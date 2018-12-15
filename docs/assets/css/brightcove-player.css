@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Circular Std';
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/CircularStd/CircularStd-Black.eot");
+  src: url("../fonts/CircularStd/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd/CircularStd-Black.woff2") format("woff2"), url("../fonts/CircularStd/CircularStd-Black.woff") format("woff"), url("../fonts/CircularStd/CircularStd-Black.ttf") format("truetype"), url("../fonts/CircularStd/CircularStd-Black.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Circular Std';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/CircularStd/CircularStd-Book.eot");
+  src: url("../fonts/CircularStd/CircularStd-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd/CircularStd-Book.woff2") format("woff2"), url("../fonts/CircularStd/CircularStd-Book.woff") format("woff"), url("../fonts/CircularStd/CircularStd-Book.ttf") format("truetype"), url("../fonts/CircularStd/CircularStd-Book.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Circular Std';
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/CircularStd/CircularStd-Medium.eot");
+  src: url("../fonts/CircularStd/CircularStd-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd/CircularStd-Medium.woff2") format("woff2"), url("../fonts/CircularStd/CircularStd-Medium.woff") format("woff"), url("../fonts/CircularStd/CircularStd-Medium.ttf") format("truetype"), url("../fonts/CircularStd/CircularStd-Medium.svg#codropsicons") format("svg"); }
+
+.video-js .vjs-progress-control .vjs-mouse-display {
+  background-color: white; }
+
+.video-js .vjs-control-bar {
+  height: 48px; }
+
+.video-js .vjs-control {
+  font-size: 14px;
+  text-shadow: none !important; }
+
+.video-js .vjs-time-tooltip, .video-js .vjs-time-control {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 400; }
+
+.video-js .vjs-time-control {
+  font-size: 16px;
+  line-height: 48px;
+  padding: 0; }
+
+.video-js .vjs-volume-bar {
+  margin: 21px 0.48em; }
+
+.video-js .vjs-fullscreen-control {
+  -ms-flex-order: 2;
+  order: 2; }
+
+.video-js .vjs-play-control {
+  -ms-flex-order: 0;
+  order: 0; }
+
+.video-js .vjs-volume-panel {
+  -ms-flex-order: 1;
+  order: 1; }
+
+.video-js button {
+  outline: none; }
+  .video-js button.vjs-big-play-button {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-right: auto;
+    transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+    margin-left: .48em;
+    margin-bottom: .48em;
+    margin-top: auto;
+    border: solid 2px;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.4em;
+    font-size: 3.24em; }
+
+.video-js .vjs-dock-text {
+  display: none; }
+
+.video-js:hover button.vjs-big-play-button {
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.video-js.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-active:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
+.video-js.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
+  transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1);
+  -ms-transform: translateY(48px);
+  transform: translateY(48px); }
+
+.video-js .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal,
+.video-js .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal,
+.video-js .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal,
+.video-js .vjs-volume-panel .vjs-volume-control:hover.vjs-volume-horizontal,
+.video-js .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal,
+.video-js .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal,
+.video-js .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
+  height: 48px; }
+
+.video-js .vjs-progress-control {
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+.video-js .vjs-button > .vjs-icon-placeholder:before {
+  position: relative; }
+
+/*# sourceMappingURL=brightcove-player.css.map */

@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	// width: 100%;
+}
+
+body {
+	-webkit-overflow-scrolling: touch;
+	// -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.logo {
+	margin-left: 0;
+	width: 100%;
+	padding: 30px;
+	padding-top: 0;
+	padding-left: 0px;
+	border-bottom: solid 1px rgba(#888B8D, .12);
+	text-align: center;
+
+	img {
+		width: 100%;
+		max-width: 208px;
+		// margin-bottom: 30px;
+	}
+}

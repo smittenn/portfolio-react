@@ -1,0 +1,61 @@
+ @media screen and (max-width: $bp-medium) {
+		.grid {
+			padding: 0 30px;
+
+			&__item {
+				&--hide-bp-medium {
+					display: none;
+				}   
+				&--col-12-medium {
+					width: 100%;
+				}   
+			}
+		}
+
+		.editable-title {
+			margin-left: -30px;
+		}
+		.article-jumbotron {
+			height: 60vh;
+		}
+		.article-body {
+			padding: 60px 30px;
+			flex-direction: column-reverse;
+
+			.introduction {
+				h4 {
+					max-height: 24px;
+					margin-top: 12px;
+				}
+			}
+			.metadata {
+				margin-top: 30px;
+			}
+		}
+
+		h1 {
+			font-size: 48px;
+			line-height: 48px;
+		}
+		blockquote {
+			margin: 30px 0;
+			font-size: 28px;
+			transform: none;
+		}
+		h2 {
+			font-size: 32px;
+			letter-spacing: 0.006em;
+		}
+		input {
+			font-size: 32px;
+		}
+		h3 {
+			font-size: 32px;
+		}
+		h4 {
+			font-size: 18px;
+		}
+		p {
+			font-size: 17px;
+		}
+	}

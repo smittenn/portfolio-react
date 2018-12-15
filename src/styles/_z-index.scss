@@ -1,0 +1,16 @@
+@mixin z-index($zindex) {
+	z-index: $zindex;
+}
+
+
+.mdc-nav {
+	&__hovermain {
+		@include z-index(9999);
+	}
+	&__topbar {
+		@include z-index(9999);
+	}
+	&__hoverbar {
+		@include z-index(9999);
+	}
+}

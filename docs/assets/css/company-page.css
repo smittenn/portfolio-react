@@ -1,0 +1,105 @@
+.depuy-synthes {
+  font-family: "Circular Std";
+  background-color: #50738C; }
+  .depuy-synthes .section-hero .hero-background {
+    background: #1E5789;
+    background: -webkit-gradient(linear, left top, left bottom, from(#50738C), color-stop(80%, #1E5789), to(#1E5789));
+    background: -webkit-linear-gradient(top, #50738C 0%, #1E5789 80%, #1E5789 100%);
+    background: linear-gradient(to bottom, #50738C 0%, #1E5789 80%, #1E5789 100%); }
+  .depuy-synthes h1, .depuy-synthes h2, .depuy-synthes h3, .depuy-synthes h4, .depuy-synthes h5, .depuy-synthes h6 {
+    color: #FFF; }
+  .depuy-synthes p {
+    margin-right: 3%; }
+  .depuy-synthes * {
+    font-family: "Circular Std"; }
+  .depuy-synthes .typography-intro {
+    color: #FFF; }
+  .depuy-synthes .typography-tile-copy, .depuy-synthes .typography-tile-subheader {
+    font-family: "Circular Std";
+    font-size: 19px;
+    color: #5A6771;
+    letter-spacing: .006em; }
+  .depuy-synthes .typography-tile-subheader {
+    color: #A99A69; }
+  .depuy-synthes .violator-secondary {
+    border-color: #FFF;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-radius: 0;
+    padding: 12px 24px; }
+  .depuy-synthes .sticky-nav a {
+    color: #888B8D;
+    font-weight: 500;
+    letter-spacing: 0.012em;
+    font-size: 14px;
+    opacity: 0.6; }
+    .depuy-synthes .sticky-nav a:hover {
+      color: #A99A69;
+      opacity: 1; }
+    .depuy-synthes .sticky-nav a.active {
+      color: #1E5789 !important;
+      opacity: 1; }
+  .depuy-synthes .sticky-nav ul {
+    border-left: solid 1px #D8D8D8; }
+  .depuy-synthes .sticky-nav li {
+    padding: 6px 0 6px 0; }
+  .depuy-synthes .sticky-nav .line {
+    background: #1E5789;
+    margin-top: 12px;
+    height: 5px;
+    width: 9px;
+    border-radius: 12px;
+    left: -4.5px; }
+  .depuy-synthes .header-sticky, .depuy-synthes .header-sticky-color, .depuy-synthes .header-sticky p {
+    color: #5A6771;
+    font-weight: 400; }
+  .depuy-synthes h1.typography-headline span, .depuy-synthes h2.typography-headline span, .depuy-synthes h3.typography-headline span, .depuy-synthes h4.typography-headline span, .depuy-synthes h5.typography-headline span {
+    font-weight: 700; }
+  .depuy-synthes .tile-group-competitions .tile-header, .depuy-synthes .tile-group-competitions .typography-tile-subheader {
+    color: #A99A69; }
+  .depuy-synthes button {
+    color: #A99A69;
+    border: solid 1px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    margin: 60px 9px 0 0;
+    font-size: 14px; }
+    .depuy-synthes button:last-child {
+      background: #A99A69;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold; }
+  .depuy-synthes .tile {
+    border-radius: 0px; }
+    .depuy-synthes .tile .figure-container {
+      width: 480px;
+      height: 432px;
+      margin: 0 auto 58px; }
+  .depuy-synthes .image-knee {
+    min-width: 484px;
+    height: 432px;
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .depuy-synthes .image-knee1 {
+    background-image: url(../img/knee1.png); }
+  .depuy-synthes .image-knee2 {
+    background-image: url(../img/knee2.png);
+    min-width: 460px;
+    height: 360px; }
+  .depuy-synthes .image-knee3 {
+    background-image: url(../img/knee3.png); }
+  .depuy-synthes .tile-group-competitions .tile-trophy, .depuy-synthes .tile-group-workout .tile-yoga {
+    background: #fafafa; }
+  .depuy-synthes .tile-group-competitions .tile-trophy .copy, .depuy-synthes .tile-group-workout .copy {
+    color: #5A6771; }
+  .depuy-synthes .typography-line {
+    background: #A99A69;
+    height: 9px;
+    width: 120px;
+    margin-bottom: 24px; }
+  .depuy-synthes .image-bands {
+    display: none; }
+
+/*# sourceMappingURL=company-page.css.map */

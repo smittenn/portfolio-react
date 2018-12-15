@@ -1,0 +1,96 @@
+body, button, input, select, textarea {
+  font-variant-ligatures: none;
+}
+
+.title {
+    font-weight: 800;
+    letter-spacing: -0.006em;
+}
+
+.subtitle {
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}
+
+a {
+  // color: lighten(#000099, 18%);
+}
+
+// overflow: hidden;
+// animation: hideMenu 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+// /* animation: hideMenu cubic-bezier(0.19, 1, 0.22, 1) 1.8s; */
+// animation-fill-mode: forwards;
+
+@keyframes hideMenu {
+  0% {
+    transform: translateX(0);
+    width: 25%;
+  }
+  50% {
+    transform: translateX(-100%);
+    width: 25%;
+  }
+  100% {
+    transform: translateX(-100%);
+    width: 0px;
+    padding: 0px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Circular Std";
+  color: $brand-black;  
+
+  &.white {
+    color: white;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+p, input {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 60px;
+  // margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.eyebrow {
+    text-transform: uppercase;
+  }
+}
+
+.tag {
+  margin-right: 0.75em;
+}

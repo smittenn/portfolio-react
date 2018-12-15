@@ -1,0 +1,95 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+$height: 48px;
+
+.video-js  {
+	.vjs-progress-control .vjs-mouse-display {
+		background-color: white;
+	}
+	.vjs-control-bar {
+		height: $height;
+	}
+	.vjs-control {
+		font-size: 14px;
+		text-shadow: none !important;
+	}
+	.vjs-time-tooltip, .vjs-time-control {
+		font-family: $font-primary;
+		font-weight: 400;
+	}
+	.vjs-time-control {
+		font-size: 16px;
+		line-height: $height;
+		padding: 0 ;
+	}
+	.vjs-volume-bar {
+		margin: 21px 0.48em;
+	}
+	.vjs-fullscreen-control {
+		order: 2;
+	}
+	.vjs-play-control {
+		order: 0;
+	}
+	.vjs-volume-panel {
+		order: 1;
+	}
+	button {
+		outline: none;
+
+		&.vjs-big-play-button {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			margin-right: auto;
+			transition: all 0.6s $easing3;
+			margin-left: .48em;
+			margin-bottom: .48em;
+			margin-top: auto;
+			border: solid 2px;
+			width: 1.5em;
+			height: 1.5em;
+			line-height: 1.4em;
+			font-size: 3.24em;
+		}
+	}
+	.vjs-dock-text {
+		display: none;
+	}
+	&:hover {
+		button {
+			&.vjs-big-play-button {
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+	&.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-playing.vjs-user-active:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
+	&.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
+		transition: all 0.9s $easing3;
+		transform: translateY($height);
+	}
+
+	& .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal, 
+	& .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal, 
+	& .vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal, 
+	& .vjs-volume-panel .vjs-volume-control:hover.vjs-volume-horizontal, 
+	& .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal, 
+	& .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal, 
+	& .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
+		height: $height;
+	}
+
+	.vjs-progress-control {
+		transition: all 0.3s $easing2 !important;
+	}
+
+	.vjs-button > .vjs-icon-placeholder:before {
+		position: relative;
+	}
+}
+

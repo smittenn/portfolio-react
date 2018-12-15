@@ -1,0 +1,27 @@
+$bp-xlarge: 1800px;
+$bp-large: 1400px;
+$bp-desktop: 1100px;
+$bp-medium: 800px;
+$bp-small: 600px;
+$bp-xsmall: 480px;
+
+$font-primary: 'Circular Std', sans-serif;
+
+$easing1: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easing2: cubic-bezier(.19,1,.22,1);
+$easing3: cubic-bezier(0.86, 0, 0.07, 1);
+$easing4: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+$duration-short: 0.3s;
+$duration-medium: 0.6s;
+$duration-fast: 0.9s;
+
+$brand-white: #F9F9F9;
+
+$brand-pink: #E04E47;
+
+$brand-grey-lightest: #F4F4F4;
+$brand-grey-light: #D8D8D8;
+$brand-grey-dark: #888B8D;
+$brand-grey-darkest: #63666A;
+$brand-black: #232021;

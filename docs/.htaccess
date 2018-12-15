@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile https://erchsm.github.io/jnj-process/.htpasswd
+Require valid-user
