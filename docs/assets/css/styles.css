@@ -725,7 +725,7 @@ body {
   text-align: left; }
   @media screen and (max-width: 800px) {
     .react-parallax-content {
-      height: 60vh; } }
+      height: 72vh; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
@@ -749,7 +749,7 @@ body {
     .article-body .metadata {
       margin-top: 30px; }
   h1 {
-    font-size: 8vw; }
+    font-size: 10vw; }
   blockquote {
     margin: 30px 0;
     font-size: 28px;
