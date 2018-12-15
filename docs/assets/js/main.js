@@ -25282,7 +25282,7 @@ var Home = function (_Component) {
 				null,
 				_react2.default.createElement(
 					_reactParallax.Parallax,
-					{ bgImage: image1, blur: { min: -3, max: 6 }, strength: 600 },
+					{ bgImage: image1, strength: 600 },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },

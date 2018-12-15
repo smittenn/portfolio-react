@@ -27,7 +27,7 @@ export default class Home extends Component {
 		
 		return (
 			<div>
-				<Parallax bgImage={image1} blur={{ min: -3, max: 6 }} strength={600}>
+				<Parallax bgImage={image1} strength={600}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
 							<h1 className="white">Eric C. Smith is a UI/UX Designer and Developer in New York City</h1>

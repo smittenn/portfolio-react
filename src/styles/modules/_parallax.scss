@@ -3,4 +3,8 @@
 	display: flex;
 	align-items: center;
 	text-align: left;
+
+	 @media screen and (max-width: $bp-medium) {
+		height: 60vh;
+	}
 }
