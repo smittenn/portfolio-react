@@ -25245,6 +25245,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactParallax = require("react-parallax");
 
+var _detectMobile = require("../services/detectMobile");
+
+var _detectMobile2 = _interopRequireDefault(_detectMobile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25259,21 +25263,31 @@ var Home = function (_Component) {
 	function Home(props) {
 		_classCallCheck(this, Home);
 
-		return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+		_this.state = {
+			isMobile: (0, _detectMobile2.default)()
+		};
+		return _this;
 	}
+
+	// componentDidMount() {
+	// 	window.addEventListener('resize', this.detectMobile);
+	// }
+
+	// componentWillUnmount() {
+	// 	window.removeEventListener('resize', this.detectMobile);
+	// }
+
+	// detectMobile = (event) => {
+	// 	this.setState({
+	// 		isMobile: detectMobile()
+	// 	})
+	// }
 
 	_createClass(Home, [{
 		key: "render",
 		value: function render() {
-
-			var insideStyles = {
-				background: "white",
-				padding: 20,
-				position: "absolute",
-				top: "50%",
-				left: "50%",
-				transform: "translate(-50%,-50%)"
-			};
 
 			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
@@ -25282,7 +25296,7 @@ var Home = function (_Component) {
 				null,
 				_react2.default.createElement(
 					_reactParallax.Parallax,
-					{ bgImage: image1, strength: 600 },
+					{ bgImage: image1, blur: null, strength: 600 },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
@@ -25310,10 +25324,9 @@ var Home = function (_Component) {
 	return Home;
 }(_react.Component);
 
-Home.propTypes = {};
 exports.default = Home;
 
-},{"react":227,"react-parallax":173}],237:[function(require,module,exports){
+},{"../services/detectMobile":240,"react":227,"react-parallax":173}],237:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25766,6 +25779,17 @@ var Vai = function (_Component) {
 Vai.propTypes = {};
 exports.default = Vai;
 
-},{"react":227,"react-parallax":173}]},{},[231])
+},{"react":227,"react-parallax":173}],240:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    return window.innerWidth <= 800;
+};
+
+},{}]},{},[231])
 
 //# sourceMappingURL=main.js.map
