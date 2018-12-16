@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import { Parallax } from "react-parallax"
+import { Motion, spring, presets } from "react-motion"
+import { ScrollProvider, Scroller, ScrollLink } from "react-skroll"
+
 
 import GridLines from "./GridLines"
 import detectMobile from "../services/detectMobile"
@@ -13,6 +16,10 @@ export default class Home extends Component {
 		this.state = {
 			isMobile: detectMobile(),
 		}
+	}
+
+	splitText = (text) => {
+		return text.split(' ');
 	}
 
 	// componentDidMount() {
@@ -36,6 +43,11 @@ export default class Home extends Component {
 			</div>
 		)*/}
 
+		const pageTitle = "Eric C. Smith is a User Experience Designer in New York City";
+
+		const splitTitle = this.splitText(pageTitle).map((item, index) =>
+			<span key={index}>{item}{(index != this.splitText(pageTitle).length) ? '\u00A0' : null}</span>
+		);
 
 		const image1 = "https://erchsm.github.io/portfolio-react/assets/img/banner.jpg";
 		
@@ -43,18 +55,19 @@ export default class Home extends Component {
 
 		return (
 			<div>
-				<Parallax bgImage={image1} 
+				<div name="Hero"><Parallax 
+				bgImage={image1} 
 				blur={{ min: -3, max: 6 }} 
 				strength={600}
 				renderLayer={null}
 				>
 					<div className="grid">
 						<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-							<h1 className="white">Eric C. Smith is a User Experience Designer in New York City</h1>
+							<h1 className="white">{splitTitle}</h1>
 						</div>
 					</div>
-				</Parallax>
-				<section>
+				</Parallax></div>
+				<section name="Introduction">
 					<div className="grid">
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<h2>Hi there, I’m Eric.</h2>

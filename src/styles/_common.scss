@@ -21,18 +21,32 @@ img {
 	width: 100%;
 }
 
-.logo {
-	margin-left: 0;
-	width: 100%;
-	padding: 30px;
-	padding-top: 0;
-	padding-left: 0px;
-	border-bottom: solid 1px rgba(#888B8D, .12);
-	text-align: center;
+h1 {
+	@keyframes ghostHeader {
+		0% {
+			opacity: 0;
+			transform: translateY(100px) skewX(6deg);
+		  // filter: blur(3px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0) skewX(0deg);
+		  // filter: blur(0px);
+		}
+	}
 
-	img {
-		width: 100%;
-		max-width: 208px;
-		// margin-bottom: 30px;
+	span {
+		display: inline-block;
+		opacity: 0;
+		transform: translateY(60px) skewX(6deg);
+		animation: ghostHeader $duration-slow $easing1;
+		animation-fill-mode: forwards;
+
+		@for $i from 1 through 18 {
+			&:nth-child(#{$i}) {
+				animation-delay: (#{0.9 + ($i * 0.06)}s);
+			}
+		}
 	}
 }
+

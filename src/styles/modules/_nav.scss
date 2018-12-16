@@ -279,8 +279,8 @@ $baseclass: home-nav;
 		}
 	}
 	@media screen and (max-width: $bp-medium) {
-		.#{$baseclass}__topbar {
-			padding: 0 12px;
+		.#{$baseclass}__hamburger {
+			width: 48px;
 		}
 		hr {
 			&:last-of-type {
