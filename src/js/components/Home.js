@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Parallax } from "react-parallax"
 
+import GridLines from "./GridLines"
 import detectMobile from "../services/detectMobile"
 
 
@@ -38,10 +39,12 @@ export default class Home extends Component {
 
 		const image1 = "https://erchsm.github.io/portfolio-react/assets/img/banner.jpg";
 		
+		// console.log(this.props);
+
 		return (
 			<div>
 				<Parallax bgImage={image1} 
-				blur={null} 
+				blur={{ min: -3, max: 6 }} 
 				strength={600}
 				renderLayer={null}
 				>
@@ -51,15 +54,20 @@ export default class Home extends Component {
 						</div>
 					</div>
 				</Parallax>
-				<section style={{ height: 500 }}>
+				<section>
 					<div className="grid">
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<h3>Hi there, I’m Eric. I’m a designer with a nack for writing code. Here are some things I’ve worked on.</h3>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<h2>Hi there, I’m Eric.</h2>
+							<h3>I’m a designer with a nack for writing code. Here are some things I’ve worked on.</h3>
 							<p>I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.</p>
+						</div>
+						<div className="grid__item grid__item--col-1"/>
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							<img src="https://erchsm.github.io/portfolio-react/assets/img/me.jpg"/>
 						</div>
 					</div>
 				</section>
-				<h2>{"\u2728"}</h2>
+				<GridLines/>
 			</div>
 		);
 	}

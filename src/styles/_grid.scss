@@ -1,8 +1,27 @@
 .grid {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	padding: 0 60px;
+
+	&--lines {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		left: 0;
+	}
+
+	&__line {
+		color: rgba($brand-grey-light, .5);
+		border-left: solid 1px;
+		height: 100vh;
+		pointer-events: none;
+
+		&:last-child {
+			border-right: solid 1px;
+		}
+	}
 
 	&__item {
 		display: flex;

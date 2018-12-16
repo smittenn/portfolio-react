@@ -25234,7 +25234,73 @@ exports.default = AppRoute;
 
 }).call(this,require('_process'))
 
-},{"./Nav":237,"_process":39,"history/createBrowserHistory":29,"history/createHashHistory":30,"react":227,"react-router":198}],236:[function(require,module,exports){
+},{"./Nav":238,"_process":39,"history/createBrowserHistory":29,"history/createHashHistory":30,"react":227,"react-router":198}],236:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GridLines = function (_Component) {
+	_inherits(GridLines, _Component);
+
+	function GridLines(props) {
+		_classCallCheck(this, GridLines);
+
+		return _possibleConstructorReturn(this, (GridLines.__proto__ || Object.getPrototypeOf(GridLines)).call(this, props));
+	}
+
+	// componentDidMount() {
+	// 	window.addEventListener('resize', this.detectMobile);
+	// }
+
+	// componentWillUnmount() {
+	// 	window.removeEventListener('resize', this.detectMobile);
+	// }
+
+	// detectMobile = (event) => {
+	// 	this.setState({
+	// 		isMobile: detectMobile()
+	// 	})
+	// }
+
+	_createClass(GridLines, [{
+		key: "render",
+		value: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "grid grid--lines" },
+				_react2.default.createElement("div", { className: "grid__item--col-2 grid__line" }),
+				_react2.default.createElement("div", { className: "grid__item--col-2 grid__line" }),
+				_react2.default.createElement("div", { className: "grid__item--col-2 grid__line" }),
+				_react2.default.createElement("div", { className: "grid__item--col-2 grid__line" }),
+				_react2.default.createElement("div", { className: "grid__item--col-2 grid__line" }),
+				_react2.default.createElement("div", { className: "grid__item--col-2 grid__line" })
+			);
+		}
+	}]);
+
+	return GridLines;
+}(_react.Component);
+
+exports.default = GridLines;
+
+},{"react":227}],237:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25248,6 +25314,10 @@ var _react = require("react");
 var _react2 = _interopRequireDefault(_react);
 
 var _reactParallax = require("react-parallax");
+
+var _GridLines = require("./GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
 
 var _detectMobile = require("../services/detectMobile");
 
@@ -25300,13 +25370,15 @@ var Home = function (_Component) {
 
 			var image1 = "https://erchsm.github.io/portfolio-react/assets/img/banner.jpg";
 
+			// console.log(this.props);
+
 			return _react2.default.createElement(
 				"div",
 				null,
 				_react2.default.createElement(
 					_reactParallax.Parallax,
 					{ bgImage: image1,
-						blur: null,
+						blur: { min: -3, max: 6 },
 						strength: 600,
 						renderLayer: null
 					},
@@ -25326,31 +25398,38 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					"section",
-					{ style: { height: 500 } },
+					null,
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"h2",
+								null,
+								"Hi there, I\u2019m Eric."
+							),
 							_react2.default.createElement(
 								"h3",
 								null,
-								"Hi there, I\u2019m Eric. I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on."
+								"I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on."
 							),
 							_react2.default.createElement(
 								"p",
 								null,
 								"I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling."
 							)
+						),
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement("img", { src: "https://erchsm.github.io/portfolio-react/assets/img/me.jpg" })
 						)
 					)
 				),
-				_react2.default.createElement(
-					"h2",
-					null,
-					"\u2728"
-				)
+				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
 	}]);
@@ -25360,7 +25439,7 @@ var Home = function (_Component) {
 
 exports.default = Home;
 
-},{"../services/detectMobile":240,"react":227,"react-parallax":173}],237:[function(require,module,exports){
+},{"../services/detectMobile":241,"./GridLines":236,"react":227,"react-parallax":173}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25462,7 +25541,7 @@ var Nav = function (_Component) {
 					),
 					_react2.default.createElement(
 						'li',
-						null,
+						{ onClick: _this.toggleMenuOpen },
 						_react2.default.createElement(
 							_reactRouterDom.NavLink,
 							{ to: '/american-made' },
@@ -25475,20 +25554,7 @@ var Nav = function (_Component) {
 					),
 					_react2.default.createElement(
 						'li',
-						null,
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'J&J MDC'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						null,
+						{ onClick: _this.toggleMenuOpen },
 						_react2.default.createElement(
 							_reactRouterDom.NavLink,
 							{ to: '/vai' },
@@ -25501,7 +25567,33 @@ var Nav = function (_Component) {
 					),
 					_react2.default.createElement(
 						'li',
-						null,
+						{ onClick: _this.toggleMenuOpen },
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Translator'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ onClick: _this.toggleMenuOpen },
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'J&J MDC'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ onClick: _this.toggleMenuOpen },
 						_react2.default.createElement(
 							_reactRouterDom.NavLink,
 							{ to: '/vai' },
@@ -25514,7 +25606,7 @@ var Nav = function (_Component) {
 					),
 					_react2.default.createElement(
 						'li',
-						null,
+						{ onClick: _this.toggleMenuOpen },
 						_react2.default.createElement(
 							_reactRouterDom.NavLink,
 							{ to: '/vai' },
@@ -25527,7 +25619,7 @@ var Nav = function (_Component) {
 					),
 					_react2.default.createElement(
 						'li',
-						null,
+						{ onClick: _this.toggleMenuOpen },
 						_react2.default.createElement(
 							_reactRouterDom.NavLink,
 							{ to: '/vai' },
@@ -25540,7 +25632,7 @@ var Nav = function (_Component) {
 					),
 					_react2.default.createElement(
 						'li',
-						null,
+						{ onClick: _this.toggleMenuOpen },
 						_react2.default.createElement(
 							_reactRouterDom.NavLink,
 							{ to: '/vai' },
@@ -25548,6 +25640,32 @@ var Nav = function (_Component) {
 								'h3',
 								null,
 								'Perforce'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ onClick: _this.toggleMenuOpen },
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Cisco MATE'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						{ onClick: _this.toggleMenuOpen },
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Givjoy'
 							)
 						)
 					)
@@ -25623,7 +25741,7 @@ var Nav = function (_Component) {
 									null,
 									_react2.default.createElement(
 										'li',
-										null,
+										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/home' },
@@ -25647,7 +25765,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										null,
+										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
@@ -25660,7 +25778,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										null,
+										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
@@ -25673,7 +25791,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										null,
+										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
@@ -25762,7 +25880,7 @@ var Nav = function (_Component) {
 
 exports.default = Nav;
 
-},{"./NavRouter":238,"classnames":1,"react":227,"react-router-dom":186}],238:[function(require,module,exports){
+},{"./NavRouter":239,"classnames":1,"react":227,"react-router-dom":186}],239:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25801,22 +25919,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Router = function (_Component) {
-	_inherits(Router, _Component);
+var NavRouter = function (_Component) {
+	_inherits(NavRouter, _Component);
 
-	function Router(props) {
-		_classCallCheck(this, Router);
+	function NavRouter(props) {
+		_classCallCheck(this, NavRouter);
 
-		return _possibleConstructorReturn(this, (Router.__proto__ || Object.getPrototypeOf(Router)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (NavRouter.__proto__ || Object.getPrototypeOf(NavRouter)).call(this, props));
+
+		_this.state = {
+			currentRoute: 'Home',
+			routeAbbreviations: {
+				'Home': 'H',
+				'AmericanMade': 'P1',
+				'Vai': 'P2',
+				'AboutMe': 'A'
+			}
+		};
+		return _this;
 	}
 
-	_createClass(Router, [{
+	_createClass(NavRouter, [{
 		key: 'render',
 		value: function render() {
+			var _state = this.state,
+			    currentRoute = _state.currentRoute,
+			    routeAbbreviations = _state.routeAbbreviations;
+
+
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
 				_react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
 				_react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
 				_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default }),
@@ -25825,13 +25958,13 @@ var Router = function (_Component) {
 		}
 	}]);
 
-	return Router;
+	return NavRouter;
 }(_react.Component);
 
-Router.propTypes = {};
-exports.default = Router;
+NavRouter.propTypes = {};
+exports.default = NavRouter;
 
-},{"./AboutMe":232,"./AmericanMade":233,"./Home":236,"./Vai":239,"react":227,"react-router":198}],239:[function(require,module,exports){
+},{"./AboutMe":232,"./AmericanMade":233,"./Home":237,"./Vai":240,"react":227,"react-router":198}],240:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25904,7 +26037,7 @@ var Vai = function (_Component) {
 Vai.propTypes = {};
 exports.default = Vai;
 
-},{"react":227,"react-parallax":173}],240:[function(require,module,exports){
+},{"react":227,"react-parallax":173}],241:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -286,9 +286,23 @@ table {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-align: center;
   align-items: center;
   padding: 0 60px; }
+  .grid--lines {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0; }
+  .grid__line {
+    color: rgba(222, 222, 220, 0.5);
+    border-left: solid 1px;
+    height: 100vh;
+    pointer-events: none; }
+    .grid__line:last-child {
+      border-right: solid 1px; }
   .grid__item {
     display: -ms-flexbox;
     display: flex;
@@ -362,7 +376,8 @@ p, input {
 
 h1 {
   font-size: 90px;
-  line-height: 1.2; }
+  line-height: 1.2;
+  margin-left: -5px; }
 
 h2 {
   font-size: 48px;
@@ -396,6 +411,16 @@ h1.eyebrow, h2.eyebrow, h3.eyebrow, h4.eyebrow, h5.eyebrow, h6.eyebrow {
 body {
   -webkit-overflow-scrolling: touch; }
 
+section {
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+
+img {
+  width: 100%; }
+
 .logo {
   margin-left: 0;
   width: 100%;
@@ -408,14 +433,11 @@ body {
     width: 100%;
     max-width: 208px; }
 
-.mdc-nav__hovermain {
-  z-index: 9999; }
+.react-parallax-content * {
+  z-index: 999; }
 
-.mdc-nav__topbar {
-  z-index: 9999; }
-
-.mdc-nav__hoverbar {
-  z-index: 9999; }
+section * {
+  z-index: 999; }
 
 /* Modules */
 @keyframes slideIn {
@@ -442,68 +464,18 @@ body {
     background-color: #DEDEDC; }
     .home-nav hr:first-of-type {
       background: #F4F4F4; }
-  .home-nav__topbar {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0 72px;
-    height: 60px;
-    width: 100%;
-    max-width: 1440px; }
-    .home-nav__topbar:first-child {
-      border-color: #F4F4F4; }
-  .home-nav__left {
-    -ms-flex: 1;
-    flex: 1; }
-  .home-nav__right, .home-nav__items {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center; }
   .home-nav p {
     font-size: 21px;
     color: #888B8D;
     min-width: 130px; }
-  .home-nav__item {
-    position: relative;
-    padding: 0 18px;
-    margin-right: 24px;
-    min-height: 40px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    border-right: solid 1px #DEDEDC; }
-    .home-nav__item:not(:last-child) {
-      margin-right: 0; }
-    .home-nav__item:first-child {
-      padding-left: 0; }
-    .home-nav__item img {
-      height: 38px;
-      width: 38px;
-      border: solid 3px #DEDEDC;
-      border-radius: 50%; }
-    .home-nav__item .notifications-marker {
-      position: absolute;
-      background: #E04E47;
-      border: solid 2px white;
-      border-radius: 50%;
-      width: 14px;
-      height: 14px;
-      top: -1px;
-      right: 15px; }
-  .home-nav .icon-home-logo {
-    color: #E04E47;
-    font-size: 36px; }
   .home-nav__hamburger {
     position: fixed;
     z-index: 99999;
-    right: 18px;
+    right: 0;
     top: 18px;
     display: -ms-flexbox;
     display: flex;
-    width: 40px;
+    width: 60px;
     height: 18px;
     cursor: pointer;
     -ms-flex-direction: column;
@@ -513,7 +485,7 @@ body {
     .home-nav__hamburger .line {
       transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.6s, background-color cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
       background: #232021;
-      height: 2px;
+      height: 1px;
       border-radius: 1px;
       width: 100%; }
   .home-nav__main {
@@ -527,11 +499,7 @@ body {
   .home-nav__panel {
     pointer-events: auto;
     position: absolute;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 460px;
+    width: calc(33.32% + 24px);
     right: 0;
     height: 100%;
     transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
@@ -545,11 +513,14 @@ body {
     .home-nav__panel hr {
       height: 3px; }
     .home-nav__panel ul {
+      min-height: 100%;
+      height: auto;
+      overflow-y: auto;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
       flex-direction: column;
-      padding: 72px 72px 24px; }
+      padding: 80px 72px 24px; }
     .home-nav__panel li {
       display: -ms-inline-flexbox;
       display: inline-flex;
@@ -572,9 +543,6 @@ body {
       border-color: #E04E47; }
     .home-nav__panel--white h5 {
       margin-bottom: 12px; }
-    .home-nav__panel--white ul:first-child {
-      -ms-flex: 1;
-      flex: 1; }
   .home-nav__panel--blue {
     background: #232021; }
     .home-nav__panel--blue h1, .home-nav__panel--blue h2, .home-nav__panel--blue h3, .home-nav__panel--blue h4, .home-nav__panel--blue h5, .home-nav__panel--blue h6 {
@@ -603,7 +571,7 @@ body {
       opacity: 1;
       transform: translate3d(0, -6px, 0) rotate(45deg); }
   .home-nav--menuOpen .home-nav__main {
-    background: rgba(35, 32, 33, 0.6); }
+    background: rgba(35, 32, 33, 0.5); }
   .home-nav--menuOpen .home-nav__panel li {
     transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s; }
     .home-nav--menuOpen .home-nav__panel li:nth-child(1) {
@@ -702,13 +670,11 @@ body {
     .home-nav .tabbed-list__line-container {
       padding: 0 12px; }
     .home-nav .home-nav__panel {
-      width: 100%;
-      height: auto;
-      min-height: 100vh; }
+      width: 100%; }
       .home-nav .home-nav__panel hr {
         display: block; }
       .home-nav .home-nav__panel ul {
-        padding: 48px 12px 24px; }
+        padding: 60px 24px 24px; }
       .home-nav .home-nav__panel .home-nav__items {
         margin-bottom: 18px;
         padding: 0; }
@@ -724,16 +690,16 @@ body {
       opacity: 0; } }
 
 .react-parallax-content {
-  height: 600px;
+  background: rgba(35, 32, 33, 0.5);
+  height: 80vh;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
   text-align: left; }
-
-@media screen and (max-width: 800px) {
-  .react-parallax {
-    height: 72vh; } }
+  @media screen and (max-width: 800px) {
+    .react-parallax-content {
+      height: 72vh; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
@@ -757,7 +723,8 @@ body {
     .article-body .metadata {
       margin-top: 30px; }
   h1 {
-    font-size: 10vw; }
+    font-size: 10vw;
+    margin-left: 0; }
   blockquote {
     margin: 30px 0;
     font-size: 28px;

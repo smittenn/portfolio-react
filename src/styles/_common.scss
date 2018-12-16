@@ -11,6 +11,16 @@ body {
 	// -webkit-font-smoothing: subpixel-antialiased;
 }
 
+section {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+img {
+	width: 100%;
+}
+
 .logo {
 	margin-left: 0;
 	width: 100%;

@@ -75,13 +75,16 @@ export default class Nav extends Component {
 		<div className="home-nav__panel home-nav__panel--blue">
 			<ul>
 				<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-long-left"></i><h4>Back</h4></li>
-				<li><NavLink to="/american-made"><h3>American Made</h3></NavLink></li>
-				<li><NavLink to="/vai"><h3>J&J MDC</h3></NavLink></li>
-				<li><NavLink to="/vai"><h3>Video AI</h3></NavLink></li>
-				<li><NavLink to="/vai"><h3>J&J Home</h3></NavLink></li>
-				<li><NavLink to="/vai"><h3>Micro App Interactions</h3></NavLink></li>
-				<li><NavLink to="/vai"><h3>Micro App Templates</h3></NavLink></li>
-				<li><NavLink to="/vai"><h3>Perforce</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3>American Made</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Video AI</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Translator</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J MDC</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J Home</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Micro App Interactions</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Micro App Templates</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Perforce</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Cisco MATE</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Givjoy</h3></NavLink></li>
 			</ul>
 		</div>
 	)
@@ -109,11 +112,11 @@ export default class Nav extends Component {
 						<div ref="panels">
 							<div className="home-nav__panel home-nav__panel--white">
 								<ul>
-									<li><NavLink to="/home"><h3>Home</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/home"><h3>Home</h3></NavLink></li>
 									<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Projects</h3></li>
-		 							<li><NavLink to="/about-me"><h3>Process</h3></NavLink></li>
-		 							<li><NavLink to="/about-me"><h3>About Me</h3></NavLink></li>
-		 							<li><NavLink to="/about-me"><h3>Resume</h3></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h3>Process</h3></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h3>About Me</h3></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h3>Resume</h3></NavLink></li>
 								</ul>
 							</div>
 							{ this.createCampusesContent() }
