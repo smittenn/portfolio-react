@@ -1,10 +1,13 @@
-.react-parallax-content {
-	height: 600px;
-	display: flex;
-	align-items: center;
-	text-align: left;
+.react-parallax {
+	&-content {
+		height: 600px;
+		display: flex;
+		align-items: center;
+		text-align: left;
+	}
 
-	 @media screen and (max-width: $bp-medium) {
+	@media screen and (max-width: $bp-medium) {
 		height: 72vh;
 	}
 }
+

@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
 	font-family: 'Circular Std';
 	font-weight: 800;
 	font-style: normal;
@@ -32,6 +32,42 @@
 	url('../fonts/CircularStd/CircularStd-Medium.woff') format('woff'), 
 	url('../fonts/CircularStd/CircularStd-Medium.ttf') format('truetype'),
 	url('../fonts/CircularStd/CircularStd-Medium.svg#codropsicons') format('svg');
+}*/
+
+@font-face {
+	font-family: 'Averta';
+	font-weight: 900;
+	font-style: normal;
+	src: url('../fonts/Averta/Averta-Black.eot');
+	src: url('../fonts/Averta/Averta-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Averta/Averta-Black.woff2') format('woff2'), 
+	url('../fonts/Averta/Averta-Black.woff') format('woff'), 
+	url('../fonts/Averta/Averta-Black.ttf') format('truetype'),
+	url('../fonts/Averta/Averta-Black.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Averta';
+	font-weight: 800;
+	font-style: normal;
+	src: url('../fonts/Averta/Averta-ExtraBold.eot');
+	src: url('../fonts/Averta/Averta-ExtraBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Averta/Averta-ExtraBold.woff2') format('woff2'), 
+	url('../fonts/Averta/Averta-ExtraBold.woff') format('woff'), 
+	url('../fonts/Averta/Averta-ExtraBold.ttf') format('truetype'),
+	url('../fonts/Averta/Averta-ExtraBold.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Averta';
+	font-weight: 700;
+	font-style: normal;
+	src: url('../fonts/Averta/Averta-Bold.eot');
+	src: url('../fonts/Averta/Averta-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Averta/Averta-Bold.woff2') format('woff2'), 
+	url('../fonts/Averta/Averta-Bold.woff') format('woff'), 
+	url('../fonts/Averta/Averta-Bold.ttf') format('truetype'),
+	url('../fonts/Averta/Averta-Bold.svg#codropsicons') format('svg');
 }
 
 

@@ -25168,7 +25168,7 @@ exports.default = App;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25200,29 +25200,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var AppRoute = function (_Component) {
-    _inherits(AppRoute, _Component);
+	_inherits(AppRoute, _Component);
 
-    function AppRoute(props) {
-        _classCallCheck(this, AppRoute);
+	function AppRoute(props) {
+		_classCallCheck(this, AppRoute);
 
-        return _possibleConstructorReturn(this, (AppRoute.__proto__ || Object.getPrototypeOf(AppRoute)).call(this, props));
-    }
+		return _possibleConstructorReturn(this, (AppRoute.__proto__ || Object.getPrototypeOf(AppRoute)).call(this, props));
+	}
 
-    _createClass(AppRoute, [{
-        key: 'render',
-        value: function render() {
-            var history = (0, _createBrowserHistory2.default)({ basename: process.env.PUBLIC_URL });
-            // const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+	_createClass(AppRoute, [{
+		key: 'render',
+		value: function render() {
+			var history = (0, _createBrowserHistory2.default)({ basename: process.env.PUBLIC_URL });
+			// const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 
-            return _react2.default.createElement(
-                _reactRouter.Router,
-                { history: history },
-                _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Nav2.default })
-            );
-        }
-    }]);
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					_reactRouter.Router,
+					{ history: history },
+					_react2.default.createElement(_reactRouter.Route, { path: '/', component: _Nav2.default })
+				)
+			);
+		}
+	}]);
 
-    return AppRoute;
+	return AppRoute;
 }(_react.Component);
 
 AppRoute.propTypes = {};
@@ -25289,14 +25293,23 @@ var Home = function (_Component) {
 		key: "render",
 		value: function render() {
 
-			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+			{/* percentage => (
+    <div className="grid" style={{opacity: `${1 -  (percentage * percentage)}`}}>
+    </div>
+    )*/}
+
+			var image1 = "https://erchsm.github.io/portfolio-react/assets/img/banner.jpg";
 
 			return _react2.default.createElement(
 				"div",
 				null,
 				_react2.default.createElement(
 					_reactParallax.Parallax,
-					{ bgImage: image1, blur: null, strength: 600 },
+					{ bgImage: image1,
+						blur: null,
+						strength: 600,
+						renderLayer: null
+					},
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
@@ -25306,12 +25319,33 @@ var Home = function (_Component) {
 							_react2.default.createElement(
 								"h1",
 								{ className: "white" },
-								"Eric C. Smith is a UI/UX Designer and Developer in New York City"
+								"Eric C. Smith is a User Experience Designer in New York City"
 							)
 						)
 					)
 				),
-				_react2.default.createElement("div", { style: { height: 500 } }),
+				_react2.default.createElement(
+					"section",
+					{ style: { height: 500 } },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"h3",
+								null,
+								"Hi there, I\u2019m Eric. I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on."
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling."
+							)
+						)
+					)
+				),
 				_react2.default.createElement(
 					"h2",
 					null,
@@ -25339,9 +25373,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Router = require('./Router');
+var _NavRouter = require('./NavRouter');
 
-var _Router2 = _interopRequireDefault(_Router);
+var _NavRouter2 = _interopRequireDefault(_NavRouter);
 
 var _reactRouterDom = require('react-router-dom');
 
@@ -25448,7 +25482,72 @@ var Nav = function (_Component) {
 							_react2.default.createElement(
 								'h3',
 								null,
+								'J&J MDC'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
 								'Video AI'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'J&J Home'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Micro App Interactions'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Micro App Templates'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							_reactRouterDom.NavLink,
+							{ to: '/vai' },
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Perforce'
 							)
 						)
 					)
@@ -25555,7 +25654,33 @@ var Nav = function (_Component) {
 											_react2.default.createElement(
 												'h3',
 												null,
+												'Process'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										null,
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/about-me' },
+											_react2.default.createElement(
+												'h3',
+												null,
 												'About Me'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										null,
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/about-me' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Resume'
 											)
 										)
 									)
@@ -25565,7 +25690,7 @@ var Nav = function (_Component) {
 						)
 					)
 				),
-				_react2.default.createElement(_Router2.default, null)
+				_react2.default.createElement(_NavRouter2.default, null)
 			);
 		}
 	}]);
@@ -25637,11 +25762,11 @@ var Nav = function (_Component) {
 
 exports.default = Nav;
 
-},{"./Router":238,"classnames":1,"react":227,"react-router-dom":186}],238:[function(require,module,exports){
+},{"./NavRouter":238,"classnames":1,"react":227,"react-router-dom":186}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25677,30 +25802,30 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Router = function (_Component) {
-    _inherits(Router, _Component);
+	_inherits(Router, _Component);
 
-    function Router(props) {
-        _classCallCheck(this, Router);
+	function Router(props) {
+		_classCallCheck(this, Router);
 
-        return _possibleConstructorReturn(this, (Router.__proto__ || Object.getPrototypeOf(Router)).call(this, props));
-    }
+		return _possibleConstructorReturn(this, (Router.__proto__ || Object.getPrototypeOf(Router)).call(this, props));
+	}
 
-    _createClass(Router, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/about-me', component: _AboutMe2.default })
-            );
-        }
-    }]);
+	_createClass(Router, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
+				_react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '/about-me', component: _AboutMe2.default })
+			);
+		}
+	}]);
 
-    return Router;
+	return Router;
 }(_react.Component);
 
 Router.propTypes = {};
