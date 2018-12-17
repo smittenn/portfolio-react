@@ -32,6 +32,7 @@ export default class NavRouter extends Component {
 
 		return (
 			<div>
+				<Redirect from="/" to="/home"/>
 				<Route path="/home" component={Home}/>
 				<Route path="/american-made" component={AmericanMade}/>
 				<Route path="/vai" component={Vai}/>

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import NavRouter from './NavRouter';
 import {NavLink} from 'react-router-dom';
 import classNames from "classnames";
+
+import NavRouter from './NavRouter';
 
 export default class Nav extends Component {
 
@@ -76,7 +77,7 @@ export default class Nav extends Component {
 			<ul>
 				<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-long-left"></i><h4>Back</h4></li>
 				<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3>American Made</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Video AI</h3></NavLink></li>
+				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>V.ai Player</h3></NavLink></li>
 				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Translator</h3></NavLink></li>
 				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J MDC</h3></NavLink></li>
 				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J Home</h3></NavLink></li>
@@ -104,19 +105,19 @@ export default class Nav extends Component {
 			<div>
 				<nav className={classnames}>
 					<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
-						<div className="line"></div>
-						<div className="line"></div>
-						<div className="line"></div>
+						<div className="line"/>
+						<div className="line"/>
+						<div className="line"/>
 					</div>
 					<div className="home-nav__main">
 						<div ref="panels">
 							<div className="home-nav__panel home-nav__panel--white">
 								<ul>
-									<li onClick={this.toggleMenuOpen}><NavLink to="/home"><h3>Home</h3></NavLink></li>
-									<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Projects</h3></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h3>Process</h3></NavLink></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h3>About Me</h3></NavLink></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h3>Resume</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/home"><h2>Home</h2></NavLink></li>
+									<li onClick={() => this.openSecondaryPanel('links')}><h2 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Projects</h2></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About Me</h2></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Resume</h2></NavLink></li>
 								</ul>
 							</div>
 							{ this.createCampusesContent() }

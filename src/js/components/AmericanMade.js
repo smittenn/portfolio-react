@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import { Parallax } from 'react-parallax'
 
+import Nav from './Nav'
+
 
 export default class AmericanMade extends Component {
 
@@ -18,7 +20,7 @@ export default class AmericanMade extends Component {
 
 	render() {
 
-		const pageTitle = "American Made Film Site";
+		const pageTitle = "American Made is a film site created by the NBCUX Lab";
 
 		const splitTitle = this.splitText(pageTitle).map((item, index) =>
 			<span key={index}>{item}{(index != this.splitText(pageTitle).length) ? '\u00A0' : null}</span>
@@ -28,6 +30,7 @@ export default class AmericanMade extends Component {
 
 		return (
 			<div>
+				{/*<Nav/>*/}
 				<Parallax bgImage={image1} blur={{ min: -3, max: 6 }} strength={600}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-9">

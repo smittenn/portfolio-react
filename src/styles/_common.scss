@@ -11,6 +11,12 @@ body {
 	// -webkit-font-smoothing: subpixel-antialiased;
 }
 
+
+*::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+}
+
 section {
 	height: 100vh;
 	display: flex;

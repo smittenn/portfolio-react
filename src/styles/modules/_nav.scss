@@ -69,9 +69,10 @@ $baseclass: home-nav;
 	&__panel {
 		pointer-events: auto;
 		position: absolute;
-		width: calc(33.32% + 24px);
+		width: calc(33.32% + 18px);
 		right: 0;
 		height: 100%;
+		overflow-y: scroll;
 		transition: transform $easing2 0.9s;
 		transform: translate3d(100%, 0,0);
 
@@ -92,7 +93,7 @@ $baseclass: home-nav;
 		ul {
 			min-height: 100%;
 			height: auto;
-			overflow-y: auto;
+			// overflow-y: auto;
 			display: flex;
 			flex-direction: column;
 			padding: 80px 72px 24px;
@@ -190,7 +191,7 @@ $baseclass: home-nav;
 	&--menuOpen {
 		.#{$baseclass}__hamburger {
 			.line {
-				background: $brand-grey-light;
+				background: $brand-black;
 				opacity: 0;
 
 				&:first-child {
@@ -294,7 +295,7 @@ $baseclass: home-nav;
 			padding: 0 12px;
 		}
 		.#{$baseclass}__panel {
-			width: 100%;
+			width: calc(100% - 24px);
 
 			hr {
 				display: block;

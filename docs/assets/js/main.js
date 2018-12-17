@@ -28682,6 +28682,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactParallax = require('react-parallax');
 
+var _Nav = require('./Nav');
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28710,7 +28714,7 @@ var AmericanMade = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var pageTitle = "American Made Film Site";
+			var pageTitle = "American Made is a film site created by the NBCUX Lab";
 
 			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
 				return _react2.default.createElement(
@@ -28759,7 +28763,7 @@ var AmericanMade = function (_Component) {
 AmericanMade.propTypes = {};
 exports.default = AmericanMade;
 
-},{"react":251,"react-parallax":188}],262:[function(require,module,exports){
+},{"./Nav":266,"react":251,"react-parallax":188}],262:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28836,6 +28840,10 @@ var _Nav = require('./Nav');
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
+var _Home = require('./Home');
+
+var _Home2 = _interopRequireDefault(_Home);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28879,7 +28887,7 @@ exports.default = AppRoute;
 
 }).call(this,require('_process'))
 
-},{"./Nav":266,"_process":40,"history/createBrowserHistory":29,"history/createHashHistory":30,"react":251,"react-router":213}],264:[function(require,module,exports){
+},{"./Home":265,"./Nav":266,"_process":40,"history/createBrowserHistory":29,"history/createHashHistory":30,"react":251,"react-router":213}],264:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28946,7 +28954,7 @@ var GridLines = function (_Component) {
 exports.default = GridLines;
 
 },{"react":251}],265:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -28954,21 +28962,25 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactParallax = require("react-parallax");
+var _reactParallax = require('react-parallax');
 
-var _reactMotion = require("react-motion");
+var _reactMotion = require('react-motion');
 
-var _reactSkroll = require("react-skroll");
+var _reactSkroll = require('react-skroll');
 
-var _GridLines = require("./GridLines");
+var _Nav = require('./Nav');
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _GridLines = require('./GridLines');
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
 
-var _detectMobile = require("../services/detectMobile");
+var _detectMobile = require('../services/detectMobile');
 
 var _detectMobile2 = _interopRequireDefault(_detectMobile);
 
@@ -28999,7 +29011,7 @@ var Home = function (_Component) {
 	}
 
 	_createClass(Home, [{
-		key: "render",
+		key: 'render',
 
 
 		// componentDidMount() {
@@ -29028,10 +29040,10 @@ var Home = function (_Component) {
 
 			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
 				return _react2.default.createElement(
-					"span",
+					'span',
 					{ key: index },
 					item,
-					index != _this2.splitText(pageTitle).length ? "\xA0" : null
+					index != _this2.splitText(pageTitle).length ? '\xA0' : null
 				);
 			});
 
@@ -29040,11 +29052,11 @@ var Home = function (_Component) {
 			// console.log(this.props);
 
 			return _react2.default.createElement(
-				"div",
+				'div',
 				null,
 				_react2.default.createElement(
-					"div",
-					{ name: "Hero" },
+					'div',
+					{ name: 'Hero' },
 					_react2.default.createElement(
 						_reactParallax.Parallax,
 						{
@@ -29054,14 +29066,14 @@ var Home = function (_Component) {
 							renderLayer: null
 						},
 						_react2.default.createElement(
-							"div",
-							{ className: "grid" },
+							'div',
+							{ className: 'grid' },
 							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-9 grid__item--col-12-medium" },
+								'div',
+								{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
 								_react2.default.createElement(
-									"h1",
-									{ className: "white" },
+									'h1',
+									{ className: 'white' },
 									splitTitle
 								)
 							)
@@ -29069,35 +29081,35 @@ var Home = function (_Component) {
 					)
 				),
 				_react2.default.createElement(
-					"section",
-					{ name: "Introduction" },
+					'section',
+					{ name: 'Introduction' },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
+						'div',
+						{ className: 'grid' },
 						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+							'div',
+							{ className: 'grid__item grid__item--col-5 grid__item--col-12-medium' },
 							_react2.default.createElement(
-								"h2",
+								'h2',
 								null,
-								"Hi there, I\u2019m Eric."
+								'Hi there, I\u2019m Eric.'
 							),
 							_react2.default.createElement(
-								"h3",
+								'h3',
 								null,
-								"I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on."
+								'I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on.'
 							),
 							_react2.default.createElement(
-								"p",
+								'p',
 								null,
-								"I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling."
+								'I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling.'
 							)
 						),
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1" }),
+						_react2.default.createElement('div', { className: 'grid__item grid__item--col-1' }),
 						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement("img", { src: "https://erchsm.github.io/portfolio-react/assets/img/me.jpg" })
+							'div',
+							{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
+							_react2.default.createElement('img', { src: '../assets/img/me3.jpg' })
 						)
 					)
 				),
@@ -29111,7 +29123,7 @@ var Home = function (_Component) {
 
 exports.default = Home;
 
-},{"../services/detectMobile":269,"./GridLines":264,"react":251,"react-motion":181,"react-parallax":188,"react-skroll":221}],266:[function(require,module,exports){
+},{"../services/detectMobile":269,"./GridLines":264,"./Nav":266,"react":251,"react-motion":181,"react-parallax":188,"react-skroll":221}],266:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29124,15 +29136,15 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _NavRouter = require('./NavRouter');
-
-var _NavRouter2 = _interopRequireDefault(_NavRouter);
-
 var _reactRouterDom = require('react-router-dom');
 
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
+
+var _NavRouter = require('./NavRouter');
+
+var _NavRouter2 = _interopRequireDefault(_NavRouter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29233,7 +29245,7 @@ var Nav = function (_Component) {
 							_react2.default.createElement(
 								'h3',
 								null,
-								'Video AI'
+								'V.ai Player'
 							)
 						)
 					),
@@ -29418,7 +29430,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/home' },
 											_react2.default.createElement(
-												'h3',
+												'h2',
 												null,
 												'Home'
 											)
@@ -29430,7 +29442,7 @@ var Nav = function (_Component) {
 												return _this2.openSecondaryPanel('links');
 											} },
 										_react2.default.createElement(
-											'h3',
+											'h2',
 											{ className: (0, _classnames2.default)({ 'active': secondaryPanelType == 'links' && secondaryPanelOpen }) },
 											'Projects'
 										)
@@ -29442,7 +29454,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
 											_react2.default.createElement(
-												'h3',
+												'h2',
 												null,
 												'Process'
 											)
@@ -29455,7 +29467,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
 											_react2.default.createElement(
-												'h3',
+												'h2',
 												null,
 												'About Me'
 											)
@@ -29468,7 +29480,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
 											_react2.default.createElement(
-												'h3',
+												'h2',
 												null,
 												'Resume'
 											)
@@ -29622,6 +29634,7 @@ var NavRouter = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				null,
+				_react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
 				_react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
 				_react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
 				_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default }),
@@ -29665,12 +29678,31 @@ var Vai = function (_Component) {
 	function Vai(props) {
 		_classCallCheck(this, Vai);
 
-		return _possibleConstructorReturn(this, (Vai.__proto__ || Object.getPrototypeOf(Vai)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Vai.__proto__ || Object.getPrototypeOf(Vai)).call(this, props));
+
+		_this.splitText = function (text) {
+			return text.split(' ');
+		};
+
+		return _this;
 	}
 
 	_createClass(Vai, [{
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
+			var pageTitle = "The V.ai Player uses AI to identify specific products in a video";
+
+			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
+				return _react2.default.createElement(
+					'span',
+					{ key: index },
+					item,
+					index != _this2.splitText(pageTitle).length ? '\xA0' : null
+				);
+			});
+
 			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
 			return _react2.default.createElement(
@@ -29688,7 +29720,7 @@ var Vai = function (_Component) {
 							_react2.default.createElement(
 								'h1',
 								{ className: 'white' },
-								'V.ai: Video Artificial Intelligence'
+								splitTitle
 							)
 						)
 					)

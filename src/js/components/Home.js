@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import { Parallax } from "react-parallax"
-import { Motion, spring, presets } from "react-motion"
-import { ScrollProvider, Scroller, ScrollLink } from "react-skroll"
+import { Motion, spring, presets } from 'react-motion'
+import { ScrollProvider, Scroller, ScrollLink } from 'react-skroll'
 
+import Nav from './Nav';
+import GridLines from './GridLines'
 
-import GridLines from "./GridLines"
-import detectMobile from "../services/detectMobile"
+import detectMobile from '../services/detectMobile'
 
 
 export default class Home extends Component {
@@ -76,7 +77,7 @@ export default class Home extends Component {
 						</div>
 						<div className="grid__item grid__item--col-1"/>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<img src="https://erchsm.github.io/portfolio-react/assets/img/me.jpg"/>
+							<img src="../assets/img/me3.jpg"/>
 						</div>
 					</div>
 				</section>

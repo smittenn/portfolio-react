@@ -3,6 +3,7 @@ import {Router, Route, Redirect} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import createHashHistory from 'history/createHashHistory';
 import Nav from './Nav';
+import Home from './Home';
 
 
 export default class AppRoute extends Component {
