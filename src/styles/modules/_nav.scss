@@ -69,7 +69,7 @@ $baseclass: home-nav;
 	&__panel {
 		pointer-events: auto;
 		position: absolute;
-		width: calc(33.32% + 18px);
+		width: calc(33.32% + 24px);
 		right: 0;
 		height: 100%;
 		overflow-y: scroll;
@@ -117,7 +117,6 @@ $baseclass: home-nav;
 
 	&__panel--white {
 		background: white;
-		border-top: solid 2px $brand-grey-lightest;
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {

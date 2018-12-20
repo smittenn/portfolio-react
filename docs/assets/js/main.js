@@ -28686,6 +28686,10 @@ var _Nav = require('./Nav');
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
+var _GridLines = require('./GridLines');
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28714,7 +28718,7 @@ var AmericanMade = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var pageTitle = "American Made is a film site created by the NBCUX Lab";
+			var pageTitle = "American Made is an interactive film site created for Universal Pictures.";
 
 			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
 				return _react2.default.createElement(
@@ -28738,7 +28742,7 @@ var AmericanMade = function (_Component) {
 						{ className: 'grid' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
 							_react2.default.createElement(
 								'h1',
 								{ className: 'white' },
@@ -28752,7 +28756,8 @@ var AmericanMade = function (_Component) {
 					'h2',
 					null,
 					'\u2728'
-				)
+				),
+				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
 	}]);
@@ -28763,7 +28768,7 @@ var AmericanMade = function (_Component) {
 AmericanMade.propTypes = {};
 exports.default = AmericanMade;
 
-},{"./Nav":266,"react":251,"react-parallax":188}],262:[function(require,module,exports){
+},{"./GridLines":264,"./Nav":266,"react":251,"react-parallax":188}],262:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29047,7 +29052,7 @@ var Home = function (_Component) {
 				);
 			});
 
-			var image1 = "https://erchsm.github.io/portfolio-react/assets/img/banner.jpg";
+			var image1 = "./assets/img/mountain.gif";
 
 			// console.log(this.props);
 
@@ -29062,7 +29067,7 @@ var Home = function (_Component) {
 						{
 							bgImage: image1,
 							blur: { min: -3, max: 6 },
-							strength: 600,
+							strength: 400,
 							renderLayer: null
 						},
 						_react2.default.createElement(

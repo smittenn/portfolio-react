@@ -50,7 +50,7 @@ export default class Home extends Component {
 			<span key={index}>{item}{(index != this.splitText(pageTitle).length) ? '\u00A0' : null}</span>
 		);
 
-		const image1 = "https://erchsm.github.io/portfolio-react/assets/img/banner.jpg";
+		const image1 = "./assets/img/mountain.gif";
 		
 		// console.log(this.props);
 
@@ -59,7 +59,7 @@ export default class Home extends Component {
 				<div name="Hero"><Parallax 
 				bgImage={image1} 
 				blur={{ min: -3, max: 6 }} 
-				strength={600}
+				strength={400}
 				renderLayer={null}
 				>
 					<div className="grid">
@@ -68,8 +68,8 @@ export default class Home extends Component {
 						</div>
 					</div>
 				</Parallax></div>
-				<section name="Introduction">
-					<div className="grid">
+				{<section name="Introduction">
+					{<div className="grid">
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<h2>Hi there, I’m Eric.</h2>
 							<h3>I’m a designer with a nack for writing code. Here are some things I’ve worked on.</h3>
@@ -77,10 +77,10 @@ export default class Home extends Component {
 						</div>
 						<div className="grid__item grid__item--col-1"/>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<img src="../assets/img/me3.jpg"/>
+							{<img src="../assets/img/me3.jpg"/>}
 						</div>
-					</div>
-				</section>
+					</div>}
+				</section>}
 				<GridLines/>
 			</div>
 		);

@@ -32,12 +32,12 @@ h1 {
 		0% {
 			opacity: 0;
 			transform: translateY(100px) skewX(6deg);
-		  // filter: blur(3px);
+			// filter: blur(3px);
 		}
 		100% {
 			opacity: 1;
 			transform: translateY(0) skewX(0deg);
-		  // filter: blur(0px);
+		  	// filter: blur(0px);
 		}
 	}
 
@@ -48,11 +48,33 @@ h1 {
 		animation: ghostHeader $duration-slow $easing1;
 		animation-fill-mode: forwards;
 
-		@for $i from 1 through 18 {
+		@for $i from 1 through 30 {
 			&:nth-child(#{$i}) {
-				animation-delay: (#{0.9 + ($i * 0.06)}s);
+				animation-delay: (#{1.8 + ($i * 0.06)}s);
 			}
 		}
 	}
+}
+
+.react-parallax {
+	// opacity: 0;
+  	// filter: blur(3px);
+	// clip-path: inset(60px 60px 60px 60px);
+	// animation: spreadOut $duration-slow $duration-slow $easing1;
+	// animation-fill-mode: forwards;
+
+	@keyframes spreadOut {
+		0% {
+			opacity: 0;
+			// clip-path: inset(60px 60px 60px 60px);
+			filter: blur(3px);
+		}
+		100% {
+			opacity: 1;
+			// clip-path: inset(0px 0px 0px 0px);
+		  	filter: blur(0px);
+		}
+	}
+
 }
 
