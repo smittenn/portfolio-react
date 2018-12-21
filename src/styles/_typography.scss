@@ -64,11 +64,19 @@ h1 {
   font-size: 6.5vw;
   line-height: 1.2;
   margin-left: -5px;
+
+  &.mb {
+    margin-bottom: 40px;
+  }
 }
 
 h2 {
   font-size: 40px;
   line-height: 1.2;
+
+  &.mb {
+    margin-bottom: 24px;
+  }
 }
 
 h3 {

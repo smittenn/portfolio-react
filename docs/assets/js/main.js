@@ -35528,6 +35528,10 @@ var _reactParallax = require('react-parallax');
 
 var _reactRedux = require('react-redux');
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _reactScroll = require('react-scroll');
 
 var _counter = require('../actions/counter');
@@ -35564,10 +35568,25 @@ var Home = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
 		_this.splitText = function (text) {
-			return text.split(' ');
+			return text.split(' ').map(function (item, index) {
+				return _react2.default.createElement(
+					'span',
+					{ key: index },
+					item,
+					index != text.split(' ').length ? '\xA0' : null
+				);
+			});
 		};
 
-		_this.state = {};
+		_this.setActiveSection = function (name) {
+			_this.setState({
+				activeSection: name
+			});
+		};
+
+		_this.state = {
+			activeSection: 'hello'
+		};
 		return _this;
 	}
 
@@ -35580,9 +35599,6 @@ var Home = function (_Component) {
 			this.props.reset();
 			this.props.setNavWhite();
 		}
-	}, {
-		key: 'render',
-
 
 		// componentDidMount() {
 		// 	window.addEventListener('resize', this.detectMobile);
@@ -35592,12 +35608,8 @@ var Home = function (_Component) {
 		// 	window.removeEventListener('resize', this.detectMobile);
 		// }
 
-		// detectMobile = (event) => {
-		// 	this.setState({
-		// 		isMobile: detectMobile()
-		// 	})
-		// }
-
+	}, {
+		key: 'render',
 		value: function render() {
 			var _this2 = this;
 
@@ -35606,16 +35618,8 @@ var Home = function (_Component) {
     </div>
     )*/}
 
-			var pageTitle = "Eric C. Smith is a User Experience Designer in New York City";
+			var activeSection = this.state.activeSection;
 
-			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
-				return _react2.default.createElement(
-					'span',
-					{ key: index },
-					item,
-					index != _this2.splitText(pageTitle).length ? '\xA0' : null
-				);
-			});
 
 			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
@@ -35624,7 +35628,7 @@ var Home = function (_Component) {
 				null,
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'hello' },
+					{ name: 'hello', className: (0, _classnames2.default)({ 'active-section': activeSection == 'hello' }) },
 					_react2.default.createElement(
 						_reactParallax.Parallax,
 						{
@@ -35642,28 +35646,28 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									'h1',
 									{ className: 'white' },
-									splitTitle
+									this.splitText("Eric C. Smith is a User Experience Designer in New York City.")
 								)
 							)
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ to: 'hello', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
-									_this2.props.setCounter(1);_this2.props.setNavWhite();
+							{ style: { display: 'none' }, to: 'hello', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
+									_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection('hello');
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
 							{ to: 'about', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
-									_this2.props.setCounter(2);_this2.props.setNavBlack();
+									_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection('about');
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ to: 'projects', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
-									_this2.props.setCounter(3);_this2.props.setNavBlack();
+							{ style: { display: 'none' }, to: 'projects', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
+									_this2.props.setCounter(3);_this2.props.setNavWhite();_this2.setActiveSection('projects');
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						)
@@ -35671,7 +35675,7 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'about' },
+					{ name: 'about', className: (0, _classnames2.default)({ 'active-section': activeSection == 'about' }) },
 					_react2.default.createElement(
 						'section',
 						null,
@@ -35680,24 +35684,22 @@ var Home = function (_Component) {
 							{ className: 'grid' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'grid__item grid__item--col-5 grid__item--col-12-medium' },
+								{ className: 'grid__item grid__item--col-4 grid__item--col-12-medium' },
 								_react2.default.createElement(
-									'h2',
-									null,
-									'Hi there, I\u2019m Eric.'
-								),
-								_react2.default.createElement(
-									'h3',
-									null,
-									'I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on.'
+									'h1',
+									{ className: 'mb' },
+									this.splitText("Form & Function.")
 								),
 								_react2.default.createElement(
 									'p',
 									null,
-									'I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling.'
+									this.splitText("Hi there, my name is Eric. I am a designer with a nack for writing code. Here are some things I’ve worked on."),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									this.splitText("I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")
 								)
 							),
-							_react2.default.createElement('div', { className: 'grid__item grid__item--col-1' }),
+							_react2.default.createElement('div', { className: 'grid__item grid__item--col-2' }),
 							_react2.default.createElement(
 								'div',
 								{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
@@ -35708,37 +35710,27 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'projects' },
+					{ name: 'projects', className: (0, _classnames2.default)({ 'active-section': activeSection == 'projects' }) },
 					_react2.default.createElement(
 						'section',
-						null,
+						{ className: 'black' },
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--col-5 grid__item--col-12-medium' },
-								_react2.default.createElement(
-									'h2',
-									null,
-									'Hi there, I\u2019m Eric.'
-								),
-								_react2.default.createElement(
-									'h3',
-									null,
-									'I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on.'
-								),
-								_react2.default.createElement(
-									'p',
-									null,
-									'I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling.'
-								)
-							),
-							_react2.default.createElement('div', { className: 'grid__item grid__item--col-1' }),
+							_react2.default.createElement('div', { className: 'grid__item grid__item--col-6' }),
 							_react2.default.createElement(
 								'div',
 								{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
-								_react2.default.createElement('img', { src: '../assets/img/me3.jpg' })
+								_react2.default.createElement(
+									'h2',
+									{ className: 'white mb' },
+									this.splitText("I specialize in creating prototypes, visual design & front-end code.")
+								),
+								_react2.default.createElement(
+									'p',
+									{ className: 'white' },
+									this.splitText("Here are some of the recent projects I've worked on. Some of the clients that I have worked for are Warner Bros. Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")
+								)
 							)
 						)
 					)
@@ -35780,7 +35772,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],128:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

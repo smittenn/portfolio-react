@@ -13,42 +13,80 @@ body {
 
 
 *::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; 
+	width: 0px;
+	background: transparent; 
 }
 
 section {
-	height: 100vh;
+	min-height: 100vh;
+	height: auto;
 	display: flex;
 	align-items: center;
+
+	&.black {
+		background: darken($brand-black, 2%);
+
+
+	}
 }
 
 img {
 	width: 100%;
 }
 
-h1 {
-	@keyframes ghostHeader {
-		0% {
-			opacity: 0;
-			transform: translate3d(0,100px,0) skewX(6deg);
-		}
-		100% {
-			opacity: 1;
-			transform: translate3d(0,0,0) skewX(0deg);
-		}
+@keyframes ghostHeader {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,100px,0) skewX(6deg);
 	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0,0,0) skewX(0deg);
+	}
+}
 
+@keyframes ghostHeaderSm {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,40px,0) skewX(6deg);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0,0,0) skewX(0deg);
+	}
+}
+
+
+h1, h2, p, {
 	span {
 		display: inline-block;
 		opacity: 0;
-		transform: translate3d(0,60px,0) skewX(6deg);
-		animation: ghostHeader $duration-slow $easing1;
-		animation-fill-mode: forwards;
+	}
+}
 
-		@for $i from 1 through 30 {
-			&:nth-child(#{$i}) {
-				animation-delay: (#{1.8 + ($i * 0.06)}s);
+.active-section {
+	h1, h2, {
+		span {
+			animation: ghostHeader $duration-slow $easing1;
+			animation-fill-mode: forwards;
+
+			@for $i from 1 through 60 {
+				&:nth-child(#{$i}) {
+					animation-delay: (#{0.6 + ($i * 0.06)}s);
+				}
+			}
+		}
+	}
+
+	p {
+		span {
+			animation: ghostHeaderSm $duration-slow $easing1;
+			animation-fill-mode: forwards;
+
+			@for $i from 1 through 120 {
+				&:nth-child(#{$i}) {
+					animation-delay: (#{1.2 + ($i * 0.06)}s);
+				}
 			}
 		}
 	}
@@ -69,7 +107,7 @@ h1 {
 		100% {
 			opacity: 1;
 			// clip-path: inset(0px 0px 0px 0px);
-		  	filter: blur(0px);
+			filter: blur(0px);
 		}
 	}
 

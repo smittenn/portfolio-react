@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Parallax } from 'react-parallax'
 import { connect } from 'react-redux'
+import classNames from 'classnames'
 
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy} from "react-scroll";
 
@@ -20,6 +21,7 @@ class Home extends Component {
 		super(props);
 
 		this.state = {
+			activeSection: 'hello',
 		}
 	}
 
@@ -32,9 +34,11 @@ class Home extends Component {
 	}
 
 
-	splitText = (text) => {
-		return text.split(' ');
-	}
+	splitText = (text) => (
+		text.split(' ').map((item, index) =>
+			<span key={index}>{item}{ (index != text.split(' ').length) ? '\u00A0' : null}</span>
+		)
+	)
 
 	// componentDidMount() {
 	// 	window.addEventListener('resize', this.detectMobile);
@@ -44,11 +48,11 @@ class Home extends Component {
 	// 	window.removeEventListener('resize', this.detectMobile);
 	// }
 
-	// detectMobile = (event) => {
-	// 	this.setState({
-	// 		isMobile: detectMobile()
-	// 	})
-	// }
+	setActiveSection = (name) => {
+		this.setState({
+			activeSection: name
+		})
+	}
 
 	render() {
 
@@ -57,19 +61,13 @@ class Home extends Component {
 			</div>
 		)*/}
 
-
-
-		const pageTitle = "Eric C. Smith is a User Experience Designer in New York City";
-
-		const splitTitle = this.splitText(pageTitle).map((item, index) =>
-			<span key={index}>{item}{(index != this.splitText(pageTitle).length) ? '\u00A0' : null}</span>
-		);
+		const { activeSection } = this.state;
 
 		const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 		
 		return (
 			<div>
-				<Element name="hello"><Parallax 
+				<Element name="hello" className={classNames({ 'active-section' : activeSection == 'hello'})}><Parallax 
 				bgImage={image1} 
 				blur={{ min: -3, max: 6 }} 
 				strength={400}
@@ -77,45 +75,44 @@ class Home extends Component {
 				>
 					<div className="grid">
 						<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-							<h1 className="white">{splitTitle}</h1>
+							<h1 className="white">{this.splitText("Eric C. Smith is a User Experience Designer in New York City.")}</h1>
 						</div>
 					</div>
-					<Link to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite();}}>
+					<Link style={{display: 'none'}} to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection('hello');}}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();}}>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection('about');}}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
-					<Link to="projects" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();}}>
+					<Link style={{display: 'none'}} to="projects" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(3); this.props.setNavWhite();  this.setActiveSection('projects');}}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
 				</Parallax></Element>
-				<Element name="about">
+				<Element name="about" className={classNames({ 'active-section' : activeSection == 'about'})}>
 					<section>
 						<div className="grid">
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<h2>Hi there, I’m Eric.</h2>
-								<h3>I’m a designer with a nack for writing code. Here are some things I’ve worked on.</h3>
-								<p>I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.</p>
+							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
+								<h1 className="mb">{this.splitText("Form & Function.")}</h1>
+								<p>
+									{this.splitText("Hi there, my name is Eric. I am a designer with a nack for writing code. Here are some things I’ve worked on.")}
+									<br/><br/>
+									{this.splitText("I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")}
+								</p>
 							</div>
-							<div className="grid__item grid__item--col-1"/>
+							<div className="grid__item grid__item--col-2"/>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 								{<img src="../assets/img/me3.jpg"/>}
 							</div>
 						</div>
 					</section>
 				</Element>
-				<Element name="projects">
-					<section>
+				<Element name="projects" className={classNames({ 'active-section' : activeSection == 'projects'})}>
+					<section className="black">
 						<div className="grid">
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<h2>Hi there, I’m Eric.</h2>
-								<h3>I’m a designer with a nack for writing code. Here are some things I’ve worked on.</h3>
-								<p>I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.</p>
-							</div>
-							<div className="grid__item grid__item--col-1"/>
+							<div className="grid__item grid__item--col-6"/>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								{<img src="../assets/img/me3.jpg"/>}
+								<h2 className="white mb">{this.splitText("I specialize in creating prototypes, visual design & front-end code.")}</h2>
+								<p className="white">{this.splitText("Here are some of the recent projects I've worked on. Some of the clients that I have worked for are Warner Bros. Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")}</p>
 							</div>
 						</div>
 					</section>
