@@ -12,5 +12,5 @@ export const reset = () => ({
 
 export const setCounter = (value) => ({
 	type: 'SETCOUNTER',
-	value: value,
+	value,
 })

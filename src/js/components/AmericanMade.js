@@ -1,17 +1,29 @@
 import React, {Component} from 'react'
 import { Parallax } from 'react-parallax'
+import { connect } from 'react-redux'
 
 import Nav from './Nav'
 import GridLines from './GridLines'
 
-export default class AmericanMade extends Component {
+import { increment, decrement, reset, setCounter } from '../actions/counter'
+import { americanMade } from '../actions/abbreviation'
+
+class AmericanMade extends Component {
 
 	static propTypes = {
+	}
+
+	componentDidMount() {
+		window.scrollTo(0, 0);
+
+		this.props.americanMade();
+		this.props.reset();
 	}
 
 
 	constructor(props) {
 		super(props);
+
 	}
 
 	splitText = (text) => (
@@ -45,3 +57,15 @@ export default class AmericanMade extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	counter: state.counter,
+	abbreviation: state.abbreviation,
+})
+
+const mapDispatchToProps = dispatch => ({
+	reset: () => dispatch(reset()),
+	americanMade: () => dispatch(americanMade()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AmericanMade)

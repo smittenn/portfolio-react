@@ -24,6 +24,9 @@ class Home extends Component {
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
+
+		this.props.home();
+		this.props.reset();
 	}
 
 
@@ -52,6 +55,8 @@ class Home extends Component {
 			</div>
 		)*/}
 
+
+
 		const pageTitle = "Eric C. Smith is a User Experience Designer in New York City";
 
 		const splitTitle = this.splitText(pageTitle).map((item, index) =>
@@ -62,7 +67,7 @@ class Home extends Component {
 		
 		return (
 			<div>
-				<Element name="welcome"><Parallax 
+				<Element name="hello"><Parallax 
 				bgImage={image1} 
 				blur={{ min: -3, max: 6 }} 
 				strength={400}
@@ -73,7 +78,7 @@ class Home extends Component {
 							<h1 className="white">{splitTitle}</h1>
 						</div>
 					</div>
-					<Link to="welcome" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(1)}>
+					<Link to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(1)}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
 					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(2)}>

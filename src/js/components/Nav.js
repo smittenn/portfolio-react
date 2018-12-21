@@ -72,7 +72,7 @@ class Nav extends Component {
 
 
 	createCampusesContent = () => (
-		<div className="home-nav__panel home-nav__panel--blue">
+		<div className="portfolio-nav__panel portfolio-nav__panel--blue">
 			<ul>
 				<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-long-left"></i><h4>Back</h4></li>
 				<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3>American Made</h3></NavLink></li>
@@ -94,26 +94,28 @@ class Nav extends Component {
 		const { menuOpen, secondaryPanelOpen, secondaryPanelType, countIsIncreasing } = this.state;
 
 		const classnames = classNames({
-			"home-nav": true,
-			"home-nav--menuOpen": menuOpen,
-			"home-nav--secondaryPanelOpen": secondaryPanelOpen,
-			"home-nav--countIsIncreasing": countIsIncreasing,
+			"portfolio-nav": true,
+			"portfolio-nav--menuOpen": menuOpen,
+			"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
+			"portfolio-nav--countIsIncreasing": countIsIncreasing,
 		})
 
 		return (
 			<div>
 				<nav className={classnames}>
 
-					<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
-						<h5 className="home-nav__toggle-abbreviation">{this.props.abbreviation}</h5>
-						<h5 className="home-nav__toggle-num">{this.props.count}</h5>
-						<div className="line"/>
-						<div className="line"/>
-						<div className="line"/>
+					<div className="portfolio-nav__toggle">
+						<h5 className="portfolio-nav__toggle-abbreviation">{this.props.abbreviation}</h5>
+						<div ref="hamburger" className="portfolio-nav__hamburger" onClick={this.toggleMenuOpen}>
+							<div className="line"/>
+							<div className="line"/>
+							<div className="line"/>
+						</div>
+						<h5 className="portfolio-nav__toggle-num">{this.props.count}</h5>
 					</div>
-					<div className="home-nav__main">
+					<div className="portfolio-nav__main">
 						<div ref="panels">
-							<div className="home-nav__panel home-nav__panel--white">
+							<div className="portfolio-nav__panel portfolio-nav__panel--white">
 								<ul>
 									<li onClick={() => {this.toggleMenuOpen()}}><NavLink to="/"><h2>Home</h2></NavLink></li>
 									<li onClick={() => this.openSecondaryPanel('links')}><h2 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Projects</h2></li>

@@ -9,7 +9,7 @@ export const about = () => ({
 // Projects
 
 export const americanMade = () => ({
-	type: 'AMERICAN-MADE',
+	type: 'AMERICANMADE',
 })
 
 export const vai = () => ({

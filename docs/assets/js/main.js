@@ -35132,7 +35132,7 @@ var about = exports.about = function about() {
 
 var americanMade = exports.americanMade = function americanMade() {
 	return {
-		type: 'AMERICAN-MADE'
+		type: 'AMERICANMADE'
 	};
 };
 
@@ -35305,6 +35305,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactParallax = require('react-parallax');
 
+var _reactRedux = require('react-redux');
+
 var _Nav = require('./Nav');
 
 var _Nav2 = _interopRequireDefault(_Nav);
@@ -35312,6 +35314,10 @@ var _Nav2 = _interopRequireDefault(_Nav);
 var _GridLines = require('./GridLines');
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _counter = require('../actions/counter');
+
+var _abbreviation = require('../actions/abbreviation');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35323,6 +35329,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var AmericanMade = function (_Component) {
 	_inherits(AmericanMade, _Component);
+
+	_createClass(AmericanMade, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.americanMade();
+			this.props.reset();
+		}
+	}]);
 
 	function AmericanMade(props) {
 		_classCallCheck(this, AmericanMade);
@@ -35389,9 +35405,29 @@ var AmericanMade = function (_Component) {
 }(_react.Component);
 
 AmericanMade.propTypes = {};
-exports.default = AmericanMade;
 
-},{"./GridLines":125,"./Nav":127,"react":106,"react-parallax":43}],125:[function(require,module,exports){
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		counter: state.counter,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
+
+},{"../actions/abbreviation":120,"../actions/counter":121,"./GridLines":125,"./Nav":127,"react":106,"react-parallax":43,"react-redux":54}],125:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35519,6 +35555,9 @@ var Home = function (_Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			window.scrollTo(0, 0);
+
+			this.props.home();
+			this.props.reset();
 		}
 	}, {
 		key: 'render',
@@ -35564,7 +35603,7 @@ var Home = function (_Component) {
 				null,
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'welcome' },
+					{ name: 'hello' },
 					_react2.default.createElement(
 						_reactParallax.Parallax,
 						{
@@ -35588,7 +35627,7 @@ var Home = function (_Component) {
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ to: 'welcome', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
+							{ to: 'hello', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
 									return _this2.props.setCounter(1);
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
@@ -35802,7 +35841,7 @@ var Nav = function (_Component) {
 		_this.createCampusesContent = function () {
 			return _react2.default.createElement(
 				'div',
-				{ className: 'home-nav__panel home-nav__panel--blue' },
+				{ className: 'portfolio-nav__panel portfolio-nav__panel--blue' },
 				_react2.default.createElement(
 					'ul',
 					null,
@@ -35989,10 +36028,10 @@ var Nav = function (_Component) {
 
 
 			var classnames = (0, _classnames2.default)({
-				"home-nav": true,
-				"home-nav--menuOpen": menuOpen,
-				"home-nav--secondaryPanelOpen": secondaryPanelOpen,
-				"home-nav--countIsIncreasing": countIsIncreasing
+				"portfolio-nav": true,
+				"portfolio-nav--menuOpen": menuOpen,
+				"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
+				"portfolio-nav--countIsIncreasing": countIsIncreasing
 			});
 
 			return _react2.default.createElement(
@@ -36003,30 +36042,34 @@ var Nav = function (_Component) {
 					{ className: classnames },
 					_react2.default.createElement(
 						'div',
-						{ ref: 'hamburger', className: 'home-nav__hamburger', onClick: this.toggleMenuOpen },
+						{ className: 'portfolio-nav__toggle' },
 						_react2.default.createElement(
 							'h5',
-							{ className: 'home-nav__toggle-abbreviation' },
+							{ className: 'portfolio-nav__toggle-abbreviation' },
 							this.props.abbreviation
 						),
 						_react2.default.createElement(
-							'h5',
-							{ className: 'home-nav__toggle-num' },
-							this.props.count
+							'div',
+							{ ref: 'hamburger', className: 'portfolio-nav__hamburger', onClick: this.toggleMenuOpen },
+							_react2.default.createElement('div', { className: 'line' }),
+							_react2.default.createElement('div', { className: 'line' }),
+							_react2.default.createElement('div', { className: 'line' })
 						),
-						_react2.default.createElement('div', { className: 'line' }),
-						_react2.default.createElement('div', { className: 'line' }),
-						_react2.default.createElement('div', { className: 'line' })
+						_react2.default.createElement(
+							'h5',
+							{ className: 'portfolio-nav__toggle-num' },
+							this.props.count
+						)
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'home-nav__main' },
+						{ className: 'portfolio-nav__main' },
 						_react2.default.createElement(
 							'div',
 							{ ref: 'panels' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'home-nav__panel home-nav__panel--white' },
+								{ className: 'portfolio-nav__panel portfolio-nav__panel--white' },
 								_react2.default.createElement(
 									'ul',
 									null,
