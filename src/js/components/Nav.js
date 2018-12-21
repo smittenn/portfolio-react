@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
-import classNames from "classnames";
+import {NavLink} from 'react-router-dom'
+import classNames from 'classnames'
 import { connect } from 'react-redux'
-import { increment, decrement, reset } from '../actions/counter'
-import { home, americanMade, vai, about } from '../actions/abbreviation'
-
-/*import NavRouter from './NavRouter';*/
 
 class Nav extends Component {
 
@@ -95,6 +91,7 @@ class Nav extends Component {
 
 		const classnames = classNames({
 			"portfolio-nav": true,
+			"portfolio-nav--white": this.props.color == 'WHITE',
 			"portfolio-nav--menuOpen": menuOpen,
 			"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
 			"portfolio-nav--countIsIncreasing": countIsIncreasing,
@@ -136,20 +133,10 @@ class Nav extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	color: state.color,
 })
 
-const mapDispatchToProps = dispatch => ({
-	increment: () => dispatch(increment()),
-	decrement: () => dispatch(decrement()),
-	reset: () => dispatch(reset()),
-	// abbreviations
-	home: () => dispatch(home()),
-	americanMade: () => dispatch(americanMade()),
-	vai: () => dispatch(vai()),
-	about: () => dispatch(about()),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+export default connect(mapStateToProps)(Nav)
 
 
 

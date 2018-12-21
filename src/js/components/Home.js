@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy} from "react-scroll";
 
-import { increment, decrement, reset, setCounter } from '../actions/counter'
+import { reset, setCounter } from '../actions/counter'
 import { home } from '../actions/abbreviation'
+import { setNavWhite, setNavBlack } from '../actions/color'
 
 import Nav from './Nav';
 import GridLines from './GridLines'
@@ -27,6 +28,7 @@ class Home extends Component {
 
 		this.props.home();
 		this.props.reset();
+		this.props.setNavWhite();
 	}
 
 
@@ -78,13 +80,13 @@ class Home extends Component {
 							<h1 className="white">{splitTitle}</h1>
 						</div>
 					</div>
-					<Link to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(1)}>
+					<Link to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite();}}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(2)}>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();}}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
-					<Link to="projects" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(3)}>
+					<Link to="projects" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();}}>
 						<i className="iconcss icon-caret-down-lg"></i>
 					</Link>
 				</Parallax></Element>
@@ -130,11 +132,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	increment: () => dispatch(increment()),
-	decrement: () => dispatch(decrement()),
 	reset: () => dispatch(reset()),
 	setCounter: (n) => dispatch(setCounter(n)),
 	home: () => dispatch(home()),
+	setNavWhite: () => dispatch(setNavWhite()),
+	setNavBlack: () => dispatch(setNavBlack()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

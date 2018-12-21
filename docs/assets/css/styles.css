@@ -605,7 +605,7 @@ section * {
   .portfolio-nav__toggle {
     position: fixed;
     right: 0;
-    top: 12px;
+    top: 6px;
     width: 60px;
     height: 120px;
     display: -ms-flexbox;
@@ -649,6 +649,11 @@ section * {
       width: 100%; }
       .portfolio-nav__hamburger .line:first-child, .portfolio-nav__hamburger .line:last-child {
         opacity: 0; }
+  .portfolio-nav--white .portfolio-nav__hamburger .line {
+    background-color: white; }
+  .portfolio-nav--white .portfolio-nav__toggle-abbreviation, .portfolio-nav--white .portfolio-nav__toggle-num {
+    color: white;
+    font-weight: 700; }
   .portfolio-nav__main {
     position: fixed;
     width: 100%;
@@ -828,7 +833,8 @@ section * {
     color: #E04E47; }
   @media screen and (max-width: 800px) {
     .portfolio-nav .portfolio-nav__toggle {
-      width: 48px; }
+      top: 0;
+      width: 49px; }
     .portfolio-nav hr:last-of-type {
       display: none; }
     .portfolio-nav #second-top-bar {

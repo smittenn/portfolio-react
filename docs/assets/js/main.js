@@ -35110,7 +35110,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":132,"connected-react-router":11,"prop-types":35,"react":106}],120:[function(require,module,exports){
+},{"./routes":134,"connected-react-router":11,"prop-types":35,"react":106}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35148,6 +35148,24 @@ var vai = exports.vai = function vai() {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var setNavWhite = exports.setNavWhite = function setNavWhite() {
+	return {
+		type: 'WHITE'
+	};
+};
+
+var setNavBlack = exports.setNavBlack = function setNavBlack() {
+	return {
+		type: 'BLACK'
+	};
+};
+
+},{}],122:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 var increment = exports.increment = function increment() {
 	return {
 		type: 'INCREMENT'
@@ -35173,7 +35191,7 @@ var setCounter = exports.setCounter = function setCounter(value) {
 	};
 };
 
-},{}],122:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 'use strict';
 
 var _redux = require('redux');
@@ -35217,7 +35235,7 @@ var render = function render() {
 
 render();
 
-},{"../App":119,"../reducers":131,"connected-react-router":11,"history":24,"react":106,"react-dom":39,"react-redux":54,"redux":107}],123:[function(require,module,exports){
+},{"../App":119,"../reducers":133,"connected-react-router":11,"history":24,"react":106,"react-dom":39,"react-redux":54,"redux":107}],124:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35290,7 +35308,7 @@ var AboutMe = function (_Component) {
 AboutMe.propTypes = {};
 exports.default = AboutMe;
 
-},{"react":106,"react-parallax":43}],124:[function(require,module,exports){
+},{"react":106,"react-parallax":43}],125:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35427,7 +35445,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":120,"../actions/counter":121,"./GridLines":125,"./Nav":127,"react":106,"react-parallax":43,"react-redux":54}],125:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/counter":122,"./GridLines":126,"./Nav":128,"react":106,"react-parallax":43,"react-redux":54}],126:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35493,7 +35511,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":106}],126:[function(require,module,exports){
+},{"react":106}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35515,6 +35533,8 @@ var _reactScroll = require('react-scroll');
 var _counter = require('../actions/counter');
 
 var _abbreviation = require('../actions/abbreviation');
+
+var _color = require('../actions/color');
 
 var _Nav = require('./Nav');
 
@@ -35558,6 +35578,7 @@ var Home = function (_Component) {
 
 			this.props.home();
 			this.props.reset();
+			this.props.setNavWhite();
 		}
 	}, {
 		key: 'render',
@@ -35628,21 +35649,21 @@ var Home = function (_Component) {
 						_react2.default.createElement(
 							_reactScroll.Link,
 							{ to: 'hello', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
-									return _this2.props.setCounter(1);
+									_this2.props.setCounter(1);_this2.props.setNavWhite();
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
 							{ to: 'about', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
-									return _this2.props.setCounter(2);
+									_this2.props.setCounter(2);_this2.props.setNavBlack();
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
 							{ to: 'projects', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
-									return _this2.props.setCounter(3);
+									_this2.props.setCounter(3);_this2.props.setNavBlack();
 								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						)
@@ -35739,12 +35760,6 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	return {
-		increment: function increment() {
-			return dispatch((0, _counter.increment)());
-		},
-		decrement: function decrement() {
-			return dispatch((0, _counter.decrement)());
-		},
 		reset: function reset() {
 			return dispatch((0, _counter.reset)());
 		},
@@ -35753,13 +35768,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		home: function home() {
 			return dispatch((0, _abbreviation.home)());
+		},
+		setNavWhite: function setNavWhite() {
+			return dispatch((0, _color.setNavWhite)());
+		},
+		setNavBlack: function setNavBlack() {
+			return dispatch((0, _color.setNavBlack)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":120,"../actions/counter":121,"./GridLines":125,"./Nav":127,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],127:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35780,10 +35801,6 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactRedux = require('react-redux');
 
-var _counter = require('../actions/counter');
-
-var _abbreviation = require('../actions/abbreviation');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35791,8 +35808,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/*import NavRouter from './NavRouter';*/
 
 var Nav = function (_Component) {
 	_inherits(Nav, _Component);
@@ -36029,6 +36044,7 @@ var Nav = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"portfolio-nav": true,
+				"portfolio-nav--white": this.props.color == 'WHITE',
 				"portfolio-nav--menuOpen": menuOpen,
 				"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
 				"portfolio-nav--countIsIncreasing": countIsIncreasing
@@ -36154,38 +36170,12 @@ var Nav = function (_Component) {
 var mapStateToProps = function mapStateToProps(state) {
 	return {
 		count: state.count,
-		abbreviation: state.abbreviation
+		abbreviation: state.abbreviation,
+		color: state.color
 	};
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	return {
-		increment: function increment() {
-			return dispatch((0, _counter.increment)());
-		},
-		decrement: function decrement() {
-			return dispatch((0, _counter.decrement)());
-		},
-		reset: function reset() {
-			return dispatch((0, _counter.reset)());
-		},
-		// abbreviations
-		home: function home() {
-			return dispatch((0, _abbreviation.home)());
-		},
-		americanMade: function americanMade() {
-			return dispatch((0, _abbreviation.americanMade)());
-		},
-		vai: function vai() {
-			return dispatch((0, _abbreviation.vai)());
-		},
-		about: function about() {
-			return dispatch((0, _abbreviation.about)());
-		}
-	};
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
 // import React, {Component} from 'react';
 // import Router from './Router';
@@ -36248,7 +36238,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // 	}
 // }
 
-},{"../actions/abbreviation":120,"../actions/counter":121,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],128:[function(require,module,exports){
+},{"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36340,7 +36330,7 @@ var Vai = function (_Component) {
 Vai.propTypes = {};
 exports.default = Vai;
 
-},{"react":106,"react-parallax":43}],129:[function(require,module,exports){
+},{"react":106,"react-parallax":43}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36366,7 +36356,29 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],130:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var colorReducer = function colorReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'WHITE';
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'WHITE':
+			return 'WHITE';
+		case 'BLACK':
+			return 'BLACK';
+		default:
+			return state;
+	}
+};
+
+exports.default = colorReducer;
+
+},{}],132:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36392,11 +36404,11 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],131:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _redux = require('redux');
@@ -36411,19 +36423,24 @@ var _abbreviation = require('./abbreviation');
 
 var _abbreviation2 = _interopRequireDefault(_abbreviation);
 
+var _color = require('./color');
+
+var _color2 = _interopRequireDefault(_color);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = function rootReducer(history) {
-  return (0, _redux.combineReducers)({
-    count: _counter2.default,
-    abbreviation: _abbreviation2.default,
-    router: (0, _connectedReactRouter.connectRouter)(history)
-  });
+	return (0, _redux.combineReducers)({
+		count: _counter2.default,
+		abbreviation: _abbreviation2.default,
+		color: _color2.default,
+		router: (0, _connectedReactRouter.connectRouter)(history)
+	});
 };
 
 exports.default = rootReducer;
 
-},{"./abbreviation":129,"./counter":130,"connected-react-router":11,"redux":107}],132:[function(require,module,exports){
+},{"./abbreviation":130,"./color":131,"./counter":132,"connected-react-router":11,"redux":107}],134:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36474,6 +36491,6 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/AboutMe":123,"../components/AmericanMade":124,"../components/Home":126,"../components/Nav":127,"../components/Vai":128,"react":106,"react-router":84}]},{},[122])
+},{"../components/AboutMe":124,"../components/AmericanMade":125,"../components/Home":127,"../components/Nav":128,"../components/Vai":129,"react":106,"react-router":84}]},{},[123])
 
 //# sourceMappingURL=main.js.map

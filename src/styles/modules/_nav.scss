@@ -68,7 +68,7 @@ $baseclass: portfolio-nav;
 	&__toggle {
 		position: fixed;
 		right: 0;
-		top: 12px;
+		top: 6px;
 		width: 60px;
 		height: 120px;
 		display: flex;
@@ -124,6 +124,18 @@ $baseclass: portfolio-nav;
 			&:first-child, &:last-child {
 				opacity: 0;
 			}
+		}
+	}
+
+	&--white {
+		.#{$baseclass}__hamburger {
+			.line {
+				background-color: white;
+			}
+		}
+		.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
+			color: white;
+			font-weight: 700;
 		}
 	}
 
@@ -344,7 +356,8 @@ $baseclass: portfolio-nav;
 	}
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__toggle {
-			width: 48px;
+			top: 0;
+			width: 49px;
 		}
 		hr {
 			&:last-of-type {
