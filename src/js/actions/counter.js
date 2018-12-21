@@ -9,3 +9,8 @@ export const decrement = () => ({
 export const reset = () => ({
 	type: 'RESET',
 })
+
+export const setCounter = (value) => ({
+	type: 'SETCOUNTER',
+	value: value,
+})

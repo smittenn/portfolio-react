@@ -470,16 +470,15 @@ img {
 @keyframes ghostHeader {
   0% {
     opacity: 0;
-    transform: translateY(100px) skewX(6deg); }
+    transform: translate3d(0, 100px, 0) skewX(6deg); }
   100% {
     opacity: 1;
-    transform: translateY(0) skewX(0deg); } }
+    transform: translate3d(0, 0, 0) skewX(0deg); } }
 
 h1 span {
   display: inline-block;
   opacity: 0;
-  -ms-transform: translateY(60px) skewX(6deg);
-  transform: translateY(60px) skewX(6deg);
+  transform: translate3d(0, 60px, 0) skewX(6deg);
   animation: ghostHeader 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-fill-mode: forwards; }
   h1 span:nth-child(1) {
@@ -558,10 +557,18 @@ section * {
   z-index: 999; }
 
 /* Modules */
-@keyframes slideIn {
+@keyframes increasingNum {
   0% {
     opacity: 0;
-    transform: translate3d(40px, 0, 0); }
+    transform: translate3d(0, 24px, 0) skewY(6deg); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+
+@keyframes decreasingNum {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -40px, 0) skewY(-6deg); }
   100% {
     opacity: 1;
     transform: none; } }
@@ -575,6 +582,12 @@ section * {
   -ms-flex-align: center;
   align-items: center;
   background: white; }
+  .home-nav .home-nav__toggle-num {
+    animation: decreasingNum 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: forwards; }
+  .home-nav--countIsIncreasing .home-nav__toggle-num {
+    animation: increasingNum 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    animation-fill-mode: forwards; }
   .home-nav hr {
     margin: 0;
     height: 2px;
@@ -816,7 +829,10 @@ section * {
   text-align: left; }
   .react-parallax-content a {
     position: absolute;
-    bottom: 0; }
+    bottom: 0;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
   .react-parallax-content i {
     color: white;
     font-size: 40px; }

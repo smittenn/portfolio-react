@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy} from "react-scroll";
 
-import { increment, decrement, reset } from '../actions/counter'
+import { increment, decrement, reset, setCounter } from '../actions/counter'
+import { home } from '../actions/abbreviation'
 
 import Nav from './Nav';
 import GridLines from './GridLines'
@@ -21,7 +22,8 @@ class Home extends Component {
 		}
 	}
 
-	componentDidMount = () => {
+	componentDidMount() {
+		window.scrollTo(0, 0);
 	}
 
 
@@ -60,7 +62,7 @@ class Home extends Component {
 		
 		return (
 			<div>
-				<Element name="Hero"><Parallax 
+				<Element name="welcome"><Parallax 
 				bgImage={image1} 
 				blur={{ min: -3, max: 6 }} 
 				strength={400}
@@ -71,11 +73,32 @@ class Home extends Component {
 							<h1 className="white">{splitTitle}</h1>
 						</div>
 					</div>
-					<Link to="Introduction" spy={true} smooth={true} hashSpy={true} onSetActive={this.props.increment} onSetInactive={this.props.decrement}>
-	          			<i className="iconcss icon-caret-down-lg"></i>
-	          		</Link>
+					<Link to="welcome" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(1)}>
+						<i className="iconcss icon-caret-down-lg"></i>
+					</Link>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(2)}>
+						<i className="iconcss icon-caret-down-lg"></i>
+					</Link>
+					<Link to="projects" spy={true} smooth={true} hashSpy={true} onSetActive={() => this.props.setCounter(3)}>
+						<i className="iconcss icon-caret-down-lg"></i>
+					</Link>
 				</Parallax></Element>
-				<Element name="Introduction">
+				<Element name="about">
+					<section>
+						<div className="grid">
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<h2>Hi there, I’m Eric.</h2>
+								<h3>I’m a designer with a nack for writing code. Here are some things I’ve worked on.</h3>
+								<p>I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.</p>
+							</div>
+							<div className="grid__item grid__item--col-1"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								{<img src="../assets/img/me3.jpg"/>}
+							</div>
+						</div>
+					</section>
+				</Element>
+				<Element name="projects">
 					<section>
 						<div className="grid">
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
@@ -98,12 +121,15 @@ class Home extends Component {
 
 const mapStateToProps = state => ({
 	count: state.count,
+	abbreviation: state.abbreviation,
 })
 
 const mapDispatchToProps = dispatch => ({
 	increment: () => dispatch(increment()),
 	decrement: () => dispatch(decrement()),
 	reset: () => dispatch(reset()),
+	setCounter: (n) => dispatch(setCounter(n)),
+	home: () => dispatch(home()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

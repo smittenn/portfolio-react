@@ -1,9 +1,20 @@
 $baseclass: home-nav;
 
-@keyframes slideIn {
+@keyframes increasingNum {
 	0% {
 		opacity: 0;
-		transform: translate3d(40px,0,0);
+		transform: translate3d(0,24px,0) skewY(6deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes decreasingNum {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,-40px,0) skewY(-6deg);
 	}
 	100% {
 		opacity: 1;
@@ -17,6 +28,17 @@ $baseclass: home-nav;
 	flex-direction: column;
 	align-items: center;
 	background: white;
+
+	.#{$baseclass}__toggle-num {
+		animation: decreasingNum 0.6s $easing2;
+		animation-fill-mode: forwards;
+	}
+	&--countIsIncreasing {
+		.#{$baseclass}__toggle-num {
+			animation: increasingNum 0.6s $easing2;
+			animation-fill-mode: forwards;
+		}
+	}
 
 	hr {
 		margin: 0;
@@ -226,14 +248,6 @@ $baseclass: home-nav;
 			li {
 				transform: none;
 				opacity: 1;
-
-				// animation: slideIn 0.9s $easing1;
-				// animation-fill-mode: forwards;
-				// @for $i from 1 through 30 {
-				// 	&:nth-child(#{$i}) {
-				// 		animation-delay: 0.09s * $i;
-				// 	}
-				// }
 			}
 		}
 	}
@@ -258,14 +272,6 @@ $baseclass: home-nav;
 			li {
 				transform: none;
 				opacity: 1;
-
-				// animation: slideIn 0.9s $easing1;
-				// animation-fill-mode: forwards;
-				// @for $i from 1 through 30 {
-				// 	&:nth-child(#{$i}) {
-				// 		animation-delay: 0.09s * $i;
-				// 	}
-				// }
 			}
 		}
 	}

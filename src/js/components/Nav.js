@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 import classNames from "classnames";
 import { connect } from 'react-redux'
 import { increment, decrement, reset } from '../actions/counter'
+import { home, americanMade, vai, about } from '../actions/abbreviation'
 
 /*import NavRouter from './NavRouter';*/
 
@@ -15,7 +16,6 @@ class Nav extends Component {
 			menuOpen: false,
 			secondaryPanelOpen: false,
 			secondaryPanelType: 'links',
-			notificationsOpen: false,
 			isMobile: window.innerWidth <= 800,
 		}
 	}
@@ -28,6 +28,10 @@ class Nav extends Component {
 	componentWillUnmount() {
 		document.removeEventListener('mousedown', this.handleClickOutside);
 		window.removeEventListener('resize', this.detectMobile);
+	}
+
+	componentDidUpdate(prevProps) {
+		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
 	}
 
 	detectMobile = (event) => {
@@ -66,13 +70,6 @@ class Nav extends Component {
 		})
 	}
 
-	toggleNotificationsOpen = () => {
-		this.setState({
-			menuOpen: false,
-			secondaryPanelOpen: false,
-			notificationsOpen: !this.state.notificationsOpen,
-		})
-	}
 
 	createCampusesContent = () => (
 		<div className="home-nav__panel home-nav__panel--blue">
@@ -94,13 +91,13 @@ class Nav extends Component {
 
 
 	render() {
-		const { menuOpen, secondaryPanelOpen, secondaryPanelType, notificationsOpen } = this.state;
+		const { menuOpen, secondaryPanelOpen, secondaryPanelType, countIsIncreasing } = this.state;
 
 		const classnames = classNames({
 			"home-nav": true,
 			"home-nav--menuOpen": menuOpen,
 			"home-nav--secondaryPanelOpen": secondaryPanelOpen,
-			"home-nav--notificationsOpen": notificationsOpen,
+			"home-nav--countIsIncreasing": countIsIncreasing,
 		})
 
 		return (
@@ -108,7 +105,8 @@ class Nav extends Component {
 				<nav className={classnames}>
 
 					<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
-						<span>{this.props.count}</span>
+						<h5 className="home-nav__toggle-abbreviation">{this.props.abbreviation}</h5>
+						<h5 className="home-nav__toggle-num">{this.props.count}</h5>
 						<div className="line"/>
 						<div className="line"/>
 						<div className="line"/>
@@ -135,12 +133,18 @@ class Nav extends Component {
 
 const mapStateToProps = state => ({
 	count: state.count,
+	abbreviation: state.abbreviation,
 })
 
 const mapDispatchToProps = dispatch => ({
 	increment: () => dispatch(increment()),
 	decrement: () => dispatch(decrement()),
 	reset: () => dispatch(reset()),
+	// abbreviations
+	home: () => dispatch(home()),
+	americanMade: () => dispatch(americanMade()),
+	vai: () => dispatch(vai()),
+	about: () => dispatch(about()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav)

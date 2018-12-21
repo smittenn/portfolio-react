@@ -31,20 +31,18 @@ h1 {
 	@keyframes ghostHeader {
 		0% {
 			opacity: 0;
-			transform: translateY(100px) skewX(6deg);
-			// filter: blur(3px);
+			transform: translate3d(0,100px,0) skewX(6deg);
 		}
 		100% {
 			opacity: 1;
-			transform: translateY(0) skewX(0deg);
-		  	// filter: blur(0px);
+			transform: translate3d(0,0,0) skewX(0deg);
 		}
 	}
 
 	span {
 		display: inline-block;
 		opacity: 0;
-		transform: translateY(60px) skewX(6deg);
+		transform: translate3d(0,60px,0) skewX(6deg);
 		animation: ghostHeader $duration-slow $easing1;
 		animation-fill-mode: forwards;
 

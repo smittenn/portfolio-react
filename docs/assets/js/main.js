@@ -35110,7 +35110,39 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":130,"connected-react-router":11,"prop-types":35,"react":106}],120:[function(require,module,exports){
+},{"./routes":132,"connected-react-router":11,"prop-types":35,"react":106}],120:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var home = exports.home = function home() {
+	return {
+		type: 'HOME'
+	};
+};
+
+var about = exports.about = function about() {
+	return {
+		type: 'ABOUT'
+	};
+};
+
+// Projects
+
+var americanMade = exports.americanMade = function americanMade() {
+	return {
+		type: 'AMERICAN-MADE'
+	};
+};
+
+var vai = exports.vai = function vai() {
+	return {
+		type: 'VAI'
+	};
+};
+
+},{}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35134,7 +35166,14 @@ var reset = exports.reset = function reset() {
 	};
 };
 
-},{}],121:[function(require,module,exports){
+var setCounter = exports.setCounter = function setCounter(value) {
+	return {
+		type: 'SETCOUNTER',
+		value: value
+	};
+};
+
+},{}],122:[function(require,module,exports){
 'use strict';
 
 var _redux = require('redux');
@@ -35178,7 +35217,7 @@ var render = function render() {
 
 render();
 
-},{"../App":119,"../reducers":129,"connected-react-router":11,"history":24,"react":106,"react-dom":39,"react-redux":54,"redux":107}],122:[function(require,module,exports){
+},{"../App":119,"../reducers":131,"connected-react-router":11,"history":24,"react":106,"react-dom":39,"react-redux":54,"redux":107}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35251,7 +35290,7 @@ var AboutMe = function (_Component) {
 AboutMe.propTypes = {};
 exports.default = AboutMe;
 
-},{"react":106,"react-parallax":43}],123:[function(require,module,exports){
+},{"react":106,"react-parallax":43}],124:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35352,7 +35391,7 @@ var AmericanMade = function (_Component) {
 AmericanMade.propTypes = {};
 exports.default = AmericanMade;
 
-},{"./GridLines":124,"./Nav":126,"react":106,"react-parallax":43}],124:[function(require,module,exports){
+},{"./GridLines":125,"./Nav":127,"react":106,"react-parallax":43}],125:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35418,7 +35457,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":106}],125:[function(require,module,exports){
+},{"react":106}],126:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35438,6 +35477,8 @@ var _reactRedux = require('react-redux');
 var _reactScroll = require('react-scroll');
 
 var _counter = require('../actions/counter');
+
+var _abbreviation = require('../actions/abbreviation');
 
 var _Nav = require('./Nav');
 
@@ -35466,8 +35507,6 @@ var Home = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
-		_this.componentDidMount = function () {};
-
 		_this.splitText = function (text) {
 			return text.split(' ');
 		};
@@ -35477,6 +35516,11 @@ var Home = function (_Component) {
 	}
 
 	_createClass(Home, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+		}
+	}, {
 		key: 'render',
 
 
@@ -35520,7 +35564,7 @@ var Home = function (_Component) {
 				null,
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'Hero' },
+					{ name: 'welcome' },
 					_react2.default.createElement(
 						_reactParallax.Parallax,
 						{
@@ -35544,14 +35588,67 @@ var Home = function (_Component) {
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ to: 'Introduction', spy: true, smooth: true, hashSpy: true, onSetActive: this.props.increment, onSetInactive: this.props.decrement },
+							{ to: 'welcome', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
+									return _this2.props.setCounter(1);
+								} },
+							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
+						),
+						_react2.default.createElement(
+							_reactScroll.Link,
+							{ to: 'about', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
+									return _this2.props.setCounter(2);
+								} },
+							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
+						),
+						_react2.default.createElement(
+							_reactScroll.Link,
+							{ to: 'projects', spy: true, smooth: true, hashSpy: true, onSetActive: function onSetActive() {
+									return _this2.props.setCounter(3);
+								} },
 							_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 						)
 					)
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'Introduction' },
+					{ name: 'about' },
+					_react2.default.createElement(
+						'section',
+						null,
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-5 grid__item--col-12-medium' },
+								_react2.default.createElement(
+									'h2',
+									null,
+									'Hi there, I\u2019m Eric.'
+								),
+								_react2.default.createElement(
+									'h3',
+									null,
+									'I\u2019m a designer with a nack for writing code. Here are some things I\u2019ve worked on.'
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									'I\u2019ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I\u2019m taking photos with friends or cycling.'
+								)
+							),
+							_react2.default.createElement('div', { className: 'grid__item grid__item--col-1' }),
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
+								_react2.default.createElement('img', { src: '../assets/img/me3.jpg' })
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_reactScroll.Element,
+					{ name: 'projects' },
 					_react2.default.createElement(
 						'section',
 						null,
@@ -35596,7 +35693,8 @@ var Home = function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
-		count: state.count
+		count: state.count,
+		abbreviation: state.abbreviation
 	};
 };
 
@@ -35610,13 +35708,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		reset: function reset() {
 			return dispatch((0, _counter.reset)());
+		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/counter":120,"./GridLines":124,"./Nav":126,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],126:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/counter":121,"./GridLines":125,"./Nav":127,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35638,6 +35742,8 @@ var _classnames2 = _interopRequireDefault(_classnames);
 var _reactRedux = require('react-redux');
 
 var _counter = require('../actions/counter');
+
+var _abbreviation = require('../actions/abbreviation');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35690,14 +35796,6 @@ var Nav = function (_Component) {
 		_this.closeSecondaryPanel = function () {
 			_this.setState({
 				secondaryPanelOpen: false
-			});
-		};
-
-		_this.toggleNotificationsOpen = function () {
-			_this.setState({
-				menuOpen: false,
-				secondaryPanelOpen: false,
-				notificationsOpen: !_this.state.notificationsOpen
 			});
 		};
 
@@ -35856,7 +35954,6 @@ var Nav = function (_Component) {
 			menuOpen: false,
 			secondaryPanelOpen: false,
 			secondaryPanelType: 'links',
-			notificationsOpen: false,
 			isMobile: window.innerWidth <= 800
 		};
 		return _this;
@@ -35875,6 +35972,11 @@ var Nav = function (_Component) {
 			window.removeEventListener('resize', this.detectMobile);
 		}
 	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate(prevProps) {
+			prevProps.count == this.props.count ? null : this.setState({ countIsIncreasing: prevProps.count < this.props.count });
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			var _this2 = this;
@@ -35883,14 +35985,14 @@ var Nav = function (_Component) {
 			    menuOpen = _state.menuOpen,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    secondaryPanelType = _state.secondaryPanelType,
-			    notificationsOpen = _state.notificationsOpen;
+			    countIsIncreasing = _state.countIsIncreasing;
 
 
 			var classnames = (0, _classnames2.default)({
 				"home-nav": true,
 				"home-nav--menuOpen": menuOpen,
 				"home-nav--secondaryPanelOpen": secondaryPanelOpen,
-				"home-nav--notificationsOpen": notificationsOpen
+				"home-nav--countIsIncreasing": countIsIncreasing
 			});
 
 			return _react2.default.createElement(
@@ -35903,8 +36005,13 @@ var Nav = function (_Component) {
 						'div',
 						{ ref: 'hamburger', className: 'home-nav__hamburger', onClick: this.toggleMenuOpen },
 						_react2.default.createElement(
-							'span',
-							null,
+							'h5',
+							{ className: 'home-nav__toggle-abbreviation' },
+							this.props.abbreviation
+						),
+						_react2.default.createElement(
+							'h5',
+							{ className: 'home-nav__toggle-num' },
 							this.props.count
 						),
 						_react2.default.createElement('div', { className: 'line' }),
@@ -36003,7 +36110,8 @@ var Nav = function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
-		count: state.count
+		count: state.count,
+		abbreviation: state.abbreviation
 	};
 };
 
@@ -36017,6 +36125,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		reset: function reset() {
 			return dispatch((0, _counter.reset)());
+		},
+		// abbreviations
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		},
+		vai: function vai() {
+			return dispatch((0, _abbreviation.vai)());
+		},
+		about: function about() {
+			return dispatch((0, _abbreviation.about)());
 		}
 	};
 };
@@ -36084,7 +36205,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // 	}
 // }
 
-},{"../actions/counter":120,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],127:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/counter":121,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36176,31 +36297,59 @@ var Vai = function (_Component) {
 Vai.propTypes = {};
 exports.default = Vai;
 
-},{"react":106,"react-parallax":43}],128:[function(require,module,exports){
+},{"react":106,"react-parallax":43}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
+});
+var abbreviationReducer = function abbreviationReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'H';
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'HOME':
+			return 'H';
+		case 'ABOUT':
+			return 'A';
+		case 'AMERICANMADE':
+			return 'P1';
+		case 'VAI':
+			return 'P2';
+		default:
+			return state;
+	}
+};
+
+exports.default = abbreviationReducer;
+
+},{}],130:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
 var counterReducer = function counterReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-  var action = arguments[1];
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+	var action = arguments[1];
 
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    case 'DECREMENT':
-      return state - 1;
-    case 'RESET':
-      return 1;
-    default:
-      return state;
-  }
+	switch (action.type) {
+		case 'INCREMENT':
+			return state + 1;
+		case 'DECREMENT':
+			return state - 1;
+		case 'RESET':
+			return 1;
+		case 'SETCOUNTER':
+			return action.value;
+		default:
+			return state;
+	}
 };
 
 exports.default = counterReducer;
 
-},{}],129:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36215,18 +36364,23 @@ var _counter = require('./counter');
 
 var _counter2 = _interopRequireDefault(_counter);
 
+var _abbreviation = require('./abbreviation');
+
+var _abbreviation2 = _interopRequireDefault(_abbreviation);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = function rootReducer(history) {
   return (0, _redux.combineReducers)({
     count: _counter2.default,
+    abbreviation: _abbreviation2.default,
     router: (0, _connectedReactRouter.connectRouter)(history)
   });
 };
 
 exports.default = rootReducer;
 
-},{"./counter":128,"connected-react-router":11,"redux":107}],130:[function(require,module,exports){
+},{"./abbreviation":129,"./counter":130,"connected-react-router":11,"redux":107}],132:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36277,6 +36431,6 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/AboutMe":122,"../components/AmericanMade":123,"../components/Home":125,"../components/Nav":126,"../components/Vai":127,"react":106,"react-router":84}]},{},[121])
+},{"../components/AboutMe":123,"../components/AmericanMade":124,"../components/Home":126,"../components/Nav":127,"../components/Vai":128,"react":106,"react-router":84}]},{},[122])
 
 //# sourceMappingURL=main.js.map
