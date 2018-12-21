@@ -6,6 +6,15 @@
 		align-items: center;
 		text-align: left;
 
+		a {
+			position: absolute;
+			bottom: 0;
+		}
+		i {
+			color: white;
+			font-size: 40px;
+		}
+
 		@media screen and (max-width: $bp-medium) {
 			height: 72vh;
 		}

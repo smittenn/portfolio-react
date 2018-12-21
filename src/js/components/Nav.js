@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import classNames from "classnames";
+import { connect } from 'react-redux'
+import { increment, decrement, reset } from '../actions/counter'
 
-import NavRouter from './NavRouter';
+/*import NavRouter from './NavRouter';*/
 
-export default class Nav extends Component {
+class Nav extends Component {
 
 	constructor(props) {
 		super(props);
@@ -104,7 +106,9 @@ export default class Nav extends Component {
 		return (
 			<div>
 				<nav className={classnames}>
+
 					<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
+						<span>{this.props.count}</span>
 						<div className="line"/>
 						<div className="line"/>
 						<div className="line"/>
@@ -113,7 +117,7 @@ export default class Nav extends Component {
 						<div ref="panels">
 							<div className="home-nav__panel home-nav__panel--white">
 								<ul>
-									<li onClick={this.toggleMenuOpen}><NavLink to="/home"><h2>Home</h2></NavLink></li>
+									<li onClick={() => {this.toggleMenuOpen()}}><NavLink to="/"><h2>Home</h2></NavLink></li>
 									<li onClick={() => this.openSecondaryPanel('links')}><h2 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Projects</h2></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About Me</h2></NavLink></li>
@@ -124,11 +128,22 @@ export default class Nav extends Component {
 						</div>
 					</div>
 				</nav>
-				<NavRouter/>
 			</div>
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	count: state.count,
+})
+
+const mapDispatchToProps = dispatch => ({
+	increment: () => dispatch(increment()),
+	decrement: () => dispatch(decrement()),
+	reset: () => dispatch(reset()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)
 
 
 

@@ -814,6 +814,12 @@ section * {
   -ms-flex-align: center;
   align-items: center;
   text-align: left; }
+  .react-parallax-content a {
+    position: absolute;
+    bottom: 0; }
+  .react-parallax-content i {
+    color: white;
+    font-size: 40px; }
   @media screen and (max-width: 800px) {
     .react-parallax-content {
       height: 72vh; } }
