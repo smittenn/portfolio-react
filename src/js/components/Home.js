@@ -69,7 +69,7 @@ class Home extends Component {
 			<div>
 				<Element name="hello" className={classNames({ 'active-section' : activeSection == 'hello'})}><Parallax 
 				bgImage={image1} 
-				blur={{ min: -3, max: 6 }} 
+				blur={null} 
 				strength={400}
 				renderLayer={null}
 				>
@@ -96,12 +96,18 @@ class Home extends Component {
 								<p>
 									{this.splitText("Hi there, my name is Eric. I am a designer with a nack for writing code. Here are some things I’ve worked on.")}
 									<br/><br/>
-									{this.splitText("I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")}
+									{this.splitText("My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")}
 								</p>
 							</div>
-							<div className="grid__item grid__item--col-2"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								{<img src="../assets/img/me3.jpg"/>}
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+								{<img src="../assets/img/me-4x3.jpg"/>}
+							</div>
+							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+								{<img src="../assets/img/lands-end-4x3.jpg"/>}
+							</div>
+							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+								{<img src="../assets/img/mist-3x4.jpg"/>}
 							</div>
 						</div>
 					</section>

@@ -1,64 +1,99 @@
  @media screen and (max-width: $bp-medium) {
-		.grid {
-			padding: 0 24px;
+	.grid {
+		padding: 0 24px;
 
-			&__item {
-				&--hide-bp-medium {
-					display: none;
-				}   
-				&--col-12-medium {
-					width: 100%;
-				}   
-				&--col-3-medium {
-					width: 25%;
-				}   
+		&__item {
+			&--hide-bp-medium {
+				display: none;
+			}   
+			&--col-1-medium {
+				width: 8.33%;
 			}
-		}
-
-		.editable-title {
-			margin-left: -30px;
-		}
-		.article-jumbotron {
-			height: 60vh;
-		}
-		.article-body {
-			padding: 60px 30px;
-			flex-direction: column-reverse;
-
-			.introduction {
-				h4 {
-					max-height: 24px;
-					margin-top: 12px;
-				}
+			&--col-2-medium {
+				width: 16.66%;
 			}
-			.metadata {
-				margin-top: 30px;
+			&--col-3-medium {
+				width: 25%;
 			}
-		}
-
-		h1 {
-			font-size: 10vw;
-		  margin-left: -2px;
-		}
-		blockquote {
-			margin: 30px 0;
-			font-size: 28px;
-			transform: none;
-		}
-		h2 {
-			font-size: 32px;
-			letter-spacing: 0.006em;
-		}
-		input {
-			font-size: 32px;
-		}
-		h3 {
-			font-size: 6vw;
-		}
-		h4 {
-			font-size: 18px;
-		}
-		p {
-			font-size: 17px;
+			&--col-4-medium {
+				width: 33.33%;
+			}
+			&--col-5-medium {
+				width: 41.66%;
+			}
+			&--col-6-medium {
+				width: 50%;
+			}
+			&--col-7-medium {
+				width: 58.33%;
+			}
+			&--col-8-medium {
+				width: 66.66%;
+			}
+			&--col-9-medium {
+				width: 75%;
+			}
+			&--col-10-medium {
+				width: 83.33%;
+			}
+			&--col-11-medium {
+				width: 91.66%;
+			}
+			&--col-12-medium {
+				width: 100%;
+			}  
 		}
 	}
+
+	section {
+		padding: 12px 0;
+	}
+
+	.editable-title {
+		margin-left: -30px;
+	}
+	.article-jumbotron {
+		height: 60vh;
+	}
+	.article-body {
+		padding: 60px 30px;
+		flex-direction: column-reverse;
+
+		.introduction {
+			h4 {
+				max-height: 24px;
+				margin-top: 12px;
+			}
+		}
+		.metadata {
+			margin-top: 30px;
+		}
+
+	}
+
+	h1 {
+		font-size: 10vw;
+		margin-left: -2px;
+	}
+	blockquote {
+		margin: 30px 0;
+		font-size: 28px;
+		transform: none;
+	}
+	h2 {
+		font-size: 32px;
+		letter-spacing: 0.006em;
+	}
+	input {
+		font-size: 32px;
+	}
+	h3 {
+		font-size: 6vw;
+	}
+	h4 {
+		font-size: 18px;
+	}
+	p {
+		font-size: 17px;
+	}
+ }

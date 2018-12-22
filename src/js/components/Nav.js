@@ -101,9 +101,9 @@ class Nav extends Component {
 			<div>
 				<nav className={classnames}>
 
-					<div className="portfolio-nav__toggle">
+					<div className="portfolio-nav__toggle" onClick={this.toggleMenuOpen} ref="hamburger">
 						<h5 className="portfolio-nav__toggle-abbreviation">{this.props.abbreviation}</h5>
-						<div ref="hamburger" className="portfolio-nav__hamburger" onClick={this.toggleMenuOpen}>
+						<div className="portfolio-nav__hamburger">
 							<div className="line"/>
 							<div className="line"/>
 							<div className="line"/>

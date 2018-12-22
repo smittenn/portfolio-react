@@ -10,10 +10,11 @@
 		top: 0;
 		width: 100%;
 		left: 0;
+		opacity: 0.6;
 	}
 
 	&__line {
-		color: rgba($brand-grey-light, .4);
+		color: rgba($brand-grey-light, .8);
 		border-right: solid 1px;
 		height: 100vh;
 		pointer-events: none;

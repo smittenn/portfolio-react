@@ -34,59 +34,49 @@ img {
 	width: 100%;
 }
 
-@keyframes ghostHeader {
-	0% {
-		opacity: 0;
-		transform: translate3d(0,100px,0) skewX(6deg);
-	}
-	100% {
-		opacity: 1;
-		transform: translate3d(0,0,0) skewX(0deg);
-	}
-}
-
-@keyframes ghostHeaderSm {
-	0% {
-		opacity: 0;
-		transform: translate3d(0,40px,0) skewX(6deg);
-	}
-	100% {
-		opacity: 1;
-		transform: translate3d(0,0,0) skewX(0deg);
-	}
-}
-
 
 h1, h2, p, {
 	span {
+		transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 		display: inline-block;
 		opacity: 0;
+	}
+}
+
+h1, h2 {
+	span {
+		transform: translate3d(0,100px,0) skewX(6deg);
+
+		@for $i from 1 through 60 {
+			&:nth-child(#{$i}) {
+				transition-delay: (#{0.6 + ($i * 0.06)}s);
+			}
+		}
+	}
+}
+
+p {
+	span {
+		transform: translate3d(0,24px,0) skewX(6deg);
+		transition-delay: 0s;
 	}
 }
 
 .active-section {
 	h1, h2, {
 		span {
-			animation: ghostHeader $duration-slow $easing1;
-			animation-fill-mode: forwards;
-
-			@for $i from 1 through 60 {
-				&:nth-child(#{$i}) {
-					animation-delay: (#{0.6 + ($i * 0.06)}s);
-				}
-			}
+			opacity: 1;
+			transform: translate3d(0,0,0) skewX(0deg);
 		}
 	}
 
-	p {
-		span {
-			animation: ghostHeaderSm $duration-slow $easing1;
-			animation-fill-mode: forwards;
+	p span {
+		opacity: 1;
+		transform: translate3d(0,0,0) skewX(0deg);
 
-			@for $i from 1 through 120 {
-				&:nth-child(#{$i}) {
-					animation-delay: (#{1.2 + ($i * 0.06)}s);
-				}
+		@for $i from 1 through 120 {
+			&:nth-child(#{$i}) {
+				transition-delay: (#{1.2 + ($i * 0.06)}s);
 			}
 		}
 	}

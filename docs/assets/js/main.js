@@ -35633,7 +35633,7 @@ var Home = function (_Component) {
 						_reactParallax.Parallax,
 						{
 							bgImage: image1,
-							blur: { min: -3, max: 6 },
+							blur: null,
 							strength: 400,
 							renderLayer: null
 						},
@@ -35696,14 +35696,24 @@ var Home = function (_Component) {
 									this.splitText("Hi there, my name is Eric. I am a designer with a nack for writing code. Here are some things I’ve worked on."),
 									_react2.default.createElement('br', null),
 									_react2.default.createElement('br', null),
-									this.splitText("I’ve built this site as a way to flex my coding skills. My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")
+									this.splitText("My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")
 								)
 							),
-							_react2.default.createElement('div', { className: 'grid__item grid__item--col-2' }),
+							_react2.default.createElement('div', { className: 'grid__item grid__item--col-1 grid__item--hide-bp-medium' }),
 							_react2.default.createElement(
 								'div',
-								{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
-								_react2.default.createElement('img', { src: '../assets/img/me3.jpg' })
+								{ className: 'grid__item grid__item--col-2 grid__item--col-4-medium' },
+								_react2.default.createElement('img', { src: '../assets/img/me-4x3.jpg' })
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-2 grid__item--col-4-medium' },
+								_react2.default.createElement('img', { src: '../assets/img/lands-end-4x3.jpg' })
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-2 grid__item--col-4-medium' },
+								_react2.default.createElement('img', { src: '../assets/img/mist-3x4.jpg' })
 							)
 						)
 					)
@@ -36050,7 +36060,7 @@ var Nav = function (_Component) {
 					{ className: classnames },
 					_react2.default.createElement(
 						'div',
-						{ className: 'portfolio-nav__toggle' },
+						{ className: 'portfolio-nav__toggle', onClick: this.toggleMenuOpen, ref: 'hamburger' },
 						_react2.default.createElement(
 							'h5',
 							{ className: 'portfolio-nav__toggle-abbreviation' },
@@ -36058,7 +36068,7 @@ var Nav = function (_Component) {
 						),
 						_react2.default.createElement(
 							'div',
-							{ ref: 'hamburger', className: 'portfolio-nav__hamburger', onClick: this.toggleMenuOpen },
+							{ className: 'portfolio-nav__hamburger' },
 							_react2.default.createElement('div', { className: 'line' }),
 							_react2.default.createElement('div', { className: 'line' }),
 							_react2.default.createElement('div', { className: 'line' })
