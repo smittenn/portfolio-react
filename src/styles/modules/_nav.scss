@@ -359,6 +359,12 @@ $baseclass: portfolio-nav;
 			top: 0;
 			width: 49px;
 		}
+		.#{$baseclass}__toggle-abbreviation {
+			margin-bottom: 9px;
+		}
+		.#{$baseclass}__toggle-num {
+			margin-top: 12px;
+		}
 		hr {
 			&:last-of-type {
 				display: none;
