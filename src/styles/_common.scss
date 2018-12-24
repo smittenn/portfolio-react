@@ -76,7 +76,7 @@ p {
 
 		@for $i from 1 through 120 {
 			&:nth-child(#{$i}) {
-				transition-delay: (#{1.2 + ($i * 0.06)}s);
+				transition-delay: (#{1.2 + ($i * 0.03)}s);
 			}
 		}
 	}

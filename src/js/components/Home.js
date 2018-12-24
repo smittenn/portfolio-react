@@ -3,7 +3,7 @@ import { Parallax } from 'react-parallax'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy} from "react-scroll";
+import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll";
 
 import { reset, setCounter } from '../actions/counter'
 import { home } from '../actions/abbreviation'
@@ -33,6 +33,18 @@ class Home extends Component {
 		this.props.setNavWhite();
 	}
 
+	debounce = (fn, delay) => {
+		let timer = null;
+		return () => {
+			const context = this;
+			const args = arguments;
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				fn.apply(context, args);
+			}, delay);
+		}
+	}
+
 
 	splitText = (text) => (
 		text.split(' ').map((item, index) =>
@@ -40,13 +52,27 @@ class Home extends Component {
 		)
 	)
 
-	// componentDidMount() {
-	// 	window.addEventListener('resize', this.detectMobile);
-	// }
+	wheel = (e) => {
+		this.debounce(() => {
+			(this.state.activeSection == 'hello') ? scroller.scrollTo('about', {
+				duration: 600,
+				delay: 0,
+				smooth: "easeOutExpo",
+				offset: 0, 
+			}) : null;
 
-	// componentWillUnmount() {
-	// 	window.removeEventListener('resize', this.detectMobile);
-	// }
+			(this.state.activeSection == 'about') ? scroller.scrollTo('hello', {
+				duration: 600,
+				delay: 0,
+				smooth: "easeOutExpo",
+				offset: 0, 
+			}) : null;
+
+		}, 300);
+		// e.preventDefault();
+		// console.log(e);
+		
+	}
 
 	setActiveSection = (name) => {
 		this.setState({
@@ -66,7 +92,7 @@ class Home extends Component {
 		const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 		
 		return (
-			<div>
+			<div onWheel={(e) => this.wheel(e)}>
 				<Element name="hello" className={classNames({ 'active-section' : activeSection == 'hello'})}><Parallax 
 				bgImage={image1} 
 				blur={null} 
@@ -75,7 +101,7 @@ class Home extends Component {
 				>
 					<div className="grid">
 						<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-							<h1 className="white">{this.splitText("Eric C. Smith is a User Experience Designer in New York City.")}</h1>
+							<h1 className="white">{this.splitText("Eric C. Smith is a User Experience Designer in New York City")}</h1>
 						</div>
 					</div>
 					<Link style={{display: 'none'}} to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection('hello');}}>
@@ -92,7 +118,7 @@ class Home extends Component {
 					<section>
 						<div className="grid">
 							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-								<h1 className="mb">{this.splitText("Form & Function.")}</h1>
+								<h1 className="mb">{this.splitText("Form & Function")}</h1>
 								<p>
 									{this.splitText("Hi there, my name is Eric. I am a designer with a nack for writing code. Here are some things I’ve worked on.")}
 									<br/><br/>

@@ -35563,9 +35563,23 @@ var Home = function (_Component) {
 	_inherits(Home, _Component);
 
 	function Home(props) {
+		var _arguments = arguments;
+
 		_classCallCheck(this, Home);
 
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+		_this.debounce = function (fn, delay) {
+			var timer = null;
+			return function () {
+				var context = _this;
+				var args = _arguments;
+				clearTimeout(timer);
+				timer = setTimeout(function () {
+					fn.apply(context, args);
+				}, delay);
+			};
+		};
 
 		_this.splitText = function (text) {
 			return text.split(' ').map(function (item, index) {
@@ -35576,6 +35590,26 @@ var Home = function (_Component) {
 					index != text.split(' ').length ? '\xA0' : null
 				);
 			});
+		};
+
+		_this.wheel = function (e) {
+			_this.debounce(function () {
+				_this.state.activeSection == 'hello' ? _reactScroll.scroller.scrollTo('about', {
+					duration: 600,
+					delay: 0,
+					smooth: "easeOutExpo",
+					offset: 0
+				}) : null;
+
+				_this.state.activeSection == 'about' ? _reactScroll.scroller.scrollTo('hello', {
+					duration: 600,
+					delay: 0,
+					smooth: "easeOutExpo",
+					offset: 0
+				}) : null;
+			}, 300);
+			// e.preventDefault();
+			// console.log(e);
 		};
 
 		_this.setActiveSection = function (name) {
@@ -35599,15 +35633,6 @@ var Home = function (_Component) {
 			this.props.reset();
 			this.props.setNavWhite();
 		}
-
-		// componentDidMount() {
-		// 	window.addEventListener('resize', this.detectMobile);
-		// }
-
-		// componentWillUnmount() {
-		// 	window.removeEventListener('resize', this.detectMobile);
-		// }
-
 	}, {
 		key: 'render',
 		value: function render() {
@@ -35625,7 +35650,9 @@ var Home = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ onWheel: function onWheel(e) {
+						return _this2.wheel(e);
+					} },
 				_react2.default.createElement(
 					_reactScroll.Element,
 					{ name: 'hello', className: (0, _classnames2.default)({ 'active-section': activeSection == 'hello' }) },
@@ -35646,7 +35673,7 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									'h1',
 									{ className: 'white' },
-									this.splitText("Eric C. Smith is a User Experience Designer in New York City.")
+									this.splitText("Eric C. Smith is a User Experience Designer in New York City")
 								)
 							)
 						),
@@ -35688,7 +35715,7 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									'h1',
 									{ className: 'mb' },
-									this.splitText("Form & Function.")
+									this.splitText("Form & Function")
 								),
 								_react2.default.createElement(
 									'p',
