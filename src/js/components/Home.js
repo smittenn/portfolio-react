@@ -22,11 +22,17 @@ class Home extends Component {
 
 		this.state = {
 			activeSection: 'hello',
+			pageSections: [
+			'hello',
+			'about',
+			'projects',
+			],
 		}
 	}
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
+		// window.location = window.location.href.split('#')[0];
 
 		this.props.home();
 		this.props.reset();
@@ -45,6 +51,7 @@ class Home extends Component {
 		}
 	}
 
+	// function debounce(a,b,c){var d,e;return function(){function h(){d=null,c||(e=a.apply(f,g))}var f=this,g=arguments;return clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e}}
 
 	splitText = (text) => (
 		text.split(' ').map((item, index) =>
@@ -53,27 +60,25 @@ class Home extends Component {
 	)
 
 	wheel = (e) => {
-		this.debounce(() => {
-			(this.state.activeSection == 'hello') ? scroller.scrollTo('about', {
-				duration: 600,
+		if (this.state.activeSection == 'hello' && e.deltaY > 0) {
+				scroller.scrollTo('about', {
+				duration: 300,
 				delay: 0,
-				smooth: "easeOutExpo",
+				smooth: true,
 				offset: 0, 
-			}) : null;
-
-			(this.state.activeSection == 'about') ? scroller.scrollTo('hello', {
-				duration: 600,
+			})
+		}
+		if (this.state.activeSection == 'about' && e.deltaY < 0) {
+			scroller.scrollTo('hello', {
+				duration: 300,
 				delay: 0,
-				smooth: "easeOutExpo",
+				smooth: true,
 				offset: 0, 
-			}) : null;
-
-		}, 300);
-		// e.preventDefault();
-		// console.log(e);
-		
+			})
+		}
+		console.log(e);
 	}
-
+		
 	setActiveSection = (name) => {
 		this.setState({
 			activeSection: name
@@ -92,7 +97,7 @@ class Home extends Component {
 		const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 		
 		return (
-			<div onWheel={(e) => this.wheel(e)}>
+			<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 10)}}>
 				<Element name="hello" className={classNames({ 'active-section' : activeSection == 'hello'})}><Parallax 
 				bgImage={image1} 
 				blur={null} 
@@ -101,7 +106,7 @@ class Home extends Component {
 				>
 					<div className="grid">
 						<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-							<h1 className="white">{this.splitText("Eric C. Smith is a User Experience Designer in New York City")}</h1>
+							<h1 className="white">{this.splitText("Eric C. Smith is a Creative Developer in New York City")}</h1>
 						</div>
 					</div>
 					<Link style={{display: 'none'}} to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection('hello');}}>
@@ -120,9 +125,9 @@ class Home extends Component {
 							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 								<h1 className="mb">{this.splitText("Form & Function")}</h1>
 								<p>
-									{this.splitText("Hi there, my name is Eric. I am a designer with a nack for writing code. Here are some things I’ve worked on.")}
+									{this.splitText("Hi there, my name is Eric. I am a creative developer with a good eye for design. Here are some things I’ve worked on.")}
 									<br/><br/>
-									{this.splitText("My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not designing or writing code, I’m taking photos with friends or cycling.")}
+									{this.splitText("My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.")}
 								</p>
 							</div>
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>

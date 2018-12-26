@@ -484,125 +484,125 @@ h1 span, h2 span, p span {
 h1 span, h2 span {
   transform: translate3d(0, 100px, 0) skewX(6deg); }
   h1 span:nth-child(1), h2 span:nth-child(1) {
-    transition-delay: 0.66s; }
+    transition-delay: 0.69s; }
   h1 span:nth-child(2), h2 span:nth-child(2) {
-    transition-delay: 0.72s; }
-  h1 span:nth-child(3), h2 span:nth-child(3) {
     transition-delay: 0.78s; }
+  h1 span:nth-child(3), h2 span:nth-child(3) {
+    transition-delay: 0.87s; }
   h1 span:nth-child(4), h2 span:nth-child(4) {
-    transition-delay: 0.84s; }
-  h1 span:nth-child(5), h2 span:nth-child(5) {
-    transition-delay: 0.9s; }
-  h1 span:nth-child(6), h2 span:nth-child(6) {
     transition-delay: 0.96s; }
-  h1 span:nth-child(7), h2 span:nth-child(7) {
-    transition-delay: 1.02s; }
-  h1 span:nth-child(8), h2 span:nth-child(8) {
-    transition-delay: 1.08s; }
-  h1 span:nth-child(9), h2 span:nth-child(9) {
+  h1 span:nth-child(5), h2 span:nth-child(5) {
+    transition-delay: 1.05s; }
+  h1 span:nth-child(6), h2 span:nth-child(6) {
     transition-delay: 1.14s; }
-  h1 span:nth-child(10), h2 span:nth-child(10) {
-    transition-delay: 1.2s; }
-  h1 span:nth-child(11), h2 span:nth-child(11) {
-    transition-delay: 1.26s; }
-  h1 span:nth-child(12), h2 span:nth-child(12) {
+  h1 span:nth-child(7), h2 span:nth-child(7) {
+    transition-delay: 1.23s; }
+  h1 span:nth-child(8), h2 span:nth-child(8) {
     transition-delay: 1.32s; }
-  h1 span:nth-child(13), h2 span:nth-child(13) {
-    transition-delay: 1.38s; }
-  h1 span:nth-child(14), h2 span:nth-child(14) {
-    transition-delay: 1.44s; }
-  h1 span:nth-child(15), h2 span:nth-child(15) {
+  h1 span:nth-child(9), h2 span:nth-child(9) {
+    transition-delay: 1.41s; }
+  h1 span:nth-child(10), h2 span:nth-child(10) {
     transition-delay: 1.5s; }
-  h1 span:nth-child(16), h2 span:nth-child(16) {
-    transition-delay: 1.56s; }
-  h1 span:nth-child(17), h2 span:nth-child(17) {
-    transition-delay: 1.62s; }
-  h1 span:nth-child(18), h2 span:nth-child(18) {
+  h1 span:nth-child(11), h2 span:nth-child(11) {
+    transition-delay: 1.59s; }
+  h1 span:nth-child(12), h2 span:nth-child(12) {
     transition-delay: 1.68s; }
-  h1 span:nth-child(19), h2 span:nth-child(19) {
-    transition-delay: 1.74s; }
-  h1 span:nth-child(20), h2 span:nth-child(20) {
-    transition-delay: 1.8s; }
-  h1 span:nth-child(21), h2 span:nth-child(21) {
+  h1 span:nth-child(13), h2 span:nth-child(13) {
+    transition-delay: 1.77s; }
+  h1 span:nth-child(14), h2 span:nth-child(14) {
     transition-delay: 1.86s; }
-  h1 span:nth-child(22), h2 span:nth-child(22) {
-    transition-delay: 1.92s; }
-  h1 span:nth-child(23), h2 span:nth-child(23) {
-    transition-delay: 1.98s; }
-  h1 span:nth-child(24), h2 span:nth-child(24) {
+  h1 span:nth-child(15), h2 span:nth-child(15) {
+    transition-delay: 1.95s; }
+  h1 span:nth-child(16), h2 span:nth-child(16) {
     transition-delay: 2.04s; }
-  h1 span:nth-child(25), h2 span:nth-child(25) {
-    transition-delay: 2.1s; }
-  h1 span:nth-child(26), h2 span:nth-child(26) {
-    transition-delay: 2.16s; }
-  h1 span:nth-child(27), h2 span:nth-child(27) {
+  h1 span:nth-child(17), h2 span:nth-child(17) {
+    transition-delay: 2.13s; }
+  h1 span:nth-child(18), h2 span:nth-child(18) {
     transition-delay: 2.22s; }
-  h1 span:nth-child(28), h2 span:nth-child(28) {
-    transition-delay: 2.28s; }
-  h1 span:nth-child(29), h2 span:nth-child(29) {
-    transition-delay: 2.34s; }
-  h1 span:nth-child(30), h2 span:nth-child(30) {
+  h1 span:nth-child(19), h2 span:nth-child(19) {
+    transition-delay: 2.31s; }
+  h1 span:nth-child(20), h2 span:nth-child(20) {
     transition-delay: 2.4s; }
-  h1 span:nth-child(31), h2 span:nth-child(31) {
-    transition-delay: 2.46s; }
-  h1 span:nth-child(32), h2 span:nth-child(32) {
-    transition-delay: 2.52s; }
-  h1 span:nth-child(33), h2 span:nth-child(33) {
+  h1 span:nth-child(21), h2 span:nth-child(21) {
+    transition-delay: 2.49s; }
+  h1 span:nth-child(22), h2 span:nth-child(22) {
     transition-delay: 2.58s; }
-  h1 span:nth-child(34), h2 span:nth-child(34) {
-    transition-delay: 2.64s; }
-  h1 span:nth-child(35), h2 span:nth-child(35) {
-    transition-delay: 2.7s; }
-  h1 span:nth-child(36), h2 span:nth-child(36) {
+  h1 span:nth-child(23), h2 span:nth-child(23) {
+    transition-delay: 2.67s; }
+  h1 span:nth-child(24), h2 span:nth-child(24) {
     transition-delay: 2.76s; }
-  h1 span:nth-child(37), h2 span:nth-child(37) {
-    transition-delay: 2.82s; }
-  h1 span:nth-child(38), h2 span:nth-child(38) {
-    transition-delay: 2.88s; }
-  h1 span:nth-child(39), h2 span:nth-child(39) {
+  h1 span:nth-child(25), h2 span:nth-child(25) {
+    transition-delay: 2.85s; }
+  h1 span:nth-child(26), h2 span:nth-child(26) {
     transition-delay: 2.94s; }
-  h1 span:nth-child(40), h2 span:nth-child(40) {
-    transition-delay: 3s; }
-  h1 span:nth-child(41), h2 span:nth-child(41) {
-    transition-delay: 3.06s; }
-  h1 span:nth-child(42), h2 span:nth-child(42) {
+  h1 span:nth-child(27), h2 span:nth-child(27) {
+    transition-delay: 3.03s; }
+  h1 span:nth-child(28), h2 span:nth-child(28) {
     transition-delay: 3.12s; }
-  h1 span:nth-child(43), h2 span:nth-child(43) {
-    transition-delay: 3.18s; }
-  h1 span:nth-child(44), h2 span:nth-child(44) {
-    transition-delay: 3.24s; }
-  h1 span:nth-child(45), h2 span:nth-child(45) {
+  h1 span:nth-child(29), h2 span:nth-child(29) {
+    transition-delay: 3.21s; }
+  h1 span:nth-child(30), h2 span:nth-child(30) {
     transition-delay: 3.3s; }
-  h1 span:nth-child(46), h2 span:nth-child(46) {
-    transition-delay: 3.36s; }
-  h1 span:nth-child(47), h2 span:nth-child(47) {
-    transition-delay: 3.42s; }
-  h1 span:nth-child(48), h2 span:nth-child(48) {
+  h1 span:nth-child(31), h2 span:nth-child(31) {
+    transition-delay: 3.39s; }
+  h1 span:nth-child(32), h2 span:nth-child(32) {
     transition-delay: 3.48s; }
-  h1 span:nth-child(49), h2 span:nth-child(49) {
-    transition-delay: 3.54s; }
-  h1 span:nth-child(50), h2 span:nth-child(50) {
-    transition-delay: 3.6s; }
-  h1 span:nth-child(51), h2 span:nth-child(51) {
+  h1 span:nth-child(33), h2 span:nth-child(33) {
+    transition-delay: 3.57s; }
+  h1 span:nth-child(34), h2 span:nth-child(34) {
     transition-delay: 3.66s; }
-  h1 span:nth-child(52), h2 span:nth-child(52) {
-    transition-delay: 3.72s; }
-  h1 span:nth-child(53), h2 span:nth-child(53) {
-    transition-delay: 3.78s; }
-  h1 span:nth-child(54), h2 span:nth-child(54) {
+  h1 span:nth-child(35), h2 span:nth-child(35) {
+    transition-delay: 3.75s; }
+  h1 span:nth-child(36), h2 span:nth-child(36) {
     transition-delay: 3.84s; }
-  h1 span:nth-child(55), h2 span:nth-child(55) {
-    transition-delay: 3.9s; }
-  h1 span:nth-child(56), h2 span:nth-child(56) {
-    transition-delay: 3.96s; }
-  h1 span:nth-child(57), h2 span:nth-child(57) {
+  h1 span:nth-child(37), h2 span:nth-child(37) {
+    transition-delay: 3.93s; }
+  h1 span:nth-child(38), h2 span:nth-child(38) {
     transition-delay: 4.02s; }
-  h1 span:nth-child(58), h2 span:nth-child(58) {
-    transition-delay: 4.08s; }
-  h1 span:nth-child(59), h2 span:nth-child(59) {
-    transition-delay: 4.14s; }
-  h1 span:nth-child(60), h2 span:nth-child(60) {
+  h1 span:nth-child(39), h2 span:nth-child(39) {
+    transition-delay: 4.11s; }
+  h1 span:nth-child(40), h2 span:nth-child(40) {
     transition-delay: 4.2s; }
+  h1 span:nth-child(41), h2 span:nth-child(41) {
+    transition-delay: 4.29s; }
+  h1 span:nth-child(42), h2 span:nth-child(42) {
+    transition-delay: 4.38s; }
+  h1 span:nth-child(43), h2 span:nth-child(43) {
+    transition-delay: 4.47s; }
+  h1 span:nth-child(44), h2 span:nth-child(44) {
+    transition-delay: 4.56s; }
+  h1 span:nth-child(45), h2 span:nth-child(45) {
+    transition-delay: 4.65s; }
+  h1 span:nth-child(46), h2 span:nth-child(46) {
+    transition-delay: 4.74s; }
+  h1 span:nth-child(47), h2 span:nth-child(47) {
+    transition-delay: 4.83s; }
+  h1 span:nth-child(48), h2 span:nth-child(48) {
+    transition-delay: 4.92s; }
+  h1 span:nth-child(49), h2 span:nth-child(49) {
+    transition-delay: 5.01s; }
+  h1 span:nth-child(50), h2 span:nth-child(50) {
+    transition-delay: 5.1s; }
+  h1 span:nth-child(51), h2 span:nth-child(51) {
+    transition-delay: 5.19s; }
+  h1 span:nth-child(52), h2 span:nth-child(52) {
+    transition-delay: 5.28s; }
+  h1 span:nth-child(53), h2 span:nth-child(53) {
+    transition-delay: 5.37s; }
+  h1 span:nth-child(54), h2 span:nth-child(54) {
+    transition-delay: 5.46s; }
+  h1 span:nth-child(55), h2 span:nth-child(55) {
+    transition-delay: 5.55s; }
+  h1 span:nth-child(56), h2 span:nth-child(56) {
+    transition-delay: 5.64s; }
+  h1 span:nth-child(57), h2 span:nth-child(57) {
+    transition-delay: 5.73s; }
+  h1 span:nth-child(58), h2 span:nth-child(58) {
+    transition-delay: 5.82s; }
+  h1 span:nth-child(59), h2 span:nth-child(59) {
+    transition-delay: 5.91s; }
+  h1 span:nth-child(60), h2 span:nth-child(60) {
+    transition-delay: 6s; }
 
 p span {
   transform: translate3d(0, 24px, 0) skewX(6deg);
@@ -616,245 +616,245 @@ p span {
   opacity: 1;
   transform: translate3d(0, 0, 0) skewX(0deg); }
   .active-section p span:nth-child(1) {
-    transition-delay: 1.23s; }
-  .active-section p span:nth-child(2) {
     transition-delay: 1.26s; }
-  .active-section p span:nth-child(3) {
-    transition-delay: 1.29s; }
-  .active-section p span:nth-child(4) {
+  .active-section p span:nth-child(2) {
     transition-delay: 1.32s; }
-  .active-section p span:nth-child(5) {
-    transition-delay: 1.35s; }
-  .active-section p span:nth-child(6) {
+  .active-section p span:nth-child(3) {
     transition-delay: 1.38s; }
-  .active-section p span:nth-child(7) {
-    transition-delay: 1.41s; }
-  .active-section p span:nth-child(8) {
+  .active-section p span:nth-child(4) {
     transition-delay: 1.44s; }
-  .active-section p span:nth-child(9) {
-    transition-delay: 1.47s; }
-  .active-section p span:nth-child(10) {
+  .active-section p span:nth-child(5) {
     transition-delay: 1.5s; }
-  .active-section p span:nth-child(11) {
-    transition-delay: 1.53s; }
-  .active-section p span:nth-child(12) {
+  .active-section p span:nth-child(6) {
     transition-delay: 1.56s; }
-  .active-section p span:nth-child(13) {
-    transition-delay: 1.59s; }
-  .active-section p span:nth-child(14) {
+  .active-section p span:nth-child(7) {
     transition-delay: 1.62s; }
-  .active-section p span:nth-child(15) {
-    transition-delay: 1.65s; }
-  .active-section p span:nth-child(16) {
+  .active-section p span:nth-child(8) {
     transition-delay: 1.68s; }
-  .active-section p span:nth-child(17) {
-    transition-delay: 1.71s; }
-  .active-section p span:nth-child(18) {
+  .active-section p span:nth-child(9) {
     transition-delay: 1.74s; }
-  .active-section p span:nth-child(19) {
-    transition-delay: 1.77s; }
-  .active-section p span:nth-child(20) {
+  .active-section p span:nth-child(10) {
     transition-delay: 1.8s; }
-  .active-section p span:nth-child(21) {
-    transition-delay: 1.83s; }
-  .active-section p span:nth-child(22) {
+  .active-section p span:nth-child(11) {
     transition-delay: 1.86s; }
-  .active-section p span:nth-child(23) {
-    transition-delay: 1.89s; }
-  .active-section p span:nth-child(24) {
+  .active-section p span:nth-child(12) {
     transition-delay: 1.92s; }
-  .active-section p span:nth-child(25) {
-    transition-delay: 1.95s; }
-  .active-section p span:nth-child(26) {
+  .active-section p span:nth-child(13) {
     transition-delay: 1.98s; }
-  .active-section p span:nth-child(27) {
-    transition-delay: 2.01s; }
-  .active-section p span:nth-child(28) {
+  .active-section p span:nth-child(14) {
     transition-delay: 2.04s; }
-  .active-section p span:nth-child(29) {
-    transition-delay: 2.07s; }
-  .active-section p span:nth-child(30) {
+  .active-section p span:nth-child(15) {
     transition-delay: 2.1s; }
-  .active-section p span:nth-child(31) {
-    transition-delay: 2.13s; }
-  .active-section p span:nth-child(32) {
+  .active-section p span:nth-child(16) {
     transition-delay: 2.16s; }
-  .active-section p span:nth-child(33) {
-    transition-delay: 2.19s; }
-  .active-section p span:nth-child(34) {
+  .active-section p span:nth-child(17) {
     transition-delay: 2.22s; }
-  .active-section p span:nth-child(35) {
-    transition-delay: 2.25s; }
-  .active-section p span:nth-child(36) {
+  .active-section p span:nth-child(18) {
     transition-delay: 2.28s; }
-  .active-section p span:nth-child(37) {
-    transition-delay: 2.31s; }
-  .active-section p span:nth-child(38) {
+  .active-section p span:nth-child(19) {
     transition-delay: 2.34s; }
-  .active-section p span:nth-child(39) {
-    transition-delay: 2.37s; }
-  .active-section p span:nth-child(40) {
+  .active-section p span:nth-child(20) {
     transition-delay: 2.4s; }
-  .active-section p span:nth-child(41) {
-    transition-delay: 2.43s; }
-  .active-section p span:nth-child(42) {
+  .active-section p span:nth-child(21) {
     transition-delay: 2.46s; }
-  .active-section p span:nth-child(43) {
-    transition-delay: 2.49s; }
-  .active-section p span:nth-child(44) {
+  .active-section p span:nth-child(22) {
     transition-delay: 2.52s; }
-  .active-section p span:nth-child(45) {
-    transition-delay: 2.55s; }
-  .active-section p span:nth-child(46) {
+  .active-section p span:nth-child(23) {
     transition-delay: 2.58s; }
-  .active-section p span:nth-child(47) {
-    transition-delay: 2.61s; }
-  .active-section p span:nth-child(48) {
+  .active-section p span:nth-child(24) {
     transition-delay: 2.64s; }
-  .active-section p span:nth-child(49) {
-    transition-delay: 2.67s; }
-  .active-section p span:nth-child(50) {
+  .active-section p span:nth-child(25) {
     transition-delay: 2.7s; }
-  .active-section p span:nth-child(51) {
-    transition-delay: 2.73s; }
-  .active-section p span:nth-child(52) {
+  .active-section p span:nth-child(26) {
     transition-delay: 2.76s; }
-  .active-section p span:nth-child(53) {
-    transition-delay: 2.79s; }
-  .active-section p span:nth-child(54) {
+  .active-section p span:nth-child(27) {
     transition-delay: 2.82s; }
-  .active-section p span:nth-child(55) {
-    transition-delay: 2.85s; }
-  .active-section p span:nth-child(56) {
+  .active-section p span:nth-child(28) {
     transition-delay: 2.88s; }
-  .active-section p span:nth-child(57) {
-    transition-delay: 2.91s; }
-  .active-section p span:nth-child(58) {
+  .active-section p span:nth-child(29) {
     transition-delay: 2.94s; }
-  .active-section p span:nth-child(59) {
-    transition-delay: 2.97s; }
-  .active-section p span:nth-child(60) {
+  .active-section p span:nth-child(30) {
     transition-delay: 3s; }
-  .active-section p span:nth-child(61) {
-    transition-delay: 3.03s; }
-  .active-section p span:nth-child(62) {
+  .active-section p span:nth-child(31) {
     transition-delay: 3.06s; }
-  .active-section p span:nth-child(63) {
-    transition-delay: 3.09s; }
-  .active-section p span:nth-child(64) {
+  .active-section p span:nth-child(32) {
     transition-delay: 3.12s; }
-  .active-section p span:nth-child(65) {
-    transition-delay: 3.15s; }
-  .active-section p span:nth-child(66) {
+  .active-section p span:nth-child(33) {
     transition-delay: 3.18s; }
-  .active-section p span:nth-child(67) {
-    transition-delay: 3.21s; }
-  .active-section p span:nth-child(68) {
+  .active-section p span:nth-child(34) {
     transition-delay: 3.24s; }
-  .active-section p span:nth-child(69) {
-    transition-delay: 3.27s; }
-  .active-section p span:nth-child(70) {
+  .active-section p span:nth-child(35) {
     transition-delay: 3.3s; }
-  .active-section p span:nth-child(71) {
-    transition-delay: 3.33s; }
-  .active-section p span:nth-child(72) {
+  .active-section p span:nth-child(36) {
     transition-delay: 3.36s; }
-  .active-section p span:nth-child(73) {
-    transition-delay: 3.39s; }
-  .active-section p span:nth-child(74) {
+  .active-section p span:nth-child(37) {
     transition-delay: 3.42s; }
-  .active-section p span:nth-child(75) {
-    transition-delay: 3.45s; }
-  .active-section p span:nth-child(76) {
+  .active-section p span:nth-child(38) {
     transition-delay: 3.48s; }
-  .active-section p span:nth-child(77) {
-    transition-delay: 3.51s; }
-  .active-section p span:nth-child(78) {
+  .active-section p span:nth-child(39) {
     transition-delay: 3.54s; }
-  .active-section p span:nth-child(79) {
-    transition-delay: 3.57s; }
-  .active-section p span:nth-child(80) {
+  .active-section p span:nth-child(40) {
     transition-delay: 3.6s; }
-  .active-section p span:nth-child(81) {
-    transition-delay: 3.63s; }
-  .active-section p span:nth-child(82) {
+  .active-section p span:nth-child(41) {
     transition-delay: 3.66s; }
-  .active-section p span:nth-child(83) {
-    transition-delay: 3.69s; }
-  .active-section p span:nth-child(84) {
+  .active-section p span:nth-child(42) {
     transition-delay: 3.72s; }
-  .active-section p span:nth-child(85) {
-    transition-delay: 3.75s; }
-  .active-section p span:nth-child(86) {
+  .active-section p span:nth-child(43) {
     transition-delay: 3.78s; }
-  .active-section p span:nth-child(87) {
-    transition-delay: 3.81s; }
-  .active-section p span:nth-child(88) {
+  .active-section p span:nth-child(44) {
     transition-delay: 3.84s; }
-  .active-section p span:nth-child(89) {
-    transition-delay: 3.87s; }
-  .active-section p span:nth-child(90) {
+  .active-section p span:nth-child(45) {
     transition-delay: 3.9s; }
-  .active-section p span:nth-child(91) {
-    transition-delay: 3.93s; }
-  .active-section p span:nth-child(92) {
+  .active-section p span:nth-child(46) {
     transition-delay: 3.96s; }
-  .active-section p span:nth-child(93) {
-    transition-delay: 3.99s; }
-  .active-section p span:nth-child(94) {
+  .active-section p span:nth-child(47) {
     transition-delay: 4.02s; }
-  .active-section p span:nth-child(95) {
-    transition-delay: 4.05s; }
-  .active-section p span:nth-child(96) {
+  .active-section p span:nth-child(48) {
     transition-delay: 4.08s; }
-  .active-section p span:nth-child(97) {
-    transition-delay: 4.11s; }
-  .active-section p span:nth-child(98) {
+  .active-section p span:nth-child(49) {
     transition-delay: 4.14s; }
-  .active-section p span:nth-child(99) {
-    transition-delay: 4.17s; }
-  .active-section p span:nth-child(100) {
+  .active-section p span:nth-child(50) {
     transition-delay: 4.2s; }
-  .active-section p span:nth-child(101) {
-    transition-delay: 4.23s; }
-  .active-section p span:nth-child(102) {
+  .active-section p span:nth-child(51) {
     transition-delay: 4.26s; }
-  .active-section p span:nth-child(103) {
-    transition-delay: 4.29s; }
-  .active-section p span:nth-child(104) {
+  .active-section p span:nth-child(52) {
     transition-delay: 4.32s; }
-  .active-section p span:nth-child(105) {
-    transition-delay: 4.35s; }
-  .active-section p span:nth-child(106) {
+  .active-section p span:nth-child(53) {
     transition-delay: 4.38s; }
-  .active-section p span:nth-child(107) {
-    transition-delay: 4.41s; }
-  .active-section p span:nth-child(108) {
+  .active-section p span:nth-child(54) {
     transition-delay: 4.44s; }
-  .active-section p span:nth-child(109) {
-    transition-delay: 4.47s; }
-  .active-section p span:nth-child(110) {
+  .active-section p span:nth-child(55) {
     transition-delay: 4.5s; }
-  .active-section p span:nth-child(111) {
-    transition-delay: 4.53s; }
-  .active-section p span:nth-child(112) {
+  .active-section p span:nth-child(56) {
     transition-delay: 4.56s; }
-  .active-section p span:nth-child(113) {
-    transition-delay: 4.59s; }
-  .active-section p span:nth-child(114) {
+  .active-section p span:nth-child(57) {
     transition-delay: 4.62s; }
-  .active-section p span:nth-child(115) {
-    transition-delay: 4.65s; }
-  .active-section p span:nth-child(116) {
+  .active-section p span:nth-child(58) {
     transition-delay: 4.68s; }
-  .active-section p span:nth-child(117) {
-    transition-delay: 4.71s; }
-  .active-section p span:nth-child(118) {
+  .active-section p span:nth-child(59) {
     transition-delay: 4.74s; }
-  .active-section p span:nth-child(119) {
-    transition-delay: 4.77s; }
-  .active-section p span:nth-child(120) {
+  .active-section p span:nth-child(60) {
     transition-delay: 4.8s; }
+  .active-section p span:nth-child(61) {
+    transition-delay: 4.86s; }
+  .active-section p span:nth-child(62) {
+    transition-delay: 4.92s; }
+  .active-section p span:nth-child(63) {
+    transition-delay: 4.98s; }
+  .active-section p span:nth-child(64) {
+    transition-delay: 5.04s; }
+  .active-section p span:nth-child(65) {
+    transition-delay: 5.1s; }
+  .active-section p span:nth-child(66) {
+    transition-delay: 5.16s; }
+  .active-section p span:nth-child(67) {
+    transition-delay: 5.22s; }
+  .active-section p span:nth-child(68) {
+    transition-delay: 5.28s; }
+  .active-section p span:nth-child(69) {
+    transition-delay: 5.34s; }
+  .active-section p span:nth-child(70) {
+    transition-delay: 5.4s; }
+  .active-section p span:nth-child(71) {
+    transition-delay: 5.46s; }
+  .active-section p span:nth-child(72) {
+    transition-delay: 5.52s; }
+  .active-section p span:nth-child(73) {
+    transition-delay: 5.58s; }
+  .active-section p span:nth-child(74) {
+    transition-delay: 5.64s; }
+  .active-section p span:nth-child(75) {
+    transition-delay: 5.7s; }
+  .active-section p span:nth-child(76) {
+    transition-delay: 5.76s; }
+  .active-section p span:nth-child(77) {
+    transition-delay: 5.82s; }
+  .active-section p span:nth-child(78) {
+    transition-delay: 5.88s; }
+  .active-section p span:nth-child(79) {
+    transition-delay: 5.94s; }
+  .active-section p span:nth-child(80) {
+    transition-delay: 6s; }
+  .active-section p span:nth-child(81) {
+    transition-delay: 6.06s; }
+  .active-section p span:nth-child(82) {
+    transition-delay: 6.12s; }
+  .active-section p span:nth-child(83) {
+    transition-delay: 6.18s; }
+  .active-section p span:nth-child(84) {
+    transition-delay: 6.24s; }
+  .active-section p span:nth-child(85) {
+    transition-delay: 6.3s; }
+  .active-section p span:nth-child(86) {
+    transition-delay: 6.36s; }
+  .active-section p span:nth-child(87) {
+    transition-delay: 6.42s; }
+  .active-section p span:nth-child(88) {
+    transition-delay: 6.48s; }
+  .active-section p span:nth-child(89) {
+    transition-delay: 6.54s; }
+  .active-section p span:nth-child(90) {
+    transition-delay: 6.6s; }
+  .active-section p span:nth-child(91) {
+    transition-delay: 6.66s; }
+  .active-section p span:nth-child(92) {
+    transition-delay: 6.72s; }
+  .active-section p span:nth-child(93) {
+    transition-delay: 6.78s; }
+  .active-section p span:nth-child(94) {
+    transition-delay: 6.84s; }
+  .active-section p span:nth-child(95) {
+    transition-delay: 6.9s; }
+  .active-section p span:nth-child(96) {
+    transition-delay: 6.96s; }
+  .active-section p span:nth-child(97) {
+    transition-delay: 7.02s; }
+  .active-section p span:nth-child(98) {
+    transition-delay: 7.08s; }
+  .active-section p span:nth-child(99) {
+    transition-delay: 7.14s; }
+  .active-section p span:nth-child(100) {
+    transition-delay: 7.2s; }
+  .active-section p span:nth-child(101) {
+    transition-delay: 7.26s; }
+  .active-section p span:nth-child(102) {
+    transition-delay: 7.32s; }
+  .active-section p span:nth-child(103) {
+    transition-delay: 7.38s; }
+  .active-section p span:nth-child(104) {
+    transition-delay: 7.44s; }
+  .active-section p span:nth-child(105) {
+    transition-delay: 7.5s; }
+  .active-section p span:nth-child(106) {
+    transition-delay: 7.56s; }
+  .active-section p span:nth-child(107) {
+    transition-delay: 7.62s; }
+  .active-section p span:nth-child(108) {
+    transition-delay: 7.68s; }
+  .active-section p span:nth-child(109) {
+    transition-delay: 7.74s; }
+  .active-section p span:nth-child(110) {
+    transition-delay: 7.8s; }
+  .active-section p span:nth-child(111) {
+    transition-delay: 7.86s; }
+  .active-section p span:nth-child(112) {
+    transition-delay: 7.92s; }
+  .active-section p span:nth-child(113) {
+    transition-delay: 7.98s; }
+  .active-section p span:nth-child(114) {
+    transition-delay: 8.04s; }
+  .active-section p span:nth-child(115) {
+    transition-delay: 8.1s; }
+  .active-section p span:nth-child(116) {
+    transition-delay: 8.16s; }
+  .active-section p span:nth-child(117) {
+    transition-delay: 8.22s; }
+  .active-section p span:nth-child(118) {
+    transition-delay: 8.28s; }
+  .active-section p span:nth-child(119) {
+    transition-delay: 8.34s; }
+  .active-section p span:nth-child(120) {
+    transition-delay: 8.4s; }
 
 @keyframes spreadOut {
   0% {
@@ -902,7 +902,8 @@ section * {
     margin-bottom: 12px; }
   .portfolio-nav .portfolio-nav__toggle-num {
     margin-top: 18px;
-    animation: decreasingNum 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+    animation: decreasingNum 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0.09s; }
   .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num {
     animation: increasingNum 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
   .portfolio-nav hr {
@@ -1246,7 +1247,7 @@ section * {
     .article-body .metadata {
       margin-top: 30px; }
   h1 {
-    font-size: 11vw;
+    font-size: 12vw;
     margin-left: -2px; }
   blockquote {
     margin: 30px 0;
