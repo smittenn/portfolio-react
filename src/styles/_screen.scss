@@ -2,6 +2,10 @@
 	.grid {
 		padding: 0 24px;
 
+		&--lines {
+			padding-right: 48px;
+		}
+
 		&__item {
 			&--hide-bp-medium {
 				display: none;

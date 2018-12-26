@@ -23,17 +23,28 @@ section {
 	display: flex;
 	align-items: center;
 
+	img {
+		width: 100%;
+	}
+
 	&.black {
 		background: darken($brand-black, 2%);
+	}
 
+	img {
+		opacity: 0;
+		transition: transform $duration-slow $easing2, opacity $duration-slow $easing2;
+		transform: translate3d(0,40px,0);
+	}
 
+	.grid__item--row .grid__item {
+		@for $i from 1 through 60 {
+			&:nth-child(#{$i}) img {
+				transition-delay: (#{0.6 + ($i * 0.3)}s);
+			}
+		}
 	}
 }
-
-img {
-	width: 100%;
-}
-
 
 h1, h2, p, {
 	span {
@@ -43,23 +54,29 @@ h1, h2, p, {
 	}
 }
 
-h1, h2 {
-	span {
-		transform: translate3d(0,100px,0) skewX(6deg);
+h1 span {
+	transform: translate3d(0,100px,0) skewX(6deg);
 
-		@for $i from 1 through 60 {
-			&:nth-child(#{$i}) {
-				transition-delay: (#{0.6 + ($i * 0.09)}s);
-			}
+	@for $i from 1 through 60 {
+		&:nth-child(#{$i}) {
+			transition-delay: (#{0.6 + ($i * 0.09)}s);
 		}
 	}
 }
 
-p {
-	span {
-		transform: translate3d(0,24px,0) skewX(6deg);
-		transition-delay: 0s;
+h2 span {
+	transform: translate3d(0,60px,0) skewX(6deg);
+
+	@for $i from 1 through 60 {
+		&:nth-child(#{$i}) {
+			transition-delay: (#{0.6 + ($i * 0.06)}s);
+		}
 	}
+}
+
+p span {
+	transform: translate3d(0,24px,0) skewX(6deg);
+	transition-delay: 0s;
 }
 
 .active-section {
@@ -70,13 +87,18 @@ p {
 		}
 	}
 
+	img {
+		opacity: 1;
+		transform: translate3d(0,0,0) skewX(0deg);
+	}
+
 	p span {
 		opacity: 1;
 		transform: translate3d(0,0,0) skewX(0deg);
 
 		@for $i from 1 through 120 {
 			&:nth-child(#{$i}) {
-				transition-delay: (#{1.2 + ($i * 0.06)}s);
+				transition-delay: (#{1.2 + ($i * 0.09)}s);
 			}
 		}
 	}

@@ -76,6 +76,22 @@ class Home extends Component {
 				offset: 0, 
 			})
 		}
+		if (this.state.activeSection == 'about' && e.deltaY > 0) {
+			scroller.scrollTo('projects', {
+				duration: 300,
+				delay: 0,
+				smooth: true,
+				offset: 0, 
+			})
+		}
+		if (this.state.activeSection == 'projects' && e.deltaY < 0) {
+			scroller.scrollTo('about', {
+				duration: 300,
+				delay: 0,
+				smooth: true,
+				offset: 0, 
+			})
+		}
 		console.log(e);
 	}
 		
@@ -97,7 +113,7 @@ class Home extends Component {
 		const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 		
 		return (
-			<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 10)}}>
+			<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 100)}}>
 				<Element name="hello" className={classNames({ 'active-section' : activeSection == 'hello'})}><Parallax 
 				bgImage={image1} 
 				blur={null} 
@@ -125,20 +141,16 @@ class Home extends Component {
 							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 								<h1 className="mb">{this.splitText("Form & Function")}</h1>
 								<p>
-									{this.splitText("Hi there, my name is Eric. I am a creative developer with a good eye for design. Here are some things I’ve worked on.")}
+									{this.splitText("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I’ve worked on.")}
 									<br/><br/>
-									{this.splitText("My design philosophy is about keeping it simple, the best design solution is usually the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.")}
+									{this.splitText("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.")}
 								</p>
 							</div>
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
-								{<img src="../assets/img/me-4x3.jpg"/>}
-							</div>
-							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
-								{<img src="../assets/img/lands-end-4x3.jpg"/>}
-							</div>
-							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
-								{<img src="../assets/img/mist-3x4.jpg"/>}
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+							<div className="grid__item grid__item--row grid__item--col-7 grid__item--col-4-medium">
+								<div style={{transform: 'translateY(-40%)'}} className="grid__item grid__item--col-4"><img src="../assets/img/me-4x3.jpg"/></div>
+								<div style={{transform: 'translateY(40%)'}} className="grid__item grid__item--col-4"><img src="../assets/img/lands-end-4x3.jpg"/></div>
+								<div style={{transform: 'translateY(-20%)'}} className="grid__item grid__item--col-4"><img src="../assets/img/mist-3x4.jpg"/></div>
 							</div>
 						</div>
 					</section>
