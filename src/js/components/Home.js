@@ -10,6 +10,7 @@ import { home } from '../actions/abbreviation'
 import { setNavWhite, setNavBlack } from '../actions/color'
 
 import Nav from './Nav';
+import ScrollArrow from './ScrollArrow';
 import GridLines from './GridLines'
 
 // import detectMobile from '../services/detectMobile'
@@ -39,7 +40,7 @@ class Home extends Component {
 		this.props.setNavWhite();
 	}
 
-	debounce = (fn, delay) => {
+	/*debounce = (fn, delay) => {
 		let timer = null;
 		return () => {
 			const context = this;
@@ -49,9 +50,9 @@ class Home extends Component {
 				fn.apply(context, args);
 			}, delay);
 		}
-	}
+	}*/
 
-	// function debounce(a,b,c){var d,e;return function(){function h(){d=null,c||(e=a.apply(f,g))}var f=this,g=arguments;return clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e}}
+	debounce = (a,b,c) => {var d,e;return function(){function h(){d=null,c||(e=a.apply(f,g))}var f=this,g=arguments;return clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e}}
 
 	splitText = (text) => (
 		text.split(' ').map((item, index) =>
@@ -92,7 +93,6 @@ class Home extends Component {
 				offset: 0, 
 			})
 		}
-		console.log(e);
 	}
 		
 	setActiveSection = (name) => {
@@ -110,10 +110,11 @@ class Home extends Component {
 
 		const { activeSection } = this.state;
 
-		const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+		const image1 = "../assets/img/banner.jpg";
 		
 		return (
-			<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 100)}}>
+			<div>
+			{/*<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 100)}}>*/}
 				<Element name="hello" className={classNames({ 'active-section' : activeSection == 'hello'})}><Parallax 
 				bgImage={image1} 
 				blur={null} 
@@ -125,14 +126,14 @@ class Home extends Component {
 							<h1 className="white">{this.splitText("Eric C. Smith is a Creative Developer in New York City")}</h1>
 						</div>
 					</div>
-					<Link style={{display: 'none'}} to="hello" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection('hello');}}>
-						<i className="iconcss icon-caret-down-lg"></i>
+					<Link style={{display: 'none'}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection('hello');}}>
+						<ScrollArrow/>
 					</Link>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection('about');}}>
-						<i className="iconcss icon-caret-down-lg"></i>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection('about');}}>
+						<ScrollArrow/>
 					</Link>
-					<Link style={{display: 'none'}} to="projects" spy={true} smooth={true} hashSpy={true} onSetActive={() => {this.props.setCounter(3); this.props.setNavWhite();  this.setActiveSection('projects');}}>
-						<i className="iconcss icon-caret-down-lg"></i>
+					<Link style={{display: 'none'}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavWhite();  this.setActiveSection('projects');}}>
+						<ScrollArrow/>
 					</Link>
 				</Parallax></Element>
 				<Element name="about" className={classNames({ 'active-section' : activeSection == 'about'})}>
@@ -147,7 +148,7 @@ class Home extends Component {
 								</p>
 							</div>
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--row grid__item--col-7 grid__item--col-4-medium">
+							<div className="grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium">
 								<div style={{transform: 'translateY(-40%)'}} className="grid__item grid__item--col-4"><img src="../assets/img/me-4x3.jpg"/></div>
 								<div style={{transform: 'translateY(40%)'}} className="grid__item grid__item--col-4"><img src="../assets/img/lands-end-4x3.jpg"/></div>
 								<div style={{transform: 'translateY(-20%)'}} className="grid__item grid__item--col-4"><img src="../assets/img/mist-3x4.jpg"/></div>
@@ -158,10 +159,22 @@ class Home extends Component {
 				<Element name="projects" className={classNames({ 'active-section' : activeSection == 'projects'})}>
 					<section className="black">
 						<div className="grid">
-							<div className="grid__item grid__item--col-6"/>
+							<div className="grid__item grid__item--col-8"/>
+							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
+								<h2 className="white mb">{this.splitText("Motion, Visual Design & the Front-end.")}</h2>
+								<p className="white">
+									{this.splitText("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I've worked on.")}
+									<br/><br/>
+									{this.splitText("Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")}
+								</p>
+							</div>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<h2 className="white mb">{this.splitText("I specialize in creating prototypes, visual design & front-end code.")}</h2>
-								<p className="white">{this.splitText("Here are some of the recent projects I've worked on. Some of the clients that I have worked for are Warner Bros. Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")}</p>
+								<img src="../assets/img/american-made/banner.gif"/>
+								<h3>American Made Film Site</h3>
+							</div>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<img src="../assets/img/card-components/banner-alt.jpg"/>
+								<h3 className="white">Card Components</h3>
 							</div>
 						</div>
 					</section>

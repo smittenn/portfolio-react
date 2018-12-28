@@ -1,3 +1,14 @@
+@keyframes ghostText {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,100px,0) skewX(6deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 .react-parallax {
 	&-content {
 		background: rgba($brand-black, .5);
@@ -6,12 +17,19 @@
 		align-items: center;
 		text-align: left;
 
-		a {
-			position: absolute;
-			bottom: 18px;
-			left: 72px;
-			transform: translateX(-50%);
+		h1 span {
+			// animation: ghostText $duration-slow $easing1;
+			// animation-fill-mode: forwards;
+			// opacity: 0;
+			// transform: translate3d(0,100px,0) skewX(6deg);
+
+			// @for $i from 1 through 60 {
+			// 	&:nth-child(#{$i}) {
+			// 		animation-delay: (#{0.6 + ($i * 0.09)}s);
+			// 	}
+			// }
 		}
+
 		i {
 			color: white;
 			font-size: 48px;

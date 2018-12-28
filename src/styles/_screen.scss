@@ -1,10 +1,7 @@
  @media screen and (max-width: $bp-medium) {
 	.grid {
 		padding: 0 24px;
-
-		&--lines {
-			padding-right: 48px;
-		}
+		padding-right: 48px;
 
 		&__item {
 			&--hide-bp-medium {
@@ -78,6 +75,10 @@
 	h1 {
 		font-size: 12vw;
 		margin-left: -2px;
+
+		&.mb {
+			margin-bottom: 24px;
+		}
 	}
 	blockquote {
 		margin: 30px 0;

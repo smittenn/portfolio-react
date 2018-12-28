@@ -66,6 +66,10 @@ class Nav extends Component {
 		})
 	}
 
+	pad = (n, width, z) => (
+		n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
+	)
+
 
 	createCampusesContent = () => (
 		<div className="portfolio-nav__panel portfolio-nav__panel--blue">
@@ -140,63 +144,3 @@ export default connect(mapStateToProps)(Nav)
 
 
 
-// import React, {Component} from 'react';
-// import Router from './Router';
-// import {NavLink} from 'react-router-dom';
-
-// import classNames from "classnames";
-
-
-// export default class Nav extends Component {
-
-// 	static propTypes = {
-// 	}
-
-
-// 	constructor(props) {
-// 		super(props);
-
-// 		this.state = {
-// 			navOpen: false
-// 		}
-// 	}
-
-// 	toggleNavOpen = () => {
-// 		this.setState({
-// 			navOpen: !this.state.navOpen
-// 		})
-// 	}
-
-// 	render() {
-
-// 		const classnames = classNames({
-//       "fh5co-nav": true,
-//       "fh5co-nav--open": this.state.navOpen,
-//     });
-
-// 		return (
-// 			<div className={classnames}>
-// 					<nav className="fh5co-nav-toggle" onClick={this.toggleNavOpen}>
-// 							<span className="nav-section">
-// 								<h5>H</h5>
-// 							</span>
-// 							<div className="lines"></div>
-// 							<div className="nav-numbers-list">
-// 								<a href="#project-0" className="nav-number">1</a>
-// 							</div>
-// 					</nav>
-
-// 					<nav id="fh5co-offcanvas">
-// 						<ul className="menu-list">
-// 							<li><NavLink to="/home">Home</NavLink></li>
-// 							<li><NavLink to="/american-made">American Made</NavLink></li>
-// 							<li><NavLink to="/vai">V.ai</NavLink></li>
-// 							<li><NavLink to="/transactions">Accessibility</NavLink></li>
-// 						</ul>
-// 					</nav>
-
-// 					<Router/>
-// 			</div>
-// 		);
-// 	}
-// }

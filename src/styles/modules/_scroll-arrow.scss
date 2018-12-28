@@ -1,0 +1,49 @@
+$arrow-size: 40px;
+
+.scroll-arrow {
+	cursor: pointer;
+	position: absolute;
+	bottom: 18px;
+	left: ($arrow-size / 2);
+	// width: 60px;
+	transform: translateX(-50%);
+
+
+	> div {
+		width: $arrow-size;
+		height: $arrow-size;
+		transform-origin: bottom;
+		border: 1px solid white;
+		border-left: none;
+		border-top: none;
+		animation: arrow-wave $duration-slower infinite;
+		animation-direction: alternate;
+
+		&:first-child {
+			transform: translateY(48px) rotate(45deg);
+		}
+
+		&:nth-child(2) {
+			transform: translateY(24px) rotate(45deg);
+		}
+
+		&:last-child {
+			transform: translateY(0) rotate(45deg);
+		}
+
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) {
+				animation-delay: $delay-medium * $i;
+			}
+		}
+	}
+
+	@keyframes arrow-wave {
+		0% {
+			opacity: 0;
+		}
+		50%, 100% {
+			opacity: 1;
+		}
+	}
+}
