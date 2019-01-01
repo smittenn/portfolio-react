@@ -35512,7 +35512,7 @@ var GridLines = function (_Component) {
 exports.default = GridLines;
 
 },{"react":106}],127:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -35520,35 +35520,37 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactParallax = require('react-parallax');
+var _reactParallax = require("react-parallax");
 
-var _reactRedux = require('react-redux');
+var _reactRedux = require("react-redux");
 
-var _classnames = require('classnames');
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _reactScroll = require('react-scroll');
+var _reactScroll = require("react-scroll");
 
-var _counter = require('../actions/counter');
+var _counter = require("../actions/counter");
 
-var _abbreviation = require('../actions/abbreviation');
+var _abbreviation = require("../actions/abbreviation");
 
-var _color = require('../actions/color');
+var _color = require("../actions/color");
 
-var _Nav = require('./Nav');
+var _Nav = require("./Nav");
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _ScrollArrow = require('./ScrollArrow');
+var _ScrollArrow = require("./ScrollArrow");
 
 var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
 
-var _GridLines = require('./GridLines');
+var _GridLines = require("./GridLines");
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
 
@@ -35560,7 +35562,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import detectMobile from '../services/detectMobile'
+// import detectMobile from "../services/detectMobile"
 
 
 var Home = function (_Component) {
@@ -35581,43 +35583,43 @@ var Home = function (_Component) {
 		};
 
 		_this.splitText = function (text) {
-			return text.split(' ').map(function (item, index) {
+			return text.split(" ").map(function (item, index) {
 				return _react2.default.createElement(
-					'span',
+					"span",
 					{ key: index },
 					item,
-					index != text.split(' ').length ? '\xA0' : null
+					index != text.split(" ").length ? "\xA0" : null
 				);
 			});
 		};
 
 		_this.wheel = function (e) {
-			if (_this.state.activeSection == 'hello' && e.deltaY > 0) {
-				_reactScroll.scroller.scrollTo('about', {
+			if (_this.state.activeSection == "hello" && e.deltaY > 0) {
+				_reactScroll.scroller.scrollTo("about", {
 					duration: 300,
 					delay: 0,
 					smooth: true,
 					offset: 0
 				});
 			}
-			if (_this.state.activeSection == 'about' && e.deltaY < 0) {
-				_reactScroll.scroller.scrollTo('hello', {
+			if (_this.state.activeSection == "about" && e.deltaY < 0) {
+				_reactScroll.scroller.scrollTo("hello", {
 					duration: 300,
 					delay: 0,
 					smooth: true,
 					offset: 0
 				});
 			}
-			if (_this.state.activeSection == 'about' && e.deltaY > 0) {
-				_reactScroll.scroller.scrollTo('projects', {
+			if (_this.state.activeSection == "about" && e.deltaY > 0) {
+				_reactScroll.scroller.scrollTo("projects", {
 					duration: 300,
 					delay: 0,
 					smooth: true,
 					offset: 0
 				});
 			}
-			if (_this.state.activeSection == 'projects' && e.deltaY < 0) {
-				_reactScroll.scroller.scrollTo('about', {
+			if (_this.state.activeSection == "projects" && e.deltaY < 0) {
+				_reactScroll.scroller.scrollTo("about", {
 					duration: 300,
 					delay: 0,
 					smooth: true,
@@ -35633,17 +35635,17 @@ var Home = function (_Component) {
 		};
 
 		_this.state = {
-			activeSection: 'hello',
-			pageSections: ['hello', 'about', 'projects']
+			activeSection: "hello",
+			pageSections: ["hello", "about", "projects"]
 		};
 		return _this;
 	}
 
 	_createClass(Home, [{
-		key: 'componentDidMount',
+		key: "componentDidMount",
 		value: function componentDidMount() {
 			window.scrollTo(0, 0);
-			// window.location = window.location.href.split('#')[0];
+			// window.location = window.location.href.split("#")[0];
 
 			this.props.home();
 			this.props.reset();
@@ -35663,7 +35665,7 @@ var Home = function (_Component) {
   }*/
 
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
 			var _this2 = this;
 
@@ -35678,11 +35680,11 @@ var Home = function (_Component) {
 			var image1 = "../assets/img/banner.jpg";
 
 			return _react2.default.createElement(
-				'div',
+				"div",
 				null,
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'hello', className: (0, _classnames2.default)({ 'active-section': activeSection == 'hello' }) },
+					{ name: "hello", className: (0, _classnames2.default)({ "active-section": activeSection == "hello" }) },
 					_react2.default.createElement(
 						_reactParallax.Parallax,
 						{
@@ -35692,36 +35694,36 @@ var Home = function (_Component) {
 							renderLayer: null
 						},
 						_react2.default.createElement(
-							'div',
-							{ className: 'grid' },
+							"div",
+							{ className: "grid" },
 							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
+								"div",
+								{ className: "grid__item grid__item--col-9 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									'h1',
-									{ className: 'white' },
+									"h1",
+									null,
 									this.splitText("Eric C. Smith is a Creative Developer in New York City")
 								)
 							)
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ style: { display: 'none' }, to: 'hello', spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-									_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection('hello');
+							{ style: { display: "none" }, to: "hello", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
+									_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection("hello");
 								} },
 							_react2.default.createElement(_ScrollArrow2.default, null)
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ to: 'about', spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-									_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection('about');
+							{ style: { display: "none" }, to: "about", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
+									_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
 								} },
 							_react2.default.createElement(_ScrollArrow2.default, null)
 						),
 						_react2.default.createElement(
 							_reactScroll.Link,
-							{ style: { display: 'none' }, to: 'projects', spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-									_this2.props.setCounter(3);_this2.props.setNavWhite();_this2.setActiveSection('projects');
+							{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
+									_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
 								} },
 							_react2.default.createElement(_ScrollArrow2.default, null)
 						)
@@ -35729,48 +35731,48 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'about', className: (0, _classnames2.default)({ 'active-section': activeSection == 'about' }) },
+					{ name: "about", className: (0, _classnames2.default)({ "active-section": activeSection == "about" }) },
 					_react2.default.createElement(
-						'section',
+						"section",
 						null,
 						_react2.default.createElement(
-							'div',
-							{ className: 'grid' },
+							"div",
+							{ className: "grid" },
 							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--col-4 grid__item--col-12-medium' },
+								"div",
+								{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									'h1',
-									{ className: 'mb' },
+									"h1",
+									{ className: "mb" },
 									this.splitText("Form & Function")
 								),
 								_react2.default.createElement(
-									'p',
-									null,
-									this.splitText("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I’ve worked on."),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									this.splitText("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.")
+									"p",
+									{ className: "mb" },
+									this.splitText("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
+									_react2.default.createElement("br", null),
+									_react2.default.createElement("br", null),
+									this.splitText("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
 								)
 							),
-							_react2.default.createElement('div', { className: 'grid__item grid__item--col-1 grid__item--hide-bp-medium' }),
+							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium' },
+								"div",
+								{ className: "grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									'div',
-									{ style: { transform: 'translateY(-40%)' }, className: 'grid__item grid__item--col-4' },
-									_react2.default.createElement('img', { src: '../assets/img/me-4x3.jpg' })
+									"div",
+									{ style: { transform: "translateY(-40%)" }, className: "grid__item grid__item--col-4" },
+									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
 								),
 								_react2.default.createElement(
-									'div',
-									{ style: { transform: 'translateY(40%)' }, className: 'grid__item grid__item--col-4' },
-									_react2.default.createElement('img', { src: '../assets/img/lands-end-4x3.jpg' })
+									"div",
+									{ style: { transform: "translateY(40%)" }, className: "grid__item grid__item--col-4" },
+									_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
 								),
 								_react2.default.createElement(
-									'div',
-									{ style: { transform: 'translateY(-20%)' }, className: 'grid__item grid__item--col-4' },
-									_react2.default.createElement('img', { src: '../assets/img/mist-3x4.jpg' })
+									"div",
+									{ style: { transform: "translateY(-20%)" }, className: "grid__item grid__item--col-4" },
+									_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
 								)
 							)
 						)
@@ -35778,49 +35780,49 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: 'projects', className: (0, _classnames2.default)({ 'active-section': activeSection == 'projects' }) },
+					{ name: "projects", className: (0, _classnames2.default)({ "active-section": activeSection == "projects" }) },
 					_react2.default.createElement(
-						'section',
-						{ className: 'black' },
+						"section",
+						null,
 						_react2.default.createElement(
-							'div',
-							{ className: 'grid' },
-							_react2.default.createElement('div', { className: 'grid__item grid__item--col-8' }),
+							"div",
+							{ className: "grid" },
+							_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--hide-bp-medium" }),
 							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--col-4 grid__item--col-12-medium' },
+								"div",
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									'h2',
-									{ className: 'white mb' },
-									this.splitText("Motion, Visual Design & the Front-end.")
+									"h2",
+									{ className: "mb" },
+									this.splitText("Motion, Visual Design & The Front-end.")
 								),
 								_react2.default.createElement(
-									'p',
-									{ className: 'white' },
-									this.splitText("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I've worked on."),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
+									"p",
+									{ className: "mb" },
+									this.splitText("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
+									_react2.default.createElement("br", null),
+									_react2.default.createElement("br", null),
 									this.splitText("Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")
 								)
 							),
 							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
-								_react2.default.createElement('img', { src: '../assets/img/american-made/banner.gif' }),
+								"div",
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" }),
 								_react2.default.createElement(
-									'h3',
+									"h3",
 									null,
-									'American Made Film Site'
+									"American Made Film Site"
 								)
 							),
 							_react2.default.createElement(
-								'div',
-								{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
-								_react2.default.createElement('img', { src: '../assets/img/card-components/banner-alt.jpg' }),
+								"div",
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								_react2.default.createElement("img", { src: "../assets/img/card-components/banner-alt.jpg" }),
 								_react2.default.createElement(
-									'h3',
-									{ className: 'white' },
-									'Card Components'
+									"h3",
+									{ className: "white" },
+									"Card Components"
 								)
 							)
 						)
@@ -35863,7 +35865,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],128:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-router-dom":72,"react-scroll":91}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35923,10 +35925,9 @@ var Nav = function (_Component) {
 			});
 		};
 
-		_this.openSecondaryPanel = function (type) {
+		_this.openSecondaryPanel = function () {
 			_this.setState({
-				secondaryPanelOpen: true,
-				secondaryPanelType: type
+				secondaryPanelOpen: true
 			});
 		};
 
@@ -35940,161 +35941,9 @@ var Nav = function (_Component) {
 			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 		};
 
-		_this.createCampusesContent = function () {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'portfolio-nav__panel portfolio-nav__panel--blue' },
-				_react2.default.createElement(
-					'ul',
-					null,
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.closeSecondaryPanel },
-						_react2.default.createElement('i', { className: 'iconcss icon-arrow-long-left' }),
-						_react2.default.createElement(
-							'h4',
-							null,
-							'Back'
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/american-made' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'American Made'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'V.ai Player'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Translator'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'J&J MDC'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'J&J Home'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Micro App Interactions'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Micro App Templates'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Perforce'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Cisco MATE'
-							)
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						{ onClick: _this.toggleMenuOpen },
-						_react2.default.createElement(
-							_reactRouterDom.NavLink,
-							{ to: '/vai' },
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Givjoy'
-							)
-						)
-					)
-				)
-			);
-		};
-
 		_this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			secondaryPanelType: 'links',
 			isMobile: window.innerWidth <= 800
 		};
 		return _this;
@@ -36125,8 +35974,8 @@ var Nav = function (_Component) {
 			var _state = this.state,
 			    menuOpen = _state.menuOpen,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
-			    secondaryPanelType = _state.secondaryPanelType,
 			    countIsIncreasing = _state.countIsIncreasing;
+			var abbreviation = this.props.abbreviation;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -36149,7 +35998,7 @@ var Nav = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							{ className: 'portfolio-nav__toggle-abbreviation' },
-							this.props.abbreviation
+							abbreviation
 						),
 						_react2.default.createElement(
 							'div',
@@ -36179,14 +36028,14 @@ var Nav = function (_Component) {
 									_react2.default.createElement(
 										'li',
 										{ onClick: function onClick() {
-												_this2.toggleMenuOpen();
+												return _this2.toggleMenuOpen();
 											} },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/' },
 											_react2.default.createElement(
 												'h2',
-												null,
+												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
 												'Home'
 											)
 										)
@@ -36194,11 +36043,11 @@ var Nav = function (_Component) {
 									_react2.default.createElement(
 										'li',
 										{ onClick: function onClick() {
-												return _this2.openSecondaryPanel('links');
+												return _this2.openSecondaryPanel();
 											} },
 										_react2.default.createElement(
 											'h2',
-											{ className: (0, _classnames2.default)({ 'active': secondaryPanelType == 'links' && secondaryPanelOpen }) },
+											null,
 											'Projects'
 										)
 									),
@@ -36243,7 +36092,154 @@ var Nav = function (_Component) {
 									)
 								)
 							),
-							this.createCampusesContent()
+							_react2.default.createElement(
+								'div',
+								{ className: 'portfolio-nav__panel portfolio-nav__panel--secondary' },
+								_react2.default.createElement(
+									'ul',
+									null,
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.closeSecondaryPanel },
+										_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' }),
+										_react2.default.createElement(
+											'h5',
+											{ className: 'uppercase' },
+											'Back'
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/american-made' },
+											_react2.default.createElement(
+												'h3',
+												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'P1' }) },
+												'American Made'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'V.ai Player'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Translator'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'J&J MDC'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'J&J Home'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Micro App Interactions'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Micro App Templates'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Perforce'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Cisco MATE'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/vai' },
+											_react2.default.createElement(
+												'h3',
+												null,
+												'Givjoy'
+											)
+										)
+									)
+								)
+							)
 						)
 					)
 				)

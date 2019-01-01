@@ -1,0 +1,126 @@
+@keyframes ghostText {
+	0% {
+		opacity: 0;
+		transform: translate3d(0,100px,0) skewX(6deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.react-parallax {
+	h1 span {
+		opacity: 0;
+		transform: translate3d(0,100px,0) skewX(6deg);
+		animation: ghostText $duration-slow $easing1;
+		animation-fill-mode: forwards;
+
+
+		@for $i from 1 through 60 {
+			&:nth-child(#{$i}) {
+				animation-delay: (#{0.6 + ($i * 0.09)}s);
+			}
+		}
+	}
+}
+
+
+section {
+	img {
+		opacity: 0;
+		transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
+		transform: translate3d(0,40px,0);
+	}
+
+	.grid__item--row .grid__item {
+		@for $i from 1 through 60 {
+			&:nth-child(#{$i}) img {
+				transition-delay: (#{0.6 + ($i * 0.3)}s);
+			}
+		}
+	}
+
+	h1, h2, p, {
+		span {
+			transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
+			opacity: 0;
+		}
+	}
+
+	h1 span {
+		transform: translate3d(0,100px,0) skewX(6deg);
+
+		@for $i from 1 through 60 {
+			&:nth-child(#{$i}) {
+				transition-delay: (#{0.6 + ($i * 0.09)}s);
+			}
+		}
+	}
+
+	h2 span {
+		transform: translate3d(0,60px,0) skewX(6deg);
+
+		@for $i from 1 through 60 {
+			&:nth-child(#{$i}) {
+				transition-delay: (#{0.6 + ($i * 0.06)}s);
+			}
+		}
+	}
+
+	p span {
+		transform: translate3d(0,24px,0) skewX(6deg);
+		transition-delay: 0s;
+	}
+}
+
+.active-section {
+	section {
+		h1, h2, {
+			span {
+				opacity: 1;
+				transform: translate3d(0,0,0) skewX(0deg);
+			}
+		}
+
+		img {
+			opacity: 1;
+			transform: translate3d(0,0,0) skewX(0deg);
+		}
+
+		p span {
+			opacity: 1;
+			transform: translate3d(0,0,0) skewX(0deg);
+
+			@for $i from 1 through 120 {
+				&:nth-child(#{$i}) {
+					transition-delay: (#{1.2 + ($i * 0.09)}s);
+				}
+			}
+		}
+	}
+}
+
+
+
+// .react-parallax {
+// 	opacity: 0;
+//   	filter: blur(3px);
+// 	clip-path: inset(60px 60px 60px 60px);
+
+
+// 	@keyframes spreadOut {
+// 		0% {
+// 			opacity: 0;
+// 			clip-path: inset(60px 60px 60px 60px);
+// 			filter: blur(3px);
+// 		}
+// 		100% {
+// 			opacity: 1;
+// 			clip-path: inset(0px 0px 0px 0px);
+// 			filter: blur(0px);
+// 		}
+// 	}
+
+// }
+

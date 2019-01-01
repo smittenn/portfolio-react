@@ -11,7 +11,6 @@ class Nav extends Component {
 		this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			secondaryPanelType: 'links',
 			isMobile: window.innerWidth <= 800,
 		}
 	}
@@ -53,10 +52,9 @@ class Nav extends Component {
 		})
 	}
 	
-	openSecondaryPanel = (type) => {
+	openSecondaryPanel = () => {
 		this.setState({
 			secondaryPanelOpen: true,
-			secondaryPanelType: type
 		})
 	}
 
@@ -70,28 +68,9 @@ class Nav extends Component {
 		n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
 	)
 
-
-	createCampusesContent = () => (
-		<div className="portfolio-nav__panel portfolio-nav__panel--blue">
-			<ul>
-				<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-long-left"></i><h4>Back</h4></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3>American Made</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>V.ai Player</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Translator</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J MDC</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J Home</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Micro App Interactions</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Micro App Templates</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Perforce</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Cisco MATE</h3></NavLink></li>
-				<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Givjoy</h3></NavLink></li>
-			</ul>
-		</div>
-	)
-
-
 	render() {
-		const { menuOpen, secondaryPanelOpen, secondaryPanelType, countIsIncreasing } = this.state;
+		const { menuOpen, secondaryPanelOpen, countIsIncreasing } = this.state;
+		const { abbreviation } = this.props;
 
 		const classnames = classNames({
 			"portfolio-nav": true,
@@ -104,9 +83,8 @@ class Nav extends Component {
 		return (
 			<div>
 				<nav className={classnames}>
-
 					<div className="portfolio-nav__toggle" onClick={this.toggleMenuOpen} ref="hamburger">
-						<h5 className="portfolio-nav__toggle-abbreviation">{this.props.abbreviation}</h5>
+						<h5 className="portfolio-nav__toggle-abbreviation">{abbreviation}</h5>
 						<div className="portfolio-nav__hamburger">
 							<div className="line"/>
 							<div className="line"/>
@@ -118,14 +96,28 @@ class Nav extends Component {
 						<div ref="panels">
 							<div className="portfolio-nav__panel portfolio-nav__panel--white">
 								<ul>
-									<li onClick={() => {this.toggleMenuOpen()}}><NavLink to="/"><h2>Home</h2></NavLink></li>
-									<li onClick={() => this.openSecondaryPanel('links')}><h2 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Projects</h2></li>
+									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
+									<li onClick={() => this.openSecondaryPanel()}><h2>Projects</h2></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About Me</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Resume</h2></NavLink></li>
 								</ul>
 							</div>
-							{ this.createCampusesContent() }
+							<div className="portfolio-nav__panel portfolio-nav__panel--secondary">
+								<ul>
+									<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-right"></i><h5 className="uppercase">Back</h5></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3 className={classNames({'active': abbreviation == 'P1' })}>American Made</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>V.ai Player</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Translator</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J MDC</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>J&J Home</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Micro App Interactions</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Micro App Templates</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Perforce</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Cisco MATE</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Givjoy</h3></NavLink></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</nav>

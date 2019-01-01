@@ -1,111 +1,73 @@
 body, button, input, select, textarea {
-  font-variant-ligatures: none;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.title {
-    font-weight: 800;
-    letter-spacing: -0.006em;
-}
-
-.subtitle {
-  letter-spacing: -0.012em;
-  font-weight: 400;
+	font-variant-ligatures: none;
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
-  text-decoration: none;
-  outline: none;
-  // color: lighten(#000099, 18%);
-}
-
-// overflow: hidden;
-// animation: hideMenu 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-// /* animation: hideMenu cubic-bezier(0.19, 1, 0.22, 1) 1.8s; */
-// animation-fill-mode: forwards;
-
-@keyframes hideMenu {
-  0% {
-    transform: translateX(0);
-    width: 25%;
-  }
-  50% {
-    transform: translateX(-100%);
-    width: 25%;
-  }
-  100% {
-    transform: translateX(-100%);
-    width: 0px;
-    padding: 0px;
-  }
+	text-decoration: none;
+	outline: none;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  letter-spacing: -0.006em;
-  font-family: $font-primary;
-  color: $brand-black;  
-
-  &.white {
-    color: white;
-  }
+	letter-spacing: -0.006em;
+	font-family: $font-primary;
+	color: $brand-black;  
 }
 
 h1, h2, h3, h4, h5, h6 {
-  // letter-spacing: 0.006em;
-  font-weight: 800;
-}
+	letter-spacing: -0.006em;
+	font-weight: 800;
 
-p {
-  font-size: 16px;
-  line-height: 1.3;
+	&.uppercase {
+		letter-spacing: $letter-spacing-lg;
+		text-transform: uppercase;
+	}
 }
 
 h1 {
-  // font-size: 90px;
-  font-size: 6.5vw;
-  line-height: 1.2;
-  margin-left: -5px;
+	font-size: 6.5vw;
+	line-height: 1.2;
+	margin-left: -5px;
 
-  &.mb {
-    margin-bottom: 40px;
-  }
+	&.mb {
+		margin-bottom: 40px;
+	}
 }
 
 h2 {
-  font-size: 40px;
-  line-height: 1.2;
+	font-size: 40px;
+	line-height: 1.2;
 
-  &.mb {
-    margin-bottom: 24px;
-  }
+	&.mb {
+		margin-bottom: 24px;
+	}
 }
 
 h3 {
-  font-size: 30px;
-  line-height: 1.2;
+	font-size: 30px;
+	line-height: 1.2;
 }
 
 h4 {
-  font-size: 24px;
-  line-height: 36px;
+	font-size: 24px;
+	line-height: 36px;
 }
 
 h5 {
-  font-size: 16px;
-  line-height: 24px;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 h6 {
-  font-size: 12px;
-  line-height: 14px;
+	font-size: 12px;
+	line-height: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  &.eyebrow {
-    text-transform: uppercase;
-  }
-}
+p {
+	font-size: 16px;
+	line-height: 1.3;
 
-.tag {
-  margin-right: 0.75em;
+	&.mb {
+		margin-bottom: 24px;
+	}
 }
