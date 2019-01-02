@@ -1505,7 +1505,8 @@ section p span {
     animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
   @media screen and (max-width: 800px) {
     .scroll-arrow {
-      left: -21px; } }
+      right: -18px;
+      left: auto; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
