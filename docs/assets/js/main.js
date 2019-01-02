@@ -35337,6 +35337,8 @@ var _counter = require('../actions/counter');
 
 var _abbreviation = require('../actions/abbreviation');
 
+var _color = require('../actions/color');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35355,6 +35357,7 @@ var AmericanMade = function (_Component) {
 
 			this.props.americanMade();
 			this.props.reset();
+			this.props.setNavWhite();
 		}
 	}]);
 
@@ -35375,7 +35378,7 @@ var AmericanMade = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var pageTitle = "American Made is an interactive film site created for Universal Pictures.";
+			var pageTitle = "American Made is an interactive film site created for Universal Pictures";
 
 			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
 				return _react2.default.createElement(
@@ -35439,13 +35442,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		americanMade: function americanMade() {
 			return dispatch((0, _abbreviation.americanMade)());
+		},
+		setNavWhite: function setNavWhite() {
+			return dispatch((0, _color.setNavWhite)());
+		},
+		setNavBlack: function setNavBlack() {
+			return dispatch((0, _color.setNavBlack)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":120,"../actions/counter":122,"./GridLines":126,"./Nav":128,"react":106,"react-parallax":43,"react-redux":54}],126:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"react":106,"react-parallax":43,"react-redux":54}],126:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35979,7 +35988,9 @@ var Nav = function (_Component) {
 			    menuOpen = _state.menuOpen,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    countIsIncreasing = _state.countIsIncreasing;
-			var abbreviation = this.props.abbreviation;
+			var _props = this.props,
+			    abbreviation = _props.abbreviation,
+			    count = _props.count;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -36014,7 +36025,7 @@ var Nav = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							{ className: 'portfolio-nav__toggle-num' },
-							this.props.count
+							this.pad(count, 2)
 						)
 					),
 					_react2.default.createElement(
@@ -36023,79 +36034,6 @@ var Nav = function (_Component) {
 						_react2.default.createElement(
 							'div',
 							{ ref: 'panels' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'portfolio-nav__panel portfolio-nav__panel--white' },
-								_react2.default.createElement(
-									'ul',
-									null,
-									_react2.default.createElement(
-										'li',
-										{ onClick: function onClick() {
-												return _this2.toggleMenuOpen();
-											} },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/' },
-											_react2.default.createElement(
-												'h2',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
-												'Home'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: function onClick() {
-												return _this2.openSecondaryPanel();
-											} },
-										_react2.default.createElement(
-											'h2',
-											null,
-											'Projects'
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.toggleMenuOpen },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
-											_react2.default.createElement(
-												'h2',
-												null,
-												'Process'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.toggleMenuOpen },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
-											_react2.default.createElement(
-												'h2',
-												null,
-												'About Me'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.toggleMenuOpen },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
-											_react2.default.createElement(
-												'h2',
-												null,
-												'Resume'
-											)
-										)
-									)
-								)
-							),
 							_react2.default.createElement(
 								'div',
 								{ className: 'portfolio-nav__panel portfolio-nav__panel--secondary' },
@@ -36234,6 +36172,79 @@ var Nav = function (_Component) {
 												'h3',
 												null,
 												'Givjoy'
+											)
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'portfolio-nav__panel portfolio-nav__panel--white' },
+								_react2.default.createElement(
+									'ul',
+									null,
+									_react2.default.createElement(
+										'li',
+										{ onClick: function onClick() {
+												return _this2.toggleMenuOpen();
+											} },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/' },
+											_react2.default.createElement(
+												'h2',
+												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
+												'Home'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: function onClick() {
+												return _this2.openSecondaryPanel();
+											} },
+										_react2.default.createElement(
+											'h2',
+											null,
+											'Projects'
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/about-me' },
+											_react2.default.createElement(
+												'h2',
+												null,
+												'Process'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/about-me' },
+											_react2.default.createElement(
+												'h2',
+												null,
+												'About Me'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'li',
+										{ onClick: this.toggleMenuOpen },
+										_react2.default.createElement(
+											_reactRouterDom.NavLink,
+											{ to: '/about-me' },
+											_react2.default.createElement(
+												'h2',
+												null,
+												'Resume'
 											)
 										)
 									)

@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 import Nav from './Nav'
 import GridLines from './GridLines'
 
-import { increment, decrement, reset, setCounter } from '../actions/counter'
+import { reset, setCounter } from '../actions/counter'
 import { americanMade } from '../actions/abbreviation'
+import { setNavWhite, setNavBlack } from "../actions/color"
 
 class AmericanMade extends Component {
 
@@ -18,6 +19,7 @@ class AmericanMade extends Component {
 
 		this.props.americanMade();
 		this.props.reset();
+		this.props.setNavWhite();
 	}
 
 
@@ -32,7 +34,7 @@ class AmericanMade extends Component {
 
 	render() {
 
-		const pageTitle = "American Made is an interactive film site created for Universal Pictures.";
+		const pageTitle = "American Made is an interactive film site created for Universal Pictures";
 
 		const splitTitle = this.splitText(pageTitle).map((item, index) =>
 			<span key={index}>{item}{(index != this.splitText(pageTitle).length) ? '\u00A0' : null}</span>
@@ -66,6 +68,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	reset: () => dispatch(reset()),
 	americanMade: () => dispatch(americanMade()),
+	setNavWhite: () => dispatch(setNavWhite()),
+	setNavBlack: () => dispatch(setNavBlack()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AmericanMade)

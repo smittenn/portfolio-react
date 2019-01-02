@@ -149,6 +149,9 @@ table {
 .icon-arrow-right:before {
   content: "\EA01"; }
 
+.icon-caret-right:before {
+  content: "\EA02"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -282,6 +285,7 @@ h6 {
   line-height: 14px; }
 
 p {
+  color: #595358;
   font-size: 16px;
   line-height: 1.3; }
   p.mb {
@@ -1187,7 +1191,7 @@ section p span {
       background: #F4F4F4; }
   .portfolio-nav p {
     font-size: 21px;
-    color: #575A5E;
+    color: #595358;
     min-width: 130px; }
   .portfolio-nav__toggle {
     position: fixed;

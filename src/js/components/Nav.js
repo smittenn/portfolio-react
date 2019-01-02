@@ -70,7 +70,7 @@ class Nav extends Component {
 
 	render() {
 		const { menuOpen, secondaryPanelOpen, countIsIncreasing } = this.state;
-		const { abbreviation } = this.props;
+		const { abbreviation, count } = this.props;
 
 		const classnames = classNames({
 			"portfolio-nav": true,
@@ -90,19 +90,10 @@ class Nav extends Component {
 							<div className="line"/>
 							<div className="line"/>
 						</div>
-						<h5 className="portfolio-nav__toggle-num">{this.props.count}</h5>
+						<h5 className="portfolio-nav__toggle-num">{this.pad(count, 2)}</h5>
 					</div>
 					<div className="portfolio-nav__main">
 						<div ref="panels">
-							<div className="portfolio-nav__panel portfolio-nav__panel--white">
-								<ul>
-									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
-									<li onClick={() => this.openSecondaryPanel()}><h2>Projects</h2></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About Me</h2></NavLink></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Resume</h2></NavLink></li>
-								</ul>
-							</div>
 							<div className="portfolio-nav__panel portfolio-nav__panel--secondary">
 								<ul>
 									<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-right"></i>{/*<h5 className="uppercase">Back</h5>*/}</li>
@@ -116,6 +107,15 @@ class Nav extends Component {
 									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Perforce</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Cisco MATE</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Givjoy</h3></NavLink></li>
+								</ul>
+							</div>
+							<div className="portfolio-nav__panel portfolio-nav__panel--white">
+								<ul>
+									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
+									<li onClick={() => this.openSecondaryPanel()}><h2>Projects</h2></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About Me</h2></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Resume</h2></NavLink></li>
 								</ul>
 							</div>
 						</div>
