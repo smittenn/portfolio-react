@@ -3,7 +3,7 @@ $baseclass: portfolio-nav;
 @keyframes increasingNum {
 	0% {
 		opacity: 0;
-		transform: translate3d(0,40px,0);
+		transform: translate3d(0,24px,0);
 	}
 	100% {
 		opacity: 1;
@@ -14,7 +14,7 @@ $baseclass: portfolio-nav;
 @keyframes decreasingNum {
 	0% {
 		opacity: 0;
-		transform: translate3d(0,-40px,0);
+		transform: translate3d(0,-24px,0);
 	}
 	100% {
 		opacity: 1;
@@ -39,13 +39,13 @@ $baseclass: portfolio-nav;
 	}
 	.#{$baseclass}__toggle-num {
 		margin-top: 18px;
-		animation: decreasingNum 0.3s $easing2;
+		animation: decreasingNum 0.3s $easing5;
 		transition-delay: 0.09s;
 		// animation-fill-mode: forwards;
 	}
 	&--countIsIncreasing {
 		.#{$baseclass}__toggle-num {
-			animation: increasingNum 0.3s $easing2;
+			animation: increasingNum 0.3s $easing5;
 			// animation-fill-mode: forwards;
 		}
 	}
@@ -79,8 +79,10 @@ $baseclass: portfolio-nav;
 		align-items: center;
 		z-index: 99999;
 		cursor: pointer;
+	}
 
-		&:hover {
+	&--hovering {
+		.#{$baseclass}__toggle {
 			.#{$baseclass}__hamburger {
 				height: 18px;
 

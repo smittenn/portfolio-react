@@ -11,6 +11,7 @@ class Nav extends Component {
 		this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
+			isToggleHovered: false,
 			isMobile: window.innerWidth <= 800,
 		}
 	}
@@ -49,6 +50,7 @@ class Nav extends Component {
 			menuOpen: !this.state.menuOpen,
 			secondaryPanelOpen: false,
 			notificationsOpen: false,
+			isToggleHovered: false,
 		})
 	}
 	
@@ -64,16 +66,29 @@ class Nav extends Component {
 		})
 	}
 
+	handleMouseEnter = () => {
+		this.setState({
+			isToggleHovered: true,
+		})
+	}
+
+	handleMouseLeave = () => {
+		this.setState({
+			isToggleHovered: false,
+		})
+	}
+
 	pad = (n, width, z) => (
 		n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
 	)
 
 	render() {
-		const { menuOpen, secondaryPanelOpen, countIsIncreasing } = this.state;
+		const { menuOpen, secondaryPanelOpen, countIsIncreasing, isToggleHovered } = this.state;
 		const { abbreviation, count } = this.props;
 
 		const classnames = classNames({
 			"portfolio-nav": true,
+			"portfolio-nav--hovering": isToggleHovered,
 			"portfolio-nav--white": this.props.color == 'WHITE',
 			"portfolio-nav--menuOpen": menuOpen,
 			"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
@@ -83,7 +98,7 @@ class Nav extends Component {
 		return (
 			<div>
 				<nav className={classnames}>
-					<div className="portfolio-nav__toggle" onClick={this.toggleMenuOpen} ref="hamburger">
+					<div className="portfolio-nav__toggle" onClick={this.toggleMenuOpen} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} ref="hamburger">
 						<h5 className="portfolio-nav__toggle-abbreviation">{abbreviation}</h5>
 						<div className="portfolio-nav__hamburger">
 							<div className="line"/>

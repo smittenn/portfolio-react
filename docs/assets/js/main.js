@@ -35878,7 +35878,8 @@ var Nav = function (_Component) {
 			_this.setState({
 				menuOpen: !_this.state.menuOpen,
 				secondaryPanelOpen: false,
-				notificationsOpen: false
+				notificationsOpen: false,
+				isToggleHovered: false
 			});
 		};
 
@@ -35894,6 +35895,18 @@ var Nav = function (_Component) {
 			});
 		};
 
+		_this.handleMouseEnter = function () {
+			_this.setState({
+				isToggleHovered: true
+			});
+		};
+
+		_this.handleMouseLeave = function () {
+			_this.setState({
+				isToggleHovered: false
+			});
+		};
+
 		_this.pad = function (n, width, z) {
 			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 		};
@@ -35901,6 +35914,7 @@ var Nav = function (_Component) {
 		_this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
+			isToggleHovered: false,
 			isMobile: window.innerWidth <= 800
 		};
 		return _this;
@@ -35931,7 +35945,8 @@ var Nav = function (_Component) {
 			var _state = this.state,
 			    menuOpen = _state.menuOpen,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
-			    countIsIncreasing = _state.countIsIncreasing;
+			    countIsIncreasing = _state.countIsIncreasing,
+			    isToggleHovered = _state.isToggleHovered;
 			var _props = this.props,
 			    abbreviation = _props.abbreviation,
 			    count = _props.count;
@@ -35939,6 +35954,7 @@ var Nav = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"portfolio-nav": true,
+				"portfolio-nav--hovering": isToggleHovered,
 				"portfolio-nav--white": this.props.color == 'WHITE',
 				"portfolio-nav--menuOpen": menuOpen,
 				"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
@@ -35953,7 +35969,7 @@ var Nav = function (_Component) {
 					{ className: classnames },
 					_react2.default.createElement(
 						'div',
-						{ className: 'portfolio-nav__toggle', onClick: this.toggleMenuOpen, ref: 'hamburger' },
+						{ className: 'portfolio-nav__toggle', onClick: this.toggleMenuOpen, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave, ref: 'hamburger' },
 						_react2.default.createElement(
 							'h5',
 							{ className: 'portfolio-nav__toggle-abbreviation' },
