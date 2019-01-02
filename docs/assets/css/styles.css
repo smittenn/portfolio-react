@@ -305,13 +305,13 @@ section {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  background: #FDFFFF; }
+  background: #F8FBF7; }
   section img {
     width: 100%; }
   section.black {
     background: #1e1b1c; }
     section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p {
-      color: #FDFFFF; }
+      color: #F8FBF7; }
 
 h1 span, h2 span, p span {
   display: inline-block; }
@@ -1187,7 +1187,7 @@ section p span {
       background: #F4F4F4; }
   .portfolio-nav p {
     font-size: 21px;
-    color: #484d52;
+    color: #575A5E;
     min-width: 130px; }
   .portfolio-nav__toggle {
     position: fixed;
@@ -1237,9 +1237,9 @@ section p span {
       .portfolio-nav__hamburger .line:first-child, .portfolio-nav__hamburger .line:last-child {
         opacity: 0; }
   .portfolio-nav--white .portfolio-nav__hamburger .line {
-    background-color: #FDFFFF; }
+    background-color: #F8FBF7; }
   .portfolio-nav--white .portfolio-nav__toggle-abbreviation, .portfolio-nav--white .portfolio-nav__toggle-num {
-    color: #FDFFFF;
+    color: #F8FBF7;
     font-weight: 700; }
   .portfolio-nav__main {
     position: fixed;
@@ -1286,7 +1286,7 @@ section p span {
       width: auto;
       margin-bottom: 40px; }
   .portfolio-nav__panel--white {
-    background: #FDFFFF; }
+    background: #F8FBF7; }
     .portfolio-nav__panel--white h1:hover, .portfolio-nav__panel--white h2:hover, .portfolio-nav__panel--white h3:hover, .portfolio-nav__panel--white h4:hover, .portfolio-nav__panel--white h5:hover, .portfolio-nav__panel--white h6:hover {
       border-color: #DEDEDC; }
     .portfolio-nav__panel--white h1.active, .portfolio-nav__panel--white h2.active, .portfolio-nav__panel--white h3.active, .portfolio-nav__panel--white h4.active, .portfolio-nav__panel--white h5.active, .portfolio-nav__panel--white h6.active {
@@ -1294,14 +1294,14 @@ section p span {
   .portfolio-nav__panel--secondary {
     background: #232021; }
     .portfolio-nav__panel--secondary h1, .portfolio-nav__panel--secondary h2, .portfolio-nav__panel--secondary h3, .portfolio-nav__panel--secondary h4, .portfolio-nav__panel--secondary h5, .portfolio-nav__panel--secondary h6 {
-      color: #FDFFFF; }
+      color: #F8FBF7; }
       .portfolio-nav__panel--secondary h1:hover, .portfolio-nav__panel--secondary h2:hover, .portfolio-nav__panel--secondary h3:hover, .portfolio-nav__panel--secondary h4:hover, .portfolio-nav__panel--secondary h5:hover, .portfolio-nav__panel--secondary h6:hover {
-        border-color: #FDFFFF; }
+        border-color: #F8FBF7; }
       .portfolio-nav__panel--secondary h1.active, .portfolio-nav__panel--secondary h2.active, .portfolio-nav__panel--secondary h3.active, .portfolio-nav__panel--secondary h4.active, .portfolio-nav__panel--secondary h5.active, .portfolio-nav__panel--secondary h6.active {
-        border-color: #FDFFFF; }
+        border-color: #F8FBF7; }
     .portfolio-nav__panel--secondary .icon-arrow-right {
       font-size: 36px;
-      color: #FDFFFF;
+      color: #F8FBF7;
       -ms-transform: scaleX(-1);
       transform: scaleX(-1);
       margin-right: 12px; }
@@ -1451,9 +1451,9 @@ section p span {
   align-items: center;
   text-align: left; }
   .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
-    color: #FDFFFF; }
+    color: #F8FBF7; }
   .react-parallax-content i {
-    color: #FDFFFF;
+    color: #F8FBF7;
     font-size: 48px; }
   @media screen and (max-width: 800px) {
     .react-parallax-content {
