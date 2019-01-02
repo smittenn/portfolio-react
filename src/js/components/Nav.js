@@ -3,6 +3,8 @@ import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 
+import splitLetter from '../services/splitLetter'
+
 class Nav extends Component {
 
 	constructor(props) {
@@ -41,6 +43,7 @@ class Nav extends Component {
 			this.setState({
 				menuOpen: false,
 				secondaryPanelOpen: false,
+				isToggleHovered: false,
 			});
 		}
 	}
@@ -105,7 +108,7 @@ class Nav extends Component {
 							<div className="line"/>
 							<div className="line"/>
 						</div>
-						<h5 className="portfolio-nav__toggle-num">{this.pad(count, 2)}</h5>
+						<h5 className="portfolio-nav__toggle-num">{splitLetter(this.pad(count, 2).toString())}</h5>
 					</div>
 					<div className="portfolio-nav__main">
 						<div ref="panels">
@@ -129,7 +132,7 @@ class Nav extends Component {
 									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
 									<li onClick={() => this.openSecondaryPanel()}><h2>Projects</h2></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About Me</h2></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About me</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Resume</h2></NavLink></li>
 								</ul>
 							</div>

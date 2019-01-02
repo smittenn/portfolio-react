@@ -35843,6 +35843,10 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactRedux = require('react-redux');
 
+var _splitLetter = require('../services/splitLetter');
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35869,7 +35873,8 @@ var Nav = function (_Component) {
 			if (!_this.refs.panels.contains(event.target) && !_this.refs.hamburger.contains(event.target)) {
 				_this.setState({
 					menuOpen: false,
-					secondaryPanelOpen: false
+					secondaryPanelOpen: false,
+					isToggleHovered: false
 				});
 			}
 		};
@@ -35985,7 +35990,7 @@ var Nav = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							{ className: 'portfolio-nav__toggle-num' },
-							this.pad(count, 2)
+							(0, _splitLetter2.default)(this.pad(count, 2).toString())
 						)
 					),
 					_react2.default.createElement(
@@ -36191,7 +36196,7 @@ var Nav = function (_Component) {
 											_react2.default.createElement(
 												'h2',
 												null,
-												'About Me'
+												'About me'
 											)
 										)
 									),
@@ -36230,7 +36235,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
-},{"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],129:[function(require,module,exports){
+},{"../services/splitLetter":136,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36553,6 +36558,29 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/AboutMe":124,"../components/AmericanMade":125,"../components/Home":127,"../components/Nav":128,"../components/Vai":130,"react":106,"react-router":84}]},{},[123])
+},{"../components/AboutMe":124,"../components/AmericanMade":125,"../components/Home":127,"../components/Nav":128,"../components/Vai":130,"react":106,"react-router":84}],136:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+exports.default = function (text) {
+	return text.split("").map(function (item, index) {
+		return _react2.default.createElement(
+			"span",
+			{ key: index },
+			item
+		);
+	});
+};
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"react":106}]},{},[123])
 
 //# sourceMappingURL=main.js.map

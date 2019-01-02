@@ -14,7 +14,7 @@ $baseclass: portfolio-nav;
 @keyframes decreasingNum {
 	0% {
 		opacity: 0;
-		transform: translate3d(0,-24px,0);
+		transform: translate3d(0,-18px,0);
 	}
 	100% {
 		opacity: 1;
@@ -39,14 +39,26 @@ $baseclass: portfolio-nav;
 	}
 	.#{$baseclass}__toggle-num {
 		margin-top: 18px;
-		animation: decreasingNum 0.3s $easing5;
 		transition-delay: 0.09s;
-		// animation-fill-mode: forwards;
+
+		span {
+			display: inline-block;
+			animation: decreasingNum 0.3s $easing5;
+
+			&:last-child {
+				animation-delay: $delay-medium;
+			}			
+		}
 	}
 	&--countIsIncreasing {
 		.#{$baseclass}__toggle-num {
-			animation: increasingNum 0.3s $easing5;
-			// animation-fill-mode: forwards;
+			span {
+				animation: increasingNum 0.3s $easing5;
+
+				&:last-child {
+					animation-delay: $delay-medium;
+				}	
+			}
 		}
 	}
 
@@ -223,7 +235,7 @@ $baseclass: portfolio-nav;
 			}
 
 			&.active {
-				border-color: $brand-white;
+				border-color: $brand-pink;
 			}
 		}
 
@@ -279,7 +291,7 @@ $baseclass: portfolio-nav;
 
 		.#{$baseclass}__panel--white {
 			transform: none;
-			
+
 			li {
 				transform: none;
 				opacity: 1;
@@ -335,14 +347,11 @@ $baseclass: portfolio-nav;
 				display: none;
 			}
 		}
-		#second-top-bar {
-			display: none;
-		}
 		.tabbed-list__line-container {
 			padding: 0 12px;
 		}
 		.#{$baseclass}__panel {
-			width: calc(100% - 24px);
+			width: calc(100% - 18px);
 
 			hr {
 				display: block;

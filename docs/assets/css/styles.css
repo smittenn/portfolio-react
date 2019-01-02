@@ -228,7 +228,7 @@ table {
     .grid__item--col-12 {
       width: 100%; }
 
-.react-parallax-content * {
+.react-parallax-contents * {
   z-index: 999; }
 
 section * {
@@ -1157,7 +1157,7 @@ section p span {
 @keyframes decreasingNum {
   0% {
     opacity: 0;
-    transform: translate3d(0, -24px, 0); }
+    transform: translate3d(0, -18px, 0); }
   100% {
     opacity: 1;
     transform: none; } }
@@ -1178,10 +1178,16 @@ section p span {
     margin-bottom: 12px; }
   .portfolio-nav .portfolio-nav__toggle-num {
     margin-top: 18px;
-    animation: decreasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1);
     transition-delay: 0.09s; }
-  .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num {
+    .portfolio-nav .portfolio-nav__toggle-num span {
+      display: inline-block;
+      animation: decreasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
+      .portfolio-nav .portfolio-nav__toggle-num span:last-child {
+        animation-delay: 0.09s; }
+  .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num span {
     animation: increasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
+    .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num span:last-child {
+      animation-delay: 0.09s; }
   .portfolio-nav hr {
     margin: 0;
     height: 2px;
@@ -1302,7 +1308,7 @@ section p span {
       .portfolio-nav__panel--secondary h1:hover, .portfolio-nav__panel--secondary h2:hover, .portfolio-nav__panel--secondary h3:hover, .portfolio-nav__panel--secondary h4:hover, .portfolio-nav__panel--secondary h5:hover, .portfolio-nav__panel--secondary h6:hover {
         border-color: #F8FBF7; }
       .portfolio-nav__panel--secondary h1.active, .portfolio-nav__panel--secondary h2.active, .portfolio-nav__panel--secondary h3.active, .portfolio-nav__panel--secondary h4.active, .portfolio-nav__panel--secondary h5.active, .portfolio-nav__panel--secondary h6.active {
-        border-color: #F8FBF7; }
+        border-color: #E04E47; }
     .portfolio-nav__panel--secondary .icon-arrow-right {
       font-size: 36px;
       color: #F8FBF7;
@@ -1425,12 +1431,10 @@ section p span {
       margin-top: 12px; }
     .portfolio-nav hr:last-of-type {
       display: none; }
-    .portfolio-nav #second-top-bar {
-      display: none; }
     .portfolio-nav .tabbed-list__line-container {
       padding: 0 12px; }
     .portfolio-nav .portfolio-nav__panel {
-      width: calc(100% - 24px); }
+      width: calc(100% - 18px); }
       .portfolio-nav .portfolio-nav__panel hr {
         display: block; }
       .portfolio-nav .portfolio-nav__panel ul {
