@@ -70,21 +70,21 @@ class Home extends Component {
 					<Parallax 
 					bgImage={image1} 
 					blur={null} 
-					strength={400}
+					strength={600}
 					renderLayer={percentage => (
-						<div className="react-parallax-contents">
+						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(35, 32, 33, ${percentage})` }}>
 							<div className="grid">
 								<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-									<h1 style={{ opacity: (1 - (1.5 * percentage)) + 0.5}}>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
+									<h1 style={{ opacity: (1 - (percentage)) + 0.5}}>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
 								</div>
 							</div>
-							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
+							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
 								<ScrollArrow/>
 							</Link>
-							<Link style={{display: "none"}} to="about" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
+							<Link style={{display: "none"}} to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
 								<ScrollArrow/>
 							</Link>
-							<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
+							<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
 								<ScrollArrow/>
 							</Link>
 						</div>

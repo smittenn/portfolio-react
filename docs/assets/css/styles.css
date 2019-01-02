@@ -1446,9 +1446,8 @@ section p span {
       padding-top: 0;
       padding-bottom: 0; } }
 
-.react-parallax-contents {
+.react-parallax-contents, .react-parallax-content {
   position: relative;
-  background: rgba(35, 32, 33, 0.5);
   height: 100vh;
   opacity: 1;
   display: -ms-flexbox;
@@ -1456,19 +1455,19 @@ section p span {
   -ms-flex-align: center;
   align-items: center;
   text-align: left; }
-  .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p {
+  .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p, .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
     color: #F8FBF7; }
-  .react-parallax-contents i {
+  .react-parallax-contents i, .react-parallax-content i {
     color: #F8FBF7;
     font-size: 48px; }
-  @media screen and (max-width: 800px) {
-    .react-parallax-contents {
-      height: 80vh; } }
 
 .react-parallax-content {
   position: absolute !important;
-  top: 0;
-  height: 100vh; }
+  top: 0; }
+
+@media screen and (max-width: 800px) {
+  .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
+    height: 80vh; } }
 
 .scroll-arrow {
   cursor: pointer;

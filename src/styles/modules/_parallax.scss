@@ -1,7 +1,8 @@
-.react-parallax {
-	&-contents {
+$baseclass: react-parallax;
+
+.#{$baseclass} {
+	&-contents, &-content {
 		position: relative;
-		background: rgba($brand-black, .5);
 		height: 100vh;
 		opacity: 1;
 		display: flex;
@@ -17,14 +18,15 @@
 			font-size: 48px;
 		}
 
-		@media screen and (max-width: $bp-medium) {
-			height: 80vh;
-		}
 	}
 	&-content {
 		position: absolute !important;
 		top: 0;
-		height: 100vh;
+	}
+	@media screen and (max-width: $bp-medium) {
+		.#{$baseclass}-content, .#{$baseclass}-contents {
+			height: 80vh;
+		}
 	}
 }
 
