@@ -35582,15 +35582,6 @@ var Home = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
-		_this.debounce = function (a, b, c) {
-			var d, e;return function () {
-				function h() {
-					d = null, c || (e = a.apply(f, g));
-				}var f = this,
-				    g = arguments;return clearTimeout(d), d = setTimeout(h, b), c && !d && (e = a.apply(f, g)), e;
-			};
-		};
-
 		_this.splitText = function (text) {
 			return text.split(" ").map(function (item, index) {
 				return _react2.default.createElement(
@@ -35600,41 +35591,6 @@ var Home = function (_Component) {
 					index != text.split(" ").length ? "\xA0" : null
 				);
 			});
-		};
-
-		_this.wheel = function (e) {
-			if (_this.state.activeSection == "hello" && e.deltaY > 0) {
-				_reactScroll.scroller.scrollTo("about", {
-					duration: 300,
-					delay: 0,
-					smooth: true,
-					offset: 0
-				});
-			}
-			if (_this.state.activeSection == "about" && e.deltaY < 0) {
-				_reactScroll.scroller.scrollTo("hello", {
-					duration: 300,
-					delay: 0,
-					smooth: true,
-					offset: 0
-				});
-			}
-			if (_this.state.activeSection == "about" && e.deltaY > 0) {
-				_reactScroll.scroller.scrollTo("projects", {
-					duration: 300,
-					delay: 0,
-					smooth: true,
-					offset: 0
-				});
-			}
-			if (_this.state.activeSection == "projects" && e.deltaY < 0) {
-				_reactScroll.scroller.scrollTo("about", {
-					duration: 300,
-					delay: 0,
-					smooth: true,
-					offset: 0
-				});
-			}
 		};
 
 		_this.setActiveSection = function (name) {
@@ -35660,19 +35616,6 @@ var Home = function (_Component) {
 			this.props.reset();
 			this.props.setNavWhite();
 		}
-
-		/*debounce = (fn, delay) => {
-  	let timer = null;
-  	return () => {
-  		const context = this;
-  		const args = arguments;
-  		clearTimeout(timer);
-  		timer = setTimeout(() => {
-  			fn.apply(context, args);
-  		}, delay);
-  	}
-  }*/
-
 	}, {
 		key: "render",
 		value: function render() {
@@ -35694,49 +35637,50 @@ var Home = function (_Component) {
 				_react2.default.createElement(
 					_reactScroll.Element,
 					{ name: "hello", className: (0, _classnames2.default)({ "active-section": activeSection == "hello" }) },
-					_react2.default.createElement(
-						_reactParallax.Parallax,
-						{
-							bgImage: image1,
-							blur: null,
-							strength: 400,
-							renderLayer: null
-						},
-						_react2.default.createElement(
-							"div",
-							{ className: "grid" },
-							_react2.default.createElement(
+					_react2.default.createElement(_reactParallax.Parallax, {
+						bgImage: image1,
+						blur: null,
+						strength: 400,
+						renderLayer: function renderLayer(percentage) {
+							return _react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-9 grid__item--col-12-medium" },
+								{ className: "react-parallax-contents" },
 								_react2.default.createElement(
-									"h1",
-									null,
-									this.splitText("Eric C. Smith is a Creative Developer in New York City")
+									"div",
+									{ className: "grid" },
+									_react2.default.createElement(
+										"div",
+										{ className: "grid__item grid__item--col-9 grid__item--col-12-medium" },
+										_react2.default.createElement(
+											"h1",
+											{ style: { opacity: 1 - 1.5 * percentage + 0.5 } },
+											_this2.splitText("Eric C. Smith is a Creative Developer in New York City")
+										)
+									)
+								),
+								_react2.default.createElement(
+									_reactScroll.Link,
+									{ style: { display: "none" }, to: "hello", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
+											_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection("hello");
+										} },
+									_react2.default.createElement(_ScrollArrow2.default, null)
+								),
+								_react2.default.createElement(
+									_reactScroll.Link,
+									{ style: { display: "none" }, to: "about", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
+											_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
+										} },
+									_react2.default.createElement(_ScrollArrow2.default, null)
+								),
+								_react2.default.createElement(
+									_reactScroll.Link,
+									{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
+											_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
+										} },
+									_react2.default.createElement(_ScrollArrow2.default, null)
 								)
-							)
-						),
-						_react2.default.createElement(
-							_reactScroll.Link,
-							{ style: { display: "none" }, to: "hello", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
-									_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection("hello");
-								} },
-							_react2.default.createElement(_ScrollArrow2.default, null)
-						),
-						_react2.default.createElement(
-							_reactScroll.Link,
-							{ style: { display: "none" }, to: "about", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
-									_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
-								} },
-							_react2.default.createElement(_ScrollArrow2.default, null)
-						),
-						_react2.default.createElement(
-							_reactScroll.Link,
-							{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: -180, onSetActive: function onSetActive() {
-									_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
-								} },
-							_react2.default.createElement(_ScrollArrow2.default, null)
-						)
-					)
+							);
+						} })
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,

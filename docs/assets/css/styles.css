@@ -1446,22 +1446,29 @@ section p span {
       padding-top: 0;
       padding-bottom: 0; } }
 
-.react-parallax-content {
+.react-parallax-contents {
+  position: relative;
   background: rgba(35, 32, 33, 0.5);
   height: 100vh;
+  opacity: 1;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
   text-align: left; }
-  .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
+  .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p {
     color: #F8FBF7; }
-  .react-parallax-content i {
+  .react-parallax-contents i {
     color: #F8FBF7;
     font-size: 48px; }
   @media screen and (max-width: 800px) {
-    .react-parallax-content {
+    .react-parallax-contents {
       height: 80vh; } }
+
+.react-parallax-content {
+  position: absolute !important;
+  top: 0;
+  height: 100vh; }
 
 .scroll-arrow {
   cursor: pointer;

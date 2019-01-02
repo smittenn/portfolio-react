@@ -40,60 +40,11 @@ class Home extends Component {
 		this.props.setNavWhite();
 	}
 
-	/*debounce = (fn, delay) => {
-		let timer = null;
-		return () => {
-			const context = this;
-			const args = arguments;
-			clearTimeout(timer);
-			timer = setTimeout(() => {
-				fn.apply(context, args);
-			}, delay);
-		}
-	}*/
-
-	debounce = (a,b,c) => {var d,e;return function(){function h(){d=null,c||(e=a.apply(f,g))}var f=this,g=arguments;return clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e}}
-
 	splitText = (text) => (
 		text.split(" ").map((item, index) =>
 			<span key={index}>{item}{ (index != text.split(" ").length) ? "\u00A0" : null}</span>
 		)
 	)
-
-	wheel = (e) => {
-		if (this.state.activeSection == "hello" && e.deltaY > 0) {
-				scroller.scrollTo("about", {
-				duration: 300,
-				delay: 0,
-				smooth: true,
-				offset: 0, 
-			})
-		}
-		if (this.state.activeSection == "about" && e.deltaY < 0) {
-			scroller.scrollTo("hello", {
-				duration: 300,
-				delay: 0,
-				smooth: true,
-				offset: 0, 
-			})
-		}
-		if (this.state.activeSection == "about" && e.deltaY > 0) {
-			scroller.scrollTo("projects", {
-				duration: 300,
-				delay: 0,
-				smooth: true,
-				offset: 0, 
-			})
-		}
-		if (this.state.activeSection == "projects" && e.deltaY < 0) {
-			scroller.scrollTo("about", {
-				duration: 300,
-				delay: 0,
-				smooth: true,
-				offset: 0, 
-			})
-		}
-	}
 		
 	setActiveSection = (name) => {
 		this.setState({
@@ -115,27 +66,31 @@ class Home extends Component {
 		return (
 			<div>
 			{/*<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 100)}}>*/}
-				<Element name="hello" className={classNames({ "active-section" : activeSection == "hello"})}><Parallax 
-				bgImage={image1} 
-				blur={null} 
-				strength={400}
-				renderLayer={null}
-				>
-					<div className="grid">
-						<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-							<h1>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
+				<Element name="hello" className={classNames({ "active-section" : activeSection == "hello"})}>
+					<Parallax 
+					bgImage={image1} 
+					blur={null} 
+					strength={400}
+					renderLayer={percentage => (
+						<div className="react-parallax-contents">
+							<div className="grid">
+								<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
+									<h1 style={{ opacity: (1 - (1.5 * percentage)) + 0.5}}>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
+								</div>
+							</div>
+							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
+								<ScrollArrow/>
+							</Link>
+							<Link style={{display: "none"}} to="about" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
+								<ScrollArrow/>
+							</Link>
+							<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
+								<ScrollArrow/>
+							</Link>
 						</div>
-					</div>
-					<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
-						<ScrollArrow/>
-					</Link>
-					<Link style={{display: "none"}} to="about" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
-						<ScrollArrow/>
-					</Link>
-					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={-180} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
-						<ScrollArrow/>
-					</Link>
-				</Parallax></Element>
+					)}>
+					</Parallax>
+				</Element>
 				<Element name="about" className={classNames({ "active-section" : activeSection == "about"})}>
 					<section>
 						<div className="grid">
