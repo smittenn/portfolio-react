@@ -21,6 +21,7 @@ section {
 	height: auto;
 	display: flex;
 	align-items: center;
+	background: $brand-white;
 
 	img {
 		width: 100%;
@@ -30,7 +31,7 @@ section {
 		background: darken($brand-black, 2%);
 
 		h1, h2, h3, h4, h5, h6, p {
-			color: white;
+			color: $brand-white;
 		}
 	}
 }

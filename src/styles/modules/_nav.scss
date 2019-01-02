@@ -31,6 +31,7 @@ $baseclass: portfolio-nav;
 
 	.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
 		transition: all $easing2 0.3s;
+		letter-spacing: $letter-spacing-lg;
 	}
 
 	.#{$baseclass}__toggle-abbreviation {
@@ -131,11 +132,11 @@ $baseclass: portfolio-nav;
 	&--white {
 		.#{$baseclass}__hamburger {
 			.line {
-				background-color: white;
+				background-color: $brand-white;
 			}
 		}
 		.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
-			color: white;
+			color: $brand-white;
 			font-weight: 700;
 		}
 	}
@@ -187,7 +188,7 @@ $baseclass: portfolio-nav;
 			display: inline-flex;
 			align-items: center;
 			opacity: 0;
-			transform: translate3d(60px, 0,0);
+			transform: translate3d(50%, 0,0);
 			cursor: pointer;
 			transition: none;
 			width: auto;
@@ -196,7 +197,7 @@ $baseclass: portfolio-nav;
 	}
 
 	&__panel--white {
-		background: white;
+		background: $brand-white;
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
@@ -213,16 +214,20 @@ $baseclass: portfolio-nav;
 		background: $brand-black;
 
 		h1, h2, h3, h4, h5, h6 {
-			color: white;
+			color: $brand-white;
 
 			&:hover {
-				border-color: white;
+				border-color: $brand-white;
+			}
+
+			&.active {
+				border-color: $brand-white;
 			}
 		}
 
 		.icon-arrow-right {
 			font-size: 36px;
-			color: white;
+			color: $brand-white;
 			transform: scaleX(-1);
 			margin-right: 12px;
 		}
@@ -245,7 +250,7 @@ $baseclass: portfolio-nav;
 			}
 		}
 		.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
-				opacity: 0;
+			opacity: 0;
 		}
 		.#{$baseclass}__toggle-abbreviation {
 			transform: translate3d(0,-12px,0);
@@ -254,17 +259,17 @@ $baseclass: portfolio-nav;
 			transform: translate3d(0,12px,0);
 		}
 		.#{$baseclass}__main {
+			pointer-events: normal;
 			background: rgba($brand-black, .5);
 		}
 
 		.#{$baseclass}__panel {
-
 			li {
 				transition: all $easing2 $duration-slow;
 
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: 0.09s * $i;
+						transition-delay: $delay-medium * $i;
 					}
 				}
 			}
@@ -291,7 +296,7 @@ $baseclass: portfolio-nav;
 			transform: translate3d(100%,0,0);
 
 			li {
-				transform: translate3d(40px,0,0);
+				transform: translate3d(50%,0,0);
 				opacity: 0;
 			}
 		}
@@ -367,8 +372,8 @@ $baseclass: portfolio-nav;
 		&.#{$baseclass}--secondaryPanelOpen {
 			.#{$baseclass}__panel--white {
 				li {
-					transform: translate3d(40px,0,0);
-					opacity: 0;
+					// transform: translate3d(40px,0,0);
+					// opacity: 0;
 				}
 			}
 		}

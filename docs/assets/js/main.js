@@ -35808,11 +35808,15 @@ var Home = function (_Component) {
 							_react2.default.createElement(
 								"div",
 								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" }),
 								_react2.default.createElement(
-									"h3",
-									null,
-									"American Made Film Site"
+									_reactRouterDom.NavLink,
+									{ to: "/american-made/" },
+									_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" }),
+									_react2.default.createElement(
+										"h3",
+										null,
+										"American Made Film Site"
+									)
 								)
 							),
 							_react2.default.createElement(
@@ -36101,12 +36105,7 @@ var Nav = function (_Component) {
 									_react2.default.createElement(
 										'li',
 										{ onClick: this.closeSecondaryPanel },
-										_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' }),
-										_react2.default.createElement(
-											'h5',
-											{ className: 'uppercase' },
-											'Back'
-										)
+										_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 									),
 									_react2.default.createElement(
 										'li',

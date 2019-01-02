@@ -11,6 +11,7 @@ $easing1: cubic-bezier(0.215, 0.61, 0.355, 1);
 $easing2: cubic-bezier(.19,1,.22,1);
 $easing3: cubic-bezier(0.86, 0, 0.07, 1);
 $easing4: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easing5: cubic-bezier(0.7, 0, 0.3, 1);
 
 $duration-fast: 0.3s;
 $duration-medium: 0.6s;
@@ -22,14 +23,15 @@ $delay-medium: 0.09s;
 $delay-slow: 0.12s;
 
 $letter-spacing-sm: 0.006em;
-$letter-spacing-lg: 0.012em;
+$letter-spacing-md: 0.012em;
+$letter-spacing-lg: 0.024em;
 
-$brand-white: #F9F9F9;
+$brand-white: #FDFFFF;
 
 $brand-pink: #E04E47;
 
 $brand-grey-lightest: #F4F4F4;
 $brand-grey-light: #DEDEDC;
-$brand-grey-dark: #888B8D;
-$brand-grey-darkest: #63666A;
+$brand-grey-dark: #484d52;
+$brand-grey-darkest: #333031;
 $brand-black: #232021;

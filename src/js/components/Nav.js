@@ -105,7 +105,7 @@ class Nav extends Component {
 							</div>
 							<div className="portfolio-nav__panel portfolio-nav__panel--secondary">
 								<ul>
-									<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-right"></i><h5 className="uppercase">Back</h5></li>
+									<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-right"></i>{/*<h5 className="uppercase">Back</h5>*/}</li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3 className={classNames({'active': abbreviation == 'P1' })}>American Made</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>V.ai Player</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3>Translator</h3></NavLink></li>

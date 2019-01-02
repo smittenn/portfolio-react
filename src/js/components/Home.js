@@ -169,8 +169,10 @@ class Home extends Component {
 								</p>
 							</div>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<img src="../assets/img/american-made/banner.gif"/>
-								<h3>American Made Film Site</h3>
+								<NavLink to="/american-made/">
+									<img src="../assets/img/american-made/banner.gif"/>
+									<h3>American Made Film Site</h3>
+								</NavLink>
 							</div>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 								<img src="../assets/img/card-components/banner-alt.jpg"/>
