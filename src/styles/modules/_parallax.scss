@@ -12,12 +12,6 @@ $baseclass: react-parallax;
 		h1, h2, h3, h4, h5, p {
 			color: $brand-white;
 		}
-
-		i {
-			color: $brand-white;
-			font-size: 48px;
-		}
-
 	}
 	&-content {
 		position: absolute !important;

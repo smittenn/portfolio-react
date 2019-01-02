@@ -35667,7 +35667,7 @@ var Home = function (_Component) {
 								),
 								_react2.default.createElement(
 									_reactScroll.Link,
-									{ style: { display: "none" }, to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+									{ style: null, to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 											_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
 										} },
 									_react2.default.createElement(_ScrollArrow2.default, null)
@@ -36293,9 +36293,12 @@ var ScrollArrow = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: classnames },
-				_react2.default.createElement('div', null),
-				_react2.default.createElement('div', null),
-				_react2.default.createElement('div', null)
+				_react2.default.createElement(
+					'h6',
+					{ className: 'uppercase' },
+					'Scroll'
+				),
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			);
 		}
 	}]);

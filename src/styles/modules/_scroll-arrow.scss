@@ -1,49 +1,47 @@
+@keyframes wiggle {
+	16.65% {
+		transform: translateX(4px);
+	}
+	33.3% {
+		transform: translateX(-3px);
+	}
+	49.95% {
+		transform: translateX(2px);
+	}
+	66.6% {
+		transform: translateX(-1px);
+	}
+	83.25% {
+		transform: translateX(1px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+$baseclass: scroll-arrow;
 $arrow-size: 40px;
 
-.scroll-arrow {
+.#{$baseclass} {
 	cursor: pointer;
 	position: absolute;
-	bottom: 18px;
-	left: ($arrow-size / 2);
-	// width: 60px;
-	transform: translateX(-50%);
+	bottom: 40px;
+	left: -12px;
+	display: flex;
+	align-items: center;
+	transform: rotate(90deg);
 
-
-	> div {
-		width: $arrow-size;
-		height: $arrow-size;
-		transform-origin: bottom;
-		border: 1px solid white;
-		border-left: none;
-		border-top: none;
-		animation: arrow-wave $duration-slower infinite;
-		animation-direction: alternate;
-
-		&:first-child {
-			transform: translateY(48px) rotate(45deg);
-		}
-
-		&:nth-child(2) {
-			transform: translateY(24px) rotate(45deg);
-		}
-
-		&:last-child {
-			transform: translateY(0) rotate(45deg);
-		}
-
-		@for $i from 1 through 3 {
-			&:nth-child(#{$i}) {
-				animation-delay: $delay-medium * $i;
-			}
-		}
+	h6, i {
+		color: $brand-white;
 	}
 
-	@keyframes arrow-wave {
-		0% {
-			opacity: 0;
-		}
-		50%, 100% {
-			opacity: 1;
-		}
+	i {
+		margin-left: 6px;
+		font-size: 24px;
+		animation: wiggle $duration-slower $easing2 infinite;
+	}
+
+	@media screen and (max-width: $bp-medium) {
+		left: -21px;
 	}
 }

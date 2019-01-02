@@ -240,13 +240,14 @@ body, button, input, select, textarea {
   -webkit-font-smoothing: antialiased; }
 
 a {
+  color: #232021;
   text-decoration: none;
   outline: none; }
 
 h1, h2, h3, h4, h5, h6, p {
   letter-spacing: -0.006em;
   font-family: "Averta", sans-serif;
-  color: #232021; }
+  color: inherit; }
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.006em;
@@ -295,6 +296,7 @@ p {
   box-sizing: border-box; }
 
 body {
+  background: #F8FBF7;
   -webkit-overflow-scrolling: touch; }
 
 *::-webkit-scrollbar {
@@ -1461,9 +1463,6 @@ section p span {
   text-align: left; }
   .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p, .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
     color: #F8FBF7; }
-  .react-parallax-contents i, .react-parallax-content i {
-    color: #F8FBF7;
-    font-size: 48px; }
 
 .react-parallax-content {
   position: absolute !important;
@@ -1473,44 +1472,40 @@ section p span {
   .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
     height: 80vh; } }
 
+@keyframes wiggle {
+  16.65% {
+    transform: translateX(4px); }
+  33.3% {
+    transform: translateX(-3px); }
+  49.95% {
+    transform: translateX(2px); }
+  66.6% {
+    transform: translateX(-1px); }
+  83.25% {
+    transform: translateX(1px); }
+  100% {
+    transform: translateX(0); } }
+
 .scroll-arrow {
   cursor: pointer;
   position: absolute;
-  bottom: 18px;
-  left: 20px;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%); }
-  .scroll-arrow > div {
-    width: 40px;
-    height: 40px;
-    -ms-transform-origin: bottom;
-    transform-origin: bottom;
-    border: 1px solid white;
-    border-left: none;
-    border-top: none;
-    animation: arrow-wave 1.2s infinite;
-    animation-direction: alternate; }
-    .scroll-arrow > div:first-child {
-      -ms-transform: translateY(48px) rotate(45deg);
-      transform: translateY(48px) rotate(45deg); }
-    .scroll-arrow > div:nth-child(2) {
-      -ms-transform: translateY(24px) rotate(45deg);
-      transform: translateY(24px) rotate(45deg); }
-    .scroll-arrow > div:last-child {
-      -ms-transform: translateY(0) rotate(45deg);
-      transform: translateY(0) rotate(45deg); }
-    .scroll-arrow > div:nth-child(1) {
-      animation-delay: 0.09s; }
-    .scroll-arrow > div:nth-child(2) {
-      animation-delay: 0.18s; }
-    .scroll-arrow > div:nth-child(3) {
-      animation-delay: 0.27s; }
-
-@keyframes arrow-wave {
-  0% {
-    opacity: 0; }
-  50%, 100% {
-    opacity: 1; } }
+  bottom: 40px;
+  left: -12px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+  .scroll-arrow h6, .scroll-arrow i {
+    color: #F8FBF7; }
+  .scroll-arrow i {
+    margin-left: 6px;
+    font-size: 24px;
+    animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
+  @media screen and (max-width: 800px) {
+    .scroll-arrow {
+      left: -21px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

@@ -4,6 +4,7 @@ body, button, input, select, textarea {
 }
 
 a {
+	color: $brand-black;  
 	text-decoration: none;
 	outline: none;
 }
@@ -11,7 +12,7 @@ a {
 h1, h2, h3, h4, h5, h6, p {
 	letter-spacing: -0.006em;
 	font-family: $font-primary;
-	color: $brand-black;  
+	color: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
