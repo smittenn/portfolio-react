@@ -167,12 +167,12 @@ table {
     top: 0;
     width: 100%;
     left: 0;
-    opacity: 0.6; }
+    opacity: 0.6;
+    pointer-events: none; }
   .grid__line {
-    color: rgba(222, 222, 220, 0.8);
+    color: rgba(222, 222, 220, 0.4);
     border-right: solid 1px;
     height: 100vh;
-    pointer-events: none;
     -ms-transform: scaleY(0);
     transform: scaleY(0);
     animation: drawIn 0.9s 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -1302,7 +1302,7 @@ section p span {
     .portfolio-nav__panel--white h1:hover, .portfolio-nav__panel--white h2:hover, .portfolio-nav__panel--white h3:hover, .portfolio-nav__panel--white h4:hover, .portfolio-nav__panel--white h5:hover, .portfolio-nav__panel--white h6:hover {
       border-color: #DEDEDC; }
     .portfolio-nav__panel--white h1.active, .portfolio-nav__panel--white h2.active, .portfolio-nav__panel--white h3.active, .portfolio-nav__panel--white h4.active, .portfolio-nav__panel--white h5.active, .portfolio-nav__panel--white h6.active {
-      border-color: #E04E47; }
+      border-color: #E54B4B; }
   .portfolio-nav__panel--secondary {
     background: #232021; }
     .portfolio-nav__panel--secondary h1, .portfolio-nav__panel--secondary h2, .portfolio-nav__panel--secondary h3, .portfolio-nav__panel--secondary h4, .portfolio-nav__panel--secondary h5, .portfolio-nav__panel--secondary h6 {
@@ -1310,7 +1310,7 @@ section p span {
       .portfolio-nav__panel--secondary h1:hover, .portfolio-nav__panel--secondary h2:hover, .portfolio-nav__panel--secondary h3:hover, .portfolio-nav__panel--secondary h4:hover, .portfolio-nav__panel--secondary h5:hover, .portfolio-nav__panel--secondary h6:hover {
         border-color: #F8FBF7; }
       .portfolio-nav__panel--secondary h1.active, .portfolio-nav__panel--secondary h2.active, .portfolio-nav__panel--secondary h3.active, .portfolio-nav__panel--secondary h4.active, .portfolio-nav__panel--secondary h5.active, .portfolio-nav__panel--secondary h6.active {
-        border-color: #E04E47; }
+        border-color: #E54B4B; }
     .portfolio-nav__panel--secondary .icon-arrow-right {
       font-size: 36px;
       color: #F8FBF7;
@@ -1422,7 +1422,7 @@ section p span {
     background: rgba(35, 32, 33, 0.4);
     opacity: 1; }
   .portfolio-nav--notificationsOpen .icon-bell {
-    color: #E04E47; }
+    color: #E54B4B; }
   @media screen and (max-width: 800px) {
     .portfolio-nav .portfolio-nav__toggle {
       top: 0;
@@ -1458,11 +1458,16 @@ section p span {
   opacity: 1;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: left; }
   .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p, .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
-    color: #F8FBF7; }
+    color: #F8FBF7;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 .react-parallax-content {
   position: absolute !important;
@@ -1474,39 +1479,37 @@ section p span {
 
 @keyframes wiggle {
   16.65% {
-    transform: translateX(4px); }
+    transform: translateY(4px) rotate(90deg); }
   33.3% {
-    transform: translateX(-3px); }
+    transform: translateY(-3px) rotate(90deg); }
   49.95% {
-    transform: translateX(2px); }
+    transform: translateY(2px) rotate(90deg); }
   66.6% {
-    transform: translateX(-1px); }
+    transform: translateY(-1px) rotate(90deg); }
   83.25% {
-    transform: translateX(1px); }
+    transform: translateY(1px) rotate(90deg); }
   100% {
-    transform: translateX(0); } }
+    transform: translateY(0) rotate(90deg); } }
 
 .scroll-arrow {
   cursor: pointer;
   position: absolute;
   bottom: 40px;
-  left: -12px;
+  left: 60px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center;
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg); }
+  align-items: center; }
   .scroll-arrow h6, .scroll-arrow i {
     color: #F8FBF7; }
   .scroll-arrow i {
-    margin-left: 6px;
-    font-size: 24px;
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    font-size: 40px;
     animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
   @media screen and (max-width: 800px) {
     .scroll-arrow {
-      right: -18px;
-      left: auto; } }
+      left: 18px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

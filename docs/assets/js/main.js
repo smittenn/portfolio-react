@@ -35653,7 +35653,7 @@ var Home = function (_Component) {
 										{ className: "grid__item grid__item--col-9 grid__item--col-12-medium" },
 										_react2.default.createElement(
 											"h1",
-											{ style: { opacity: 1 - percentage + 0.5 } },
+											{ style: { transform: "translate3d(0," + (-(300 * percentage) + 150) + "px,0)" } },
 											_this2.splitText("Eric C. Smith is a Creative Developer in New York City")
 										)
 									)
@@ -35667,7 +35667,7 @@ var Home = function (_Component) {
 								),
 								_react2.default.createElement(
 									_reactScroll.Link,
-									{ style: null, to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+									{ to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 											_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
 										} },
 									_react2.default.createElement(_ScrollArrow2.default, null)
@@ -35883,9 +35883,9 @@ var Nav = function (_Component) {
 			_this.setState({
 				menuOpen: !_this.state.menuOpen,
 				secondaryPanelOpen: false,
-				notificationsOpen: false,
-				isToggleHovered: false
+				notificationsOpen: false
 			});
+			_this.state.isMobile ? _this.setState(isToggleHovered) : null;
 		};
 
 		_this.openSecondaryPanel = function () {
@@ -36293,11 +36293,6 @@ var ScrollArrow = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: classnames },
-				_react2.default.createElement(
-					'h6',
-					{ className: 'uppercase' },
-					'Scroll'
-				),
 				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			);
 		}

@@ -11,13 +11,14 @@
 		width: 100%;
 		left: 0;
 		opacity: 0.6;
+		pointer-events: none;
+		// mix-blend-mode: difference;
 	}
 
 	&__line {
-		color: rgba($brand-grey-light, .8);
+		color: rgba($brand-grey-light, .4);
 		border-right: solid 1px;
 		height: 100vh;
-		pointer-events: none;
 
 		&:first-child {
 			border-left: solid 1px;

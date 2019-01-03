@@ -53,8 +53,8 @@ class Nav extends Component {
 			menuOpen: !this.state.menuOpen,
 			secondaryPanelOpen: false,
 			notificationsOpen: false,
-			isToggleHovered: false,
 		})
+		this.state.isMobile ? (this.setState(isToggleHovered: false)) : null
 	}
 	
 	openSecondaryPanel = () => {

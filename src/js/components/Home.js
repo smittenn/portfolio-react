@@ -75,13 +75,13 @@ class Home extends Component {
 						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(35, 32, 33, ${percentage})` }}>
 							<div className="grid">
 								<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-									<h1 style={{ opacity: (1 - (percentage)) + 0.5}}>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
+									<h1 style={{ transform: `translate3d(0,${-(300 * percentage) + 150}px,0)`}}>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
 								</div>
 							</div>
 							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
 								<ScrollArrow/>
 							</Link>
-							<Link style={null} to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
+							<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
 								<ScrollArrow/>
 							</Link>
 							<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>

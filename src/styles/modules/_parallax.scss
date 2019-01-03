@@ -6,11 +6,14 @@ $baseclass: react-parallax;
 		height: 100vh;
 		opacity: 1;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
 		text-align: left;
 
 		h1, h2, h3, h4, h5, p {
 			color: $brand-white;
+			transition: transform 0.3s $easing4;
 		}
 	}
 	&-content {
