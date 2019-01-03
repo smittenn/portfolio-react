@@ -25,7 +25,7 @@ $arrow-size: 40px;
 .#{$baseclass} {
 	cursor: pointer;
 	position: absolute;
-	bottom: 40px;
+	bottom: 60px;
 	left: 60px;
 	display: flex;
 	align-items: center;
@@ -37,11 +37,12 @@ $arrow-size: 40px;
 	i {
 		transform: rotate(90deg);
 		// margin-left: 6px;
-		font-size: 40px;
+		font-size: 48px;
 		animation: wiggle $duration-slower $easing2 infinite;
 	}
 
 	@media screen and (max-width: $bp-medium) {
     left: 18px;
+    bottom: 24px;
 	}
 }

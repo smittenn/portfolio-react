@@ -152,6 +152,9 @@ table {
 .icon-caret-right:before {
   content: "\EA02"; }
 
+.icon-baloon:before {
+  content: "\EA03"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -1204,7 +1207,7 @@ section p span {
   .portfolio-nav__toggle {
     position: fixed;
     right: 0;
-    top: 6px;
+    top: 12px;
     width: 60px;
     height: 90px;
     display: -ms-flexbox;
@@ -1251,8 +1254,7 @@ section p span {
   .portfolio-nav--white .portfolio-nav__hamburger .line {
     background-color: #F8FBF7; }
   .portfolio-nav--white .portfolio-nav__toggle-abbreviation, .portfolio-nav--white .portfolio-nav__toggle-num {
-    color: #F8FBF7;
-    font-weight: 700; }
+    color: #F8FBF7; }
   .portfolio-nav__main {
     position: fixed;
     width: 100%;
@@ -1273,7 +1275,7 @@ section p span {
     .portfolio-nav__panel h1, .portfolio-nav__panel h2, .portfolio-nav__panel h3, .portfolio-nav__panel h4, .portfolio-nav__panel h5, .portfolio-nav__panel h6 {
       display: inline; }
     .portfolio-nav__panel h2, .portfolio-nav__panel h3 {
-      border-bottom: solid 1px transparent;
+      border-bottom: solid 3px transparent;
       transition: border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
       padding-bottom: 2px; }
     .portfolio-nav__panel hr {
@@ -1302,7 +1304,7 @@ section p span {
     .portfolio-nav__panel--white h1:hover, .portfolio-nav__panel--white h2:hover, .portfolio-nav__panel--white h3:hover, .portfolio-nav__panel--white h4:hover, .portfolio-nav__panel--white h5:hover, .portfolio-nav__panel--white h6:hover {
       border-color: #DEDEDC; }
     .portfolio-nav__panel--white h1.active, .portfolio-nav__panel--white h2.active, .portfolio-nav__panel--white h3.active, .portfolio-nav__panel--white h4.active, .portfolio-nav__panel--white h5.active, .portfolio-nav__panel--white h6.active {
-      border-color: #E54B4B; }
+      border-color: #ff483c; }
   .portfolio-nav__panel--secondary {
     background: #232021; }
     .portfolio-nav__panel--secondary h1, .portfolio-nav__panel--secondary h2, .portfolio-nav__panel--secondary h3, .portfolio-nav__panel--secondary h4, .portfolio-nav__panel--secondary h5, .portfolio-nav__panel--secondary h6 {
@@ -1310,9 +1312,9 @@ section p span {
       .portfolio-nav__panel--secondary h1:hover, .portfolio-nav__panel--secondary h2:hover, .portfolio-nav__panel--secondary h3:hover, .portfolio-nav__panel--secondary h4:hover, .portfolio-nav__panel--secondary h5:hover, .portfolio-nav__panel--secondary h6:hover {
         border-color: #F8FBF7; }
       .portfolio-nav__panel--secondary h1.active, .portfolio-nav__panel--secondary h2.active, .portfolio-nav__panel--secondary h3.active, .portfolio-nav__panel--secondary h4.active, .portfolio-nav__panel--secondary h5.active, .portfolio-nav__panel--secondary h6.active {
-        border-color: #E54B4B; }
+        border-color: #ff483c; }
     .portfolio-nav__panel--secondary .icon-arrow-right {
-      font-size: 36px;
+      font-size: 48px;
       color: #F8FBF7;
       -ms-transform: scaleX(-1);
       transform: scaleX(-1);
@@ -1418,11 +1420,6 @@ section p span {
       -ms-transform: none;
       transform: none;
       opacity: 1; }
-  .portfolio-nav--notificationsOpen .portfolio-nav__notifications {
-    background: rgba(35, 32, 33, 0.4);
-    opacity: 1; }
-  .portfolio-nav--notificationsOpen .icon-bell {
-    color: #E54B4B; }
   @media screen and (max-width: 800px) {
     .portfolio-nav .portfolio-nav__toggle {
       top: 0;
@@ -1467,7 +1464,7 @@ section p span {
   text-align: left; }
   .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p, .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
     color: #F8FBF7;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
 .react-parallax-content {
   position: absolute !important;
@@ -1494,7 +1491,7 @@ section p span {
 .scroll-arrow {
   cursor: pointer;
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 60px;
   display: -ms-flexbox;
   display: flex;
@@ -1505,11 +1502,12 @@ section p span {
   .scroll-arrow i {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    font-size: 40px;
+    font-size: 48px;
     animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
   @media screen and (max-width: 800px) {
     .scroll-arrow {
-      left: 18px; } }
+      left: 18px;
+      bottom: 24px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

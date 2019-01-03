@@ -13,7 +13,7 @@ $baseclass: react-parallax;
 
 		h1, h2, h3, h4, h5, p {
 			color: $brand-white;
-			transition: transform 0.3s $easing4;
+			transition: transform $duration-medium $easing4;
 		}
 	}
 	&-content {

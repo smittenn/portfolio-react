@@ -82,7 +82,7 @@ $baseclass: portfolio-nav;
 	&__toggle {
 		position: fixed;
 		right: 0;
-		top: 6px;
+		top: 12px;
 		width: 60px;
 		height: 90px;
 		display: flex;
@@ -151,7 +151,7 @@ $baseclass: portfolio-nav;
 		}
 		.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
 			color: $brand-white;
-			font-weight: 700;
+			// font-weight: 700;
 		}
 	}
 
@@ -180,7 +180,7 @@ $baseclass: portfolio-nav;
 		}
 
 		h2, h3 {
-			border-bottom: solid 1px transparent;
+			border-bottom: solid 3px transparent;
 			transition: border-color 0.3s $easing1;
 			padding-bottom: 2px;
 		}
@@ -215,11 +215,10 @@ $baseclass: portfolio-nav;
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
-				// border-color: $brand-pink;
 				border-color: $brand-grey-light;
 			}
 			&.active {
-				border-color: $brand-pink;
+				border-color: $brand-red;
 			}
 		}
 	}
@@ -235,12 +234,12 @@ $baseclass: portfolio-nav;
 			}
 
 			&.active {
-				border-color: $brand-pink;
+				border-color: $brand-red;
 			}
 		}
 
 		.icon-arrow-right {
-			font-size: 36px;
+			font-size: 48px;
 			color: $brand-white;
 			transform: scaleX(-1);
 			margin-right: 12px;
@@ -322,15 +321,7 @@ $baseclass: portfolio-nav;
 			}
 		}
 	}
-	&--notificationsOpen {
-		.#{$baseclass}__notifications {
-			background: rgba($brand-black, .40);
-			opacity: 1;
-		}
-		.icon-bell {
-			color: $brand-pink;
-		}
-	}
+
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__toggle {
 			top: 0;

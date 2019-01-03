@@ -35567,6 +35567,10 @@ var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
 
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35586,6 +35590,12 @@ var Home = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
+		_this.detectMobile = function (event) {
+			_this.setState({
+				isMobile: window.innerWidth <= 800
+			});
+		};
+
 		_this.setActiveSection = function (name) {
 			_this.setState({
 				activeSection: name
@@ -35594,6 +35604,7 @@ var Home = function (_Component) {
 
 		_this.state = {
 			activeSection: "hello",
+			isMobile: window.innerWidth <= 800,
 			pageSections: ["hello", "about", "projects"]
 		};
 		return _this;
@@ -35603,11 +35614,21 @@ var Home = function (_Component) {
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			window.scrollTo(0, 0);
-			// window.location = window.location.href.split("#")[0];
+			window.addEventListener('resize', this.detectMobile);
 
 			this.props.home();
 			this.props.reset();
 			this.props.setNavWhite();
+		}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {
+			window.removeEventListener('resize', this.detectMobile);
+		}
+	}, {
+		key: "componentDidUpdate",
+		value: function componentDidUpdate(prevProps) {
+			prevProps.count == this.props.count ? null : this.setState({ countIsIncreasing: prevProps.count < this.props.count });
 		}
 	}, {
 		key: "render",
@@ -35622,7 +35643,9 @@ var Home = function (_Component) {
 			var activeSection = this.state.activeSection;
 
 
-			var image1 = "../assets/img/banner.jpg";
+			var image1 = "../assets/img/liquid.gif";
+
+			var bgColor = (0, _hexToRgb2.default)("#232021");
 
 			return _react2.default.createElement(
 				"div",
@@ -35637,13 +35660,13 @@ var Home = function (_Component) {
 						renderLayer: function renderLayer(percentage) {
 							return _react2.default.createElement(
 								"div",
-								{ className: "react-parallax-contents", style: { backgroundColor: "rgba(35, 32, 33, " + percentage + ")" } },
+								{ className: "react-parallax-contents", style: { backgroundColor: "rgba(" + bgColor.r + ", " + bgColor.b + ", " + bgColor.g + ", " + percentage + ")" } },
 								_react2.default.createElement(
 									"div",
 									{ className: "grid" },
 									_react2.default.createElement(
 										"div",
-										{ className: "grid__item grid__item--col-9 grid__item--col-12-medium" },
+										{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 										_react2.default.createElement(
 											"h1",
 											{ style: { transform: "translate3d(0," + (-(300 * percentage) + 150) + "px,0)" } },
@@ -35815,7 +35838,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../services/splitWord":137,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-router-dom":72,"react-scroll":91}],128:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../services/hexToRgb":136,"../services/splitWord":138,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-router-dom":72,"react-scroll":91}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36230,7 +36253,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
-},{"../services/splitLetter":136,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],129:[function(require,module,exports){
+},{"../services/splitLetter":137,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36288,7 +36311,12 @@ var ScrollArrow = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: classnames },
-				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' }),
+				_react2.default.createElement(
+					'h5',
+					{ className: 'uppercase' },
+					'Scroll'
+				)
 			);
 		}
 	}]);
@@ -36558,6 +36586,22 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+exports.default = function (hex) {
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+		r: parseInt(result[1], 16),
+		g: parseInt(result[2], 16),
+		b: parseInt(result[3], 16)
+	} : null;
+};
+
+},{}],137:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 exports.default = function (text) {
 	return text.split("").map(function (item, index) {
 		return _react2.default.createElement(
@@ -36574,7 +36618,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":106}],137:[function(require,module,exports){
+},{"react":106}],138:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

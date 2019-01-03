@@ -14,6 +14,7 @@ import ScrollArrow from "./ScrollArrow";
 import GridLines from "./GridLines"
 
 import splitWord from "../services/splitWord"
+import hexToRgb from "../services/hexToRgb"
 
 // import detectMobile from "../services/detectMobile"
 
@@ -25,6 +26,7 @@ class Home extends Component {
 
 		this.state = {
 			activeSection: "hello",
+			isMobile: window.innerWidth <= 800,
 			pageSections: [
 			"hello",
 			"about",
@@ -35,11 +37,25 @@ class Home extends Component {
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
-		// window.location = window.location.href.split("#")[0];
+		window.addEventListener('resize', this.detectMobile);
 
 		this.props.home();
 		this.props.reset();
 		this.props.setNavWhite();
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.detectMobile);
+	}
+
+	componentDidUpdate(prevProps) {
+		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
+	}
+
+	detectMobile = (event) => {
+		this.setState({
+			isMobile: window.innerWidth <= 800,
+		})
 	}
 
 		
@@ -58,7 +74,9 @@ class Home extends Component {
 
 		const { activeSection } = this.state;
 
-		const image1 = "../assets/img/banner.jpg";
+		const image1 = "../assets/img/liquid.gif";
+
+		const bgColor = hexToRgb("#232021");
 		
 		return (
 			<div>
@@ -69,9 +87,9 @@ class Home extends Component {
 					blur={null} 
 					strength={600}
 					renderLayer={percentage => (
-						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(35, 32, 33, ${percentage})` }}>
+						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${bgColor.r}, ${bgColor.b}, ${bgColor.g}, ${percentage})` }}>
 							<div className="grid">
-								<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
+								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 									<h1 style={{ transform: `translate3d(0,${-(300 * percentage) + 150}px,0)`}}>{splitWord(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
 								</div>
 							</div>
