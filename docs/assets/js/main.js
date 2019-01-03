@@ -35563,6 +35563,10 @@ var _GridLines = require("./GridLines");
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
 
+var _splitWord = require("../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35581,17 +35585,6 @@ var Home = function (_Component) {
 		_classCallCheck(this, Home);
 
 		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
-
-		_this.splitText = function (text) {
-			return text.split(" ").map(function (item, index) {
-				return _react2.default.createElement(
-					"span",
-					{ key: index },
-					item,
-					index != text.split(" ").length ? "\xA0" : null
-				);
-			});
-		};
 
 		_this.setActiveSection = function (name) {
 			_this.setState({
@@ -35654,7 +35647,7 @@ var Home = function (_Component) {
 										_react2.default.createElement(
 											"h1",
 											{ style: { transform: "translate3d(0," + (-(300 * percentage) + 150) + "px,0)" } },
-											_this2.splitText("Eric C. Smith is a Creative Developer in New York City")
+											(0, _splitWord2.default)("Eric C. Smith is a Creative Developer in New York City")
 										)
 									)
 								),
@@ -35697,15 +35690,15 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									"h1",
 									{ className: "mb" },
-									this.splitText("Form & Function")
+									(0, _splitWord2.default)("Form & Function")
 								),
 								_react2.default.createElement(
 									"p",
 									{ className: "mb" },
-									this.splitText("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
+									(0, _splitWord2.default)("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
 									_react2.default.createElement("br", null),
 									_react2.default.createElement("br", null),
-									this.splitText("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
+									(0, _splitWord2.default)("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
 								)
 							),
 							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
@@ -35747,15 +35740,15 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									"h2",
 									{ className: "mb" },
-									this.splitText("Motion, Visual Design & The Front-end.")
+									(0, _splitWord2.default)("Motion, Visual Design & The Front-end.")
 								),
 								_react2.default.createElement(
 									"p",
 									{ className: "mb" },
-									this.splitText("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
+									(0, _splitWord2.default)("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
 									_react2.default.createElement("br", null),
 									_react2.default.createElement("br", null),
-									this.splitText("Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")
+									(0, _splitWord2.default)("Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")
 								)
 							),
 							_react2.default.createElement(
@@ -35822,7 +35815,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-router-dom":72,"react-scroll":91}],128:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../services/splitWord":137,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-router-dom":72,"react-scroll":91}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35885,7 +35878,9 @@ var Nav = function (_Component) {
 				secondaryPanelOpen: false,
 				notificationsOpen: false
 			});
-			_this.state.isMobile ? _this.setState(isToggleHovered) : null;
+			_this.state.isMobile ? setTimeout(function () {
+				_this.setState({ isToggleHovered: false });
+			}, 600) : null;
 		};
 
 		_this.openSecondaryPanel = function () {
@@ -36569,6 +36564,30 @@ exports.default = function (text) {
 			"span",
 			{ key: index },
 			item
+		);
+	});
+};
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"react":106}],137:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+exports.default = function (text) {
+	return text.split(" ").map(function (item, index) {
+		return _react2.default.createElement(
+			"span",
+			{ key: index },
+			item,
+			index != text.split(" ").length ? "\xA0" : null
 		);
 	});
 };

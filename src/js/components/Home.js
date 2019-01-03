@@ -13,6 +13,8 @@ import Nav from "./Nav";
 import ScrollArrow from "./ScrollArrow";
 import GridLines from "./GridLines"
 
+import splitWord from "../services/splitWord"
+
 // import detectMobile from "../services/detectMobile"
 
 
@@ -40,11 +42,6 @@ class Home extends Component {
 		this.props.setNavWhite();
 	}
 
-	splitText = (text) => (
-		text.split(" ").map((item, index) =>
-			<span key={index}>{item}{ (index != text.split(" ").length) ? "\u00A0" : null}</span>
-		)
-	)
 		
 	setActiveSection = (name) => {
 		this.setState({
@@ -75,7 +72,7 @@ class Home extends Component {
 						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(35, 32, 33, ${percentage})` }}>
 							<div className="grid">
 								<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
-									<h1 style={{ transform: `translate3d(0,${-(300 * percentage) + 150}px,0)`}}>{this.splitText(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
+									<h1 style={{ transform: `translate3d(0,${-(300 * percentage) + 150}px,0)`}}>{splitWord(`Eric C. Smith is a Creative Developer in New York City`)}</h1>
 								</div>
 							</div>
 							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
@@ -95,11 +92,11 @@ class Home extends Component {
 					<section>
 						<div className="grid">
 							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-								<h1 className="mb">{this.splitText("Form & Function")}</h1>
+								<h1 className="mb">{splitWord("Form & Function")}</h1>
 								<p className="mb">
-									{this.splitText(`Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I’ve worked on.`)}
+									{splitWord(`Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I’ve worked on.`)}
 									<br/><br/>
-									{this.splitText(`My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.`)}
+									{splitWord(`My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.`)}
 								</p>
 							</div>
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -116,11 +113,11 @@ class Home extends Component {
 						<div className="grid">
 							<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<h2 className="mb">{this.splitText("Motion, Visual Design & The Front-end.")}</h2>
+								<h2 className="mb">{splitWord("Motion, Visual Design & The Front-end.")}</h2>
 								<p className="mb">
-									{this.splitText(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
+									{splitWord(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 									<br/><br/>
-									{this.splitText(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)}
+									{splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)}
 								</p>
 							</div>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">

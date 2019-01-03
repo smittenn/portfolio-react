@@ -54,7 +54,7 @@ class Nav extends Component {
 			secondaryPanelOpen: false,
 			notificationsOpen: false,
 		})
-		this.state.isMobile ? (this.setState(isToggleHovered: false)) : null
+		this.state.isMobile ? (setTimeout(() => {this.setState({ isToggleHovered: false })}, 600)) : null
 	}
 	
 	openSecondaryPanel = () => {
