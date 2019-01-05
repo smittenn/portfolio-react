@@ -82,7 +82,7 @@ $baseclass: portfolio-nav;
 	&__toggle {
 		position: fixed;
 		right: 0;
-		top: 12px;
+		top: 18px;
 		width: 60px;
 		height: 90px;
 		display: flex;
@@ -177,9 +177,6 @@ $baseclass: portfolio-nav;
 
 		h1, h2, h3, h4, h5, h6 {
 			display: inline;
-		}
-
-		h2, h3 {
 			border-bottom: solid 3px transparent;
 			transition: border-color 0.3s $easing1;
 			padding-bottom: 2px;
@@ -207,6 +204,21 @@ $baseclass: portfolio-nav;
 			transition: none;
 			width: auto;
 			margin-bottom: 40px;
+
+			&:nth-child(1) {
+				h1, h2, h3, h4, h5, h6 {
+					&.active {
+						border-color: $brand-red;
+					}
+				}
+			}
+			&:nth-child(2) {
+				h1, h2, h3, h4, h5, h6 {
+					&.active {
+						border-color: $brand-purple;
+					}
+				}
+			}
 		}
 	}
 
@@ -216,9 +228,6 @@ $baseclass: portfolio-nav;
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
 				border-color: $brand-grey-light;
-			}
-			&.active {
-				border-color: $brand-red;
 			}
 		}
 	}
@@ -231,10 +240,6 @@ $baseclass: portfolio-nav;
 
 			&:hover {
 				border-color: $brand-white;
-			}
-
-			&.active {
-				border-color: $brand-red;
 			}
 		}
 

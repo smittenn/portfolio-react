@@ -334,130 +334,187 @@ h1 span, h2 span, p span {
     transform: none; } }
 
 .react-parallax h1 span {
-  opacity: 0;
-  transform: translate3d(0, 100px, 0) skewX(6deg);
-  animation: ghostText 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation-fill-mode: forwards; }
-  .react-parallax h1 span:nth-child(1) {
-    animation-delay: 0.69s; }
-  .react-parallax h1 span:nth-child(2) {
-    animation-delay: 0.78s; }
-  .react-parallax h1 span:nth-child(3) {
-    animation-delay: 0.87s; }
-  .react-parallax h1 span:nth-child(4) {
-    animation-delay: 0.96s; }
-  .react-parallax h1 span:nth-child(5) {
-    animation-delay: 1.05s; }
-  .react-parallax h1 span:nth-child(6) {
-    animation-delay: 1.14s; }
-  .react-parallax h1 span:nth-child(7) {
-    animation-delay: 1.23s; }
-  .react-parallax h1 span:nth-child(8) {
-    animation-delay: 1.32s; }
-  .react-parallax h1 span:nth-child(9) {
-    animation-delay: 1.41s; }
-  .react-parallax h1 span:nth-child(10) {
-    animation-delay: 1.5s; }
-  .react-parallax h1 span:nth-child(11) {
-    animation-delay: 1.59s; }
-  .react-parallax h1 span:nth-child(12) {
-    animation-delay: 1.68s; }
-  .react-parallax h1 span:nth-child(13) {
-    animation-delay: 1.77s; }
-  .react-parallax h1 span:nth-child(14) {
-    animation-delay: 1.86s; }
-  .react-parallax h1 span:nth-child(15) {
-    animation-delay: 1.95s; }
-  .react-parallax h1 span:nth-child(16) {
-    animation-delay: 2.04s; }
-  .react-parallax h1 span:nth-child(17) {
-    animation-delay: 2.13s; }
-  .react-parallax h1 span:nth-child(18) {
-    animation-delay: 2.22s; }
-  .react-parallax h1 span:nth-child(19) {
-    animation-delay: 2.31s; }
-  .react-parallax h1 span:nth-child(20) {
-    animation-delay: 2.4s; }
-  .react-parallax h1 span:nth-child(21) {
-    animation-delay: 2.49s; }
-  .react-parallax h1 span:nth-child(22) {
-    animation-delay: 2.58s; }
-  .react-parallax h1 span:nth-child(23) {
-    animation-delay: 2.67s; }
-  .react-parallax h1 span:nth-child(24) {
-    animation-delay: 2.76s; }
-  .react-parallax h1 span:nth-child(25) {
-    animation-delay: 2.85s; }
-  .react-parallax h1 span:nth-child(26) {
-    animation-delay: 2.94s; }
-  .react-parallax h1 span:nth-child(27) {
-    animation-delay: 3.03s; }
-  .react-parallax h1 span:nth-child(28) {
-    animation-delay: 3.12s; }
-  .react-parallax h1 span:nth-child(29) {
-    animation-delay: 3.21s; }
-  .react-parallax h1 span:nth-child(30) {
-    animation-delay: 3.3s; }
-  .react-parallax h1 span:nth-child(31) {
-    animation-delay: 3.39s; }
-  .react-parallax h1 span:nth-child(32) {
-    animation-delay: 3.48s; }
-  .react-parallax h1 span:nth-child(33) {
-    animation-delay: 3.57s; }
-  .react-parallax h1 span:nth-child(34) {
-    animation-delay: 3.66s; }
-  .react-parallax h1 span:nth-child(35) {
-    animation-delay: 3.75s; }
-  .react-parallax h1 span:nth-child(36) {
-    animation-delay: 3.84s; }
-  .react-parallax h1 span:nth-child(37) {
-    animation-delay: 3.93s; }
-  .react-parallax h1 span:nth-child(38) {
-    animation-delay: 4.02s; }
-  .react-parallax h1 span:nth-child(39) {
-    animation-delay: 4.11s; }
-  .react-parallax h1 span:nth-child(40) {
-    animation-delay: 4.2s; }
-  .react-parallax h1 span:nth-child(41) {
-    animation-delay: 4.29s; }
-  .react-parallax h1 span:nth-child(42) {
-    animation-delay: 4.38s; }
-  .react-parallax h1 span:nth-child(43) {
-    animation-delay: 4.47s; }
-  .react-parallax h1 span:nth-child(44) {
-    animation-delay: 4.56s; }
-  .react-parallax h1 span:nth-child(45) {
-    animation-delay: 4.65s; }
-  .react-parallax h1 span:nth-child(46) {
-    animation-delay: 4.74s; }
-  .react-parallax h1 span:nth-child(47) {
-    animation-delay: 4.83s; }
-  .react-parallax h1 span:nth-child(48) {
-    animation-delay: 4.92s; }
-  .react-parallax h1 span:nth-child(49) {
-    animation-delay: 5.01s; }
-  .react-parallax h1 span:nth-child(50) {
-    animation-delay: 5.1s; }
-  .react-parallax h1 span:nth-child(51) {
-    animation-delay: 5.19s; }
-  .react-parallax h1 span:nth-child(52) {
-    animation-delay: 5.28s; }
-  .react-parallax h1 span:nth-child(53) {
-    animation-delay: 5.37s; }
-  .react-parallax h1 span:nth-child(54) {
-    animation-delay: 5.46s; }
-  .react-parallax h1 span:nth-child(55) {
-    animation-delay: 5.55s; }
-  .react-parallax h1 span:nth-child(56) {
-    animation-delay: 5.64s; }
-  .react-parallax h1 span:nth-child(57) {
-    animation-delay: 5.73s; }
-  .react-parallax h1 span:nth-child(58) {
-    animation-delay: 5.82s; }
-  .react-parallax h1 span:nth-child(59) {
-    animation-delay: 5.91s; }
-  .react-parallax h1 span:nth-child(60) {
-    animation-delay: 6s; }
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1.8s; }
+  .react-parallax h1 span:nth-last-child(1) {
+    animation-delay: 0.69s;
+    transition-delay: 0.03s; }
+  .react-parallax h1 span:nth-last-child(2) {
+    animation-delay: 0.78s;
+    transition-delay: 0.06s; }
+  .react-parallax h1 span:nth-last-child(3) {
+    animation-delay: 0.87s;
+    transition-delay: 0.09s; }
+  .react-parallax h1 span:nth-last-child(4) {
+    animation-delay: 0.96s;
+    transition-delay: 0.12s; }
+  .react-parallax h1 span:nth-last-child(5) {
+    animation-delay: 1.05s;
+    transition-delay: 0.15s; }
+  .react-parallax h1 span:nth-last-child(6) {
+    animation-delay: 1.14s;
+    transition-delay: 0.18s; }
+  .react-parallax h1 span:nth-last-child(7) {
+    animation-delay: 1.23s;
+    transition-delay: 0.21s; }
+  .react-parallax h1 span:nth-last-child(8) {
+    animation-delay: 1.32s;
+    transition-delay: 0.24s; }
+  .react-parallax h1 span:nth-last-child(9) {
+    animation-delay: 1.41s;
+    transition-delay: 0.27s; }
+  .react-parallax h1 span:nth-last-child(10) {
+    animation-delay: 1.5s;
+    transition-delay: 0.3s; }
+  .react-parallax h1 span:nth-last-child(11) {
+    animation-delay: 1.59s;
+    transition-delay: 0.33s; }
+  .react-parallax h1 span:nth-last-child(12) {
+    animation-delay: 1.68s;
+    transition-delay: 0.36s; }
+  .react-parallax h1 span:nth-last-child(13) {
+    animation-delay: 1.77s;
+    transition-delay: 0.39s; }
+  .react-parallax h1 span:nth-last-child(14) {
+    animation-delay: 1.86s;
+    transition-delay: 0.42s; }
+  .react-parallax h1 span:nth-last-child(15) {
+    animation-delay: 1.95s;
+    transition-delay: 0.45s; }
+  .react-parallax h1 span:nth-last-child(16) {
+    animation-delay: 2.04s;
+    transition-delay: 0.48s; }
+  .react-parallax h1 span:nth-last-child(17) {
+    animation-delay: 2.13s;
+    transition-delay: 0.51s; }
+  .react-parallax h1 span:nth-last-child(18) {
+    animation-delay: 2.22s;
+    transition-delay: 0.54s; }
+  .react-parallax h1 span:nth-last-child(19) {
+    animation-delay: 2.31s;
+    transition-delay: 0.57s; }
+  .react-parallax h1 span:nth-last-child(20) {
+    animation-delay: 2.4s;
+    transition-delay: 0.6s; }
+  .react-parallax h1 span:nth-last-child(21) {
+    animation-delay: 2.49s;
+    transition-delay: 0.63s; }
+  .react-parallax h1 span:nth-last-child(22) {
+    animation-delay: 2.58s;
+    transition-delay: 0.66s; }
+  .react-parallax h1 span:nth-last-child(23) {
+    animation-delay: 2.67s;
+    transition-delay: 0.69s; }
+  .react-parallax h1 span:nth-last-child(24) {
+    animation-delay: 2.76s;
+    transition-delay: 0.72s; }
+  .react-parallax h1 span:nth-last-child(25) {
+    animation-delay: 2.85s;
+    transition-delay: 0.75s; }
+  .react-parallax h1 span:nth-last-child(26) {
+    animation-delay: 2.94s;
+    transition-delay: 0.78s; }
+  .react-parallax h1 span:nth-last-child(27) {
+    animation-delay: 3.03s;
+    transition-delay: 0.81s; }
+  .react-parallax h1 span:nth-last-child(28) {
+    animation-delay: 3.12s;
+    transition-delay: 0.84s; }
+  .react-parallax h1 span:nth-last-child(29) {
+    animation-delay: 3.21s;
+    transition-delay: 0.87s; }
+  .react-parallax h1 span:nth-last-child(30) {
+    animation-delay: 3.3s;
+    transition-delay: 0.9s; }
+  .react-parallax h1 span:nth-last-child(31) {
+    animation-delay: 3.39s;
+    transition-delay: 0.93s; }
+  .react-parallax h1 span:nth-last-child(32) {
+    animation-delay: 3.48s;
+    transition-delay: 0.96s; }
+  .react-parallax h1 span:nth-last-child(33) {
+    animation-delay: 3.57s;
+    transition-delay: 0.99s; }
+  .react-parallax h1 span:nth-last-child(34) {
+    animation-delay: 3.66s;
+    transition-delay: 1.02s; }
+  .react-parallax h1 span:nth-last-child(35) {
+    animation-delay: 3.75s;
+    transition-delay: 1.05s; }
+  .react-parallax h1 span:nth-last-child(36) {
+    animation-delay: 3.84s;
+    transition-delay: 1.08s; }
+  .react-parallax h1 span:nth-last-child(37) {
+    animation-delay: 3.93s;
+    transition-delay: 1.11s; }
+  .react-parallax h1 span:nth-last-child(38) {
+    animation-delay: 4.02s;
+    transition-delay: 1.14s; }
+  .react-parallax h1 span:nth-last-child(39) {
+    animation-delay: 4.11s;
+    transition-delay: 1.17s; }
+  .react-parallax h1 span:nth-last-child(40) {
+    animation-delay: 4.2s;
+    transition-delay: 1.2s; }
+  .react-parallax h1 span:nth-last-child(41) {
+    animation-delay: 4.29s;
+    transition-delay: 1.23s; }
+  .react-parallax h1 span:nth-last-child(42) {
+    animation-delay: 4.38s;
+    transition-delay: 1.26s; }
+  .react-parallax h1 span:nth-last-child(43) {
+    animation-delay: 4.47s;
+    transition-delay: 1.29s; }
+  .react-parallax h1 span:nth-last-child(44) {
+    animation-delay: 4.56s;
+    transition-delay: 1.32s; }
+  .react-parallax h1 span:nth-last-child(45) {
+    animation-delay: 4.65s;
+    transition-delay: 1.35s; }
+  .react-parallax h1 span:nth-last-child(46) {
+    animation-delay: 4.74s;
+    transition-delay: 1.38s; }
+  .react-parallax h1 span:nth-last-child(47) {
+    animation-delay: 4.83s;
+    transition-delay: 1.41s; }
+  .react-parallax h1 span:nth-last-child(48) {
+    animation-delay: 4.92s;
+    transition-delay: 1.44s; }
+  .react-parallax h1 span:nth-last-child(49) {
+    animation-delay: 5.01s;
+    transition-delay: 1.47s; }
+  .react-parallax h1 span:nth-last-child(50) {
+    animation-delay: 5.1s;
+    transition-delay: 1.5s; }
+  .react-parallax h1 span:nth-last-child(51) {
+    animation-delay: 5.19s;
+    transition-delay: 1.53s; }
+  .react-parallax h1 span:nth-last-child(52) {
+    animation-delay: 5.28s;
+    transition-delay: 1.56s; }
+  .react-parallax h1 span:nth-last-child(53) {
+    animation-delay: 5.37s;
+    transition-delay: 1.59s; }
+  .react-parallax h1 span:nth-last-child(54) {
+    animation-delay: 5.46s;
+    transition-delay: 1.62s; }
+  .react-parallax h1 span:nth-last-child(55) {
+    animation-delay: 5.55s;
+    transition-delay: 1.65s; }
+  .react-parallax h1 span:nth-last-child(56) {
+    animation-delay: 5.64s;
+    transition-delay: 1.68s; }
+  .react-parallax h1 span:nth-last-child(57) {
+    animation-delay: 5.73s;
+    transition-delay: 1.71s; }
+  .react-parallax h1 span:nth-last-child(58) {
+    animation-delay: 5.82s;
+    transition-delay: 1.74s; }
+  .react-parallax h1 span:nth-last-child(59) {
+    animation-delay: 5.91s;
+    transition-delay: 1.77s; }
+  .react-parallax h1 span:nth-last-child(60) {
+    animation-delay: 6s;
+    transition-delay: 1.8s; }
 
 section img {
   opacity: 0;
@@ -1207,7 +1264,7 @@ section p span {
   .portfolio-nav__toggle {
     position: fixed;
     right: 0;
-    top: 12px;
+    top: 18px;
     width: 60px;
     height: 90px;
     display: -ms-flexbox;
@@ -1273,8 +1330,7 @@ section p span {
     transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
     transform: translate3d(100%, 0, 0); }
     .portfolio-nav__panel h1, .portfolio-nav__panel h2, .portfolio-nav__panel h3, .portfolio-nav__panel h4, .portfolio-nav__panel h5, .portfolio-nav__panel h6 {
-      display: inline; }
-    .portfolio-nav__panel h2, .portfolio-nav__panel h3 {
+      display: inline;
       border-bottom: solid 3px transparent;
       transition: border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
       padding-bottom: 2px; }
@@ -1299,20 +1355,20 @@ section p span {
       transition: none;
       width: auto;
       margin-bottom: 40px; }
+      .portfolio-nav__panel li:nth-child(1) h1.active, .portfolio-nav__panel li:nth-child(1) h2.active, .portfolio-nav__panel li:nth-child(1) h3.active, .portfolio-nav__panel li:nth-child(1) h4.active, .portfolio-nav__panel li:nth-child(1) h5.active, .portfolio-nav__panel li:nth-child(1) h6.active {
+        border-color: #ff483c; }
+      .portfolio-nav__panel li:nth-child(2) h1.active, .portfolio-nav__panel li:nth-child(2) h2.active, .portfolio-nav__panel li:nth-child(2) h3.active, .portfolio-nav__panel li:nth-child(2) h4.active, .portfolio-nav__panel li:nth-child(2) h5.active, .portfolio-nav__panel li:nth-child(2) h6.active {
+        border-color: #7366fb; }
   .portfolio-nav__panel--white {
     background: #F8FBF7; }
     .portfolio-nav__panel--white h1:hover, .portfolio-nav__panel--white h2:hover, .portfolio-nav__panel--white h3:hover, .portfolio-nav__panel--white h4:hover, .portfolio-nav__panel--white h5:hover, .portfolio-nav__panel--white h6:hover {
       border-color: #DEDEDC; }
-    .portfolio-nav__panel--white h1.active, .portfolio-nav__panel--white h2.active, .portfolio-nav__panel--white h3.active, .portfolio-nav__panel--white h4.active, .portfolio-nav__panel--white h5.active, .portfolio-nav__panel--white h6.active {
-      border-color: #ff483c; }
   .portfolio-nav__panel--secondary {
     background: #232021; }
     .portfolio-nav__panel--secondary h1, .portfolio-nav__panel--secondary h2, .portfolio-nav__panel--secondary h3, .portfolio-nav__panel--secondary h4, .portfolio-nav__panel--secondary h5, .portfolio-nav__panel--secondary h6 {
       color: #F8FBF7; }
       .portfolio-nav__panel--secondary h1:hover, .portfolio-nav__panel--secondary h2:hover, .portfolio-nav__panel--secondary h3:hover, .portfolio-nav__panel--secondary h4:hover, .portfolio-nav__panel--secondary h5:hover, .portfolio-nav__panel--secondary h6:hover {
         border-color: #F8FBF7; }
-      .portfolio-nav__panel--secondary h1.active, .portfolio-nav__panel--secondary h2.active, .portfolio-nav__panel--secondary h3.active, .portfolio-nav__panel--secondary h4.active, .portfolio-nav__panel--secondary h5.active, .portfolio-nav__panel--secondary h6.active {
-        border-color: #ff483c; }
     .portfolio-nav__panel--secondary .icon-arrow-right {
       font-size: 48px;
       color: #F8FBF7;
@@ -1496,7 +1552,9 @@ section p span {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  -ms-transform: translateX(-12px);
+  transform: translateX(-12px); }
   .scroll-arrow h6, .scroll-arrow i {
     color: #F8FBF7; }
   .scroll-arrow i {

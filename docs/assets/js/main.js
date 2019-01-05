@@ -35669,8 +35669,8 @@ var Home = function (_Component) {
 										{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 										_react2.default.createElement(
 											"h1",
-											{ style: { transform: "translate3d(0," + (-(300 * percentage) + 150) + "px,0)" } },
-											(0, _splitWord2.default)("Eric C. Smith is a Creative Developer in New York City")
+											null,
+											(0, _splitWord2.default)("Eric C. Smith is a Creative Developer in New York City", { transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-(400 * percentage) + 200) + "px,0)" })
 										)
 									)
 								),
@@ -36197,7 +36197,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
+											{ to: '/process' },
 											_react2.default.createElement(
 												'h2',
 												null,
@@ -36571,6 +36571,7 @@ var routes = _react2.default.createElement(
 		_reactRouter.Switch,
 		null,
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _Home2.default }),
+		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/process', component: _Home2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/about', component: _AboutMe2.default })
@@ -36625,11 +36626,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-exports.default = function (text) {
+exports.default = function (text, style) {
 	return text.split(" ").map(function (item, index) {
 		return _react2.default.createElement(
 			"span",
-			{ key: index },
+			{ style: style, key: index },
 			item,
 			index != text.split(" ").length ? "\xA0" : null
 		);

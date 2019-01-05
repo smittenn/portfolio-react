@@ -131,7 +131,7 @@ class Nav extends Component {
 								<ul>
 									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
 									<li onClick={() => this.openSecondaryPanel()}><h2>Projects</h2></li>
-		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Process</h2></NavLink></li>
+		 							<li onClick={this.toggleMenuOpen}><NavLink to="/process"><h2>Process</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About me</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>Resume</h2></NavLink></li>
 								</ul>

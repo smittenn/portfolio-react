@@ -11,6 +11,7 @@ const routes = (
 		<Nav/>
 		<Switch>
 			<Route exact path="/" component={Home}/>
+			<Route exact path="/process" component={Home}/>
 			<Route path="/american-made" component={AmericanMade}/>
 			<Route path="/vai" component={Vai}/>
 			<Route path="/about" component={AboutMe}/>

@@ -29,6 +29,7 @@ $arrow-size: 40px;
 	left: 60px;
 	display: flex;
 	align-items: center;
+	transform: translateX(-12px);
 
 	h6, i {
 		color: $brand-white;
