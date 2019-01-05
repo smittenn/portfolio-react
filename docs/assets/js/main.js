@@ -36059,7 +36059,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/translator' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36072,7 +36072,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/jnj-mdc' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36085,7 +36085,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/jnj-home' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36098,7 +36098,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/micro-app-interactions' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36111,7 +36111,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/micro-app-templates' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36124,7 +36124,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/perforce' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36137,7 +36137,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/cisco' },
 											_react2.default.createElement(
 												'h3',
 												null,
@@ -36150,11 +36150,11 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/vai' },
+											{ to: '/protohack' },
 											_react2.default.createElement(
 												'h3',
 												null,
-												'Givjoy'
+												'Protohack'
 											)
 										)
 									)
@@ -36223,7 +36223,7 @@ var Nav = function (_Component) {
 										{ onClick: this.toggleMenuOpen },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
+											{ to: '/resume' },
 											_react2.default.createElement(
 												'h2',
 												null,

@@ -1,4 +1,4 @@
- @media screen and (max-width: $bp-medium) {
+@media screen and (max-width: $bp-medium) {
 	.grid {
 		padding: 0 18px;
 		padding-right: 48px;
@@ -46,6 +46,16 @@
 		}
 	}
 
+	.react-parallax {
+		h1 span {
+			@for $i from 1 through 60 {
+				&:nth-last-child(#{$i}) {
+					transition-delay: (#{0.3 + ($i * 0.03)}s);
+				}
+			}
+		}
+	}
+
 	section {
 		padding: 12px 0;
 	}
@@ -71,4 +81,4 @@
 	h4 {
 		font-size: 4vw;
 	}
- }
+}
