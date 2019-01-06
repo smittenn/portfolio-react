@@ -35643,7 +35643,7 @@ var Home = function (_Component) {
 			var activeSection = this.state.activeSection;
 
 
-			var image1 = "../assets/img/liquid.gif";
+			var image1 = "../assets/img/banner.jpg";
 
 			var bgColor = (0, _hexToRgb2.default)("#232021");
 
@@ -35670,7 +35670,7 @@ var Home = function (_Component) {
 										_react2.default.createElement(
 											"h1",
 											null,
-											(0, _splitWord2.default)("Eric C. Smith is a Creative Developer in New York City", { transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-(400 * percentage) + 200) + "px,0)" })
+											(0, _splitWord2.default)("Eric C. Smith is a Creative Developer in New York City", { opacity: -(0.5 * percentage) + 1.25, transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" })
 										)
 									)
 								),

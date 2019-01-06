@@ -74,7 +74,7 @@ class Home extends Component {
 
 		const { activeSection } = this.state;
 
-		const image1 = "../assets/img/liquid.gif";
+		const image1 = "../assets/img/banner.jpg";
 
 		const bgColor = hexToRgb("#232021");
 		
@@ -90,7 +90,7 @@ class Home extends Component {
 						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${bgColor.r}, ${bgColor.b}, ${bgColor.g}, ${percentage})` }}>
 							<div className="grid">
 								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-									<h1>{splitWord(`Eric C. Smith is a Creative Developer in New York City`, { transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${-(400 * percentage) + 200}px,0)`})}</h1>
+									<h1>{splitWord(`Eric C. Smith is a Creative Developer in New York City`, { opacity: -(0.5 * percentage) + 1.25, transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`})}</h1>
 								</div>
 							</div>
 							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
