@@ -2,8 +2,8 @@ export const home = () => ({
 	type: 'HOME',
 })
 
-export const about = () => ({
-	type: 'ABOUT',
+export const aboutMe = () => ({
+	type: 'ABOUTME',
 })
 
 // Projects

@@ -35110,7 +35110,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":135,"connected-react-router":11,"prop-types":35,"react":106}],120:[function(require,module,exports){
+},{"./routes":136,"connected-react-router":11,"prop-types":35,"react":106}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35122,9 +35122,9 @@ var home = exports.home = function home() {
 	};
 };
 
-var about = exports.about = function about() {
+var aboutMe = exports.aboutMe = function aboutMe() {
 	return {
-		type: 'ABOUT'
+		type: 'ABOUTME'
 	};
 };
 
@@ -35235,226 +35235,7 @@ var render = function render() {
 
 render();
 
-},{"../App":119,"../reducers":134,"connected-react-router":11,"history":24,"react":106,"react-dom":39,"react-redux":54,"redux":107}],124:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactParallax = require('react-parallax');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AboutMe = function (_Component) {
-	_inherits(AboutMe, _Component);
-
-	function AboutMe(props) {
-		_classCallCheck(this, AboutMe);
-
-		return _possibleConstructorReturn(this, (AboutMe.__proto__ || Object.getPrototypeOf(AboutMe)).call(this, props));
-	}
-
-	_createClass(AboutMe, [{
-		key: 'render',
-		value: function render() {
-			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					_reactParallax.Parallax,
-					{ bgImage: image1, blur: { min: -3, max: 6 } },
-					_react2.default.createElement(
-						'div',
-						{ className: 'grid' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid__item grid__item--col-9' },
-							_react2.default.createElement(
-								'h1',
-								{ className: 'white' },
-								'About Me'
-							)
-						)
-					)
-				),
-				_react2.default.createElement('div', { style: { height: 500 } }),
-				_react2.default.createElement(
-					'h2',
-					null,
-					'\u2728'
-				)
-			);
-		}
-	}]);
-
-	return AboutMe;
-}(_react.Component);
-
-AboutMe.propTypes = {};
-exports.default = AboutMe;
-
-},{"react":106,"react-parallax":43}],125:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactParallax = require('react-parallax');
-
-var _reactRedux = require('react-redux');
-
-var _Nav = require('./Nav');
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
-var _GridLines = require('./GridLines');
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _counter = require('../actions/counter');
-
-var _abbreviation = require('../actions/abbreviation');
-
-var _color = require('../actions/color');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AmericanMade = function (_Component) {
-	_inherits(AmericanMade, _Component);
-
-	_createClass(AmericanMade, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			window.scrollTo(0, 0);
-
-			this.props.americanMade();
-			this.props.reset();
-			this.props.setNavWhite();
-		}
-	}]);
-
-	function AmericanMade(props) {
-		_classCallCheck(this, AmericanMade);
-
-		var _this = _possibleConstructorReturn(this, (AmericanMade.__proto__ || Object.getPrototypeOf(AmericanMade)).call(this, props));
-
-		_this.splitText = function (text) {
-			return text.split(' ');
-		};
-
-		return _this;
-	}
-
-	_createClass(AmericanMade, [{
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
-
-			var pageTitle = "American Made is an interactive film site created for Universal Pictures";
-
-			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
-				return _react2.default.createElement(
-					'span',
-					{ key: index },
-					item,
-					index != _this2.splitText(pageTitle).length ? '\xA0' : null
-				);
-			});
-
-			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					_reactParallax.Parallax,
-					{ bgImage: image1, blur: { min: -3, max: 6 }, strength: 600 },
-					_react2.default.createElement(
-						'div',
-						{ className: 'grid' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
-							_react2.default.createElement(
-								'h1',
-								{ className: 'white' },
-								splitTitle
-							)
-						)
-					)
-				),
-				_react2.default.createElement('div', { style: { height: 500 } }),
-				_react2.default.createElement(
-					'h2',
-					null,
-					'\u2728'
-				),
-				_react2.default.createElement(_GridLines2.default, null)
-			);
-		}
-	}]);
-
-	return AmericanMade;
-}(_react.Component);
-
-AmericanMade.propTypes = {};
-
-
-var mapStateToProps = function mapStateToProps(state) {
-	return {
-		counter: state.counter,
-		abbreviation: state.abbreviation
-	};
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	return {
-		reset: function reset() {
-			return dispatch((0, _counter.reset)());
-		},
-		americanMade: function americanMade() {
-			return dispatch((0, _abbreviation.americanMade)());
-		},
-		setNavWhite: function setNavWhite() {
-			return dispatch((0, _color.setNavWhite)());
-		},
-		setNavBlack: function setNavBlack() {
-			return dispatch((0, _color.setNavBlack)());
-		}
-	};
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
-
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"./GridLines":126,"./Nav":128,"react":106,"react-parallax":43,"react-redux":54}],126:[function(require,module,exports){
+},{"../App":119,"../reducers":131,"connected-react-router":11,"history":24,"react":106,"react-dom":39,"react-redux":54,"redux":107}],124:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35520,325 +35301,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":106}],127:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactParallax = require("react-parallax");
-
-var _reactRedux = require("react-redux");
-
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
-var _counter = require("../actions/counter");
-
-var _abbreviation = require("../actions/abbreviation");
-
-var _color = require("../actions/color");
-
-var _Nav = require("./Nav");
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
-var _ScrollArrow = require("./ScrollArrow");
-
-var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
-
-var _GridLines = require("./GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _splitWord = require("../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _hexToRgb = require("../services/hexToRgb");
-
-var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import detectMobile from "../services/detectMobile"
-
-
-var Home = function (_Component) {
-	_inherits(Home, _Component);
-
-	function Home(props) {
-		_classCallCheck(this, Home);
-
-		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
-
-		_this.detectMobile = function (event) {
-			_this.setState({
-				isMobile: window.innerWidth <= 800
-			});
-		};
-
-		_this.setActiveSection = function (name) {
-			_this.setState({
-				activeSection: name
-			});
-		};
-
-		_this.state = {
-			activeSection: "hello",
-			isMobile: window.innerWidth <= 800,
-			pageSections: ["hello", "about", "projects"]
-		};
-		return _this;
-	}
-
-	_createClass(Home, [{
-		key: "componentDidMount",
-		value: function componentDidMount() {
-			window.scrollTo(0, 0);
-			window.addEventListener('resize', this.detectMobile);
-
-			this.props.home();
-			this.props.reset();
-			this.props.setNavWhite();
-		}
-	}, {
-		key: "componentWillUnmount",
-		value: function componentWillUnmount() {
-			window.removeEventListener('resize', this.detectMobile);
-		}
-	}, {
-		key: "componentDidUpdate",
-		value: function componentDidUpdate(prevProps) {
-			prevProps.count == this.props.count ? null : this.setState({ countIsIncreasing: prevProps.count < this.props.count });
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			var _this2 = this;
-
-			{/* percentage => (
-    <div className="grid" style={{opacity: `${1 -  (percentage * percentage)}`}}>
-    </div>
-    )*/}
-
-			var activeSection = this.state.activeSection;
-
-
-			var image1 = "../assets/img/banner.jpg";
-
-			var bgColor = (0, _hexToRgb2.default)("#232021");
-
-			return _react2.default.createElement(
-				"div",
-				null,
-				_react2.default.createElement(
-					_reactScroll.Element,
-					{ name: "hello", className: (0, _classnames2.default)({ "active-section": activeSection == "hello" }) },
-					_react2.default.createElement(_reactParallax.Parallax, {
-						bgImage: image1,
-						blur: null,
-						strength: 600,
-						renderLayer: function renderLayer(percentage) {
-							return _react2.default.createElement(
-								"div",
-								{ className: "react-parallax-contents", style: { backgroundColor: "rgba(" + bgColor.r + ", " + bgColor.b + ", " + bgColor.g + ", " + percentage + ")" } },
-								_react2.default.createElement(
-									"div",
-									{ className: "grid" },
-									_react2.default.createElement(
-										"div",
-										{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-										_react2.default.createElement(
-											"h1",
-											null,
-											(0, _splitWord2.default)("Eric C. Smith is a Creative Developer in New York City", { opacity: -(0.5 * percentage) + 1.25, transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" })
-										)
-									)
-								),
-								_react2.default.createElement(
-									_reactScroll.Link,
-									{ style: { display: "none" }, to: "hello", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-											_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection("hello");
-										} },
-									_react2.default.createElement(_ScrollArrow2.default, null)
-								),
-								_react2.default.createElement(
-									_reactScroll.Link,
-									{ to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-											_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
-										} },
-									_react2.default.createElement(_ScrollArrow2.default, null)
-								),
-								_react2.default.createElement(
-									_reactScroll.Link,
-									{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-											_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
-										} },
-									_react2.default.createElement(_ScrollArrow2.default, null)
-								)
-							);
-						} })
-				),
-				_react2.default.createElement(
-					_reactScroll.Element,
-					{ name: "about", className: (0, _classnames2.default)({ "active-section": activeSection == "about" }) },
-					_react2.default.createElement(
-						"section",
-						null,
-						_react2.default.createElement(
-							"div",
-							{ className: "grid" },
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h1",
-									{ className: "mb" },
-									(0, _splitWord2.default)("Form & Function")
-								),
-								_react2.default.createElement(
-									"p",
-									{ className: "mb" },
-									(0, _splitWord2.default)("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
-									_react2.default.createElement("br", null),
-									_react2.default.createElement("br", null),
-									(0, _splitWord2.default)("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
-								)
-							),
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"div",
-									{ style: { transform: "translateY(-40%)" }, className: "grid__item grid__item--col-4" },
-									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
-								),
-								_react2.default.createElement(
-									"div",
-									{ style: { transform: "translateY(40%)" }, className: "grid__item grid__item--col-4" },
-									_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
-								),
-								_react2.default.createElement(
-									"div",
-									{ style: { transform: "translateY(-20%)" }, className: "grid__item grid__item--col-4" },
-									_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					_reactScroll.Element,
-					{ name: "projects", className: (0, _classnames2.default)({ "active-section": activeSection == "projects" }) },
-					_react2.default.createElement(
-						"section",
-						null,
-						_react2.default.createElement(
-							"div",
-							{ className: "grid" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "mb" },
-									(0, _splitWord2.default)("Motion, Visual Design & The Front-end.")
-								),
-								_react2.default.createElement(
-									"p",
-									{ className: "mb" },
-									(0, _splitWord2.default)("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
-									_react2.default.createElement("br", null),
-									_react2.default.createElement("br", null),
-									(0, _splitWord2.default)("Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									_reactRouterDom.NavLink,
-									{ to: "/american-made/" },
-									_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" }),
-									_react2.default.createElement(
-										"h3",
-										null,
-										"American Made Film Site"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement("img", { src: "../assets/img/card-components/banner-alt.jpg" }),
-								_react2.default.createElement(
-									"h3",
-									{ className: "white" },
-									"Card Components"
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(_GridLines2.default, null)
-			);
-		}
-	}]);
-
-	return Home;
-}(_react.Component);
-
-var mapStateToProps = function mapStateToProps(state) {
-	return {
-		count: state.count,
-		abbreviation: state.abbreviation
-	};
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	return {
-		reset: function reset() {
-			return dispatch((0, _counter.reset)());
-		},
-		setCounter: function setCounter(n) {
-			return dispatch((0, _counter.setCounter)(n));
-		},
-		home: function home() {
-			return dispatch((0, _abbreviation.home)());
-		},
-		setNavWhite: function setNavWhite() {
-			return dispatch((0, _color.setNavWhite)());
-		},
-		setNavBlack: function setNavBlack() {
-			return dispatch((0, _color.setNavBlack)());
-		}
-	};
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
-
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../services/hexToRgb":136,"../services/splitWord":138,"./GridLines":126,"./Nav":128,"./ScrollArrow":129,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-router-dom":72,"react-scroll":91}],128:[function(require,module,exports){
+},{"react":106}],125:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36049,7 +35512,7 @@ var Nav = function (_Component) {
 											{ to: '/vai' },
 											_react2.default.createElement(
 												'h3',
-												null,
+												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'P2' }) },
 												'V.ai Player'
 											)
 										)
@@ -36253,7 +35716,112 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
-},{"../services/splitLetter":137,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],129:[function(require,module,exports){
+},{"../services/splitLetter":138,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],126:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactParallax = require("react-parallax");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _splitWord = require("../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import detectMobile from "../services/detectMobile"
+
+
+var ParallaxHeader = function (_Component) {
+	_inherits(ParallaxHeader, _Component);
+
+	function ParallaxHeader(props) {
+		_classCallCheck(this, ParallaxHeader);
+
+		var _this = _possibleConstructorReturn(this, (ParallaxHeader.__proto__ || Object.getPrototypeOf(ParallaxHeader)).call(this, props));
+
+		_this.state = {};
+		return _this;
+	}
+
+	_createClass(ParallaxHeader, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {}
+	}, {
+		key: "componentDidUpdate",
+		value: function componentDidUpdate(prevProps) {}
+	}, {
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    bgImage = _props.bgImage,
+			    bgColor = _props.bgColor,
+			    headerText = _props.headerText;
+
+
+			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+
+			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)("#232021");
+
+			return _react2.default.createElement(_reactParallax.Parallax, {
+				bgImage: imageUrl,
+				blur: null,
+				strength: 600,
+				renderLayer: function renderLayer(percentage) {
+					return _react2.default.createElement(
+						"div",
+						{ className: "react-parallax-contents", style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + percentage + ")" } },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h1",
+									null,
+									(0, _splitWord2.default)(headerText, { opacity: -(3 * percentage) + 2.5, transform: "skewX(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" })
+								)
+							)
+						)
+					);
+				} });
+		}
+	}]);
+
+	return ParallaxHeader;
+}(_react.Component);
+
+exports.default = ParallaxHeader;
+
+},{"../services/hexToRgb":137,"../services/splitWord":139,"classnames":7,"react":106,"react-parallax":43,"react-scroll":91}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36326,99 +35894,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],130:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactParallax = require('react-parallax');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Vai = function (_Component) {
-	_inherits(Vai, _Component);
-
-	function Vai(props) {
-		_classCallCheck(this, Vai);
-
-		var _this = _possibleConstructorReturn(this, (Vai.__proto__ || Object.getPrototypeOf(Vai)).call(this, props));
-
-		_this.splitText = function (text) {
-			return text.split(' ');
-		};
-
-		return _this;
-	}
-
-	_createClass(Vai, [{
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
-
-			var pageTitle = "The V.ai Player uses AI to identify specific products in a video";
-
-			var splitTitle = this.splitText(pageTitle).map(function (item, index) {
-				return _react2.default.createElement(
-					'span',
-					{ key: index },
-					item,
-					index != _this2.splitText(pageTitle).length ? '\xA0' : null
-				);
-			});
-
-			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					_reactParallax.Parallax,
-					{ bgImage: image1, blur: { min: -3, max: 6 }, strength: 600 },
-					_react2.default.createElement(
-						'div',
-						{ className: 'grid' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid__item grid__item--col-9' },
-							_react2.default.createElement(
-								'h1',
-								{ className: 'white' },
-								splitTitle
-							)
-						)
-					)
-				),
-				_react2.default.createElement('div', { style: { height: 500 } }),
-				_react2.default.createElement(
-					'h2',
-					null,
-					'\u2728'
-				)
-			);
-		}
-	}]);
-
-	return Vai;
-}(_react.Component);
-
-Vai.propTypes = {};
-exports.default = Vai;
-
-},{"react":106,"react-parallax":43}],131:[function(require,module,exports){
+},{"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36431,7 +35907,7 @@ var abbreviationReducer = function abbreviationReducer() {
 	switch (action.type) {
 		case 'HOME':
 			return 'H';
-		case 'ABOUT':
+		case 'ABOUTME':
 			return 'A';
 		case 'AMERICANMADE':
 			return 'P1';
@@ -36444,7 +35920,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],132:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36466,7 +35942,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],133:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36492,7 +35968,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],134:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36528,7 +36004,649 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":131,"./color":132,"./counter":133,"connected-react-router":11,"redux":107}],135:[function(require,module,exports){
+},{"./abbreviation":128,"./color":129,"./counter":130,"connected-react-router":11,"redux":107}],132:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require('react-redux');
+
+var _Nav = require('../components/Nav');
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _ParallaxHeader = require('../components/ParallaxHeader');
+
+var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+
+var _GridLines = require('../components/GridLines');
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _counter = require('../actions/counter');
+
+var _abbreviation = require('../actions/abbreviation');
+
+var _color = require('../actions/color');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AboutMe = function (_Component) {
+	_inherits(AboutMe, _Component);
+
+	_createClass(AboutMe, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.aboutMe();
+			this.props.reset();
+			this.props.setNavWhite();
+		}
+	}]);
+
+	function AboutMe(props) {
+		_classCallCheck(this, AboutMe);
+
+		return _possibleConstructorReturn(this, (AboutMe.__proto__ || Object.getPrototypeOf(AboutMe)).call(this, props));
+	}
+
+	_createClass(AboutMe, [{
+		key: 'render',
+		value: function render() {
+
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_ParallaxHeader2.default, {
+					headerText: 'About Me'
+				}),
+				_react2.default.createElement('div', { style: { height: 500 } }),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'\u2728'
+				),
+				_react2.default.createElement(_GridLines2.default, null)
+			);
+		}
+	}]);
+
+	return AboutMe;
+}(_react.Component);
+
+AboutMe.propTypes = {};
+
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		counter: state.counter,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		aboutMe: function aboutMe() {
+			return dispatch((0, _abbreviation.aboutMe)());
+		},
+		setNavWhite: function setNavWhite() {
+			return dispatch((0, _color.setNavWhite)());
+		},
+		setNavBlack: function setNavBlack() {
+			return dispatch((0, _color.setNavBlack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
+
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"react":106,"react-redux":54}],133:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require('react-redux');
+
+var _Nav = require('../components/Nav');
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _ParallaxHeader = require('../components/ParallaxHeader');
+
+var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+
+var _GridLines = require('../components/GridLines');
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _counter = require('../actions/counter');
+
+var _abbreviation = require('../actions/abbreviation');
+
+var _color = require('../actions/color');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AmericanMade = function (_Component) {
+	_inherits(AmericanMade, _Component);
+
+	_createClass(AmericanMade, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.americanMade();
+			this.props.reset();
+			this.props.setNavWhite();
+		}
+	}]);
+
+	function AmericanMade(props) {
+		_classCallCheck(this, AmericanMade);
+
+		return _possibleConstructorReturn(this, (AmericanMade.__proto__ || Object.getPrototypeOf(AmericanMade)).call(this, props));
+	}
+
+	_createClass(AmericanMade, [{
+		key: 'render',
+		value: function render() {
+
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_ParallaxHeader2.default, {
+					headerText: 'American Made was a film site created for Universal Pictures'
+				}),
+				_react2.default.createElement('div', { style: { height: 500 } }),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'\u2728'
+				),
+				_react2.default.createElement(_GridLines2.default, null)
+			);
+		}
+	}]);
+
+	return AmericanMade;
+}(_react.Component);
+
+AmericanMade.propTypes = {};
+
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		counter: state.counter,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		},
+		setNavWhite: function setNavWhite() {
+			return dispatch((0, _color.setNavWhite)());
+		},
+		setNavBlack: function setNavBlack() {
+			return dispatch((0, _color.setNavBlack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
+
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"react":106,"react-redux":54}],134:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _counter = require("../actions/counter");
+
+var _abbreviation = require("../actions/abbreviation");
+
+var _color = require("../actions/color");
+
+var _Nav = require("../components/Nav");
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _ParallaxHeader = require("../components/ParallaxHeader");
+
+var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+
+var _ScrollArrow = require("../components/ScrollArrow");
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
+
+var _GridLines = require("../components/GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _splitWord = require("../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import detectMobile from "../services/detectMobile"
+
+
+var Home = function (_Component) {
+	_inherits(Home, _Component);
+
+	function Home(props) {
+		_classCallCheck(this, Home);
+
+		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+		_this.detectMobile = function (event) {
+			_this.setState({
+				isMobile: window.innerWidth <= 800
+			});
+		};
+
+		_this.setActiveSection = function (name) {
+			_this.setState({
+				activeSection: name
+			});
+		};
+
+		_this.state = {
+			activeSection: "hello",
+			isMobile: window.innerWidth <= 800,
+			pageSections: ["hello", "about", "projects"]
+		};
+		return _this;
+	}
+
+	_createClass(Home, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+			window.addEventListener('resize', this.detectMobile);
+
+			this.props.home();
+			this.props.reset();
+			this.props.setNavWhite();
+		}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {
+			window.removeEventListener('resize', this.detectMobile);
+		}
+	}, {
+		key: "componentDidUpdate",
+		value: function componentDidUpdate(prevProps) {
+			prevProps.count == this.props.count ? null : this.setState({ countIsIncreasing: prevProps.count < this.props.count });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			{/* percentage => (
+    <div className="grid" style={{opacity: `${1 -  (percentage * percentage)}`}}>
+    </div>
+    )*/}
+
+			var activeSection = this.state.activeSection;
+
+
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					_reactScroll.Element,
+					{ name: "hello", className: (0, _classnames2.default)({ "active-section": activeSection == "hello" }) },
+					_react2.default.createElement(_ParallaxHeader2.default, {
+						headerText: "Eric C. Smith is a Creative Developer in New York City",
+						bgImage: "../assets/img/liquid.gif",
+						bgColor: "#232021"
+					}),
+					_react2.default.createElement(
+						_reactScroll.Link,
+						{ style: { display: "none" }, to: "hello", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+								_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection("hello");
+							} },
+						_react2.default.createElement(_ScrollArrow2.default, null)
+					),
+					_react2.default.createElement(
+						_reactScroll.Link,
+						{ to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+								_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
+							} },
+						_react2.default.createElement(_ScrollArrow2.default, null)
+					),
+					_react2.default.createElement(
+						_reactScroll.Link,
+						{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+								_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
+							} },
+						_react2.default.createElement(_ScrollArrow2.default, null)
+					)
+				),
+				_react2.default.createElement(
+					_reactScroll.Element,
+					{ name: "about", className: (0, _classnames2.default)({ "active-section": activeSection == "about" }) },
+					_react2.default.createElement(
+						"section",
+						null,
+						_react2.default.createElement(
+							"div",
+							{ className: "grid" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h1",
+									{ className: "mb" },
+									(0, _splitWord2.default)("Form & Function")
+								),
+								_react2.default.createElement(
+									"p",
+									{ className: "mb" },
+									(0, _splitWord2.default)("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
+									_react2.default.createElement("br", null),
+									_react2.default.createElement("br", null),
+									(0, _splitWord2.default)("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
+								)
+							),
+							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"div",
+									{ style: { transform: "translateY(-40%)" }, className: "grid__item grid__item--col-4" },
+									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
+								),
+								_react2.default.createElement(
+									"div",
+									{ style: { transform: "translateY(40%)" }, className: "grid__item grid__item--col-4" },
+									_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
+								),
+								_react2.default.createElement(
+									"div",
+									{ style: { transform: "translateY(-20%)" }, className: "grid__item grid__item--col-4" },
+									_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_reactScroll.Element,
+					{ name: "projects", className: (0, _classnames2.default)({ "active-section": activeSection == "projects" }) },
+					_react2.default.createElement(
+						"section",
+						null,
+						_react2.default.createElement(
+							"div",
+							{ className: "grid" },
+							_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--hide-bp-medium" }),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									{ className: "mb" },
+									(0, _splitWord2.default)("Motion, Visual Design & The Front-end.")
+								),
+								_react2.default.createElement(
+									"p",
+									{ className: "mb" },
+									(0, _splitWord2.default)("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
+									_react2.default.createElement("br", null),
+									_react2.default.createElement("br", null),
+									(0, _splitWord2.default)("Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.")
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									_reactRouterDom.NavLink,
+									{ to: "/american-made/" },
+									_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" }),
+									_react2.default.createElement(
+										"h3",
+										null,
+										"American Made Film Site"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								_react2.default.createElement("img", { src: "../assets/img/card-components/banner-alt.jpg" }),
+								_react2.default.createElement(
+									"h3",
+									{ className: "white" },
+									"Card Components"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(_GridLines2.default, null)
+			);
+		}
+	}]);
+
+	return Home;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		count: state.count,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
+		},
+		setNavWhite: function setNavWhite() {
+			return dispatch((0, _color.setNavWhite)());
+		},
+		setNavBlack: function setNavBlack() {
+			return dispatch((0, _color.setNavBlack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
+
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"../components/ScrollArrow":127,"../services/hexToRgb":137,"../services/splitWord":139,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72,"react-scroll":91}],135:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require('react-redux');
+
+var _Nav = require('../components/Nav');
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _ParallaxHeader = require('../components/ParallaxHeader');
+
+var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+
+var _GridLines = require('../components/GridLines');
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _counter = require('../actions/counter');
+
+var _abbreviation = require('../actions/abbreviation');
+
+var _color = require('../actions/color');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Vai = function (_Component) {
+	_inherits(Vai, _Component);
+
+	_createClass(Vai, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.vai();
+			this.props.reset();
+			this.props.setNavWhite();
+		}
+	}]);
+
+	function Vai(props) {
+		_classCallCheck(this, Vai);
+
+		return _possibleConstructorReturn(this, (Vai.__proto__ || Object.getPrototypeOf(Vai)).call(this, props));
+	}
+
+	_createClass(Vai, [{
+		key: 'render',
+		value: function render() {
+
+			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_ParallaxHeader2.default, {
+					bgImage: image1,
+					headerText: 'The V.ai Player uses AI to identify specific products in a video'
+				}),
+				_react2.default.createElement('div', { style: { height: 500 } }),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'\u2728'
+				)
+			);
+		}
+	}]);
+
+	return Vai;
+}(_react.Component);
+
+Vai.propTypes = {};
+
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		counter: state.counter,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		vai: function vai() {
+			return dispatch((0, _abbreviation.vai)());
+		},
+		setNavWhite: function setNavWhite() {
+			return dispatch((0, _color.setNavWhite)());
+		},
+		setNavBlack: function setNavBlack() {
+			return dispatch((0, _color.setNavBlack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Vai);
+
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"react":106,"react-redux":54}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36545,19 +36663,19 @@ var _Nav = require('../components/Nav');
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _Home = require('../components/Home');
+var _Home = require('./Home');
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _AmericanMade = require('../components/AmericanMade');
+var _AmericanMade = require('./AmericanMade');
 
 var _AmericanMade2 = _interopRequireDefault(_AmericanMade);
 
-var _Vai = require('../components/Vai');
+var _Vai = require('./Vai');
 
 var _Vai2 = _interopRequireDefault(_Vai);
 
-var _AboutMe = require('../components/AboutMe');
+var _AboutMe = require('./AboutMe');
 
 var _AboutMe2 = _interopRequireDefault(_AboutMe);
 
@@ -36572,15 +36690,16 @@ var routes = _react2.default.createElement(
 		null,
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _Home2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/process', component: _Home2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/about-me', component: _AboutMe2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/resume', component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/about', component: _AboutMe2.default })
+		_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default })
 	)
 );
 
 exports.default = routes;
 
-},{"../components/AboutMe":124,"../components/AmericanMade":125,"../components/Home":127,"../components/Nav":128,"../components/Vai":130,"react":106,"react-router":84}],136:[function(require,module,exports){
+},{"../components/Nav":125,"./AboutMe":132,"./AmericanMade":133,"./Home":134,"./Vai":135,"react":106,"react-router":84}],137:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36596,7 +36715,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],137:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36619,7 +36738,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":106}],138:[function(require,module,exports){
+},{"react":106}],139:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

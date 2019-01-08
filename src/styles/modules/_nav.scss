@@ -172,7 +172,7 @@ $baseclass: portfolio-nav;
 		right: 0;
 		height: 100%;
 		overflow-y: scroll;
-		transition: transform $easing2 $duration-slow;
+		transition: transform $easing5 $duration-medium;
 		transform: translate3d(100%, 0,0);
 
 		h1, h2, h3, h4, h5, h6 {
@@ -246,7 +246,7 @@ $baseclass: portfolio-nav;
 		.icon-arrow-right {
 			font-size: 48px;
 			color: $brand-white;
-			transform: scaleX(-1);
+			// transform: scaleX(-1);
 			margin-right: 12px;
 		}
 	}
@@ -287,7 +287,7 @@ $baseclass: portfolio-nav;
 
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: $delay-medium * $i;
+						transition-delay: (#{0.3 + ($i * 0.09)}s);
 					}
 				}
 			}
@@ -305,8 +305,9 @@ $baseclass: portfolio-nav;
 
 	&--secondaryPanelOpen {
 		.#{$baseclass}__hamburger, .#{$baseclass}__toggle:hover .#{$baseclass}__hamburger {
+			pointer-events: none;
 			.line {
-				background: white;
+				background: transparent;
 			}
 		}
 		.#{$baseclass}__panel--white {

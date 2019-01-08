@@ -11,14 +11,14 @@
 
 .react-parallax {
 	h1 span {
-		transition: transform $easing1 $duration-slowest, opacity $easing1 $duration-slowest;
+		transition: transform $easing1 $duration-slower, opacity $easing1 $duration-slower;
 		// opacity: 0;
 		// animation: ghostText $duration-slow $easing1;
 		// animation-fill-mode: both;
 
 
 		@for $i from 1 through 60 {
-			&:nth-last-child(#{$i}) {
+			&:nth-child(#{$i}) {
 				animation-delay: (#{0.6 + ($i * 0.09)}s);
 				transition-delay: (#{0.0 + ($i * 0.03)}s);
 			}

@@ -22,7 +22,7 @@ $baseclass: react-parallax;
 	}
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}-content, .#{$baseclass}-contents {
-			height: 80vh;
+			// height: 80vh;
 		}
 	}
 }

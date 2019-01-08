@@ -1,17 +1,19 @@
 import React, {Component} from "react"
-import { Parallax } from "react-parallax"
 import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll";
+import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../actions/counter"
 import { home } from "../actions/abbreviation"
 import { setNavWhite, setNavBlack } from "../actions/color"
 
-import Nav from "./Nav";
-import ScrollArrow from "./ScrollArrow";
-import GridLines from "./GridLines"
+import Nav from "../components/Nav"
+import ParallaxHeader from "../components/ParallaxHeader"
+import ScrollArrow from "../components/ScrollArrow";
+
+
+import GridLines from "../components/GridLines"
 
 import splitWord from "../services/splitWord"
 import hexToRgb from "../services/hexToRgb"
@@ -73,38 +75,26 @@ class Home extends Component {
 		)*/}
 
 		const { activeSection } = this.state;
-
-		const image1 = "../assets/img/banner.jpg";
-
-		const bgColor = hexToRgb("#232021");
 		
 		return (
 			<div>
 			{/*<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 100)}}>*/}
 				<Element name="hello" className={classNames({ "active-section" : activeSection == "hello"})}>
-					<Parallax 
-					bgImage={image1} 
-					blur={null} 
-					strength={600}
-					renderLayer={percentage => (
-						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${bgColor.r}, ${bgColor.b}, ${bgColor.g}, ${percentage})` }}>
-							<div className="grid">
-								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-									<h1>{splitWord(`Eric C. Smith is a Creative Developer in New York City`, { opacity: -(0.5 * percentage) + 1.25, transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`})}</h1>
-								</div>
-							</div>
-							<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
-								<ScrollArrow/>
-							</Link>
-							<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
-								<ScrollArrow/>
-							</Link>
-							<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
-								<ScrollArrow/>
-							</Link>
-						</div>
-					)}>
-					</Parallax>
+					<ParallaxHeader 
+					headerText={`Eric C. Smith is a Creative Developer in New York City`} 
+					bgImage={"../assets/img/liquid.gif"} 
+					bgColor={"#232021"}
+					/>
+					<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
+						<ScrollArrow/>
+					</Link>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
+						<ScrollArrow/>
+					</Link>
+					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
+						<ScrollArrow/>
+					</Link>
+
 				</Element>
 				<Element name="about" className={classNames({ "active-section" : activeSection == "about"})}>
 					<section>

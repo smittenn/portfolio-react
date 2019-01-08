@@ -2,7 +2,7 @@ const abbreviationReducer = (state = 'H', action) => {
 	switch (action.type) {
 		case 'HOME':
 			return 'H'
-		case 'ABOUT':
+		case 'ABOUTME':
 			return 'A'
 		case 'AMERICANMADE':
 			return 'P1'
