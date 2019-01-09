@@ -35421,7 +35421,9 @@ var Nav = function (_Component) {
 	}, {
 		key: 'componentDidUpdate',
 		value: function componentDidUpdate(prevProps) {
-			prevProps.count == this.props.count ? null : this.setState({ countIsIncreasing: prevProps.count < this.props.count });
+			prevProps.count == this.props.count ? null : this.setState({
+				countIsIncreasing: prevProps.count < this.props.count
+			});
 		}
 	}, {
 		key: 'render',
@@ -36595,13 +36597,11 @@ var Vai = function (_Component) {
 		key: 'render',
 		value: function render() {
 
-			var image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-
 			return _react2.default.createElement(
 				'div',
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
-					bgImage: image1,
+					bgImage: "../assets/img/vai/eye.gif",
 					headerText: 'The V.ai Player uses AI to identify specific products in a video'
 				}),
 				_react2.default.createElement('div', { style: { height: 500 } }),

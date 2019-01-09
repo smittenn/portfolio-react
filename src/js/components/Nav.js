@@ -29,7 +29,9 @@ class Nav extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
+		(prevProps.count == this.props.count) ? null : this.setState({ 
+			countIsIncreasing: (prevProps.count < this.props.count) 
+		})
 	}
 
 	detectMobile = (event) => {

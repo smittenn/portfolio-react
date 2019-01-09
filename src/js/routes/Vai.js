@@ -30,12 +30,11 @@ class Vai extends Component {
 
 	render() {
 
-		const image1 = "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
 		return (
 			<div>
 				<ParallaxHeader 
-				bgImage={image1}
+				bgImage={"../assets/img/vai/eye.gif"}
 				headerText={`The V.ai Player uses AI to identify specific products in a video`}
 				/>
 				<div style={{ height: 500 }} />
