@@ -1527,6 +1527,10 @@ section p span {
   position: absolute !important;
   top: 0; }
 
+@media screen and (max-width: 800px) {
+  .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
+    height: calc(100vh - 40px); } }
+
 @keyframes wiggle {
   16.65% {
     transform: translateY(4px) rotate(90deg); }
