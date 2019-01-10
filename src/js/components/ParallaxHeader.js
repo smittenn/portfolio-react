@@ -31,17 +31,19 @@ export default class ParallaxHeader extends Component {
 		
 	render() {
 
-		const { bgImage, bgColor, headerText } = this.props;
+		const { bgImage, bgColor, headerText, strength } = this.props;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
 		const color = bgColor ? hexToRgb(bgColor) : hexToRgb("#232021");
+
+		const str = strength ? strength : 600;
 		
 		return (
 			<Parallax 
 			bgImage={imageUrl} 
 			blur={null} 
-			strength={600}
+			strength={str}
 			renderLayer={percentage => (
 				<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 					<div className="grid">

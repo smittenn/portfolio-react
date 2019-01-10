@@ -83,7 +83,6 @@ class Home extends Component {
 					<ParallaxHeader 
 					headerText={`Eric C. Smith is a Creative Developer in New York City`} 
 					bgImage={"../assets/img/liquid.gif"} 
-					bgColor={"#232021"}
 					/>
 					<Link style={{display: "none"}} to="hello" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection("hello");}}>
 						<ScrollArrow/>

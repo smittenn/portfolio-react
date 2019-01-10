@@ -34,11 +34,12 @@ class Vai extends Component {
 		return (
 			<div>
 				<ParallaxHeader 
-				bgImage={"../assets/img/vai/eye.gif"}
+				bgImage={"../assets/img/vai/banner.gif"}
 				headerText={`The V.ai Player uses AI to identify specific products in a video`}
 				/>
 				<div style={{ height: 500 }} />
 				<h2>{"\u2728"}</h2>
+				<GridLines/>
 			</div>
 		);
 	}

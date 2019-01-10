@@ -1320,7 +1320,7 @@ section p span {
     pointer-events: none;
     height: calc(100vh);
     top: 0px;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s; }
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
   .portfolio-nav__panel {
     pointer-events: auto;
     position: absolute;
@@ -1328,7 +1328,7 @@ section p span {
     right: 0;
     height: 100%;
     overflow-y: scroll;
-    transition: transform cubic-bezier(0.7, 0, 0.3, 1) 0.6s;
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s;
     transform: translate3d(100%, 0, 0); }
     .portfolio-nav__panel h1, .portfolio-nav__panel h2, .portfolio-nav__panel h3, .portfolio-nav__panel h4, .portfolio-nav__panel h5, .portfolio-nav__panel h6 {
       display: inline;
@@ -1461,10 +1461,10 @@ section p span {
       -ms-transform: none;
       transform: none;
       opacity: 1; }
-  .portfolio-nav--secondaryPanelOpen .portfolio-nav__hamburger, .portfolio-nav--secondaryPanelOpen .portfolio-nav__toggle:hover .portfolio-nav__hamburger {
+  .portfolio-nav--secondaryPanelOpen .portfolio-nav__toggle {
     pointer-events: none; }
-    .portfolio-nav--secondaryPanelOpen .portfolio-nav__hamburger .line, .portfolio-nav--secondaryPanelOpen .portfolio-nav__toggle:hover .portfolio-nav__hamburger .line {
-      background: transparent; }
+  .portfolio-nav--secondaryPanelOpen .portfolio-nav__hamburger .line, .portfolio-nav--secondaryPanelOpen .portfolio-nav__toggle:hover .portfolio-nav__hamburger .line {
+    background: transparent; }
   .portfolio-nav--secondaryPanelOpen .portfolio-nav__panel--white {
     transform: translate3d(100%, 0, 0); }
     .portfolio-nav--secondaryPanelOpen .portfolio-nav__panel--white li {

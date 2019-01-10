@@ -35785,17 +35785,20 @@ var ParallaxHeader = function (_Component) {
 			var _props = this.props,
 			    bgImage = _props.bgImage,
 			    bgColor = _props.bgColor,
-			    headerText = _props.headerText;
+			    headerText = _props.headerText,
+			    strength = _props.strength;
 
 
 			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
 			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)("#232021");
 
+			var str = strength ? strength : 600;
+
 			return _react2.default.createElement(_reactParallax.Parallax, {
 				bgImage: imageUrl,
 				blur: null,
-				strength: 600,
+				strength: str,
 				renderLayer: function renderLayer(percentage) {
 					return _react2.default.createElement(
 						"div",
@@ -36189,7 +36192,9 @@ var AmericanMade = function (_Component) {
 				'div',
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
-					headerText: 'American Made was a film site created for Universal Pictures'
+					headerText: 'American Made was a film site created for Universal Pictures',
+					bgImage: "../assets/img/american-made/tickets-bg-dots-darker.jpg",
+					strength: 200
 				}),
 				_react2.default.createElement('div', { style: { height: 500 } }),
 				_react2.default.createElement(
@@ -36367,8 +36372,7 @@ var Home = function (_Component) {
 					{ name: "hello", className: (0, _classnames2.default)({ "active-section": activeSection == "hello" }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						headerText: "Eric C. Smith is a Creative Developer in New York City",
-						bgImage: "../assets/img/liquid.gif",
-						bgColor: "#232021"
+						bgImage: "../assets/img/liquid.gif"
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
@@ -36601,7 +36605,7 @@ var Vai = function (_Component) {
 				'div',
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
-					bgImage: "../assets/img/vai/eye.gif",
+					bgImage: "../assets/img/vai/banner.gif",
 					headerText: 'The V.ai Player uses AI to identify specific products in a video'
 				}),
 				_react2.default.createElement('div', { style: { height: 500 } }),
@@ -36609,7 +36613,8 @@ var Vai = function (_Component) {
 					'h2',
 					null,
 					'\u2728'
-				)
+				),
+				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
 	}]);
