@@ -34,7 +34,7 @@ class AmericanMade extends Component {
 		return (
 			<div>
 				<ParallaxHeader 
-				headerText={`American Made was a film site created for Universal Pictures`}
+				headerText={`American Made is a film site created for Universal Pictures`}
 				bgImage={"../assets/img/american-made/tickets-bg-dots-darker.jpg"}
 				strength={200}
 				/>

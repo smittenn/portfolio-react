@@ -35,7 +35,7 @@ class Vai extends Component {
 			<div>
 				<ParallaxHeader 
 				bgImage={"../assets/img/vai/banner.gif"}
-				headerText={`The V.ai Player uses AI to identify specific products in a video`}
+				headerText={`The V.ai Player uses AI to identify products and people in a video`}
 				/>
 				<div style={{ height: 500 }} />
 				<h2>{"\u2728"}</h2>

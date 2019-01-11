@@ -35075,7 +35075,7 @@ module.exports = warning;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _react = require('react');
@@ -35095,17 +35095,17 @@ var _routes2 = _interopRequireDefault(_routes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App(_ref) {
-  var history = _ref.history;
+	var history = _ref.history;
 
-  return _react2.default.createElement(
-    _connectedReactRouter.ConnectedRouter,
-    { history: history },
-    _routes2.default
-  );
+	return _react2.default.createElement(
+		_connectedReactRouter.ConnectedRouter,
+		{ history: history },
+		_routes2.default
+	);
 };
 
 App.propTypes = {
-  history: _propTypes2.default.object
+	history: _propTypes2.default.object
 };
 
 exports.default = App;
@@ -35808,7 +35808,7 @@ var ParallaxHeader = function (_Component) {
 							{ className: "grid" },
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+								{ className: "grid__item grid__item--col-11 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h1",
 									null,
@@ -36192,7 +36192,7 @@ var AmericanMade = function (_Component) {
 				'div',
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
-					headerText: 'American Made was a film site created for Universal Pictures',
+					headerText: 'American Made is a film site created for Universal Pictures',
 					bgImage: "../assets/img/american-made/tickets-bg-dots-darker.jpg",
 					strength: 200
 				}),
@@ -36606,7 +36606,7 @@ var Vai = function (_Component) {
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
 					bgImage: "../assets/img/vai/banner.gif",
-					headerText: 'The V.ai Player uses AI to identify specific products in a video'
+					headerText: 'The V.ai Player uses AI to identify products and people in a video'
 				}),
 				_react2.default.createElement('div', { style: { height: 500 } }),
 				_react2.default.createElement(

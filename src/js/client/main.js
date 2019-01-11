@@ -29,6 +29,3 @@ const render = () => {
 }
 
 render()
-
-
-
