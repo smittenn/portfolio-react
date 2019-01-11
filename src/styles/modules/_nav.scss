@@ -98,7 +98,7 @@ $baseclass: portfolio-nav;
 			.#{$baseclass}__hamburger {
 				height: 18px;
 
-				.line {
+				.line {					
 					&:first-child, &:last-child {
 						opacity: 1;
 					}

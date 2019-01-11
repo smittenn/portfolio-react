@@ -1529,7 +1529,7 @@ section p span {
 
 @media screen and (max-width: 800px) {
   .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
-    height: calc(100vh - 40px); } }
+    height: calc(100vh - 50px); } }
 
 @keyframes wiggle {
   16.65% {
@@ -1545,19 +1545,42 @@ section p span {
   100% {
     transform: translateY(0) rotate(90deg); } }
 
+@keyframes drawInOut {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(1); }
+  10% {
+    transform-origin: bottom;
+    transform: scaleY(0); }
+  11% {
+    transform: scaleY(0);
+    transform-origin: top; }
+  21%, 100% {
+    transform: scaleY(1);
+    transform-origin: top; } }
+
 .scroll-arrow {
   cursor: pointer;
   position: absolute;
-  bottom: 60px;
-  left: 60px;
+  bottom: 0px;
+  left: 30px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  -ms-transform: translateX(-12px);
-  transform: translateX(-12px); }
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse; }
   .scroll-arrow h5, .scroll-arrow h6, .scroll-arrow i {
     color: #F8FBF7; }
+  .scroll-arrow__seperator {
+    height: 60px;
+    background: white;
+    width: 1px;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+    animation: drawInOut cubic-bezier(0.86, 0, 0.07, 1) 6s infinite; }
+    .scroll-arrow__seperator:first-child {
+      margin-top: 6px; }
   .scroll-arrow i {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -1565,8 +1588,8 @@ section p span {
     animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
   @media screen and (max-width: 800px) {
     .scroll-arrow {
-      left: 18px;
-      bottom: 24px; } }
+      left: calc(50% - 48px);
+      bottom: 50px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

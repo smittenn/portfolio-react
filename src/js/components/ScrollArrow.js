@@ -22,7 +22,8 @@ export default class ScrollArrow extends Component {
 
 		return (
 			<div className={classnames}>
-				<i className="iconcss icon-arrow-right"/>
+				<div className="scroll-arrow__seperator"/>
+				{/*<i className="iconcss icon-arrow-right"/>*/}
 				{<h5 className="uppercase">Scroll</h5>}
 			</div>					
 		);

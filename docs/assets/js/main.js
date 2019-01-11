@@ -35884,7 +35884,7 @@ var ScrollArrow = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: classnames },
-				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' }),
+				_react2.default.createElement('div', { className: 'scroll-arrow__seperator' }),
 				_react2.default.createElement(
 					'h5',
 					{ className: 'uppercase' },
