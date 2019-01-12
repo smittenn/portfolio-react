@@ -35884,8 +35884,8 @@ var ScrollArrow = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
 		_this.handleMouseWheel = function (e) {
-			_this.setState({ isHidden: true });
-			document.body.scrollTop == 0 ? _this.setState({ isHidden: false }) : null;
+			// this.setState({ isHidden: true });
+			// () ? this.setState({ isHidden: false }) : null;
 		};
 
 		_this.state = {
@@ -35897,14 +35897,14 @@ var ScrollArrow = function (_Component) {
 	_createClass(ScrollArrow, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			document.addEventListener('mousewheel', this.handleMouseWheel);
-			document.addEventListener('touchstart', this.handleMouseWheel);
+			// document.addEventListener('mousewheel', this.handleMouseWheel);
+			// document.addEventListener('touchstart', this.handleMouseWheel);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener('mousewheel', this.handleMouseWheel);
-			document.removeEventListener('touchstart', this.handleMouseWheel);
+			// document.removeEventListener('mousewheel', this.handleMouseWheel);
+			// document.removeEventListener('touchstart', this.handleMouseWheel);
 		}
 	}, {
 		key: 'render',
@@ -35914,7 +35914,7 @@ var ScrollArrow = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"scroll-arrow": true,
-				"scroll-arrow--hidden": this.state.isHidden
+				"scroll-arrow--hidden": document.body.scrollTop != 0
 			});
 
 			return _react2.default.createElement(
