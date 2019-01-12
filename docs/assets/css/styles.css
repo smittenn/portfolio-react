@@ -190,18 +190,19 @@ table {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 0 60px; }
   .grid--lines {
     position: fixed;
     top: 0;
     width: 100%;
     left: 0;
-    opacity: 0.6;
-    pointer-events: none; }
+    opacity: 0.12;
+    pointer-events: none;
+    mix-blend-mode: difference; }
   .grid__line {
-    color: rgba(222, 222, 220, 0.4);
+    color: rgba(222, 222, 220, 0.6);
     border-right: solid 1px;
     height: 100vh;
     -ms-transform: scaleY(0);
@@ -278,40 +279,43 @@ a {
 
 h1, h2, h3, h4, h5, h6, p {
   letter-spacing: -0.006em;
-  font-family: "GTWalsheim", sans-serif;
+  font-family: "Averta", sans-serif;
   color: inherit; }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.006em;
-  font-weight: 700; }
+  font-weight: 800; }
   h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase {
     letter-spacing: 0.024em;
     text-transform: uppercase; }
 
 h1 {
   font-size: 8vw;
-  line-height: 1.2;
-  margin-left: -5px; }
-  h1.mb {
-    margin-bottom: 40px; }
+  line-height: 1.3;
+  margin-left: -5px;
+  margin-bottom: 40px; }
+  h1 .outline {
+    color: transparent;
+    -webkit-text-stroke: 1px #F8FBF7; }
 
 h2 {
   font-size: 40px;
-  line-height: 1.2; }
-  h2.mb {
-    margin-bottom: 24px; }
+  line-height: 1.2;
+  margin-bottom: 24px; }
 
 h3 {
   font-size: 30px;
-  line-height: 1.2; }
+  line-height: 1.2;
+  margin-bottom: 18px; }
 
 h4 {
   font-size: 24px;
-  line-height: 36px; }
+  line-height: 1.2;
+  margin-bottom: 36px; }
 
 h5 {
   font-size: 16px;
-  line-height: 24px; }
+  line-height: 24px;
+  margin-bottom: 12px; }
 
 h6 {
   font-size: 12px;
@@ -321,9 +325,8 @@ p {
   color: #595358;
   font-size: 16px;
   line-height: 1.3;
-  white-space: pre-line; }
-  p.mb {
-    margin-bottom: 24px; }
+  white-space: pre-line;
+  margin-bottom: 24px; }
 
 * {
   box-sizing: border-box; }
@@ -1265,7 +1268,8 @@ section p span {
   background: white; }
   .portfolio-nav .portfolio-nav__toggle-abbreviation, .portfolio-nav .portfolio-nav__toggle-num {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
-    letter-spacing: 0.024em; }
+    letter-spacing: 0.024em;
+    margin: 0; }
   .portfolio-nav .portfolio-nav__toggle-abbreviation {
     margin-bottom: 12px; }
   .portfolio-nav .portfolio-nav__toggle-num {
@@ -1273,13 +1277,13 @@ section p span {
     transition-delay: 0.09s; }
     .portfolio-nav .portfolio-nav__toggle-num span {
       display: inline-block;
-      animation: decreasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
+      animation: none; }
       .portfolio-nav .portfolio-nav__toggle-num span:last-child {
         animation-delay: 0.09s; }
   .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num span {
     animation: increasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
-    .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num span:last-child {
-      animation-delay: 0.09s; }
+  .portfolio-nav--countIsDecreasing .portfolio-nav__toggle-num span {
+    animation: decreasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
   .portfolio-nav hr {
     margin: 0;
     height: 2px;
@@ -1363,6 +1367,7 @@ section p span {
       display: inline;
       border-bottom: solid 3px transparent;
       transition: border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+      margin: 0;
       padding-bottom: 2px; }
     .portfolio-nav__panel hr {
       height: 3px; }
@@ -1556,10 +1561,6 @@ section p span {
   position: absolute !important;
   top: 0; }
 
-@media screen and (max-width: 800px) {
-  .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
-    height: calc(100vh - 50px); } }
-
 @keyframes wiggle {
   16.65% {
     transform: translateY(4px) rotate(90deg); }
@@ -1588,11 +1589,18 @@ section p span {
     transform: scaleY(1);
     transform-origin: top; } }
 
+@keyframes drawOut {
+  0% {
+    transform: scaleY(1); }
+  100% {
+    transform: scaleY(0); } }
+
 .scroll-arrow {
   cursor: pointer;
   position: absolute;
   bottom: 0px;
   left: 29px;
+  left: calc(50% - 32px);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1600,25 +1608,60 @@ section p span {
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse; }
   .scroll-arrow h5, .scroll-arrow h6, .scroll-arrow i {
-    color: #F8FBF7; }
+    color: #F8FBF7;
+    margin: 0; }
+    .scroll-arrow h5 span, .scroll-arrow h6 span, .scroll-arrow i span {
+      display: inline-block;
+      opacity: 1;
+      -ms-transform: none;
+      transform: none;
+      transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
+      .scroll-arrow h5 span:nth-child(1), .scroll-arrow h6 span:nth-child(1), .scroll-arrow i span:nth-child(1) {
+        transition-delay: 0.09s; }
+      .scroll-arrow h5 span:nth-child(2), .scroll-arrow h6 span:nth-child(2), .scroll-arrow i span:nth-child(2) {
+        transition-delay: 0.18s; }
+      .scroll-arrow h5 span:nth-child(3), .scroll-arrow h6 span:nth-child(3), .scroll-arrow i span:nth-child(3) {
+        transition-delay: 0.27s; }
+      .scroll-arrow h5 span:nth-child(4), .scroll-arrow h6 span:nth-child(4), .scroll-arrow i span:nth-child(4) {
+        transition-delay: 0.36s; }
+      .scroll-arrow h5 span:nth-child(5), .scroll-arrow h6 span:nth-child(5), .scroll-arrow i span:nth-child(5) {
+        transition-delay: 0.45s; }
+      .scroll-arrow h5 span:nth-child(6), .scroll-arrow h6 span:nth-child(6), .scroll-arrow i span:nth-child(6) {
+        transition-delay: 0.54s; }
+      .scroll-arrow h5 span:nth-child(7), .scroll-arrow h6 span:nth-child(7), .scroll-arrow i span:nth-child(7) {
+        transition-delay: 0.63s; }
+      .scroll-arrow h5 span:nth-child(8), .scroll-arrow h6 span:nth-child(8), .scroll-arrow i span:nth-child(8) {
+        transition-delay: 0.72s; }
+      .scroll-arrow h5 span:nth-child(9), .scroll-arrow h6 span:nth-child(9), .scroll-arrow i span:nth-child(9) {
+        transition-delay: 0.81s; }
+      .scroll-arrow h5 span:nth-child(10), .scroll-arrow h6 span:nth-child(10), .scroll-arrow i span:nth-child(10) {
+        transition-delay: 0.9s; }
+  .scroll-arrow i {
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    font-size: 48px;
+    animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
   .scroll-arrow__seperator {
     height: 60px;
     background: white;
     width: 1px;
     -ms-transform-origin: bottom;
     transform-origin: bottom;
-    animation: drawInOut cubic-bezier(0.86, 0, 0.07, 1) 6s infinite; }
+    animation: drawInOut cubic-bezier(0.86, 0, 0.07, 1) 5s infinite; }
     .scroll-arrow__seperator:first-child {
       margin-top: 6px; }
-  .scroll-arrow i {
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    font-size: 48px;
-    animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
+  .scroll-arrow--hidden h5 span, .scroll-arrow--hidden h6 span {
+    opacity: 0;
+    -ms-transform: translateY(12px);
+    transform: translateY(12px); }
+  .scroll-arrow--hidden .scroll-arrow__seperator {
+    animation: drawOut cubic-bezier(0.86, 0, 0.07, 1) 0.9s;
+    animation-fill-mode: forwards; }
   @media screen and (max-width: 800px) {
     .scroll-arrow {
-      left: calc(50% - 48px);
-      bottom: 24px; } }
+      left: calc(50% - 47px); }
+      .scroll-arrow .scroll-arrow__seperator {
+        height: 90px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
@@ -1775,13 +1818,11 @@ section p span {
     padding: 12px 0; }
   h1 {
     font-size: 12vw;
-    margin-left: -2px; }
-    h1.mb {
-      margin-bottom: 24px; }
+    margin-left: -2px;
+    margin-bottom: 24px; }
   h2 {
-    font-size: 8vw; }
-    h2.mb {
-      margin-bottom: 12px; }
+    font-size: 8vw;
+    margin-bottom: 12px; }
   h3 {
     font-size: 6vw; }
   h4 {

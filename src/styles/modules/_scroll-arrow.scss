@@ -38,6 +38,15 @@
 	}
 }
 
+@keyframes drawOut {
+	0% {
+		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(0);
+	}
+}
+
 $baseclass: scroll-arrow;
 $arrow-size: 40px;
 
@@ -46,13 +55,33 @@ $arrow-size: 40px;
 	position: absolute;
 	bottom: 0px;
 	left: 29px;
+	left: calc(50% - 32px);
 	display: flex;
 	align-items: center;
 	flex-direction: column-reverse;
-	// transform: translateX(-12px);
 
 	h5, h6, i {
 		color: $brand-white;
+		margin: 0;
+
+		span {
+			display: inline-block;
+			opacity: 1;
+			transform: none;
+			transition: all $duration-slow $easing2;
+
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {
+					transition-delay: (#{0.0 + ($i * 0.09)}s);
+				}
+			}
+		}
+	}
+
+	i {
+		transform: rotate(90deg);
+		font-size: 48px;
+		animation: wiggle $duration-slower $easing2 infinite;
 	}
 
 	&__seperator {
@@ -60,22 +89,31 @@ $arrow-size: 40px;
 		background: white;
 		width: 1px;
 		transform-origin: bottom;
-		animation: drawInOut $easing3 6s infinite;
+		animation: drawInOut $easing3 5s infinite;
 
 		&:first-child {
 			margin-top: 6px;
 		}
 	}
 
-	i {
-		transform: rotate(90deg);
-		// margin-left: 6px;
-		font-size: 48px;
-		animation: wiggle $duration-slower $easing2 infinite;
+	&--hidden {
+		h5, h6 {
+			span {
+				opacity: 0;
+				transform: translateY(12px);
+			}
+		}
+		.#{$baseclass}__seperator {
+			animation: drawOut $easing3 $duration-slow;
+			animation-fill-mode: forwards;
+		}
 	}
 
 	@media screen and (max-width: $bp-medium) {
-    left: calc(50% - 48px);
-    bottom: 24px;
+		left: calc(50% - 47px);
+
+		.#{$baseclass}__seperator {
+			height: 90px;
+		}
 	}
 }

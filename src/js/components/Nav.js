@@ -15,6 +15,8 @@ class Nav extends Component {
 			secondaryPanelOpen: false,
 			isToggleHovered: false,
 			isMobile: window.innerWidth <= 800,
+			countIsIncreasing: false,
+			countIsDecreasing: false,
 		}
 	}
 
@@ -29,9 +31,13 @@ class Nav extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		(prevProps.count == this.props.count) ? null : this.setState({ 
-			countIsIncreasing: (prevProps.count < this.props.count) 
-		})
+		if (prevProps.count != this.props.count) { 
+			this.setState({
+				countIsIncreasing: (prevProps.count < this.props.count),
+				countIsDecreasing: (prevProps.count > this.props.count),
+			})
+			setTimeout(() => {this.setState({ countIsIncreasing: false, countIsDecreasing: false })}, 600);
+		}
 	}
 
 	detectMobile = (event) => {
@@ -56,7 +62,7 @@ class Nav extends Component {
 			secondaryPanelOpen: false,
 			notificationsOpen: false,
 		})
-		this.state.isMobile ? (setTimeout(() => {this.setState({ isToggleHovered: false })}, 600)) : null
+		this.state.isMobile ? (setTimeout(() => {this.setState({ isToggleHovered: false })}, 900)) : null
 	}
 	
 	openSecondaryPanel = () => {
@@ -88,7 +94,7 @@ class Nav extends Component {
 	)
 
 	render() {
-		const { menuOpen, secondaryPanelOpen, countIsIncreasing, isToggleHovered } = this.state;
+		const { menuOpen, secondaryPanelOpen, countIsIncreasing, countIsDecreasing, isToggleHovered } = this.state;
 		const { abbreviation, count } = this.props;
 
 		const classnames = classNames({
@@ -98,6 +104,7 @@ class Nav extends Component {
 			"portfolio-nav--menuOpen": menuOpen,
 			"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
 			"portfolio-nav--countIsIncreasing": countIsIncreasing,
+			"portfolio-nav--countIsDecreasing": countIsDecreasing,
 		})
 
 		return (

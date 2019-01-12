@@ -47,8 +47,8 @@ export default class ParallaxHeader extends Component {
 			renderLayer={percentage => (
 				<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-11 grid__item--col-12-medium">
-							<h1>{splitWord(headerText, { opacity: -(3 * percentage) + 2.5, transform: `skewX(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`})}</h1>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<h1>{splitWord(headerText, { opacity: -(3 * percentage) + 2.5, transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`})}</h1>
 						</div>
 					</div>
 				</div>

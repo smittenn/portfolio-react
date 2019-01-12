@@ -10,7 +10,7 @@ import { setNavWhite, setNavBlack } from "../actions/color"
 
 import Nav from "../components/Nav"
 import ParallaxHeader from "../components/ParallaxHeader"
-import ScrollArrow from "../components/ScrollArrow";
+import ScrollArrow from "../components/ScrollArrow"
 
 
 import GridLines from "../components/GridLines"
@@ -99,8 +99,8 @@ class Home extends Component {
 					<section>
 						<div className="grid">
 							<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-								<h1 className="mb">{splitWord("Form & Function")}</h1>
-								<p className="mb">
+								<h1>{splitWord("Form & Function")}</h1>
+								<p>
 									{splitWord(`Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I’ve worked on.`)}
 									<br/><br/>
 									{splitWord(`My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.`)}
@@ -108,9 +108,9 @@ class Home extends Component {
 							</div>
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium">
-								<div style={{transform: "translateY(-40%)"}} className="grid__item grid__item--col-4"><img src="../assets/img/me-4x3.jpg"/></div>
-								<div style={{transform: "translateY(40%)"}} className="grid__item grid__item--col-4"><img src="../assets/img/lands-end-4x3.jpg"/></div>
-								<div style={{transform: "translateY(-20%)"}} className="grid__item grid__item--col-4"><img src="../assets/img/mist-3x4.jpg"/></div>
+								<div className="grid__item grid__item--col-4"><img src="../assets/img/me-4x3.jpg"/></div>
+								<div className="grid__item grid__item--col-4"><img src="../assets/img/lands-end-4x3.jpg"/></div>
+								<div className="grid__item grid__item--col-4"><img src="../assets/img/mist-3x4.jpg"/></div>
 							</div>
 						</div>
 					</section>
@@ -120,8 +120,8 @@ class Home extends Component {
 						<div className="grid">
 							<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<h2 className="mb">{splitWord("Motion, Visual Design & The Front-end.")}</h2>
-								<p className="mb">
+								<h2>{splitWord("Motion, Visual Design & The Front-end.")}</h2>
+								<p>
 									{splitWord(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 									<br/><br/>
 									{splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)}

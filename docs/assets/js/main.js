@@ -35366,7 +35366,7 @@ var Nav = function (_Component) {
 			});
 			_this.state.isMobile ? setTimeout(function () {
 				_this.setState({ isToggleHovered: false });
-			}, 600) : null;
+			}, 900) : null;
 		};
 
 		_this.openSecondaryPanel = function () {
@@ -35401,7 +35401,9 @@ var Nav = function (_Component) {
 			menuOpen: false,
 			secondaryPanelOpen: false,
 			isToggleHovered: false,
-			isMobile: window.innerWidth <= 800
+			isMobile: window.innerWidth <= 800,
+			countIsIncreasing: false,
+			countIsDecreasing: false
 		};
 		return _this;
 	}
@@ -35421,19 +35423,28 @@ var Nav = function (_Component) {
 	}, {
 		key: 'componentDidUpdate',
 		value: function componentDidUpdate(prevProps) {
-			prevProps.count == this.props.count ? null : this.setState({
-				countIsIncreasing: prevProps.count < this.props.count
-			});
+			var _this2 = this;
+
+			if (prevProps.count != this.props.count) {
+				this.setState({
+					countIsIncreasing: prevProps.count < this.props.count,
+					countIsDecreasing: prevProps.count > this.props.count
+				});
+				setTimeout(function () {
+					_this2.setState({ countIsIncreasing: false, countIsDecreasing: false });
+				}, 600);
+			}
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
+			var _this3 = this;
 
 			var _state = this.state,
 			    menuOpen = _state.menuOpen,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    countIsIncreasing = _state.countIsIncreasing,
+			    countIsDecreasing = _state.countIsDecreasing,
 			    isToggleHovered = _state.isToggleHovered;
 			var _props = this.props,
 			    abbreviation = _props.abbreviation,
@@ -35446,7 +35457,8 @@ var Nav = function (_Component) {
 				"portfolio-nav--white": this.props.color == 'WHITE',
 				"portfolio-nav--menuOpen": menuOpen,
 				"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
-				"portfolio-nav--countIsIncreasing": countIsIncreasing
+				"portfolio-nav--countIsIncreasing": countIsIncreasing,
+				"portfolio-nav--countIsDecreasing": countIsDecreasing
 			});
 
 			return _react2.default.createElement(
@@ -35634,7 +35646,7 @@ var Nav = function (_Component) {
 									_react2.default.createElement(
 										'li',
 										{ onClick: function onClick() {
-												return _this2.toggleMenuOpen();
+												return _this3.toggleMenuOpen();
 											} },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
@@ -35649,7 +35661,7 @@ var Nav = function (_Component) {
 									_react2.default.createElement(
 										'li',
 										{ onClick: function onClick() {
-												return _this2.openSecondaryPanel();
+												return _this3.openSecondaryPanel();
 											} },
 										_react2.default.createElement(
 											'h2',
@@ -35808,11 +35820,11 @@ var ParallaxHeader = function (_Component) {
 							{ className: "grid" },
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-11 grid__item--col-12-medium" },
+								{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h1",
 									null,
-									(0, _splitWord2.default)(headerText, { opacity: -(3 * percentage) + 2.5, transform: "skewX(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" })
+									(0, _splitWord2.default)(headerText, { opacity: -(3 * percentage) + 2.5, transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" })
 								)
 							)
 						)
@@ -35847,6 +35859,10 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactRedux = require('react-redux');
 
+var _splitLetter = require('../services/splitLetter');
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35863,22 +35879,36 @@ var ScrollArrow = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
-		_this.state = {};
+		_this.handleMouseWheel = function (e) {
+			_this.setState({ isHidden: true });
+			document.body.scrollTop == 0 ? _this.setState({ isHidden: false }) : null;
+		};
+
+		_this.state = {
+			isHidden: false
+		};
 		return _this;
 	}
 
 	_createClass(ScrollArrow, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			document.addEventListener('mousewheel', this.handleMouseWheel);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			document.removeEventListener('mousewheel', this.handleMouseWheel);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
-			var _state = this.state,
-			    menuOpen = _state.menuOpen,
-			    secondaryPanelOpen = _state.secondaryPanelOpen,
-			    secondaryPanelType = _state.secondaryPanelType,
-			    countIsIncreasing = _state.countIsIncreasing;
+			var label = this.props.label;
 
 
 			var classnames = (0, _classnames2.default)({
-				"scroll-arrow": true
+				"scroll-arrow": true,
+				"scroll-arrow--hidden": this.state.isHidden
 			});
 
 			return _react2.default.createElement(
@@ -35888,7 +35918,7 @@ var ScrollArrow = function (_Component) {
 				_react2.default.createElement(
 					'h5',
 					{ className: 'uppercase' },
-					'Scroll'
+					this.props.label ? (0, _splitLetter2.default)('Scroll') : (0, _splitLetter2.default)('Scroll')
 				)
 			);
 		}
@@ -35899,7 +35929,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],128:[function(require,module,exports){
+},{"../services/splitLetter":138,"classnames":7,"react":106,"react-redux":54,"react-router-dom":72}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36150,6 +36180,14 @@ var _GridLines = require('../components/GridLines');
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
 
+var _ScrollArrow = require('../components/ScrollArrow');
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
+
+var _splitWord = require('../services/splitWord');
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
 var _counter = require('../actions/counter');
 
 var _abbreviation = require('../actions/abbreviation');
@@ -36193,14 +36231,93 @@ var AmericanMade = function (_Component) {
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
 					headerText: 'American Made is a film site created for Universal Pictures',
-					bgImage: "../assets/img/american-made/tickets-bg-dots-darker.jpg",
+					bgImage: "../assets/img/american-made/output.gif",
 					strength: 200
 				}),
-				_react2.default.createElement('div', { style: { height: 500 } }),
+				_react2.default.createElement(_ScrollArrow2.default, null),
 				_react2.default.createElement(
-					'h2',
+					'section',
 					null,
-					'\u2728'
+					_react2.default.createElement(
+						'div',
+						{ className: 'grid' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-4' },
+							_react2.default.createElement(
+								'h6',
+								{ className: 'uppercase' },
+								'Role'
+							),
+							_react2.default.createElement(
+								'h4',
+								null,
+								'Lead Designer & Creative Developer'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-4' },
+							_react2.default.createElement(
+								'h6',
+								{ className: 'uppercase' },
+								'Date'
+							),
+							_react2.default.createElement(
+								'h4',
+								null,
+								'June, 2017'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-4' },
+							_react2.default.createElement(
+								'h6',
+								{ className: 'uppercase' },
+								'Agency'
+							),
+							_react2.default.createElement(
+								'h4',
+								null,
+								'NBCUXLAB'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-8 grid__item--col-12-medium' },
+							_react2.default.createElement(
+								'h2',
+								null,
+								'I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. ',
+								_react2.default.createElement('br', null),
+								_react2.default.createElement('br', null),
+								' Our final design is the product of many late nights and too many cups of caffeine. It all paid off though\u2014the film earned $16.7 million at the box office the first weekend and there was a 63% conversion rate from our site to purchase tickets! I didn\'t do it alone, ',
+								_react2.default.createElement(
+									'a',
+									{ href: 'https://www.linkedin.com/in/oleksandr-lebedyev/' },
+									'Oleksandr Lebedyev'
+								),
+								' and ',
+								_react2.default.createElement(
+									'a',
+									{ href: 'https://www.linkedin.com/in/poplar-bai/' },
+									'Poplar Bai'
+								),
+								' helped greatly.'
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'section',
+					null,
+					_react2.default.createElement('img', { src: '../assets/img/american-made/columbia.gif' })
 				),
 				_react2.default.createElement(_GridLines2.default, null)
 			);
@@ -36239,7 +36356,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"react":106,"react-redux":54}],134:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"../components/ScrollArrow":127,"../services/splitWord":139,"react":106,"react-redux":54}],134:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36410,12 +36527,12 @@ var Home = function (_Component) {
 								{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h1",
-									{ className: "mb" },
+									null,
 									(0, _splitWord2.default)("Form & Function")
 								),
 								_react2.default.createElement(
 									"p",
-									{ className: "mb" },
+									null,
 									(0, _splitWord2.default)("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
 									_react2.default.createElement("br", null),
 									_react2.default.createElement("br", null),
@@ -36428,17 +36545,17 @@ var Home = function (_Component) {
 								{ className: "grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"div",
-									{ style: { transform: "translateY(-40%)" }, className: "grid__item grid__item--col-4" },
+									{ className: "grid__item grid__item--col-4" },
 									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
 								),
 								_react2.default.createElement(
 									"div",
-									{ style: { transform: "translateY(40%)" }, className: "grid__item grid__item--col-4" },
+									{ className: "grid__item grid__item--col-4" },
 									_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
 								),
 								_react2.default.createElement(
 									"div",
-									{ style: { transform: "translateY(-20%)" }, className: "grid__item grid__item--col-4" },
+									{ className: "grid__item grid__item--col-4" },
 									_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
 								)
 							)
@@ -36460,12 +36577,12 @@ var Home = function (_Component) {
 								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h2",
-									{ className: "mb" },
+									null,
 									(0, _splitWord2.default)("Motion, Visual Design & The Front-end.")
 								),
 								_react2.default.createElement(
 									"p",
-									{ className: "mb" },
+									null,
 									(0, _splitWord2.default)("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
 									_react2.default.createElement("br", null),
 									_react2.default.createElement("br", null),
@@ -36563,6 +36680,10 @@ var _GridLines = require('../components/GridLines');
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
 
+var _ScrollArrow = require('../components/ScrollArrow');
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
+
 var _counter = require('../actions/counter');
 
 var _abbreviation = require('../actions/abbreviation');
@@ -36606,7 +36727,7 @@ var Vai = function (_Component) {
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
 					bgImage: "../assets/img/vai/banner.gif",
-					headerText: 'The V.ai Player uses AI to identify products and people in a video'
+					headerText: 'The V.ai player uses AI to identify people and objects in video'
 				}),
 				_react2.default.createElement('div', { style: { height: 500 } }),
 				_react2.default.createElement(
@@ -36614,7 +36735,8 @@ var Vai = function (_Component) {
 					null,
 					'\u2728'
 				),
-				_react2.default.createElement(_GridLines2.default, null)
+				_react2.default.createElement(_GridLines2.default, null),
+				_react2.default.createElement(_ScrollArrow2.default, null)
 			);
 		}
 	}]);
@@ -36651,7 +36773,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Vai);
 
-},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"react":106,"react-redux":54}],136:[function(require,module,exports){
+},{"../actions/abbreviation":120,"../actions/color":121,"../actions/counter":122,"../components/GridLines":124,"../components/Nav":125,"../components/ParallaxHeader":126,"../components/ScrollArrow":127,"react":106,"react-redux":54}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -32,6 +32,7 @@ $baseclass: portfolio-nav;
 	.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
 		transition: all $easing2 0.3s;
 		letter-spacing: $letter-spacing-lg;
+		margin: 0;
 	}
 
 	.#{$baseclass}__toggle-abbreviation {
@@ -43,7 +44,7 @@ $baseclass: portfolio-nav;
 
 		span {
 			display: inline-block;
-			animation: decreasingNum 0.3s $easing5;
+			animation: none;
 
 			&:last-child {
 				animation-delay: $delay-medium;
@@ -54,10 +55,13 @@ $baseclass: portfolio-nav;
 		.#{$baseclass}__toggle-num {
 			span {
 				animation: increasingNum 0.3s $easing5;
-
-				&:last-child {
-					animation-delay: $delay-medium;
-				}	
+			}
+		}
+	}
+	&--countIsDecreasing {
+		.#{$baseclass}__toggle-num {
+			span {
+				animation: decreasingNum 0.3s $easing5;
 			}
 		}
 	}
@@ -179,6 +183,7 @@ $baseclass: portfolio-nav;
 			display: inline;
 			border-bottom: solid 3px transparent;
 			transition: border-color 0.3s $easing1;
+			margin: 0;
 			padding-bottom: 2px;
 		}
 

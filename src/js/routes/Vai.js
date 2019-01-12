@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import ParallaxHeader from "../components/ParallaxHeader"
 
 import GridLines from "../components/GridLines"
+import ScrollArrow from "../components/ScrollArrow";
 
 
 import { reset, setCounter } from '../actions/counter'
@@ -35,11 +36,12 @@ class Vai extends Component {
 			<div>
 				<ParallaxHeader 
 				bgImage={"../assets/img/vai/banner.gif"}
-				headerText={`The V.ai Player uses AI to identify products and people in a video`}
+				headerText={`The V.ai player uses AI to identify people and objects in video`}
 				/>
 				<div style={{ height: 500 }} />
 				<h2>{"\u2728"}</h2>
 				<GridLines/>
+				<ScrollArrow/>
 			</div>
 		);
 	}
