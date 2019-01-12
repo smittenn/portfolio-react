@@ -78,7 +78,6 @@ class Home extends Component {
 		
 		return (
 			<div>
-			{/*<div onWheel={(e) => {e.preventDefault(); this.debounce(this.wheel(e), 100)}}>*/}
 				<Element name="hello" className={classNames({ "active-section" : activeSection == "hello"})}>
 					<ParallaxHeader 
 					headerText={`Eric C. Smith is a Creative Developer in New York City`} 
