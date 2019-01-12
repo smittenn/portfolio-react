@@ -35883,9 +35883,10 @@ var ScrollArrow = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
-		_this.handleMouseWheel = function (e) {
+		_this.handleScroll = function (e) {
 			// this.setState({ isHidden: true });
-			// () ? this.setState({ isHidden: false }) : null;
+			document.body.scrollTop > 0 ? _this.setState({ isHidden: true }) : null;
+			document.body.scrollTop == 0 ? _this.setState({ isHidden: false }) : null;
 		};
 
 		_this.state = {
@@ -35897,14 +35898,14 @@ var ScrollArrow = function (_Component) {
 	_createClass(ScrollArrow, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			// document.addEventListener('mousewheel', this.handleMouseWheel);
-			// document.addEventListener('touchstart', this.handleMouseWheel);
+			document.addEventListener('mousewheel', this.handleScroll);
+			document.addEventListener('touchstart', this.handleScroll);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			// document.removeEventListener('mousewheel', this.handleMouseWheel);
-			// document.removeEventListener('touchstart', this.handleMouseWheel);
+			document.removeEventListener('mousewheel', this.handleScroll);
+			document.removeEventListener('touchstart', this.handleScroll);
 		}
 	}, {
 		key: 'render',
@@ -35912,9 +35913,11 @@ var ScrollArrow = function (_Component) {
 			var label = this.props.label;
 
 
+			console.log();
+
 			var classnames = (0, _classnames2.default)({
 				"scroll-arrow": true,
-				"scroll-arrow--hidden": document.body.scrollTop != 0
+				"scroll-arrow--hidden": this.state.isHidden
 			});
 
 			return _react2.default.createElement(
@@ -36251,26 +36254,26 @@ var AmericanMade = function (_Component) {
 							'div',
 							{ className: 'grid__item grid__item--col-4' },
 							_react2.default.createElement(
-								'h6',
+								'p',
 								{ className: 'uppercase' },
 								'Role'
 							),
 							_react2.default.createElement(
-								'h4',
+								'h3',
 								null,
-								'Lead Designer & Creative Developer'
+								'Lead Designer'
 							)
 						),
 						_react2.default.createElement(
 							'div',
 							{ className: 'grid__item grid__item--col-4' },
 							_react2.default.createElement(
-								'h6',
+								'p',
 								{ className: 'uppercase' },
 								'Date'
 							),
 							_react2.default.createElement(
-								'h4',
+								'h3',
 								null,
 								'June, 2017'
 							)
@@ -36279,14 +36282,14 @@ var AmericanMade = function (_Component) {
 							'div',
 							{ className: 'grid__item grid__item--col-4' },
 							_react2.default.createElement(
-								'h6',
+								'p',
 								{ className: 'uppercase' },
-								'Agency'
+								'Client'
 							),
 							_react2.default.createElement(
-								'h4',
+								'h3',
 								null,
-								'NBCUXLAB'
+								'NBCUX Lab'
 							)
 						),
 						_react2.default.createElement(
@@ -36489,7 +36492,7 @@ var Home = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				null,
+				{ id: "home" },
 				_react2.default.createElement(
 					_reactScroll.Element,
 					{ name: "hello", className: (0, _classnames2.default)({ "active-section": activeSection == "hello" }) },

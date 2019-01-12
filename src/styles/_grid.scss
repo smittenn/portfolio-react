@@ -10,13 +10,13 @@
 		top: 0;
 		width: 100%;
 		left: 0;
-		opacity: 0.4;
+		opacity: 0.33;
 		pointer-events: none;
 		// mix-blend-mode: difference;
 	}
 
 	&__line {
-		color: rgba($brand-grey-light, .72);
+		color: rgba($brand-grey-medium, 0.33);
 		border-right: solid 1px;
 		height: 100vh;
 

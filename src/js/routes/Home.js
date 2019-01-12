@@ -77,7 +77,7 @@ class Home extends Component {
 		const { activeSection } = this.state;
 		
 		return (
-			<div>
+			<div id="home">
 				<Element name="hello" className={classNames({ "active-section" : activeSection == "hello"})}>
 					<ParallaxHeader 
 					headerText={`Eric C. Smith is a Creative Developer in New York City`} 
