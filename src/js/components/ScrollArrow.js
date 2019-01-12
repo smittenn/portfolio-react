@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import splitLetter from '../services/splitLetter'
+import detectMobile from '../services/detectMobile'
 
 export default class ScrollArrow extends Component {
 
@@ -17,10 +18,12 @@ export default class ScrollArrow extends Component {
 
 	componentDidMount() {
 		document.addEventListener('mousewheel', this.handleMouseWheel);
+		document.addEventListener('touchstart', this.handleMouseWheel);
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('mousewheel', this.handleMouseWheel);
+		document.removeEventListener('touchstart', this.handleMouseWheel);
 	}
 
 	handleMouseWheel = (e) => {

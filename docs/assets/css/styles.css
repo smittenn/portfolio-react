@@ -335,6 +335,9 @@ body {
   background: #F8FBF7;
   -webkit-overflow-scrolling: touch; }
 
+#root > div > div > div {
+  position: relative; }
+
 *::-webkit-scrollbar {
   width: 0px;
   background: transparent; }

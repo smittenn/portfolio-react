@@ -93,7 +93,6 @@ class Home extends Component {
 					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
 						<ScrollArrow/>
 					</Link>
-
 				</Element>
 				<Element name="about" className={classNames({ "active-section" : activeSection == "about"})}>
 					<section>
