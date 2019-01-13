@@ -125,8 +125,8 @@ class Nav extends Component {
 							<div className="portfolio-nav__panel portfolio-nav__panel--secondary">
 								<ul>
 									{<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-right"></i>{/*<h5 className="uppercase">Back</h5>*/}</li>}
-									<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3 className={classNames({'active': abbreviation == 'P1' })}>American Made</h3></NavLink></li>
-									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3 className={classNames({'active': abbreviation == 'P2' })}>V.ai Player</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/american-made"><h3 className={classNames({ 'active': abbreviation == 'P1' })}>American Made</h3></NavLink></li>
+									<li onClick={this.toggleMenuOpen}><NavLink to="/vai"><h3 className={classNames({ 'active': abbreviation == 'P2' })}>V.ai Player</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/translator"><h3>Translator</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/jnj-mdc"><h3>J&J MDC</h3></NavLink></li>
 									<li onClick={this.toggleMenuOpen}><NavLink to="/jnj-home"><h3>J&J Home</h3></NavLink></li>
@@ -139,8 +139,8 @@ class Nav extends Component {
 							</div>
 							<div className="portfolio-nav__panel portfolio-nav__panel--white">
 								<ul>
-									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
-									<li onClick={() => this.openSecondaryPanel()}><h2>Projects</h2></li>
+									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({ 'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
+									<li onClick={() => this.openSecondaryPanel()}><h2 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h2></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/process"><h2>Process</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/about-me"><h2>About me</h2></NavLink></li>
 		 							<li onClick={this.toggleMenuOpen}><NavLink to="/resume"><h2>Resume</h2></NavLink></li>
