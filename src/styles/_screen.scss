@@ -1,7 +1,10 @@
 @media screen and (max-width: $bp-medium) {
 	.grid {
 		padding: 0 18px;
-		padding-right: 48px;
+
+		&--lines {
+			padding: 0 48px;
+		}
 
 		&__item {
 			&--hide-bp-medium {

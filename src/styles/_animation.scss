@@ -76,6 +76,7 @@ section {
 
 	p span {
 		transform: translate3d(0,24px,0) skewX(6deg);
+		transition-duration: 0.6s;
 		transition-delay: 0s;
 	}
 }
@@ -100,7 +101,7 @@ section {
 
 			@for $i from 1 through 120 {
 				&:nth-child(#{$i}) {
-					transition-delay: (#{1.2 + ($i * 0.09)}s);
+					transition-delay: (#{1.2 + ($i * 0.06)}s);
 				}
 			}
 		}

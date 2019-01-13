@@ -36780,7 +36780,7 @@ var ParallaxHeader = function (_Component) {
 							{ className: "grid" },
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+								{ className: "grid__item grid__item--col-10 grid__item--col-11-medium" },
 								_react2.default.createElement(
 									"h1",
 									null,
@@ -37489,10 +37489,10 @@ var Home = function (_Component) {
 					{ name: "about" },
 					_react2.default.createElement(
 						_reactIntersectionVisible2.default,
-						{ onShow: function onShow(entries) {
-								return console.log(entries[0].target.classList.add("active-section"));
-							}, onHide: function onHide(entries) {
-								return console.log(entries[0].target.classList.remove("active-section"));
+						{ onShow: function onShow(i) {
+								return console.log(i[0].target.classList.add("active-section"));
+							}, onHide: function onHide(i) {
+								return console.log(i[0].target.classList.remove("active-section"));
 							} },
 						_react2.default.createElement(
 							"section",
@@ -37546,10 +37546,10 @@ var Home = function (_Component) {
 					{ name: "projects" },
 					_react2.default.createElement(
 						_reactIntersectionVisible2.default,
-						{ onShow: function onShow(entries) {
-								return console.log(entries[0].target.classList.add("active-section"));
-							}, onHide: function onHide(entries) {
-								return console.log(entries[0].target.classList.remove("active-section"));
+						{ onShow: function onShow(i) {
+								return console.log(i[0].target.classList.add("active-section"));
+							}, onHide: function onHide(i) {
+								return console.log(i[0].target.classList.remove("active-section"));
 							} },
 						_react2.default.createElement(
 							"section",

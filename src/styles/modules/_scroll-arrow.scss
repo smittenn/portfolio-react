@@ -107,7 +107,7 @@ $arrow-size: 40px;
 	}
 
 	@media screen and (max-width: $bp-medium) {
-		left: calc(50% - 47px);
+		left: calc(50% - 32px);
 
 		.#{$baseclass}__seperator-container {
 			height: 112px;

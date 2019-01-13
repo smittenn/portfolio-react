@@ -87,7 +87,7 @@ $baseclass: portfolio-nav;
 		position: fixed;
 		right: 0;
 		top: 18px;
-		width: 60px;
+		width: 61px;
 		height: 90px;
 		display: flex;
 		flex-direction: column;
@@ -337,7 +337,7 @@ $baseclass: portfolio-nav;
 
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__toggle {
-			top: 0;
+			top: 6px;
 			width: 49px;
 		}
 		.#{$baseclass}__toggle-abbreviation {

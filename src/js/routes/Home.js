@@ -90,7 +90,7 @@ class Home extends Component {
 					</Link>
 				</Element>
 				<Element name="about">
-					<IntersectionVisible onShow={(entries) => console.log(entries[0].target.classList.add("active-section"))} onHide={(entries) => console.log(entries[0].target.classList.remove("active-section"))}>
+					<IntersectionVisible onShow={(i) => console.log(i[0].target.classList.add("active-section"))} onHide={(i) => console.log(i[0].target.classList.remove("active-section"))}>
 						<section>
 							<div className="grid">
 								<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
@@ -112,7 +112,7 @@ class Home extends Component {
 					</IntersectionVisible>
 				</Element>
 				<Element name="projects">
-					<IntersectionVisible onShow={(entries) => console.log(entries[0].target.classList.add("active-section"))} onHide={(entries) => console.log(entries[0].target.classList.remove("active-section"))}>
+					<IntersectionVisible onShow={(i) => console.log(i[0].target.classList.add("active-section"))} onHide={(i) => console.log(i[0].target.classList.remove("active-section"))}>
 						<section>
 							<div className="grid">
 								<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium"/>
