@@ -35899,13 +35899,13 @@ var ScrollArrow = function (_Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			document.addEventListener('mousewheel', this.handleScroll);
-			document.addEventListener('touchstart', this.handleScroll);
+			document.addEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousewheel', this.handleScroll);
-			document.removeEventListener('touchstart', this.handleScroll);
+			document.removeEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'render',
@@ -35923,7 +35923,11 @@ var ScrollArrow = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: classnames },
-				_react2.default.createElement('div', { className: 'scroll-arrow__seperator' }),
+				_react2.default.createElement(
+					'div',
+					{ className: 'scroll-arrow__seperator-container' },
+					_react2.default.createElement('div', { className: 'scroll-arrow__seperator' })
+				),
 				_react2.default.createElement(
 					'h5',
 					{ className: 'uppercase' },

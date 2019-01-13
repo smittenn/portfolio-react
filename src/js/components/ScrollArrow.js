@@ -18,12 +18,12 @@ export default class ScrollArrow extends Component {
 
 	componentDidMount() {
 		document.addEventListener('mousewheel', this.handleScroll);
-		document.addEventListener('touchstart', this.handleScroll);
+		document.addEventListener('touchmove', this.handleScroll);
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('mousewheel', this.handleScroll);
-		document.removeEventListener('touchstart', this.handleScroll);
+		document.removeEventListener('touchmove', this.handleScroll);
 	}
 
 	handleScroll = (e) => {
@@ -44,8 +44,10 @@ export default class ScrollArrow extends Component {
 		})
 
 		return (
-			<div className={classnames}>
-				<div className="scroll-arrow__seperator"/>
+			<div className={classnames}>				
+				<div className="scroll-arrow__seperator-container">
+					<div className="scroll-arrow__seperator"/>
+				</div>
 				{/*<i className="iconcss icon-arrow-right"/>*/}
 				{<h5 className="uppercase">{this.props.label ? splitLetter(`Scroll`) : splitLetter(`Scroll`)}</h5>}
 			</div>					

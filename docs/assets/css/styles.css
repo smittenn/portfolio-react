@@ -230,7 +230,13 @@ table {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    /*&--col-11 {
+			width: 91.66%;
+		}
+		&--col-12 {
+			width: 100%;
+		}*/ }
     .grid__item--row {
       -ms-flex-direction: row;
       flex-direction: row; }
@@ -254,10 +260,6 @@ table {
       width: 75%; }
     .grid__item--col-10 {
       width: 83.33%; }
-    .grid__item--col-11 {
-      width: 91.66%; }
-    .grid__item--col-12 {
-      width: 100%; }
 
 .react-parallax-contents * {
   z-index: 999; }
@@ -1578,24 +1580,18 @@ section p span {
     transform: translateY(0) rotate(90deg); } }
 
 @keyframes drawInOut {
-  0% {
+  0%, 40% {
     transform-origin: bottom;
     transform: scaleY(1); }
-  10% {
+  50% {
     transform-origin: bottom;
     transform: scaleY(0); }
-  11% {
+  51% {
     transform: scaleY(0);
     transform-origin: top; }
-  21%, 100% {
+  61%, 100% {
     transform: scaleY(1);
     transform-origin: top; } }
-
-@keyframes drawOut {
-  0% {
-    transform: scaleY(1); }
-  100% {
-    transform: scaleY(0); } }
 
 .scroll-arrow {
   cursor: pointer;
@@ -1643,22 +1639,28 @@ section p span {
     transform: rotate(90deg);
     font-size: 48px;
     animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
-  .scroll-arrow__seperator {
+  .scroll-arrow__seperator-container {
     height: 60px;
-    background: white;
     width: 1px;
     -ms-transform-origin: bottom;
     transform-origin: bottom;
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    transition: transform cubic-bezier(0.86, 0, 0.07, 1) 0.9s; }
+  .scroll-arrow__seperator {
+    height: 100%;
+    width: 100%;
+    background: white;
     animation: drawInOut cubic-bezier(0.86, 0, 0.07, 1) 5s infinite; }
-    .scroll-arrow__seperator:first-child {
-      margin-top: 6px; }
   .scroll-arrow--hidden h5 span, .scroll-arrow--hidden h6 span {
     opacity: 0;
     -ms-transform: translateY(12px);
     transform: translateY(12px); }
+  .scroll-arrow--hidden .scroll-arrow__seperator-container {
+    -ms-transform: scaleY(0);
+    transform: scaleY(0); }
   .scroll-arrow--hidden .scroll-arrow__seperator {
-    animation: drawOut cubic-bezier(0.86, 0, 0.07, 1) 0.9s;
-    animation-fill-mode: forwards; }
+    animation: none; }
   @media screen and (max-width: 800px) {
     .scroll-arrow {
       left: calc(50% - 47px); }
