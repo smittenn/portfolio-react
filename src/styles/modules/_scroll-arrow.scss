@@ -54,6 +54,7 @@ $arrow-size: 40px;
 	h5, h6, i {
 		color: $brand-white;
 		margin: 0;
+		margin-bottom: 12px;
 
 		span {
 			display: inline-block;
@@ -108,8 +109,8 @@ $arrow-size: 40px;
 	@media screen and (max-width: $bp-medium) {
 		left: calc(50% - 47px);
 
-		.#{$baseclass}__seperator {
-			height: 100px;
+		.#{$baseclass}__seperator-container {
+			height: 112px;
 		}
 	}
 }
