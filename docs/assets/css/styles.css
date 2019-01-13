@@ -344,7 +344,7 @@ body {
   background: transparent; }
 
 section {
-  padding: 60px 0;
+  padding: 72px 0;
   min-height: 100vh;
   height: auto;
   display: -ms-flexbox;
@@ -1294,7 +1294,7 @@ section p span {
     width: 100%;
     background-color: #DEDEDC; }
     .portfolio-nav hr:first-of-type {
-      background: #F4F4F4; }
+      background: #F4F4F0; }
   .portfolio-nav p {
     font-size: 21px;
     color: #595358;
