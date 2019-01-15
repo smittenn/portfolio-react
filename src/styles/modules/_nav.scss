@@ -209,21 +209,6 @@ $baseclass: portfolio-nav;
 			transition: none;
 			width: auto;
 			margin-bottom: 40px;
-
-			&:nth-child(1) {
-				h1, h2, h3, h4, h5, h6 {
-					&.active {
-						border-color: $brand-red;
-					}
-				}
-			}
-			&:nth-child(2) {
-				h1, h2, h3, h4, h5, h6 {
-					&.active {
-						border-color: $brand-purple;
-					}
-				}
-			}
 		}
 	}
 
@@ -233,6 +218,9 @@ $baseclass: portfolio-nav;
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
 				border-color: $brand-grey-light;
+			}
+			&.active {
+				border-color: $brand-red;
 			}
 		}
 	}
@@ -245,6 +233,10 @@ $baseclass: portfolio-nav;
 
 			&:hover {
 				border-color: $brand-white;
+			}
+
+			&.active {
+				border-color: $brand-red;
 			}
 		}
 

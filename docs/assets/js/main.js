@@ -37216,11 +37216,11 @@ var AmericanMade = function (_Component) {
 							{ className: 'grid__item grid__item--col-4' },
 							_react2.default.createElement(
 								'p',
-								{ className: 'uppercase' },
+								null,
 								'Role'
 							),
 							_react2.default.createElement(
-								'h3',
+								'h4',
 								null,
 								'Lead Designer'
 							)
@@ -37230,11 +37230,11 @@ var AmericanMade = function (_Component) {
 							{ className: 'grid__item grid__item--col-4' },
 							_react2.default.createElement(
 								'p',
-								{ className: 'uppercase' },
+								null,
 								'Date'
 							),
 							_react2.default.createElement(
-								'h3',
+								'h4',
 								null,
 								'June, 2017'
 							)
@@ -37244,11 +37244,11 @@ var AmericanMade = function (_Component) {
 							{ className: 'grid__item grid__item--col-4' },
 							_react2.default.createElement(
 								'p',
-								{ className: 'uppercase' },
+								null,
 								'Client'
 							),
 							_react2.default.createElement(
-								'h3',
+								'h4',
 								null,
 								'NBCUX Lab'
 							)

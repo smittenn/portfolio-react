@@ -45,16 +45,16 @@ class AmericanMade extends Component {
 				<section>
 					<div className="grid">
 						<div className="grid__item grid__item--col-4">
-							<p className="uppercase">Role</p>
-							<h3>Lead Designer</h3>
+							<p>Role</p>
+							<h4>Lead Designer</h4>
 						</div>
 						<div className="grid__item grid__item--col-4">
-							<p className="uppercase">Date</p>
-							<h3>June, 2017</h3>
+							<p>Date</p>
+							<h4>June, 2017</h4>
 						</div>
 						<div className="grid__item grid__item--col-4">
-							<p className="uppercase">Client</p>
-							<h3>NBCUX Lab</h3> 
+							<p>Client</p>
+							<h4>NBCUX Lab</h4> 
 						</div>
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							{/*<h1>Deep dive into the story</h1>*/}
