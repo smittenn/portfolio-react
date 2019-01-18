@@ -270,14 +270,14 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Campton", sans-serif;
   color: inherit; }
   h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, p.uppercase {
-    letter-spacing: 0.06em;
+    letter-spacing: 0.006em;
     text-transform: uppercase; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800; }
 
 h1 {
-  font-size: 8vw;
+  font-size: 7vw;
   line-height: 1.3;
   margin-left: -5px;
   margin-bottom: 40px; }

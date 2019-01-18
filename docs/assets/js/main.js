@@ -36772,6 +36772,14 @@ var ParallaxHeader = function (_Component) {
 				blur: null,
 				strength: str,
 				renderLayer: function renderLayer(percentage) {
+					var style = {
+						opacity: -(3 * percentage) + 2.5,
+						transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)"
+					};
+					var updatedText = [];
+					headerText.forEach(function (item, idx) {
+						typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style });
+					});
 					return _react2.default.createElement(
 						"div",
 						{ className: "react-parallax-contents", style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + percentage + ")" } },
@@ -36784,7 +36792,7 @@ var ParallaxHeader = function (_Component) {
 								_react2.default.createElement(
 									"h1",
 									null,
-									(0, _splitWord2.default)(headerText, { opacity: -(3 * percentage) + 2.5, transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" })
+									updatedText
 								)
 							)
 						)
@@ -37200,7 +37208,15 @@ var AmericanMade = function (_Component) {
 				'div',
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
-					headerText: 'American Made is a film site created for Universal Pictures',
+					headerText: [_react2.default.createElement(
+						'span',
+						{ className: 'outline' },
+						'American\xA0'
+					), _react2.default.createElement(
+						'span',
+						{ className: 'outline' },
+						'Made\xA0'
+					), 'is a film site created for Universal Pictures'],
 					bgImage: "../assets/img/american-made/output.gif",
 					strength: 200
 				}),
@@ -37459,7 +37475,15 @@ var Home = function (_Component) {
 					_reactScroll.Element,
 					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
-						headerText: "Eric C. Smith is a Creative Developer in New York City",
+						headerText: ["Eric C. Smith is a", _react2.default.createElement(
+							"span",
+							{ className: "outline" },
+							"Creative\xA0"
+						), _react2.default.createElement(
+							"span",
+							{ className: "outline" },
+							"Developer\xA0"
+						), "in New York City"],
 						bgImage: "../assets/img/liquid.gif"
 					}),
 					_react2.default.createElement(
@@ -37472,14 +37496,14 @@ var Home = function (_Component) {
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
+								_this2.props.setCounter(2);_this2.props.setNavWhite();_this2.setActiveSection("about");
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					),
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
+								_this2.props.setCounter(3);_this2.props.setNavWhite();_this2.setActiveSection("projects");
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					)
@@ -37714,7 +37738,15 @@ var Vai = function (_Component) {
 				null,
 				_react2.default.createElement(_ParallaxHeader2.default, {
 					bgImage: "../assets/img/vai/banner.gif",
-					headerText: 'The V.ai player uses AI to identify people and objects in video'
+					headerText: ['The', _react2.default.createElement(
+						'span',
+						{ className: 'outline' },
+						'V.ai\xA0'
+					), _react2.default.createElement(
+						'span',
+						{ className: 'outline' },
+						'player\xA0'
+					), 'uses AI to identify people and objects in video']
 				}),
 				_react2.default.createElement('div', { style: { height: 500 } }),
 				_react2.default.createElement(

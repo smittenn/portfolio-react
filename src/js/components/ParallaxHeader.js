@@ -44,15 +44,25 @@ export default class ParallaxHeader extends Component {
 			bgImage={imageUrl} 
 			blur={null} 
 			strength={str}
-			renderLayer={percentage => (
-				<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
-					<div className="grid">
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
-							<h1>{splitWord(headerText, { opacity: -(3 * percentage) + 2.5, transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`})}</h1>
+			renderLayer={percentage => {
+				const style = { 
+					opacity: -(3 * percentage) + 2.5, 
+					transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
+				}
+				let updatedText = [];
+				headerText.forEach((item, idx) => {
+					typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style })
+				})
+				return (
+					<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
+						<div className="grid">
+							<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+								<h1>{updatedText}</h1>
+							</div>
 						</div>
 					</div>
-				</div>
-			)}>
+				)
+			}}>
 			</Parallax>
 		);
 	}

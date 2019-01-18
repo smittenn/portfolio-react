@@ -37,7 +37,7 @@ class AmericanMade extends Component {
 		return (
 			<div>
 				<ParallaxHeader 
-				headerText={`American Made is a film site created for Universal Pictures`}
+				headerText={[<span className="outline">American&nbsp;</span>, <span className="outline">Made&nbsp;</span>, `is a film site created for Universal Pictures`]}
 				bgImage={"../assets/img/american-made/output.gif"}
 				strength={200}
 				/>
