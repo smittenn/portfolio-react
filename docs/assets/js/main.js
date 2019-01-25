@@ -37496,14 +37496,14 @@ var Home = function (_Component) {
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								_this2.props.setCounter(2);_this2.props.setNavWhite();_this2.setActiveSection("about");
+								_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection("about");
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					),
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								_this2.props.setCounter(3);_this2.props.setNavWhite();_this2.setActiveSection("projects");
+								_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection("projects");
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					)

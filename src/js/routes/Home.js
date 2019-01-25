@@ -82,10 +82,10 @@ class Home extends Component {
 					<Link style={{display: "none"}} to={pageSections[0]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}>
 						<ScrollArrow/>
 					</Link>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavWhite();  this.setActiveSection("about");}}>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
 						<ScrollArrow/>
 					</Link>
-					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavWhite();  this.setActiveSection("projects");}}>
+					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
 						<ScrollArrow/>
 					</Link>
 				</Element>
