@@ -36719,6 +36719,10 @@ var _hexToRgb = require("../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 
+var _detectMobile = require("../services/detectMobile");
+
+var _detectMobile2 = _interopRequireDefault(_detectMobile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36726,9 +36730,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import detectMobile from "../services/detectMobile"
-
 
 var ParallaxHeader = function (_Component) {
 	_inherits(ParallaxHeader, _Component);
@@ -36738,19 +36739,28 @@ var ParallaxHeader = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (ParallaxHeader.__proto__ || Object.getPrototypeOf(ParallaxHeader)).call(this, props));
 
-		_this.state = {};
+		_this.detectMobile = function (event) {
+			_this.setState({
+				isMobile: (0, _detectMobile2.default)()
+			});
+		};
+
+		_this.state = {
+			isMobile: (0, _detectMobile2.default)()
+		};
 		return _this;
 	}
 
 	_createClass(ParallaxHeader, [{
 		key: "componentDidMount",
-		value: function componentDidMount() {}
+		value: function componentDidMount() {
+			window.addEventListener('resize', this.detectMobile);
+		}
 	}, {
 		key: "componentWillUnmount",
-		value: function componentWillUnmount() {}
-	}, {
-		key: "componentDidUpdate",
-		value: function componentDidUpdate(prevProps) {}
+		value: function componentWillUnmount() {
+			window.removeEventListener('resize', this.detectMobile);
+		}
 	}, {
 		key: "render",
 		value: function render() {
@@ -36759,6 +36769,7 @@ var ParallaxHeader = function (_Component) {
 			    bgColor = _props.bgColor,
 			    headerText = _props.headerText,
 			    strength = _props.strength;
+			var isMobile = this.state.isMobile;
 
 
 			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -36766,6 +36777,9 @@ var ParallaxHeader = function (_Component) {
 			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)("#232021");
 
 			var str = strength ? strength : 600;
+			isMobile ? str /= 2 : null;
+
+			console.log(str);
 
 			return _react2.default.createElement(_reactParallax.Parallax, {
 				bgImage: imageUrl,
@@ -36806,7 +36820,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/hexToRgb":140,"../services/splitWord":142,"classnames":7,"react":108,"react-parallax":45,"react-scroll":93}],129:[function(require,module,exports){
+},{"../services/detectMobile":139,"../services/hexToRgb":140,"../services/splitWord":142,"classnames":7,"react":108,"react-parallax":45,"react-scroll":93}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37432,7 +37446,6 @@ var Home = function (_Component) {
 
 		_this.state = {
 			activeSection: "hello",
-			isMobile: window.innerWidth <= 800,
 			pageSections: ["hello", "about", "projects"]
 		};
 		return _this;
@@ -37470,7 +37483,7 @@ var Home = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				{ id: "home" },
+				null,
 				_react2.default.createElement(
 					_reactScroll.Element,
 					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
@@ -37478,11 +37491,11 @@ var Home = function (_Component) {
 						headerText: ["Eric C. Smith is a", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Creative\xA0"
+							"Creative "
 						), _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Developer\xA0"
+							"Developer "
 						), "in New York City"],
 						bgImage: "../assets/img/liquid.gif"
 					}),
@@ -37510,13 +37523,13 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: "about" },
+					{ name: pageSections[1] },
 					_react2.default.createElement(
 						_reactIntersectionVisible2.default,
 						{ onShow: function onShow(i) {
-								return console.log(i[0].target.classList.add("active-section"));
+								return i[0].target.classList.add("active-section");
 							}, onHide: function onHide(i) {
-								return console.log(i[0].target.classList.remove("active-section"));
+								return i[0].target.classList.remove("active-section");
 							} },
 						_react2.default.createElement(
 							"section",
@@ -37567,13 +37580,13 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: "projects" },
+					{ name: pageSections[2] },
 					_react2.default.createElement(
 						_reactIntersectionVisible2.default,
 						{ onShow: function onShow(i) {
-								return console.log(i[0].target.classList.add("active-section"));
+								return i[0].target.classList.add("active-section");
 							}, onHide: function onHide(i) {
-								return console.log(i[0].target.classList.remove("active-section"));
+								return i[0].target.classList.remove("active-section");
 							} },
 						_react2.default.createElement(
 							"section",

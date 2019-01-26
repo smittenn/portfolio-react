@@ -7,7 +7,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import splitWord from "../services/splitWord"
 import hexToRgb from "../services/hexToRgb"
 
-// import detectMobile from "../services/detectMobile"
+import detectMobile from "../services/detectMobile"
 
 
 export default class ParallaxHeader extends Component {
@@ -16,29 +16,39 @@ export default class ParallaxHeader extends Component {
 		super(props);
 
 		this.state = {
+			isMobile: detectMobile(),
 		}
 	}
 
 	componentDidMount() {
+		window.addEventListener('resize', this.detectMobile);
 	}
 
 	componentWillUnmount() {
+		window.removeEventListener('resize', this.detectMobile);
 	}
 
-	componentDidUpdate(prevProps) {
+	detectMobile = (event) => {
+		this.setState({
+			isMobile: detectMobile(),
+		})
 	}
 
 		
 	render() {
 
 		const { bgImage, bgColor, headerText, strength } = this.props;
+		const { isMobile } = this.state;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
 		const color = bgColor ? hexToRgb(bgColor) : hexToRgb("#232021");
 
-		const str = strength ? strength : 600;
-		
+		let str = strength ? strength : 600;
+		isMobile ? (str /= 2) : null
+
+		console.log(str)
+
 		return (
 			<Parallax 
 			bgImage={imageUrl} 

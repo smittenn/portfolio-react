@@ -1548,6 +1548,8 @@ section p span {
   .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p, .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
     color: #F8FBF7;
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .react-parallax-contents h1 span, .react-parallax-contents h2 span, .react-parallax-contents h3 span, .react-parallax-contents h4 span, .react-parallax-contents h5 span, .react-parallax-contents p span, .react-parallax-content h1 span, .react-parallax-content h2 span, .react-parallax-content h3 span, .react-parallax-content h4 span, .react-parallax-content h5 span, .react-parallax-content p span {
+      white-space: pre; }
 
 .react-parallax-content {
   position: absolute !important;
@@ -1585,8 +1587,10 @@ section p span {
   cursor: pointer;
   position: absolute;
   bottom: 0px;
-  left: 29px;
-  left: calc(50% - 32px);
+  left: 50%;
+  width: 80px;
+  -ms-transform: translateX(-41px);
+  transform: translateX(-41px);
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1629,6 +1633,7 @@ section p span {
     font-size: 48px;
     animation: wiggle 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite; }
   .scroll-arrow__seperator-container {
+    background: rgba(248, 251, 247, 0.24);
     height: 60px;
     width: 1px;
     -ms-transform-origin: bottom;
@@ -1651,10 +1656,8 @@ section p span {
   .scroll-arrow--hidden .scroll-arrow__seperator {
     animation: none; }
   @media screen and (max-width: 800px) {
-    .scroll-arrow {
-      left: calc(50% - 32px); }
-      .scroll-arrow .scroll-arrow__seperator-container {
-        height: 112px; } }
+    .scroll-arrow .scroll-arrow__seperator-container {
+      height: 112px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
@@ -1811,8 +1814,8 @@ section p span {
   section {
     padding: 40px 0; }
   h1 {
-    font-size: 11.5vw;
-    margin-left: -2px;
+    font-size: 11vw;
+    margin-left: 0;
     margin-bottom: 24px; }
   h2 {
     font-size: 8vw;

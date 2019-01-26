@@ -22,13 +22,14 @@ import hexToRgb from "../services/hexToRgb"
 // import detectMobile from "../services/detectMobile"
 
 
-class Home extends Component {
+class ScrollingPage extends Component {
 
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			activeSection: "hello",
+			isMobile: window.innerWidth <= 800,
 			pageSections: [
 			"hello",
 			"about",
@@ -50,15 +51,14 @@ class Home extends Component {
 		window.removeEventListener('resize', this.detectMobile);
 	}
 
+	componentDidUpdate(prevProps) {
+		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
+	}
+
 	detectMobile = (event) => {
 		this.setState({
 			isMobile: window.innerWidth <= 800,
 		})
-	}
-
-
-	componentDidUpdate(prevProps) {
-		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
 	}
 
 		
@@ -73,10 +73,10 @@ class Home extends Component {
 		const { activeSection, pageSections } = this.state;
 		
 		return (
-			<div>
+			<div id="home">
 				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is a`, <span className="outline">Creative </span>, <span className="outline">Developer </span>, `in New York City`]} 
+					headerText={[`Eric C. Smith is a`, <span className="outline">Creative&nbsp;</span>, <span className="outline">Developer&nbsp;</span>, `in New York City`]} 
 					bgImage={"../assets/img/liquid.gif"} 
 					/>
 					<Link style={{display: "none"}} to={pageSections[0]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}>
