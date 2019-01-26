@@ -84,48 +84,6 @@ table {
 	url('../fonts/CircularStd/CircularStd-Medium.svg#codropsicons') format('svg');
 }*/
 @font-face {
-  font-family: 'Averta';
-  font-weight: 900;
-  font-style: normal;
-  src: url("../fonts/Averta/Averta-Black.eot");
-  src: url("../fonts/Averta/Averta-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-Black.woff2") format("woff2"), url("../fonts/Averta/Averta-Black.woff") format("woff"), url("../fonts/Averta/Averta-Black.ttf") format("truetype"), url("../fonts/Averta/Averta-Black.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Averta';
-  font-weight: 800;
-  font-style: normal;
-  src: url("../fonts/Averta/Averta-ExtraBold.eot");
-  src: url("../fonts/Averta/Averta-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-ExtraBold.woff2") format("woff2"), url("../fonts/Averta/Averta-ExtraBold.woff") format("woff"), url("../fonts/Averta/Averta-ExtraBold.ttf") format("truetype"), url("../fonts/Averta/Averta-ExtraBold.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Averta';
-  font-weight: 700;
-  font-style: normal;
-  src: url("../fonts/Averta/Averta-Bold.eot");
-  src: url("../fonts/Averta/Averta-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-Bold.woff2") format("woff2"), url("../fonts/Averta/Averta-Bold.woff") format("woff"), url("../fonts/Averta/Averta-Bold.ttf") format("truetype"), url("../fonts/Averta/Averta-Bold.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Averta';
-  font-weight: 600;
-  font-style: normal;
-  src: url("../fonts/Averta/Averta-Semibold.eot");
-  src: url("../fonts/Averta/Averta-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-Semibold.woff2") format("woff2"), url("../fonts/Averta/Averta-Semibold.woff") format("woff"), url("../fonts/Averta/Averta-Semibold.ttf") format("truetype"), url("../fonts/Averta/Averta-Semibold.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Averta';
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/Averta/Averta-Regular.eot");
-  src: url("../fonts/Averta/Averta-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-Regular.woff2") format("woff2"), url("../fonts/Averta/Averta-Regular.woff") format("woff"), url("../fonts/Averta/Averta-Regular.ttf") format("truetype"), url("../fonts/Averta/Averta-Regular.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Averta';
-  font-weight: 300;
-  font-style: normal;
-  src: url("../fonts/Averta/Averta-Thin.eot");
-  src: url("../fonts/Averta/Averta-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-Thin.woff2") format("woff2"), url("../fonts/Averta/Averta-Thin.woff") format("woff"), url("../fonts/Averta/Averta-Thin.ttf") format("truetype"), url("../fonts/Averta/Averta-Thin.svg#codropsicons") format("svg"); }
-
-@font-face {
   font-family: 'Campton';
   font-weight: 400;
   font-style: normal;
@@ -1814,7 +1772,7 @@ section p span {
   section {
     padding: 40px 0; }
   h1 {
-    font-size: 11vw;
+    font-size: 12vw;
     margin-left: 0;
     margin-bottom: 24px; }
   h2 {

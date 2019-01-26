@@ -60,9 +60,8 @@ class Nav extends Component {
 		this.setState({
 			menuOpen: !this.state.menuOpen,
 			secondaryPanelOpen: false,
-			notificationsOpen: false,
 		})
-		this.state.isMobile ? (setTimeout(() => {this.setState({ isToggleHovered: false })}, 900)) : null
+		this.state.isMobile ? setTimeout(() => {this.setState({ isToggleHovered: false })}, 900) : null
 	}
 	
 	openSecondaryPanel = () => {
@@ -86,7 +85,7 @@ class Nav extends Component {
 	handleMouseLeave = () => {
 		this.setState({
 			isToggleHovered: false,
-		})
+		})			
 	}
 
 	pad = (n, width, z) => (

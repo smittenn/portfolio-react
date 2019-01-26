@@ -47,8 +47,6 @@ export default class ParallaxHeader extends Component {
 		let str = strength ? strength : 600;
 		isMobile ? (str /= 2) : null
 
-		console.log(str)
-
 		return (
 			<Parallax 
 			bgImage={imageUrl} 
@@ -61,12 +59,12 @@ export default class ParallaxHeader extends Component {
 				}
 				let updatedText = [];
 				headerText.forEach((item, idx) => {
-					typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style })
+					typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
 				})
 				return (
 					<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 						<div className="grid">
-							<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 								<h1>{updatedText}</h1>
 							</div>
 						</div>

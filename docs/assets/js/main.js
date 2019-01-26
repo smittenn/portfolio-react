@@ -36321,8 +36321,7 @@ var Nav = function (_Component) {
 		_this.toggleMenuOpen = function () {
 			_this.setState({
 				menuOpen: !_this.state.menuOpen,
-				secondaryPanelOpen: false,
-				notificationsOpen: false
+				secondaryPanelOpen: false
 			});
 			_this.state.isMobile ? setTimeout(function () {
 				_this.setState({ isToggleHovered: false });
@@ -36779,8 +36778,6 @@ var ParallaxHeader = function (_Component) {
 			var str = strength ? strength : 600;
 			isMobile ? str /= 2 : null;
 
-			console.log(str);
-
 			return _react2.default.createElement(_reactParallax.Parallax, {
 				bgImage: imageUrl,
 				blur: null,
@@ -36792,7 +36789,7 @@ var ParallaxHeader = function (_Component) {
 					};
 					var updatedText = [];
 					headerText.forEach(function (item, idx) {
-						typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style });
+						typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style, key: idx });
 					});
 					return _react2.default.createElement(
 						"div",
@@ -36802,7 +36799,7 @@ var ParallaxHeader = function (_Component) {
 							{ className: "grid" },
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-10 grid__item--col-11-medium" },
+								{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h1",
 									null,
