@@ -688,7 +688,7 @@ section h1 span, section h2 span, section p span {
   opacity: 0; }
 
 section h1 span {
-  transform: translate3d(0, 100px, 0) skewX(6deg); }
+  transform: translate3d(0, 100px, 0) skewY(6deg); }
   section h1 span:nth-child(1) {
     transition-delay: 0.69s; }
   section h1 span:nth-child(2) {
@@ -1311,7 +1311,7 @@ section p span {
     right: 0;
     height: 100%;
     overflow-y: scroll;
-    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s;
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s 0.12s;
     transform: translate3d(100%, 0, 0); }
     .portfolio-nav__panel h1, .portfolio-nav__panel h2, .portfolio-nav__panel h3, .portfolio-nav__panel h4, .portfolio-nav__panel h5, .portfolio-nav__panel h6 {
       display: inline;

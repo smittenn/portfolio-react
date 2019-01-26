@@ -44,23 +44,26 @@ class AmericanMade extends Component {
 				<ScrollArrow/>
 				<section>
 					<div className="grid">
-						<div className="grid__item grid__item--col-4">
-							<p>Role</p>
-							<h4>Lead Designer</h4>
-						</div>
-						<div className="grid__item grid__item--col-4">
-							<p>Date</p>
-							<h4>June, 2017</h4>
-						</div>
-						<div className="grid__item grid__item--col-4">
-							<p>Client</p>
-							<h4>NBCUX Lab</h4> 
-						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							{/*<h1>Deep dive into the story</h1>*/}
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							{/*<h1>The Sky <br/> is Never <br/>the Limit</h1>*/}
 							{<h2>I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures.</h2> }
 							<p>The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. <br/><br/>	Our final design is the product of many late nights and too many cups of caffeine. It all paid off though—the film earned $16.7 million at the box office the first weekend and there was a 63% conversion rate from our site to purchase tickets! I didn't do it alone, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Oleksandr Lebedyev</a> and <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a> helped greatly.</p>
 						</div>
+						<div className="grid__item grid__item--col-6">
+						<div className="grid__item grid__item--col-12">
+							<p className="uppercase">Role</p>
+							<h4>Lead Designer</h4>
+						</div>
+						<div className="grid__item grid__item--col-3">
+							<p className="uppercase">Date</p>
+							<h4>June, 2017</h4>
+						</div>
+						<div className="grid__item grid__item--col-3">
+							<p className="uppercase">Client</p>
+							<h4>NBCUX Lab</h4> 
+						</div>
+						</div>
+
 					</div>
 				</section>
 				<section>

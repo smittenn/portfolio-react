@@ -55,7 +55,7 @@ section {
 	}
 
 	h1 span {
-		transform: translate3d(0,100px,0) skewX(6deg);
+		transform: translate3d(0,100px,0) skewY(6deg);
 
 		@for $i from 1 through 60 {
 			&:nth-child(#{$i}) {

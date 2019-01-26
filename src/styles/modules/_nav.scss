@@ -177,7 +177,7 @@ $baseclass: portfolio-nav;
 		right: 0;
 		height: 100%;
 		overflow-y: scroll;
-		transition: transform $easing1 $duration-medium;
+		transition: transform $easing1 $duration-medium $delay-slow;
 		transform: translate3d(100%, 0,0);
 
 		h1, h2, h3, h4, h5, h6 {

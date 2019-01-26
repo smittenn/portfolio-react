@@ -36319,10 +36319,18 @@ var Nav = function (_Component) {
 		};
 
 		_this.toggleMenuOpen = function () {
-			_this.setState({
-				menuOpen: !_this.state.menuOpen,
-				secondaryPanelOpen: false
-			});
+			if (_this.state.menuOpen) {
+				_this.setState({
+					menuOpen: false,
+					secondaryPanelOpen: false,
+					isToggleHovered: true
+				});
+			}
+			if (!_this.state.menuOpen) {
+				_this.setState({
+					menuOpen: true
+				});
+			}
 			_this.state.isMobile ? setTimeout(function () {
 				_this.setState({ isToggleHovered: false });
 			}, 900) : null;
@@ -37240,49 +37248,7 @@ var AmericanMade = function (_Component) {
 						{ className: 'grid' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-4' },
-							_react2.default.createElement(
-								'p',
-								null,
-								'Role'
-							),
-							_react2.default.createElement(
-								'h4',
-								null,
-								'Lead Designer'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid__item grid__item--col-4' },
-							_react2.default.createElement(
-								'p',
-								null,
-								'Date'
-							),
-							_react2.default.createElement(
-								'h4',
-								null,
-								'June, 2017'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid__item grid__item--col-4' },
-							_react2.default.createElement(
-								'p',
-								null,
-								'Client'
-							),
-							_react2.default.createElement(
-								'h4',
-								null,
-								'NBCUX Lab'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'grid__item grid__item--col-8 grid__item--col-12-medium' },
+							{ className: 'grid__item grid__item--col-6 grid__item--col-12-medium' },
 							_react2.default.createElement(
 								'h2',
 								null,
@@ -37307,6 +37273,52 @@ var AmericanMade = function (_Component) {
 									'Poplar Bai'
 								),
 								' helped greatly.'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-6' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-12' },
+								_react2.default.createElement(
+									'p',
+									{ className: 'uppercase' },
+									'Role'
+								),
+								_react2.default.createElement(
+									'h4',
+									null,
+									'Lead Designer'
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-3' },
+								_react2.default.createElement(
+									'p',
+									{ className: 'uppercase' },
+									'Date'
+								),
+								_react2.default.createElement(
+									'h4',
+									null,
+									'June, 2017'
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'grid__item grid__item--col-3' },
+								_react2.default.createElement(
+									'p',
+									{ className: 'uppercase' },
+									'Client'
+								),
+								_react2.default.createElement(
+									'h4',
+									null,
+									'NBCUX Lab'
+								)
 							)
 						)
 					)
