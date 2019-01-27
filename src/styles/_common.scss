@@ -27,22 +27,25 @@ section {
 	height: auto;
 	display: flex;
 	align-items: center;
-	background: $brand-white;
+	background-color: $brand-white;
+	background-blend-mode: overlay;
+	background-size: cover;
+	background-position: 25% 25%;
 
 	img {
 		width: 100%;
 	}
 
 	&.black {
-		background: darken($brand-black, 3%);
+		background-color: darken($brand-black, 3%);
 
-		h1, h2, h3, h4, h5, h6, p, blockquote {
+		h1, h2, h3, h4, h5, h6, p, blockquote, a {
 			color: $brand-white;
 		}
 	}
 
 	&.grey {
-		background: $brand-grey-light;
+		background-color: $brand-grey-light;
 
 		h1, h2, h3, h4, h5, h6, p, blockquote {
 			color: $brand-white;

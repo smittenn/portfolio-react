@@ -37008,6 +37008,10 @@ var _reactIntersectionVisible = require("react-intersection-visible");
 
 var _reactIntersectionVisible2 = _interopRequireDefault(_reactIntersectionVisible);
 
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37043,7 +37047,9 @@ var ScrollSection = function (_Component) {
 			var _props = this.props,
 			    name = _props.name,
 			    onSetActive = _props.onSetActive,
-			    black = _props.black;
+			    black = _props.black,
+			    bgImage = _props.bgImage,
+			    bgColor = _props.bgColor;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -37051,19 +37057,24 @@ var ScrollSection = function (_Component) {
 				"grey": this.props.grey
 			});
 
+			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)("#232021");
+
 			return _react2.default.createElement(
 				_reactScroll.Element,
 				{ name: name },
 				_react2.default.createElement(
 					_reactIntersectionVisible2.default,
-					{ onShow: function onShow(i) {
+					{
+						onShow: function onShow(i) {
 							return i[0].target.classList.add("active-section");
-						}, onHide: function onHide(i) {
+						},
+						onHide: function onHide(i) {
 							return i[0].target.classList.remove("active-section");
-						} },
+						}
+					},
 					_react2.default.createElement(
 						"section",
-						{ className: classnames },
+						{ className: classnames, style: bgImage ? { backgroundImage: "url(" + bgImage + ")", backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", .6" } : null },
 						this.props.children
 					),
 					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: onSetActive })
@@ -37077,7 +37088,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"classnames":7,"react":108,"react-intersection-visible":41,"react-redux":56,"react-router-dom":74,"react-scroll":93}],131:[function(require,module,exports){
+},{"../services/hexToRgb":141,"classnames":7,"react":108,"react-intersection-visible":41,"react-redux":56,"react-router-dom":74,"react-scroll":93}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37404,8 +37415,8 @@ var AmericanMade = function (_Component) {
 		};
 
 		_this.state = {
-			activeSection: "hello",
-			pageSections: ["hello", "overview", "cinemagraphs"]
+			activeSection: "overview",
+			pageSections: ["overview", "intro", "details", "cinemagraphs"]
 		};
 		return _this;
 	}
@@ -37427,7 +37438,7 @@ var AmericanMade = function (_Component) {
 					_reactScroll.Element,
 					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
-						name: "hello",
+						name: pageSections[0],
 						headerText: [_react2.default.createElement(
 							"span",
 							{ className: "outline" },
@@ -37445,7 +37456,7 @@ var AmericanMade = function (_Component) {
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: "overview", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+						{ to: pageSections[1], spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 								_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection(pageSections[1]);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
@@ -37461,105 +37472,26 @@ var AmericanMade = function (_Component) {
 						{ className: "grid" },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__row" },
+							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
 							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h1",
-									{ className: "no-mb" },
-									"American Made Site"
-								)
+								"h2",
+								null,
+								(0, _splitWord2.default)("I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures")
 							),
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1" }),
 							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "no-mb" },
-									"I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures"
-								)
+								"p",
+								null,
+								"The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. Additionally There was a 63% conversion rate from our site to purchase tickets!",
+								_react2.default.createElement("br", null),
+								_react2.default.createElement("br", null),
+								"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems."
 							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-2" },
-								_react2.default.createElement(
-									"p",
-									{ className: "" },
-									"Role"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Lead Designer"
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-2" },
-								_react2.default.createElement(
-									"p",
-									{ className: "" },
-									"Date"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"June, 2017"
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-2" },
-								_react2.default.createElement(
-									"p",
-									{ className: "" },
-									"Client"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"NBCUX Lab"
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"p",
-									null,
-									"The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. Additionally There was a 63% conversion rate from our site to purchase tickets! I didn't do it alone, ",
-									_react2.default.createElement(
-										"a",
-										{ href: "https://www.linkedin.com/in/oleksandr-lebedyev/" },
-										"Oleksandr Lebedyev"
-									),
-									" and ",
-									_react2.default.createElement(
-										"a",
-										{ href: "https://www.linkedin.com/in/poplar-bai/" },
-										"Poplar Bai"
-									),
-									" helped greatly."
-								),
-								_react2.default.createElement(
-									"p",
-									null,
-									"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems."
-								)
-							)
-						),
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-6" })
+						)
 					)
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
-					{ black: true, name: pageSections[2], onSetActive: function onSetActive() {
+					{ black: true, bgImage: "../assets/img/american-made/s07-synopsis.jpg", name: pageSections[2], onSetActive: function onSetActive() {
 							_this2.props.setCounter(3);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[2]);
 						} },
 					_react2.default.createElement(
@@ -37567,8 +37499,89 @@ var AmericanMade = function (_Component) {
 						{ className: "grid" },
 						_react2.default.createElement(
 							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"p",
+								{ className: "" },
+								"Role"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"Lead Designer"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"p",
+								{ className: "" },
+								"Date"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"June, 2017"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"p",
+								{ className: "" },
+								"Client"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"NBCUX Lab"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"p",
+								{ className: "" },
+								"Team"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/minaazimov" },
+									"Mina Azimov"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/oleksandr-lebedyev/" },
+									"Oleksandr Lebedyev"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/poplar-bai/" },
+									"Poplar Bai"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{ black: true, name: pageSections[3], onSetActive: function onSetActive() {
+							_this2.props.setCounter(4);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[3]);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
 							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1" }),
 							_react2.default.createElement(
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },

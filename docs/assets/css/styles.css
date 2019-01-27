@@ -311,15 +311,18 @@ section {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  background: #F8FBF7; }
+  background-color: #F8FBF7;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: 25% 25%; }
   section img {
     width: 100%; }
   section.black {
-    background: #1b1919; }
-    section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p, section.black blockquote {
+    background-color: #1b1919; }
+    section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p, section.black blockquote, section.black a {
       color: #F8FBF7; }
   section.grey {
-    background: #DEDEDC; }
+    background-color: #DEDEDC; }
     section.grey h1, section.grey h2, section.grey h3, section.grey h4, section.grey h5, section.grey h6, section.grey p, section.grey blockquote {
       color: #F8FBF7; }
 
