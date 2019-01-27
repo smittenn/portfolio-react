@@ -21,8 +21,9 @@ body {
 }
 
 section {
-	padding: 72px 0;
-	min-height: 100vh;
+	padding: 90px 0;
+	// min-height: 100vh;
+	flex-direction: column;
 	height: auto;
 	display: flex;
 	align-items: center;
@@ -33,15 +34,23 @@ section {
 	}
 
 	&.black {
-		background: darken($brand-black, 2%);
+		background: darken($brand-black, 3%);
 
-		h1, h2, h3, h4, h5, h6, p {
+		h1, h2, h3, h4, h5, h6, p, blockquote {
+			color: $brand-white;
+		}
+	}
+
+	&.grey {
+		background: $brand-grey-light;
+
+		h1, h2, h3, h4, h5, h6, p, blockquote {
 			color: $brand-white;
 		}
 	}
 }
 
-h1, h2, p, {
+h1, h2, h3, p, blockquote, {
 	span {
 		display: inline-block;
 	}

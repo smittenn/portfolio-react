@@ -6,21 +6,16 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import IntersectionVisible from "react-intersection-visible"
 
 import { reset, setCounter } from "../actions/counter"
-import { home } from "../actions/abbreviation"
+import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 import { setNavWhite, setNavBlack } from "../actions/color"
 
 import Nav from "../components/Nav"
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
 
-
 import GridLines from "../components/GridLines"
 
 import splitWord from "../services/splitWord"
-import hexToRgb from "../services/hexToRgb"
-
-// import detectMobile from "../services/detectMobile"
-
 
 class Home extends Component {
 
@@ -55,12 +50,6 @@ class Home extends Component {
 			isMobile: window.innerWidth <= 800,
 		})
 	}
-
-
-	componentDidUpdate(prevProps) {
-		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
-	}
-
 		
 	setActiveSection = (name) => {
 		this.setState({
@@ -76,16 +65,15 @@ class Home extends Component {
 			<div>
 				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
+					name="hello"
 					headerText={[`Eric C. Smith is a`, <span className="outline">Creative </span>, <span className="outline">Developer </span>, `in New York City`]} 
 					bgImage={"../assets/img/liquid.gif"} 
+					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
-					<Link style={{display: "none"}} to={pageSections[0]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection(pageSections[1]); }}>
 						<ScrollArrow/>
 					</Link>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
-						<ScrollArrow/>
-					</Link>
-					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
+					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection(pageSections[2]);}}>
 						<ScrollArrow/>
 					</Link>
 				</Element>
@@ -154,6 +142,16 @@ const mapDispatchToProps = dispatch => ({
 	reset: () => dispatch(reset()),
 	setCounter: (n) => dispatch(setCounter(n)),
 	home: () => dispatch(home()),
+	americanMade: () => dispatch(americanMade()),
+	vai: () => dispatch(vai()),
+	translator: () => dispatch(translator()),
+	jjMdc: () => dispatch(jjMdc()),
+	jjHome: () => dispatch(jjHome()),
+	wrap1: () => dispatch(wrap1()),
+	wrap2: () => dispatch(wrap2()),
+	perforce: () => dispatch(perforce()),
+	cisco: () => dispatch(cisco()),
+	protohack: () => dispatch(protohack()),
 	setNavWhite: () => dispatch(setNavWhite()),
 	setNavBlack: () => dispatch(setNavBlack()),
 })

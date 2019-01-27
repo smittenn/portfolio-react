@@ -47,13 +47,17 @@
 		}
 	}
 
+	&__row {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 40px;
+	}
+
+
 	&__item {
 		display: flex;
 		flex-direction: column;
-
-		&--row {
-			flex-direction: row;
-		}
 
 		&--col-1 {
 			width: 8.33%;

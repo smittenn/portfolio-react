@@ -171,6 +171,13 @@ table {
     transform: scaleY(0); }
   100% {
     transform: scaleY(1); } }
+  .grid__row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px; }
   .grid__item {
     display: -ms-flexbox;
     display: flex;
@@ -182,9 +189,6 @@ table {
 		&--col-12 {
 			width: 100%;
 		}*/ }
-    .grid__item--row {
-      -ms-flex-direction: row;
-      flex-direction: row; }
     .grid__item--col-1 {
       width: 8.33%; }
     .grid__item--col-2 {
@@ -216,20 +220,23 @@ body, button, input, select, textarea {
   -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed; }
+  text-rendering: optimizeSpeed;
+  font-family: "Campton", sans-serif;
+  letter-spacing: -0.006em; }
 
 a {
-  color: #232021;
+  color: #595358;
+  border-bottom: solid 1px;
   text-decoration: none;
   outline: none; }
 
 h1, h2, h3, h4, h5, h6, p {
-  letter-spacing: -0.006em;
-  font-family: "Campton", sans-serif;
   color: inherit; }
   h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, p.uppercase {
     letter-spacing: 0.006em;
     text-transform: uppercase; }
+  h1.no-mb, h2.no-mb, h3.no-mb, h4.no-mb, h5.no-mb, h6.no-mb, p.no-mb {
+    margin-bottom: 0; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800; }
@@ -274,6 +281,13 @@ p {
   white-space: pre-line;
   margin-bottom: 24px; }
 
+blockquote {
+  font-size: 20px;
+  line-height: 1.5;
+  white-space: pre-line;
+  display: inline-block;
+  margin-bottom: 32px; }
+
 * {
   box-sizing: border-box; }
 
@@ -289,8 +303,9 @@ body {
   background: transparent; }
 
 section {
-  padding: 72px 0;
-  min-height: 100vh;
+  padding: 90px 0;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: auto;
   display: -ms-flexbox;
   display: flex;
@@ -300,11 +315,15 @@ section {
   section img {
     width: 100%; }
   section.black {
-    background: #1e1b1c; }
-    section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p {
+    background: #1b1919; }
+    section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p, section.black blockquote {
+      color: #F8FBF7; }
+  section.grey {
+    background: #DEDEDC; }
+    section.grey h1, section.grey h2, section.grey h3, section.grey h4, section.grey h5, section.grey h6, section.grey p, section.grey blockquote {
       color: #F8FBF7; }
 
-h1 span, h2 span, p span {
+h1 span, h2 span, h3 span, p span, blockquote span {
   display: inline-block; }
 
 @keyframes ghostText {
@@ -683,7 +702,7 @@ section .grid__item--row .grid__item:nth-child(59) img {
 section .grid__item--row .grid__item:nth-child(60) img {
   transition-delay: 18.6s; }
 
-section h1 span, section h2 span, section p span {
+section h1 span, section h2 span, section p span, section blockquote span {
   transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: 0; }
 
@@ -933,7 +952,7 @@ section h2 span {
   section h2 span:nth-child(60) {
     transition-delay: 4.2s; }
 
-section p span {
+section p span, section blockquote span {
   transform: translate3d(0, 24px, 0) skewX(6deg);
   transition-duration: 0.6s;
   transition-delay: 0s; }
@@ -946,248 +965,248 @@ section p span {
   opacity: 1;
   transform: translate3d(0, 0, 0) skewX(0deg); }
 
-.active-section section p span {
+.active-section section p span, .active-section section blockquote span {
   opacity: 1;
   transform: translate3d(0, 0, 0) skewX(0deg); }
-  .active-section section p span:nth-child(1) {
+  .active-section section p span:nth-child(1), .active-section section blockquote span:nth-child(1) {
     transition-delay: 1.26s; }
-  .active-section section p span:nth-child(2) {
+  .active-section section p span:nth-child(2), .active-section section blockquote span:nth-child(2) {
     transition-delay: 1.32s; }
-  .active-section section p span:nth-child(3) {
+  .active-section section p span:nth-child(3), .active-section section blockquote span:nth-child(3) {
     transition-delay: 1.38s; }
-  .active-section section p span:nth-child(4) {
+  .active-section section p span:nth-child(4), .active-section section blockquote span:nth-child(4) {
     transition-delay: 1.44s; }
-  .active-section section p span:nth-child(5) {
+  .active-section section p span:nth-child(5), .active-section section blockquote span:nth-child(5) {
     transition-delay: 1.5s; }
-  .active-section section p span:nth-child(6) {
+  .active-section section p span:nth-child(6), .active-section section blockquote span:nth-child(6) {
     transition-delay: 1.56s; }
-  .active-section section p span:nth-child(7) {
+  .active-section section p span:nth-child(7), .active-section section blockquote span:nth-child(7) {
     transition-delay: 1.62s; }
-  .active-section section p span:nth-child(8) {
+  .active-section section p span:nth-child(8), .active-section section blockquote span:nth-child(8) {
     transition-delay: 1.68s; }
-  .active-section section p span:nth-child(9) {
+  .active-section section p span:nth-child(9), .active-section section blockquote span:nth-child(9) {
     transition-delay: 1.74s; }
-  .active-section section p span:nth-child(10) {
+  .active-section section p span:nth-child(10), .active-section section blockquote span:nth-child(10) {
     transition-delay: 1.8s; }
-  .active-section section p span:nth-child(11) {
+  .active-section section p span:nth-child(11), .active-section section blockquote span:nth-child(11) {
     transition-delay: 1.86s; }
-  .active-section section p span:nth-child(12) {
+  .active-section section p span:nth-child(12), .active-section section blockquote span:nth-child(12) {
     transition-delay: 1.92s; }
-  .active-section section p span:nth-child(13) {
+  .active-section section p span:nth-child(13), .active-section section blockquote span:nth-child(13) {
     transition-delay: 1.98s; }
-  .active-section section p span:nth-child(14) {
+  .active-section section p span:nth-child(14), .active-section section blockquote span:nth-child(14) {
     transition-delay: 2.04s; }
-  .active-section section p span:nth-child(15) {
+  .active-section section p span:nth-child(15), .active-section section blockquote span:nth-child(15) {
     transition-delay: 2.1s; }
-  .active-section section p span:nth-child(16) {
+  .active-section section p span:nth-child(16), .active-section section blockquote span:nth-child(16) {
     transition-delay: 2.16s; }
-  .active-section section p span:nth-child(17) {
+  .active-section section p span:nth-child(17), .active-section section blockquote span:nth-child(17) {
     transition-delay: 2.22s; }
-  .active-section section p span:nth-child(18) {
+  .active-section section p span:nth-child(18), .active-section section blockquote span:nth-child(18) {
     transition-delay: 2.28s; }
-  .active-section section p span:nth-child(19) {
+  .active-section section p span:nth-child(19), .active-section section blockquote span:nth-child(19) {
     transition-delay: 2.34s; }
-  .active-section section p span:nth-child(20) {
+  .active-section section p span:nth-child(20), .active-section section blockquote span:nth-child(20) {
     transition-delay: 2.4s; }
-  .active-section section p span:nth-child(21) {
+  .active-section section p span:nth-child(21), .active-section section blockquote span:nth-child(21) {
     transition-delay: 2.46s; }
-  .active-section section p span:nth-child(22) {
+  .active-section section p span:nth-child(22), .active-section section blockquote span:nth-child(22) {
     transition-delay: 2.52s; }
-  .active-section section p span:nth-child(23) {
+  .active-section section p span:nth-child(23), .active-section section blockquote span:nth-child(23) {
     transition-delay: 2.58s; }
-  .active-section section p span:nth-child(24) {
+  .active-section section p span:nth-child(24), .active-section section blockquote span:nth-child(24) {
     transition-delay: 2.64s; }
-  .active-section section p span:nth-child(25) {
+  .active-section section p span:nth-child(25), .active-section section blockquote span:nth-child(25) {
     transition-delay: 2.7s; }
-  .active-section section p span:nth-child(26) {
+  .active-section section p span:nth-child(26), .active-section section blockquote span:nth-child(26) {
     transition-delay: 2.76s; }
-  .active-section section p span:nth-child(27) {
+  .active-section section p span:nth-child(27), .active-section section blockquote span:nth-child(27) {
     transition-delay: 2.82s; }
-  .active-section section p span:nth-child(28) {
+  .active-section section p span:nth-child(28), .active-section section blockquote span:nth-child(28) {
     transition-delay: 2.88s; }
-  .active-section section p span:nth-child(29) {
+  .active-section section p span:nth-child(29), .active-section section blockquote span:nth-child(29) {
     transition-delay: 2.94s; }
-  .active-section section p span:nth-child(30) {
+  .active-section section p span:nth-child(30), .active-section section blockquote span:nth-child(30) {
     transition-delay: 3s; }
-  .active-section section p span:nth-child(31) {
+  .active-section section p span:nth-child(31), .active-section section blockquote span:nth-child(31) {
     transition-delay: 3.06s; }
-  .active-section section p span:nth-child(32) {
+  .active-section section p span:nth-child(32), .active-section section blockquote span:nth-child(32) {
     transition-delay: 3.12s; }
-  .active-section section p span:nth-child(33) {
+  .active-section section p span:nth-child(33), .active-section section blockquote span:nth-child(33) {
     transition-delay: 3.18s; }
-  .active-section section p span:nth-child(34) {
+  .active-section section p span:nth-child(34), .active-section section blockquote span:nth-child(34) {
     transition-delay: 3.24s; }
-  .active-section section p span:nth-child(35) {
+  .active-section section p span:nth-child(35), .active-section section blockquote span:nth-child(35) {
     transition-delay: 3.3s; }
-  .active-section section p span:nth-child(36) {
+  .active-section section p span:nth-child(36), .active-section section blockquote span:nth-child(36) {
     transition-delay: 3.36s; }
-  .active-section section p span:nth-child(37) {
+  .active-section section p span:nth-child(37), .active-section section blockquote span:nth-child(37) {
     transition-delay: 3.42s; }
-  .active-section section p span:nth-child(38) {
+  .active-section section p span:nth-child(38), .active-section section blockquote span:nth-child(38) {
     transition-delay: 3.48s; }
-  .active-section section p span:nth-child(39) {
+  .active-section section p span:nth-child(39), .active-section section blockquote span:nth-child(39) {
     transition-delay: 3.54s; }
-  .active-section section p span:nth-child(40) {
+  .active-section section p span:nth-child(40), .active-section section blockquote span:nth-child(40) {
     transition-delay: 3.6s; }
-  .active-section section p span:nth-child(41) {
+  .active-section section p span:nth-child(41), .active-section section blockquote span:nth-child(41) {
     transition-delay: 3.66s; }
-  .active-section section p span:nth-child(42) {
+  .active-section section p span:nth-child(42), .active-section section blockquote span:nth-child(42) {
     transition-delay: 3.72s; }
-  .active-section section p span:nth-child(43) {
+  .active-section section p span:nth-child(43), .active-section section blockquote span:nth-child(43) {
     transition-delay: 3.78s; }
-  .active-section section p span:nth-child(44) {
+  .active-section section p span:nth-child(44), .active-section section blockquote span:nth-child(44) {
     transition-delay: 3.84s; }
-  .active-section section p span:nth-child(45) {
+  .active-section section p span:nth-child(45), .active-section section blockquote span:nth-child(45) {
     transition-delay: 3.9s; }
-  .active-section section p span:nth-child(46) {
+  .active-section section p span:nth-child(46), .active-section section blockquote span:nth-child(46) {
     transition-delay: 3.96s; }
-  .active-section section p span:nth-child(47) {
+  .active-section section p span:nth-child(47), .active-section section blockquote span:nth-child(47) {
     transition-delay: 4.02s; }
-  .active-section section p span:nth-child(48) {
+  .active-section section p span:nth-child(48), .active-section section blockquote span:nth-child(48) {
     transition-delay: 4.08s; }
-  .active-section section p span:nth-child(49) {
+  .active-section section p span:nth-child(49), .active-section section blockquote span:nth-child(49) {
     transition-delay: 4.14s; }
-  .active-section section p span:nth-child(50) {
+  .active-section section p span:nth-child(50), .active-section section blockquote span:nth-child(50) {
     transition-delay: 4.2s; }
-  .active-section section p span:nth-child(51) {
+  .active-section section p span:nth-child(51), .active-section section blockquote span:nth-child(51) {
     transition-delay: 4.26s; }
-  .active-section section p span:nth-child(52) {
+  .active-section section p span:nth-child(52), .active-section section blockquote span:nth-child(52) {
     transition-delay: 4.32s; }
-  .active-section section p span:nth-child(53) {
+  .active-section section p span:nth-child(53), .active-section section blockquote span:nth-child(53) {
     transition-delay: 4.38s; }
-  .active-section section p span:nth-child(54) {
+  .active-section section p span:nth-child(54), .active-section section blockquote span:nth-child(54) {
     transition-delay: 4.44s; }
-  .active-section section p span:nth-child(55) {
+  .active-section section p span:nth-child(55), .active-section section blockquote span:nth-child(55) {
     transition-delay: 4.5s; }
-  .active-section section p span:nth-child(56) {
+  .active-section section p span:nth-child(56), .active-section section blockquote span:nth-child(56) {
     transition-delay: 4.56s; }
-  .active-section section p span:nth-child(57) {
+  .active-section section p span:nth-child(57), .active-section section blockquote span:nth-child(57) {
     transition-delay: 4.62s; }
-  .active-section section p span:nth-child(58) {
+  .active-section section p span:nth-child(58), .active-section section blockquote span:nth-child(58) {
     transition-delay: 4.68s; }
-  .active-section section p span:nth-child(59) {
+  .active-section section p span:nth-child(59), .active-section section blockquote span:nth-child(59) {
     transition-delay: 4.74s; }
-  .active-section section p span:nth-child(60) {
+  .active-section section p span:nth-child(60), .active-section section blockquote span:nth-child(60) {
     transition-delay: 4.8s; }
-  .active-section section p span:nth-child(61) {
+  .active-section section p span:nth-child(61), .active-section section blockquote span:nth-child(61) {
     transition-delay: 4.86s; }
-  .active-section section p span:nth-child(62) {
+  .active-section section p span:nth-child(62), .active-section section blockquote span:nth-child(62) {
     transition-delay: 4.92s; }
-  .active-section section p span:nth-child(63) {
+  .active-section section p span:nth-child(63), .active-section section blockquote span:nth-child(63) {
     transition-delay: 4.98s; }
-  .active-section section p span:nth-child(64) {
+  .active-section section p span:nth-child(64), .active-section section blockquote span:nth-child(64) {
     transition-delay: 5.04s; }
-  .active-section section p span:nth-child(65) {
+  .active-section section p span:nth-child(65), .active-section section blockquote span:nth-child(65) {
     transition-delay: 5.1s; }
-  .active-section section p span:nth-child(66) {
+  .active-section section p span:nth-child(66), .active-section section blockquote span:nth-child(66) {
     transition-delay: 5.16s; }
-  .active-section section p span:nth-child(67) {
+  .active-section section p span:nth-child(67), .active-section section blockquote span:nth-child(67) {
     transition-delay: 5.22s; }
-  .active-section section p span:nth-child(68) {
+  .active-section section p span:nth-child(68), .active-section section blockquote span:nth-child(68) {
     transition-delay: 5.28s; }
-  .active-section section p span:nth-child(69) {
+  .active-section section p span:nth-child(69), .active-section section blockquote span:nth-child(69) {
     transition-delay: 5.34s; }
-  .active-section section p span:nth-child(70) {
+  .active-section section p span:nth-child(70), .active-section section blockquote span:nth-child(70) {
     transition-delay: 5.4s; }
-  .active-section section p span:nth-child(71) {
+  .active-section section p span:nth-child(71), .active-section section blockquote span:nth-child(71) {
     transition-delay: 5.46s; }
-  .active-section section p span:nth-child(72) {
+  .active-section section p span:nth-child(72), .active-section section blockquote span:nth-child(72) {
     transition-delay: 5.52s; }
-  .active-section section p span:nth-child(73) {
+  .active-section section p span:nth-child(73), .active-section section blockquote span:nth-child(73) {
     transition-delay: 5.58s; }
-  .active-section section p span:nth-child(74) {
+  .active-section section p span:nth-child(74), .active-section section blockquote span:nth-child(74) {
     transition-delay: 5.64s; }
-  .active-section section p span:nth-child(75) {
+  .active-section section p span:nth-child(75), .active-section section blockquote span:nth-child(75) {
     transition-delay: 5.7s; }
-  .active-section section p span:nth-child(76) {
+  .active-section section p span:nth-child(76), .active-section section blockquote span:nth-child(76) {
     transition-delay: 5.76s; }
-  .active-section section p span:nth-child(77) {
+  .active-section section p span:nth-child(77), .active-section section blockquote span:nth-child(77) {
     transition-delay: 5.82s; }
-  .active-section section p span:nth-child(78) {
+  .active-section section p span:nth-child(78), .active-section section blockquote span:nth-child(78) {
     transition-delay: 5.88s; }
-  .active-section section p span:nth-child(79) {
+  .active-section section p span:nth-child(79), .active-section section blockquote span:nth-child(79) {
     transition-delay: 5.94s; }
-  .active-section section p span:nth-child(80) {
+  .active-section section p span:nth-child(80), .active-section section blockquote span:nth-child(80) {
     transition-delay: 6s; }
-  .active-section section p span:nth-child(81) {
+  .active-section section p span:nth-child(81), .active-section section blockquote span:nth-child(81) {
     transition-delay: 6.06s; }
-  .active-section section p span:nth-child(82) {
+  .active-section section p span:nth-child(82), .active-section section blockquote span:nth-child(82) {
     transition-delay: 6.12s; }
-  .active-section section p span:nth-child(83) {
+  .active-section section p span:nth-child(83), .active-section section blockquote span:nth-child(83) {
     transition-delay: 6.18s; }
-  .active-section section p span:nth-child(84) {
+  .active-section section p span:nth-child(84), .active-section section blockquote span:nth-child(84) {
     transition-delay: 6.24s; }
-  .active-section section p span:nth-child(85) {
+  .active-section section p span:nth-child(85), .active-section section blockquote span:nth-child(85) {
     transition-delay: 6.3s; }
-  .active-section section p span:nth-child(86) {
+  .active-section section p span:nth-child(86), .active-section section blockquote span:nth-child(86) {
     transition-delay: 6.36s; }
-  .active-section section p span:nth-child(87) {
+  .active-section section p span:nth-child(87), .active-section section blockquote span:nth-child(87) {
     transition-delay: 6.42s; }
-  .active-section section p span:nth-child(88) {
+  .active-section section p span:nth-child(88), .active-section section blockquote span:nth-child(88) {
     transition-delay: 6.48s; }
-  .active-section section p span:nth-child(89) {
+  .active-section section p span:nth-child(89), .active-section section blockquote span:nth-child(89) {
     transition-delay: 6.54s; }
-  .active-section section p span:nth-child(90) {
+  .active-section section p span:nth-child(90), .active-section section blockquote span:nth-child(90) {
     transition-delay: 6.6s; }
-  .active-section section p span:nth-child(91) {
+  .active-section section p span:nth-child(91), .active-section section blockquote span:nth-child(91) {
     transition-delay: 6.66s; }
-  .active-section section p span:nth-child(92) {
+  .active-section section p span:nth-child(92), .active-section section blockquote span:nth-child(92) {
     transition-delay: 6.72s; }
-  .active-section section p span:nth-child(93) {
+  .active-section section p span:nth-child(93), .active-section section blockquote span:nth-child(93) {
     transition-delay: 6.78s; }
-  .active-section section p span:nth-child(94) {
+  .active-section section p span:nth-child(94), .active-section section blockquote span:nth-child(94) {
     transition-delay: 6.84s; }
-  .active-section section p span:nth-child(95) {
+  .active-section section p span:nth-child(95), .active-section section blockquote span:nth-child(95) {
     transition-delay: 6.9s; }
-  .active-section section p span:nth-child(96) {
+  .active-section section p span:nth-child(96), .active-section section blockquote span:nth-child(96) {
     transition-delay: 6.96s; }
-  .active-section section p span:nth-child(97) {
+  .active-section section p span:nth-child(97), .active-section section blockquote span:nth-child(97) {
     transition-delay: 7.02s; }
-  .active-section section p span:nth-child(98) {
+  .active-section section p span:nth-child(98), .active-section section blockquote span:nth-child(98) {
     transition-delay: 7.08s; }
-  .active-section section p span:nth-child(99) {
+  .active-section section p span:nth-child(99), .active-section section blockquote span:nth-child(99) {
     transition-delay: 7.14s; }
-  .active-section section p span:nth-child(100) {
+  .active-section section p span:nth-child(100), .active-section section blockquote span:nth-child(100) {
     transition-delay: 7.2s; }
-  .active-section section p span:nth-child(101) {
+  .active-section section p span:nth-child(101), .active-section section blockquote span:nth-child(101) {
     transition-delay: 7.26s; }
-  .active-section section p span:nth-child(102) {
+  .active-section section p span:nth-child(102), .active-section section blockquote span:nth-child(102) {
     transition-delay: 7.32s; }
-  .active-section section p span:nth-child(103) {
+  .active-section section p span:nth-child(103), .active-section section blockquote span:nth-child(103) {
     transition-delay: 7.38s; }
-  .active-section section p span:nth-child(104) {
+  .active-section section p span:nth-child(104), .active-section section blockquote span:nth-child(104) {
     transition-delay: 7.44s; }
-  .active-section section p span:nth-child(105) {
+  .active-section section p span:nth-child(105), .active-section section blockquote span:nth-child(105) {
     transition-delay: 7.5s; }
-  .active-section section p span:nth-child(106) {
+  .active-section section p span:nth-child(106), .active-section section blockquote span:nth-child(106) {
     transition-delay: 7.56s; }
-  .active-section section p span:nth-child(107) {
+  .active-section section p span:nth-child(107), .active-section section blockquote span:nth-child(107) {
     transition-delay: 7.62s; }
-  .active-section section p span:nth-child(108) {
+  .active-section section p span:nth-child(108), .active-section section blockquote span:nth-child(108) {
     transition-delay: 7.68s; }
-  .active-section section p span:nth-child(109) {
+  .active-section section p span:nth-child(109), .active-section section blockquote span:nth-child(109) {
     transition-delay: 7.74s; }
-  .active-section section p span:nth-child(110) {
+  .active-section section p span:nth-child(110), .active-section section blockquote span:nth-child(110) {
     transition-delay: 7.8s; }
-  .active-section section p span:nth-child(111) {
+  .active-section section p span:nth-child(111), .active-section section blockquote span:nth-child(111) {
     transition-delay: 7.86s; }
-  .active-section section p span:nth-child(112) {
+  .active-section section p span:nth-child(112), .active-section section blockquote span:nth-child(112) {
     transition-delay: 7.92s; }
-  .active-section section p span:nth-child(113) {
+  .active-section section p span:nth-child(113), .active-section section blockquote span:nth-child(113) {
     transition-delay: 7.98s; }
-  .active-section section p span:nth-child(114) {
+  .active-section section p span:nth-child(114), .active-section section blockquote span:nth-child(114) {
     transition-delay: 8.04s; }
-  .active-section section p span:nth-child(115) {
+  .active-section section p span:nth-child(115), .active-section section blockquote span:nth-child(115) {
     transition-delay: 8.1s; }
-  .active-section section p span:nth-child(116) {
+  .active-section section p span:nth-child(116), .active-section section blockquote span:nth-child(116) {
     transition-delay: 8.16s; }
-  .active-section section p span:nth-child(117) {
+  .active-section section p span:nth-child(117), .active-section section blockquote span:nth-child(117) {
     transition-delay: 8.22s; }
-  .active-section section p span:nth-child(118) {
+  .active-section section p span:nth-child(118), .active-section section blockquote span:nth-child(118) {
     transition-delay: 8.28s; }
-  .active-section section p span:nth-child(119) {
+  .active-section section p span:nth-child(119), .active-section section blockquote span:nth-child(119) {
     transition-delay: 8.34s; }
-  .active-section section p span:nth-child(120) {
+  .active-section section p span:nth-child(120), .active-section section blockquote span:nth-child(120) {
     transition-delay: 8.4s; }
 
 /* Modules */
@@ -1319,6 +1338,9 @@ section p span {
       transition: border-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
       margin: 0;
       padding-bottom: 2px; }
+    .portfolio-nav__panel a {
+      border: none;
+      color: #232021; }
     .portfolio-nav__panel hr {
       height: 3px; }
     .portfolio-nav__panel ul {

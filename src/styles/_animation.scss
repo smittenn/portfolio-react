@@ -47,7 +47,7 @@ section {
 		}
 	}
 
-	h1, h2, p, {
+	h1, h2, p, blockquote {
 		span {
 			transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 			opacity: 0;
@@ -74,10 +74,12 @@ section {
 		}
 	}
 
-	p span {
-		transform: translate3d(0,24px,0) skewX(6deg);
-		transition-duration: 0.6s;
-		transition-delay: 0s;
+	p, blockquote {
+		span {
+			transform: translate3d(0,24px,0) skewX(6deg);
+			transition-duration: 0.6s;
+			transition-delay: 0s;
+		}
 	}
 }
 
@@ -95,13 +97,15 @@ section {
 			transform: translate3d(0,0,0) skewX(0deg);
 		}
 
-		p span {
-			opacity: 1;
-			transform: translate3d(0,0,0) skewX(0deg);
+		p, blockquote {
+			span {
+				opacity: 1;
+				transform: translate3d(0,0,0) skewX(0deg);
 
-			@for $i from 1 through 120 {
-				&:nth-child(#{$i}) {
-					transition-delay: (#{1.2 + ($i * 0.06)}s);
+				@for $i from 1 through 120 {
+					&:nth-child(#{$i}) {
+						transition-delay: (#{1.2 + ($i * 0.06)}s);
+					}
 				}
 			}
 		}

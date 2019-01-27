@@ -37,7 +37,7 @@ export default class ParallaxHeader extends Component {
 		
 	render() {
 
-		const { bgImage, bgColor, headerText, strength } = this.props;
+		const { bgImage, bgColor, headerText, strength, name, onSetActive } = this.props;
 		const { isMobile } = this.state;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -48,30 +48,33 @@ export default class ParallaxHeader extends Component {
 		isMobile ? (str /= 2) : null
 
 		return (
-			<Parallax 
-			bgImage={imageUrl} 
-			blur={null} 
-			strength={str}
-			renderLayer={percentage => {
-				const style = { 
-					opacity: -(3 * percentage) + 2.5, 
-					transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
-				}
-				let updatedText = [];
-				headerText.forEach((item, idx) => {
-					typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
-				})
-				return (
-					<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
-						<div className="grid">
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<h1>{updatedText}</h1>
+			<div>
+				<Parallax 
+				bgImage={imageUrl} 
+				blur={null} 
+				strength={str}
+				renderLayer={percentage => {
+					const style = { 
+						opacity: -(3 * percentage) + 2.5, 
+						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
+					}
+					let updatedText = [];
+					headerText.forEach((item, idx) => {
+						typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
+					})
+					return (
+						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
+							<div className="grid">
+								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+									<h1>{updatedText}</h1>
+								</div>
 							</div>
 						</div>
-					</div>
-				)
-			}}>
-			</Parallax>
+					)
+				}}>
+				</Parallax>
+				<Link style={{display: "none"}} to={name} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={onSetActive}/>
+			</div>
 		);
 	}
 }

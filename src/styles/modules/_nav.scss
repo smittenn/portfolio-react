@@ -188,6 +188,11 @@ $baseclass: portfolio-nav;
 			padding-bottom: 2px;
 		}
 
+		a {
+			border: none;
+			color: $brand-black;
+		}
+
 		hr {
 			height: 3px;
 		}

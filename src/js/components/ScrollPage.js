@@ -6,7 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import IntersectionVisible from "react-intersection-visible"
 
 import { reset, setCounter } from "../actions/counter"
-import { home } from "../actions/abbreviation"
+import { home, americanMade } from "../actions/abbreviation"
 import { setNavWhite, setNavBlack } from "../actions/color"
 
 import Nav from "../components/Nav"
@@ -19,17 +19,14 @@ import GridLines from "../components/GridLines"
 import splitWord from "../services/splitWord"
 import hexToRgb from "../services/hexToRgb"
 
-// import detectMobile from "../services/detectMobile"
 
-
-class ScrollingPage extends Component {
+class ScrollPage extends Component {
 
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			activeSection: "hello",
-			isMobile: window.innerWidth <= 800,
 			pageSections: [
 			"hello",
 			"about",
@@ -51,10 +48,6 @@ class ScrollingPage extends Component {
 		window.removeEventListener('resize', this.detectMobile);
 	}
 
-	componentDidUpdate(prevProps) {
-		(prevProps.count == this.props.count) ? null : this.setState({ countIsIncreasing: (prevProps.count < this.props.count) })
-	}
-
 	detectMobile = (event) => {
 		this.setState({
 			isMobile: window.innerWidth <= 800,
@@ -73,19 +66,19 @@ class ScrollingPage extends Component {
 		const { activeSection, pageSections } = this.state;
 		
 		return (
-			<div id="home">
+			<div>
 				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is a`, <span className="outline">Creative&nbsp;</span>, <span className="outline">Developer&nbsp;</span>, `in New York City`]} 
+					headerText={[`Eric C. Smith is a`, <span className="outline">Creative </span>, <span className="outline">Developer </span>, `in New York City`]} 
 					bgImage={"../assets/img/liquid.gif"} 
 					/>
 					<Link style={{display: "none"}} to={pageSections[0]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}>
 						<ScrollArrow/>
 					</Link>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection("about");}}>
+					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection(pageSections[1]); }}>
 						<ScrollArrow/>
 					</Link>
-					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection("projects");}}>
+					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection(pageSections[2]);}}>
 						<ScrollArrow/>
 					</Link>
 				</Element>
