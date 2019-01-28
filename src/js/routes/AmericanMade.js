@@ -138,7 +138,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h1 className="no-mb">{splitWord("Atomic Design")}</h1> 
+							<h1 className="">{splitWord("Atomic Design")}</h1> 
 							<blockquote>{splitWord("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids, textures first. Atoms, molecules and organisms came naturally building upon the foundations.")}</blockquote>
 						</div>
 					</div>
@@ -148,8 +148,12 @@ class AmericanMade extends Component {
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<h2>{"Preloader"}</h2> 
-							<blockquote>{"If you have content that will take a long time to load, you should give the user feedback. I thought that the preloader could serve to delight and excite the the site visitors while they are waiting for the site. A simple plane animations sets the tone of the film. After the page loads the users are greeted with the \“Sky is Never The Limit\”, a catchphrase for the film."}</blockquote>
-							<p className="codepen" data-height="720" data-theme-id="light" data-default-tab="result" data-user="erchsm" data-slug-hash="RyGNYm" style={{ width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid black", margin: "1em 0", padding: "1em"}} data-pen-title="Preloader: American Made Film Site">
+							<blockquote>{"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."}</blockquote>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<p className="codepen" data-height="720" data-theme-id="light" data-default-tab="result" data-user="erchsm" data-slug-hash="RyGNYm" style={{ width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em"}} data-pen-title="Preloader: American Made Film Site">
 							<span>See the Pen <a href="https://codepen.io/erchsm/pen/RyGNYm/">
 							Preloader: American Made Film Site</a> by eric smith (<a href="https://codepen.io/erchsm">@erchsm</a>)
 							on <a href="https://codepen.io">CodePen</a>.</span>
