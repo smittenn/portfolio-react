@@ -14,6 +14,7 @@ import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
 
 import GridLines from "../components/GridLines"
+import Sidebar from "../components/Sidebar"
 
 import splitWord from "../services/splitWord"
 
@@ -105,13 +106,13 @@ class Home extends Component {
 							<div className="grid">
 								<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium"/>
 								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-									<h1>{splitWord("My Work")}</h1>
-									{/*<h2>{splitWord("Motion, Visual Design & The Front-end.")}</h2>*/}
-									<p>
+									{/*<h1>{splitWord("My Work")}</h1>*/}
+									{<h2>{splitWord("Motion Graphics, Visual Design & Interactions")}</h2>}
+									<blockquote>
 										{splitWord(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 										<br/><br/>
-										{splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)}
-									</p>
+										{/*splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)*/}
+									</blockquote>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<NavLink to="/american-made/">
@@ -127,6 +128,7 @@ class Home extends Component {
 						</section>
 					</IntersectionVisible>
 				</Element>
+				<Sidebar sections={pageSections} activeSection={activeSection}/>
 				<GridLines/>
 			</div>
 		);

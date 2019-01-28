@@ -3,7 +3,7 @@ $baseclass: portfolio-nav;
 @keyframes increasingNum {
 	0% {
 		opacity: 0;
-		transform: translate3d(0,24px,0);
+		transform: translate3d(0,32px,0);
 	}
 	100% {
 		opacity: 1;
@@ -14,7 +14,7 @@ $baseclass: portfolio-nav;
 @keyframes decreasingNum {
 	0% {
 		opacity: 0;
-		transform: translate3d(0,-18px,0);
+		transform: translate3d(0,-40px,0);
 	}
 	100% {
 		opacity: 1;
@@ -48,7 +48,7 @@ $baseclass: portfolio-nav;
 			animation: none;
 
 			&:last-child {
-				animation-delay: $delay-medium;
+				animation-delay: $delay-slow;
 			}			
 		}
 	}
