@@ -10,7 +10,7 @@ $baseclass: sidebar-container;
 	justify-content: flex-end;
 	right: 0;
 	top: 0;
-	z-index: 9999;
+	z-index: 999;
 
 	p {
 		font-weight: 700;
@@ -46,7 +46,7 @@ $baseclass: sidebar-container;
 		border: none;
 	}
 
-	.sidebar-item:after {
+	.sidebar-item:before {
 		content: "";
 		display: block;
 		position: absolute;
@@ -55,7 +55,7 @@ $baseclass: sidebar-container;
 		height: 100%;
 		width: 0%;
 		background: #3d4e4d;
-		z-index: -1;
+		// z-index: -1;
 		opacity: 0;
 		transition: all ease-out 0.3s
 	}
@@ -82,8 +82,9 @@ $baseclass: sidebar-container;
 	}
 
 	.sidebar-label {
+		position: relative;
 		color: darken($brand-black, 10%);
-		margin: 0 0 0 48px;
+		padding: 0 0 0 48px;
 		opacity: 0;
 		display: inline-block;
 		transition: all $easing4 0.2s
@@ -112,14 +113,14 @@ $baseclass: sidebar-container;
 	.sidebar:hover {
 		width: 100%;
 		transition: all $easing4 0.3s 0.3s;
+		background: rgba($brand-white, 1);
 
 		.sidebar-item {
 			height: 64px;
 			transition: height $easing4 0.3s;
-			// background: rgba($brand-black, .12);
 
 			&:hover {
-				&:after {
+				&:before {
 					opacity: 1;
 					width: 100%;
 					background: $brand-black;
@@ -165,6 +166,9 @@ $baseclass: sidebar-container;
 
 
 	&.white {
+		.sidebar:hover {
+			background: transparent;
+		}
 		.sidebar-dash {
 			background: white;
 		}
@@ -180,7 +184,14 @@ $baseclass: sidebar-container;
 			color: $brand-white;
 		}
 	}
+
 	@media screen and (max-width: $bp-medium) {
+		width: 30px;
+
+		&:hover {
+			width: 260px;
+		}
+
 		.sidebar {
 			.sidebar-item {
 				height: 36px;

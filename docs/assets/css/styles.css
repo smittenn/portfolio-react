@@ -1647,7 +1647,7 @@ section p span, section blockquote span {
   justify-content: flex-end;
   right: 0;
   top: 0;
-  z-index: 9999; }
+  z-index: 999; }
   .sidebar-container p {
     font-weight: 700;
     letter-spacing: 0.012em;
@@ -1671,7 +1671,7 @@ section p span, section blockquote span {
     height: 100%;
     cursor: pointer;
     border: none; }
-  .sidebar-container .sidebar-item:after {
+  .sidebar-container .sidebar-item:before {
     content: "";
     display: block;
     position: absolute;
@@ -1680,7 +1680,6 @@ section p span, section blockquote span {
     height: 100%;
     width: 0%;
     background: #3d4e4d;
-    z-index: -1;
     opacity: 0;
     transition: all ease-out 0.3s; }
   .sidebar-container .sidebar-number {
@@ -1701,8 +1700,9 @@ section p span, section blockquote span {
     top: 50%;
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s; }
   .sidebar-container .sidebar-label {
+    position: relative;
     color: #080808;
-    margin: 0 0 0 48px;
+    padding: 0 0 0 48px;
     opacity: 0;
     display: inline-block;
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s; }
@@ -1723,11 +1723,12 @@ section p span, section blockquote span {
     transition-property: margin, width; }
   .sidebar-container .sidebar:hover {
     width: 100%;
-    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s; }
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s;
+    background: #f8fbf7; }
     .sidebar-container .sidebar:hover .sidebar-item {
       height: 64px;
       transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
-      .sidebar-container .sidebar:hover .sidebar-item:hover:after {
+      .sidebar-container .sidebar:hover .sidebar-item:hover:before {
         opacity: 1;
         width: 100%;
         background: #232021; }
@@ -1752,6 +1753,8 @@ section p span, section blockquote span {
       background: rgba(255, 255, 255, 0.15);
       width: 100%;
       transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s; }
+  .sidebar-container.white .sidebar:hover {
+    background: transparent; }
   .sidebar-container.white .sidebar-dash {
     background: white; }
   .sidebar-container.white .sidebar-number {
@@ -1761,12 +1764,16 @@ section p span, section blockquote span {
   .sidebar-container.white .sidebar-label {
     color: #F8FBF7; }
   @media screen and (max-width: 800px) {
-    .sidebar-container .sidebar .sidebar-item {
-      height: 36px;
-      line-height: 55px; }
-    .sidebar-container .sidebar:hover .sidebar-item {
-      height: 55px;
-      line-height: 55px; } }
+    .sidebar-container {
+      width: 30px; }
+      .sidebar-container:hover {
+        width: 260px; }
+      .sidebar-container .sidebar .sidebar-item {
+        height: 36px;
+        line-height: 55px; }
+      .sidebar-container .sidebar:hover .sidebar-item {
+        height: 55px;
+        line-height: 55px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
