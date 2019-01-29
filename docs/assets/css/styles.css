@@ -1637,7 +1637,7 @@ section p span, section blockquote span {
 
 .sidebar-container {
   height: 100%;
-  width: 100px;
+  width: 60px;
   position: fixed;
   display: -ms-flexbox;
   display: flex;
@@ -1774,6 +1774,8 @@ section p span, section blockquote span {
     padding: 0 18px; }
     .grid--lines {
       padding: 0 48px; }
+    .grid__row {
+      margin-bottom: 12px; }
     .grid__item--hide-bp-medium {
       display: none; }
     .grid__item--col-1-medium {
@@ -1932,6 +1934,8 @@ section p span, section blockquote span {
   h3 {
     font-size: 6vw; }
   h4 {
-    font-size: 4vw; } }
+    font-size: 4vw; }
+  blockquote {
+    margin-bottom: 18px; } }
 
 /*# sourceMappingURL=styles.css.map */

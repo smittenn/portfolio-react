@@ -37678,6 +37678,28 @@ var AmericanMade = function (_Component) {
 			this.props.americanMade();
 			this.props.reset();
 			this.props.setNavWhite();
+
+			var codepen = document.getElementsByClassName('codepen');
+
+			if (codepen.length > 0) {
+
+				if (!document.getElementById('codepen-script') || !this.state.codepen) {
+
+					var s = document.createElement('script');
+					s.async = s.defer = true;
+					s.src = "//static.codepen.io/assets/embed/ei.js";
+					s.id = 'codepen-script';
+					var body = document.body;
+
+					if (body) {
+						body.appendChild(s);
+					}
+
+					this.setState({
+						'codepen': true
+					});
+				}
+			}
 		}
 	}]);
 
@@ -37907,7 +37929,7 @@ var AmericanMade = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								(0, _splitWord2.default)("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids, textures first. Atoms, molecules and organisms came naturally building upon the foundations.")
+								(0, _splitWord2.default)("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations.")
 							)
 						)
 					)
@@ -37922,16 +37944,20 @@ var AmericanMade = function (_Component) {
 						{ className: "grid" },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+							{ className: "grid__row" },
 							_react2.default.createElement(
-								"h2",
-								null,
-								"Preloader"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Preloader"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."
+								)
 							)
 						)
 					),
@@ -37943,7 +37969,7 @@ var AmericanMade = function (_Component) {
 							{ className: "grid__item grid__item--col-12" },
 							_react2.default.createElement(
 								"p",
-								{ className: "codepen", "data-height": "720", "data-theme-id": "light", "data-default-tab": "result", "data-user": "erchsm", "data-slug-hash": "RyGNYm", style: { width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em" }, "data-pen-title": "Preloader: American Made Film Site" },
+								{ className: "codepen", "data-height": "720", "data-theme-id": "dark", "data-default-tab": "result", "data-user": "erchsm", "data-slug-hash": "RyGNYm", style: { width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em" }, "data-pen-title": "Preloader: American Made Film Site" },
 								_react2.default.createElement(
 									"span",
 									null,

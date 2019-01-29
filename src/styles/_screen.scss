@@ -6,6 +6,10 @@
 			padding: 0 48px;
 		}
 
+		&__row {
+			margin-bottom: 12px;
+		}
+
 		&__item {
 			&--hide-bp-medium {
 				display: none;
@@ -77,5 +81,8 @@
 	}
 	h4 {
 		font-size: 4vw;
+	}
+	blockquote {
+		margin-bottom: 18px;
 	}
 }

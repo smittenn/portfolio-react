@@ -2,7 +2,8 @@ $baseclass: sidebar-container;
 
 .#{$baseclass} {
 	height: 100%;
-	width: 100px;
+	width: 60px;
+	// pointer-events: none;
 	position: fixed;
 	display: flex;
 	align-items: center;

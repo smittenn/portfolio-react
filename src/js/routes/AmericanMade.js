@@ -33,6 +33,28 @@ class AmericanMade extends Component {
 		this.props.americanMade();
 		this.props.reset();
 		this.props.setNavWhite();
+
+		const codepen = document.getElementsByClassName('codepen');
+
+		if (codepen.length > 0) {
+
+			if (!document.getElementById('codepen-script') || !this.state.codepen) {
+
+				const s = document.createElement('script')
+				s.async = s.defer = true
+				s.src = `//static.codepen.io/assets/embed/ei.js`
+				s.id = 'codepen-script'
+				const body: HTMLElement | null = document.body
+
+				if (body) {
+					body.appendChild(s)
+				}
+
+				this.setState({
+					'codepen': true
+				});
+			}
+	    }
 	}
 
 
@@ -139,21 +161,22 @@ class AmericanMade extends Component {
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<h1 className="">{splitWord("Atomic Design")}</h1> 
-							<blockquote>{splitWord("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids, textures first. Atoms, molecules and organisms came naturally building upon the foundations.")}</blockquote>
+							<blockquote>{splitWord("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations.")}</blockquote>
 						</div>
 					</div>
 				</ScrollSection>
 				<ScrollSection name={pageSections[5]} onSetActive={() => {this.props.setCounter(6); this.props.setNavBlack(); this.setActiveSection(pageSections[5]);}}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h2>{"Preloader"}</h2> 
-							<blockquote>{"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."}</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>{"Preloader"}</h2> 
+								<blockquote>{"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."}</blockquote>
+							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<p className="codepen" data-height="720" data-theme-id="light" data-default-tab="result" data-user="erchsm" data-slug-hash="RyGNYm" style={{ width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em"}} data-pen-title="Preloader: American Made Film Site">
+							<p className="codepen" data-height="720" data-theme-id="dark" data-default-tab="result" data-user="erchsm" data-slug-hash="RyGNYm" style={{ width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em"}} data-pen-title="Preloader: American Made Film Site">
 							<span>See the Pen <a href="https://codepen.io/erchsm/pen/RyGNYm/">
 							Preloader: American Made Film Site</a> by eric smith (<a href="https://codepen.io/erchsm">@erchsm</a>)
 							on <a href="https://codepen.io">CodePen</a>.</span>
