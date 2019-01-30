@@ -109,6 +109,9 @@ $arrow-size: 40px;
 	}
 
 	@media screen and (max-width: $bp-medium) {
+		h5, h6, i {
+			margin-bottom: 3px;
+		}
 		.#{$baseclass}__seperator-container {
 			height: 112px;
 		}

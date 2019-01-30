@@ -29,6 +29,7 @@ class Home extends Component {
 			"hello",
 			"about",
 			"projects",
+			"experiments",
 			],
 		}
 	}
@@ -67,7 +68,7 @@ class Home extends Component {
 				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name="hello"
-					headerText={[`Eric C. Smith is a`, <span className="outline">Creative </span>, <span className="outline">Developer </span>, `in New York City`]} 
+					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
 					bgImage={"../assets/img/liquid.gif"} 
 					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
@@ -78,28 +79,26 @@ class Home extends Component {
 						<ScrollArrow/>
 					</Link>
 				</Element>
+				
 				<Element name={pageSections[1]}>
 					<IntersectionVisible onShow={(i) => i[0].target.classList.add("active-section")} onHide={(i) => i[0].target.classList.remove("active-section")}>
 						<section>
 							<div className="grid">
 								<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 									<h1>{splitWord("Form & Function")}</h1>
-									<p>
-										{splitWord(`Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I’ve worked on.`)}
-										<br/><br/>
-										{splitWord(`My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.`)}
-									</p>
+									<blockquote>
+										{splitWord(`Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.`)}
+									</blockquote>
 								</div>
 								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-								<div className="grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium">
-									<div className="grid__item grid__item--col-4"><img src="../assets/img/me-4x3.jpg"/></div>
-									<div className="grid__item grid__item--col-4"><img src="../assets/img/lands-end-4x3.jpg"/></div>
-									<div className="grid__item grid__item--col-4"><img src="../assets/img/mist-3x4.jpg"/></div>
-								</div>
+									<div className="grid__item grid__item--col-2 grid__item--col-4-medium"><img src="../assets/img/me-4x3.jpg"/></div>
+									<div className="grid__item grid__item--col-2 grid__item--col-4-medium"><img src="../assets/img/lands-end-4x3.jpg"/></div>
+									<div className="grid__item grid__item--col-2 grid__item--col-4-medium"><img src="../assets/img/mist-3x4.jpg"/></div>
 							</div>
 						</section>
 					</IntersectionVisible>
 				</Element>
+
 				<Element name={pageSections[2]}>
 					<IntersectionVisible onShow={(i) => i[0].target.classList.add("active-section")} onHide={(i) => i[0].target.classList.remove("active-section")}>
 						<section>
@@ -107,7 +106,7 @@ class Home extends Component {
 								<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium"/>
 								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 									{/*<h1>{splitWord("My Work")}</h1>*/}
-									{<h2>{splitWord("Motion Graphics, Visual Design & Interactions")}</h2>}
+									{<h1>{splitWord("Visual & Interactive")}</h1>}
 									<blockquote>
 										{splitWord(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 										<br/><br/>
@@ -115,7 +114,7 @@ class Home extends Component {
 									</blockquote>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<NavLink to="/american-made/">
+									<NavLink to="/american-made">
 										<img src="../assets/img/american-made/banner.gif"/>
 										<h3>American Made Film Site</h3>
 									</NavLink>
@@ -128,7 +127,12 @@ class Home extends Component {
 						</section>
 					</IntersectionVisible>
 				</Element>
-				<Sidebar sections={pageSections} activeSection={activeSection}/>
+				
+				<Sidebar 
+				sections={pageSections} 
+				activeSection={activeSection}
+				/>
+
 				<GridLines/>
 			</div>
 		);

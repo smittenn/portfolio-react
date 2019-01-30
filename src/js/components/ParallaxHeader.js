@@ -66,7 +66,7 @@ export default class ParallaxHeader extends Component {
 						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 							<div className="grid">
 								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-									<h1>{updatedText}</h1>
+									<h1 className="no-mb">{updatedText}</h1>
 								</div>
 							</div>
 						</div>

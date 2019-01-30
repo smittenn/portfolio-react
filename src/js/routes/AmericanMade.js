@@ -16,10 +16,12 @@ import ScrollSection from "../components/ScrollSection"
 
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
+import CodepenEmbed from "../components/CodepenEmbed"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
+import palette from "../services/palette"
 
 
 class AmericanMade extends Component {
@@ -33,28 +35,6 @@ class AmericanMade extends Component {
 		this.props.americanMade();
 		this.props.reset();
 		this.props.setNavWhite();
-
-		const codepen = document.getElementsByClassName('codepen');
-
-		if (codepen.length > 0) {
-
-			if (!document.getElementById('codepen-script') || !this.state.codepen) {
-
-				const s = document.createElement('script')
-				s.async = s.defer = true
-				s.src = `//static.codepen.io/assets/embed/ei.js`
-				s.id = 'codepen-script'
-				const body: HTMLElement | null = document.body
-
-				if (body) {
-					body.appendChild(s)
-				}
-
-				this.setState({
-					'codepen': true
-				});
-			}
-	    }
 	}
 
 
@@ -65,11 +45,12 @@ class AmericanMade extends Component {
 			activeSection: "overview",
 			pageSections: [
 				"overview",
-				"intro",
 				"details",
+				"details-2",
 				"cinemagraphs",
 				"atomic-design",
 				"preloader",
+				"navigation",
 			],
 		}
 	}
@@ -83,31 +64,33 @@ class AmericanMade extends Component {
 
 	render() {
 
+		const { setCounter, setNavWhite, setNavBlack } = this.props;
 		const { activeSection, pageSections } = this.state;
 
-		const brandBlack = hexToRgb("#232021");
+		const brandBlack = hexToRgb(palette("brand-black"));
 
 
 		return (
-			<div>
-				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
+			<article>
+				<Element 
+				name={pageSections[0]} 
+				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
 					headerText={[<span className="outline">American </span>, <span className="outline">Made </span>, `is a film site created for Universal Pictures`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
-					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
+					onSetActive={() => { setCounter(1); setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
-					<Link to={pageSections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack(); this.setActiveSection(pageSections[1]); }}>
+					<Link to={pageSections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]); }}>
 						<ScrollArrow/>
 					</Link>
 				</Element>
-				<ScrollSection name={pageSections[1]} onSetActive={() => {this.props.setCounter(2); this.props.setNavBlack(); this.setActiveSection(pageSections[1]);}}>
+
+				<ScrollSection 
+				name={pageSections[1]} 
+				onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]);}}>
 					<div className="grid">
-							{/*<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<h1 className="no-mb">{splitWord("American Made Site")}</h1>
-							</div>*/}
-						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<h2>I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures</h2> 
 							<p>
@@ -116,77 +99,117 @@ class AmericanMade extends Component {
 								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. 
 							</p>
 						</div>
-						
 					</div>
 				</ScrollSection>
-				<ScrollSection black style={{ backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`}} name={pageSections[2]} onSetActive={() => {this.props.setCounter(3); this.props.setNavWhite(); this.setActiveSection(pageSections[2]);}}>
+
+				<ScrollSection 
+				name={pageSections[2]}
+				black 
+				style={{ backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`}}  
+				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(pageSections[2]); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<p className="">Role</p>
+							<h5 className="uppercase">Role</h5>
 							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<p className="">Date</p>
+							<h5 className="uppercase">Date</h5>
 							<blockquote>June, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<p className="">Client</p>
+							<h5 className="uppercase">Client</h5>
 							<blockquote>NBCUX Lab</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
-							<p className="">Team</p>
+							<h5 className="uppercase">Team</h5>
 							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Oleksandr Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
-				<ScrollSection black name={pageSections[3]} onSetActive={() => {this.props.setCounter(4); this.props.setNavWhite(); this.setActiveSection(pageSections[3]);}}>
+
+				<ScrollSection 
+				black 
+				name={pageSections[3]} 
+				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(pageSections[3]);}}>
 					<div className="grid">
 						<div className="grid__row">
 							{/*<div className="grid__item grid__item--col-1"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>{splitLetter("Cinemagraphs")}</h1> 
-								<blockquote>{splitWord("One of my goals for this project was to integrate the content and UI of the site in a seamless way. To create a more interactive experience I created cinemagraphs. Cinemagraphs are a fairly new medium that enable deep visual storytelling. Cinemagraphs helped to reinforced the cinematic quality of the site and tell the story in richer way.")}</blockquote>
+								<h1>{splitWord("Cinemagraphs")}</h1> 
+								<blockquote>{splitWord("One of my goals for this project was to integrate the content and UI of the site in a seamless way. To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")}</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-6">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<img src="../assets/img/american-made/columbia.gif"/>
+						</div>
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							<img src="../assets/img/american-made/hangar.gif"/>
 						</div>
 					</div>
 				</ScrollSection>
-				<ScrollSection black style={{ backgroundImage: `url(../assets/img/american-made/cloud-bg.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.95`, backgroundPosition: "center 30%" }} name={pageSections[4]} onSetActive={() => {this.props.setCounter(5); this.props.setNavWhite(); this.setActiveSection(pageSections[4]);}}>
+
+				<ScrollSection 
+				name={pageSections[4]} 
+				onSetActive={() => { setCounter(5); setNavWhite(); this.setActiveSection(pageSections[4]);}} 
+				black 
+				style={{ backgroundImage: `url(../assets/img/american-made/cloud-bg.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.95`, backgroundPosition: "center 30%" }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h1 className="">{splitWord("Atomic Design")}</h1> 
-							<blockquote>{splitWord("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations.")}</blockquote>
+							<h1 className="">{"Atomic Design"}</h1> 
+							<blockquote>{"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations."}</blockquote>
 						</div>
 					</div>
 				</ScrollSection>
-				<ScrollSection name={pageSections[5]} onSetActive={() => {this.props.setCounter(6); this.props.setNavBlack(); this.setActiveSection(pageSections[5]);}}>
+
+				<ScrollSection 
+				name={pageSections[5]} 
+				onSetActive={() => { setCounter(6); setNavBlack(); this.setActiveSection(pageSections[5]);}}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{"Preloader"}</h2> 
-								<blockquote>{"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."}</blockquote>
+								<h2>{splitWord("Preloader")}</h2> 
+								<blockquote>{splitWord("Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”.")}</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<p className="codepen" data-height="720" data-theme-id="dark" data-default-tab="result" data-user="erchsm" data-slug-hash="RyGNYm" style={{ width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em"}} data-pen-title="Preloader: American Made Film Site">
-							<span>See the Pen <a href="https://codepen.io/erchsm/pen/RyGNYm/">
-							Preloader: American Made Film Site</a> by eric smith (<a href="https://codepen.io/erchsm">@erchsm</a>)
-							on <a href="https://codepen.io">CodePen</a>.</span>
-							</p>
+							<CodepenEmbed slug="RyGNYm" title="Preloader: American Made Film Site" height={720} handle="erchsm"/>
 						</div>
 					</div>
 				</ScrollSection>
-				<Sidebar sections={pageSections} activeSection={activeSection}/>
+
+				<ScrollSection 
+				name={pageSections[6]} 
+				black
+				onSetActive={() => { setCounter(7); setNavWhite(); this.setActiveSection(pageSections[6]);}}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>“Runway” Navigation</h2>
+								<blockquote>I designed a unique themed navigation for the site. The nav mimic'd the bird's eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<CodepenEmbed slug="qoQajr" title="Navigation: American Made Film Site" height={625} handle="erchsm"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<Sidebar 
+				sections={pageSections} 
+				activeSection={activeSection}
+				/>
+
 				<GridLines/>
-			</div>
+			</article>
 		);
 	}
 }

@@ -39,10 +39,12 @@ section {
 		transform: translate3d(0,40px,0);
 	}
 
-	.grid__item--row .grid__item {
+	.grid__item {
 		@for $i from 1 through 60 {
-			&:nth-child(#{$i}) img {
-				transition-delay: (#{0.6 + ($i * 0.3)}s);
+			&:nth-child(#{$i}) {
+				img {
+					transition-delay: (#{0.9 + ($i * 0.3)}s);
+				}
 			}
 		}
 	}

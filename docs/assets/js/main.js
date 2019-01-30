@@ -36227,7 +36227,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":141,"connected-react-router":11,"prop-types":36,"react":109}],123:[function(require,module,exports){
+},{"./routes":142,"connected-react-router":11,"prop-types":36,"react":109}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36400,7 +36400,138 @@ var render = function render() {
 
 render();
 
-},{"../App":122,"../reducers":136,"connected-react-router":11,"history":24,"react":109,"react-dom":41,"react-redux":57,"redux":110}],127:[function(require,module,exports){
+},{"../App":122,"../reducers":137,"connected-react-router":11,"history":24,"react":109,"react-dom":41,"react-redux":57,"redux":110}],127:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CodepenEmbed = function (_Component) {
+	_inherits(CodepenEmbed, _Component);
+
+	function CodepenEmbed(props) {
+		_classCallCheck(this, CodepenEmbed);
+
+		var _this = _possibleConstructorReturn(this, (CodepenEmbed.__proto__ || Object.getPrototypeOf(CodepenEmbed)).call(this, props));
+
+		_this.state = {
+			codepen: false
+		};
+		return _this;
+	}
+
+	_createClass(CodepenEmbed, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var codepen = document.getElementsByClassName('codepen');
+
+			if (codepen.length > 0) {
+
+				if (!document.getElementById('codepen-script') || !this.state.codepen) {
+
+					var s = document.createElement('script');
+					s.async = s.defer = true;
+					s.src = "//static.codepen.io/assets/embed/ei.js";
+					s.id = 'codepen-script';
+					var body = document.body;
+
+					if (body) {
+						body.appendChild(s);
+					}
+
+					this.setState({
+						'codepen': true
+					});
+				}
+			}
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    slug = _props.slug,
+			    height = _props.height,
+			    title = _props.title,
+			    handle = _props.handle;
+
+
+			var style = {
+				width: "100%",
+				height: height + "px",
+				backgroundColor: (0, _palette2.default)("brand-white"),
+				boxSizing: "border-box",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				border: "1px solid black",
+				margin: "1em 0",
+				padding: "1em"
+			};
+
+			return _react2.default.createElement(
+				"p",
+				{ className: "codepen", "data-height": height, "data-theme-id": "dark", "data-default-tab": "result", "data-user": handle, "data-slug-hash": slug, style: style, "data-pen-title": title },
+				_react2.default.createElement(
+					"span",
+					null,
+					"See the Pen ",
+					_react2.default.createElement(
+						"a",
+						{ href: "https://codepen.io/erchsm/pen/" + slug + "/" },
+						title
+					),
+					"\xA0 by Eric Smith (",
+					_react2.default.createElement(
+						"a",
+						{ href: "https://codepen.io/erchsm" },
+						"@",
+						handle
+					),
+					") on ",
+					_react2.default.createElement(
+						"a",
+						{ href: "https://codepen.io" },
+						"CodePen"
+					),
+					"."
+				)
+			);
+		}
+	}]);
+
+	return CodepenEmbed;
+}(_react.Component);
+
+exports.default = CodepenEmbed;
+
+},{"../services/hexToRgb":144,"../services/palette":146,"classnames":7,"react":109}],128:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36466,7 +36597,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":109}],128:[function(require,module,exports){
+},{"react":109}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36902,7 +37033,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
-},{"../services/splitLetter":145,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],129:[function(require,module,exports){
+},{"../services/splitLetter":147,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],130:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37020,7 +37151,7 @@ var ParallaxHeader = function (_Component) {
 									{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 									_react2.default.createElement(
 										"h1",
-										null,
+										{ className: "no-mb" },
 										updatedText
 									)
 								)
@@ -37037,7 +37168,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":142,"../services/hexToRgb":143,"../services/splitWord":146,"classnames":7,"react":109,"react-parallax":46,"react-scroll":94}],130:[function(require,module,exports){
+},{"../services/detectMobile":143,"../services/hexToRgb":144,"../services/splitWord":148,"classnames":7,"react":109,"react-parallax":46,"react-scroll":94}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37138,7 +37269,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"../services/detectMobile":142,"../services/splitLetter":145,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],131:[function(require,module,exports){
+},{"../services/detectMobile":143,"../services/splitLetter":147,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],132:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37238,7 +37369,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],132:[function(require,module,exports){
+},{"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],133:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37298,13 +37429,14 @@ var Sidebar = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"sidebar-container": true,
-				"white": color == "WHITE"
+				"white": color == "WHITE",
+				"black": color == "BLACK"
 			});
 
 			var sidebarItems = sections.map(function (section, i) {
 				return _react2.default.createElement(
 					'li',
-					{ key: i, className: 'sidebar-item sidebarIn' },
+					{ key: i, className: 'sidebar-item' },
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: section, smooth: true, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
@@ -37350,7 +37482,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Sidebar);
 
-},{"../services/pad":144,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75,"react-scroll":94}],133:[function(require,module,exports){
+},{"../services/pad":145,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75,"react-scroll":94}],134:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37392,7 +37524,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],134:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37414,7 +37546,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],135:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37440,7 +37572,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],136:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37476,7 +37608,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":133,"./color":134,"./counter":135,"connected-react-router":11,"redux":110}],137:[function(require,module,exports){
+},{"./abbreviation":134,"./color":135,"./counter":136,"connected-react-router":11,"redux":110}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37590,7 +37722,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":127,"../components/Nav":128,"../components/ParallaxHeader":129,"react":109,"react-redux":57}],138:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"react":109,"react-redux":57}],139:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37647,6 +37779,10 @@ var _Sidebar = require("../components/Sidebar");
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
+var _CodepenEmbed = require("../components/CodepenEmbed");
+
+var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
+
 var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
@@ -37658,6 +37794,10 @@ var _splitLetter2 = _interopRequireDefault(_splitLetter);
 var _hexToRgb = require("../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37678,28 +37818,6 @@ var AmericanMade = function (_Component) {
 			this.props.americanMade();
 			this.props.reset();
 			this.props.setNavWhite();
-
-			var codepen = document.getElementsByClassName('codepen');
-
-			if (codepen.length > 0) {
-
-				if (!document.getElementById('codepen-script') || !this.state.codepen) {
-
-					var s = document.createElement('script');
-					s.async = s.defer = true;
-					s.src = "//static.codepen.io/assets/embed/ei.js";
-					s.id = 'codepen-script';
-					var body = document.body;
-
-					if (body) {
-						body.appendChild(s);
-					}
-
-					this.setState({
-						'codepen': true
-					});
-				}
-			}
 		}
 	}]);
 
@@ -37716,7 +37834,7 @@ var AmericanMade = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "intro", "details", "cinemagraphs", "atomic-design", "preloader"]
+			pageSections: ["overview", "details", "details-2", "cinemagraphs", "atomic-design", "preloader", "navigation"]
 		};
 		return _this;
 	}
@@ -37726,19 +37844,25 @@ var AmericanMade = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
+			var _props = this.props,
+			    setCounter = _props.setCounter,
+			    setNavWhite = _props.setNavWhite,
+			    setNavBlack = _props.setNavBlack;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    pageSections = _state.pageSections;
 
 
-			var brandBlack = (0, _hexToRgb2.default)("#232021");
+			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 
 			return _react2.default.createElement(
-				"div",
+				"article",
 				null,
 				_react2.default.createElement(
 					_reactScroll.Element,
-					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
+					{
+						name: pageSections[0],
+						className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: pageSections[0],
 						headerText: [_react2.default.createElement(
@@ -37753,21 +37877,23 @@ var AmericanMade = function (_Component) {
 						bgImage: "../assets/img/american-made/output.gif",
 						strength: 200,
 						onSetActive: function onSetActive() {
-							_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[0]);
+							setCounter(1);setNavWhite();_this2.setActiveSection(pageSections[0]);
 						}
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: pageSections[1], spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection(pageSections[1]);
+								setCounter(2);setNavBlack();_this2.setActiveSection(pageSections[1]);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					)
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
-					{ name: pageSections[1], onSetActive: function onSetActive() {
-							_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection(pageSections[1]);
+					{
+						name: pageSections[1],
+						onSetActive: function onSetActive() {
+							setCounter(2);setNavBlack();_this2.setActiveSection(pageSections[1]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37793,8 +37919,12 @@ var AmericanMade = function (_Component) {
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
-					{ black: true, style: { backgroundImage: "url(../assets/img/american-made/s07-synopsis.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6" }, name: pageSections[2], onSetActive: function onSetActive() {
-							_this2.props.setCounter(3);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[2]);
+					{
+						name: pageSections[2],
+						black: true,
+						style: { backgroundImage: "url(../assets/img/american-made/s07-synopsis.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6" },
+						onSetActive: function onSetActive() {
+							setCounter(3);setNavWhite();_this2.setActiveSection(pageSections[2]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37803,8 +37933,8 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"p",
-								{ className: "" },
+								"h5",
+								{ className: "uppercase" },
 								"Role"
 							),
 							_react2.default.createElement(
@@ -37817,8 +37947,8 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"p",
-								{ className: "" },
+								"h5",
+								{ className: "uppercase" },
 								"Date"
 							),
 							_react2.default.createElement(
@@ -37831,8 +37961,8 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"p",
-								{ className: "" },
+								"h5",
+								{ className: "uppercase" },
 								"Client"
 							),
 							_react2.default.createElement(
@@ -37845,8 +37975,8 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-4  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"p",
-								{ className: "" },
+								"h5",
+								{ className: "uppercase" },
 								"Team"
 							),
 							_react2.default.createElement(
@@ -37875,8 +38005,11 @@ var AmericanMade = function (_Component) {
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
-					{ black: true, name: pageSections[3], onSetActive: function onSetActive() {
-							_this2.props.setCounter(4);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[3]);
+					{
+						black: true,
+						name: pageSections[3],
+						onSetActive: function onSetActive() {
+							setCounter(3);setNavWhite();_this2.setActiveSection(pageSections[3]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37890,12 +38023,12 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"h1",
 									null,
-									(0, _splitLetter2.default)("Cinemagraphs")
+									(0, _splitWord2.default)("Cinemagraphs")
 								),
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									(0, _splitWord2.default)("One of my goals for this project was to integrate the content and UI of the site in a seamless way. To create a more interactive experience I created cinemagraphs. Cinemagraphs are a fairly new medium that enable deep visual storytelling. Cinemagraphs helped to reinforced the cinematic quality of the site and tell the story in richer way.")
+									(0, _splitWord2.default)("One of my goals for this project was to integrate the content and UI of the site in a seamless way. To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")
 								)
 							)
 						)
@@ -37905,16 +38038,25 @@ var AmericanMade = function (_Component) {
 						{ className: "grid" },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6" },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement("img", { src: "../assets/img/american-made/columbia.gif" })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement("img", { src: "../assets/img/american-made/hangar.gif" })
 						)
 					)
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
-					{ black: true, style: { backgroundImage: "url(../assets/img/american-made/cloud-bg.png)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", 0.95", backgroundPosition: "center 30%" }, name: pageSections[4], onSetActive: function onSetActive() {
-							_this2.props.setCounter(5);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[4]);
-						} },
+					{
+						name: pageSections[4],
+						onSetActive: function onSetActive() {
+							setCounter(5);setNavWhite();_this2.setActiveSection(pageSections[4]);
+						},
+						black: true,
+						style: { backgroundImage: "url(../assets/img/american-made/cloud-bg.png)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", 0.95", backgroundPosition: "center 30%" } },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
@@ -37924,20 +38066,22 @@ var AmericanMade = function (_Component) {
 							_react2.default.createElement(
 								"h1",
 								{ className: "" },
-								(0, _splitWord2.default)("Atomic Design")
+								"Atomic Design"
 							),
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								(0, _splitWord2.default)("I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations.")
+								"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations."
 							)
 						)
 					)
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
-					{ name: pageSections[5], onSetActive: function onSetActive() {
-							_this2.props.setCounter(6);_this2.props.setNavBlack();_this2.setActiveSection(pageSections[5]);
+					{
+						name: pageSections[5],
+						onSetActive: function onSetActive() {
+							setCounter(6);setNavBlack();_this2.setActiveSection(pageSections[5]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37951,12 +38095,12 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"h2",
 									null,
-									"Preloader"
+									(0, _splitWord2.default)("Preloader")
 								),
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. Barry's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”."
+									(0, _splitWord2.default)("Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”.")
 								)
 							)
 						)
@@ -37967,37 +38111,54 @@ var AmericanMade = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-12" },
-							_react2.default.createElement(
-								"p",
-								{ className: "codepen", "data-height": "720", "data-theme-id": "dark", "data-default-tab": "result", "data-user": "erchsm", "data-slug-hash": "RyGNYm", style: { width: "100vw", height: "720px", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", border: "0px solid black", margin: "1em 0", padding: "1em" }, "data-pen-title": "Preloader: American Made Film Site" },
-								_react2.default.createElement(
-									"span",
-									null,
-									"See the Pen ",
-									_react2.default.createElement(
-										"a",
-										{ href: "https://codepen.io/erchsm/pen/RyGNYm/" },
-										"Preloader: American Made Film Site"
-									),
-									" by eric smith (",
-									_react2.default.createElement(
-										"a",
-										{ href: "https://codepen.io/erchsm" },
-										"@erchsm"
-									),
-									") on ",
-									_react2.default.createElement(
-										"a",
-										{ href: "https://codepen.io" },
-										"CodePen"
-									),
-									"."
-								)
-							)
+							_react2.default.createElement(_CodepenEmbed2.default, { slug: "RyGNYm", title: "Preloader: American Made Film Site", height: 720, handle: "erchsm" })
 						)
 					)
 				),
-				_react2.default.createElement(_Sidebar2.default, { sections: pageSections, activeSection: activeSection }),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: pageSections[6],
+						black: true,
+						onSetActive: function onSetActive() {
+							setCounter(7);setNavWhite();_this2.setActiveSection(pageSections[6]);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"\u201CRunway\u201D Navigation"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I designed a unique themed navigation for the site. The nav mimic'd the bird's eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_CodepenEmbed2.default, { slug: "qoQajr", title: "Navigation: American Made Film Site", height: 625, handle: "erchsm" })
+						)
+					)
+				),
+				_react2.default.createElement(_Sidebar2.default, {
+					sections: pageSections,
+					activeSection: activeSection
+				}),
 				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
@@ -38068,7 +38229,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":127,"../components/Nav":128,"../components/ParallaxHeader":129,"../components/ScrollArrow":130,"../components/ScrollSection":131,"../components/Sidebar":132,"../services/hexToRgb":143,"../services/splitLetter":145,"../services/splitWord":146,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],139:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/CodepenEmbed":127,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/ScrollSection":132,"../components/Sidebar":133,"../services/hexToRgb":144,"../services/palette":146,"../services/splitLetter":147,"../services/splitWord":148,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38155,7 +38316,7 @@ var Home = function (_Component) {
 
 		_this.state = {
 			activeSection: "hello",
-			pageSections: ["hello", "about", "projects"]
+			pageSections: ["hello", "about", "projects", "experiments"]
 		};
 		return _this;
 	}
@@ -38193,14 +38354,14 @@ var Home = function (_Component) {
 					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: "hello",
-						headerText: ["Eric C. Smith is a", _react2.default.createElement(
+						headerText: ["Eric C. Smith is an", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Creative "
+							"Interactive "
 						), _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Developer "
+							"Designer "
 						), "in New York City"],
 						bgImage: "../assets/img/liquid.gif",
 						onSetActive: function onSetActive() {
@@ -38247,33 +38408,26 @@ var Home = function (_Component) {
 										(0, _splitWord2.default)("Form & Function")
 									),
 									_react2.default.createElement(
-										"p",
+										"blockquote",
 										null,
-										(0, _splitWord2.default)("Hi there, my name is Eric. I am a Creative Developer and Designer. Here are some things I\u2019ve worked on."),
-										_react2.default.createElement("br", null),
-										_react2.default.createElement("br", null),
-										(0, _splitWord2.default)("My design philosophy is about keeping it simple, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
+										(0, _splitWord2.default)("Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
 									)
 								),
 								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 								_react2.default.createElement(
 									"div",
-									{ className: "grid__item grid__item--row grid__item--col-7 grid__item--col-12-medium" },
-									_react2.default.createElement(
-										"div",
-										{ className: "grid__item grid__item--col-4" },
-										_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
-									),
-									_react2.default.createElement(
-										"div",
-										{ className: "grid__item grid__item--col-4" },
-										_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
-									),
-									_react2.default.createElement(
-										"div",
-										{ className: "grid__item grid__item--col-4" },
-										_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
-									)
+									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
+									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
+									_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
+									_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
 								)
 							)
 						)
@@ -38300,9 +38454,9 @@ var Home = function (_Component) {
 									"div",
 									{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
 									_react2.default.createElement(
-										"h2",
+										"h1",
 										null,
-										(0, _splitWord2.default)("Motion Graphics, Visual Design & Interactions")
+										(0, _splitWord2.default)("Visual & Interactive")
 									),
 									_react2.default.createElement(
 										"blockquote",
@@ -38317,7 +38471,7 @@ var Home = function (_Component) {
 									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 									_react2.default.createElement(
 										_reactRouterDom.NavLink,
-										{ to: "/american-made/" },
+										{ to: "/american-made" },
 										_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" }),
 										_react2.default.createElement(
 											"h3",
@@ -38340,7 +38494,10 @@ var Home = function (_Component) {
 						)
 					)
 				),
-				_react2.default.createElement(_Sidebar2.default, { sections: pageSections, activeSection: activeSection }),
+				_react2.default.createElement(_Sidebar2.default, {
+					sections: pageSections,
+					activeSection: activeSection
+				}),
 				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
@@ -38408,7 +38565,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":127,"../components/Nav":128,"../components/ParallaxHeader":129,"../components/ScrollArrow":130,"../components/Sidebar":132,"../services/splitWord":146,"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],140:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/Sidebar":133,"../services/splitWord":148,"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38536,7 +38693,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Vai);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":127,"../components/Nav":128,"../components/ParallaxHeader":129,"../components/ScrollArrow":130,"react":109,"react-redux":57}],141:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"react":109,"react-redux":57}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38589,7 +38746,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/Nav":128,"./AboutMe":137,"./AmericanMade":138,"./Home":139,"./Vai":140,"react":109,"react-router":87}],142:[function(require,module,exports){
+},{"../components/Nav":129,"./AboutMe":138,"./AmericanMade":139,"./Home":140,"./Vai":141,"react":109,"react-router":87}],143:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38600,7 +38757,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],143:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38616,7 +38773,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],144:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38627,7 +38784,34 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],145:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+exports.default = function (color) {
+	var palette = {
+		"brand-red": "#ff483c",
+		"brand-purple": "#7366fb",
+		"brand-green": "#8CB369",
+		"brand-yellow": "#F4E285",
+		"brand-orange": "#fd8451",
+		"brand-pink": "#fed1cf",
+
+		"brand-white": "#F8FBF7",
+		"brand-grey-lightest": "#F4F4F0",
+		"brand-grey-light": "#DEDEDC",
+		"brand-grey-medium": "#81717A",
+		"brand-grey-dark": "#595358",
+		"brand-grey-darkest": "#333031",
+		"brand-black": "#232021"
+	};
+	return palette[color];
+};
+
+},{}],147:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38650,7 +38834,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":109}],146:[function(require,module,exports){
+},{"react":109}],148:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -3,7 +3,6 @@ $baseclass: sidebar-container;
 .#{$baseclass} {
 	height: 100%;
 	width: 60px;
-	// pointer-events: none;
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -19,13 +18,14 @@ $baseclass: sidebar-container;
 	}
 
 	&:hover {
-		width: 280px;
+		min-width: 280px;
+		width: calc(16.667% + 40px);
 	}
 
 	.sidebar {
 		width: 94px;
 		padding: 0;
-		transition: all $easing4 0.3s
+		transition: all $easing1 $duration-fast
 	}
 
 	.sidebar-item {
@@ -35,13 +35,20 @@ $baseclass: sidebar-container;
 		border-bottom: none;
 		overflow: hidden;
 		position: relative;
-		transition: height $easing4 0.3s 0.3s;
+		transition: height $easing1 $duration-fast $duration-fast;
+
+		&:last-child {
+			.sidebar-border {
+				display: none;
+			}
+		}
 	}
 
 	.sidebar-item a {
 		width: 100%;
 		height: 100%;
-		// display: block;
+		display: flex;
+		align-items: center;
 		cursor: pointer;
 		border: none;
 	}
@@ -54,40 +61,43 @@ $baseclass: sidebar-container;
 		right: 0;
 		height: 100%;
 		width: 0%;
-		background: #3d4e4d;
-		// z-index: -1;
 		opacity: 0;
-		transition: all ease-out 0.3s
+		pointer-events: none;
+		transition: all ease-out $duration-fast;
+	}
+
+	.sidebar-number, .sidebar-dash, .sidebar-label, .sidebar-border {
+		transition: all ease-out 0.2s
 	}
 
 	.sidebar-number {
-		color: darken($brand-black, 10%);
+		color: darken($brand-black, 0%);
 		margin: 0 16px 0 32px;
 		opacity: 0;
 		transform: translate3d(32px, 0, 0);
 		display: inline-block;
-		transition: all $easing4 0.2s
 	}
+
+	.sidebar-label {
+		position: relative;
+		color: darken($brand-black, 0%);
+		padding: 0 0 0 48px;
+		margin: 0;
+		opacity: 0;
+		display: inline-block;
+	}
+
 
 	.sidebar-dash {
 		margin: 0 0 0 16px;
 		width: 16px;
 		height: 1px;
-		background-color: darken($brand-black, 10%);
+		background-color: darken($brand-black, 0%);
 		display: inline-block;
 		vertical-align: middle;
 		position: absolute;
 		top: 50%;
-		transition: all $easing4 0.2s;
-	}
-
-	.sidebar-label {
-		position: relative;
-		color: darken($brand-black, 10%);
-		padding: 0 0 0 48px;
-		opacity: 0;
-		display: inline-block;
-		transition: all $easing4 0.2s
+		left: 72px;
 	}
 
 	.sidebar-border {
@@ -97,27 +107,27 @@ $baseclass: sidebar-container;
 		right: 0;
 		width: 0%;
 		height: 1px;
-		background: rgba(121,131,82,0.3);
-		transition: all $easing4 0.2s
+		background: rgba($brand-black, .1);
+		opacity: 0;
 	}
 
 	.sidebar-item a.active .sidebar-dash {
 		margin: 0;
 		width: 34px;
 		// background: #3d4e4d;
-		transition-timing-function: $easing4;
-		transition-duration: 0.3s;
+		transition-timing-function: $easing1;
+		transition-duration: $duration-fast;
 		transition-property: margin, width;
 	}
 
 	.sidebar:hover {
 		width: 100%;
-		transition: all $easing4 0.3s 0.3s;
+		transition: all $easing1 $duration-fast $duration-fast;
 		background: rgba($brand-white, 1);
 
 		.sidebar-item {
 			height: 64px;
-			transition: height $easing4 0.3s;
+			transition: height $easing1 $duration-fast;
 
 			&:hover {
 				&:before {
@@ -142,46 +152,37 @@ $baseclass: sidebar-container;
 		.sidebar-number {
 			opacity: 1;
 			transform: translate3d(0, 0, 0);
-			transition: all $easing4 0.4s;
+			transition: all $easing1 $duration-medium;
 			// color: $brand-white;
 		}
 
 		.sidebar-dash {
 			width: 34px;
 			margin: 0;
-			transition: all $easing4 0.4s !important;
+			transition: all $easing1 $duration-medium !important;
 		}
 
 		.sidebar-label {
 			opacity: 1;
-			transition: all $easing4 0.4s;
+			transition: all $easing1 $duration-medium;
 		}
 
 		.sidebar-border {
-			background: rgba(255,255,255,0.15);
+			opacity: 1;
 			width: 100%;
-			transition: all $easing4 0.4s;
+			transition: all $easing1 $duration-medium;
 		}
 	}
 
 
 	&.white {
+		.sidebar-dash {
+			background: $brand-white;
+		}
 		.sidebar:hover {
-			background: transparent;
-		}
-		.sidebar-dash {
-			background: white;
-		}
-		.sidebar-number {
-			color: $brand-white;
-		}
-
-		.sidebar-dash {
-			background-color: $brand-white;
-		}
-
-		.sidebar-label {
-			color: $brand-white;
+			.sidebar-dash {
+				background: $brand-black;
+			}
 		}
 	}
 

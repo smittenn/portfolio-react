@@ -23,10 +23,11 @@ class Sidebar extends Component {
 		const classnames = classNames({
 			"sidebar-container": true,
 			"white": color == "WHITE",
+			"black": color == "BLACK",
 		})
 
 		const sidebarItems = sections.map((section, i) => 
-			<li key={i} className="sidebar-item sidebarIn">
+			<li key={i} className="sidebar-item">
 				<Link to={section} smooth={true} className={classNames({ "active": sections[i] == activeSection })}>
 					<p className="sidebar-number">{pad(i + 1, 2)}.</p>
 					<div className="sidebar-dash"></div>
