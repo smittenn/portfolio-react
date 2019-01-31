@@ -37991,7 +37991,7 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"a",
 									{ href: "https://www.linkedin.com/in/oleksandr-lebedyev/" },
-									"Oleksandr Lebedyev"
+									"Alex Lebedyev"
 								),
 								", ",
 								_react2.default.createElement(
@@ -38566,7 +38566,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
 },{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/Sidebar":133,"../services/splitWord":148,"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],141:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -38574,33 +38574,73 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = require('react-redux');
+var _reactRedux = require("react-redux");
 
-var _Nav = require('../components/Nav');
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _reactCodepenEmbed = require("react-codepen-embed");
+
+var _reactCodepenEmbed2 = _interopRequireDefault(_reactCodepenEmbed);
+
+var _counter = require("../actions/counter");
+
+var _abbreviation = require("../actions/abbreviation");
+
+var _color = require("../actions/color");
+
+var _Nav = require("../components/Nav");
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _ParallaxHeader = require('../components/ParallaxHeader');
+var _ParallaxHeader = require("../components/ParallaxHeader");
 
 var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
 
-var _GridLines = require('../components/GridLines');
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _ScrollArrow = require('../components/ScrollArrow');
+var _ScrollArrow = require("../components/ScrollArrow");
 
 var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
 
-var _counter = require('../actions/counter');
+var _ScrollSection = require("../components/ScrollSection");
 
-var _abbreviation = require('../actions/abbreviation');
+var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 
-var _color = require('../actions/color');
+var _GridLines = require("../components/GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _Sidebar = require("../components/Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+var _CodepenEmbed = require("../components/CodepenEmbed");
+
+var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
+
+var _splitWord = require("../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _splitLetter = require("../services/splitLetter");
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38614,7 +38654,7 @@ var Vai = function (_Component) {
 	_inherits(Vai, _Component);
 
 	_createClass(Vai, [{
-		key: 'componentDidMount',
+		key: "componentDidMount",
 		value: function componentDidMount() {
 			window.scrollTo(0, 0);
 
@@ -38627,36 +38667,236 @@ var Vai = function (_Component) {
 	function Vai(props) {
 		_classCallCheck(this, Vai);
 
-		return _possibleConstructorReturn(this, (Vai.__proto__ || Object.getPrototypeOf(Vai)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Vai.__proto__ || Object.getPrototypeOf(Vai)).call(this, props));
+
+		_this.setActiveSection = function (name) {
+			_this.setState({
+				activeSection: name
+			});
+		};
+
+		_this.state = {
+			activeSection: "overview",
+			pageSections: [{ name: "overview"
+			}, { name: "details"
+			}, { name: "details-2"
+			}]
+		};
+		return _this;
 	}
 
 	_createClass(Vai, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
+			var _this2 = this;
+
+			var _props = this.props,
+			    setCounter = _props.setCounter,
+			    setNavWhite = _props.setNavWhite,
+			    setNavBlack = _props.setNavBlack;
+			var _state = this.state,
+			    activeSection = _state.activeSection,
+			    pageSections = _state.pageSections;
+
+
+			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
+
+			var sections = [];
+
+			pageSections.forEach(function (item, idx) {
+				sections.push(item.name);
+			});
+
+			var elements = pageSections.map(function (element) {
+				console.log(element);
+			});
 
 			return _react2.default.createElement(
-				'div',
+				"article",
 				null,
-				_react2.default.createElement(_ParallaxHeader2.default, {
-					bgImage: "../assets/img/vai/banner.gif",
-					headerText: ['The', _react2.default.createElement(
-						'span',
-						{ className: 'outline' },
-						'V.ai\xA0'
-					), _react2.default.createElement(
-						'span',
-						{ className: 'outline' },
-						'player\xA0'
-					), 'uses AI to identify people and objects in video']
-				}),
-				_react2.default.createElement('div', { style: { height: 500 } }),
 				_react2.default.createElement(
-					'h2',
-					null,
-					'\u2728'
+					_reactScroll.Element,
+					{
+						name: sections[0],
+						className: (0, _classnames2.default)({ "active-section": activeSection == sections[0] }) },
+					_react2.default.createElement(_ParallaxHeader2.default, {
+						name: sections[0],
+						headerText: ["The", _react2.default.createElement(
+							"span",
+							{ className: "outline" },
+							"V.ai "
+						), _react2.default.createElement(
+							"span",
+							{ className: "outline" },
+							"player "
+						), "uses AI to identify people and objects in video"],
+						bgImage: "../assets/img/vai/banner.gif",
+						onSetActive: function onSetActive() {
+							setCounter(1);setNavWhite();_this2.setActiveSection(sections[0]);
+						}
+					}),
+					_react2.default.createElement(
+						_reactScroll.Link,
+						{ to: sections[1], spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+								setCounter(2);setNavBlack();_this2.setActiveSection(sections[1]);
+							} },
+						_react2.default.createElement(_ScrollArrow2.default, null)
+					)
 				),
-				_react2.default.createElement(_GridLines2.default, null),
-				_react2.default.createElement(_ScrollArrow2.default, null)
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[1],
+						onSetActive: function onSetActive() {
+							setCounter(2);setNavBlack();_this2.setActiveSection(sections[1]);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"h2",
+								null,
+								"Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? "
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"Did you download an ad blocker plugin to your browser?",
+								_react2.default.createElement("br", null),
+								" More likely than not, you did."
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing. The NBCUX Lab saw the need for a new way for brands to reach their audiences.",
+								_react2.default.createElement("br", null),
+								_react2.default.createElement("br", null),
+								"In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"The NBCUX Lab is a group of user-centric problem solvers who architect culturally relevant products with innovation at the core of our strategy.",
+								_react2.default.createElement("br", null),
+								_react2.default.createElement("br", null),
+								"They operate as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems."
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[2],
+						black: true,
+						style: { backgroundImage: "url(../assets/img/vai/chevrolet.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6", backgroundPosition: "center 70%" },
+						onSetActive: function onSetActive() {
+							setCounter(3);setNavWhite();_this2.setActiveSection(sections[2]);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h5",
+								{ className: "uppercase" },
+								"Role"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"Lead Designer"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h5",
+								{ className: "uppercase" },
+								"Date"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"October, 2017"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h5",
+								{ className: "uppercase" },
+								"Client"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"NBCUX Lab"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-5  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h5",
+								{ className: "uppercase" },
+								"Team"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/minaazimov" },
+									"Mina Azimov"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/oleksandr-lebedyev/" },
+									"Alex Lebedyev"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "" },
+									"Kennix Lee"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "" },
+									"Jing Zhao"
+								),
+								" "
+							)
+						)
+					)
+				),
+				_react2.default.createElement(_Sidebar2.default, {
+					sections: sections,
+					activeSection: activeSection
+				}),
+				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
 	}]);
@@ -38669,7 +38909,7 @@ Vai.propTypes = {};
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
-		counter: state.counter,
+		count: state.count,
 		abbreviation: state.abbreviation
 	};
 };
@@ -38679,8 +38919,41 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		reset: function reset() {
 			return dispatch((0, _counter.reset)());
 		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		},
 		vai: function vai() {
 			return dispatch((0, _abbreviation.vai)());
+		},
+		translator: function translator() {
+			return dispatch((0, _abbreviation.translator)());
+		},
+		jjMdc: function jjMdc() {
+			return dispatch((0, _abbreviation.jjMdc)());
+		},
+		jjHome: function jjHome() {
+			return dispatch((0, _abbreviation.jjHome)());
+		},
+		wrap1: function wrap1() {
+			return dispatch((0, _abbreviation.wrap1)());
+		},
+		wrap2: function wrap2() {
+			return dispatch((0, _abbreviation.wrap2)());
+		},
+		perforce: function perforce() {
+			return dispatch((0, _abbreviation.perforce)());
+		},
+		cisco: function cisco() {
+			return dispatch((0, _abbreviation.cisco)());
+		},
+		protohack: function protohack() {
+			return dispatch((0, _abbreviation.protohack)());
 		},
 		setNavWhite: function setNavWhite() {
 			return dispatch((0, _color.setNavWhite)());
@@ -38693,7 +38966,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Vai);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"react":109,"react-redux":57}],142:[function(require,module,exports){
+// <ParallaxHeader 
+// bgImage={"../assets/img/vai/banner.gif"}
+// headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
+
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/CodepenEmbed":127,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/ScrollSection":132,"../components/Sidebar":133,"../services/hexToRgb":144,"../services/palette":146,"../services/splitLetter":147,"../services/splitWord":148,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

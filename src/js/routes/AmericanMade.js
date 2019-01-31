@@ -123,7 +123,7 @@ class AmericanMade extends Component {
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h5 className="uppercase">Team</h5>
-							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Oleksandr Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
+							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
