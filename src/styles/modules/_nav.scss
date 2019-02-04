@@ -48,21 +48,21 @@ $baseclass: portfolio-nav;
 			animation: none;
 
 			&:last-child {
-				animation-delay: $delay-slow;
+				animation-delay: $delay-slower;
 			}			
 		}
 	}
 	&--countIsIncreasing {
 		.#{$baseclass}__toggle-num {
 			span {
-				animation: increasingNum 0.3s $easing5;
+				animation: increasingNum $duration-fast $easing5;
 			}
 		}
 	}
 	&--countIsDecreasing {
 		.#{$baseclass}__toggle-num {
 			span {
-				animation: decreasingNum 0.3s $easing5;
+				animation: decreasingNum $duration-fast $easing5;
 			}
 		}
 	}

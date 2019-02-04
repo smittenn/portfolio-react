@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
-export default function(text) {
+export default function(text, style) {
 	return text.split("").map((item, index) =>
-		<span key={index}>{item}</span>
+		<span style={style} key={index}>{item}</span>
 	)
 }

@@ -1245,7 +1245,7 @@ section p span, section blockquote span {
       display: inline-block;
       animation: none; }
       .portfolio-nav .portfolio-nav__toggle-num span:last-child {
-        animation-delay: 0.12s; }
+        animation-delay: 0.18s; }
   .portfolio-nav--countIsIncreasing .portfolio-nav__toggle-num span {
     animation: increasingNum 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
   .portfolio-nav--countIsDecreasing .portfolio-nav__toggle-num span {
@@ -1511,7 +1511,7 @@ section p span, section blockquote span {
 
 .react-parallax-contents, .react-parallax-content {
   position: relative;
-  height: calc(100vh + 1px);
+  height: calc(100vh - 50px);
   opacity: 1;
   display: -ms-flexbox;
   display: flex;
@@ -1577,7 +1577,7 @@ section p span, section blockquote span {
   .scroll-arrow h5, .scroll-arrow h6, .scroll-arrow i {
     color: #F8FBF7;
     margin: 0;
-    margin-bottom: 12px; }
+    margin-bottom: 6px; }
     .scroll-arrow h5 span, .scroll-arrow h6 span, .scroll-arrow i span {
       display: inline-block;
       opacity: 1;
@@ -1636,10 +1636,10 @@ section p span, section blockquote span {
     .scroll-arrow h5, .scroll-arrow h6, .scroll-arrow i {
       margin-bottom: 3px; }
     .scroll-arrow .scroll-arrow__seperator-container {
-      height: 112px; } }
+      height: 72px; } }
 
 .sidebar-container {
-  height: 100%;
+  height: calc(100% - 120px);
   width: 60px;
   position: fixed;
   display: -ms-flexbox;
@@ -1649,15 +1649,47 @@ section p span, section blockquote span {
   -ms-flex-pack: end;
   justify-content: flex-end;
   right: 0;
-  top: 0;
+  bottom: 0;
   z-index: 999; }
   .sidebar-container p {
     font-weight: 700;
     letter-spacing: 0.012em;
     color: #F8FBF7; }
-  .sidebar-container:hover {
+  .sidebar-container--hover {
     min-width: 280px;
     width: calc(16.667% + 40px); }
+    .sidebar-container--hover .sidebar:hover {
+      width: 100%;
+      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s 0.3s;
+      background: #f8fbf7; }
+      .sidebar-container--hover .sidebar:hover .sidebar-item {
+        height: 64px;
+        transition: height cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s; }
+        .sidebar-container--hover .sidebar:hover .sidebar-item:hover:before {
+          opacity: 1;
+          width: 100%;
+          background: #232021; }
+        .sidebar-container--hover .sidebar:hover .sidebar-item:hover .sidebar-number {
+          color: #F8FBF7; }
+        .sidebar-container--hover .sidebar:hover .sidebar-item:hover .sidebar-dash {
+          background-color: #F8FBF7; }
+        .sidebar-container--hover .sidebar:hover .sidebar-item:hover .sidebar-label {
+          color: #F8FBF7; }
+      .sidebar-container--hover .sidebar:hover .sidebar-number {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
+      .sidebar-container--hover .sidebar:hover .sidebar-dash {
+        width: 34px;
+        margin: 0;
+        transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s !important; }
+      .sidebar-container--hover .sidebar:hover .sidebar-label {
+        opacity: 1;
+        transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
+      .sidebar-container--hover .sidebar:hover .sidebar-border {
+        opacity: 1;
+        width: 100%;
+        transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
   .sidebar-container .sidebar {
     width: 94px;
     padding: 0;
@@ -1706,7 +1738,8 @@ section p span, section blockquote span {
     padding: 0 0 0 48px;
     margin: 0;
     opacity: 0;
-    display: inline-block; }
+    display: inline-block;
+    white-space: nowrap; }
   .sidebar-container .sidebar-dash {
     margin: 0 0 0 16px;
     width: 16px;
@@ -1724,7 +1757,7 @@ section p span, section blockquote span {
     right: 0;
     width: 0%;
     height: 1px;
-    background: rgba(35, 32, 33, 0.1);
+    background: rgba(35, 32, 33, 0.06);
     opacity: 0; }
   .sidebar-container .sidebar-item a.active .sidebar-dash {
     margin: 0;
@@ -1732,46 +1765,15 @@ section p span, section blockquote span {
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-duration: 0.3s;
     transition-property: margin, width; }
-  .sidebar-container .sidebar:hover {
-    width: 100%;
-    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s 0.3s;
-    background: #f8fbf7; }
-    .sidebar-container .sidebar:hover .sidebar-item {
-      height: 64px;
-      transition: height cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s; }
-      .sidebar-container .sidebar:hover .sidebar-item:hover:before {
-        opacity: 1;
-        width: 100%;
-        background: #232021; }
-      .sidebar-container .sidebar:hover .sidebar-item:hover .sidebar-number {
-        color: #F8FBF7; }
-      .sidebar-container .sidebar:hover .sidebar-item:hover .sidebar-dash {
-        background-color: #F8FBF7; }
-      .sidebar-container .sidebar:hover .sidebar-item:hover .sidebar-label {
-        color: #F8FBF7; }
-    .sidebar-container .sidebar:hover .sidebar-number {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
-    .sidebar-container .sidebar:hover .sidebar-dash {
-      width: 34px;
-      margin: 0;
-      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s !important; }
-    .sidebar-container .sidebar:hover .sidebar-label {
-      opacity: 1;
-      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
-    .sidebar-container .sidebar:hover .sidebar-border {
-      opacity: 1;
-      width: 100%;
-      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
-  .sidebar-container.white .sidebar-dash {
+  .sidebar-container--white .sidebar-dash {
     background: #F8FBF7; }
-  .sidebar-container.white .sidebar:hover .sidebar-dash {
+  .sidebar-container--white .sidebar:hover .sidebar-dash {
     background: #232021; }
   @media screen and (max-width: 800px) {
     .sidebar-container {
-      width: 30px; }
-      .sidebar-container:hover {
+      width: 24px;
+      height: 100%; }
+      .sidebar-container.sidebar-container--hover {
         width: 260px; }
       .sidebar-container .sidebar .sidebar-item {
         height: 36px;

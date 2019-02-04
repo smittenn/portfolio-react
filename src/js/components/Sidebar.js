@@ -12,18 +12,33 @@ class Sidebar extends Component {
 		super(props);
 
 		this.state = {
+			isOpen: false
 		}
 	}
 
+	handleMouseEnter = () => {
+		this.setState({
+			isOpen: true,
+		})
+	}
+
+	handleMouseLeave = () => {
+		this.setState({
+			isOpen: false,
+		})			
+	}
+
+
 	render() {
 
-		// const { activeSection, pageSections } = this.state;
+		const { isOpen } = this.state;
 		const { color, sections, activeSection } = this.props;
 
 		const classnames = classNames({
 			"sidebar-container": true,
-			"white": color == "WHITE",
-			"black": color == "BLACK",
+			"sidebar-container--white": color == "WHITE",
+			"sidebar-container--black": color == "BLACK",
+			"sidebar-container--hover": isOpen,
 		})
 
 		const sidebarItems = sections.map((section, i) => 
@@ -38,7 +53,7 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames}>
+			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
 				<ul className="sidebar">
 					{sidebarItems}
 				</ul>

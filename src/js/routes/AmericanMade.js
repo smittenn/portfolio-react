@@ -51,14 +51,17 @@ class AmericanMade extends Component {
 				"atomic-design",
 				"preloader",
 				"navigation",
+				"video-gallery",
+				"parallax",
 			],
 		}
 	}
 
-	setActiveSection = (name) => {
+	setActiveSection = (idx) => {
 		this.setState({
-			activeSection: name,
+			activeSection: this.state.pageSections[idx],
 		})
+		this.props.setCounter(idx + 1);
 	}
 
 
@@ -80,7 +83,7 @@ class AmericanMade extends Component {
 					headerText={[<span className="outline">American </span>, <span className="outline">Made </span>, `is a film site created for Universal Pictures`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
-					onSetActive={() => { setCounter(1); setNavWhite(); this.setActiveSection(pageSections[0]);}}
+					onSetActive={() => { setNavWhite(); this.setActiveSection(0);}}
 					/>
 					<Link to={pageSections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]); }}>
 						<ScrollArrow/>
@@ -89,14 +92,14 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				name={pageSections[1]} 
-				onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]);}}>
+				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<h2>I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures</h2> 
 							<p>
 								The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. Additionally There was a 63% conversion rate from our site to purchase tickets!
 								<br/><br/>
-								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. 
+								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way.
 							</p>
 						</div>
 					</div>
@@ -105,8 +108,11 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				name={pageSections[2]}
 				black 
-				style={{ backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`}}  
-				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(pageSections[2]); }}>
+				style={{ 
+					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+				}}  
+				onSetActive={() => { setNavWhite(); this.setActiveSection(2); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
@@ -131,13 +137,13 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				black 
 				name={pageSections[3]} 
-				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(pageSections[3]);}}>
+				onSetActive={() => { setNavWhite(); this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{/*<div className="grid__item grid__item--col-1"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h1>{splitWord("Cinemagraphs")}</h1> 
-								<blockquote>{splitWord("One of my goals for this project was to integrate the content and UI of the site in a seamless way. To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")}</blockquote>
+								<blockquote>{splitWord("To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")}</blockquote>
 							</div>
 						</div>
 					</div>
@@ -154,21 +160,25 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				name={pageSections[4]} 
-				onSetActive={() => { setCounter(5); setNavWhite(); this.setActiveSection(pageSections[4]);}} 
+				onSetActive={() => { setNavWhite(); this.setActiveSection(4); }} 
 				black 
 				style={{ backgroundImage: `url(../assets/img/american-made/cloud-bg.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.95`, backgroundPosition: "center 30%" }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<h1 className="">{"Atomic Design"}</h1> 
-							<blockquote>{"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations."}</blockquote>
+							<blockquote>{"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Molecules, Organisms and Pages came naturally building upon the foundations."}</blockquote>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<img src="../assets/img/american-made/atomic-design.svg"/>
 						</div>
 					</div>
 				</ScrollSection>
 
 				<ScrollSection 
 				name={pageSections[5]} 
-				onSetActive={() => { setCounter(6); setNavBlack(); this.setActiveSection(pageSections[5]);}}>
+				onSetActive={() => { setNavBlack(); this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -187,18 +197,56 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				name={pageSections[6]} 
 				black
-				onSetActive={() => { setCounter(7); setNavWhite(); this.setActiveSection(pageSections[6]);}}>
+				onSetActive={() => { setNavWhite(); this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>“Runway” Navigation</h2>
-								<blockquote>I designed a unique themed navigation for the site. The nav mimic'd the bird's eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
+								<blockquote>I designed a unique themed navigation for the site. The nav mimic'd the bird's-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
 							<CodepenEmbed slug="qoQajr" title="Navigation: American Made Film Site" height={625} handle="erchsm"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				name={pageSections[7]} 
+				onSetActive={() => { setNavBlack(); this.setActiveSection(7); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Video Gallery</h2>
+								<blockquote>To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<CodepenEmbed hash="MGedbG" title="Video Gallery: American Made Film Site" height={625} handle="erchsm"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				black
+				name={pageSections[8]} 
+				onSetActive={() => { setNavWhite(); this.setActiveSection(8); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Scrolling Story: Parallax</h2>
+								<blockquote>In my quest to unify content and UI I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
+								<blockquote>I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<CodepenEmbed hash="ZoBVbY" title="Story: American Made Film Site" height={625} handle="erchsm"/>
 						</div>
 					</div>
 				</ScrollSection>

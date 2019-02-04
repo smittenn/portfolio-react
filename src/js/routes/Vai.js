@@ -44,12 +44,9 @@ class Vai extends Component {
 		this.state = {
 			activeSection: "overview",
 			pageSections: [
-				{ name: "overview",
-				},
-				{ name: "details",
-				},
-				{ name: "details-2",
-				},
+				{ name: "overview", },
+				{ name: "details", },
+				{ name: "details-2", },
 			],
 		}
 	}
@@ -68,15 +65,7 @@ class Vai extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
-		const sections =[]
-
-		pageSections.forEach((item, idx) => {
-			sections.push(item.name);
-		});
-
-		const elements = pageSections.map((element) => {
-			console.log(element);
-		})
+		const sections = pageSections.map(i => i.name)
 
 		return (
 			<article>
@@ -100,7 +89,11 @@ class Vai extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<h2>Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? </h2> 
-							<blockquote>Did you download an ad blocker plugin to your browser?<br/> More likely than not, you did.</blockquote>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							<blockquote>Did you download an ad blocker plugin to your browser? More likely than not, you did.</blockquote>
 						</div>
 					</div>
 					<div className="grid">

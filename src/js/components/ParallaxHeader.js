@@ -5,6 +5,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 
 import splitWord from "../services/splitWord"
+import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 
 import detectMobile from "../services/detectMobile"

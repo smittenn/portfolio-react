@@ -37058,6 +37058,10 @@ var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
 
+var _splitLetter = require("../services/splitLetter");
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
 var _hexToRgb = require("../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -37168,7 +37172,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":143,"../services/hexToRgb":144,"../services/splitWord":148,"classnames":7,"react":109,"react-parallax":46,"react-scroll":94}],131:[function(require,module,exports){
+},{"../services/detectMobile":143,"../services/hexToRgb":144,"../services/splitLetter":147,"../services/splitWord":148,"classnames":7,"react":109,"react-parallax":46,"react-scroll":94}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37412,15 +37416,28 @@ var Sidebar = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).call(this, props));
 
-		_this.state = {};
+		_this.handleMouseEnter = function () {
+			_this.setState({
+				isOpen: true
+			});
+		};
+
+		_this.handleMouseLeave = function () {
+			_this.setState({
+				isOpen: false
+			});
+		};
+
+		_this.state = {
+			isOpen: false
+		};
 		return _this;
 	}
 
 	_createClass(Sidebar, [{
 		key: 'render',
 		value: function render() {
-
-			// const { activeSection, pageSections } = this.state;
+			var isOpen = this.state.isOpen;
 			var _props = this.props,
 			    color = _props.color,
 			    sections = _props.sections,
@@ -37429,8 +37446,9 @@ var Sidebar = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"sidebar-container": true,
-				"white": color == "WHITE",
-				"black": color == "BLACK"
+				"sidebar-container--white": color == "WHITE",
+				"sidebar-container--black": color == "BLACK",
+				"sidebar-container--hover": isOpen
 			});
 
 			var sidebarItems = sections.map(function (section, i) {
@@ -37459,7 +37477,7 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames },
+				{ className: classnames, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave },
 				_react2.default.createElement(
 					'ul',
 					{ className: 'sidebar' },
@@ -37826,15 +37844,16 @@ var AmericanMade = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (AmericanMade.__proto__ || Object.getPrototypeOf(AmericanMade)).call(this, props));
 
-		_this.setActiveSection = function (name) {
+		_this.setActiveSection = function (idx) {
 			_this.setState({
-				activeSection: name
+				activeSection: _this.state.pageSections[idx]
 			});
+			_this.props.setCounter(idx + 1);
 		};
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "details", "details-2", "cinemagraphs", "atomic-design", "preloader", "navigation"]
+			pageSections: ["overview", "details", "details-2", "cinemagraphs", "atomic-design", "preloader", "navigation", "video-gallery", "parallax"]
 		};
 		return _this;
 	}
@@ -37877,7 +37896,7 @@ var AmericanMade = function (_Component) {
 						bgImage: "../assets/img/american-made/output.gif",
 						strength: 200,
 						onSetActive: function onSetActive() {
-							setCounter(1);setNavWhite();_this2.setActiveSection(pageSections[0]);
+							setNavWhite();_this2.setActiveSection(0);
 						}
 					}),
 					_react2.default.createElement(
@@ -37893,7 +37912,7 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[1],
 						onSetActive: function onSetActive() {
-							setCounter(2);setNavBlack();_this2.setActiveSection(pageSections[1]);
+							setNavBlack();_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37912,7 +37931,7 @@ var AmericanMade = function (_Component) {
 								"The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. Additionally There was a 63% conversion rate from our site to purchase tickets!",
 								_react2.default.createElement("br", null),
 								_react2.default.createElement("br", null),
-								"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems."
+								"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way."
 							)
 						)
 					)
@@ -37922,9 +37941,12 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[2],
 						black: true,
-						style: { backgroundImage: "url(../assets/img/american-made/s07-synopsis.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6" },
+						style: {
+							backgroundImage: "url(../assets/img/american-made/s07-synopsis.jpg)",
+							backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6"
+						},
 						onSetActive: function onSetActive() {
-							setCounter(3);setNavWhite();_this2.setActiveSection(pageSections[2]);
+							setNavWhite();_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38009,7 +38031,7 @@ var AmericanMade = function (_Component) {
 						black: true,
 						name: pageSections[3],
 						onSetActive: function onSetActive() {
-							setCounter(3);setNavWhite();_this2.setActiveSection(pageSections[3]);
+							setNavWhite();_this2.setActiveSection(3);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38028,7 +38050,7 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									(0, _splitWord2.default)("One of my goals for this project was to integrate the content and UI of the site in a seamless way. To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")
+									(0, _splitWord2.default)("To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")
 								)
 							)
 						)
@@ -38053,7 +38075,7 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[4],
 						onSetActive: function onSetActive() {
-							setCounter(5);setNavWhite();_this2.setActiveSection(pageSections[4]);
+							setNavWhite();_this2.setActiveSection(4);
 						},
 						black: true,
 						style: { backgroundImage: "url(../assets/img/american-made/cloud-bg.png)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", 0.95", backgroundPosition: "center 30%" } },
@@ -38071,8 +38093,17 @@ var AmericanMade = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Atoms, molecules and organisms came naturally building upon the foundations."
+								"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Molecules, Organisms and Pages came naturally building upon the foundations."
 							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+							_react2.default.createElement("img", { src: "../assets/img/american-made/atomic-design.svg" })
 						)
 					)
 				),
@@ -38081,7 +38112,7 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[5],
 						onSetActive: function onSetActive() {
-							setCounter(6);setNavBlack();_this2.setActiveSection(pageSections[5]);
+							setNavBlack();_this2.setActiveSection(5);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38121,7 +38152,7 @@ var AmericanMade = function (_Component) {
 						name: pageSections[6],
 						black: true,
 						onSetActive: function onSetActive() {
-							setCounter(7);setNavWhite();_this2.setActiveSection(pageSections[6]);
+							setNavWhite();_this2.setActiveSection(6);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38140,7 +38171,7 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"I designed a unique themed navigation for the site. The nav mimic'd the bird's eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
+									"I designed a unique themed navigation for the site. The nav mimic'd the bird's-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
 								)
 							)
 						)
@@ -38152,6 +38183,90 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-12" },
 							_react2.default.createElement(_CodepenEmbed2.default, { slug: "qoQajr", title: "Navigation: American Made Film Site", height: 625, handle: "erchsm" })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: pageSections[7],
+						onSetActive: function onSetActive() {
+							setNavBlack();_this2.setActiveSection(7);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Video Gallery"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_CodepenEmbed2.default, { hash: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625, handle: "erchsm" })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						black: true,
+						name: pageSections[8],
+						onSetActive: function onSetActive() {
+							setNavWhite();_this2.setActiveSection(8);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Scrolling Story: Parallax"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"In my quest to unify content and UI I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way."
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_CodepenEmbed2.default, { hash: "ZoBVbY", title: "Story: American Made Film Site", height: 625, handle: "erchsm" })
 						)
 					)
 				),
@@ -38316,7 +38431,7 @@ var Home = function (_Component) {
 
 		_this.state = {
 			activeSection: "hello",
-			pageSections: ["hello", "about", "projects", "experiments"]
+			pageSections: ["hello", "about", "projects", "experiments", "social"]
 		};
 		return _this;
 	}
@@ -38354,7 +38469,7 @@ var Home = function (_Component) {
 					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: "hello",
-						headerText: ["Eric C. Smith is an", _react2.default.createElement(
+						headerText: ["Eric C. Smith, an", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
 							"Interactive "
@@ -38410,7 +38525,7 @@ var Home = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										null,
-										(0, _splitWord2.default)("Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When im not writing code, I\u2019m taking photos with friends or cycling.")
+										(0, _splitWord2.default)("Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I\u2019m not designing, you can find me outdoors taking photos with friends.")
 									)
 								),
 								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
@@ -38677,10 +38792,7 @@ var Vai = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: [{ name: "overview"
-			}, { name: "details"
-			}, { name: "details-2"
-			}]
+			pageSections: [{ name: "overview" }, { name: "details" }, { name: "details-2" }]
 		};
 		return _this;
 	}
@@ -38701,14 +38813,8 @@ var Vai = function (_Component) {
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 
-			var sections = [];
-
-			pageSections.forEach(function (item, idx) {
-				sections.push(item.name);
-			});
-
-			var elements = pageSections.map(function (element) {
-				console.log(element);
+			var sections = pageSections.map(function (i) {
+				return i.name;
 			});
 
 			return _react2.default.createElement(
@@ -38760,13 +38866,19 @@ var Vai = function (_Component) {
 								"h2",
 								null,
 								"Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? "
-							),
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"Did you download an ad blocker plugin to your browser?",
-								_react2.default.createElement("br", null),
-								" More likely than not, you did."
+								"Did you download an ad blocker plugin to your browser? More likely than not, you did."
 							)
 						)
 					),
@@ -39095,11 +39207,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-exports.default = function (text) {
+exports.default = function (text, style) {
 	return text.split("").map(function (item, index) {
 		return _react2.default.createElement(
 			"span",
-			{ key: index },
+			{ style: style, key: index },
 			item
 		);
 	});

@@ -30,6 +30,7 @@ class Home extends Component {
 			"about",
 			"projects",
 			"experiments",
+			"social",
 			],
 		}
 	}
@@ -68,7 +69,7 @@ class Home extends Component {
 				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name="hello"
-					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
+					headerText={[`Eric C. Smith, an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
 					bgImage={"../assets/img/liquid.gif"} 
 					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
@@ -79,7 +80,7 @@ class Home extends Component {
 						<ScrollArrow/>
 					</Link>
 				</Element>
-				
+
 				<Element name={pageSections[1]}>
 					<IntersectionVisible onShow={(i) => i[0].target.classList.add("active-section")} onHide={(i) => i[0].target.classList.remove("active-section")}>
 						<section>
@@ -87,7 +88,7 @@ class Home extends Component {
 								<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 									<h1>{splitWord("Form & Function")}</h1>
 									<blockquote>
-										{splitWord(`Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When im not writing code, I’m taking photos with friends or cycling.`)}
+										{splitWord(`Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 									</blockquote>
 								</div>
 								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

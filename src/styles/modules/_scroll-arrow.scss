@@ -55,7 +55,7 @@ $arrow-size: 40px;
 	h5, h6, i {
 		color: $brand-white;
 		margin: 0;
-		margin-bottom: 12px;
+		margin-bottom: 6px;
 
 		span {
 			display: inline-block;
@@ -113,7 +113,7 @@ $arrow-size: 40px;
 			margin-bottom: 3px;
 		}
 		.#{$baseclass}__seperator-container {
-			height: 112px;
+			height: 72px;
 		}
 	}
 }
