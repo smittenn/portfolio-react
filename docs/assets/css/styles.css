@@ -1511,7 +1511,7 @@ section p span, section blockquote span {
 
 .react-parallax-contents, .react-parallax-content {
   position: relative;
-  height: calc(100vh - 50px);
+  height: calc(100vh + 1px);
   opacity: 1;
   display: -ms-flexbox;
   display: flex;
@@ -1531,6 +1531,10 @@ section p span, section blockquote span {
 .react-parallax-content {
   position: absolute !important;
   top: 0; }
+
+@media screen and (max-width: 800px) {
+  .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
+    height: calc(100vh - 50px); } }
 
 @keyframes wiggle {
   16.65% {
@@ -1639,7 +1643,7 @@ section p span, section blockquote span {
       height: 72px; } }
 
 .sidebar-container {
-  height: calc(100% - 120px);
+  height: calc(100vh - 120px);
   width: 60px;
   position: fixed;
   display: -ms-flexbox;
@@ -1772,7 +1776,7 @@ section p span, section blockquote span {
   @media screen and (max-width: 800px) {
     .sidebar-container {
       width: 24px;
-      height: 100%; }
+      height: calc(100vh - 90px); }
       .sidebar-container.sidebar-container--hover {
         width: 260px; }
       .sidebar-container .sidebar .sidebar-item {

@@ -1,7 +1,7 @@
 $baseclass: sidebar-container;
 
 .#{$baseclass} {
-	height: calc(100% - 120px);
+	height: calc(100vh - 120px);
 	width: 60px;
 	position: fixed;
 	display: flex;
@@ -188,7 +188,7 @@ $baseclass: sidebar-container;
 
 	@media screen and (max-width: $bp-medium) {
 		width: 24px;
-		height: 100%;
+		height: calc(100vh - 90px);
 
 		&.#{$baseclass}--hover {
 			width: 260px;
