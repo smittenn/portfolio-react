@@ -26,10 +26,10 @@
 		}
 
 
-		transform: scaleY(0);
-		animation: drawIn $duration-slow $duration-slow $easing1;
-		animation-fill-mode: forwards;
-		transform-origin: top;
+		// transform: scaleY(0);
+		// animation: drawIn $duration-slow $duration-slow $easing1;
+		// animation-fill-mode: forwards;
+		// transform-origin: top;
 
 		@for $i from 1 through 4 {
 			&:nth-child(#{$i}n + #{$i}) {

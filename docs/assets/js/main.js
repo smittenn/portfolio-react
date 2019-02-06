@@ -37457,7 +37457,7 @@ var Sidebar = function (_Component) {
 					{ key: i, className: 'sidebar-item' },
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: section, smooth: true, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
+						{ to: isOpen ? section : null, smooth: true, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
 						_react2.default.createElement(
 							'p',
 							{ className: 'sidebar-number' },
@@ -38221,7 +38221,7 @@ var AmericanMade = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-12" },
-							_react2.default.createElement(_CodepenEmbed2.default, { hash: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625, handle: "erchsm" })
+							_react2.default.createElement(_CodepenEmbed2.default, { slug: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625, handle: "erchsm" })
 						)
 					)
 				),
@@ -38266,7 +38266,7 @@ var AmericanMade = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-12" },
-							_react2.default.createElement(_CodepenEmbed2.default, { hash: "ZoBVbY", title: "Story: American Made Film Site", height: 625, handle: "erchsm" })
+							_react2.default.createElement(_CodepenEmbed2.default, { slug: "ZoBVbY", title: "Story: American Made Film Site", height: 625, handle: "erchsm" })
 						)
 					)
 				),

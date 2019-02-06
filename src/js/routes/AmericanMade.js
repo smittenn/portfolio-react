@@ -226,7 +226,7 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<CodepenEmbed hash="MGedbG" title="Video Gallery: American Made Film Site" height={625} handle="erchsm"/>
+							<CodepenEmbed slug="MGedbG" title="Video Gallery: American Made Film Site" height={625} handle="erchsm"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -246,7 +246,7 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<CodepenEmbed hash="ZoBVbY" title="Story: American Made Film Site" height={625} handle="erchsm"/>
+							<CodepenEmbed slug="ZoBVbY" title="Story: American Made Film Site" height={625} handle="erchsm"/>
 						</div>
 					</div>
 				</ScrollSection>
