@@ -37093,7 +37093,8 @@ var ParallaxHeader = function (_Component) {
 		};
 
 		_this.state = {
-			isMobile: (0, _detectMobile2.default)()
+			isMobile: (0, _detectMobile2.default)(),
+			isAnimating: true
 		};
 		return _this;
 	}
@@ -37101,7 +37102,12 @@ var ParallaxHeader = function (_Component) {
 	_createClass(ParallaxHeader, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
+			var _this2 = this;
+
 			window.addEventListener('resize', this.detectMobile);
+			setTimeout(function () {
+				_this2.setState({ isAnimating: false });
+			}, 2400);
 		}
 	}, {
 		key: "componentWillUnmount",
@@ -37118,7 +37124,9 @@ var ParallaxHeader = function (_Component) {
 			    strength = _props.strength,
 			    name = _props.name,
 			    onSetActive = _props.onSetActive;
-			var isMobile = this.state.isMobile;
+			var _state = this.state,
+			    isMobile = _state.isMobile,
+			    isAnimating = _state.isAnimating;
 
 
 			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -37127,6 +37135,11 @@ var ParallaxHeader = function (_Component) {
 
 			var str = strength ? strength : 600;
 			isMobile ? str /= 2 : null;
+
+			var classnames = (0, _classnames2.default)({
+				"react-parallax-contents": true,
+				"react-parallax-contents--animating": isAnimating
+			});
 
 			return _react2.default.createElement(
 				"div",
@@ -37138,7 +37151,7 @@ var ParallaxHeader = function (_Component) {
 					renderLayer: function renderLayer(percentage) {
 						var style = {
 							opacity: -(3 * percentage) + 2.5,
-							transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)"
+							transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (400 * (1 - percentage) - 200) + "px,0)"
 						};
 						var updatedText = [];
 						headerText.forEach(function (item, idx) {
@@ -37146,7 +37159,7 @@ var ParallaxHeader = function (_Component) {
 						});
 						return _react2.default.createElement(
 							"div",
-							{ className: "react-parallax-contents", style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + percentage + ")" } },
+							{ className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + percentage + ")" } },
 							_react2.default.createElement(
 								"div",
 								{ className: "grid" },

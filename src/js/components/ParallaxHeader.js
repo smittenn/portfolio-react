@@ -18,11 +18,15 @@ export default class ParallaxHeader extends Component {
 
 		this.state = {
 			isMobile: detectMobile(),
+			isAnimating: true,
 		}
 	}
 
 	componentDidMount() {
 		window.addEventListener('resize', this.detectMobile);
+		setTimeout(() => {
+             this.setState({ isAnimating: false });
+        }, 2400)
 	}
 
 	componentWillUnmount() {
@@ -39,7 +43,7 @@ export default class ParallaxHeader extends Component {
 	render() {
 
 		const { bgImage, bgColor, headerText, strength, name, onSetActive } = this.props;
-		const { isMobile } = this.state;
+		const { isMobile, isAnimating } = this.state;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
@@ -47,6 +51,11 @@ export default class ParallaxHeader extends Component {
 
 		let str = strength ? strength : 600;
 		isMobile ? (str /= 2) : null
+
+		const classnames = classNames({
+			"react-parallax-contents" : true,
+			"react-parallax-contents--animating" : isAnimating,			
+		})
 
 		return (
 			<div>
@@ -57,14 +66,14 @@ export default class ParallaxHeader extends Component {
 				renderLayer={percentage => {
 					const style = { 
 						opacity: -(3 * percentage) + 2.5, 
-						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
+						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(400 * (1 - percentage)) - 200}px,0)`
 					}
 					let updatedText = [];
 					headerText.forEach((item, idx) => {
 						typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
 					})
 					return (
-						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
+						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 							<div className="grid">
 								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 									<h1 className="no-mb">{updatedText}</h1>
