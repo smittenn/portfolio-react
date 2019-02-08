@@ -24,9 +24,11 @@ export default class ParallaxHeader extends Component {
 
 	componentDidMount() {
 		window.addEventListener('resize', this.detectMobile);
-		setTimeout(() => {
-             this.setState({ isAnimating: false });
-        }, 2400)
+		if (!this.state.isMobile) {
+			setTimeout(() => {
+				this.setState({ isAnimating: false });
+			}, 2400)	
+		}
 	}
 
 	componentWillUnmount() {

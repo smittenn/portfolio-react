@@ -37105,9 +37105,11 @@ var ParallaxHeader = function (_Component) {
 			var _this2 = this;
 
 			window.addEventListener('resize', this.detectMobile);
-			setTimeout(function () {
-				_this2.setState({ isAnimating: false });
-			}, 2400);
+			if (!this.state.isMobile) {
+				setTimeout(function () {
+					_this2.setState({ isAnimating: false });
+				}, 2400);
+			}
 		}
 	}, {
 		key: "componentWillUnmount",
