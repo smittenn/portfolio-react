@@ -41,7 +41,7 @@ export default class  ScrollSection extends Component {
 					<section className={classnames} style={style}>
 						{ this.props.children }
 					</section>
-					<Link style={{display: "none"}} to={name} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={onSetActive}>
+					<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}>
 					</Link>
 				</IntersectionVisible>
 			</Element>

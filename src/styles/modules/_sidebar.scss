@@ -1,8 +1,9 @@
 $baseclass: sidebar-container;
 
 .#{$baseclass} {
+	height: 100vh;
 	height: calc(100vh - 120px);
-	width: 60px;
+	width: 24px;
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -17,65 +18,6 @@ $baseclass: sidebar-container;
 		color: $brand-white;
 	}
 
-	&--hover {
-		min-width: 280px;
-		width: calc(16.667% + 40px);
-
-		.sidebar:hover {
-			width: 100%;
-			transition: all $easing1 $duration-fast $duration-fast;
-			background: rgba($brand-white, 1);
-
-			.sidebar-item {
-				height: 64px;
-				transition: height $easing1 $duration-fast;
-
-				&:hover {
-					&:before {
-						opacity: 1;
-						width: 100%;
-						background: $brand-black;
-					}
-					.sidebar-number {
-						color: $brand-white;
-					}
-
-					.sidebar-dash {
-						background-color: $brand-white;
-					}
-
-					.sidebar-label {
-						color: $brand-white;
-					}
-				}
-			}
-
-			.sidebar-number {
-				opacity: 1;
-				transform: translate3d(0, 0, 0);
-				transition: all $easing1 $duration-medium;
-			}
-
-			.sidebar-dash {
-				width: 34px;
-				margin: 0;
-				transition: all $easing1 $duration-medium !important;
-			}
-
-			.sidebar-label {
-				opacity: 1;
-				transition: all $easing1 $duration-medium;
-			}
-
-			.sidebar-border {
-				opacity: 1;
-				width: 100%;
-				transition: all $easing1 $duration-medium;
-			}
-		}
-
-	}
-
 	.sidebar {
 		width: 94px;
 		padding: 0;
@@ -85,7 +27,6 @@ $baseclass: sidebar-container;
 	.sidebar-item {
 		width: 100%;
 		height: 40px;
-		line-height: 64px;
 		border-bottom: none;
 		overflow: hidden;
 		position: relative;
@@ -149,10 +90,12 @@ $baseclass: sidebar-container;
 		height: 1px;
 		background-color: darken($brand-black, 0%);
 		display: inline-block;
-		vertical-align: middle;
 		position: absolute;
 		top: 50%;
 		left: 72px;
+
+		// margin: 0 16px 0 0;
+		// left: 24px;
 	}
 
 	.sidebar-border {
@@ -186,9 +129,70 @@ $baseclass: sidebar-container;
 		}
 	}
 
+
+	&--hover {
+		min-width: 280px;
+		width: calc(16.667% + 40px);
+
+		.sidebar {
+			width: 100%;
+			transition: all $easing1 $duration-fast $duration-fast;
+			background: rgba($brand-white, 1);
+
+			.sidebar-item {
+				height: 60px;
+				transition: height $easing1 $duration-fast;
+
+				&:hover {
+					&:before {
+						opacity: 1;
+						width: 100%;
+						background: $brand-black;
+					}
+					.sidebar-number {
+						color: $brand-white;
+					}
+
+					.sidebar-dash {
+						background-color: $brand-white;
+					}
+
+					.sidebar-label {
+						color: $brand-white;
+					}
+				}
+			}
+
+			.sidebar-number {
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+				transition: all $easing1 $duration-medium;
+			}
+
+			.sidebar-dash {
+				width: 34px;
+				margin: 0;
+				transition: all $easing1 $duration-medium !important;
+			}
+
+			.sidebar-label {
+				opacity: 1;
+				transition: all $easing1 $duration-medium;
+			}
+
+			.sidebar-border {
+				opacity: 1;
+				width: 100%;
+				transition: all $easing1 $duration-medium;
+			}
+		}
+
+	}
+
+
 	@media screen and (max-width: $bp-medium) {
 		width: 24px;
-		height: calc(100vh - 90px);
+		// height: calc(100vh - 90px);
 
 		&.#{$baseclass}--hover {
 			width: 260px;

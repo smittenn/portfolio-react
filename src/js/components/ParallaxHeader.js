@@ -18,17 +18,17 @@ export default class ParallaxHeader extends Component {
 
 		this.state = {
 			isMobile: detectMobile(),
-			isAnimating: true,
+			isAnimating: detectMobile(),
 		}
 	}
 
 	componentDidMount() {
 		window.addEventListener('resize', this.detectMobile);
-		if (!this.state.isMobile) {
-			setTimeout(() => {
-				this.setState({ isAnimating: false });
-			}, 2400)	
-		}
+		// if (!this.state.isMobile) {
+		// 	setTimeout(() => {
+		// 		this.setState({ isAnimating: false });
+		// 	}, 2400)	
+		// }
 	}
 
 	componentWillUnmount() {
@@ -56,7 +56,7 @@ export default class ParallaxHeader extends Component {
 
 		const classnames = classNames({
 			"react-parallax-contents" : true,
-			"react-parallax-contents--animating" : isAnimating,			
+			// "react-parallax-contents--animating" : isAnimating,			
 		})
 
 		return (
@@ -68,7 +68,7 @@ export default class ParallaxHeader extends Component {
 				renderLayer={percentage => {
 					const style = { 
 						opacity: -(3 * percentage) + 2.5, 
-						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(400 * (1 - percentage)) - 200}px,0)`
+						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
 					}
 					let updatedText = [];
 					headerText.forEach((item, idx) => {
@@ -77,7 +77,7 @@ export default class ParallaxHeader extends Component {
 					return (
 						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 							<div className="grid">
-								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
 									<h1 className="no-mb">{updatedText}</h1>
 								</div>
 							</div>
@@ -85,7 +85,7 @@ export default class ParallaxHeader extends Component {
 					)
 				}}>
 				</Parallax>
-				<Link style={{display: "none"}} to={name} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={onSetActive}/>
+				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}/>
 			</div>
 		);
 	}

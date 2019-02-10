@@ -73,10 +73,10 @@ class Home extends Component {
 					bgImage={"../assets/img/liquid.gif"} 
 					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
-					<Link to="about" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection(pageSections[1]); }}>
+					<Link to="about" spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection(pageSections[1]); }}>
 						<ScrollArrow/>
 					</Link>
-					<Link style={{display: "none"}} to="projects" spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection(pageSections[2]);}}>
+					<Link style={{display: "none"}} to="projects" spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => {this.props.setCounter(3); this.props.setNavBlack();  this.setActiveSection(pageSections[2]);}}>
 						<ScrollArrow/>
 					</Link>
 				</Element>

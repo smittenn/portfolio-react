@@ -145,6 +145,16 @@ class Nav extends Component {
 								</ul>
 							</div>
 							<div className="portfolio-nav__panel portfolio-nav__panel--white">
+								{/*<h1 style={{
+									position: "absolute",
+									top: 0,
+									right: 0,
+									fontSize: "30vw",
+									lineHeight: "30vw",
+									color: "transparent",
+									pointerEvents: "none",
+									"-webkit-text-stroke": "1px rgba(35, 32, 33, .1)",
+								}}>{abbreviation}</h1>*/}
 								<ul>
 									<li onClick={() => this.toggleMenuOpen()}><NavLink to="/"><h2 className={classNames({ 'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
 									<li onClick={() => this.openSecondaryPanel()}><h2 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h2></li>

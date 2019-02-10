@@ -36227,7 +36227,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":142,"connected-react-router":11,"prop-types":36,"react":109}],123:[function(require,module,exports){
+},{"./routes":143,"connected-react-router":11,"prop-types":36,"react":109}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36400,7 +36400,7 @@ var render = function render() {
 
 render();
 
-},{"../App":122,"../reducers":137,"connected-react-router":11,"history":24,"react":109,"react-dom":41,"react-redux":57,"redux":110}],127:[function(require,module,exports){
+},{"../App":122,"../reducers":138,"connected-react-router":11,"history":24,"react":109,"react-dom":41,"react-redux":57,"redux":110}],127:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36531,7 +36531,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":144,"../services/palette":146,"classnames":7,"react":109}],128:[function(require,module,exports){
+},{"../services/hexToRgb":145,"../services/palette":147,"classnames":7,"react":109}],128:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37033,7 +37033,220 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
-},{"../services/splitLetter":147,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],130:[function(require,module,exports){
+},{"../services/splitLetter":148,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],130:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = require('react-router-dom');
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactRedux = require('react-redux');
+
+var _splitLetter = require('../services/splitLetter');
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Nav = function (_Component) {
+	_inherits(Nav, _Component);
+
+	function Nav(props) {
+		_classCallCheck(this, Nav);
+
+		var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+
+		_this.loop = function () {
+
+			var top = window.pageYOffset;
+
+			var sections = document.querySelectorAll('section');
+			var replaceContainer = document.querySelectorAll('.js-replace');
+			var replaceItem = document.querySelectorAll('.js-replace__item');
+
+			if (replaceItem.length > 0) {
+				// get top position of item from container, because image might not have loaded
+				_this.replaceItemTop = parseInt(replaceContainer[0].getBoundingClientRect().top);
+				_this.replaceItemHeight = replaceItem[0].offsetHeight;
+				_this.replaceItemBottom = _this.replaceItemTop + _this.replaceItemHeight;
+			}
+
+			var sectionTop = -1;
+			var sectionBottom = -1;
+			var currentSection = -1;
+
+			// Fire when needed
+			if (_this.lastPosition == window.pageYOffset) {
+				scroll(loop);
+				return false;
+			} else {
+				_this.lastPosition = window.pageYOffset;
+
+				Array.prototype.forEach.call(sections, function (el, i) {
+					sectionTop = parseInt(el.getBoundingClientRect().top);
+					sectionBottom = parseInt(el.getBoundingClientRect().bottom);
+
+					if (sectionTop <= this.replaceItemBottom && sectionBottom > this.replaceItemTop) {
+						currentSection = el.classList.contains('section--bg');
+
+						if (currentSection) {
+							replaceContainer[0].classList.remove('js-replace--reverse');
+						} else {
+							replaceContainer[0].classList.add('js-replace--reverse');
+						}
+					}
+
+					if (this.replaceItemTop < sectionTop && sectionTop <= this.replaceItemBottom) {
+						if (currentSection != this.lastSection) {
+							document.documentElement.style.setProperty('--replace-offset', 100 / this.replaceItemHeight * parseInt(sectionTop - this.replaceItemTop) + '%');
+						}
+					}
+
+					if (this.replaceItemTop >= sectionTop) {
+						document.documentElement.style.setProperty('--replace-offset', 0 + '%');
+						this.lastSection = currentSection;
+					}
+				});
+			}
+
+			// perform loop work here
+
+			// Set up next iteration of the loop
+			_this.frameId = window.requestAnimationFrame(_this.loop);
+		};
+
+		_this.pad = function (n, width, z) {
+			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
+		};
+
+		_this.lastPosition = -1;
+
+		// my Variables
+		_this.lastSection = false;
+		_this.replaceItemTop = -1;
+		_this.replaceItemBottom = -1;
+		_this.replaceItemHeight = -1;
+
+		return _this;
+	}
+
+	_createClass(Nav, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.startLoop();
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			this.stopLoop();
+		}
+	}, {
+		key: 'startLoop',
+		value: function startLoop() {
+			if (!this._frameId) {
+				this._frameId = window.requestAnimationFrame(this.loop);
+			}
+		}
+	}, {
+		key: 'stopLoop',
+		value: function stopLoop() {
+			window.cancelAnimationFrame(this._frameId);
+			// Note: no need to worry if the loop has already been cancelled
+			// cancelAnimationFrame() won't throw an error
+		}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate(prevProps) {}
+	}, {
+		key: 'render',
+
+
+		// loop = () => {
+		// 	console.log('loop');
+
+		// 	// var scroll = window.requestAnimationFrame
+		// 	// || window.webkitRequestAnimationFrame
+		// 	// || window.mozRequestAnimationFrame
+		// 	// || window.msRequestAnimationFrame
+		// 	// || window.oRequestAnimationFrame
+		// 	// || function(callback){ window.setTimeout(callback, 1000/60) };
+
+		// 	// Recall the loop
+		// 	scroll( this.loop )
+		// }
+
+
+		value: function render() {
+
+			return _react2.default.createElement(
+				'header',
+				{ className: 'nav-toggle header' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'header__logo  js-replace' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'js-replace__item  js-replace__item--active' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'js-replace__content' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'logo' },
+								'Logo'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'js-replace__item' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'js-replace__content' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'logo  logo--invert' },
+								'Logo'
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Nav;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		count: state.count,
+		abbreviation: state.abbreviation,
+		color: state.color
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
+
+},{"../services/splitLetter":148,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],131:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37094,7 +37307,7 @@ var ParallaxHeader = function (_Component) {
 
 		_this.state = {
 			isMobile: (0, _detectMobile2.default)(),
-			isAnimating: true
+			isAnimating: (0, _detectMobile2.default)()
 		};
 		return _this;
 	}
@@ -37102,14 +37315,12 @@ var ParallaxHeader = function (_Component) {
 	_createClass(ParallaxHeader, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
-			var _this2 = this;
-
 			window.addEventListener('resize', this.detectMobile);
-			if (!this.state.isMobile) {
-				setTimeout(function () {
-					_this2.setState({ isAnimating: false });
-				}, 2400);
-			}
+			// if (!this.state.isMobile) {
+			// 	setTimeout(() => {
+			// 		this.setState({ isAnimating: false });
+			// 	}, 2400)	
+			// }
 		}
 	}, {
 		key: "componentWillUnmount",
@@ -37139,8 +37350,8 @@ var ParallaxHeader = function (_Component) {
 			isMobile ? str /= 2 : null;
 
 			var classnames = (0, _classnames2.default)({
-				"react-parallax-contents": true,
-				"react-parallax-contents--animating": isAnimating
+				"react-parallax-contents": true
+				// "react-parallax-contents--animating" : isAnimating,			
 			});
 
 			return _react2.default.createElement(
@@ -37153,7 +37364,7 @@ var ParallaxHeader = function (_Component) {
 					renderLayer: function renderLayer(percentage) {
 						var style = {
 							opacity: -(3 * percentage) + 2.5,
-							transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (400 * (1 - percentage) - 200) + "px,0)"
+							transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)"
 						};
 						var updatedText = [];
 						headerText.forEach(function (item, idx) {
@@ -37167,7 +37378,7 @@ var ParallaxHeader = function (_Component) {
 								{ className: "grid" },
 								_react2.default.createElement(
 									"div",
-									{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+									{ className: "grid__item grid__item--col-10 grid__item--col-11-medium" },
 									_react2.default.createElement(
 										"h1",
 										{ className: "no-mb" },
@@ -37177,7 +37388,7 @@ var ParallaxHeader = function (_Component) {
 							)
 						);
 					} }),
-				_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: onSetActive })
+				_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive })
 			);
 		}
 	}]);
@@ -37187,7 +37398,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":143,"../services/hexToRgb":144,"../services/splitLetter":147,"../services/splitWord":148,"classnames":7,"react":109,"react-parallax":46,"react-scroll":94}],131:[function(require,module,exports){
+},{"../services/detectMobile":144,"../services/hexToRgb":145,"../services/splitLetter":148,"../services/splitWord":149,"classnames":7,"react":109,"react-parallax":46,"react-scroll":94}],132:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37288,7 +37499,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"../services/detectMobile":143,"../services/splitLetter":147,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],132:[function(require,module,exports){
+},{"../services/detectMobile":144,"../services/splitLetter":148,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75}],133:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37377,7 +37588,7 @@ var ScrollSection = function (_Component) {
 						{ className: classnames, style: style },
 						this.props.children
 					),
-					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: onSetActive })
+					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive })
 				)
 			);
 		}
@@ -37388,7 +37599,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],133:[function(require,module,exports){
+},{"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],134:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37431,6 +37642,12 @@ var Sidebar = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).call(this, props));
 
+		_this.detectMobile = function (event) {
+			_this.setState({
+				isMobile: window.innerWidth <= 800
+			});
+		};
+
 		_this.handleMouseEnter = function () {
 			_this.setState({
 				isOpen: true
@@ -37444,7 +37661,8 @@ var Sidebar = function (_Component) {
 		};
 
 		_this.state = {
-			isOpen: false
+			isOpen: false,
+			isMobile: window.innerWidth <= 800
 		};
 		return _this;
 	}
@@ -37456,7 +37674,9 @@ var Sidebar = function (_Component) {
 			var _props = this.props,
 			    color = _props.color,
 			    sections = _props.sections,
-			    activeSection = _props.activeSection;
+			    activeSection = _props.activeSection,
+			    isBlack = _props.isBlack,
+			    isWhite = _props.isWhite;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -37472,7 +37692,7 @@ var Sidebar = function (_Component) {
 					{ key: i, className: 'sidebar-item' },
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: isOpen ? section : null, smooth: true, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
+						{ to: isOpen ? section : "", smooth: "easeOutCubic", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
 						_react2.default.createElement(
 							'p',
 							{ className: 'sidebar-number' },
@@ -37492,10 +37712,10 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave },
+				{ className: classnames, onMouseEnter: this.handleMouseEnter },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'sidebar' },
+					{ className: 'sidebar', onMouseLeave: this.handleMouseLeave },
 					sidebarItems
 				)
 			);
@@ -37515,7 +37735,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Sidebar);
 
-},{"../services/pad":145,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75,"react-scroll":94}],134:[function(require,module,exports){
+},{"../services/pad":146,"classnames":7,"react":109,"react-redux":57,"react-router-dom":75,"react-scroll":94}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37557,7 +37777,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],135:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37579,7 +37799,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],136:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37605,7 +37825,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],137:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37641,7 +37861,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":134,"./color":135,"./counter":136,"connected-react-router":11,"redux":110}],138:[function(require,module,exports){
+},{"./abbreviation":135,"./color":136,"./counter":137,"connected-react-router":11,"redux":110}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37755,7 +37975,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"react":109,"react-redux":57}],139:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":131,"react":109,"react-redux":57}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37816,6 +38036,10 @@ var _CodepenEmbed = require("../components/CodepenEmbed");
 
 var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
 
+var _NavToggle = require("../components/NavToggle");
+
+var _NavToggle2 = _interopRequireDefault(_NavToggle);
+
 var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
@@ -37868,7 +38092,7 @@ var AmericanMade = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "details", "details-2", "cinemagraphs", "atomic-design", "preloader", "navigation", "video-gallery", "parallax"]
+			pageSections: ["overview", "details", "details-2", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax"]
 		};
 		return _this;
 	}
@@ -37916,7 +38140,7 @@ var AmericanMade = function (_Component) {
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: pageSections[1], spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+						{ to: pageSections[1], spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 								setCounter(2);setNavBlack();_this2.setActiveSection(pageSections[1]);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
@@ -38090,44 +38314,7 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[4],
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(4);
-						},
-						black: true,
-						style: { backgroundImage: "url(../assets/img/american-made/cloud-bg.png)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", 0.95", backgroundPosition: "center 30%" } },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h1",
-								{ className: "" },
-								"Atomic Design"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Molecules, Organisms and Pages came naturally building upon the foundations."
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement("img", { src: "../assets/img/american-made/atomic-design.svg" })
-						)
-					)
-				),
-				_react2.default.createElement(
-					_ScrollSection2.default,
-					{
-						name: pageSections[5],
-						onSetActive: function onSetActive() {
-							setNavBlack();_this2.setActiveSection(5);
+							setNavBlack();_this2.setActiveSection(4);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38164,10 +38351,10 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[6],
+						name: pageSections[5],
 						black: true,
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(6);
+							setNavWhite();_this2.setActiveSection(5);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38204,9 +38391,9 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[7],
+						name: pageSections[6],
 						onSetActive: function onSetActive() {
-							setNavBlack();_this2.setActiveSection(7);
+							setNavBlack();_this2.setActiveSection(6);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38244,9 +38431,9 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						black: true,
-						name: pageSections[8],
+						name: pageSections[7],
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(8);
+							setNavWhite();_this2.setActiveSection(7);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -38359,7 +38546,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/CodepenEmbed":127,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/ScrollSection":132,"../components/Sidebar":133,"../services/hexToRgb":144,"../services/palette":146,"../services/splitLetter":147,"../services/splitWord":148,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],140:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/CodepenEmbed":127,"../components/GridLines":128,"../components/Nav":129,"../components/NavToggle":130,"../components/ParallaxHeader":131,"../components/ScrollArrow":132,"../components/ScrollSection":133,"../components/Sidebar":134,"../services/hexToRgb":145,"../services/palette":147,"../services/splitLetter":148,"../services/splitWord":149,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],141:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38500,14 +38687,14 @@ var Home = function (_Component) {
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: "about", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+						{ to: "about", spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 								_this2.props.setCounter(2);_this2.props.setNavBlack();_this2.setActiveSection(pageSections[1]);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					),
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ style: { display: "none" }, to: "projects", spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+						{ style: { display: "none" }, to: "projects", spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 								_this2.props.setCounter(3);_this2.props.setNavBlack();_this2.setActiveSection(pageSections[2]);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
@@ -38695,7 +38882,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/Sidebar":133,"../services/splitWord":148,"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],141:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":131,"../components/ScrollArrow":132,"../components/Sidebar":134,"../services/splitWord":149,"classnames":7,"react":109,"react-intersection-visible":42,"react-redux":57,"react-router-dom":75,"react-scroll":94}],142:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38846,11 +39033,7 @@ var Vai = function (_Component) {
 							"span",
 							{ className: "outline" },
 							"V.ai "
-						), _react2.default.createElement(
-							"span",
-							{ className: "outline" },
-							"player "
-						), "uses AI to identify people and objects in video"],
+						), "video player uses AI to identify people and products"],
 						bgImage: "../assets/img/vai/banner.gif",
 						onSetActive: function onSetActive() {
 							setCounter(1);setNavWhite();_this2.setActiveSection(sections[0]);
@@ -39097,7 +39280,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // bgImage={"../assets/img/vai/banner.gif"}
 // headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
 
-},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/CodepenEmbed":127,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":130,"../components/ScrollArrow":131,"../components/ScrollSection":132,"../components/Sidebar":133,"../services/hexToRgb":144,"../services/palette":146,"../services/splitLetter":147,"../services/splitWord":148,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],142:[function(require,module,exports){
+},{"../actions/abbreviation":123,"../actions/color":124,"../actions/counter":125,"../components/CodepenEmbed":127,"../components/GridLines":128,"../components/Nav":129,"../components/ParallaxHeader":131,"../components/ScrollArrow":132,"../components/ScrollSection":133,"../components/Sidebar":134,"../services/hexToRgb":145,"../services/palette":147,"../services/splitLetter":148,"../services/splitWord":149,"classnames":7,"react":109,"react-codepen-embed":38,"react-redux":57,"react-router-dom":75,"react-scroll":94}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39150,7 +39333,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/Nav":129,"./AboutMe":138,"./AmericanMade":139,"./Home":140,"./Vai":141,"react":109,"react-router":87}],143:[function(require,module,exports){
+},{"../components/Nav":129,"./AboutMe":139,"./AmericanMade":140,"./Home":141,"./Vai":142,"react":109,"react-router":87}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39161,7 +39344,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],144:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39177,7 +39360,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],145:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39188,7 +39371,7 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],146:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39215,7 +39398,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],147:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39238,7 +39421,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":109}],148:[function(require,module,exports){
+},{"react":109}],149:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

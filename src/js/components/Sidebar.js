@@ -12,8 +12,15 @@ class Sidebar extends Component {
 		super(props);
 
 		this.state = {
-			isOpen: false
+			isOpen: false,
+			isMobile: window.innerWidth <= 800,
 		}
+	}
+
+	detectMobile = (event) => {
+		this.setState({
+			isMobile: window.innerWidth <= 800,
+		})
 	}
 
 	handleMouseEnter = () => {
@@ -32,7 +39,7 @@ class Sidebar extends Component {
 	render() {
 
 		const { isOpen } = this.state;
-		const { color, sections, activeSection } = this.props;
+		const { color, sections, activeSection, isBlack, isWhite } = this.props;
 
 		const classnames = classNames({
 			"sidebar-container": true,
@@ -43,7 +50,7 @@ class Sidebar extends Component {
 
 		const sidebarItems = sections.map((section, i) => 
 			<li key={i} className="sidebar-item">
-				<Link to={ isOpen ? section : null } smooth={true} className={classNames({ "active": sections[i] == activeSection })}>
+				<Link to={ isOpen ? section : "" } smooth={"easeOutCubic"} duration={1200} className={classNames({ "active": sections[i] == activeSection })}>
 					<p className="sidebar-number">{pad(i + 1, 2)}.</p>
 					<div className="sidebar-dash"></div>
 					<p className="sidebar-label">{section}</p>
@@ -53,8 +60,8 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-				<ul className="sidebar">
+			<div className={classnames} onMouseEnter={this.handleMouseEnter}>
+				<ul className="sidebar" onMouseLeave={this.handleMouseLeave}>
 					{sidebarItems}
 				</ul>
 			</div>

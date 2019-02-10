@@ -74,7 +74,7 @@ class Vai extends Component {
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
 					name={sections[0]}
-					headerText={[`The`, <span className="outline">V.ai </span>, <span className="outline">player </span>,`uses AI to identify people and objects in video`]}
+					headerText={[`The`, <span className="outline">V.ai </span>, `video player uses AI to identify people and products`]}
 					bgImage={"../assets/img/vai/banner.gif"}
 					onSetActive={() => { setCounter(1); setNavWhite(); this.setActiveSection(sections[0]);}}
 					/>

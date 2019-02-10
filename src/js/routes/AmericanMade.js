@@ -17,6 +17,7 @@ import ScrollSection from "../components/ScrollSection"
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
+import NavToggle from "../components/NavToggle"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -48,7 +49,6 @@ class AmericanMade extends Component {
 				"details",
 				"details-2",
 				"cinemagraphs",
-				"atomic-design",
 				"preloader",
 				"navigation",
 				"video-gallery",
@@ -85,7 +85,7 @@ class AmericanMade extends Component {
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0);}}
 					/>
-					<Link to={pageSections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]); }}>
+					<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]); }}>
 						<ScrollArrow/>
 					</Link>
 				</Element>
@@ -158,7 +158,7 @@ class AmericanMade extends Component {
 					</div>
 				</ScrollSection>
 
-				<ScrollSection 
+				{/*<ScrollSection 
 				name={pageSections[4]} 
 				onSetActive={() => { setNavWhite(); this.setActiveSection(4); }} 
 				black 
@@ -171,14 +171,13 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<img src="../assets/img/american-made/atomic-design.svg"/>
 						</div>
 					</div>
-				</ScrollSection>
+				</ScrollSection>*/}
 
 				<ScrollSection 
-				name={pageSections[5]} 
-				onSetActive={() => { setNavBlack(); this.setActiveSection(5); }}>
+				name={pageSections[4]} 
+				onSetActive={() => { setNavBlack(); this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -195,9 +194,9 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[6]} 
+				name={pageSections[5]} 
 				black
-				onSetActive={() => { setNavWhite(); this.setActiveSection(6); }}>
+				onSetActive={() => { setNavWhite(); this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -214,8 +213,8 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[7]} 
-				onSetActive={() => { setNavBlack(); this.setActiveSection(7); }}>
+				name={pageSections[6]} 
+				onSetActive={() => { setNavBlack(); this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -233,8 +232,8 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				black
-				name={pageSections[8]} 
-				onSetActive={() => { setNavWhite(); this.setActiveSection(8); }}>
+				name={pageSections[7]} 
+				onSetActive={() => { setNavWhite(); this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -250,6 +249,8 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 				</ScrollSection>
+
+				{/*<NavToggle/>*/}
 
 				<Sidebar 
 				sections={pageSections} 
