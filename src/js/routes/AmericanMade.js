@@ -17,7 +17,6 @@ import ScrollSection from "../components/ScrollSection"
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
-import NavToggle from "../components/NavToggle"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -238,7 +237,7 @@ class AmericanMade extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Scrolling Story: Parallax</h2>
-								<blockquote>In my quest to unify content and UI I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
+								<blockquote>In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
 								<blockquote>I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.</blockquote>
 							</div>
 						</div>
@@ -249,8 +248,6 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 				</ScrollSection>
-
-				{/*<NavToggle/>*/}
 
 				<Sidebar 
 				sections={pageSections} 

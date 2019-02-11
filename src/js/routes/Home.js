@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import IntersectionVisible from "react-intersection-visible"
@@ -12,6 +11,7 @@ import { setNavWhite, setNavBlack } from "../actions/color"
 import Nav from "../components/Nav"
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
+import ProjectCard from "../components/ProjectCard"
 
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
@@ -85,7 +85,7 @@ class Home extends Component {
 					<IntersectionVisible onShow={(i) => i[0].target.classList.add("active-section")} onHide={(i) => i[0].target.classList.remove("active-section")}>
 						<section>
 							<div className="grid">
-								<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
+								<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 									<h1>{splitWord("Form & Function")}</h1>
 									<blockquote>
 										{splitWord(`Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
@@ -115,14 +115,15 @@ class Home extends Component {
 									</blockquote>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<NavLink to="/american-made">
-										<img src="../assets/img/american-made/banner.gif"/>
-										<h3>American Made Film Site</h3>
-									</NavLink>
+									
+										<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interaction"]}>
+											<img src="../assets/img/american-made/banner.gif"/>
+										</ProjectCard>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<img src="../assets/img/card-components/banner-alt.jpg"/>
-									<h3 className="white">Card Components</h3>
+									<ProjectCard name="Micro App Templates" href="/micro-app-templates" tags={["Visual Design", "Interaction"]}>
+										<img src="../assets/img/card-components/banner-alt.jpg"/>
+									</ProjectCard>
 								</div>
 							</div>
 						</section>

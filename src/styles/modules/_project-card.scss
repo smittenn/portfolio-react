@@ -1,0 +1,64 @@
+$baseclass: project-card;
+
+.#{$baseclass} {
+	margin-right: 24px;
+	position: relative;
+	// background: $brand-black;
+
+	a {
+		border: none;
+		color: $brand-black;
+	}
+
+	h1, h2, h3, h4, h5, h6, blockquote {
+		margin: 0;
+	}
+
+	i {
+		font-size: 40px;
+		position: absolute;
+		right: 24px;
+		bottom: 36px;
+	}
+
+	&__bottom {
+		padding: 40px 24px;
+	}
+
+	&__asset {
+		overflow: hidden;
+		clip-path: none;
+
+		&, img, video  {
+			transition: all $easing1 $duration-slow 0s !important;
+		}
+
+		img, video {
+			transition-delay: $delay-fast;
+		}
+	}
+
+	&--hovered {
+		.#{$baseclass}__asset {
+			margin: 6px;
+			// clip-path: inset(12px 12px 12px 12px);
+
+			img, video {
+				transform: scale(1.09);
+			}
+		}
+	}
+
+	@media screen and (max-width: $bp-medium) {
+		margin: 0;
+
+		.#{$baseclass}__bottom {
+			padding: 24px 0;
+			padding-bottom: 40px;
+		}
+
+		i {
+			right: 0;
+		}
+	}
+}
