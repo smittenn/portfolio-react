@@ -80,7 +80,7 @@ class AmericanMade extends Component {
 					<ParallaxHeader 
 					name={pageSections[0]}
 					headerText={[<span className="outline">American </span>, <span className="outline">Made </span>, `is a film site created for Universal Pictures`]}
-					bgImage={"../assets/img/american-made/output.gif"}
+					bgAsset={"../assets/img/american-made/banner.mp4"}
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0);}}
 					/>

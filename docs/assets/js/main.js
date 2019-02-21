@@ -589,7 +589,7 @@ if ((_typeOfOriginalExport === 'object' || _typeOfOriginalExport === 'function')
 }
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./actions":9,"./selectors":14,"prop-types":36,"react":113,"react-redux":61,"react-router":91}],9:[function(require,module,exports){
+},{"./actions":9,"./selectors":14,"prop-types":36,"react":125,"react-redux":60,"react-router":90}],9:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -2355,7 +2355,7 @@ if ((_typeOfOriginalExport === 'object' || _typeOfOriginalExport === 'function')
 }
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"react-router":91}],15:[function(require,module,exports){
+},{"react-router":90}],15:[function(require,module,exports){
 (function (global){
 "use strict";
 
@@ -3029,7 +3029,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":19,"resolve-pathname":115,"value-equal":124}],19:[function(require,module,exports){
+},{"./PathUtils":19,"resolve-pathname":127,"value-equal":136}],19:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3399,7 +3399,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":17,"./LocationUtils":18,"./PathUtils":19,"./createTransitionManager":23,"invariant":27,"warning":125}],21:[function(require,module,exports){
+},{"./DOMUtils":17,"./LocationUtils":18,"./PathUtils":19,"./createTransitionManager":23,"invariant":27,"warning":137}],21:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3724,7 +3724,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":17,"./LocationUtils":18,"./PathUtils":19,"./createTransitionManager":23,"invariant":27,"warning":125}],22:[function(require,module,exports){
+},{"./DOMUtils":17,"./LocationUtils":18,"./PathUtils":19,"./createTransitionManager":23,"invariant":27,"warning":137}],22:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3895,7 +3895,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":18,"./PathUtils":19,"./createTransitionManager":23,"warning":125}],23:[function(require,module,exports){
+},{"./LocationUtils":18,"./PathUtils":19,"./createTransitionManager":23,"warning":137}],23:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3981,7 +3981,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":125}],24:[function(require,module,exports){
+},{"warning":137}],24:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -6962,7 +6962,7 @@ ReactCodepen.propTypes = {
 };
 
 exports.default = ReactCodepen;
-},{"prop-types":36,"react":113}],39:[function(require,module,exports){
+},{"prop-types":36,"react":125}],39:[function(require,module,exports){
 (function (process){
 /** @license React v16.7.0
  * react-dom.development.js
@@ -27052,7 +27052,7 @@ module.exports = reactDom;
 
 }).call(this,require('_process'))
 
-},{"_process":32,"object-assign":29,"prop-types/checkPropTypes":33,"react":113,"scheduler":120,"scheduler/tracing":121}],40:[function(require,module,exports){
+},{"_process":32,"object-assign":29,"prop-types/checkPropTypes":33,"react":125,"scheduler":132,"scheduler/tracing":133}],40:[function(require,module,exports){
 /** @license React v16.7.0
  * react-dom.production.min.js
  *
@@ -27303,7 +27303,7 @@ void 0:t("40");return a._reactRootContainer?(Uh(function(){fi(null,null,a,!1,fun
 Ka,La,Ca.injectEventPluginsByName,qa,Ra,function(a){za(a,Qa)},Ib,Jb,Jd,Ea]}};function hi(a,b){di(a)?void 0:t("299","unstable_createRoot");return new ci(a,!0,null!=b&&!0===b.hydrate)}(function(a){var b=a.findFiberByHostInstance;return We(n({},a,{overrideProps:null,findHostInstanceByFiber:function(a){a=nd(a);return null===a?null:a.stateNode},findFiberByHostInstance:function(a){return b?b(a):null}}))})({findFiberByHostInstance:Ia,bundleType:0,version:"16.7.0",rendererPackageName:"react-dom"});
 var li={default:ki},mi=li&&ki||li;module.exports=mi.default||mi;
 
-},{"object-assign":29,"react":113,"scheduler":120}],41:[function(require,module,exports){
+},{"object-assign":29,"react":125,"scheduler":132}],41:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27537,7 +27537,7 @@ ReactHover.Hover = _Hover.default;
 var _default = ReactHover;
 exports.default = _default;
 
-},{"./lib/Hover":44,"./lib/Trigger":45,"prop-types":36,"react":113}],43:[function(require,module,exports){
+},{"./lib/Hover":44,"./lib/Trigger":45,"prop-types":36,"react":125}],43:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27620,7 +27620,7 @@ _defineProperty(Hover, "propTypes", {
   styles: _propTypes.default.object
 });
 
-},{"prop-types":36,"react":113}],45:[function(require,module,exports){
+},{"prop-types":36,"react":125}],45:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27743,7 +27743,7 @@ _defineProperty(Trigger, "propTypes", {
   getCursorPos: _propTypes.default.func
 });
 
-},{"prop-types":36,"react":113}],46:[function(require,module,exports){
+},{"prop-types":36,"react":125}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27975,7 +27975,7 @@ IntersectionVisible.defaultProps = {
   }
 };
 exports.default = IntersectionVisible;
-},{"intersection-observer":26,"prop-types":36,"react":113}],47:[function(require,module,exports){
+},{"intersection-observer":26,"prop-types":36,"react":125}],47:[function(require,module,exports){
 (function (process){
 /** @license React v16.7.0
  * react-is.development.js
@@ -28237,8 +28237,6 @@ if (process.env.NODE_ENV === 'production') {
 }).call(this,require('_process'))
 
 },{"./cjs/react-is.development.js":47,"./cjs/react-is.production.min.js":48,"_process":32}],50:[function(require,module,exports){
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("react"),require("prop-types")):"function"==typeof define&&define.amd?define(["react","prop-types"],t):"object"==typeof exports?exports["react-parallax"]=t(require("react"),require("prop-types")):e["react-parallax"]=t(e.React,e.PropTypes)}(this,function(e,t){return function(e){function t(r){if(n[r])return n[r].exports;var i=n[r]={i:r,l:!1,exports:{}};return e[r].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=5)}([function(t,n){t.exports=e},function(e,n){e.exports=t},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),u=r(l),c=n(0),f=r(c),d=function(e){function t(){return i(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f.default.createElement("div",{className:"react-parallax-background "+this.props.className},this.props.children)}}],[{key:"isParallaxBackground",value:function(){return!0}}]),t}(f.default.Component);d.propTypes={children:u.default.node,className:u.default.string},d.defaultProps={className:""},t.default=d},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=n(1),c=r(u),f=n(0),d=r(f),g=n(6),p=n(4),h=r(p),b={position:"absolute",left:"50%",WebkitTransform:"translate3d(-50%, 0, 0)",transform:"translate3d(-50%, 0, 0)",WebkitTransformStyle:"preserve-3d",WebkitBackfaceVisibility:"hidden",MozBackfaceVisibility:"hidden",MsBackfaceVisibility:"hidden"},m=function(e){function t(e){i(this,t);var n=o(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.onWindowResize=function(){n.parentHeight=(0,g.getNodeHeight)(n.canUseDOM,n.parent),n.updatePosition()},n.onWindowLoad=function(){n.updatePosition()},n.onScroll=function(e){if(n.canUseDOM){var t=Date.now();t-n.timestamp>=10&&(0,g.isScrolledIntoView)(n.node,100,n.canUseDOM)&&(window.requestAnimationFrame(n.updatePosition),n.timestamp=t)}},n.onContentMount=function(e){n.content=e},n.updatePosition=function(){if(n.content){var e=!1;n.contentHeight=n.content.getBoundingClientRect().height,n.contentWidth=n.node.getBoundingClientRect().width,n.img&&n.img.naturalWidth/n.img.naturalHeight<n.contentWidth/n.getImageHeight()&&(e=!0);var t=(0,g.getRelativePosition)(n.node,n.canUseDOM,n.parent);n.img&&n.setImagePosition(t,e),n.bg&&n.splitChildren.bgChildren.length>0&&n.setBackgroundPosition(t)}},n.state={bgImage:e.bgImage,bgImageSrcSet:e.bgImageSrcSet,bgImageSizes:e.bgImageSizes,imgStyle:b,bgStyle:s({},b,n.getCustomBgStyle(e)),percentage:0},n.canUseDOM=(0,g.canUseDOM)(),n.node=null,n.content=null,n.splitChildren=(0,g.getSplitChildren)(e),n.bgImageLoaded=!1,n.bgImageRef=void 0,n.parent=e.parent,n.parentHeight=(0,g.getNodeHeight)(n.canUseDOM,n.parent),n.timestamp=Date.now(),n.dynamicBlur=!(!e.blur||void 0===e.blur.min||void 0===e.blur.max),n}return a(t,e),l(t,[{key:"componentDidMount",value:function(){var e=this.props.parent,t=this.state,n=t.bgImage,r=t.bgImageSrcSet,i=t.bgImageSizes;this.parent=e||document,this.addListeners(),n?this.loadImage(n,r,i):this.updatePosition(),this.setParallaxStyle()}},{key:"componentWillReceiveProps",value:function(e){var t=e.parent,n=e.bgImage,r=e.bgImageSrcSet,i=e.bgImageSizes;this.splitChildren=(0,g.getSplitChildren)(e),t&&this.parent!==t&&(this.parent=t,this.removeListeners(),this.addListeners()),this.parentHeight=(0,g.getNodeHeight)(this.canUseDOM,this.parent),this.state.bgImage!==n&&this.loadImage(n,r,i)}},{key:"shouldComponentUpdate",value:function(e,t){return e.bgImage===this.props.bgImage||t.bgImage!==this.state.bgImage}},{key:"componentWillUnmount",value:function(){this.removeListeners(this.parent),this.releaseImage()}},{key:"setParallaxStyle",value:function(){this.node&&(this.node.style.position="relative",this.node.style.overflow="hidden")}},{key:"getCustomBgStyle",value:function(e){var t=this,n={};return this.props.bgStyle&&Object.keys(this.props.bgStyle).forEach(function(e){n[e]=t.props.bgStyle[e]}),n}},{key:"setBackgroundPosition",value:function(e){var t=this.props,n=t.disabled,r=t.strength;if(!0!==n){var i=r<0,o=(i?r:0)-r*e,a="translate3d(-50%, "+o+"px, 0)";this.setState({bgStyle:s({},this.state.bgStyle,{WebkitTransform:a,transform:a}),percentage:e})}}},{key:"setImagePosition",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.props,r=n.bgHeight,i=n.bgWidth,o=n.disabled,a=n.strength,l=n.blur,u=r||(t?"auto":this.getImageHeight()+"px"),c=i||(t?this.contentWidth+"px":"auto");if(!0!==o){var f=a<0,d=(f?a:0)-a*e,g="translate3d(-50%, "+d+"px, 0)",p="none";l&&(p="blur("+(this.dynamicBlur?l.min+(1-e)*l.max:l)+"px)"),this.setState({imgStyle:s({},this.state.imgStyle,{height:u,width:c,WebkitTransform:g,transform:g,WebkitFilter:p,filter:p}),percentage:e})}}},{key:"getImageHeight",value:function(){var e=this.props.strength<0,t=e?2.5:1,n=t*Math.abs(this.props.strength);return Math.floor(this.contentHeight+n)}},{key:"addListeners",value:function(){this.canUseDOM&&this.parent&&(this.parent.addEventListener("scroll",this.onScroll,!1),window.addEventListener("resize",this.onWindowResize,!1),window.addEventListener("load",this.onWindowLoad,!1))}},{key:"removeListeners",value:function(){this.canUseDOM&&this.parent&&(this.parent.removeEventListener("scroll",this.onScroll,!1),window.removeEventListener("resize",this.onWindowResize,!1),window.removeEventListener("load",this.onWindowLoad,!1))}},{key:"loadImage",value:function(e,t,n){var r=this;this.releaseImage(),this.bgImageRef=new Image,this.bgImageRef.onload=function(i){r.setState({bgImage:e,bgImageSrcSet:t,bgImageSizes:n},function(){return r.updatePosition()})},this.bgImageRef.onerror=this.bgImageRef.onload,this.bgImageRef.src=e,this.bgImageRef.srcset=t||"",this.bgImageRef.sizes=n||""}},{key:"releaseImage",value:function(){this.bgImageRef&&(this.bgImageRef.onload=null,this.bgImageRef.onerror=null,delete this.bgImageRef)}},{key:"log",value:function(){if(this.props.log){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];console.log(t)}}},{key:"render",value:function(){var e=this,t=this.props,n=t.className,r=t.style,i=t.bgClassName,o=t.contentClassName,a=t.bgImageAlt,s=t.renderLayer,l=this.state,u=l.bgImage,c=l.bgImageSrcSet,f=l.bgImageSizes,g=l.percentage;return d.default.createElement("div",{className:"react-parallax "+n,style:r,ref:function(t){return e.node=t}},u?d.default.createElement("img",{className:i,src:u,srcSet:c,sizes:f,ref:function(t){return e.img=t},alt:a,style:this.state.imgStyle}):null,s?s(Math.min(-(g-1),1)):null,this.splitChildren.bgChildren.length>0?d.default.createElement("div",{className:"react-parallax-background-children",ref:function(t){return e.bg=t},style:this.state.bgStyle},this.splitChildren.bgChildren):null,d.default.createElement(h.default,{onMount:this.onContentMount,className:o},this.splitChildren.children))}}]),t}(d.default.Component);m.propTypes={bgClassName:c.default.string,bgHeight:c.default.string,bgImage:c.default.string,bgImageAlt:c.default.string,bgImageSizes:c.default.string,bgImageSrcSet:c.default.string,bgStyle:c.default.object,bgWidth:c.default.string,blur:c.default.oneOfType([c.default.number,c.default.object]),className:c.default.string,contentClassName:c.default.string,disabled:c.default.bool,log:c.default.bool,parent:c.default.any,renderLayer:c.default.func,strength:c.default.number,style:c.default.object},m.defaultProps={bgClassName:"react-parallax-bgimage",bgImageAlt:"",className:"",disabled:!1,log:!1,strength:100},t.default=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(0),u=r(l),c=n(1),f=r(c),d=function(e){function t(){return i(this,t),o(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){var e=this.props,t=e.children,n=e.onMount,r=e.className;return u.default.createElement("div",{ref:function(e){return n(e)},className:r||"react-parallax-content",style:{position:"relative"}},t)}}]),t}(l.PureComponent);d.propTypes={children:f.default.node,className:f.default.string,onMount:f.default.func},d.propTypes={},t.default=d},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),t.Background=t.Parallax=void 0;var i=n(3),o=r(i),a=n(2),s=r(a);t.Parallax=o.default,t.Background=s.default},function(e,t,n){"use strict";function r(e){if(!e)return 0;var t=window,n=document,r=n.documentElement,i=n.getElementsByTagName("body")[0];return t.innerHeight||r.clientHeight||i.clientHeight}function i(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,n=arguments[2];if(!n)return!1;var i=e.getBoundingClientRect().top-t,o=e.getBoundingClientRect().bottom+t;return i<=r(n)&&o>=0}function o(e,t){return e?t?t.clientHeight:r(e):0}function a(){return!("undefined"==typeof window||!window.document||!window.document.createElement)}function s(e,t,n){return(n-e)/(t-e)||0}function l(e,t,n){if(!t)return 0;var r=e,i=r.getBoundingClientRect(),a=i.top,l=i.height,u=o(t),c=l>u?l:u;return s(-l,c,Math.round(a>c?c:a),l)}function u(e){var t=[],n=d.default.Children.toArray(e.children);return n.forEach(function(e,r){e.type&&e.type.isParallaxBackground&&(t=t.concat(n.splice(r,1)))}),{bgChildren:t,children:n}}function c(e,t){e.style.WebkitFilter="blur("+t+"px)",e.style.filter="blur("+t+"px)"}Object.defineProperty(t,"__esModule",{value:!0}),t.getWindowHeight=r,t.isScrolledIntoView=i,t.getNodeHeight=o,t.canUseDOM=a,t.getPercentage=s,t.getRelativePosition=l,t.getSplitChildren=u,t.setBlur=c;var f=n(0),d=function(e){return e&&e.__esModule?e:{default:e}}(f)}])});
-},{"prop-types":36,"react":113}],51:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -28253,7 +28251,7 @@ var ReactReduxContext = _react.default.createContext(null);
 exports.ReactReduxContext = ReactReduxContext;
 var _default = ReactReduxContext;
 exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":4,"react":113}],52:[function(require,module,exports){
+},{"@babel/runtime/helpers/interopRequireDefault":4,"react":125}],51:[function(require,module,exports){
 "use strict";
 
 var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
@@ -28360,7 +28358,7 @@ Provider.propTypes = {
 };
 var _default = Provider;
 exports.default = _default;
-},{"./Context":51,"@babel/runtime/helpers/inheritsLoose":3,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/interopRequireWildcard":5,"prop-types":36,"react":113}],53:[function(require,module,exports){
+},{"./Context":50,"@babel/runtime/helpers/inheritsLoose":3,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/interopRequireWildcard":5,"prop-types":36,"react":125}],52:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -28567,7 +28565,7 @@ _ref) {
 }
 }).call(this,require('_process'))
 
-},{"./Context":51,"@babel/runtime/helpers/assertThisInitialized":1,"@babel/runtime/helpers/extends":2,"@babel/runtime/helpers/inheritsLoose":3,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/interopRequireWildcard":5,"@babel/runtime/helpers/objectWithoutPropertiesLoose":6,"_process":32,"hoist-non-react-statics":66,"invariant":27,"react":113,"react-is":49}],54:[function(require,module,exports){
+},{"./Context":50,"@babel/runtime/helpers/assertThisInitialized":1,"@babel/runtime/helpers/extends":2,"@babel/runtime/helpers/inheritsLoose":3,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/interopRequireWildcard":5,"@babel/runtime/helpers/objectWithoutPropertiesLoose":6,"_process":32,"hoist-non-react-statics":65,"invariant":27,"react":125,"react-is":49}],53:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -28683,7 +28681,7 @@ function createConnect(_temp) {
 var _default = createConnect();
 
 exports.default = _default;
-},{"../components/connectAdvanced":53,"../utils/shallowEqual":63,"./mapDispatchToProps":55,"./mapStateToProps":56,"./mergeProps":57,"./selectorFactory":58,"@babel/runtime/helpers/extends":2,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/objectWithoutPropertiesLoose":6}],55:[function(require,module,exports){
+},{"../components/connectAdvanced":52,"../utils/shallowEqual":62,"./mapDispatchToProps":54,"./mapStateToProps":55,"./mergeProps":56,"./selectorFactory":57,"@babel/runtime/helpers/extends":2,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/objectWithoutPropertiesLoose":6}],54:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28716,7 +28714,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 
 var _default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 exports.default = _default;
-},{"./wrapMapToProps":60,"redux":114}],56:[function(require,module,exports){
+},{"./wrapMapToProps":59,"redux":126}],55:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -28738,7 +28736,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 
 var _default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 exports.default = _default;
-},{"./wrapMapToProps":60}],57:[function(require,module,exports){
+},{"./wrapMapToProps":59}],56:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -28796,7 +28794,7 @@ var _default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 exports.default = _default;
 }).call(this,require('_process'))
 
-},{"../utils/verifyPlainObject":64,"@babel/runtime/helpers/extends":2,"@babel/runtime/helpers/interopRequireDefault":4,"_process":32}],58:[function(require,module,exports){
+},{"../utils/verifyPlainObject":63,"@babel/runtime/helpers/extends":2,"@babel/runtime/helpers/interopRequireDefault":4,"_process":32}],57:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -28899,7 +28897,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 }
 }).call(this,require('_process'))
 
-},{"./verifySubselectors":59,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/objectWithoutPropertiesLoose":6,"_process":32}],59:[function(require,module,exports){
+},{"./verifySubselectors":58,"@babel/runtime/helpers/interopRequireDefault":4,"@babel/runtime/helpers/objectWithoutPropertiesLoose":6,"_process":32}],58:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -28924,7 +28922,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
   verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
   verify(mergeProps, 'mergeProps', displayName);
 }
-},{"../utils/warning":65,"@babel/runtime/helpers/interopRequireDefault":4}],60:[function(require,module,exports){
+},{"../utils/warning":64,"@babel/runtime/helpers/interopRequireDefault":4}],59:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -29004,7 +29002,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 }
 }).call(this,require('_process'))
 
-},{"../utils/verifyPlainObject":64,"@babel/runtime/helpers/interopRequireDefault":4,"_process":32}],61:[function(require,module,exports){
+},{"../utils/verifyPlainObject":63,"@babel/runtime/helpers/interopRequireDefault":4,"_process":32}],60:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -29026,7 +29024,7 @@ exports.ReactReduxContext = _Context.ReactReduxContext;
 var _connect = _interopRequireDefault(require("./connect/connect"));
 
 exports.connect = _connect.default;
-},{"./components/Context":51,"./components/Provider":52,"./components/connectAdvanced":53,"./connect/connect":54,"@babel/runtime/helpers/interopRequireDefault":4}],62:[function(require,module,exports){
+},{"./components/Context":50,"./components/Provider":51,"./components/connectAdvanced":52,"./connect/connect":53,"@babel/runtime/helpers/interopRequireDefault":4}],61:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29048,7 +29046,7 @@ function isPlainObject(obj) {
 
   return proto === baseProto;
 }
-},{}],63:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29082,7 +29080,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],64:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -29099,7 +29097,7 @@ function verifyPlainObject(value, displayName, methodName) {
     (0, _warning.default)(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
   }
 }
-},{"./isPlainObject":62,"./warning":65,"@babel/runtime/helpers/interopRequireDefault":4}],65:[function(require,module,exports){
+},{"./isPlainObject":61,"./warning":64,"@babel/runtime/helpers/interopRequireDefault":4}],64:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29129,7 +29127,7 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
-},{}],66:[function(require,module,exports){
+},{}],65:[function(require,module,exports){
 'use strict';
 
 /**
@@ -29218,7 +29216,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react-is":49}],67:[function(require,module,exports){
+},{"react-is":49}],66:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29286,7 +29284,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":75,"history":24,"prop-types":36,"react":113,"warning":81}],68:[function(require,module,exports){
+},{"./Router":74,"history":24,"prop-types":36,"react":125,"warning":80}],67:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29353,7 +29351,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":75,"history":24,"prop-types":36,"react":113,"warning":81}],69:[function(require,module,exports){
+},{"./Router":74,"history":24,"prop-types":36,"react":125,"warning":80}],68:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29471,7 +29469,7 @@ Link.contextTypes = {
   }).isRequired
 };
 exports.default = Link;
-},{"history":24,"invariant":27,"prop-types":36,"react":113}],70:[function(require,module,exports){
+},{"history":24,"invariant":27,"prop-types":36,"react":125}],69:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29483,7 +29481,7 @@ var _MemoryRouter2 = _interopRequireDefault(_MemoryRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MemoryRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/MemoryRouter":83}],71:[function(require,module,exports){
+},{"react-router/MemoryRouter":82}],70:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29575,7 +29573,7 @@ NavLink.defaultProps = {
 };
 
 exports.default = NavLink;
-},{"./Link":69,"./Route":74,"prop-types":36,"react":113}],72:[function(require,module,exports){
+},{"./Link":68,"./Route":73,"prop-types":36,"react":125}],71:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29587,7 +29585,7 @@ var _Prompt2 = _interopRequireDefault(_Prompt);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Prompt2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Prompt":84}],73:[function(require,module,exports){
+},{"react-router/Prompt":83}],72:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29599,7 +29597,7 @@ var _Redirect2 = _interopRequireDefault(_Redirect);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Redirect2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Redirect":85}],74:[function(require,module,exports){
+},{"react-router/Redirect":84}],73:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29611,7 +29609,7 @@ var _Route2 = _interopRequireDefault(_Route);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Route2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Route":86}],75:[function(require,module,exports){
+},{"react-router/Route":85}],74:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29623,7 +29621,7 @@ var _Router2 = _interopRequireDefault(_Router);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Router2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Router":87}],76:[function(require,module,exports){
+},{"react-router/Router":86}],75:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29635,7 +29633,7 @@ var _StaticRouter2 = _interopRequireDefault(_StaticRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _StaticRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/StaticRouter":88}],77:[function(require,module,exports){
+},{"react-router/StaticRouter":87}],76:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29647,7 +29645,7 @@ var _Switch2 = _interopRequireDefault(_Switch);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Switch2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/Switch":89}],78:[function(require,module,exports){
+},{"react-router/Switch":88}],77:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29659,7 +29657,7 @@ var _generatePath2 = _interopRequireDefault(_generatePath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _generatePath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/generatePath":90}],79:[function(require,module,exports){
+},{"react-router/generatePath":89}],78:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29737,7 +29735,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./BrowserRouter":67,"./HashRouter":68,"./Link":69,"./MemoryRouter":70,"./NavLink":71,"./Prompt":72,"./Redirect":73,"./Route":74,"./Router":75,"./StaticRouter":76,"./Switch":77,"./generatePath":78,"./matchPath":80,"./withRouter":82}],80:[function(require,module,exports){
+},{"./BrowserRouter":66,"./HashRouter":67,"./Link":68,"./MemoryRouter":69,"./NavLink":70,"./Prompt":71,"./Redirect":72,"./Route":73,"./Router":74,"./StaticRouter":75,"./Switch":76,"./generatePath":77,"./matchPath":79,"./withRouter":81}],79:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29749,7 +29747,7 @@ var _matchPath2 = _interopRequireDefault(_matchPath);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _matchPath2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/matchPath":92}],81:[function(require,module,exports){
+},{"react-router/matchPath":91}],80:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -29816,7 +29814,7 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 
-},{"_process":32}],82:[function(require,module,exports){
+},{"_process":32}],81:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29828,7 +29826,7 @@ var _withRouter2 = _interopRequireDefault(_withRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _withRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/withRouter":94}],83:[function(require,module,exports){
+},{"react-router/withRouter":93}],82:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29896,7 +29894,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":87,"history":24,"prop-types":36,"react":113,"warning":93}],84:[function(require,module,exports){
+},{"./Router":86,"history":24,"prop-types":36,"react":125,"warning":92}],83:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -29987,7 +29985,7 @@ Prompt.contextTypes = {
   }).isRequired
 };
 exports.default = Prompt;
-},{"invariant":27,"prop-types":36,"react":113}],85:[function(require,module,exports){
+},{"invariant":27,"prop-types":36,"react":125}],84:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30119,7 +30117,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"./generatePath":90,"history":24,"invariant":27,"prop-types":36,"react":113,"warning":93}],86:[function(require,module,exports){
+},{"./generatePath":89,"history":24,"invariant":27,"prop-types":36,"react":125,"warning":92}],85:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30277,7 +30275,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":92,"invariant":27,"prop-types":36,"react":113,"warning":93}],87:[function(require,module,exports){
+},{"./matchPath":91,"invariant":27,"prop-types":36,"react":125,"warning":92}],86:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30397,7 +30395,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":27,"prop-types":36,"react":113,"warning":93}],88:[function(require,module,exports){
+},{"invariant":27,"prop-types":36,"react":125,"warning":92}],87:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30567,7 +30565,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":87,"history":24,"invariant":27,"prop-types":36,"react":113,"warning":93}],89:[function(require,module,exports){
+},{"./Router":86,"history":24,"invariant":27,"prop-types":36,"react":125,"warning":92}],88:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30662,7 +30660,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":92,"invariant":27,"prop-types":36,"react":113,"warning":93}],90:[function(require,module,exports){
+},{"./matchPath":91,"invariant":27,"prop-types":36,"react":125,"warning":92}],89:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30708,7 +30706,7 @@ var generatePath = function generatePath() {
 };
 
 exports.default = generatePath;
-},{"path-to-regexp":30}],91:[function(require,module,exports){
+},{"path-to-regexp":30}],90:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30766,7 +30764,7 @@ exports.Switch = _Switch3.default;
 exports.generatePath = _generatePath3.default;
 exports.matchPath = _matchPath3.default;
 exports.withRouter = _withRouter3.default;
-},{"./MemoryRouter":83,"./Prompt":84,"./Redirect":85,"./Route":86,"./Router":87,"./StaticRouter":88,"./Switch":89,"./generatePath":90,"./matchPath":92,"./withRouter":94}],92:[function(require,module,exports){
+},{"./MemoryRouter":82,"./Prompt":83,"./Redirect":84,"./Route":85,"./Router":86,"./StaticRouter":87,"./Switch":88,"./generatePath":89,"./matchPath":91,"./withRouter":93}],91:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30847,7 +30845,7 @@ var matchPath = function matchPath(pathname) {
 };
 
 exports.default = matchPath;
-},{"path-to-regexp":30}],93:[function(require,module,exports){
+},{"path-to-regexp":30}],92:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -30914,7 +30912,7 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 
-},{"_process":32}],94:[function(require,module,exports){
+},{"_process":32}],93:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30968,7 +30966,1095 @@ var withRouter = function withRouter(Component) {
 };
 
 exports.default = withRouter;
-},{"./Route":86,"hoist-non-react-statics":25,"prop-types":36,"react":113}],95:[function(require,module,exports){
+},{"./Route":85,"hoist-non-react-statics":25,"prop-types":36,"react":125}],94:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _propValidation = require('../utils/propValidation');
+
+var _ParallaxController = require('../libs/ParallaxController');
+
+var _ParallaxController2 = _interopRequireDefault(_ParallaxController);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Parallax = function (_Component) {
+    _inherits(Parallax, _Component);
+
+    function Parallax() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Parallax);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Parallax.__proto__ || Object.getPrototypeOf(Parallax)).call.apply(_ref, [this].concat(args))), _this), _this.mapRefOuter = function (ref) {
+            _this._outer = ref;
+        }, _this.mapRefInner = function (ref) {
+            _this._inner = ref;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Parallax, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            // Make sure the provided controller is an instance of the Parallax Controller
+            var isInstance = this.controller instanceof _ParallaxController2.default;
+
+            // Throw if neither context or global is available
+            if (!this.controller && !isInstance) {
+                throw new Error("Must wrap your application's <Parallax /> components in a <ParallaxProvider />.");
+            }
+
+            // Deprecation warning for <=1.0.0
+            // If no context is available but the window global is then warn
+            if (!this.context.parallaxController && window.ParallaxController) {
+                console.log('Calling ParallaxController.init() has been deprecated in favor of using the <ParallaxProvider /> component. For usage details see: https://github.com/jscottsmith/react-scroll-parallax/tree/v1.1.0#usage');
+            }
+
+            // create a new parallax element and save the reference
+            this.element = this.controller.createElement({
+                elInner: this._inner,
+                elOuter: this._outer,
+                props: {
+                    disabled: this.props.disabled,
+                    offsetXMax: this.props.offsetXMax,
+                    offsetXMin: this.props.offsetXMin,
+                    offsetYMax: this.props.offsetYMax,
+                    offsetYMin: this.props.offsetYMin,
+                    slowerScrollRate: this.props.slowerScrollRate
+                }
+            });
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            // updates the elements props when relevant parallax props change
+            if (this.props.disabled !== nextProps.disabled || this.props.offsetXMax !== nextProps.offsetXMax || this.props.offsetXMin !== nextProps.offsetXMin || this.props.offsetYMax !== nextProps.offsetYMax || this.props.offsetYMin !== nextProps.offsetYMin || this.props.slowerScrollRate !== nextProps.slowerScrollRate) {
+                this.controller.updateElement(this.element, {
+                    props: {
+                        disabled: nextProps.disabled,
+                        offsetXMax: nextProps.offsetXMax,
+                        offsetXMin: nextProps.offsetXMin,
+                        offsetYMax: nextProps.offsetYMax,
+                        offsetYMin: nextProps.offsetYMin,
+                        slowerScrollRate: nextProps.slowerScrollRate
+                    }
+                });
+            }
+            // resets element styles when disabled
+            if (this.props.disabled !== nextProps.disabled && nextProps.disabled) {
+                this.controller.resetElementStyles(this.element);
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.controller.removeElement(this.element);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                children = _props.children,
+                className = _props.className,
+                Tag = _props.tag,
+                styleOuter = _props.styleOuter,
+                styleInner = _props.styleInner;
+
+
+            var rootClass = 'parallax-outer' + (className ? ' ' + className : '');
+
+            return _react2.default.createElement(
+                Tag,
+                {
+                    className: rootClass,
+                    ref: this.mapRefOuter,
+                    style: styleOuter
+                },
+                _react2.default.createElement(
+                    'div',
+                    {
+                        className: 'parallax-inner',
+                        ref: this.mapRefInner,
+                        style: styleInner
+                    },
+                    children
+                )
+            );
+        }
+    }, {
+        key: 'controller',
+        get: function get() {
+            // Legacy versions may use the global, not context
+            return this.context.parallaxController || window.ParallaxController;
+        }
+
+        // refs
+
+    }]);
+
+    return Parallax;
+}(_react.Component);
+
+Parallax.defaultProps = {
+    disabled: false,
+    offsetYMax: 0,
+    offsetYMin: 0,
+    offsetXMax: 0,
+    offsetXMin: 0,
+    slowerScrollRate: false, // determines whether scroll rate is faster or slower than standard scroll
+    tag: 'div'
+};
+Parallax.propTypes = {
+    children: _propTypes2.default.node,
+    className: _propTypes2.default.string,
+    disabled: _propTypes2.default.bool.isRequired,
+    offsetXMax: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    offsetXMin: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    offsetYMax: _propValidation.offsetMax,
+    offsetYMin: _propValidation.offsetMin,
+    slowerScrollRate: _propTypes2.default.bool.isRequired,
+    styleOuter: _propTypes2.default.object,
+    styleInner: _propTypes2.default.object,
+    tag: _propTypes2.default.string.isRequired
+};
+Parallax.contextTypes = {
+    parallaxController: _propTypes2.default.object // not required because this could be rendered on the server.
+};
+exports.default = Parallax;
+module.exports = exports['default'];
+},{"../libs/ParallaxController":98,"../utils/propValidation":104,"prop-types":36,"react":125}],95:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Parallax = require('./Parallax');
+
+var _Parallax2 = _interopRequireDefault(_Parallax);
+
+var _propValidation = require('../utils/propValidation');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var constainerStyle = {
+    position: 'relative',
+    overflow: 'hidden',
+    width: '100%',
+    height: '50vh'
+};
+
+var absoluteStyle = {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+};
+
+var ParallaxBanner = function ParallaxBanner(_ref) {
+    var children = _ref.children,
+        className = _ref.className,
+        layers = _ref.layers,
+        style = _ref.style,
+        disabled = _ref.disabled;
+
+    return _react2.default.createElement(
+        'div',
+        {
+            style: _extends({}, constainerStyle, style),
+            className: 'parallax-banner' + (className ? ' ' + className : '')
+        },
+        layers.map(function (_ref2, i) {
+            var image = _ref2.image,
+                amount = _ref2.amount,
+                slowerScrollRate = _ref2.slowerScrollRate,
+                children = _ref2.children,
+                _ref2$expanded = _ref2.expanded,
+                expanded = _ref2$expanded === undefined ? true : _ref2$expanded;
+
+            // if this is an expanded layer overwrite the top/bottom styles with negative margins
+            var expandedStyle = expanded ? {
+                top: amount * 100 * -1 + '%',
+                bottom: amount * 100 * -1 + '%'
+            } : {};
+
+            return _react2.default.createElement(
+                _Parallax2.default,
+                {
+                    key: 'layer-' + i,
+                    offsetYMax: amount * 100 + '%',
+                    offsetYMin: amount * -1 * 100 + '%',
+                    slowerScrollRate: slowerScrollRate,
+                    styleInner: absoluteStyle,
+                    styleOuter: absoluteStyle,
+                    disabled: disabled
+                },
+                image ? _react2.default.createElement('div', {
+                    className: 'parallax-banner-layer-' + i,
+                    style: _extends({
+                        backgroundImage: 'url(' + image + ')',
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover'
+                    }, absoluteStyle, expandedStyle)
+                }) : _react2.default.createElement(
+                    'div',
+                    {
+                        className: 'parallax-banner-layer-' + i,
+                        style: _extends({}, absoluteStyle, expandedStyle)
+                    },
+                    children
+                )
+            );
+        }),
+        children
+    );
+};
+
+ParallaxBanner.defaultProps = {
+    disabled: false
+};
+
+ParallaxBanner.propTypes = {
+    className: _propTypes2.default.string,
+    children: _propTypes2.default.node,
+    disabled: _propTypes2.default.bool.isRequired,
+    layers: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        amount: _propTypes2.default.number.isRequired,
+        children: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.func]),
+        expanded: _propTypes2.default.bool,
+        image: _propTypes2.default.string,
+        slowerScrollRate: _propTypes2.default.bool
+    })),
+    style: _propTypes2.default.object
+};
+
+exports.default = ParallaxBanner;
+module.exports = exports['default'];
+},{"../utils/propValidation":104,"./Parallax":94,"prop-types":36,"react":125}],96:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _ParallaxController = require('../libs/ParallaxController');
+
+var _ParallaxController2 = _interopRequireDefault(_ParallaxController);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ParallaxProvider = function (_Component) {
+    _inherits(ParallaxProvider, _Component);
+
+    function ParallaxProvider() {
+        _classCallCheck(this, ParallaxProvider);
+
+        return _possibleConstructorReturn(this, (ParallaxProvider.__proto__ || Object.getPrototypeOf(ParallaxProvider)).apply(this, arguments));
+    }
+
+    _createClass(ParallaxProvider, [{
+        key: 'getChildContext',
+        value: function getChildContext() {
+            // Passes down the reference to the controller
+            var parallaxController = this.parallaxController;
+
+            return { parallaxController: parallaxController };
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            // Don't initialize on the server
+            var isServer = typeof window === 'undefined';
+
+            if (!isServer) {
+                // Must not be the server so kick it off...
+                this.parallaxController = _ParallaxController2.default.init();
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.parallaxController = this.parallaxController.destroy();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var children = this.props.children;
+
+
+            return children;
+        }
+    }]);
+
+    return ParallaxProvider;
+}(_react.Component);
+
+ParallaxProvider.propTypes = {
+    children: _propTypes2.default.node.isRequired
+};
+ParallaxProvider.childContextTypes = {
+    parallaxController: _propTypes2.default.object
+};
+exports.default = ParallaxProvider;
+module.exports = exports['default'];
+},{"../libs/ParallaxController":98,"prop-types":36,"react":125}],97:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ParallaxController = exports.ParallaxBanner = exports.ParallaxProvider = exports.Parallax = undefined;
+
+var _Parallax2 = require('./components/Parallax');
+
+var _Parallax3 = _interopRequireDefault(_Parallax2);
+
+var _ParallaxProvider2 = require('./components/ParallaxProvider');
+
+var _ParallaxProvider3 = _interopRequireDefault(_ParallaxProvider2);
+
+var _ParallaxBanner2 = require('./components/ParallaxBanner');
+
+var _ParallaxBanner3 = _interopRequireDefault(_ParallaxBanner2);
+
+var _ParallaxController2 = require('./libs/ParallaxController');
+
+var _ParallaxController3 = _interopRequireDefault(_ParallaxController2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Parallax = _Parallax3.default;
+exports.ParallaxProvider = _ParallaxProvider3.default;
+exports.ParallaxBanner = _ParallaxBanner3.default;
+exports.ParallaxController = _ParallaxController3.default;
+},{"./components/Parallax":94,"./components/ParallaxBanner":95,"./components/ParallaxProvider":96,"./libs/ParallaxController":98}],98:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _index = require('../utils/index');
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+/**
+ * -------------------------------------------------------
+ * Parallax Controller
+ * -------------------------------------------------------
+ *
+ * The global controller for setting up window scroll/resize
+ * listeners, managing and caching parallax element positions,
+ * determining which elements are inside the viewport based on
+ * scroll position, and then updating parallax element styles
+ * based on min/max offsets and current scroll position.
+ *
+ */
+function ParallaxController() {
+    // All parallax elements to be updated
+    var elements = [];
+
+    // Tracks current scroll y distance
+    var scrollY = 0;
+
+    // Window inner height
+    var windowHeight = 0;
+
+    // ID to increment for elements
+    var id = 0;
+
+    // Ticking
+    var ticking = false;
+
+    // Scroll direction
+    // let scrollDown = null;
+
+    // Passive support
+    var supportsPassive = (0, _index.testForPassiveScroll)();
+
+    function _addListeners() {
+        window.addEventListener('scroll', _handleScroll, supportsPassive ? { passive: true } : false);
+        window.addEventListener('resize', _handleResize, false);
+    }
+
+    function _removeListeners() {
+        window.removeEventListener('scroll', _handleScroll, supportsPassive ? { passive: true } : false);
+        window.removeEventListener('resize', _handleResize, false);
+    }
+
+    _addListeners();
+
+    /**
+     * Window scroll handler. Sets the 'scrollY'
+     * and then calls '_updateElementPositions()'.
+     */
+    function _handleScroll() {
+        // reference to prev scroll y
+        // const prevScrollY = scrollY;
+
+        // Save current scroll
+        scrollY = window.pageYOffset; // Supports IE 9 and up.
+
+        // direction
+        // scrollDown = scrollY > prevScrollY;
+
+        // Only called if the last animation request has been
+        // completed and there are parallax elements to update
+        if (!ticking && elements.length > 0) {
+            ticking = true;
+            window.requestAnimationFrame(_updateElementPositions);
+        }
+    }
+
+    /**
+     * Window resize handler. Sets the new window inner height
+     * then updates parallax element attributes and positions.
+     */
+    function _handleResize() {
+        _setWindowHeight();
+        _updateElementAttributes();
+        _updateElementPositions();
+    }
+
+    /**
+     * Creates a unique id to distinguish parallax elements.
+     * @return {Number}
+     */
+    function _createID() {
+        ++id;
+        return id;
+    }
+
+    /**
+     * Update element positions.
+     * Determines if the element is in view based on the cached
+     * attributes, if so set the elements parallax styles.
+     */
+    function _updateElementPositions() {
+        elements.forEach(function (element) {
+            if (element.props.disabled) return;
+
+            // check if the element is in view then
+            var isInView = (0, _index.isElementInView)(element, windowHeight, scrollY);
+
+            // set styles if it is
+            if (isInView) _setParallaxStyles(element);
+
+            // reset ticking so more animations can be called
+            ticking = false;
+        });
+    }
+
+    /**
+     * Update element attributes.
+     * Sets up the elements offsets based on the props passed from
+     * the component then caches the elements current position and
+     * other important attributes.
+     */
+    function _updateElementAttributes() {
+        elements.forEach(function (element) {
+            if (element.props.disabled) return;
+
+            _setupOffsets(element);
+
+            _cacheAttributes(element);
+        });
+    }
+
+    /**
+     * Remove parallax styles from all elements.
+     */
+    function _removeParallaxStyles() {
+        elements.forEach(function (element) {
+            _resetStyles(element);
+        });
+    }
+
+    /**
+     * Cache the window height.
+     */
+    function _setWindowHeight() {
+        var html = document.documentElement;
+        windowHeight = window.innerHeight || html.clientHeight;
+    }
+
+    /**
+     * Takes a parallax element and caches important values that
+     * cause layout reflow and paints. Stores the values as an
+     * attribute object accesible on the parallax element.
+     * @param {object} element
+     */
+    function _cacheAttributes(element) {
+        var _element$offsets = element.offsets,
+            yMin = _element$offsets.yMin,
+            yMax = _element$offsets.yMax,
+            xMax = _element$offsets.xMax,
+            xMin = _element$offsets.xMin;
+        var slowerScrollRate = element.props.slowerScrollRate;
+
+        // NOTE: Many of these cause layout and reflow so we're not
+        // calculating them on every frame -- instead these values
+        // are cached on the element to access later when determining
+        // the element's position and offset.
+
+        var el = element.elOuter;
+        var rect = el.getBoundingClientRect();
+        var elHeight = el.offsetHeight;
+        var elWidth = el.offsetWidth;
+        var scrollY = window.pageYOffset;
+
+        // NOTE: offsetYMax and offsetYMin are percents
+        // based of the height of the element. They must be
+        // calculated as px to correctly determine whether
+        // the element is in the viewport.
+        var yPercent = yMax.unit === '%' || yMin.unit === '%';
+        var xPercent = xMax.unit === '%' || xMin.unit === '%';
+
+        // X offsets
+        var yMinPx = yMin.value;
+        var yMaxPx = yMax.value;
+
+        if (yPercent) {
+            var h100 = elHeight / 100;
+            yMaxPx = yMax.value * h100;
+            yMinPx = yMin.value * h100; // negative value
+        }
+
+        // Y offsets
+        var xMinPx = xMax.value;
+        var xMaxPx = xMin.value;
+
+        if (xPercent) {
+            var w100 = elWidth / 100;
+            xMaxPx = xMax.value * w100;
+            xMinPx = xMin.value * w100; // negative value
+        }
+
+        // NOTE: must add the current scroll position when the
+        // element is checked so that we get its absolute position
+        // relative to the document and not the viewport then
+        // add the min/max offsets calculated above.
+        var top = 0;
+        var bottom = 0;
+
+        if (slowerScrollRate) {
+            top = rect.top + scrollY + yMinPx;
+            bottom = rect.bottom + scrollY + yMaxPx;
+        } else {
+            top = rect.top + scrollY + yMaxPx * -1;
+            bottom = rect.bottom + scrollY + yMinPx * -1;
+        }
+
+        // NOTE: Total distance the element will move from when
+        // the top enters the view to the bottom leaving
+        // accounting for elements height and max/min offsets.
+        var totalDist = windowHeight + (elHeight + Math.abs(yMinPx) + yMaxPx);
+
+        element.attributes = {
+            top: top,
+            bottom: bottom,
+            elHeight: elHeight,
+            elWidth: elWidth,
+            yMaxPx: yMaxPx,
+            yMinPx: yMinPx,
+            xMaxPx: xMaxPx,
+            xMinPx: xMinPx,
+            totalDist: totalDist
+        };
+    }
+
+    /**
+     * Takes a parallax element and parses the offset props to get the value
+     * and unit. Sets these values as offset object accessible on the element.
+     * @param {object} element
+     */
+    function _setupOffsets(element) {
+        var _element$props = element.props,
+            offsetYMin = _element$props.offsetYMin,
+            offsetYMax = _element$props.offsetYMax,
+            offsetXMax = _element$props.offsetXMax,
+            offsetXMin = _element$props.offsetXMin;
+
+
+        var yMin = (0, _index.parseValueAndUnit)(offsetYMin);
+        var yMax = (0, _index.parseValueAndUnit)(offsetYMax);
+        var xMin = (0, _index.parseValueAndUnit)(offsetXMax);
+        var xMax = (0, _index.parseValueAndUnit)(offsetXMin);
+
+        if (xMin.unit !== xMax.unit || yMin.unit !== yMax.unit) {
+            throw new Error('Must provide matching units for the min and max offset values of each axis.');
+        }
+
+        var xUnit = xMin.unit || '%';
+        var yUnit = yMin.unit || '%';
+
+        element.offsets = {
+            xUnit: xUnit,
+            yUnit: yUnit,
+            yMin: yMin,
+            yMax: yMax,
+            xMin: xMin,
+            xMax: xMax
+        };
+    }
+
+    /**
+     * Takes a parallax element and set the styles based on the
+     * offsets and percent the element has moved though the viewport.
+     * @param {object} element
+     */
+    function _setParallaxStyles(element) {
+        var top = element.attributes.top - scrollY;
+        var totalDist = element.attributes.totalDist;
+
+        // Percent the element has moved based on current and total distance to move
+
+        var percentMoved = (top * -1 + windowHeight) / totalDist * 100;
+
+        // Scale percentMoved to min/max percent determined by offset props
+        var slowerScrollRate = element.props.slowerScrollRate;
+
+        // Get the parallax X and Y offsets
+
+        var offsets = (0, _index.getParallaxOffsets)(element.offsets, percentMoved, slowerScrollRate);
+
+        // Apply styles
+        var el = element.elInner;
+
+        // prettier-ignore
+        el.style.transform = 'translate3d(' + offsets.x.value + offsets.x.unit + ', ' + offsets.y.value + offsets.y.unit + ', 0)';
+    }
+
+    /**
+     * Takes a parallax element and removes parallax offset styles.
+     * @param {object} element
+     */
+    function _resetStyles(element) {
+        var el = element.elInner;
+        el.style.transform = '';
+    }
+
+    /**
+     * -------------------------------------------------------
+     * Public methods
+     * -------------------------------------------------------
+     */
+
+    /**
+     * Gets the parallax elements in the controller
+     * @return {array} parallax elements
+     */
+    this.getElements = function () {
+        return elements;
+    };
+
+    /**
+     * Creates a new parallax element object with new id
+     * and options to store in the 'elements' array.
+     * @param {object} options
+     * @return {object} element
+     */
+    this.createElement = function (options) {
+        var id = _createID();
+        var newElement = _extends({
+            id: id
+        }, options);
+
+        var updatedElements = [].concat(_toConsumableArray(elements), [newElement]);
+        elements = updatedElements;
+        this.update();
+
+        return newElement;
+    };
+
+    /**
+     * Creates a new parallax element object with new id
+     * and options to store in the 'elements' array.
+     * @param {object} element
+     */
+    this.removeElement = function (element) {
+        var updatedElements = elements.filter(function (el) {
+            return el.id !== element.id;
+        });
+        elements = updatedElements;
+    };
+
+    /**
+     * Updates an existing parallax element object with new options.
+     * @param {object} element
+     * @param {object} options
+     */
+    this.updateElement = function (element, options) {
+        var updatedElements = elements.map(function (el) {
+            // create element with new options and replaces the old
+            if (el.id === element.id) {
+                // update props
+                el.props = options.props;
+            }
+            return el;
+        });
+
+        elements = updatedElements;
+
+        // call update to set attributes and positions based on the new options
+        this.update();
+    };
+
+    /**
+     * Remove element styles.
+     * @param {object} element
+     */
+    this.resetElementStyles = function (element) {
+        _resetStyles(element);
+    };
+
+    /**
+     * Updates all parallax element attributes and postitions.
+     */
+    this.update = function () {
+        _setWindowHeight();
+        _updateElementAttributes();
+        _updateElementPositions();
+    };
+
+    /**
+     * Removes listeners, reset all styles then nullifies the global ParallaxController.
+     */
+    this.destroy = function () {
+        _removeListeners();
+        _removeParallaxStyles();
+        window.ParallaxController = null;
+    };
+}
+
+/**
+ * Static method to instantiate the ParallaxController.
+ * Returns a new or existing instance of the ParallaxController.
+ * @returns {Object} ParallaxController
+ */
+ParallaxController.init = function () {
+    var hasWindow = typeof window !== 'undefined';
+
+    if (!hasWindow) {
+        throw new Error('Looks like ParallaxController.init() was called on the server. This method must be called on the client.');
+    }
+
+    var controller = new ParallaxController();
+
+    // Keep global reference for legacy versions <= 1.1.0
+    if (hasWindow && !window.ParallaxController) {
+        window.ParallaxController = controller;
+    }
+
+    return controller;
+};
+
+exports.default = ParallaxController;
+module.exports = exports['default'];
+},{"../utils/index":101}],99:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = clamp;
+function clamp(number, lower, upper) {
+    number = number <= upper ? number : upper;
+    number = number >= lower ? number : lower;
+    return number;
+}
+module.exports = exports["default"];
+},{}],100:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = getParallaxOffsets;
+
+var _index = require('./index');
+
+/**
+ * Gets the parallax X and Y offsets to be applied to an element
+ * based upon the percent the element has moved in the viewport
+ * and the min/max offsets
+ * @returns {Object}
+ */
+
+function getParallaxOffsets(offsets, percentMoved, slowerScrollRate) {
+    var yMin = offsets.yMin,
+        yMax = offsets.yMax,
+        xMin = offsets.xMin,
+        xMax = offsets.xMax;
+
+
+    var yUnit = yMax.unit;
+    var xUnit = xMax.unit;
+
+    // sets parallax to faster or slower than the rate of scroll
+    var x = 0;
+    var y = 0;
+
+    if (slowerScrollRate) {
+        x = (0, _index.scaleBetween)(percentMoved, xMin.value, xMax.value, 0, 100);
+        y = (0, _index.scaleBetween)(percentMoved, yMin.value, yMax.value, 0, 100);
+    } else {
+        // flipped max/min
+        x = (0, _index.scaleBetween)(percentMoved, xMax.value, xMin.value, 0, 100);
+        y = (0, _index.scaleBetween)(percentMoved, yMax.value, yMin.value, 0, 100);
+    }
+
+    return {
+        x: {
+            value: x,
+            unit: xUnit
+        },
+        y: {
+            value: y,
+            unit: yUnit
+        }
+    };
+}
+module.exports = exports['default'];
+},{"./index":101}],101:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.testForPassiveScroll = exports.scaleBetween = exports.parseValueAndUnit = exports.isElementInView = exports.getParallaxOffsets = exports.clamp = undefined;
+
+var _clamp2 = require('./clamp');
+
+var _clamp3 = _interopRequireDefault(_clamp2);
+
+var _getParallaxOffsets2 = require('./getParallaxOffsets');
+
+var _getParallaxOffsets3 = _interopRequireDefault(_getParallaxOffsets2);
+
+var _isElementInView2 = require('./isElementInView');
+
+var _isElementInView3 = _interopRequireDefault(_isElementInView2);
+
+var _parseValueAndUnit2 = require('./parseValueAndUnit');
+
+var _parseValueAndUnit3 = _interopRequireDefault(_parseValueAndUnit2);
+
+var _scaleBetween2 = require('./scaleBetween');
+
+var _scaleBetween3 = _interopRequireDefault(_scaleBetween2);
+
+var _testForPassiveScroll2 = require('./testForPassiveScroll');
+
+var _testForPassiveScroll3 = _interopRequireDefault(_testForPassiveScroll2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.clamp = _clamp3.default;
+exports.getParallaxOffsets = _getParallaxOffsets3.default;
+exports.isElementInView = _isElementInView3.default;
+exports.parseValueAndUnit = _parseValueAndUnit3.default;
+exports.scaleBetween = _scaleBetween3.default;
+exports.testForPassiveScroll = _testForPassiveScroll3.default;
+},{"./clamp":99,"./getParallaxOffsets":100,"./isElementInView":102,"./parseValueAndUnit":103,"./scaleBetween":105,"./testForPassiveScroll":106}],102:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = isElementInView;
+/**
+ * Takes a parallax element and returns whether the element
+ * is in view based on the cached position of the element,
+ * current scroll position and the window height.
+ * @param {object} element
+ * @return {boolean} isInView
+ */
+function isElementInView(element, windowHeight, scrollY) {
+    var top = element.attributes.top - scrollY;
+    var bottom = element.attributes.bottom - scrollY;
+
+    var topInView = top >= 0 && top <= windowHeight;
+    var bottomInView = bottom >= 0 && bottom <= windowHeight;
+    var covering = top <= 0 && bottom >= windowHeight;
+
+    var isInView = topInView || bottomInView || covering;
+
+    return isInView;
+}
+module.exports = exports["default"];
+},{}],103:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = parseValueAndUnit;
+/**
+ * Determines the unit of a string and parses the value
+ *
+ * @param {string} str
+ * @param {object} out
+ * @return {object} The parsed value and the unit if any
+ */
+function parseValueAndUnit(str) {
+    var out = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { value: 0, unit: 'px' };
+
+    var isValid = typeof str === 'number' || typeof str === 'string';
+
+    if (!isValid) {
+        throw new Error('Invalid value provided. Must provide a value as a string or number');
+    }
+
+    str = String(str);
+    out.value = parseFloat(str, 10);
+    out.unit = str.match(/[\d.\-\+]*\s*(.*)/)[1] || '%'; // default to percent
+
+    var validUnits = ['px', '%'];
+    var isValidUnit = validUnits.find(function (unit) {
+        return unit === out.unit;
+    });
+
+    if (!isValidUnit) {
+        throw new Error('Invalid unit provided. Must provide a unit of px in or %');
+    }
+
+    return out;
+}
+module.exports = exports['default'];
+},{}],104:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.offsetMin = offsetMin;
+exports.offsetMax = offsetMax;
+function offsetMin(props, propName) {
+    var componentName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'ANONYMOUS';
+
+    var value = props[propName];
+    var isValid = typeof value === 'string' || typeof value === 'number';
+
+    if (!isValid) {
+        return new Error('[' + propName + '] in ' + componentName + ' must be a string with with "%"" or "px" units or number.');
+    }
+
+    if (props[propName]) {
+        if (typeof value === 'string') {
+            value = parseInt(value, 10);
+        }
+        return value <= 0 ? null : new Error('[' + propName + '] in ' + componentName + ' is greater than zero. [' + propName + '] must be less than or equal to zero.');
+    }
+    return null;
+}
+
+function offsetMax(props, propName) {
+    var componentName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'ANONYMOUS';
+
+    var value = props[propName];
+    var isValid = typeof value === 'string' || typeof value === 'number';
+
+    if (!isValid) {
+        return new Error('[' + propName + '] in ' + componentName + ' must be a string with with "%"" or "px" units or number.');
+    }
+
+    if (props[propName]) {
+        if (typeof value === 'string') {
+            value = parseInt(value, 10);
+        }
+        return value >= 0 ? null : new Error('[' + propName + '] in ' + componentName + ' is less than zero. [' + propName + '] must be greater than or equal to zero.');
+    }
+    return null;
+}
+},{}],105:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = scaleBetween;
+// Scale between AKA normalize
+function scaleBetween(value, newMin, newMax, oldMin, oldMax) {
+    return (newMax - newMin) * (value - oldMin) / (oldMax - oldMin) + newMin;
+}
+module.exports = exports["default"];
+},{}],106:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = testForPassiveScroll;
+function testForPassiveScroll() {
+    var supportsPassiveOption = false;
+    try {
+        var opts = Object.defineProperty({}, 'passive', {
+            get: function get() {
+                supportsPassiveOption = true;
+            }
+        });
+        window.addEventListener('test', null, opts);
+        window.removeEventListener('test', null, opts);
+    } catch (e) {}
+    return supportsPassiveOption;
+}
+module.exports = exports['default'];
+},{}],107:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31019,7 +32105,7 @@ var ButtonElement = function (_React$Component) {
 ;
 
 exports.default = (0, _scrollLink2.default)(ButtonElement);
-},{"../mixins/scroll-link":106,"react":113}],96:[function(require,module,exports){
+},{"../mixins/scroll-link":118,"react":125}],108:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31091,7 +32177,7 @@ ElementWrapper.propTypes = {
 };
 
 exports.default = (0, _scrollElement2.default)(ElementWrapper);
-},{"../mixins/scroll-element":103,"prop-types":36,"react":113}],97:[function(require,module,exports){
+},{"../mixins/scroll-element":115,"prop-types":36,"react":125}],109:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31143,7 +32229,7 @@ var LinkElement = function (_React$Component) {
 ;
 
 exports.default = (0, _scrollLink2.default)(LinkElement);
-},{"../mixins/scroll-link":106,"react":113}],98:[function(require,module,exports){
+},{"../mixins/scroll-link":118,"react":125}],110:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31204,7 +32290,7 @@ exports.ScrollLink = _scrollLink2.default;
 exports.ScrollElement = _scrollElement2.default;
 exports.Helpers = _Helpers2.default;
 exports.default = { Link: _Link2.default, Button: _Button2.default, Element: _Element2.default, scroller: _scroller2.default, Events: _scrollEvents2.default, scrollSpy: _scrollSpy2.default, animateScroll: _animateScroll2.default, ScrollLink: _scrollLink2.default, ScrollElement: _scrollElement2.default, Helpers: _Helpers2.default };
-},{"./components/Button.js":95,"./components/Element.js":96,"./components/Link.js":97,"./mixins/Helpers.js":99,"./mixins/animate-scroll.js":100,"./mixins/scroll-element.js":103,"./mixins/scroll-events.js":104,"./mixins/scroll-link.js":106,"./mixins/scroll-spy.js":107,"./mixins/scroller.js":108}],99:[function(require,module,exports){
+},{"./components/Button.js":107,"./components/Element.js":108,"./components/Link.js":109,"./mixins/Helpers.js":111,"./mixins/animate-scroll.js":112,"./mixins/scroll-element.js":115,"./mixins/scroll-events.js":116,"./mixins/scroll-link.js":118,"./mixins/scroll-spy.js":119,"./mixins/scroller.js":120}],111:[function(require,module,exports){
 "use strict";
 
 /* DEPRECATED */
@@ -31529,7 +32615,7 @@ var Helpers = {
 };
 
 module.exports = Helpers;
-},{"./scroll-hash":105,"./scroll-spy":107,"./scroller":108,"./utils":110,"prop-types":36,"react":113,"react-dom":41}],100:[function(require,module,exports){
+},{"./scroll-hash":117,"./scroll-spy":119,"./scroller":120,"./utils":122,"prop-types":36,"react":125,"react-dom":41}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31752,7 +32838,7 @@ exports.default = {
   scrollTo: scrollTo,
   scrollMore: scrollMore
 };
-},{"./cancel-events":101,"./scroll-events":104,"./smooth":109,"./utils":110}],101:[function(require,module,exports){
+},{"./cancel-events":113,"./scroll-events":116,"./smooth":121,"./utils":122}],113:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31770,7 +32856,7 @@ exports.default = {
     });
   }
 };
-},{"./passive-event-listeners":102}],102:[function(require,module,exports){
+},{"./passive-event-listeners":114}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31800,7 +32886,7 @@ var addPassiveEventListener = exports.addPassiveEventListener = function addPass
 var removePassiveEventListener = exports.removePassiveEventListener = function removePassiveEventListener(target, eventName, listener) {
   target.removeEventListener(eventName, listener);
 };
-},{}],103:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31897,7 +32983,7 @@ exports.default = function (Component) {
 
   return Element;
 };
-},{"./scroller":108,"prop-types":36,"react":113,"react-dom":41}],104:[function(require,module,exports){
+},{"./scroller":120,"prop-types":36,"react":125,"react-dom":41}],116:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31917,7 +33003,7 @@ var Events = {
 };
 
 exports.default = Events;
-},{}],105:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31996,7 +33082,7 @@ var scrollHash = {
 };
 
 exports.default = scrollHash;
-},{"./passive-event-listeners":102,"./utils":110}],106:[function(require,module,exports){
+},{"./passive-event-listeners":114,"./utils":122}],118:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32257,7 +33343,7 @@ exports.default = function (Component, customScroller) {
 
   return Link;
 };
-},{"./scroll-hash":105,"./scroll-spy":107,"./scroller":108,"./utils":110,"prop-types":36,"react":113,"react-dom":41}],107:[function(require,module,exports){
+},{"./scroll-hash":117,"./scroll-spy":119,"./scroller":120,"./utils":122,"prop-types":36,"react":125,"react-dom":41}],119:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32350,7 +33436,7 @@ var scrollSpy = {
 };
 
 exports.default = scrollSpy;
-},{"./passive-event-listeners":102,"lodash.throttle":28}],108:[function(require,module,exports){
+},{"./passive-event-listeners":114,"lodash.throttle":28}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32457,7 +33543,7 @@ exports.default = {
     _animateScroll2.default.animateTopScroll(scrollOffset, props, to, target);
   }
 };
-},{"./animate-scroll":100,"./scroll-events":104,"./utils":110}],109:[function(require,module,exports){
+},{"./animate-scroll":112,"./scroll-events":116,"./utils":122}],121:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32529,7 +33615,7 @@ exports.default = {
     return x < .5 ? 16 * x * x * x * x * x : 1 + 16 * --x * x * x * x * x;
   }
 };
-},{}],110:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32568,7 +33654,7 @@ exports.default = {
   filterElementInContainer: filterElementInContainer,
   scrollOffset: scrollOffset
 };
-},{}],111:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 (function (process){
 /** @license React v16.7.0
  * react.development.js
@@ -34456,7 +35542,7 @@ module.exports = react;
 
 }).call(this,require('_process'))
 
-},{"_process":32,"object-assign":29,"prop-types/checkPropTypes":33}],112:[function(require,module,exports){
+},{"_process":32,"object-assign":29,"prop-types/checkPropTypes":33}],124:[function(require,module,exports){
 /** @license React v16.7.0
  * react.production.min.js
  *
@@ -34482,7 +35568,7 @@ _currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null};a.P
 if(null!=b){void 0!==b.ref&&(h=b.ref,f=K.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)L.call(b,c)&&!M.hasOwnProperty(c)&&(d[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)d.children=e;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];d.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:d,_owner:f}},createFactory:function(a){var b=N.bind(null,a);b.type=a;return b},isValidElement:O,version:"16.7.0",
 unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:K,assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":29}],113:[function(require,module,exports){
+},{"object-assign":29}],125:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -34494,7 +35580,7 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/react.development.js":111,"./cjs/react.production.min.js":112,"_process":32}],114:[function(require,module,exports){
+},{"./cjs/react.development.js":123,"./cjs/react.production.min.js":124,"_process":32}],126:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -35146,7 +36232,7 @@ exports.__DO_NOT_USE__ActionTypes = ActionTypes;
 
 }).call(this,require('_process'))
 
-},{"_process":32,"symbol-observable":122}],115:[function(require,module,exports){
+},{"_process":32,"symbol-observable":134}],127:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35221,7 +36307,7 @@ function resolvePathname(to) {
 
 exports.default = resolvePathname;
 module.exports = exports['default'];
-},{}],116:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 (function (process){
 /** @license React v0.12.0
  * scheduler-tracing.development.js
@@ -35649,7 +36735,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 }).call(this,require('_process'))
 
-},{"_process":32}],117:[function(require,module,exports){
+},{"_process":32}],129:[function(require,module,exports){
 /** @license React v0.12.0
  * scheduler-tracing.production.min.js
  *
@@ -35661,7 +36747,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 'use strict';Object.defineProperty(exports,"__esModule",{value:!0});var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unstable_clear=function(a){return a()};exports.unstable_getCurrent=function(){return null};exports.unstable_getThreadID=function(){return++b};exports.unstable_trace=function(a,d,c){return c()};exports.unstable_wrap=function(a){return a};exports.unstable_subscribe=function(){};exports.unstable_unsubscribe=function(){};
 
-},{}],118:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 (function (process,global){
 /** @license React v0.12.0
  * scheduler.development.js
@@ -36369,7 +37455,7 @@ exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"_process":32}],119:[function(require,module,exports){
+},{"_process":32}],131:[function(require,module,exports){
 (function (global){
 /** @license React v0.12.0
  * scheduler.production.min.js
@@ -36395,7 +37481,7 @@ exports.unstable_shouldYield=function(){return!f&&(null!==c&&c.expirationTime<l|
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],120:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -36407,7 +37493,7 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/scheduler.development.js":118,"./cjs/scheduler.production.min.js":119,"_process":32}],121:[function(require,module,exports){
+},{"./cjs/scheduler.development.js":130,"./cjs/scheduler.production.min.js":131,"_process":32}],133:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -36419,7 +37505,7 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/scheduler-tracing.development.js":116,"./cjs/scheduler-tracing.production.min.js":117,"_process":32}],122:[function(require,module,exports){
+},{"./cjs/scheduler-tracing.development.js":128,"./cjs/scheduler-tracing.production.min.js":129,"_process":32}],134:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -36452,7 +37538,7 @@ var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./ponyfill.js":123}],123:[function(require,module,exports){
+},{"./ponyfill.js":135}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36476,7 +37562,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],124:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36520,7 +37606,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],125:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -36585,7 +37671,7 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 
-},{"_process":32}],126:[function(require,module,exports){
+},{"_process":32}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36624,7 +37710,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":147,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
+},{"./routes":159,"connected-react-router":11,"prop-types":36,"react":125}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36704,7 +37790,7 @@ var protohack = exports.protohack = function protohack() {
 	};
 };
 
-},{}],128:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36722,7 +37808,7 @@ var setNavBlack = exports.setNavBlack = function setNavBlack() {
 	};
 };
 
-},{}],129:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36753,7 +37839,7 @@ var setCounter = exports.setCounter = function setCounter(value) {
 	};
 };
 
-},{}],130:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 'use strict';
 
 var _redux = require('redux');
@@ -36797,7 +37883,7 @@ var render = function render() {
 
 render();
 
-},{"../App":126,"../reducers":142,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],131:[function(require,module,exports){
+},{"../App":138,"../reducers":154,"connected-react-router":11,"history":24,"react":125,"react-dom":41,"react-redux":60,"redux":126}],143:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36928,7 +38014,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":149,"../services/palette":151,"classnames":7,"react":113}],132:[function(require,module,exports){
+},{"../services/hexToRgb":161,"../services/palette":163,"classnames":7,"react":125}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36992,7 +38078,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":113}],133:[function(require,module,exports){
+},{"react":125}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37428,7 +38514,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
-},{"../services/splitLetter":152,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],134:[function(require,module,exports){
+},{"../services/splitLetter":164,"classnames":7,"react":125,"react-redux":60,"react-router-dom":78}],146:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37441,13 +38527,13 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactParallax = require("react-parallax");
-
 var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactScroll = require("react-scroll");
+
+var _reactScrollParallax = require("react-scroll-parallax");
 
 var _splitWord = require("../services/splitWord");
 
@@ -37472,6 +38558,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import { Parallax } from "react-parallax"
 
 var ParallaxHeader = function (_Component) {
 	_inherits(ParallaxHeader, _Component);
@@ -37513,6 +38601,7 @@ var ParallaxHeader = function (_Component) {
 		key: "render",
 		value: function render() {
 			var _props = this.props,
+			    bgAsset = _props.bgAsset,
 			    bgImage = _props.bgImage,
 			    bgColor = _props.bgColor,
 			    headerText = _props.headerText,
@@ -37532,29 +38621,41 @@ var ParallaxHeader = function (_Component) {
 			isMobile ? str /= 2 : null;
 
 			var classnames = (0, _classnames2.default)({
-				"react-parallax-contents": true
+				// "react-parallax-contents" : true,
 				// "react-parallax-contents--animating" : isAnimating,			
+				"parallax-header": true
+			});
+
+			var updatedText = [];
+			headerText.forEach(function (item, idx) {
+				typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item) : updatedText[idx] = item;
 			});
 
 			return _react2.default.createElement(
 				"div",
 				null,
-				_react2.default.createElement(_reactParallax.Parallax, {
-					bgImage: imageUrl,
-					blur: null,
-					strength: str,
-					renderLayer: function renderLayer(percentage) {
-						var style = {
-							opacity: -(3 * percentage) + 2.5,
-							transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)"
-						};
-						var updatedText = [];
-						headerText.forEach(function (item, idx) {
-							typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style, key: idx });
-						});
-						return _react2.default.createElement(
+				_react2.default.createElement(
+					_reactScrollParallax.ParallaxProvider,
+					null,
+					_react2.default.createElement(
+						_reactScrollParallax.ParallaxBanner,
+						{
+							style: { height: 'calc(100vh + 1px)' },
+							layers: [{
+								amount: 0.3,
+								children: _react2.default.createElement("video", {
+									autoPlay: true,
+									loop: true,
+									playsInline: true,
+									preload: "auto",
+									muted: true,
+									src: bgAsset
+								}),
+								slowerScrollRate: true
+							}] },
+						_react2.default.createElement(
 							"div",
-							{ className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + percentage + ")" } },
+							{ className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", .8" } },
 							_react2.default.createElement(
 								"div",
 								{ className: "grid" },
@@ -37568,8 +38669,9 @@ var ParallaxHeader = function (_Component) {
 									)
 								)
 							)
-						);
-					} }),
+						)
+					)
+				),
 				_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive })
 			);
 		}
@@ -37580,7 +38682,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":148,"../services/hexToRgb":149,"../services/splitLetter":152,"../services/splitWord":153,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],135:[function(require,module,exports){
+},{"../services/detectMobile":160,"../services/hexToRgb":161,"../services/splitLetter":164,"../services/splitWord":165,"classnames":7,"react":125,"react-scroll":110,"react-scroll-parallax":97}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37705,7 +38807,7 @@ var ProjectCard = function (_Component) {
 
 exports.default = ProjectCard;
 
-},{"../services/splitLetter":152,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],136:[function(require,module,exports){
+},{"../services/splitLetter":164,"classnames":7,"react":125,"react-hover":43,"react-router-dom":78}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37806,7 +38908,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"../services/detectMobile":148,"../services/splitLetter":152,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],137:[function(require,module,exports){
+},{"../services/detectMobile":160,"../services/splitLetter":164,"classnames":7,"react":125,"react-redux":60,"react-router-dom":78}],149:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37906,7 +39008,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],138:[function(require,module,exports){
+},{"classnames":7,"react":125,"react-intersection-visible":46,"react-redux":60,"react-router-dom":78,"react-scroll":110}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38019,10 +39121,10 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames, onMouseEnter: this.handleMouseEnter },
+				{ className: classnames, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'sidebar', onMouseLeave: this.handleMouseLeave },
+					{ className: 'sidebar' },
 					sidebarItems
 				)
 			);
@@ -38042,7 +39144,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Sidebar);
 
-},{"../services/pad":150,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],139:[function(require,module,exports){
+},{"../services/pad":162,"classnames":7,"react":125,"react-redux":60,"react-router-dom":78,"react-scroll":110}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38084,7 +39186,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],140:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38106,7 +39208,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],141:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38132,7 +39234,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],142:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38168,7 +39270,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":139,"./color":140,"./counter":141,"connected-react-router":11,"redux":114}],143:[function(require,module,exports){
+},{"./abbreviation":151,"./color":152,"./counter":153,"connected-react-router":11,"redux":126}],155:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38282,7 +39384,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":132,"../components/Nav":133,"../components/ParallaxHeader":134,"react":113,"react-redux":61}],144:[function(require,module,exports){
+},{"../actions/abbreviation":139,"../actions/color":140,"../actions/counter":141,"../components/GridLines":144,"../components/Nav":145,"../components/ParallaxHeader":146,"react":125,"react-redux":60}],156:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38435,7 +39537,7 @@ var AmericanMade = function (_Component) {
 							{ className: "outline" },
 							"Made "
 						), "is a film site created for Universal Pictures"],
-						bgImage: "../assets/img/american-made/output.gif",
+						bgAsset: "../assets/img/american-made/banner.mp4",
 						strength: 200,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(0);
@@ -38849,7 +39951,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":131,"../components/GridLines":132,"../components/Nav":133,"../components/ParallaxHeader":134,"../components/ScrollArrow":136,"../components/ScrollSection":137,"../components/Sidebar":138,"../services/hexToRgb":149,"../services/palette":151,"../services/splitLetter":152,"../services/splitWord":153,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],145:[function(require,module,exports){
+},{"../actions/abbreviation":139,"../actions/color":140,"../actions/counter":141,"../components/CodepenEmbed":143,"../components/GridLines":144,"../components/Nav":145,"../components/ParallaxHeader":146,"../components/ScrollArrow":148,"../components/ScrollSection":149,"../components/Sidebar":150,"../services/hexToRgb":161,"../services/palette":163,"../services/splitLetter":164,"../services/splitWord":165,"classnames":7,"react":125,"react-codepen-embed":38,"react-redux":60,"react-router-dom":78,"react-scroll":110}],157:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38976,7 +40078,7 @@ var Home = function (_Component) {
 					{ name: pageSections[0], className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: "hello",
-						headerText: ["Eric C. Smith, an", _react2.default.createElement(
+						headerText: ["Eric C. Smith is an", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
 							"Interactive "
@@ -38985,7 +40087,7 @@ var Home = function (_Component) {
 							{ className: "outline" },
 							"Designer "
 						), "in New York City"],
-						bgImage: "../assets/img/liquid.gif",
+						bgAsset: "../assets/img/terrain.mp4",
 						onSetActive: function onSetActive() {
 							_this2.props.setCounter(1);_this2.props.setNavWhite();_this2.setActiveSection(pageSections[0]);
 						}
@@ -39094,7 +40196,7 @@ var Home = function (_Component) {
 									_react2.default.createElement(
 										_ProjectCard2.default,
 										{ name: "American Made Film Site", href: "/american-made", tags: ["UI", "Interaction"] },
-										_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" })
+										_react2.default.createElement("video", { src: "../assets/img/project-1.mp4", autoPlay: true, loop: true, playsInline: true, preload: "auto", muted: true })
 									)
 								),
 								_react2.default.createElement(
@@ -39181,7 +40283,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":132,"../components/Nav":133,"../components/ParallaxHeader":134,"../components/ProjectCard":135,"../components/ScrollArrow":136,"../components/Sidebar":138,"../services/splitWord":153,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-scroll":98}],146:[function(require,module,exports){
+},{"../actions/abbreviation":139,"../actions/color":140,"../actions/counter":141,"../components/GridLines":144,"../components/Nav":145,"../components/ParallaxHeader":146,"../components/ProjectCard":147,"../components/ScrollArrow":148,"../components/Sidebar":150,"../services/splitWord":165,"classnames":7,"react":125,"react-intersection-visible":46,"react-redux":60,"react-scroll":110}],158:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39579,7 +40681,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // bgImage={"../assets/img/vai/banner.gif"}
 // headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":131,"../components/GridLines":132,"../components/Nav":133,"../components/ParallaxHeader":134,"../components/ScrollArrow":136,"../components/ScrollSection":137,"../components/Sidebar":138,"../services/hexToRgb":149,"../services/palette":151,"../services/splitLetter":152,"../services/splitWord":153,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],147:[function(require,module,exports){
+},{"../actions/abbreviation":139,"../actions/color":140,"../actions/counter":141,"../components/CodepenEmbed":143,"../components/GridLines":144,"../components/Nav":145,"../components/ParallaxHeader":146,"../components/ScrollArrow":148,"../components/ScrollSection":149,"../components/Sidebar":150,"../services/hexToRgb":161,"../services/palette":163,"../services/splitLetter":164,"../services/splitWord":165,"classnames":7,"react":125,"react-codepen-embed":38,"react-redux":60,"react-router-dom":78,"react-scroll":110}],159:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39632,7 +40734,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/Nav":133,"./AboutMe":143,"./AmericanMade":144,"./Home":145,"./Vai":146,"react":113,"react-router":91}],148:[function(require,module,exports){
+},{"../components/Nav":145,"./AboutMe":155,"./AmericanMade":156,"./Home":157,"./Vai":158,"react":125,"react-router":90}],160:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39643,7 +40745,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],149:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39659,7 +40761,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],150:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39670,7 +40772,7 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],151:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39697,7 +40799,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],152:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39720,7 +40822,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}],153:[function(require,module,exports){
+},{"react":125}],165:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39744,6 +40846,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}]},{},[130])
+},{"react":125}]},{},[142])
 
 //# sourceMappingURL=main.js.map

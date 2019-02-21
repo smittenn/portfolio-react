@@ -31,6 +31,12 @@
 	}
 }
 
+.parallax-header {
+	* {
+		@include zIndexCloser();
+	}
+}
+
 section { 
 	* {
 		@include zIndexCloser();					

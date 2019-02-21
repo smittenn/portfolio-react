@@ -69,8 +69,8 @@ class Home extends Component {
 				<Element name={pageSections[0]} className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name="hello"
-					headerText={[`Eric C. Smith, an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
-					bgImage={"../assets/img/liquid.gif"} 
+					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
+					bgAsset={"../assets/img/terrain.mp4"} 
 					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
 					<Link to="about" spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection(pageSections[1]); }}>
@@ -117,7 +117,8 @@ class Home extends Component {
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									
 										<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interaction"]}>
-											<img src="../assets/img/american-made/banner.gif"/>
+											{/*<img src="../assets/img/american-made/banner.gif"/>*/}
+											<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />
 										</ProjectCard>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">

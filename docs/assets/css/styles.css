@@ -200,6 +200,9 @@ table {
 .react-parallax-contents * {
   z-index: 999; }
 
+.parallax-header * {
+  z-index: 999; }
+
 section * {
   z-index: 999; }
 
@@ -1594,6 +1597,27 @@ section p span, section blockquote span {
 @media screen and (max-width: 800px) {
   .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
     height: calc(100vh - 50px); } }
+
+.parallax-header {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .parallax-header h1, .parallax-header h2, .parallax-header h3, .parallax-header h4, .parallax-header h5, .parallax-header p {
+    color: #F8FBF7; }
+    .parallax-header h1 span, .parallax-header h2 span, .parallax-header h3 span, .parallax-header h4 span, .parallax-header h5 span, .parallax-header p span {
+      white-space: pre; }
+
+.parallax-inner > * > * {
+  height: 130vh !important; }
 
 .project-card {
   margin-right: 24px;

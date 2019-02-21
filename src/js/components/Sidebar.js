@@ -60,8 +60,8 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter}>
-				<ul className="sidebar" onMouseLeave={this.handleMouseLeave}>
+			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+				<ul className="sidebar">
 					{sidebarItems}
 				</ul>
 			</div>

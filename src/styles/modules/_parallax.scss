@@ -31,3 +31,32 @@ $baseclass: react-parallax;
 	}
 }
 
+
+$baseclass2: parallax-header;
+
+.#{$baseclass2} {
+	height: 100vh;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    // flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    h1, h2, h3, h4, h5, p {
+		color: $brand-white;
+
+		span {
+			white-space: pre;
+		}
+	}
+}
+
+.parallax-inner {
+	> * > * {
+		height: 130vh !important;
+	}
+}
