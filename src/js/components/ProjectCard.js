@@ -15,14 +15,12 @@ export default class ProjectCard extends Component {
 		}
 	}
 
-	
 	componentDidMount() {
 	}
 
 	componentWillUnmount() {
 	}
 	
-
 	componentDidUpdate(prevProps) {
 	}
 
@@ -59,8 +57,10 @@ export default class ProjectCard extends Component {
 					{this.props.children}
 					</div>
 					<div className="project-card__bottom">
-						<h3>{name}</h3>
-						<blockquote>{tags.join(", ")}</blockquote>
+						<div>
+							<h3>{name}</h3>
+							<blockquote>{tags.join(", ")}</blockquote>
+						</div>
 						<i className="iconcss icon-arrow-right"></i>
 					</div>
 				</NavLink>

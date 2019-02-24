@@ -19,6 +19,7 @@ $baseclass: sidebar-container;
 	}
 
 	.sidebar {
+		cursor: pointer;
 		width: 94px;
 		padding: 0;
 		transition: all $easing1 $duration-fast
@@ -44,8 +45,8 @@ $baseclass: sidebar-container;
 		height: 100%;
 		display: flex;
 		align-items: center;
-		cursor: pointer;
 		border: none;
+		pointer-events: none;
 	}
 
 	.sidebar-item:before {
@@ -130,7 +131,7 @@ $baseclass: sidebar-container;
 	}
 
 
-	&--hover {
+	&--open {
 		min-width: 280px;
 		width: calc(16.667% + 40px);
 
@@ -142,6 +143,34 @@ $baseclass: sidebar-container;
 			.sidebar-item {
 				height: 60px;
 				transition: height $easing1 $duration-fast;
+
+				a {
+					pointer-events: auto;
+				}
+
+				.sidebar-number {
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+					transition: all $easing1 $duration-medium;
+				}
+
+				.sidebar-dash {
+					width: 34px;
+					margin: 0;
+					transition: all $easing1 $duration-medium;
+				}
+
+				.sidebar-label {
+					opacity: 1;
+					transition: all $easing1 $duration-medium;
+				}
+
+				.sidebar-border {
+					opacity: 1;
+					width: 100%;
+					transition: all $easing1 $duration-medium;
+				}
+
 
 				&:hover {
 					&:before {
@@ -162,53 +191,16 @@ $baseclass: sidebar-container;
 					}
 				}
 			}
-
-			.sidebar-number {
-				opacity: 1;
-				transform: translate3d(0, 0, 0);
-				transition: all $easing1 $duration-medium;
-			}
-
-			.sidebar-dash {
-				width: 34px;
-				margin: 0;
-				transition: all $easing1 $duration-medium !important;
-			}
-
-			.sidebar-label {
-				opacity: 1;
-				transition: all $easing1 $duration-medium;
-			}
-
-			.sidebar-border {
-				opacity: 1;
-				width: 100%;
-				transition: all $easing1 $duration-medium;
-			}
 		}
-
 	}
 
 
 	@media screen and (max-width: $bp-medium) {
 		width: 24px;
-		// height: calc(100vh - 90px);
+		height: calc(100vh - 90px);
 
-		&.#{$baseclass}--hover {
+		&.#{$baseclass}--open {
 			width: 260px;
-		}
-
-		.sidebar {
-			.sidebar-item {
-				height: 36px;
-				line-height: 55px;
-			}
-			&:hover {
-				.sidebar-item {
-					height: 55px;
-					line-height: 55px;
-				}
-			}
 		}
 	}
 }

@@ -17,19 +17,38 @@ class Sidebar extends Component {
 		}
 	}
 
+	componentDidMount() {
+		document.addEventListener('mousedown', this.handleClickOutside);
+		window.addEventListener('resize', this.detectMobile);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('mousedown', this.handleClickOutside);
+		window.removeEventListener('resize', this.detectMobile);
+	}
+
 	detectMobile = (event) => {
 		this.setState({
 			isMobile: window.innerWidth <= 800,
 		})
 	}
 
-	handleMouseEnter = () => {
+	handleClickOutside = (event) => {
+		if (!this.refs.sidebar.contains(event.target)) {
+			this.setState({
+				isOpen: false,
+			});
+		}
+	}
+
+
+	openSidebar = () => {
 		this.setState({
 			isOpen: true,
 		})
 	}
 
-	handleMouseLeave = () => {
+	closeSidebar = () => {
 		this.setState({
 			isOpen: false,
 		})			
@@ -38,14 +57,14 @@ class Sidebar extends Component {
 
 	render() {
 
-		const { isOpen } = this.state;
+		const { isOpen, isMobile } = this.state;
 		const { color, sections, activeSection, isBlack, isWhite } = this.props;
 
 		const classnames = classNames({
 			"sidebar-container": true,
 			"sidebar-container--white": color == "WHITE",
 			"sidebar-container--black": color == "BLACK",
-			"sidebar-container--hover": isOpen,
+			"sidebar-container--open": isOpen,
 		})
 
 		const sidebarItems = sections.map((section, i) => 
@@ -60,8 +79,8 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-				<ul className="sidebar">
+			<div className={classnames} onMouseEnter={isMobile ? null : this.openSidebar} onClick={this.openSidebar}>
+				<ul className="sidebar" onMouseLeave={isMobile ? null : this.closeSidebar} ref="sidebar">
 					{sidebarItems}
 				</ul>
 			</div>

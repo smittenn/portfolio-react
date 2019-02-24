@@ -52,6 +52,8 @@ class AmericanMade extends Component {
 				"navigation",
 				"video-gallery",
 				"parallax",
+				"mobile-first",
+				"immersive-map",
 			],
 		}
 	}
@@ -79,8 +81,8 @@ class AmericanMade extends Component {
 				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
-					headerText={[<span className="outline">American </span>, <span className="outline">Made </span>, `is a film site created for Universal Pictures`]}
-					bgAsset={"../assets/img/american-made/banner.mp4"}
+					headerText={[ <span className="outline">American </span>, <span className="outline">Made </span>, `is a film site created for Universal Pictures`]}
+					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0);}}
 					/>
@@ -96,7 +98,7 @@ class AmericanMade extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<h2>I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures</h2> 
 							<p>
-								The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. Additionally There was a 63% conversion rate from our site to purchase tickets!
+								The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!
 								<br/><br/>
 								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way.
 							</p>
@@ -245,6 +247,43 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
 							<CodepenEmbed slug="ZoBVbY" title="Story: American Made Film Site" height={625} handle="erchsm"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				black
+				name={pageSections[8]} 
+				onSetActive={() => { setNavWhite(); this.setActiveSection(8); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h1>Mobile First Design</h1>
+								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on bare essential functionality before moving onto more features for bigger screens.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				black
+				name={pageSections[9]} 
+				onSetActive={() => { setNavWhite(); this.setActiveSection(9); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h1 className="no-mb">Immersive Map</h1>
+								<h2>“Fly With Barry”</h2>
+								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of his escapades through Central and South America.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
 						</div>
 					</div>
 				</ScrollSection>

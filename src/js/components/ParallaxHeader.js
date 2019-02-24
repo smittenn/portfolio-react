@@ -1,10 +1,7 @@
 import React, {Component} from "react"
+import { Parallax } from "react-parallax"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-
-// import { Parallax } from "react-parallax"
-
-import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
 
 
 import splitWord from "../services/splitWord"
@@ -44,10 +41,10 @@ export default class ParallaxHeader extends Component {
 		})
 	}
 
-		
+
 	render() {
 
-		const { bgAsset, bgImage, bgColor, headerText, strength, name, onSetActive } = this.props;
+		const { bgImage, bgColor, headerText, strength, name, onSetActive } = this.props;
 		const { isMobile, isAnimating } = this.state;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -58,47 +55,13 @@ export default class ParallaxHeader extends Component {
 		isMobile ? (str /= 2) : null
 
 		const classnames = classNames({
-			// "react-parallax-contents" : true,
+			"react-parallax-contents" : true,
 			// "react-parallax-contents--animating" : isAnimating,			
-			"parallax-header": true,
-		})
-
-		let updatedText = [];
-		headerText.forEach((item, idx) => {
-			typeof(item) == "string" ? updatedText[idx] = splitWord(item) : updatedText[idx] = item
 		})
 
 		return (
 			<div>
-				<ParallaxProvider>
-					<ParallaxBanner
-					style={{ height: 'calc(100vh + 1px)' }}
-		            layers={[
-		                {
-		                    amount: 0.3,
-		                    children: (
-		                        <video
-		                            autoPlay
-		                            loop
-		                            playsInline
-		                            preload="auto"
-		                            muted
-		                            src={bgAsset}
-		                        />
-		                    ),
-		                    slowerScrollRate: true,
-		                },
-		            ]}>
-		            <div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, .8` }}>
-			            <div className="grid">
-							<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
-				                <h1 className="no-mb">{updatedText}</h1>
-				            </div>
-			            </div>
-		            </div>
-		        </ParallaxBanner>
-				</ParallaxProvider>
-				{/*<Parallax 
+				<Parallax 
 				bgImage={imageUrl} 
 				blur={null} 
 				strength={str}
@@ -114,17 +77,16 @@ export default class ParallaxHeader extends Component {
 					return (
 						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 							<div className="grid">
-								<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 									<h1 className="no-mb">{updatedText}</h1>
 								</div>
 							</div>
 						</div>
 					)
 				}}>
-				</Parallax>*/}
+				</Parallax>
 				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}/>
 			</div>
 		);
 	}
 }
-

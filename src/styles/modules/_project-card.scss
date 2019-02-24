@@ -1,7 +1,7 @@
 $baseclass: project-card;
 
 .#{$baseclass} {
-	margin-right: 24px;
+	// margin-right: 24px;
 	position: relative;
 	// background: $brand-black;
 
@@ -16,13 +16,16 @@ $baseclass: project-card;
 
 	i {
 		font-size: 40px;
-		position: absolute;
-		right: 24px;
-		bottom: 36px;
 	}
 
 	&__bottom {
+		display: flex;
+		align-items: center;
 		padding: 40px 24px;
+
+		> div {
+			flex: 1;
+		}
 	}
 
 	&__asset {

@@ -11,6 +11,10 @@ body {
 	-webkit-overflow-scrolling: touch;
 }
 
+video {
+	width: 100%;
+}
+
 .active-section {
 	position: relative;
 }

@@ -70,7 +70,7 @@ class Home extends Component {
 					<ParallaxHeader 
 					name="hello"
 					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
-					bgAsset={"../assets/img/terrain.mp4"} 
+					bgImage={"../assets/img/terrain.gif"} 
 					onSetActive={() => {this.props.setCounter(1); this.props.setNavWhite(); this.setActiveSection(pageSections[0]);}}
 					/>
 					<Link to="about" spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { this.props.setCounter(2); this.props.setNavBlack();  this.setActiveSection(pageSections[1]); }}>
