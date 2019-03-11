@@ -117,8 +117,8 @@ class Home extends Component {
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									
 										<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interaction"]}>
-											{/*<img src="../assets/img/american-made/banner.gif"/>*/}
-											<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />
+											{<img src="../assets/img/american-made/banner.gif"/>}
+											{/*<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />*/}
 										</ProjectCard>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">

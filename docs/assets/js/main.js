@@ -37769,13 +37769,13 @@ var ScrollArrow = function (_Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			document.addEventListener('mousewheel', this.handleScroll);
-			document.addEventListener('touchend', this.handleScroll);
+			document.addEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousewheel', this.handleScroll);
-			document.removeEventListener('touchend', this.handleScroll);
+			document.removeEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'render',
@@ -39197,7 +39197,7 @@ var Home = function (_Component) {
 									_react2.default.createElement(
 										_ProjectCard2.default,
 										{ name: "American Made Film Site", href: "/american-made", tags: ["UI", "Interaction"] },
-										_react2.default.createElement("video", { src: "../assets/img/project-1.mp4", autoPlay: true, loop: true, playsInline: true, preload: "auto", muted: true })
+										_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" })
 									)
 								),
 								_react2.default.createElement(

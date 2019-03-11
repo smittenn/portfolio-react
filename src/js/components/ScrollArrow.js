@@ -18,19 +18,18 @@ export default class ScrollArrow extends Component {
 
 	componentDidMount() {
 		document.addEventListener('mousewheel', this.handleScroll);
-		document.addEventListener('touchend', this.handleScroll);
+		document.addEventListener('touchmove', this.handleScroll);
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('mousewheel', this.handleScroll);
-		document.removeEventListener('touchend', this.handleScroll);
+		document.removeEventListener('touchmove', this.handleScroll);
 	}
 
 	handleScroll = (e) => {
 		(document.body.scrollTop > 0) ? this.setState({ isHidden: true }) : null;
 		(document.body.scrollTop == 0) ? this.setState({ isHidden: false }) : null;
 	}
-
 
 	render() {
 		const { label } = this.props;
