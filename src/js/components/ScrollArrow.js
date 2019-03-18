@@ -17,18 +17,17 @@ export default class ScrollArrow extends Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener('mousewheel', this.handleScroll);
-		document.addEventListener('touchmove', this.handleScroll);
+		document.addEventListener('scroll', this.handleScroll);
+		// document.addEventListener('touchmove', this.handleScroll);
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener('mousewheel', this.handleScroll);
-		document.removeEventListener('touchmove', this.handleScroll);
+		document.removeEventListener('scroll', this.handleScroll);
+		// document.removeEventListener('touchmove', this.handleScroll);
 	}
 
 	handleScroll = (e) => {
-		(document.body.scrollTop > 0) ? this.setState({ isHidden: true }) : null;
-		(document.body.scrollTop == 0) ? this.setState({ isHidden: false }) : null;
+		(document.body.scrollTop > (window.innerHeight /  2)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
 	}
 
 	render() {

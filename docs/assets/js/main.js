@@ -37755,8 +37755,7 @@ var ScrollArrow = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
 		_this.handleScroll = function (e) {
-			document.body.scrollTop > 0 ? _this.setState({ isHidden: true }) : null;
-			document.body.scrollTop == 0 ? _this.setState({ isHidden: false }) : null;
+			document.body.scrollTop > window.innerHeight / 2 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
 		};
 
 		_this.state = {
@@ -37768,14 +37767,14 @@ var ScrollArrow = function (_Component) {
 	_createClass(ScrollArrow, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			document.addEventListener('mousewheel', this.handleScroll);
-			document.addEventListener('touchmove', this.handleScroll);
+			document.addEventListener('scroll', this.handleScroll);
+			// document.addEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener('mousewheel', this.handleScroll);
-			document.removeEventListener('touchmove', this.handleScroll);
+			document.removeEventListener('scroll', this.handleScroll);
+			// document.removeEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'render',
@@ -38421,7 +38420,7 @@ var AmericanMade = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "details", "details-2", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "immersive-map"]
+			pageSections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "immersive-map"]
 		};
 		return _this;
 	}
@@ -38452,7 +38451,7 @@ var AmericanMade = function (_Component) {
 						className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: pageSections[0],
-						headerText: [_react2.default.createElement(
+						headerText: ["The", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
 							"American "
@@ -38460,7 +38459,7 @@ var AmericanMade = function (_Component) {
 							"span",
 							{ className: "outline" },
 							"Made "
-						), "is a film site created for Universal Pictures"],
+						), "film site excited our movie-goers"],
 						bgImage: "../assets/img/american-made/output.gif",
 						strength: 200,
 						onSetActive: function onSetActive() {
@@ -38470,7 +38469,7 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: pageSections[1], spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								setCounter(2);setNavBlack();_this2.setActiveSection(pageSections[1]);
+								setCounter(2);setNavBlack();_this2.setActiveSection(1);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					)

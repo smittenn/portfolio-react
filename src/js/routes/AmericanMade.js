@@ -45,8 +45,8 @@ class AmericanMade extends Component {
 			activeSection: "overview",
 			pageSections: [
 				"overview",
+				"about",
 				"details",
-				"details-2",
 				"cinemagraphs",
 				"preloader",
 				"navigation",
@@ -81,14 +81,14 @@ class AmericanMade extends Component {
 				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
-					headerText={[ <span className="outline">American </span>, <span className="outline">Made </span>, `is a film site created for Universal Pictures`]}
+					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site excited our movie-goers`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
-					onSetActive={() => { setNavWhite(); this.setActiveSection(0);}}
+					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
 					/>
-					<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(pageSections[1]); }}>
+					{<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
 						<ScrollArrow/>
-					</Link>
+					</Link>}
 				</Element>
 
 				<ScrollSection 
