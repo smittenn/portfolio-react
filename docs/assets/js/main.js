@@ -38025,6 +38025,7 @@ var Sidebar = function (_Component) {
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: isOpen ? section : "", smooth: "easeOutCubic", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
+						i == 0 ? _react2.default.createElement('div', { className: 'sidebar-border sidebar-border__top' }) : null,
 						_react2.default.createElement(
 							'p',
 							{ className: 'sidebar-number' },
@@ -38420,7 +38421,7 @@ var AmericanMade = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "immersive-map"]
+			pageSections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "map"]
 		};
 		return _this;
 	}
@@ -38459,7 +38460,7 @@ var AmericanMade = function (_Component) {
 							"span",
 							{ className: "outline" },
 							"Made "
-						), "film site excited our movie-goers"],
+						), "film site was created for Universal Pictures"],
 						bgImage: "../assets/img/american-made/output.gif",
 						strength: 200,
 						onSetActive: function onSetActive() {
@@ -38490,15 +38491,12 @@ var AmericanMade = function (_Component) {
 							_react2.default.createElement(
 								"h2",
 								null,
-								"I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures"
+								(0, _splitWord2.default)("I took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures")
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
-								"The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!",
-								_react2.default.createElement("br", null),
-								_react2.default.createElement("br", null),
-								"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way."
+								(0, _splitWord2.default)('The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!')
 							)
 						)
 					)
@@ -38527,7 +38525,7 @@ var AmericanMade = function (_Component) {
 								"Role"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								"Lead Designer"
 							)
@@ -38541,7 +38539,7 @@ var AmericanMade = function (_Component) {
 								"Date"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								"June, 2017"
 							)
@@ -38555,7 +38553,7 @@ var AmericanMade = function (_Component) {
 								"Client"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								"NBCUX Lab"
 							)
@@ -38569,7 +38567,7 @@ var AmericanMade = function (_Component) {
 								"Team"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								_react2.default.createElement(
 									"a",
@@ -38818,7 +38816,7 @@ var AmericanMade = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									"Mobile First Design"
 								),
@@ -38833,7 +38831,11 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-12" })
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement("object", { data: "../assets/img/american-made/mobile.svg", style: { minWidth: "100%" }, type: "image/svg+xml" })
+						)
 					)
 				),
 				_react2.default.createElement(
@@ -38856,7 +38858,7 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"h1",
 									{ className: "no-mb" },
-									"Immersive Map"
+									"Interactive Map"
 								),
 								_react2.default.createElement(
 									"h2",
@@ -38874,7 +38876,11 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-12" })
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement("object", { data: "../assets/img/american-made/map-code2.svg", style: { minWidth: "100%" }, type: "image/svg+xml" })
+						)
 					)
 				),
 				_react2.default.createElement(_Sidebar2.default, {
@@ -39141,16 +39147,19 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									"div",
 									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
-									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
-								),
-								_react2.default.createElement(
-									"div",
-									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
+									_react2.default.createElement("div", { className: "spacer spacer__sm" }),
 									_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
 								),
 								_react2.default.createElement(
 									"div",
 									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
+									_react2.default.createElement("div", { className: "spacer spacer__lg" }),
+									_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
+									_react2.default.createElement("div", { className: "spacer spacer__md" }),
 									_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
 								)
 							)
@@ -39193,9 +39202,10 @@ var Home = function (_Component) {
 								_react2.default.createElement(
 									"div",
 									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+									_react2.default.createElement("div", { className: "spacer spacer__sm" }),
 									_react2.default.createElement(
 										_ProjectCard2.default,
-										{ name: "American Made Film Site", href: "/american-made", tags: ["UI", "Interaction"] },
+										{ name: "American Made Film Site", href: "/american-made", tags: ["UI", "Interactive"] },
 										_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" })
 									)
 								),
@@ -39204,8 +39214,27 @@ var Home = function (_Component) {
 									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 									_react2.default.createElement(
 										_ProjectCard2.default,
-										{ name: "Micro App Templates", href: "/micro-app-templates", tags: ["Visual Design", "Interaction"] },
+										{ name: "V.ai Player", href: "/vai", tags: ["UX", "Interactive"] },
+										_react2.default.createElement("img", { src: "../assets/img/vai/eye.gif" })
+									)
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+									_react2.default.createElement("div", { className: "spacer spacer__md" }),
+									_react2.default.createElement(
+										_ProjectCard2.default,
+										{ name: "Micro App Templates", href: "/micro-app-templates", tags: ["Visual Design", "Brand"] },
 										_react2.default.createElement("img", { src: "../assets/img/card-components/banner-alt.jpg" })
+									)
+								),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										_ProjectCard2.default,
+										{ name: "J&J Home", href: "/jnj-home", tags: ["UX", "UI"] },
+										_react2.default.createElement("img", { src: "../assets/img/jnj-home/onboarding-kiosk-mock.png" })
 									)
 								)
 							)

@@ -243,7 +243,7 @@ h1 {
 
 h2 {
   font-size: 40px;
-  line-height: 1.2;
+  line-height: 1.3;
   margin-bottom: 36px; }
 
 h3 {
@@ -320,6 +320,12 @@ section {
     background-color: #DEDEDC; }
     section.grey h1, section.grey h2, section.grey h3, section.grey h4, section.grey h5, section.grey h6, section.grey p, section.grey blockquote {
       color: #F8FBF7; }
+  section .spacer__sm {
+    min-height: 60px; }
+  section .spacer__md {
+    min-height: 120px; }
+  section .spacer__lg {
+    min-height: 240px; }
 
 h1 span, h2 span, h3 span, p span, blockquote span {
   display: inline-block; }
@@ -1627,11 +1633,9 @@ section p span, section blockquote span {
       transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s 0s !important; }
     .project-card__asset img, .project-card__asset video {
       transition-delay: 0.06s; }
-  .project-card--hovered .project-card__asset {
-    margin: 6px; }
-    .project-card--hovered .project-card__asset img, .project-card--hovered .project-card__asset video {
-      -ms-transform: scale(1.09);
-      transform: scale(1.09); }
+  .project-card--hovered .project-card__asset img, .project-card--hovered .project-card__asset video {
+    -ms-transform: scale(1.06);
+    transform: scale(1.06); }
   @media screen and (max-width: 800px) {
     .project-card {
       margin: 0; }
@@ -1768,16 +1772,14 @@ section p span, section blockquote span {
     cursor: pointer;
     width: 94px;
     padding: 0;
-    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s; }
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
   .sidebar-container .sidebar-item {
     width: 100%;
     height: 40px;
     border-bottom: none;
     overflow: hidden;
     position: relative;
-    transition: height cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s 0.3s; }
-    .sidebar-container .sidebar-item:first-child {
-      border-top: solid 1px rgba(35, 32, 33, 0.06); }
+    transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s; }
   .sidebar-container .sidebar-item a {
     width: 100%;
     height: 100%;
@@ -1832,10 +1834,13 @@ section p span, section blockquote span {
     height: 1px;
     background: rgba(35, 32, 33, 0.06);
     opacity: 0; }
+    .sidebar-container .sidebar-border__top {
+      bottom: auto;
+      top: 0; }
   .sidebar-container .sidebar-item a.active .sidebar-dash {
     margin: 0;
     width: 34px;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-duration: 0.3s;
     transition-property: margin, width; }
   .sidebar-container--white .sidebar-dash {
@@ -1847,28 +1852,28 @@ section p span, section blockquote span {
     width: calc(16.667% + 40px); }
     .sidebar-container--open .sidebar {
       width: 100%;
-      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s 0.3s;
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s;
       background: #f8fbf7; }
       .sidebar-container--open .sidebar .sidebar-item {
         height: 60px;
-        transition: height cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s; }
+        transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
         .sidebar-container--open .sidebar .sidebar-item a {
           pointer-events: auto; }
         .sidebar-container--open .sidebar .sidebar-item .sidebar-number {
           opacity: 1;
           transform: translate3d(0, 0, 0);
-          transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
+          transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
         .sidebar-container--open .sidebar .sidebar-item .sidebar-dash {
           width: 34px;
           margin: 0;
-          transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
+          transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
         .sidebar-container--open .sidebar .sidebar-item .sidebar-label {
           opacity: 1;
-          transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
+          transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
         .sidebar-container--open .sidebar .sidebar-item .sidebar-border {
           opacity: 1;
           width: 100%;
-          transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
+          transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
         .sidebar-container--open .sidebar .sidebar-item:hover:before {
           opacity: 1;
           width: 100%;
@@ -1886,12 +1891,14 @@ section p span, section blockquote span {
       .sidebar-container .sidebar-item {
         height: 32px; }
       .sidebar-container.sidebar-container--open {
-        min-width: 260px; }
+        min-width: 252px; }
         .sidebar-container.sidebar-container--open .sidebar-item {
           height: 48px; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {
+  .spacer {
+    display: none; }
   .grid {
     padding: 0 18px; }
     .grid--lines {

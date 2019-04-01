@@ -70,10 +70,11 @@ class Sidebar extends Component {
 		const sidebarItems = sections.map((section, i) => 
 			<li key={i} className="sidebar-item">
 				<Link to={ isOpen ? section : "" } smooth={"easeOutCubic"} duration={1200} className={classNames({ "active": sections[i] == activeSection })}>
+					{ i == 0 ? <div className="sidebar-border sidebar-border__top"/> : null }
 					<p className="sidebar-number">{pad(i + 1, 2)}.</p>
 					<div className="sidebar-dash"></div>
 					<p className="sidebar-label">{section}</p>
-					<div className="sidebar-border"></div>
+					<div className="sidebar-border"/>
 				</Link>
 			</li>
 		)

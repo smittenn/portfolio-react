@@ -53,7 +53,7 @@ class AmericanMade extends Component {
 				"video-gallery",
 				"parallax",
 				"mobile-first",
-				"immersive-map",
+				"map",
 			],
 		}
 	}
@@ -81,7 +81,7 @@ class AmericanMade extends Component {
 				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
-					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site excited our movie-goers`]}
+					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site was created for Universal Pictures`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
@@ -96,12 +96,12 @@ class AmericanMade extends Component {
 				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<h2>I took a deep dive into the story of the American Made film when the NBCUX Lab partnered with Universal Pictures</h2> 
-							<p>
-								The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!
-								<br/><br/>
-								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way.
-							</p>
+							<h2>{splitWord(`I took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures`)}</h2> 
+							<blockquote>{splitWord('The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!')}</blockquote>
+							{/*<blockquote>
+								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems.
+							</blockquote>*/}
+							 {/*My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way.*/}
 						</div>
 					</div>
 				</ScrollSection>
@@ -118,19 +118,19 @@ class AmericanMade extends Component {
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
-							<blockquote>Lead Designer</blockquote>
+							<p>Lead Designer</p>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Date</h5>
-							<blockquote>June, 2017</blockquote>
+							<p>June, 2017</p>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Client</h5>
-							<blockquote>NBCUX Lab</blockquote> 
+							<p>NBCUX Lab</p> 
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h5 className="uppercase">Team</h5>
-							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
+							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></p> 
 						</div>
 					</div>
 				</ScrollSection>
@@ -258,13 +258,14 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>Mobile First Design</h1>
+								<h2>Mobile First Design</h2>
 								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on bare essential functionality before moving onto more features for bigger screens.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
+							<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>
 						</div>
 					</div>
 				</ScrollSection>
@@ -276,7 +277,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1 className="no-mb">Immersive Map</h1>
+								<h1 className="no-mb">Interactive Map</h1>
 								<h2>“Fly With Barry”</h2>
 								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of his escapades through Central and South America.</blockquote>
 							</div>
@@ -284,6 +285,7 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
+							<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>
 						</div>
 					</div>
 				</ScrollSection>

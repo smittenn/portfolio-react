@@ -57,6 +57,18 @@ section {
 			color: $brand-white;
 		}
 	}
+
+	.spacer {
+		&__sm {
+			min-height: 60px;
+		}
+		&__md {
+			min-height: 120px;
+		}
+		&__lg {
+			min-height: 240px;
+		}
+	}
 }
 
 h1, h2, h3, p, blockquote, {

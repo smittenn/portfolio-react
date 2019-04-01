@@ -43,11 +43,11 @@ $baseclass: project-card;
 
 	&--hovered {
 		.#{$baseclass}__asset {
-			margin: 6px;
+			// margin: 6px;
 			// clip-path: inset(12px 12px 12px 12px);
 
 			img, video {
-				transform: scale(1.09);
+				transform: scale(1.06);
 			}
 		}
 	}

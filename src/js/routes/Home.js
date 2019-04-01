@@ -92,9 +92,18 @@ class Home extends Component {
 									</blockquote>
 								</div>
 								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-									<div className="grid__item grid__item--col-2 grid__item--col-4-medium"><img src="../assets/img/me-4x3.jpg"/></div>
-									<div className="grid__item grid__item--col-2 grid__item--col-4-medium"><img src="../assets/img/lands-end-4x3.jpg"/></div>
-									<div className="grid__item grid__item--col-2 grid__item--col-4-medium"><img src="../assets/img/mist-3x4.jpg"/></div>
+									<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+										<div className="spacer spacer__sm"/>
+										<img src="../assets/img/lands-end-4x3.jpg"/>
+									</div>
+									<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+										<div className="spacer spacer__lg"/>
+										<img src="../assets/img/me-4x3.jpg"/>
+									</div>
+									<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+										<div className="spacer spacer__md"/>
+										<img src="../assets/img/mist-3x4.jpg"/>
+									</div>
 							</div>
 						</section>
 					</IntersectionVisible>
@@ -115,15 +124,27 @@ class Home extends Component {
 									</blockquote>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									
-										<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interaction"]}>
-											{<img src="../assets/img/american-made/banner.gif"/>}
-											{/*<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />*/}
-										</ProjectCard>
+									<div className="spacer spacer__sm"/>
+									<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interactive"]}>
+										{<img src="../assets/img/american-made/banner.gif"/>}
+										{/*<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />*/}
+									</ProjectCard>
 								</div>
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<ProjectCard name="Micro App Templates" href="/micro-app-templates" tags={["Visual Design", "Interaction"]}>
+									<ProjectCard name="V.ai Player" href="/vai" tags={["UX", "Interactive"]}>
+										<img src="../assets/img/vai/eye.gif"/>
+									</ProjectCard>
+								</div>
+
+								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+									<div className="spacer spacer__md"/>
+									<ProjectCard name="Micro App Templates" href="/micro-app-templates" tags={["Visual Design", "Brand"]}>
 										<img src="../assets/img/card-components/banner-alt.jpg"/>
+									</ProjectCard>
+								</div>
+								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+									<ProjectCard name="J&J Home" href="/jnj-home" tags={["UX", "UI"]}>
+										<img src="../assets/img/jnj-home/onboarding-kiosk-mock.png"/>
 									</ProjectCard>
 								</div>
 							</div>
