@@ -3,11 +3,11 @@ import { Parallax } from "react-parallax"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
+import NavToggle from "./NavToggle"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
-
 import detectMobile from "../services/detectMobile"
 
 
@@ -61,13 +61,14 @@ export default class ParallaxHeader extends Component {
 
 		return (
 			<div>
+				<NavToggle/>
 				<Parallax 
 				bgImage={imageUrl} 
 				blur={null} 
 				strength={str}
 				renderLayer={percentage => {
 					const style = { 
-						opacity: -(3 * percentage) + 2.5, 
+						opacity: -(8 * percentage) + 5, 
 						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
 					}
 					let updatedText = [];

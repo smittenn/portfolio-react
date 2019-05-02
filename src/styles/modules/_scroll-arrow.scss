@@ -43,6 +43,7 @@ $arrow-size: 40px;
 
 .#{$baseclass} {
 	cursor: pointer;
+	pointer-events: auto;
 	position: absolute;
 	bottom: 0px;
 	left: 50%;

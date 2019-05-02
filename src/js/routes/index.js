@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
 
-import Nav from '../components/Nav'
+import NavTakeover from '../components/NavTakeover'
 
 import Home from './Home'
 import AmericanMade from './AmericanMade'
@@ -10,7 +10,6 @@ import AboutMe from './AboutMe'
 
 const routes = (
 	<div>
-		<Nav/>
 		<Switch>
 			<Route exact path="/" component={Home}/>
 			<Route exact path="/process" component={Home}/>
@@ -28,6 +27,7 @@ const routes = (
 			<Route path="/cisco" component={Cisco}/>
 			<Route path="/protohack" component={Protohack}/>*/}
 		</Switch>
+		<NavTakeover/>
 	</div>
 )
 

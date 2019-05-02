@@ -5,7 +5,9 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import IntersectionVisible from "react-intersection-visible"
 
-export default class  ScrollSection extends Component {
+import NavToggle from "./NavToggle"
+
+export default class ScrollSection extends Component {
 
 	constructor(props) {
 		super(props);
@@ -14,14 +16,11 @@ export default class  ScrollSection extends Component {
 		}
 	}
 
-	componentDidMount() {
-	}
+	componentDidMount() {}
 
-	componentWillUnmount() {
-	}
+	componentWillUnmount() {}
 
-	componentDidUpdate(prevProps) {
-	}
+	componentDidUpdate(prevProps) {}
 
 	render() {
 
@@ -38,6 +37,7 @@ export default class  ScrollSection extends Component {
 				onShow={(i) => i[0].target.classList.add("active-section")} 
 				onHide={(i) => i[0].target.classList.remove("active-section")}
 				>
+				<NavToggle black={!black}/>
 					<section className={classnames} style={style}>
 						{ this.props.children }
 					</section>

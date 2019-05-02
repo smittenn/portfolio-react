@@ -1,6 +1,8 @@
 $baseclass: react-parallax;
 
 .#{$baseclass} {
+	overflow: hidden; 
+	
 	img {
 		// object-fit: scale-down;
 	}

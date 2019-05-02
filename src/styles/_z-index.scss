@@ -38,7 +38,18 @@
 }
 
 section { 
+	// &.black {
+	// 	@include zIndexClose();
+	// }
 	* {
 		@include zIndexCloser();					
 	}
+}
+
+.nav-toggle {
+	// @include zIndexFar();
+
+	// &--white {
+	// 	@include zIndexCloser();
+	// }
 }

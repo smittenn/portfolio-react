@@ -9,7 +9,6 @@ import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 import { setNavWhite, setNavBlack } from "../actions/color"
 
-import Nav from "../components/Nav"
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
 import ScrollSection from "../components/ScrollSection"
@@ -53,7 +52,7 @@ class AmericanMade extends Component {
 				"video-gallery",
 				"parallax",
 				"mobile-first",
-				"map",
+				// "map",
 			],
 		}
 	}
@@ -81,13 +80,13 @@ class AmericanMade extends Component {
 				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
-					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site was created for Universal Pictures`]}
+					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
 					/>
-					{<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
-						<ScrollArrow/>
+					{<Link to={pageSections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
+						<ScrollArrow label="Read More"/>
 					</Link>}
 				</Element>
 
@@ -96,8 +95,8 @@ class AmericanMade extends Component {
 				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<h2>{splitWord(`I took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures`)}</h2> 
-							<blockquote>{splitWord('The final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!')}</blockquote>
+							<h2>{splitWord(`I took a deep dive into the story of American Made when the NBCUX Lab partnered with none other than Universal Pictures.`)}</h2> 
+							<blockquote>{splitWord('Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!')}</blockquote>
 							{/*<blockquote>
 								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems.
 							</blockquote>*/}
@@ -258,7 +257,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Mobile First Design</h2>
+								<h1>Mobile Design</h1>
 								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on bare essential functionality before moving onto more features for bigger screens.</blockquote>
 							</div>
 						</div>
@@ -270,7 +269,7 @@ class AmericanMade extends Component {
 					</div>
 				</ScrollSection>
 
-				<ScrollSection 
+				{/*<ScrollSection 
 				black
 				name={pageSections[9]} 
 				onSetActive={() => { setNavWhite(); this.setActiveSection(9); }}>
@@ -288,7 +287,7 @@ class AmericanMade extends Component {
 							<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>
 						</div>
 					</div>
-				</ScrollSection>
+				</ScrollSection>*/}
 
 				<Sidebar 
 				sections={pageSections} 
