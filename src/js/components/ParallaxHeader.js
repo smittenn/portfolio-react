@@ -61,7 +61,6 @@ export default class ParallaxHeader extends Component {
 
 		return (
 			<div>
-				<NavToggle/>
 				<Parallax 
 				bgImage={imageUrl} 
 				blur={null} 
@@ -78,6 +77,7 @@ export default class ParallaxHeader extends Component {
 					return (
 						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
 							<div className="grid">
+								<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 									<h1 className="no-mb">{updatedText}</h1>
 								</div>
@@ -86,6 +86,7 @@ export default class ParallaxHeader extends Component {
 					)
 				}}>
 				</Parallax>
+				{/*<NavToggle black={false}/>*/}
 				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}/>
 			</div>
 		);

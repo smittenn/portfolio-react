@@ -1,4 +1,4 @@
-$baseclass: portfolio-nav;
+$baseclass: nav-takeover;
 
 .#{$baseclass} {
 	position: relative;
@@ -35,33 +35,35 @@ $baseclass: portfolio-nav;
 		@include zIndexCloser();
 
 		> div {
-			flex: .666;
+			flex: .6;
 		}
 
 		.#{$baseclass}__panels {
-			flex: .333;
+			flex: .4;
 		}
 	}
 
 	&__panel {
 		pointer-events: auto;
 		position: absolute;
-		width: calc(33.32%);
+		width: calc(40%);
 		right: 0;
 		height: 100%;
 		overflow-y: scroll;
-		transition: transform $easing1 $duration-medium $delay-slow;
+		transition: transform $easing5 $duration-medium $delay-slow;
 		transform: translate3d(100%, 0,0);
 
 		h1, h2, h3, h4, h5, h6 {
 			display: inline;
-			border-bottom: solid 1px transparent;
-			transition: border-color 0.3s $easing1;
+			pointer-events: none;
+			// border-bottom: solid 1px transparent;
+			// transition: border-color 0.3s $easing1;
 			margin: 0;
-			padding-bottom: 2px;
+			// padding-bottom: 2px;
 		}
 
 		a {
+			// pointer-events: auto;
 			border: none;
 			color: $brand-black;
 		}
@@ -76,30 +78,58 @@ $baseclass: portfolio-nav;
 			// overflow-y: auto;
 			display: flex;
 			flex-direction: column;
-			padding: 80px 72px 24px;
+			align-items: flex-end;
+			padding: 120px;
 		}
 
 		li {
-			display: inline-flex;
+			display: flex;
 			align-items: center;
-			opacity: 0;
-			transform: translate3d(50%, 0,0);
+			// opacity: 0;
+			transform: translate3d(200%, 0,0);
 			cursor: pointer;
+			pointer-events: all;
 			transition: none;
 			width: auto;
 			margin-bottom: 48px;
 		}
 	}
 
-	&__panel--white {
+	&__line-container {
+		position: absolute;
+		height: 100%;
+		width: 72px;
 		background: $brand-white;
+		border-left: solid 1px $brand-grey-light;
+		right: 0;
+		top: 0;
+		padding-top: 120px;
+	}
+
+	&__line {
+		border-left: solid 1px $brand-red;
+		box-shadow: 0 4px $brand-white, 0 -4px $brand-white;
+		height: 60px;
+		width: 100%;
+		transition: all $easing2 $duration-slow;
+	}
+
+	&__panel--primary {
+		background: $brand-white;
+
+		li {
+			min-height: 60px;
+		}
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
 				border-color: $brand-grey-light;
 			}
+
 			&.active {
-				border-color: $brand-red;
+				color: transparent;
+				-webkit-text-stroke: 1px $brand-red;
+				// border-color: $brand-red;
 			}
 		}
 	}
@@ -113,9 +143,12 @@ $baseclass: portfolio-nav;
 			&:hover {
 				border-color: $brand-white;
 			}
+		}
 
-			&.active {
-				border-color: $brand-red;
+		a.active {
+			h1, h2, h3, h4, h5, h6 {
+				color: transparent;
+				-webkit-text-stroke: 1px $brand-red;
 			}
 		}
 
@@ -128,54 +161,36 @@ $baseclass: portfolio-nav;
 	}
 
 	&--menuOpen {
-		.#{$baseclass}__hamburger, .#{$baseclass}__toggle:hover .#{$baseclass}__hamburger {
-			.line {
-				background: $brand-black;
-				opacity: 0;
-
-				&:first-child {
-					opacity: 1;
-					transform: translate3d(0,0px,0) rotate(135deg);
-				}
-				&:last-child {
-					opacity: 1;
-					transform: translate3d(0,-2px,0) rotate(45deg);
-				}
-			}
-		}
-		.#{$baseclass}__toggle-abbreviation, .#{$baseclass}__toggle-num {
-			opacity: 0;
-		}
-		.#{$baseclass}__toggle-abbreviation {
-			transform: translate3d(0,-12px,0);
-		}
-		.#{$baseclass}__toggle-num {
-			transform: translate3d(0,12px,0);
-		}
 		.#{$baseclass}__main {
 			pointer-events: auto;
 			background: rgba($brand-black, .5);
 		}
 
-		.#{$baseclass}__panel {			
+		.#{$baseclass}__panel {		
+			// transition-timing-function: $easing1;
+
 			li {
-				transition: all $easing2 $duration-slow;
+				transition: all $easing1 $duration-slow;
 
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: (#{0.3 + ($i * 0.09)}s);
+						transition-delay: (#{0.3 + ($i * 0.12)}s);
 					}
 				}
 			}
 		}
 
-		.#{$baseclass}__panel--white {
+		.#{$baseclass}__panel--primary {
 			transform: none;
 
 			li {
 				transform: none;
-				opacity: 1;
+				// opacity: 1;
 			}
+		}
+
+		.#{$baseclass}__panel--secondary {
+			transform: none;
 		}
 	}
 
@@ -188,16 +203,16 @@ $baseclass: portfolio-nav;
 				background: transparent;
 			}
 		}
-		.#{$baseclass}__panel--white {
-			transform: translate3d(100%,0,0);
+		.#{$baseclass}__panel--primary {
+			transform: none
 
-			li {
-				transform: translate3d(50%,0,0);
-				opacity: 0;
-			}
+			// li {
+			// 	transform: translate3d(50%,0,0);
+			// 	opacity: 0;
+			// }
 		}
 		.#{$baseclass}__panel--secondary {
-			transform: none;
+			transform: translate3d(-100%,0,0);
 
 			li {
 				transform: none;
@@ -207,32 +222,31 @@ $baseclass: portfolio-nav;
 	}
 
 	@media screen and (max-width: $bp-medium) {
-		.#{$baseclass}__toggle {
-			top: 6px;
-			width: 49px;
-		}
-		.#{$baseclass}__toggle-abbreviation {
-			margin-bottom: 9px;
-		}
-		.#{$baseclass}__toggle-num {
-			margin-top: 12px;
-		}
-		hr {
-			&:last-of-type {
-				display: none;
+		.#{$baseclass}__main {
+			> div {
+				flex: .2;
+			}
+
+			.#{$baseclass}__panels {
+				flex: .8;
 			}
 		}
-		.tabbed-list__line-container {
-			padding: 0 12px;
+
+		.#{$baseclass}__line-container {
+			width: 40px;
 		}
+
 		.#{$baseclass}__panel {
-			width: calc(100% - 18px);
+			width: 80%;
 
 			hr {
 				display: block;
 			}
 			ul {
-				padding: 60px 24px 24px;
+				padding: 60px;
+			}
+			li {
+				min-height: 24px;
 			}
 			.#{$baseclass}__items {
 				margin-bottom: 18px;
@@ -247,6 +261,10 @@ $baseclass: portfolio-nav;
 		}
 		.#{$baseclass}--menuOpen {
 			opacity: 0;
+
+			.#{$baseclass}__panel--secondary {
+				transform: translate3d(100%,0,0);
+			}
 		}
 		.tabbed-list__header {
 			ul {
@@ -254,11 +272,19 @@ $baseclass: portfolio-nav;
 				padding-bottom: 0;
 			}
 		}
+
 		&.#{$baseclass}--secondaryPanelOpen {
-			.#{$baseclass}__panel--white {
+
+
+			.#{$baseclass}__panel--secondary {
+				transform: none;
+			}
+			.#{$baseclass}__panel--primary {
+				transform: translate3d(100%,0,0);
+
 				li {
-					// transform: translate3d(40px,0,0);
-					// opacity: 0;
+					transform: translate3d(12%,0,0);
+					opacity: 0;
 				}
 			}
 		}

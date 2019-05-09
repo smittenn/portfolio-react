@@ -36624,7 +36624,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":151,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
+},{"./routes":157,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36765,6 +36765,12 @@ var openTakeover = exports.openTakeover = function openTakeover() {
 	};
 };
 
+var openSecondaryPanel = exports.openSecondaryPanel = function openSecondaryPanel() {
+	return {
+		type: 'OPEN_SECONDARY'
+	};
+};
+
 var closeTakeover = exports.closeTakeover = function closeTakeover() {
 	return {
 		type: 'CLOSE'
@@ -36772,6 +36778,60 @@ var closeTakeover = exports.closeTakeover = function closeTakeover() {
 };
 
 },{}],131:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var hoverToggle = exports.hoverToggle = function hoverToggle() {
+	return {
+		type: 'HOVER'
+	};
+};
+
+var unhoverToggle = exports.unhoverToggle = function unhoverToggle() {
+	return {
+		type: 'UNHOVER'
+	};
+};
+
+},{}],132:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var openSecondaryPanel = exports.openSecondaryPanel = function openSecondaryPanel() {
+	return {
+		type: 'SHOW'
+	};
+};
+
+var closeSecondaryPanel = exports.closeSecondaryPanel = function closeSecondaryPanel() {
+	return {
+		type: 'HIDE'
+	};
+};
+
+},{}],133:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var openSidebar = exports.openSidebar = function openSidebar() {
+	return {
+		type: 'OPEN_SIDEBAR'
+	};
+};
+
+var closeSidebar = exports.closeSidebar = function closeSidebar() {
+	return {
+		type: 'CLOSE_SIDEBAR'
+	};
+};
+
+},{}],134:[function(require,module,exports){
 'use strict';
 
 var _redux = require('redux');
@@ -36815,7 +36875,7 @@ var render = function render() {
 
 render();
 
-},{"../App":126,"../reducers":145,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],132:[function(require,module,exports){
+},{"../App":126,"../reducers":148,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],135:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36946,7 +37006,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":153,"../services/palette":155,"classnames":7,"react":113}],133:[function(require,module,exports){
+},{"../services/hexToRgb":159,"../services/palette":161,"classnames":7,"react":113}],136:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37010,8 +37070,8 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":113}],134:[function(require,module,exports){
-'use strict';
+},{"react":113}],137:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -37019,23 +37079,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = require('react-router-dom');
-
-var _classnames = require('classnames');
+var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactRedux = require('react-redux');
-
-var _navTakeover = require('../actions/navTakeover');
-
-var _splitLetter = require('../services/splitLetter');
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37045,356 +37095,61 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Nav = function (_Component) {
-	_inherits(Nav, _Component);
+var Image = function (_Component) {
+	_inherits(Image, _Component);
 
-	function Nav(props) {
-		_classCallCheck(this, Nav);
+	function Image(props) {
+		_classCallCheck(this, Image);
 
-		var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
-
-		_this.detectMobile = function (event) {
-			_this.setState({
-				isMobile: window.innerWidth <= 800
-			});
-		};
-
-		_this.handleClickOutside = function (event) {
-			if (!_this.refs.panels.contains(event.target)) {
-				_this.setState({
-					secondaryPanelOpen: false
-				});
-				console.log(event);
-				_this.props.closeTakeover();
-			}
-		};
-
-		_this.setMenuClosed = function () {
-			if (_this.props.isTakeoverOpen) {
-				_this.setState({
-					secondaryPanelOpen: false
-				});
-				_this.props.closeTakeover();
-				_this.state.isMobile ? _this.setState({ isToggleHovered: true }) : null;
-				_this.state.isMobile ? setTimeout(function () {
-					_this.setState({ isToggleHovered: false });
-				}, 900) : null;
-			}
-		};
-
-		_this.openSecondaryPanel = function () {
-			_this.setState({
-				secondaryPanelOpen: true
-			});
-		};
-
-		_this.closeSecondaryPanel = function () {
-			_this.setState({
-				secondaryPanelOpen: false
-			});
-		};
-
-		_this.pad = function (n, width, z) {
-			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
-		};
-
-		_this.state = {
-			menuOpen: false,
-			secondaryPanelOpen: false,
-			isToggleHovered: false,
-			isMobile: window.innerWidth <= 800,
-			countIsIncreasing: false,
-			countIsDecreasing: false
-		};
-		return _this;
+		return _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).call(this, props));
 	}
 
-	_createClass(Nav, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			document.addEventListener('mousedown', this.handleClickOutside);
-			window.addEventListener('resize', this.detectMobile);
-		}
+	_createClass(Image, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {}
 	}, {
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			document.removeEventListener('mousedown', this.handleClickOutside);
-			window.removeEventListener('resize', this.detectMobile);
-		}
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {}
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
-			var _state = this.state,
-			    menuOpen = _state.menuOpen,
-			    secondaryPanelOpen = _state.secondaryPanelOpen;
 			var _props = this.props,
-			    abbreviation = _props.abbreviation,
-			    count = _props.count;
+			    src = _props.src,
+			    aspectRatio = _props.aspectRatio;
 
 
-			var classnames = (0, _classnames2.default)({
-				"portfolio-nav": true,
-				"portfolio-nav--menuOpen": this.props.isTakeoverOpen,
-				"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen
-			});
+			var style = void 0;
+			aspectRatio == '16x9' ? style = {
+				position: 'relative',
+				display: 'block',
+				height: 0,
+				paddingBottom: '56.25%',
+				overflow: 'hidden'
+			} : null;
 
 			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'nav',
-					{ className: classnames },
-					_react2.default.createElement(
-						'div',
-						{ className: 'portfolio-nav__main' },
-						_react2.default.createElement(
-							'div',
-							{ ref: 'panels', className: 'portfolio-nav__panels' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'portfolio-nav__panel portfolio-nav__panel--secondary' },
-								_react2.default.createElement(
-									'ul',
-									null,
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.closeSecondaryPanel },
-										_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/american-made' },
-											_react2.default.createElement(
-												'h3',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'P1' }) },
-												'American Made'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/vai' },
-											_react2.default.createElement(
-												'h3',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'P2' }) },
-												'V.ai Player'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/translator' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Translator'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/jnj-mdc' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'J&J MDC'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/jnj-home' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'J&J Home'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/micro-app-interactions' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Micro App Interactions'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/micro-app-templates' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Micro App Templates'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/perforce' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Perforce'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/cisco' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Cisco MATE'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/protohack' },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Protohack'
-											)
-										)
-									)
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'portfolio-nav__panel portfolio-nav__panel--white' },
-								_react2.default.createElement(
-									'ul',
-									null,
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/' },
-											_react2.default.createElement(
-												'h2',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
-												'Home'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.openSecondaryPanel },
-										_react2.default.createElement(
-											'h2',
-											{ className: (0, _classnames2.default)({ 'active': abbreviation.match(/[0-9]/g) }) },
-											'Projects'
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/process' },
-											_react2.default.createElement(
-												'h2',
-												null,
-												'Process'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
-											_react2.default.createElement(
-												'h2',
-												null,
-												'About me'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/resume' },
-											_react2.default.createElement(
-												'h2',
-												null,
-												'Resume'
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				)
+				"div",
+				{ style: style },
+				_react2.default.createElement("img", { src: src, style: {
+						display: 'block',
+						width: '100%',
+						height: '100%',
+						position: 'absolute',
+						top: 0,
+						bottom: 0,
+						left: 0,
+						right: 0
+					} })
 			);
 		}
 	}]);
 
-	return Nav;
+	return Image;
 }(_react.Component);
 
-var mapStateToProps = function mapStateToProps(state) {
-	return {
-		count: state.count,
-		abbreviation: state.abbreviation,
-		color: state.color,
-		isTakeoverOpen: state.isTakeoverOpen
-	};
-};
+exports.default = Image;
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	return {
-		openTakeover: function openTakeover() {
-			return dispatch((0, _navTakeover.openTakeover)());
-		},
-		closeTakeover: function closeTakeover() {
-			return dispatch((0, _navTakeover.closeTakeover)());
-		}
-	};
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
-
-},{"../actions/navTakeover":130,"../services/splitLetter":156,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],135:[function(require,module,exports){
+},{"classnames":7,"react":113}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37416,6 +37171,8 @@ var _classnames2 = _interopRequireDefault(_classnames);
 var _reactRedux = require('react-redux');
 
 var _navTakeover = require('../actions/navTakeover');
+
+var _secondaryPanel = require('../actions/secondaryPanel');
 
 var _splitLetter = require('../services/splitLetter');
 
@@ -37445,20 +37202,16 @@ var Nav = function (_Component) {
 
 		_this.handleClickOutside = function (event) {
 			if (_this.refs.notPanels.contains(event.target)) {
-				_this.setState({
-					secondaryPanelOpen: false
-				});
-				console.log(event);
 				_this.props.closeTakeover();
+				_this.props.closeSecondaryPanel();
 			}
 		};
 
 		_this.setMenuClosed = function () {
 			if (_this.props.isTakeoverOpen) {
-				_this.setState({
-					secondaryPanelOpen: false
-				});
 				_this.props.closeTakeover();
+				_this.props.closeSecondaryPanel();
+
 				_this.state.isMobile ? _this.setState({ isToggleHovered: true }) : null;
 				_this.state.isMobile ? setTimeout(function () {
 					_this.setState({ isToggleHovered: false });
@@ -37482,13 +37235,40 @@ var Nav = function (_Component) {
 			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 		};
 
+		_this.setIndexHovered = function (event) {
+			var index = _this.getChildIndex(event.target);
+
+			_this.setState({
+				indexHovered: index
+			});
+		};
+
+		_this.getChildIndex = function (elem) {
+			var i = 0;
+
+			while ((elem = elem.previousSibling) != null) {
+				i++;
+			}
+
+			return i;
+		};
+
+		_this.getActiveIndex = function () {
+			console.log(_this.props.abbreviation);
+			switch (_this.props.abbreviation) {
+				case 'H':
+					return 0;
+				case 'P1':
+					return 1;
+				default:
+					return 1;
+			}
+		};
+
 		_this.state = {
-			menuOpen: false,
-			secondaryPanelOpen: false,
 			isToggleHovered: false,
-			isMobile: window.innerWidth <= 800,
-			countIsIncreasing: false,
-			countIsDecreasing: false
+			indexHovered: _this.getActiveIndex(),
+			isMobile: window.innerWidth <= 800
 		};
 		return _this;
 	}
@@ -37509,18 +37289,23 @@ var Nav = function (_Component) {
 		key: 'render',
 		value: function render() {
 			var _state = this.state,
-			    menuOpen = _state.menuOpen,
-			    secondaryPanelOpen = _state.secondaryPanelOpen;
+			    isMobile = _state.isMobile,
+			    indexHovered = _state.indexHovered;
 			var _props = this.props,
 			    abbreviation = _props.abbreviation,
 			    count = _props.count;
 
 
 			var classnames = (0, _classnames2.default)({
-				"portfolio-nav": true,
-				"portfolio-nav--menuOpen": this.props.isTakeoverOpen,
-				"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen
+				"nav-takeover": true,
+				"nav-takeover--menuOpen": this.props.isTakeoverOpen,
+				"nav-takeover--secondaryPanelOpen": this.props.isSecondaryPanelOpen
 			});
+
+			var lineAnimation = {
+				transform: 'translate3d(-1px, ' + 108 * (indexHovered + 0) + 'px, 0)',
+				opacity: this.props.isTakeoverOpen ? 1 : 0
+			};
 
 			return _react2.default.createElement(
 				'div',
@@ -37530,22 +37315,22 @@ var Nav = function (_Component) {
 					{ className: classnames },
 					_react2.default.createElement(
 						'div',
-						{ className: 'portfolio-nav__main' },
+						{ className: 'nav-takeover__main' },
 						_react2.default.createElement('div', { ref: 'notPanels' }),
 						_react2.default.createElement(
 							'div',
-							{ className: 'portfolio-nav__panels' },
+							{ className: 'nav-takeover__panels' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'portfolio-nav__panel portfolio-nav__panel--secondary' },
+								{ className: 'nav-takeover__panel nav-takeover__panel--secondary' },
 								_react2.default.createElement(
 									'ul',
 									null,
-									_react2.default.createElement(
+									isMobile ? _react2.default.createElement(
 										'li',
-										{ onClick: this.closeSecondaryPanel },
+										{ onClick: this.props.closeSecondaryPanel },
 										_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
-									),
+									) : null,
 									_react2.default.createElement(
 										'li',
 										{ onClick: this.setMenuClosed },
@@ -37553,8 +37338,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/american-made' },
 											_react2.default.createElement(
-												'h3',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'P1' }) },
+												'h4',
+												{ className: 'uppercase' },
 												'American Made'
 											)
 										)
@@ -37566,8 +37351,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/vai' },
 											_react2.default.createElement(
-												'h3',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'P2' }) },
+												'h4',
+												{ className: 'uppercase' },
 												'V.ai Player'
 											)
 										)
@@ -37579,8 +37364,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/translator' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'Translator'
 											)
 										)
@@ -37592,8 +37377,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/jnj-mdc' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'J&J MDC'
 											)
 										)
@@ -37605,8 +37390,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/jnj-home' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'J&J Home'
 											)
 										)
@@ -37618,8 +37403,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/micro-app-interactions' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'Micro App Interactions'
 											)
 										)
@@ -37631,8 +37416,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/micro-app-templates' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'Micro App Templates'
 											)
 										)
@@ -37644,8 +37429,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/perforce' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'Perforce'
 											)
 										)
@@ -37657,8 +37442,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/cisco' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'Cisco MATE'
 											)
 										)
@@ -37670,8 +37455,8 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/protohack' },
 											_react2.default.createElement(
-												'h3',
-												null,
+												'h4',
+												{ className: 'uppercase' },
 												'Protohack'
 											)
 										)
@@ -37680,13 +37465,13 @@ var Nav = function (_Component) {
 							),
 							_react2.default.createElement(
 								'div',
-								{ className: 'portfolio-nav__panel portfolio-nav__panel--white' },
+								{ className: 'nav-takeover__panel nav-takeover__panel--primary' },
 								_react2.default.createElement(
 									'ul',
 									null,
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.setMenuClosed },
+										{ onClick: this.setMenuClosed, onMouseOver: this.setIndexHovered },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/' },
@@ -37699,7 +37484,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.openSecondaryPanel },
+										{ onMouseOver: this.setIndexHovered, onClick: this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel },
 										_react2.default.createElement(
 											'h2',
 											{ className: (0, _classnames2.default)({ 'active': abbreviation.match(/[0-9]/g) }) },
@@ -37708,7 +37493,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.setMenuClosed },
+										{ onMouseOver: this.setIndexHovered, onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/process' },
@@ -37721,7 +37506,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.setMenuClosed },
+										{ onMouseOver: this.setIndexHovered, onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/about-me' },
@@ -37734,7 +37519,7 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.setMenuClosed },
+										{ onMouseOver: this.setIndexHovered, onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
 											{ to: '/resume' },
@@ -37745,6 +37530,11 @@ var Nav = function (_Component) {
 											)
 										)
 									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'nav-takeover__line-container' },
+									_react2.default.createElement('div', { style: lineAnimation, className: 'nav-takeover__line' })
 								)
 							)
 						)
@@ -37762,7 +37552,8 @@ var mapStateToProps = function mapStateToProps(state) {
 		count: state.count,
 		abbreviation: state.abbreviation,
 		color: state.color,
-		isTakeoverOpen: state.isTakeoverOpen
+		isTakeoverOpen: state.isTakeoverOpen,
+		isSecondaryPanelOpen: state.isSecondaryPanelOpen
 	};
 };
 
@@ -37773,13 +37564,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		closeTakeover: function closeTakeover() {
 			return dispatch((0, _navTakeover.closeTakeover)());
+		},
+		openSecondaryPanel: function openSecondaryPanel() {
+			return dispatch((0, _secondaryPanel.openSecondaryPanel)());
+		},
+		closeSecondaryPanel: function closeSecondaryPanel() {
+			return dispatch((0, _secondaryPanel.closeSecondaryPanel)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
 
-},{"../actions/navTakeover":130,"../services/splitLetter":156,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],136:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/secondaryPanel":132,"../services/splitLetter":162,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37802,6 +37599,10 @@ var _reactRedux = require('react-redux');
 
 var _navTakeover = require('../actions/navTakeover');
 
+var _navToggle = require('../actions/navToggle');
+
+var _secondaryPanel = require('../actions/secondaryPanel');
+
 var _splitLetter = require('../services/splitLetter');
 
 var _splitLetter2 = _interopRequireDefault(_splitLetter);
@@ -37822,29 +37623,19 @@ var NavToggle = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (NavToggle.__proto__ || Object.getPrototypeOf(NavToggle)).call(this, props));
 
+		_this.openNav = function () {
+			_this.props.openTakeover();
+			_this.props.closeSecondaryPanel();
+		};
+
+		_this.closeNav = function () {
+			_this.props.closeTakeover();
+			_this.props.closeSecondaryPanel();
+		};
+
 		_this.detectMobile = function (event) {
 			_this.setState({
 				isMobile: window.innerWidth <= 800
-			});
-		};
-
-		_this.handleClickOutside = function (event) {
-			if (!_this.refs.hamburger.contains(event.target)) {
-				// this.setState({
-				// 	isToggleHovered: false,
-				// });
-			}
-		};
-
-		_this.handleMouseEnter = function () {
-			_this.setState({
-				isToggleHovered: true
-			});
-		};
-
-		_this.handleMouseLeave = function () {
-			_this.setState({
-				isToggleHovered: false
 			});
 		};
 
@@ -37855,7 +37646,7 @@ var NavToggle = function (_Component) {
 		_this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			isToggleHovered: false,
+			// isToggleHovered: false,
 			isMobile: window.innerWidth <= 800,
 			countIsIncreasing: false,
 			countIsDecreasing: false
@@ -37866,25 +37657,14 @@ var NavToggle = function (_Component) {
 	_createClass(NavToggle, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			document.addEventListener('mousedown', this.handleClickOutside);
+			// document.addEventListener('mousedown', this.handleClickOutside);
 			window.addEventListener('resize', this.detectMobile);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener('mousedown', this.handleClickOutside);
+			// document.removeEventListener('mousedown', this.handleClickOutside);
 			window.removeEventListener('resize', this.detectMobile);
-		}
-	}, {
-		key: 'componentDidUpdate',
-		value: function componentDidUpdate(prevProps) {
-			// if (prevProps.count != this.props.count) { 
-			// 	this.setState({
-			// 		countIsIncreasing: (prevProps.count < this.props.count),
-			// 		countIsDecreasing: (prevProps.count > this.props.count),
-			// 	})
-			// 	setTimeout(() => {this.setState({ countIsIncreasing: false, countIsDecreasing: false })}, 600);
-			// }
 		}
 	}, {
 		key: 'render',
@@ -37892,43 +37672,39 @@ var NavToggle = function (_Component) {
 			var _state = this.state,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    countIsIncreasing = _state.countIsIncreasing,
-			    countIsDecreasing = _state.countIsDecreasing,
-			    isToggleHovered = _state.isToggleHovered;
+			    countIsDecreasing = _state.countIsDecreasing;
 			var black = this.props.black;
 
 
 			var classnames = (0, _classnames2.default)({
 				"nav-toggle": true,
-				"nav-toggle--hovering": isToggleHovered,
 				"nav-toggle--white": !black,
-				"nav-toggle--menuOpen": this.props.isTakeoverOpen
-				// "nav-toggle--countIsIncreasing": countIsIncreasing,
-				// "nav-toggle--countIsDecreasing": countIsDecreasing,
+				"nav-toggle--hovering": this.props.isToggleHovered,
+				"nav-toggle--menuOpen": this.props.isTakeoverOpen,
+				"nav-toggle--countIsIncreasing": countIsIncreasing,
+				"nav-toggle--countIsDecreasing": countIsDecreasing
 			});
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames },
+				{ className: classnames, onMouseEnter: this.props.hoverToggle, onMouseLeave: this.props.unhoverToggle,
+					onClick: this.props.isTakeoverOpen ? this.closeNav : this.openNav },
+				_react2.default.createElement(
+					'h5',
+					{ className: 'nav-toggle__abbreviation' },
+					this.props.abbreviation
+				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'nav-toggle__toggle', onClick: this.props.isTakeoverOpen ? this.props.closeTakeover : this.props.openTakeover, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave, ref: 'hamburger' },
-					_react2.default.createElement(
-						'h5',
-						{ className: 'nav-toggle__abbreviation' },
-						this.props.abbreviation
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'nav-toggle__hamburger' },
-						_react2.default.createElement('div', { className: 'line' }),
-						_react2.default.createElement('div', { className: 'line' }),
-						_react2.default.createElement('div', { className: 'line' })
-					),
-					_react2.default.createElement(
-						'h5',
-						{ className: 'nav-toggle__count' },
-						(0, _splitLetter2.default)(this.pad(this.props.count, 2).toString())
-					)
+					{ className: 'nav-toggle__hamburger' },
+					_react2.default.createElement('div', { className: 'line' }),
+					_react2.default.createElement('div', { className: 'line' }),
+					_react2.default.createElement('div', { className: 'line' })
+				),
+				_react2.default.createElement(
+					'h5',
+					{ className: 'nav-toggle__count' },
+					(0, _splitLetter2.default)(this.pad(this.props.count, 2).toString())
 				)
 			);
 		}
@@ -37941,7 +37717,8 @@ var mapStateToProps = function mapStateToProps(state) {
 	return {
 		count: state.count,
 		abbreviation: state.abbreviation,
-		isTakeoverOpen: state.isTakeoverOpen
+		isTakeoverOpen: state.isTakeoverOpen,
+		isToggleHovered: state.isToggleHovered
 	};
 };
 
@@ -37952,13 +37729,25 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		closeTakeover: function closeTakeover() {
 			return dispatch((0, _navTakeover.closeTakeover)());
+		},
+		hoverToggle: function hoverToggle() {
+			return dispatch((0, _navToggle.hoverToggle)());
+		},
+		unhoverToggle: function unhoverToggle() {
+			return dispatch((0, _navToggle.unhoverToggle)());
+		},
+		openSecondaryPanel: function openSecondaryPanel() {
+			return dispatch((0, _secondaryPanel.openSecondaryPanel)());
+		},
+		closeSecondaryPanel: function closeSecondaryPanel() {
+			return dispatch((0, _secondaryPanel.closeSecondaryPanel)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/navTakeover":130,"../services/splitLetter":156,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],137:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":162,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38073,7 +37862,6 @@ var ParallaxHeader = function (_Component) {
 			return _react2.default.createElement(
 				"div",
 				null,
-				_react2.default.createElement(_NavToggle2.default, null),
 				_react2.default.createElement(_reactParallax.Parallax, {
 					bgImage: imageUrl,
 					blur: null,
@@ -38093,6 +37881,7 @@ var ParallaxHeader = function (_Component) {
 							_react2.default.createElement(
 								"div",
 								{ className: "grid" },
+								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 								_react2.default.createElement(
 									"div",
 									{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
@@ -38115,7 +37904,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":152,"../services/hexToRgb":153,"../services/splitLetter":156,"../services/splitWord":157,"./NavToggle":136,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],138:[function(require,module,exports){
+},{"../services/detectMobile":158,"../services/hexToRgb":159,"../services/splitLetter":162,"../services/splitWord":163,"./NavToggle":139,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38244,7 +38033,7 @@ var ProjectCard = function (_Component) {
 
 exports.default = ProjectCard;
 
-},{"../services/splitLetter":156,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],139:[function(require,module,exports){
+},{"../services/splitLetter":162,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38290,7 +38079,7 @@ var ScrollArrow = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
 		_this.handleScroll = function (e) {
-			document.body.scrollTop > window.innerHeight / 2 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
+			document.body.scrollTop > 0 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
 		};
 
 		_this.state = {
@@ -38344,7 +38133,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"../services/detectMobile":152,"../services/splitLetter":156,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
+},{"../services/detectMobile":158,"../services/splitLetter":162,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],143:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38374,6 +38163,14 @@ var _reactIntersectionVisible2 = _interopRequireDefault(_reactIntersectionVisibl
 var _NavToggle = require("./NavToggle");
 
 var _NavToggle2 = _interopRequireDefault(_NavToggle);
+
+var _Sidebar = require("./Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+var _GridLines = require("../components/GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38411,7 +38208,9 @@ var ScrollSection = function (_Component) {
 			    name = _props.name,
 			    onSetActive = _props.onSetActive,
 			    black = _props.black,
-			    style = _props.style;
+			    style = _props.style,
+			    sections = _props.sections,
+			    activeSection = _props.activeSection;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -38432,13 +38231,23 @@ var ScrollSection = function (_Component) {
 							return i[0].target.classList.remove("active-section");
 						}
 					},
-					_react2.default.createElement(_NavToggle2.default, { black: !black }),
 					_react2.default.createElement(
 						"section",
 						{ className: classnames, style: style },
+						_react2.default.createElement(_GridLines2.default, null),
 						this.props.children
 					),
-					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive })
+					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive }),
+					_react2.default.createElement(
+						"div",
+						{ className: "clip-wrapper" },
+						_react2.default.createElement(_Sidebar2.default, {
+							isBlack: !black,
+							sections: sections,
+							activeSection: activeSection
+						}),
+						_react2.default.createElement(_NavToggle2.default, { black: !black })
+					)
 				)
 			);
 		}
@@ -38449,7 +38258,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"./NavToggle":136,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],141:[function(require,module,exports){
+},{"../components/GridLines":136,"./NavToggle":139,"./Sidebar":144,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],144:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38471,6 +38280,8 @@ var _classnames = require('classnames');
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactRedux = require('react-redux');
+
+var _sidebar = require('../actions/sidebar');
 
 var _pad = require('../services/pad');
 
@@ -38506,18 +38317,6 @@ var Sidebar = function (_Component) {
 			}
 		};
 
-		_this.openSidebar = function () {
-			_this.setState({
-				isOpen: true
-			});
-		};
-
-		_this.closeSidebar = function () {
-			_this.setState({
-				isOpen: false
-			});
-		};
-
 		_this.state = {
 			isOpen: false,
 			isMobile: window.innerWidth <= 800
@@ -38539,23 +38338,37 @@ var Sidebar = function (_Component) {
 		}
 	}, {
 		key: 'render',
+
+
+		// openSidebar = () => {
+		// 	this.setState({
+		// 		isOpen: true,
+		// 	})
+		// 	console.log('hellop');
+		// }
+
+		// closeSidebar = () => {
+		// 	this.setState({
+		// 		isOpen: false,
+		// 	})			
+		// }
+
+
 		value: function render() {
-			var _state = this.state,
-			    isOpen = _state.isOpen,
-			    isMobile = _state.isMobile;
+			var _this2 = this;
+
+			var isMobile = this.state.isMobile;
 			var _props = this.props,
-			    color = _props.color,
-			    sections = _props.sections,
-			    activeSection = _props.activeSection,
 			    isBlack = _props.isBlack,
-			    isWhite = _props.isWhite;
+			    sections = _props.sections,
+			    activeSection = _props.activeSection;
 
 
 			var classnames = (0, _classnames2.default)({
 				"sidebar-container": true,
-				"sidebar-container--white": color == "WHITE",
-				"sidebar-container--black": color == "BLACK",
-				"sidebar-container--open": isOpen
+				"sidebar-container--white": !isBlack,
+				"sidebar-container--black": isBlack,
+				"sidebar-container--open": this.props.isSidebarOpen
 			});
 
 			var sidebarItems = sections.map(function (section, i) {
@@ -38564,17 +38377,17 @@ var Sidebar = function (_Component) {
 					{ key: i, className: 'sidebar-item' },
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: isOpen ? section : "", smooth: "easeOutCubic", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
+						{ to: _this2.props.isSidebarOpen ? section : "", smooth: "easeOutCubic", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }) },
 						i == 0 ? _react2.default.createElement('div', { className: 'sidebar-border sidebar-border__top' }) : null,
 						_react2.default.createElement(
-							'p',
+							'h5',
 							{ className: 'sidebar-number' },
 							(0, _pad2.default)(i + 1, 2),
 							'.'
 						),
 						_react2.default.createElement('div', { className: 'sidebar-dash' }),
 						_react2.default.createElement(
-							'p',
+							'h5',
 							{ className: 'sidebar-label' },
 							section
 						),
@@ -38585,10 +38398,10 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames, onMouseEnter: isMobile ? null : this.openSidebar, onClick: this.openSidebar },
+				{ className: classnames },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'sidebar', onMouseLeave: isMobile ? null : this.closeSidebar, ref: 'sidebar' },
+					{ className: 'sidebar', onMouseEnter: isMobile ? null : this.props.openSidebar, onClick: this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar, ref: 'sidebar' },
 					sidebarItems
 				)
 			);
@@ -38602,13 +38415,24 @@ var mapStateToProps = function mapStateToProps(state) {
 	return {
 		count: state.count,
 		abbreviation: state.abbreviation,
-		color: state.color
+		isSidebarOpen: state.isSidebarOpen
 	};
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Sidebar);
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		openSidebar: function openSidebar() {
+			return dispatch((0, _sidebar.openSidebar)());
+		},
+		closeSidebar: function closeSidebar() {
+			return dispatch((0, _sidebar.closeSidebar)());
+		}
+	};
+};
 
-},{"../services/pad":154,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],142:[function(require,module,exports){
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
+
+},{"../actions/sidebar":133,"../services/pad":160,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38650,7 +38474,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],143:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38672,7 +38496,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],144:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38698,7 +38522,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],145:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38725,21 +38549,36 @@ var _navTakeover = require('./navTakeover');
 
 var _navTakeover2 = _interopRequireDefault(_navTakeover);
 
+var _navToggle = require('./navToggle');
+
+var _navToggle2 = _interopRequireDefault(_navToggle);
+
+var _secondaryPanel = require('./secondaryPanel');
+
+var _secondaryPanel2 = _interopRequireDefault(_secondaryPanel);
+
+var _sidebar = require('./sidebar');
+
+var _sidebar2 = _interopRequireDefault(_sidebar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = function rootReducer(history) {
 	return (0, _redux.combineReducers)({
-		isTakeoverOpen: _navTakeover2.default,
 		count: _counter2.default,
 		abbreviation: _abbreviation2.default,
 		color: _color2.default,
+		isTakeoverOpen: _navTakeover2.default,
+		isToggleHovered: _navToggle2.default,
+		isSecondaryPanelOpen: _secondaryPanel2.default,
+		isSidebarOpen: _sidebar2.default,
 		router: (0, _connectedReactRouter.connectRouter)(history)
 	});
 };
 
 exports.default = rootReducer;
 
-},{"./abbreviation":142,"./color":143,"./counter":144,"./navTakeover":146,"connected-react-router":11,"redux":114}],146:[function(require,module,exports){
+},{"./abbreviation":145,"./color":146,"./counter":147,"./navTakeover":149,"./navToggle":150,"./secondaryPanel":151,"./sidebar":152,"connected-react-router":11,"redux":114}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38761,7 +38600,73 @@ var navTakeoverReducer = function navTakeoverReducer() {
 
 exports.default = navTakeoverReducer;
 
-},{}],147:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var navToggleReducer = function navToggleReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'HOVER':
+			return true;
+		case 'UNHOVER':
+			return false;
+		default:
+			return state;
+	}
+};
+
+exports.default = navToggleReducer;
+
+},{}],151:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var secondaryPanelReducer = function secondaryPanelReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'SHOW':
+			return true;
+		case 'HIDE':
+			return false;
+		default:
+			return state;
+	}
+};
+
+exports.default = secondaryPanelReducer;
+
+},{}],152:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var sidebarReducer = function sidebarReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'OPEN_SIDEBAR':
+			return true;
+		case 'CLOSE_SIDEBAR':
+			return false;
+		default:
+			return state;
+	}
+};
+
+exports.default = sidebarReducer;
+
+},{}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38775,10 +38680,6 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require('react-redux');
-
-var _Nav = require('../components/Nav');
-
-var _Nav2 = _interopRequireDefault(_Nav);
 
 var _ParallaxHeader = require('../components/ParallaxHeader');
 
@@ -38875,7 +38776,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":133,"../components/Nav":134,"../components/ParallaxHeader":137,"react":113,"react-redux":61}],148:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":136,"../components/ParallaxHeader":140,"react":113,"react-redux":61}],154:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38932,6 +38833,10 @@ var _CodepenEmbed = require("../components/CodepenEmbed");
 
 var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
 
+var _Image = require("../components/Image");
+
+var _Image2 = _interopRequireDefault(_Image);
+
 var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
@@ -38984,7 +38889,7 @@ var AmericanMade = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first"]
+			pageSections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "map"]
 		};
 		return _this;
 	}
@@ -39042,24 +38947,32 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						name: pageSections[1],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavBlack();_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-2 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
+							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 							_react2.default.createElement(
-								"h2",
-								null,
-								(0, _splitWord2.default)("I took a deep dive into the story of American Made when the NBCUX Lab partnered with none other than Universal Pictures.")
+								"blockquote",
+								{ className: "drop-caps" },
+								"We took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees."
 							),
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								(0, _splitWord2.default)('Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!')
+								"Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets."
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. As the first film site in a series of film sites to be developed in the partnership I wanted to create reusable components that could be leveraged in later sites."
 							)
 						)
 					)
@@ -39069,6 +38982,8 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[2],
 						black: true,
+						sections: pageSections,
+						activeSection: activeSection,
 						style: {
 							backgroundImage: "url(../assets/img/american-made/s07-synopsis.jpg)",
 							backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6"
@@ -39158,6 +39073,8 @@ var AmericanMade = function (_Component) {
 					{
 						black: true,
 						name: pageSections[3],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(3);
 						} },
@@ -39189,12 +39106,12 @@ var AmericanMade = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement("img", { src: "../assets/img/american-made/columbia.gif" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/columbia.gif", aspectRatio: "16x9" })
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement("img", { src: "../assets/img/american-made/hangar.gif" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/hangar.gif", aspectRatio: "16x9" })
 						)
 					)
 				),
@@ -39202,6 +39119,8 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						name: pageSections[4],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavBlack();_this2.setActiveSection(4);
 						} },
@@ -39242,6 +39161,8 @@ var AmericanMade = function (_Component) {
 					{
 						name: pageSections[5],
 						black: true,
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(5);
 						} },
@@ -39281,6 +39202,8 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						name: pageSections[6],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavBlack();_this2.setActiveSection(6);
 						} },
@@ -39321,6 +39244,8 @@ var AmericanMade = function (_Component) {
 					{
 						black: true,
 						name: pageSections[7],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(7);
 						} },
@@ -39364,8 +39289,9 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						black: true,
 						name: pageSections[8],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(8);
 						} },
@@ -39379,14 +39305,14 @@ var AmericanMade = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
-									"Mobile Design"
+									"Mobile First Design"
 								),
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on bare essential functionality before moving onto more features for bigger screens."
+									"A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens."
 								)
 							)
 						)
@@ -39394,18 +39320,52 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12" },
-							_react2.default.createElement("object", { data: "../assets/img/american-made/mobile.svg", style: { minWidth: "100%" }, type: "image/svg+xml" })
-						)
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-12" })
 					)
 				),
-				_react2.default.createElement(_Sidebar2.default, {
-					sections: pageSections,
-					activeSection: activeSection
-				}),
-				_react2.default.createElement(_GridLines2.default, null)
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						black: true,
+						name: pageSections[9],
+						sections: pageSections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							setNavWhite();_this2.setActiveSection(9);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h1",
+									{ className: "no-mb" },
+									"Interactive Map"
+								),
+								_react2.default.createElement(
+									"h2",
+									null,
+									"\u201CFly With Barry\u201D"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"We developed an extra feature to accompany the site called \u201CFly With Barry\u201D. The interactive map followed the timeline of his escapades through Central and South America."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-12" })
+					)
+				)
 			);
 		}
 	}]);
@@ -39475,7 +39435,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":132,"../components/GridLines":133,"../components/ParallaxHeader":137,"../components/ScrollArrow":139,"../components/ScrollSection":140,"../components/Sidebar":141,"../services/hexToRgb":153,"../services/palette":155,"../services/splitLetter":156,"../services/splitWord":157,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],149:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/ParallaxHeader":140,"../components/ScrollArrow":142,"../components/ScrollSection":143,"../components/Sidebar":144,"../services/hexToRgb":159,"../services/palette":161,"../services/splitLetter":162,"../services/splitWord":163,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],155:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39506,10 +39466,6 @@ var _ScrollSection = require("../components/ScrollSection");
 
 var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 
-var _Nav = require("../components/Nav");
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
 var _ParallaxHeader = require("../components/ParallaxHeader");
 
 var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
@@ -39521,10 +39477,6 @@ var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
 var _ProjectCard = require("../components/ProjectCard");
 
 var _ProjectCard2 = _interopRequireDefault(_ProjectCard);
-
-var _GridLines = require("../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
 
 var _Sidebar = require("../components/Sidebar");
 
@@ -39618,19 +39570,14 @@ var Home = function (_Component) {
 						onSetActive: function onSetActive() {
 							(0, _color.setNavWhite)();_this2.setActiveSection(0);
 						}
-					}),
-					_react2.default.createElement(
-						_reactScroll.Link,
-						{ to: pageSections[1], spy: true, smooth: "easeOutQuint", duration: 1200, offset: 0, onSetActive: function onSetActive() {
-								(0, _counter.setCounter)(2);(0, _color.setNavBlack)();_this2.setActiveSection(1);
-							} },
-						_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
-					)
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
 						name: pageSections[1],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							(0, _color.setNavBlack)();_this2.setActiveSection(1);
 						} },
@@ -39676,16 +39623,18 @@ var Home = function (_Component) {
 					_ScrollSection2.default,
 					{
 						name: pageSections[2],
+						sections: pageSections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							(0, _color.setNavBlack)();_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--hide-bp-medium" }),
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-7 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+							{ className: "grid__item grid__item--col-5 grid__item--col-11-medium" },
 							_react2.default.createElement(
 								"h1",
 								null,
@@ -39739,11 +39688,13 @@ var Home = function (_Component) {
 						)
 					)
 				),
-				_react2.default.createElement(_Sidebar2.default, {
-					sections: pageSections,
-					activeSection: activeSection
-				}),
-				_react2.default.createElement(_GridLines2.default, null)
+				_react2.default.createElement(
+					_reactScroll.Link,
+					{ to: pageSections[1], spy: true, smooth: "easeOutQuint", duration: 1200, offset: 0, onSetActive: function onSetActive() {
+							(0, _counter.setCounter)(2);(0, _color.setNavBlack)();_this2.setActiveSection(1);
+						} },
+					_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
+				)
 			);
 		}
 	}]);
@@ -39810,7 +39761,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":133,"../components/Nav":134,"../components/ParallaxHeader":137,"../components/ProjectCard":138,"../components/ScrollArrow":139,"../components/ScrollSection":140,"../components/Sidebar":141,"../services/splitWord":157,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],150:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/ParallaxHeader":140,"../components/ProjectCard":141,"../components/ScrollArrow":142,"../components/ScrollSection":143,"../components/Sidebar":144,"../services/splitWord":163,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],156:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39843,10 +39794,6 @@ var _abbreviation = require("../actions/abbreviation");
 
 var _color = require("../actions/color");
 
-var _Nav = require("../components/Nav");
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
 var _ParallaxHeader = require("../components/ParallaxHeader");
 
 var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
@@ -39870,6 +39817,10 @@ var _Sidebar2 = _interopRequireDefault(_Sidebar);
 var _CodepenEmbed = require("../components/CodepenEmbed");
 
 var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
+
+var _Image = require("../components/Image");
+
+var _Image2 = _interopRequireDefault(_Image);
 
 var _splitWord = require("../services/splitWord");
 
@@ -39922,7 +39873,7 @@ var Vai = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: [{ name: "overview" }, { name: "details" }, { name: "details-2" }]
+			pageSections: [{ name: "intro" }, { name: "overview" }, { name: "details" }, { name: "vai" }]
 		};
 		return _this;
 	}
@@ -39979,60 +39930,32 @@ var Vai = function (_Component) {
 					_ScrollSection2.default,
 					{
 						name: sections[1],
+						sections: sections,
+						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setCounter(2);setNavBlack();_this2.setActiveSection(sections[1]);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-2 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
+							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 							_react2.default.createElement(
-								"h2",
-								null,
-								"Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? "
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								"blockquote",
+								{ className: "drop-caps" },
+								"Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing."
+							),
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"Did you download an ad blocker plugin to your browser? More likely than not, you did."
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+								"The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience."
+							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
-								"In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing. The NBCUX Lab saw the need for a new way for brands to reach their audiences.",
-								_react2.default.createElement("br", null),
-								_react2.default.createElement("br", null),
-								"In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience."
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"p",
-								null,
-								"The NBCUX Lab is a group of user-centric problem solvers who architect culturally relevant products with innovation at the core of our strategy.",
-								_react2.default.createElement("br", null),
-								_react2.default.createElement("br", null),
-								"They operate as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems."
+								"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees."
 							)
 						)
 					)
@@ -40042,6 +39965,8 @@ var Vai = function (_Component) {
 					{
 						name: sections[2],
 						black: true,
+						sections: sections,
+						activeSection: activeSection,
 						style: { backgroundImage: "url(../assets/img/vai/chevrolet.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6", backgroundPosition: "center 70%" },
 						onSetActive: function onSetActive() {
 							setCounter(3);setNavWhite();_this2.setActiveSection(sections[2]);
@@ -40058,7 +39983,7 @@ var Vai = function (_Component) {
 								"Role"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								"Lead Designer"
 							)
@@ -40072,7 +39997,7 @@ var Vai = function (_Component) {
 								"Date"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								"October, 2017"
 							)
@@ -40086,7 +40011,7 @@ var Vai = function (_Component) {
 								"Client"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								"NBCUX Lab"
 							)
@@ -40100,7 +40025,7 @@ var Vai = function (_Component) {
 								"Team"
 							),
 							_react2.default.createElement(
-								"blockquote",
+								"p",
 								null,
 								_react2.default.createElement(
 									"a",
@@ -40130,10 +40055,26 @@ var Vai = function (_Component) {
 						)
 					)
 				),
-				_react2.default.createElement(_Sidebar2.default, {
-					sections: sections,
-					activeSection: activeSection
-				}),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[3],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							setCounter(3);setNavWhite();_this2.setActiveSection(sections[2]);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12 " },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/vai/Dark Devices Full Artboard.jpg", aspectRatio: "16x9" })
+						)
+					)
+				),
 				_react2.default.createElement(_GridLines2.default, null)
 			);
 		}
@@ -40208,7 +40149,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // bgImage={"../assets/img/vai/banner.gif"}
 // headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":132,"../components/GridLines":133,"../components/Nav":134,"../components/ParallaxHeader":137,"../components/ScrollArrow":139,"../components/ScrollSection":140,"../components/Sidebar":141,"../services/hexToRgb":153,"../services/palette":155,"../services/splitLetter":156,"../services/splitWord":157,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],151:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/ParallaxHeader":140,"../components/ScrollArrow":142,"../components/ScrollSection":143,"../components/Sidebar":144,"../services/hexToRgb":159,"../services/palette":161,"../services/splitLetter":162,"../services/splitWord":163,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],157:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40261,7 +40202,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/NavTakeover":135,"./AboutMe":147,"./AmericanMade":148,"./Home":149,"./Vai":150,"react":113,"react-router":91}],152:[function(require,module,exports){
+},{"../components/NavTakeover":138,"./AboutMe":153,"./AmericanMade":154,"./Home":155,"./Vai":156,"react":113,"react-router":91}],158:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40272,7 +40213,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],153:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40288,7 +40229,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],154:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40299,7 +40240,7 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],155:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40326,7 +40267,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],156:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40349,7 +40290,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}],157:[function(require,module,exports){
+},{"react":113}],163:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40373,6 +40314,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}]},{},[131])
+},{"react":113}]},{},[134])
 
 //# sourceMappingURL=main.js.map

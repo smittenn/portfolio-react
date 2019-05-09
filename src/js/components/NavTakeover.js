@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
+import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPanel"
 
 import splitLetter from '../services/splitLetter'
 
@@ -13,12 +14,9 @@ class Nav extends Component {
 		super(props);
 
 		this.state = {
-			menuOpen: false,
-			secondaryPanelOpen: false,
 			isToggleHovered: false,
+			indexHovered: this.getActiveIndex(),
 			isMobile: window.innerWidth <= 800,
-			countIsIncreasing: false,
-			countIsDecreasing: false,
 		}
 	}
 
@@ -40,20 +38,16 @@ class Nav extends Component {
 
 	handleClickOutside = (event) => {
 		if (this.refs.notPanels.contains(event.target)) {
-			this.setState({
-				secondaryPanelOpen: false,
-			});
-			console.log(event);
 			this.props.closeTakeover();
+			this.props.closeSecondaryPanel();
 		}
 	}
 
 	setMenuClosed = () => {
 		if (this.props.isTakeoverOpen) {
-			this.setState({
-				secondaryPanelOpen: false,
-			})
 			this.props.closeTakeover();
+			this.props.closeSecondaryPanel();
+
 			this.state.isMobile ? this.setState({ isToggleHovered: true }) : null
 			this.state.isMobile ? setTimeout(() => { this.setState({ isToggleHovered: false }) }, 900) : null
 		}
@@ -75,45 +69,114 @@ class Nav extends Component {
 		n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
 	)
 
+	setIndexHovered = (event) => {
+		const index = this.getChildIndex(event.target);
+
+		this.setState({
+			indexHovered: index,
+		});
+	}
+
+	getChildIndex = (elem) => {
+		let i = 0;
+
+		while ((elem = elem.previousSibling) != null) { i++; }
+
+		return i;
+	}
+
+	getActiveIndex = () => {
+		console.log(this.props.abbreviation)
+		switch (this.props.abbreviation) {
+			case 'H':
+				return 0;
+			case 'P1':
+				return 1;
+			default:
+				return 1;
+		}
+	}
+
+
 	render() {
-		const { menuOpen, secondaryPanelOpen } = this.state;
+		const { isMobile, indexHovered } = this.state;
 		const { abbreviation, count } = this.props;
 
 		const classnames = classNames({
-			"portfolio-nav": true,
-			"portfolio-nav--menuOpen": this.props.isTakeoverOpen,
-			"portfolio-nav--secondaryPanelOpen": secondaryPanelOpen,
+			"nav-takeover": true,
+			"nav-takeover--menuOpen": this.props.isTakeoverOpen,
+			"nav-takeover--secondaryPanelOpen": this.props.isSecondaryPanelOpen,
 		})
+
+		const lineAnimation = {
+			transform: 'translate3d(-1px, ' + 108 * (indexHovered + 0) + 'px, 0)',
+			opacity: (this.props.isTakeoverOpen ? 1 : 0)
+		}
 
 		return (
 			<div>
 				<nav className={classnames}>
-					<div className="portfolio-nav__main">
-						<div ref="notPanels"></div>
-						<div className="portfolio-nav__panels">
-							<div className="portfolio-nav__panel portfolio-nav__panel--secondary">
+					<div className="nav-takeover__main">
+						<div ref="notPanels"/>
+						<div className="nav-takeover__panels">
+							<div className="nav-takeover__panel nav-takeover__panel--secondary">
 								<ul>
-									{<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-right"></i>{/*<h5 className="uppercase">Back</h5>*/}</li>}
-									<li onClick={this.setMenuClosed}><NavLink to="/american-made"><h3 className={classNames({ 'active': abbreviation == 'P1' })}>American Made</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/vai"><h3 className={classNames({ 'active': abbreviation == 'P2' })}>V.ai Player</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/translator"><h3>Translator</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/jnj-mdc"><h3>J&J MDC</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/jnj-home"><h3>J&J Home</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/micro-app-interactions"><h3>Micro App Interactions</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/micro-app-templates"><h3>Micro App Templates</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/perforce"><h3>Perforce</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/cisco"><h3>Cisco MATE</h3></NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/protohack"><h3>Protohack</h3></NavLink></li>
+									{ isMobile ? (<li onClick={this.props.closeSecondaryPanel}>
+										<i className="iconcss icon-arrow-right"></i>
+									</li>) : null }
+									<li onClick={this.setMenuClosed}><NavLink to="/american-made">
+										<h4 className="uppercase">American Made</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/vai">
+										<h4 className="uppercase">V.ai Player</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/translator">
+										<h4 className="uppercase">Translator</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/jnj-mdc">
+										<h4 className="uppercase">J&J MDC</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/jnj-home">
+										<h4 className="uppercase">J&J Home</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/micro-app-interactions">
+										<h4 className="uppercase">Micro App Interactions</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/micro-app-templates">
+										<h4 className="uppercase">Micro App Templates</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/perforce">
+										<h4 className="uppercase">Perforce</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/cisco">
+										<h4 className="uppercase">Cisco MATE</h4>
+									</NavLink></li>
+									<li onClick={this.setMenuClosed}><NavLink to="/protohack">
+										<h4 className="uppercase">Protohack</h4>
+									</NavLink></li>
 								</ul>
 							</div>
-							<div className="portfolio-nav__panel portfolio-nav__panel--white">
+							<div className="nav-takeover__panel nav-takeover__panel--primary">
 								<ul>
-									<li onClick={this.setMenuClosed}><NavLink to="/"><h2 className={classNames({ 'active': abbreviation == 'H' })}>Home</h2></NavLink></li>
-									<li onClick={this.openSecondaryPanel}><h2 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h2></li>
-		 							<li onClick={this.setMenuClosed}><NavLink to="/process"><h2>Process</h2></NavLink></li>
-		 							<li onClick={this.setMenuClosed}><NavLink to="/about-me"><h2>About me</h2></NavLink></li>
-		 							<li onClick={this.setMenuClosed}><NavLink to="/resume"><h2>Resume</h2></NavLink></li>
+									<li onClick={this.setMenuClosed} onMouseOver={this.setIndexHovered}><NavLink to="/">
+										<h2 className={classNames({ 'active': abbreviation == 'H' })}>Home</h2>
+									</NavLink></li>
+									<li onMouseOver={this.setIndexHovered} onClick={this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel}>
+										<h2 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h2>
+									</li>
+		 							<li onMouseOver={this.setIndexHovered} onClick={this.setMenuClosed}><NavLink to="/process">
+			 							<h2>Process</h2>
+		 							</NavLink></li>
+		 							<li onMouseOver={this.setIndexHovered} onClick={this.setMenuClosed}><NavLink to="/about-me">
+			 							<h2>About me</h2>
+			 						</NavLink></li>
+		 							<li onMouseOver={this.setIndexHovered} onClick={this.setMenuClosed}><NavLink to="/resume">
+			 							<h2>Resume</h2>
+		 							</NavLink></li>
 								</ul>
+								<div className="nav-takeover__line-container">
+									<div style={ lineAnimation } className="nav-takeover__line"></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -128,11 +191,14 @@ const mapStateToProps = state => ({
 	abbreviation: state.abbreviation,
 	color: state.color,
 	isTakeoverOpen: state.isTakeoverOpen,
+	isSecondaryPanelOpen: state.isSecondaryPanelOpen,
 })
 
 const mapDispatchToProps = dispatch => ({
 	openTakeover: () => dispatch(openTakeover()),
 	closeTakeover: () => dispatch(closeTakeover()),
+	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
+	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
 })
 
 

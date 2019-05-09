@@ -27,6 +27,7 @@ video {
 section {
 	padding: 90px 0;
 	// min-height: 100vh;
+	position: relative;
 	overflow: hidden;
 	flex-direction: column;
 	height: auto;
@@ -47,6 +48,10 @@ section {
 
 		h1, h2, h3, h4, h5, h6, p, blockquote, a {
 			color: $brand-white;
+		}
+
+		.grid--lines {
+			opacity: .6666;
 		}
 	}
 
@@ -75,5 +80,15 @@ h1, h2, h3, p, blockquote, {
 	span {
 		display: inline-block;
 	}
+}
+
+.clip-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	clip: rect(0,auto,auto,0);
 }
 

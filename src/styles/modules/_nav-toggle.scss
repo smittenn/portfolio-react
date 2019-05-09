@@ -23,33 +23,25 @@ $baseclass: nav-toggle;
 }
 
 .#{$baseclass} {
-	position: absolute;
-	top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
-	clip: rect(0,auto,auto,0);
+	position: fixed;
+	right: 0;
+	top: 24px;
+	width: 61px;
+	pointer-events: auto;
+	height: 90px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	@include zIndexClosest();
 
-	.#{$baseclass}__toggle {
-		position: fixed;
-		right: 0;
-		top: 24px;
-		width: 61px;
-		pointer-events: auto;
-		height: 90px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		@include zIndexClosest();
-	}
 
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
 		transition: all $easing2 0.3s;
 		letter-spacing: $letter-spacing-lg;
 		margin: 0;
+		font-family: "Campton";
 	}
 
 	.#{$baseclass}__abbreviation {
@@ -72,14 +64,14 @@ $baseclass: nav-toggle;
 	&--countIsIncreasing {
 		.#{$baseclass}__count {
 			span {
-				// animation: increasingNum $duration-fast $easing1;
+				animation: increasingNum $duration-fast $easing1;
 			}
 		}
 	}
 	&--countIsDecreasing {
 		.#{$baseclass}__count {
 			span {
-				// animation: decreasingNum $duration-fast $easing1;
+				animation: decreasingNum $duration-fast $easing1;
 			}
 		}
 	}
@@ -117,48 +109,17 @@ $baseclass: nav-toggle;
 	}
 
 	&--hovering {
-		.#{$baseclass}__toggle {
-			.#{$baseclass}__hamburger {
-				height: 18px;
+		.#{$baseclass}__hamburger {
+			height: 18px;
 
-				.line {					
-					&:first-child, &:last-child {
-						opacity: 1;
-					}
-
-					&:first-child {
-						transform: translate3d(0,-9px,0);
-					}
-					&:last-child {
-						transform: translate3d(0,9px,0);
-					}
-				}
-			}
-			.#{$baseclass}__abbreviation, .#{$baseclass}__count {
-				opacity: 0;
-			}
-			.#{$baseclass}__abbreviation {
-				transform: translate3d(0,-12px,0);
-			}
-			.#{$baseclass}__count {
-				transform: translate3d(0,12px,0);
-			}
-		}
-	}
-
-	&--menuOpen {
-		.#{$baseclass}__hamburger, .#{$baseclass}__toggle:hover .#{$baseclass}__hamburger {
-			.line {
-				background: $brand-black;
-				opacity: 0;
+			.line {					
+				opacity: 1;
 
 				&:first-child {
-					opacity: 1;
-					transform: translate3d(0,0px,0) rotate(135deg);
+					transform: translate3d(0,-9px,0);
 				}
 				&:last-child {
-					opacity: 1;
-					transform: translate3d(0,-2px,0) rotate(45deg);
+					transform: translate3d(0,9px,0);
 				}
 			}
 		}
@@ -172,13 +133,42 @@ $baseclass: nav-toggle;
 			transform: translate3d(0,12px,0);
 		}
 	}
+	
+
+	&--menuOpen {
+		pointer-events: none;
+
+		.#{$baseclass}__hamburger {
+			.line {
+				background: $brand-black;
+				opacity: 0;
+
+				// &:first-child {
+				// 	transform: translate3d(0,0px,0) rotate(135deg);
+				// }
+				// &:nth-child(2) {
+				// 	opacity: 0;
+				// }
+				// &:last-child {
+				// 	transform: translate3d(0,-2px,0) rotate(45deg);
+				// }
+			}
+		}
+		.#{$baseclass}__abbreviation, .#{$baseclass}__count {
+			opacity: 0;
+		}
+		.#{$baseclass}__abbreviation {
+			transform: translate3d(0,-12px,0);
+		}
+		.#{$baseclass}__count {
+			transform: translate3d(0,12px,0);
+		}
+	}
+	
 
 	@media screen and (max-width: $bp-medium) {
-
-		.#{$baseclass}__toggle {
-			top: 6px;
-			width: 49px;
-		}
+		top: 6px;
+		width: 49px;
 
 		.#{$baseclass}__abbreviation {
 			margin-bottom: 9px;

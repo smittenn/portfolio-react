@@ -6,6 +6,8 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import IntersectionVisible from "react-intersection-visible"
 
 import NavToggle from "./NavToggle"
+import Sidebar from "./Sidebar"
+import GridLines from "../components/GridLines"
 
 export default class ScrollSection extends Component {
 
@@ -24,7 +26,7 @@ export default class ScrollSection extends Component {
 
 	render() {
 
-		const { name, onSetActive, black, style } = this.props;
+		const { name, onSetActive, black, style, sections, activeSection } = this.props;
 
 		const classnames = classNames({
 			"black": this.props.black,
@@ -37,12 +39,23 @@ export default class ScrollSection extends Component {
 				onShow={(i) => i[0].target.classList.add("active-section")} 
 				onHide={(i) => i[0].target.classList.remove("active-section")}
 				>
-				<NavToggle black={!black}/>
+
 					<section className={classnames} style={style}>
+						<GridLines/>
 						{ this.props.children }
 					</section>
 					<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}>
 					</Link>
+					<div className="clip-wrapper">
+
+						<Sidebar 
+						isBlack={!black}
+						sections={sections} 
+						activeSection={activeSection}
+						/>
+
+						<NavToggle black={!black}/>
+					</div>
 				</IntersectionVisible>
 			</Element>
 		);

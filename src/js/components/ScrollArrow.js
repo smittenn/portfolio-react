@@ -27,7 +27,7 @@ export default class ScrollArrow extends Component {
 	}
 
 	handleScroll = (e) => {
-		(document.body.scrollTop > (window.innerHeight /  2)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
+		(document.body.scrollTop > 0) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
 	}
 
 	render() {

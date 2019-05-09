@@ -1,4 +1,4 @@
-/*@font-face {
+@font-face {
 	font-family: 'Circular Std';
 	font-weight: 800;
 	font-style: normal;
@@ -10,29 +10,29 @@
 	url('../fonts/CircularStd/CircularStd-Black.svg#codropsicons') format('svg');
 }
 
-@font-face {
-	font-family: 'Circular Std';
-	font-weight: 400;
-	font-style: normal;
-	src: url('../fonts/CircularStd/CircularStd-Book.eot');
-	src: url('../fonts/CircularStd/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/CircularStd/CircularStd-Book.woff2') format('woff2'), 
-	url('../fonts/CircularStd/CircularStd-Book.woff') format('woff'), 
-	url('../fonts/CircularStd/CircularStd-Book.ttf') format('truetype'),
-	url('../fonts/CircularStd/CircularStd-Book.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Circular Std';
+// 	font-weight: 400;
+// 	font-style: normal;
+// 	src: url('../fonts/CircularStd/CircularStd-Book.eot');
+// 	src: url('../fonts/CircularStd/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/CircularStd/CircularStd-Book.woff2') format('woff2'), 
+// 	url('../fonts/CircularStd/CircularStd-Book.woff') format('woff'), 
+// 	url('../fonts/CircularStd/CircularStd-Book.ttf') format('truetype'),
+// 	url('../fonts/CircularStd/CircularStd-Book.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Circular Std';
-	font-weight: 500;
-	font-style: normal;
-	src: url('../fonts/CircularStd/CircularStd-Medium.eot');
-	src: url('../fonts/CircularStd/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/CircularStd/CircularStd-Medium.woff2') format('woff2'), 
-	url('../fonts/CircularStd/CircularStd-Medium.woff') format('woff'), 
-	url('../fonts/CircularStd/CircularStd-Medium.ttf') format('truetype'),
-	url('../fonts/CircularStd/CircularStd-Medium.svg#codropsicons') format('svg');
-}*/
+// @font-face {
+// 	font-family: 'Circular Std';
+// 	font-weight: 500;
+// 	font-style: normal;
+// 	src: url('../fonts/CircularStd/CircularStd-Medium.eot');
+// 	src: url('../fonts/CircularStd/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/CircularStd/CircularStd-Medium.woff2') format('woff2'), 
+// 	url('../fonts/CircularStd/CircularStd-Medium.woff') format('woff'), 
+// 	url('../fonts/CircularStd/CircularStd-Medium.ttf') format('truetype'),
+// 	url('../fonts/CircularStd/CircularStd-Medium.svg#codropsicons') format('svg');
+// }
 
 // @font-face {
 // 	font-family: 'Averta';
@@ -108,7 +108,7 @@
 
 
 @font-face {
-	font-family: 'Campton';
+	font-family: 'Averta';
 	font-weight: 400;
 	font-style: normal;
 	src: url('../fonts/Averta/Averta-Regular.eot');
@@ -118,6 +118,19 @@
 	url('../fonts/Averta/Averta-Regular.ttf') format('truetype'),
 	url('../fonts/Averta/Averta-Regular.svg#codropsicons') format('svg');
 }
+
+@font-face {
+	font-family: 'GT Sectra Display';
+	font-weight: 400;
+	font-style: normal;
+	src: url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.eot');
+	src: url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.woff2') format('woff2'), 
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.woff') format('woff'), 
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.ttf') format('truetype'),
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.svg#codropsicons') format('svg');
+}
+
 
 @font-face {
 	font-family: 'Campton';

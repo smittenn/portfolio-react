@@ -5,7 +5,31 @@ $bp-medium: 800px;
 $bp-small: 600px;
 $bp-xsmall: 480px;
 
-$font-primary: 'Campton', sans-serif;
+$font-primary: 'Circular Std', sans-serif;
+$font-secondary: 'Averta', sans-serif;
+$font-serif: 'GT Sectra Display', serif;
+
+$brand-red: #ff483c;
+$brand-red: #ff3636;
+// $brand-red: #ff4716;
+
+$brand-purple: #7366fb;
+$brand-green: #8CB369;
+$brand-yellow: #F4E285;
+$brand-orange: #fd8451;
+$brand-pink: #fed1cf;
+
+$brand-white: #F8FBF7;
+$brand-grey-lightest: #F4F4F0;
+$brand-grey-light: #DEDEDC;
+$brand-grey-medium: #81717A;
+$brand-grey-dark: #595358;
+$brand-grey-darkest: #333031;
+$brand-black: #232021;
+
+$letter-spacing-sm: 0.006em;
+$letter-spacing-md: 0.04em;
+$letter-spacing-lg: 0.06em;
 
 $easing1: cubic-bezier(0.215, 0.61, 0.355, 1);
 $easing2: cubic-bezier(.19,1,.22,1);
@@ -23,23 +47,3 @@ $delay-fast: 0.06s;
 $delay-medium: 0.09s;
 $delay-slow: 0.12s;
 $delay-slower: 0.18s;
-
-$letter-spacing-sm: 0.006em;
-$letter-spacing-md: 0.04em;
-$letter-spacing-lg: 0.06em;
-
-
-$brand-red: #ff483c;
-$brand-purple: #7366fb;
-$brand-green: #8CB369;
-$brand-yellow: #F4E285;
-$brand-orange: #fd8451;
-$brand-pink: #fed1cf;
-
-$brand-white: #F8FBF7;
-$brand-grey-lightest: #F4F4F0;
-$brand-grey-light: #DEDEDC;
-$brand-grey-medium: #81717A;
-$brand-grey-dark: #595358;
-$brand-grey-darkest: #333031;
-$brand-black: #232021;

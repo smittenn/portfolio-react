@@ -9,7 +9,6 @@ import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 import { setNavWhite, setNavBlack } from "../actions/color"
 
-import Nav from "../components/Nav"
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
 import ScrollSection from "../components/ScrollSection"
@@ -17,6 +16,7 @@ import ScrollSection from "../components/ScrollSection"
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
+import Image from "../components/Image"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -44,9 +44,10 @@ class Vai extends Component {
 		this.state = {
 			activeSection: "overview",
 			pageSections: [
+				{ name: "intro", },
 				{ name: "overview", },
 				{ name: "details", },
-				{ name: "details-2", },
+				{ name: "vai", },
 			],
 		}
 	}
@@ -85,31 +86,21 @@ class Vai extends Component {
 
 				<ScrollSection 
 				name={sections[1]} 
+				sections={sections} 
+				activeSection={activeSection}
 				onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(sections[1]);}}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<h2>Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? </h2> 
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<blockquote>Did you download an ad blocker plugin to your browser? More likely than not, you did.</blockquote>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<p>
-								In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing. The NBCUX Lab saw the need for a new way for brands to reach their audiences. 
-								<br/><br/>
-								In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience.
-							</p>
-						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<p>
-								The NBCUX Lab is a group of user-centric problem solvers who architect culturally relevant products with innovation at the core of our strategy.
-								<br/><br/>
-								They operate as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems. 
-							</p>
+						<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<blockquote className="drop-caps">
+								Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing.
+							</blockquote>
+							<blockquote>
+								The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience.
+							</blockquote>
+							<blockquote>
+								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
+							</blockquote>
 						</div>
 					</div>
 				</ScrollSection>
@@ -117,33 +108,45 @@ class Vai extends Component {
 				<ScrollSection 
 				name={sections[2]}
 				black 
+				sections={sections} 
+				activeSection={activeSection}
 				style={{ backgroundImage: `url(../assets/img/vai/chevrolet.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`, backgroundPosition: "center 70%" }}  
 				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(sections[2]); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
-							<blockquote>Lead Designer</blockquote>
+							<p>Lead Designer</p>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Date</h5>
-							<blockquote>October, 2017</blockquote>
+							<p>October, 2017</p>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Client</h5>
-							<blockquote>NBCUX Lab</blockquote> 
+							<p>NBCUX Lab</p> 
 						</div>
 						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
 							<h5 className="uppercase">Team</h5>
-							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </blockquote> 
+							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </p> 
 						</div>
 					</div>
 				</ScrollSection>
 
-				<Sidebar 
+				<ScrollSection 
+				name={sections[3]}
+				black 
 				sections={sections} 
 				activeSection={activeSection}
-				/>
+				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(sections[2]); }}>
+					<div className="grid">
+						{/*<div className="grid__item grid__item--col-1"/>*/}
+						<div className="grid__item grid__item--col-12 ">
+							<Image src="../assets/img/vai/Dark Devices Full Artboard.jpg" aspectRatio="16x9"/>
+						</div>
+					</div>
+				</ScrollSection>
+
 
 				<GridLines/>
 			</article>

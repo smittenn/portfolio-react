@@ -5,12 +5,15 @@ $baseclass: sidebar-container;
 	// height: 100vh;
 	width: 24px;
 	position: fixed;
+	pointer-events: auto;
+	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	right: 0;
 	bottom: 0;
-	z-index: 999;
+	@include zIndexCloser();
+
 
 	p {
 		font-weight: 700;
@@ -62,11 +65,7 @@ $baseclass: sidebar-container;
 		width: 0%;
 		opacity: 0;
 		pointer-events: none;
-		transition: all ease-out $duration-fast;
-	}
-
-	.sidebar-number, .sidebar-dash, .sidebar-label, .sidebar-border {
-		transition: all ease-out 0.2s
+		transition: all $easing2 $duration-medium;
 	}
 
 	.sidebar-number {
@@ -124,12 +123,16 @@ $baseclass: sidebar-container;
 		// background: #3d4e4d;
 		transition-timing-function: $easing4;
 		transition-duration: $duration-fast;
-		transition-property: margin, width;
+		transition-property: width;
 	}
 
 	&--white {
 		.sidebar-dash {
 			background: $brand-white;
+		}
+
+		.sidebar-number, .sidebar-label {
+			// color: $brand-white;
 		}
 		&.#{$baseclass}--open {
 			.sidebar-dash {
@@ -159,7 +162,7 @@ $baseclass: sidebar-container;
 				.sidebar-number {
 					opacity: 1;
 					transform: translate3d(0, 0, 0);
-					transition: all $easing4 $duration-medium;
+					// transition: all $easing4 $duration-medium;
 				}
 
 				.sidebar-dash {
@@ -170,13 +173,13 @@ $baseclass: sidebar-container;
 
 				.sidebar-label {
 					opacity: 1;
-					transition: all $easing4 $duration-medium;
+					// transition: all $easing4 $duration-medium;
 				}
 
 				.sidebar-border {
 					opacity: 1;
 					width: 100%;
-					transition: all $easing4 $duration-medium;
+					// transition: all $easing4 $duration-medium;
 				}
 
 
@@ -184,7 +187,7 @@ $baseclass: sidebar-container;
 					&:before {
 						opacity: 1;
 						width: 100%;
-						background: $brand-black;
+						background: $brand-grey-darkest;
 					}
 					.sidebar-number {
 						color: $brand-white;
@@ -200,6 +203,10 @@ $baseclass: sidebar-container;
 				}
 			}
 		}
+	}
+
+	&--left {
+
 	}
 
 

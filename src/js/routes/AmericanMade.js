@@ -17,6 +17,8 @@ import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 
+import Image from "../components/Image"
+
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
@@ -52,7 +54,7 @@ class AmericanMade extends Component {
 				"video-gallery",
 				"parallax",
 				"mobile-first",
-				// "map",
+				"map",
 			],
 		}
 	}
@@ -92,15 +94,21 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				name={pageSections[1]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<h2>{splitWord(`I took a deep dive into the story of American Made when the NBCUX Lab partnered with none other than Universal Pictures.`)}</h2> 
-							<blockquote>{splitWord('Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets!')}</blockquote>
-							{/*<blockquote>
-								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging from consumer film sites to internal tools and content management systems.
-							</blockquote>*/}
-							 {/*My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way.*/}
+						<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<blockquote className="drop-caps">
+								We took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees. 
+							</blockquote> 
+							<blockquote>
+								Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
+							</blockquote>
+							<blockquote>
+								My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. As the first film site in a series of film sites to be developed in the partnership I wanted to create reusable components that could be leveraged in later sites. 
+							</blockquote>
 						</div>
 					</div>
 				</ScrollSection>
@@ -108,13 +116,15 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				name={pageSections[2]}
 				black 
+				sections={pageSections} 
+				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}  
 				onSetActive={() => { setNavWhite(); this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1"/>*/}
+						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
 							<p>Lead Designer</p>
@@ -137,6 +147,8 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				black 
 				name={pageSections[3]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
@@ -149,11 +161,12 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<img src="../assets/img/american-made/columbia.gif"/>
+							{/*<img src="../assets/img/american-made/columbia.gif"/>*/}
+							<Image src="../assets/img/american-made/columbia.gif" aspectRatio="16x9"/>
 						</div>
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<img src="../assets/img/american-made/hangar.gif"/>
+							<Image src="../assets/img/american-made/hangar.gif" aspectRatio="16x9"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -177,6 +190,8 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				name={pageSections[4]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
@@ -196,6 +211,8 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				name={pageSections[5]} 
 				black
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
@@ -214,6 +231,8 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				name={pageSections[6]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
@@ -233,6 +252,8 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				black
 				name={pageSections[7]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
@@ -251,27 +272,30 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				black
 				name={pageSections[8]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(8); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>Mobile Design</h1>
-								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on bare essential functionality before moving onto more features for bigger screens.</blockquote>
+								<h2>Mobile First Design</h2>
+								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>
+							{/*<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
 						</div>
 					</div>
 				</ScrollSection>
 
-				{/*<ScrollSection 
+				{<ScrollSection 
 				black
 				name={pageSections[9]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(9); }}>
 					<div className="grid">
 						<div className="grid__row">
@@ -284,17 +308,11 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>
+							{/*<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
 						</div>
 					</div>
-				</ScrollSection>*/}
+				</ScrollSection>}
 
-				<Sidebar 
-				sections={pageSections} 
-				activeSection={activeSection}
-				/>
-
-				<GridLines/>
 			</article>
 		);
 	}

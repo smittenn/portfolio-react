@@ -8,12 +8,10 @@ import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perfo
 import { setNavWhite, setNavBlack } from "../actions/color"
 
 import ScrollSection from "../components/ScrollSection"
-import Nav from "../components/Nav"
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
 import ProjectCard from "../components/ProjectCard"
 
-import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 
 import splitWord from "../services/splitWord"
@@ -76,13 +74,12 @@ class Home extends Component {
 					bgImage={"../assets/img/terrain.gif"} 
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
 					/>
-					{<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
-						<ScrollArrow label="Read More"/>
-					</Link>}
 				</Element>
 
 				<ScrollSection 
 				name={pageSections[1]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
@@ -109,10 +106,12 @@ class Home extends Component {
 
 				<ScrollSection 
 				name={pageSections[2]} 
+				sections={pageSections} 
+				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(2); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
 							{/*<h1>{splitWord("My Work")}</h1>*/}
 							{<h1>{splitWord("Visual & Interactive")}</h1>}
 							<blockquote>
@@ -148,13 +147,11 @@ class Home extends Component {
 					</div>
 				</ScrollSection>
 
-				
-				<Sidebar 
-				sections={pageSections} 
-				activeSection={activeSection}
-				/>
 
-				<GridLines/>
+				{<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
+					<ScrollArrow label="Read More"/>
+				</Link>}
+
 			</article>
 		);
 	}

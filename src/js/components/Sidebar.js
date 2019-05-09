@@ -4,6 +4,8 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 
+import { openSidebar, closeSidebar } from '../actions/sidebar'
+
 import pad from '../services/pad'
 
 class Sidebar extends Component {
@@ -42,46 +44,47 @@ class Sidebar extends Component {
 	}
 
 
-	openSidebar = () => {
-		this.setState({
-			isOpen: true,
-		})
-	}
+	// openSidebar = () => {
+	// 	this.setState({
+	// 		isOpen: true,
+	// 	})
+	// 	console.log('hellop');
+	// }
 
-	closeSidebar = () => {
-		this.setState({
-			isOpen: false,
-		})			
-	}
+	// closeSidebar = () => {
+	// 	this.setState({
+	// 		isOpen: false,
+	// 	})			
+	// }
 
 
 	render() {
 
-		const { isOpen, isMobile } = this.state;
-		const { color, sections, activeSection, isBlack, isWhite } = this.props;
+		const { isMobile } = this.state;
+		const { isBlack, sections, activeSection } = this.props;
 
 		const classnames = classNames({
 			"sidebar-container": true,
-			"sidebar-container--white": color == "WHITE",
-			"sidebar-container--black": color == "BLACK",
-			"sidebar-container--open": isOpen,
+			"sidebar-container--white": !isBlack,
+			"sidebar-container--black": isBlack,
+			"sidebar-container--open": this.props.isSidebarOpen,
 		})
 
 		const sidebarItems = sections.map((section, i) => 
 			<li key={i} className="sidebar-item">
-				<Link to={ isOpen ? section : "" } smooth={"easeOutCubic"} duration={1200} className={classNames({ "active": sections[i] == activeSection })}>
+				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutCubic"} duration={1200} className={classNames({ "active": sections[i] == activeSection })}>
 					{ i == 0 ? <div className="sidebar-border sidebar-border__top"/> : null }
-					<p className="sidebar-number">{pad(i + 1, 2)}.</p>
+					<h5 className="sidebar-number">{pad(i + 1, 2)}.</h5>
 					<div className="sidebar-dash"></div>
-					<p className="sidebar-label">{section}</p>
+					<h5 className="sidebar-label">{section}</h5>
 					<div className="sidebar-border"/>
 				</Link>
 			</li>
 		)
 		
 		return (
-			<div className={classnames} onMouseEnter={isMobile ? null : this.openSidebar} onClick={this.openSidebar}>
-				<ul className="sidebar" onMouseLeave={isMobile ? null : this.closeSidebar} ref="sidebar">
+			<div className={classnames}>
+				<ul className="sidebar" onMouseEnter={isMobile ? null : this.props.openSidebar} onClick={this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar} ref="sidebar">
 					{sidebarItems}
 				</ul>
 			</div>
@@ -92,7 +95,12 @@ class Sidebar extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
-	color: state.color,
+	isSidebarOpen: state.isSidebarOpen,
 })
 
-export default connect(mapStateToProps)(Sidebar)
+const mapDispatchToProps = dispatch => ({
+	openSidebar: () => dispatch(openSidebar()),
+	closeSidebar: () => dispatch(closeSidebar()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

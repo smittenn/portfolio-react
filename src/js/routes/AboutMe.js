@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 
-import Nav from "../components/Nav";
 import ParallaxHeader from "../components/ParallaxHeader"
 
 import GridLines from "../components/GridLines"

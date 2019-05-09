@@ -38,9 +38,6 @@
 }
 
 section { 
-	// &.black {
-	// 	@include zIndexClose();
-	// }
 	* {
 		@include zIndexCloser();					
 	}
