@@ -32,15 +32,15 @@
 }
 
 .parallax-header {
-	* {
-		@include zIndexCloser();
-	}
+	// * {
+	// 	@include zIndexCloser();
+	// }
 }
 
 section { 
-	* {
-		@include zIndexCloser();					
-	}
+	// * {
+	// 	@include zIndexCloser();					
+	// }
 }
 
 .nav-toggle {

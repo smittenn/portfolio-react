@@ -11,15 +11,15 @@
 
 .react-parallax {
 	h1 span {
-		transition: transform $easing1 $duration-slower, opacity $easing1 $duration-slower;
-		// opacity: 0;
-		// animation: ghostText $duration-slow $easing1;
-		// animation-fill-mode: both;
+		transition: opacity $easing1 $duration-slower;
+		opacity: 0;
+		animation: ghostText $duration-slow $easing1;
+		animation-fill-mode: both;
 
 
 		@for $i from 1 through 60 {
-			&:nth-last-child(#{$i}) {
-				transition-delay: (#{0.0 + ($i * 0.03)}s);
+			&:nth-child(#{$i}) {
+				animation-delay: (#{0.6 + ($i * 0.09)}s);
 			}
 		}
 		// @for $i from 1 through 4 {
@@ -36,7 +36,6 @@
 			animation: ghostText $duration-slow $easing1;
 			animation-fill-mode: both;
 
-
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) {
 					animation-delay: (#{0.6 + ($i * 0.09)}s);
@@ -50,8 +49,8 @@
 section {
 	img {
 		opacity: 0;
-		transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
-		transform: translate3d(0,40px,0);
+		transition: none;
+		transform: translate3d(0,50%,0);
 	}
 
 	.grid__item {
@@ -66,36 +65,24 @@ section {
 
 	h1, h2, p, blockquote {
 		span {
-			transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
+			transition: none;
 			opacity: 0;
 		}
 	}
 
 	h1 span {
 		transform: translate3d(0,100px,0) skewY(6deg);
-
-		@for $i from 1 through 60 {
-			&:nth-child(#{$i}) {
-				transition-delay: (#{0.6 + ($i * 0.09)}s);
-			}
-		}
 	}
 
 	h2 span {
 		transform: translate3d(0,60px,0) skewX(6deg);
-
-		@for $i from 1 through 60 {
-			&:nth-child(#{$i}) {
-				transition-delay: (#{0.6 + ($i * 0.06)}s);
-			}
-		}
 	}
 
 	p, blockquote {
 		span {
+			opacity: 0;
 			transform: translate3d(0,24px,0) skewX(6deg);
-			transition-duration: 0.6s;
-			transition-delay: 0s;
+			transition: none;
 		}
 	}
 }
@@ -104,12 +91,30 @@ section {
 	section {
 		h1, h2, {
 			span {
+				transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 				opacity: 1;
 				transform: translate3d(0,0,0) skewX(0deg);
 			}
 		}
 
+		h1 span {
+			@for $i from 1 through 60 {
+				&:nth-child(#{$i}) {
+					transition-delay: (#{0.6 + ($i * 0.09)}s);
+				}
+			}
+		}
+
+		h2 span {
+			@for $i from 1 through 60 {
+				&:nth-child(#{$i}) {
+					transition-delay: (#{0.6 + ($i * 0.06)}s);
+				}
+			}
+		}
+
 		img {
+			transition: transform $duration-slow $easing2, opacity $duration-slow $easing2;
 			opacity: 1;
 			transform: translate3d(0,0,0) skewX(0deg);
 		}
@@ -118,6 +123,7 @@ section {
 			span {
 				opacity: 1;
 				transform: translate3d(0,0,0) skewX(0deg);
+				transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 
 				@for $i from 1 through 120 {
 					&:nth-child(#{$i}) {

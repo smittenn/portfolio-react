@@ -15,16 +15,17 @@ export default class Image extends Component {
 
 	render() {
 
-		const { src, aspectRatio } = this.props;
+		const { src, aspectRatioWidth, aspectRatioHeight } = this.props;
+
+		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
 		
-		let style;
-		( aspectRatio == '16x9' ) ? ( style =  {
+		const style =  {
 			position: 'relative',
 			display: 'block',
 			height: 0,
-			paddingBottom: '56.25%',
+			paddingBottom: pb + '%',
 			overflow: 'hidden',
-		}) : null
+		}
 
 		return (
 			<div style={style}>

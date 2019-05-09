@@ -63,6 +63,35 @@ class Home extends Component {
 
 	render() {
 
+		const projects = [
+			{
+				name: "American Made Film Site",
+				href: "/american-made",
+				tags: [ "UI", "Interactive" ],
+			},
+			{
+				name: "V.ai Player",
+				href: "/vai",
+				tags: [ "UX", "Interactive" ],
+			},
+			{
+				name: "Translator",
+				href: "/translator",
+				tags: [ "UX", "Design System" ],
+			},
+			{
+				name: "Micro App Interactions",
+				href: "/micro-app-interactions",
+				tags: [ "Interactive", "Mobile" ],
+			},
+			{
+				name: "Micro App Templates",
+				href: "/micro-app-templates",
+				tags: [ "Visual Design", "Mobile" ],
+			},
+
+		]
+
 		const { activeSection, pageSections } = this.state;
 		
 		return (
@@ -93,15 +122,15 @@ class Home extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 								<div className="spacer spacer__sm"/>
-								<img src="../assets/img/lands-end-4x3.jpg"/>
+								<Image src="../assets/img/lands-end-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 							</div>
 							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 								<div className="spacer spacer__lg"/>
-								<img src="../assets/img/me-4x3.jpg"/>
+								<Image src="../assets/img/me-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 							</div>
 							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 								<div className="spacer spacer__md"/>
-								<img src="../assets/img/mist-3x4.jpg"/>
+								<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 							</div>
 					</div>
 				</ScrollSection>
@@ -126,11 +155,12 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
 							<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interactive"]}>
-								<Image src="../assets/img/american-made/banner.gif" aspectRatio="16x9"/>
+								<Image src="../assets/img/american-made/banner.gif" aspectRatioWidth={1} aspectRatioHeight={1}/>
 								{/*<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />*/}
 							</ProjectCard>
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							<div className="spacer spacer__md"/>
 							<ProjectCard name="V.ai Player" href="/vai" tags={["UX", "Interactive"]}>
 								<img src="../assets/img/vai/eye.gif"/>
 							</ProjectCard>

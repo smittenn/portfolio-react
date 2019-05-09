@@ -83,7 +83,7 @@ class AmericanMade extends Component {
 				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
-					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
+					headerText={[ `The `, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
@@ -163,11 +163,11 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							{/*<img src="../assets/img/american-made/columbia.gif"/>*/}
-							<Image src="../assets/img/american-made/columbia.gif" aspectRatio="16x9"/>
+							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<Image src="../assets/img/american-made/hangar.gif" aspectRatio="16x9"/>
+							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>

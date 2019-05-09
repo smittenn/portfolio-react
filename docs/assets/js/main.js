@@ -37115,17 +37115,19 @@ var Image = function (_Component) {
 		value: function render() {
 			var _props = this.props,
 			    src = _props.src,
-			    aspectRatio = _props.aspectRatio;
+			    aspectRatioWidth = _props.aspectRatioWidth,
+			    aspectRatioHeight = _props.aspectRatioHeight;
 
 
-			var style = void 0;
-			aspectRatio == '16x9' ? style = {
+			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
+
+			var style = {
 				position: 'relative',
 				display: 'block',
 				height: 0,
-				paddingBottom: '56.25%',
+				paddingBottom: pb + '%',
 				overflow: 'hidden'
-			} : null;
+			};
 
 			return _react2.default.createElement(
 				"div",
@@ -37987,10 +37989,11 @@ var ParallaxHeader = function (_Component) {
 					blur: null,
 					strength: str,
 					renderLayer: function renderLayer(percentage) {
-						var style = {
-							opacity: -(8 * percentage) + 5,
-							transform: "skewY(" + (10 * percentage - 5) + "deg) translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)"
-						};
+						// const style = { 
+						// opacity: -(8 * percentage) + 5, 
+						// transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
+						// }
+						var style = {};
 						var updatedText = [];
 						headerText.forEach(function (item, idx) {
 							typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style, key: idx });
@@ -38007,7 +38010,7 @@ var ParallaxHeader = function (_Component) {
 									{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 									_react2.default.createElement(
 										"h1",
-										{ className: "no-mb" },
+										{ className: "no-mb", style: { opacity: -(8 * percentage) + 5, transform: "translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" } },
 										updatedText
 									)
 								)
@@ -39026,7 +39029,7 @@ var AmericanMade = function (_Component) {
 						className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: pageSections[0],
-						headerText: ["The", _react2.default.createElement(
+						headerText: ["The ", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
 							"American "
@@ -39213,12 +39216,12 @@ var AmericanMade = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/columbia.gif", aspectRatio: "16x9" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/columbia.gif", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/hangar.gif", aspectRatio: "16x9" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/hangar.gif", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 						)
 					)
 				),
@@ -39666,6 +39669,28 @@ var Home = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
+			var projects = [{
+				name: "American Made Film Site",
+				href: "/american-made",
+				tags: ["UI", "Interactive"]
+			}, {
+				name: "V.ai Player",
+				href: "/vai",
+				tags: ["UX", "Interactive"]
+			}, {
+				name: "Translator",
+				href: "/translator",
+				tags: ["UX", "Design System"]
+			}, {
+				name: "Micro App Interactions",
+				href: "/micro-app-interactions",
+				tags: ["Interactive", "Mobile"]
+			}, {
+				name: "Micro App Templates",
+				href: "/micro-app-templates",
+				tags: ["Visual Design", "Mobile"]
+			}];
+
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    pageSections = _state.pageSections;
@@ -39727,19 +39752,19 @@ var Home = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
 							_react2.default.createElement("div", { className: "spacer spacer__sm" }),
-							_react2.default.createElement("img", { src: "../assets/img/lands-end-4x3.jpg" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/lands-end-4x3.jpg", aspectRatioWidth: 3, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
 							_react2.default.createElement("div", { className: "spacer spacer__lg" }),
-							_react2.default.createElement("img", { src: "../assets/img/me-4x3.jpg" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/me-4x3.jpg", aspectRatioWidth: 3, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
 							_react2.default.createElement("div", { className: "spacer spacer__md" }),
-							_react2.default.createElement("img", { src: "../assets/img/mist-3x4.jpg" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/mist-3x4.jpg", aspectRatioWidth: 3, aspectRatioHeight: 4 })
 						)
 					)
 				),
@@ -39780,12 +39805,13 @@ var Home = function (_Component) {
 							_react2.default.createElement(
 								_ProjectCard2.default,
 								{ name: "American Made Film Site", href: "/american-made", tags: ["UI", "Interactive"] },
-								_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/banner.gif", aspectRatio: "16x9" })
+								_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/banner.gif", aspectRatioWidth: 1, aspectRatioHeight: 1 })
 							)
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement("div", { className: "spacer spacer__md" }),
 							_react2.default.createElement(
 								_ProjectCard2.default,
 								{ name: "V.ai Player", href: "/vai", tags: ["UX", "Interactive"] },
@@ -40196,11 +40222,10 @@ var Vai = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-12 " },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/vai/Dark Devices Full Artboard.jpg", aspectRatio: "16x9" })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/vai/Dark Devices Full Artboard.jpg", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 						)
 					)
-				),
-				_react2.default.createElement(_GridLines2.default, null)
+				)
 			);
 		}
 	}]);

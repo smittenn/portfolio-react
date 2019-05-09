@@ -142,13 +142,10 @@ class Vai extends Component {
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1"/>*/}
 						<div className="grid__item grid__item--col-12 ">
-							<Image src="../assets/img/vai/Dark Devices Full Artboard.jpg" aspectRatio="16x9"/>
+							<Image src="../assets/img/vai/Dark Devices Full Artboard.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>
-
-
-				<GridLines/>
 			</article>
 		);
 	}

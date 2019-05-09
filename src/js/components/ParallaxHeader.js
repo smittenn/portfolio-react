@@ -66,10 +66,11 @@ export default class ParallaxHeader extends Component {
 				blur={null} 
 				strength={str}
 				renderLayer={percentage => {
-					const style = { 
-						opacity: -(8 * percentage) + 5, 
-						transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
-					}
+					// const style = { 
+						// opacity: -(8 * percentage) + 5, 
+						// transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
+					// }
+					const style = {}
 					let updatedText = [];
 					headerText.forEach((item, idx) => {
 						typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
@@ -79,7 +80,7 @@ export default class ParallaxHeader extends Component {
 							<div className="grid">
 								<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-									<h1 className="no-mb">{updatedText}</h1>
+									<h1 className="no-mb" style={{ opacity: -(8 * percentage) + 5, transform: `translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)` }}>{updatedText}</h1>
 								</div>
 							</div>
 						</div>
