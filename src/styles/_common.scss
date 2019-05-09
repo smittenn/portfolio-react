@@ -9,6 +9,14 @@ html {
 body {
 	background: $brand-white;
 	-webkit-overflow-scrolling: touch;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none; 
+	-moz-user-select: none;    
+	-ms-user-select: none;     
+
+	-o-user-select: none;
+	user-select: none;  
 }
 
 video {
@@ -51,7 +59,7 @@ section {
 		}
 
 		.grid--lines {
-			opacity: .6666;
+			opacity: .5;
 		}
 	}
 

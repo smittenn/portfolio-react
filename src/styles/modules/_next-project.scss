@@ -1,0 +1,22 @@
+$baseclass: next-project;
+
+.#{$baseclass} {
+	position: relative;
+	background: $brand-black;
+	cursor: none;
+	// height: 60vh;
+	// overflow: hidden;
+
+	section {
+		height: 60vh;
+		transition: none;
+		transition: all $easing2 $duration-slow;
+	}
+
+	&:hover {
+		section {
+			height: 65vh;
+			transform: translate3d(0, -5vh, 0);
+		}
+	}
+}

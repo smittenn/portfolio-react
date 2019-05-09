@@ -86,7 +86,9 @@ export default class ParallaxHeader extends Component {
 					)
 				}}>
 				</Parallax>
-				{/*<NavToggle black={false}/>*/}
+				{/*<div className="clip-wrapper">
+					<NavToggle black={false}/>}
+				</div>*/}
 				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}/>
 			</div>
 		);

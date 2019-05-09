@@ -14,18 +14,17 @@ class Sidebar extends Component {
 		super(props);
 
 		this.state = {
-			isOpen: false,
 			isMobile: window.innerWidth <= 800,
 		}
 	}
 
 	componentDidMount() {
-		document.addEventListener('mousedown', this.handleClickOutside);
+		// document.addEventListener('mousedown', this.handleClickOutside);
 		window.addEventListener('resize', this.detectMobile);
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener('mousedown', this.handleClickOutside);
+		// document.removeEventListener('mousedown', this.handleClickOutside);
 		window.removeEventListener('resize', this.detectMobile);
 	}
 
@@ -37,26 +36,10 @@ class Sidebar extends Component {
 
 	handleClickOutside = (event) => {
 		if (!this.refs.sidebar.contains(event.target)) {
-			this.setState({
-				isOpen: false,
-			});
+			// console.log(this.refs);
+			// this.props.closeSidebar();
 		}
 	}
-
-
-	// openSidebar = () => {
-	// 	this.setState({
-	// 		isOpen: true,
-	// 	})
-	// 	console.log('hellop');
-	// }
-
-	// closeSidebar = () => {
-	// 	this.setState({
-	// 		isOpen: false,
-	// 	})			
-	// }
-
 
 	render() {
 
@@ -83,8 +66,8 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames}>
-				<ul className="sidebar" onMouseEnter={isMobile ? null : this.props.openSidebar} onClick={this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar} ref="sidebar">
+			<div className={classnames} ref="sidebar" onClick={this.props.openSidebar}>
+				<ul className="sidebar" onMouseEnter={isMobile ? null : this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar}>
 					{sidebarItems}
 				</ul>
 			</div>

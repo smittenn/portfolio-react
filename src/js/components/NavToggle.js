@@ -18,7 +18,6 @@ class NavToggle extends Component {
 		this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			// isToggleHovered: false,
 			isMobile: window.innerWidth <= 800,
 			countIsIncreasing: false,
 			countIsDecreasing: false,

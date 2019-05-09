@@ -110,6 +110,8 @@ $arrow-size: 40px;
 	}
 
 	@media screen and (max-width: $bp-medium) {
+		position: fixed;
+
 		h5, h6, i {
 			margin-bottom: 3px;
 		}

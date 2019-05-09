@@ -53,20 +53,37 @@ $baseclass: sidebar-container;
 		align-items: center;
 		border: none;
 		pointer-events: none;
+
+		&.active {
+			&:after {
+				content: '';
+				display: block;
+				margin-top: 2px;
+				margin-left: 6px;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: $brand-red;
+			}
+		}
 	}
 
-	.sidebar-item:before {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 100%;
-		width: 0%;
-		opacity: 0;
-		pointer-events: none;
-		transition: all $easing2 $duration-medium;
-	}
+	// .sidebar-item:before {
+	// 	content: "";
+	// 	display: block;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	right: 0;
+	// 	height: 100%;
+	// 	width: 0%;
+	// 	opacity: 0;
+	// 	pointer-events: none;
+	// 	transition: all $easing2 $duration-medium;
+	// }
+
+	.sidebar-number, .sidebar-label {
+		font-family: "campton"
+	} 
 
 	.sidebar-number {
 		color: darken($brand-black, 0%);
@@ -96,9 +113,7 @@ $baseclass: sidebar-container;
 		position: absolute;
 		top: 50%;
 		left: 72px;
-
-		// margin: 0 16px 0 0;
-		// left: 24px;
+		// transition: all $easing4 $duration-fast;
 	}
 
 	.sidebar-border {
@@ -168,7 +183,6 @@ $baseclass: sidebar-container;
 				.sidebar-dash {
 					width: 34px;
 					margin: 0;
-					transition: all $easing4 $duration-medium;
 				}
 
 				.sidebar-label {
@@ -184,22 +198,22 @@ $baseclass: sidebar-container;
 
 
 				&:hover {
-					&:before {
-						opacity: 1;
-						width: 100%;
-						background: $brand-grey-darkest;
-					}
-					.sidebar-number {
-						color: $brand-white;
-					}
+					// &:before {
+					// 	opacity: 1;
+					// 	width: 100%;
+					// 	background: $brand-grey-darkest;
+					// }
+					// .sidebar-number {
+					// 	color: $brand-white;
+					// }
 
-					.sidebar-dash {
-						background-color: $brand-white;
-					}
+					// .sidebar-dash {
+					// 	background-color: $brand-white;
+					// }
 
-					.sidebar-label {
-						color: $brand-white;
-					}
+					// .sidebar-label {
+					// 	color: $brand-white;
+					// }
 				}
 			}
 		}

@@ -14,6 +14,8 @@ import ProjectCard from "../components/ProjectCard"
 
 import Sidebar from "../components/Sidebar"
 
+import Image from "../components/Image"
+
 import splitWord from "../services/splitWord"
 
 class Home extends Component {
@@ -106,6 +108,7 @@ class Home extends Component {
 
 				<ScrollSection 
 				name={pageSections[2]} 
+				black
 				sections={pageSections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(2); }}>
@@ -123,7 +126,7 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
 							<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interactive"]}>
-								{<img src="../assets/img/american-made/banner.gif"/>}
+								<Image src="../assets/img/american-made/banner.gif" aspectRatio="16x9"/>
 								{/*<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />*/}
 							</ProjectCard>
 						</div>

@@ -36624,7 +36624,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":157,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
+},{"./routes":158,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36875,7 +36875,7 @@ var render = function render() {
 
 render();
 
-},{"../App":126,"../reducers":148,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],135:[function(require,module,exports){
+},{"../App":126,"../reducers":149,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],135:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37006,7 +37006,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":159,"../services/palette":161,"classnames":7,"react":113}],136:[function(require,module,exports){
+},{"../services/hexToRgb":160,"../services/palette":162,"classnames":7,"react":113}],136:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37132,13 +37132,13 @@ var Image = function (_Component) {
 				{ style: style },
 				_react2.default.createElement("img", { src: src, style: {
 						display: 'block',
-						width: '100%',
+						// width: '100%',
 						height: '100%',
 						position: 'absolute',
 						top: 0,
-						bottom: 0,
-						left: 0,
-						right: 0
+						// bottom: 0,
+						left: 0
+						// right: 0,
 					} })
 			);
 		}
@@ -37576,7 +37576,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
 
-},{"../actions/navTakeover":130,"../actions/secondaryPanel":132,"../services/splitLetter":162,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/secondaryPanel":132,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37646,7 +37646,6 @@ var NavToggle = function (_Component) {
 		_this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			// isToggleHovered: false,
 			isMobile: window.innerWidth <= 800,
 			countIsIncreasing: false,
 			countIsDecreasing: false
@@ -37747,7 +37746,128 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":162,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _GridLines = require("../components/GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _Sidebar = require("../components/Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NextProject = function (_Component) {
+	_inherits(NextProject, _Component);
+
+	function NextProject(props) {
+		_classCallCheck(this, NextProject);
+
+		var _this = _possibleConstructorReturn(this, (NextProject.__proto__ || Object.getPrototypeOf(NextProject)).call(this, props));
+
+		_this.state = {};
+		return _this;
+	}
+
+	_createClass(NextProject, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {}
+	}, {
+		key: "componentDidUpdate",
+		value: function componentDidUpdate(prevProps) {}
+	}, {
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    to = _props.to,
+			    name = _props.name,
+			    style = _props.style,
+			    sections = _props.sections,
+			    activeSection = _props.activeSection;
+
+
+			var classnames = (0, _classnames2.default)({
+				"next-project": true
+			});
+
+			return _react2.default.createElement(
+				"div",
+				{ className: classnames },
+				_react2.default.createElement(
+					_reactRouterDom.NavLink,
+					{ to: to },
+					_react2.default.createElement(
+						"section",
+						{ className: "black", style: style },
+						_react2.default.createElement(_GridLines2.default, null),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-12" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Next Up"
+								),
+								_react2.default.createElement(
+									"h1",
+									null,
+									name
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "clip-wrapper" },
+					_react2.default.createElement(_Sidebar2.default, {
+						isBlack: false,
+						sections: sections,
+						activeSection: activeSection
+					})
+				)
+			);
+		}
+	}]);
+
+	return NextProject;
+}(_react.Component);
+
+exports.default = NextProject;
+
+},{"../components/GridLines":136,"../components/Sidebar":145,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],141:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37904,7 +38024,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":158,"../services/hexToRgb":159,"../services/splitLetter":162,"../services/splitWord":163,"./NavToggle":139,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],141:[function(require,module,exports){
+},{"../services/detectMobile":159,"../services/hexToRgb":160,"../services/splitLetter":163,"../services/splitWord":164,"./NavToggle":139,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38033,7 +38153,7 @@ var ProjectCard = function (_Component) {
 
 exports.default = ProjectCard;
 
-},{"../services/splitLetter":162,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],142:[function(require,module,exports){
+},{"../services/splitLetter":163,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38133,7 +38253,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"../services/detectMobile":158,"../services/splitLetter":162,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],143:[function(require,module,exports){
+},{"../services/detectMobile":159,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38258,7 +38378,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"../components/GridLines":136,"./NavToggle":139,"./Sidebar":144,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],144:[function(require,module,exports){
+},{"../components/GridLines":136,"./NavToggle":139,"./Sidebar":145,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38311,14 +38431,12 @@ var Sidebar = function (_Component) {
 
 		_this.handleClickOutside = function (event) {
 			if (!_this.refs.sidebar.contains(event.target)) {
-				_this.setState({
-					isOpen: false
-				});
+				// console.log(this.refs);
+				// this.props.closeSidebar();
 			}
 		};
 
 		_this.state = {
-			isOpen: false,
 			isMobile: window.innerWidth <= 800
 		};
 		return _this;
@@ -38327,33 +38445,17 @@ var Sidebar = function (_Component) {
 	_createClass(Sidebar, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			document.addEventListener('mousedown', this.handleClickOutside);
+			// document.addEventListener('mousedown', this.handleClickOutside);
 			window.addEventListener('resize', this.detectMobile);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener('mousedown', this.handleClickOutside);
+			// document.removeEventListener('mousedown', this.handleClickOutside);
 			window.removeEventListener('resize', this.detectMobile);
 		}
 	}, {
 		key: 'render',
-
-
-		// openSidebar = () => {
-		// 	this.setState({
-		// 		isOpen: true,
-		// 	})
-		// 	console.log('hellop');
-		// }
-
-		// closeSidebar = () => {
-		// 	this.setState({
-		// 		isOpen: false,
-		// 	})			
-		// }
-
-
 		value: function render() {
 			var _this2 = this;
 
@@ -38398,10 +38500,10 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames },
+				{ className: classnames, ref: 'sidebar', onClick: this.props.openSidebar },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'sidebar', onMouseEnter: isMobile ? null : this.props.openSidebar, onClick: this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar, ref: 'sidebar' },
+					{ className: 'sidebar', onMouseEnter: isMobile ? null : this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar },
 					sidebarItems
 				)
 			);
@@ -38432,7 +38534,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-},{"../actions/sidebar":133,"../services/pad":160,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],145:[function(require,module,exports){
+},{"../actions/sidebar":133,"../services/pad":161,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38474,7 +38576,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],146:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38496,7 +38598,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],147:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38522,7 +38624,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],148:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38578,7 +38680,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":145,"./color":146,"./counter":147,"./navTakeover":149,"./navToggle":150,"./secondaryPanel":151,"./sidebar":152,"connected-react-router":11,"redux":114}],149:[function(require,module,exports){
+},{"./abbreviation":146,"./color":147,"./counter":148,"./navTakeover":150,"./navToggle":151,"./secondaryPanel":152,"./sidebar":153,"connected-react-router":11,"redux":114}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38600,7 +38702,7 @@ var navTakeoverReducer = function navTakeoverReducer() {
 
 exports.default = navTakeoverReducer;
 
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38622,7 +38724,7 @@ var navToggleReducer = function navToggleReducer() {
 
 exports.default = navToggleReducer;
 
-},{}],151:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38644,7 +38746,7 @@ var secondaryPanelReducer = function secondaryPanelReducer() {
 
 exports.default = secondaryPanelReducer;
 
-},{}],152:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38666,7 +38768,7 @@ var sidebarReducer = function sidebarReducer() {
 
 exports.default = sidebarReducer;
 
-},{}],153:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38776,7 +38878,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":136,"../components/ParallaxHeader":140,"react":113,"react-redux":61}],154:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":136,"../components/ParallaxHeader":141,"react":113,"react-redux":61}],155:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38832,6 +38934,10 @@ var _Sidebar2 = _interopRequireDefault(_Sidebar);
 var _CodepenEmbed = require("../components/CodepenEmbed");
 
 var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
+
+var _NextProject = require("../components/NextProject");
+
+var _NextProject2 = _interopRequireDefault(_NextProject);
 
 var _Image = require("../components/Image");
 
@@ -38994,6 +39100,7 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
@@ -39305,9 +39412,9 @@ var AmericanMade = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h2",
+									"h1",
 									null,
-									"Mobile First Design"
+									"Mobile First"
 								),
 								_react2.default.createElement(
 									"blockquote",
@@ -39363,9 +39470,22 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-12" })
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement("object", { data: "../assets/img/american-made/map-code2.svg", style: { minWidth: "100%" }, type: "image/svg+xml" })
+						)
 					)
-				)
+				),
+				_react2.default.createElement(_NextProject2.default, {
+					to: "/vai",
+					name: "V.ai",
+					sections: pageSections,
+					activeSection: activeSection,
+					style: {
+						backgroundImage: "url(../assets/img/vai/banner.jpg)",
+						backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6"
+					} })
 			);
 		}
 	}]);
@@ -39435,7 +39555,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/ParallaxHeader":140,"../components/ScrollArrow":142,"../components/ScrollSection":143,"../components/Sidebar":144,"../services/hexToRgb":159,"../services/palette":161,"../services/splitLetter":162,"../services/splitWord":163,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],155:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/NextProject":140,"../components/ParallaxHeader":141,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/Sidebar":145,"../services/hexToRgb":160,"../services/palette":162,"../services/splitLetter":163,"../services/splitWord":164,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],156:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39481,6 +39601,10 @@ var _ProjectCard2 = _interopRequireDefault(_ProjectCard);
 var _Sidebar = require("../components/Sidebar");
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+var _Image = require("../components/Image");
+
+var _Image2 = _interopRequireDefault(_Image);
 
 var _splitWord = require("../services/splitWord");
 
@@ -39623,6 +39747,7 @@ var Home = function (_Component) {
 					_ScrollSection2.default,
 					{
 						name: pageSections[2],
+						black: true,
 						sections: pageSections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
@@ -39655,7 +39780,7 @@ var Home = function (_Component) {
 							_react2.default.createElement(
 								_ProjectCard2.default,
 								{ name: "American Made Film Site", href: "/american-made", tags: ["UI", "Interactive"] },
-								_react2.default.createElement("img", { src: "../assets/img/american-made/banner.gif" })
+								_react2.default.createElement(_Image2.default, { src: "../assets/img/american-made/banner.gif", aspectRatio: "16x9" })
 							)
 						),
 						_react2.default.createElement(
@@ -39761,7 +39886,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/ParallaxHeader":140,"../components/ProjectCard":141,"../components/ScrollArrow":142,"../components/ScrollSection":143,"../components/Sidebar":144,"../services/splitWord":163,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],156:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/Image":137,"../components/ParallaxHeader":141,"../components/ProjectCard":142,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/Sidebar":145,"../services/splitWord":164,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],157:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40149,7 +40274,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // bgImage={"../assets/img/vai/banner.gif"}
 // headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/ParallaxHeader":140,"../components/ScrollArrow":142,"../components/ScrollSection":143,"../components/Sidebar":144,"../services/hexToRgb":159,"../services/palette":161,"../services/splitLetter":162,"../services/splitWord":163,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],157:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/ParallaxHeader":141,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/Sidebar":145,"../services/hexToRgb":160,"../services/palette":162,"../services/splitLetter":163,"../services/splitWord":164,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],158:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40202,7 +40327,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/NavTakeover":138,"./AboutMe":153,"./AmericanMade":154,"./Home":155,"./Vai":156,"react":113,"react-router":91}],158:[function(require,module,exports){
+},{"../components/NavTakeover":138,"./AboutMe":154,"./AmericanMade":155,"./Home":156,"./Vai":157,"react":113,"react-router":91}],159:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40213,7 +40338,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],159:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40229,7 +40354,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],160:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40240,7 +40365,7 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],161:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40267,7 +40392,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],162:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40290,7 +40415,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}],163:[function(require,module,exports){
+},{"react":113}],164:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

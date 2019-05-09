@@ -16,6 +16,7 @@ import ScrollSection from "../components/ScrollSection"
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
+import NextProject from "../components/NextProject"
 
 import Image from "../components/Image"
 
@@ -124,7 +125,7 @@ class AmericanMade extends Component {
 				}}  
 				onSetActive={() => { setNavWhite(); this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
 							<p>Lead Designer</p>
@@ -279,7 +280,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Mobile First Design</h2>
+								<h1>Mobile First</h1>
 								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.</blockquote>
 							</div>
 						</div>
@@ -308,10 +309,20 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							{/*<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
+							{<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>}
 						</div>
 					</div>
 				</ScrollSection>}
+
+				<NextProject 
+				to="/vai"
+				name="V.ai"
+				sections={pageSections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/vai/banner.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+				}}/>
 
 			</article>
 		);
