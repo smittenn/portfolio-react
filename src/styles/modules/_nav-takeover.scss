@@ -6,6 +6,7 @@ $baseclass: nav-takeover;
 	flex-direction: column;
 	align-items: center;
 	background: white;
+	@include zIndexClosest();
 
 	&__main {
 		position: fixed;
@@ -71,7 +72,7 @@ $baseclass: nav-takeover;
 
 	&__line-container {
 		position: absolute;
-		height: 100%;
+		height: 1440px;
 		width: 72px;
 		background: $brand-white;
 		border-left: solid 1px $brand-grey-light;
@@ -175,7 +176,7 @@ $baseclass: nav-takeover;
 			// padding-top: 10px;
 		}
 
-		
+
 		.#{$baseclass}__items--primary {
 			// opacity: 0;
 			pointer-events: none;

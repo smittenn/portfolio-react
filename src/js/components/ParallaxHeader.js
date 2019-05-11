@@ -60,6 +60,13 @@ export default class ParallaxHeader extends Component {
 			// "react-parallax-contents--animating" : isAnimating,			
 		})
 
+		const style = {}
+		let updatedText = [];
+		headerText.forEach((item, idx) => {
+			typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
+		})
+
+
 		return (
 			<div>
 				<Parallax 
@@ -67,31 +74,22 @@ export default class ParallaxHeader extends Component {
 				blur={null} 
 				strength={str}
 				renderLayer={percentage => {
-					// const style = { 
-						// opacity: -(8 * percentage) + 5, 
-						// transform: `skewY(${((10 * percentage) - 5)}deg) translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)`
-					// }
-					const style = {}
-					let updatedText = [];
-					headerText.forEach((item, idx) => {
-						typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
-					})
 					return (
 						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
-							{/*<GridLines/>*/}
-							<div className="grid">
-								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-									<h1 className="no-mb" style={{ opacity: -(3 * percentage) + 2.5, transform: `translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)` }}>{updatedText}</h1>
-								</div>
-							</div>
 						</div>
 					)
 				}}>
-				</Parallax>
-				{/*<div className="clip-wrapper">
+				<div className="grid">
+					{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+						<h1 className="no-mb">{updatedText}</h1>
+					</div>
+				</div>
+
+				<div className="clip-wrapper">
 					<NavToggle black={false}/>}
-				</div>*/}
+				</div>
+				</Parallax>
 				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}/>
 			</div>
 		);

@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import { openSidebar, closeSidebar } from '../actions/sidebar'
+import createNewId from '../services/createNewId'
 
 import pad from '../services/pad'
 
@@ -54,8 +55,8 @@ class Sidebar extends Component {
 		})
 
 		const sidebarItems = sections.map((section, i) => 
-			<li key={i} className="sidebar-item">
-				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutCubic"} duration={1200} className={classNames({ "active": sections[i] == activeSection })}>
+			<li key={i} className="sidebar-item" >
+				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutQuint"} duration={1200} className={classNames({ "active": sections[i] == activeSection })} onClick={this.props.closeSidebar}>
 					{ i == 0 ? <div className="sidebar-border sidebar-border__top"/> : null }
 					<h5 className="sidebar-number">{pad(i + 1, 2)}.</h5>
 					<div className="sidebar-dash"></div>
@@ -66,8 +67,8 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames} ref="sidebar" onClick={this.props.openSidebar}>
-				<ul className="sidebar" onMouseEnter={isMobile ? null : this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar}>
+			<div className={classnames} ref="sidebar">
+				<ul className="sidebar" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={isMobile ? null : this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar}>
 					{sidebarItems}
 				</ul>
 			</div>

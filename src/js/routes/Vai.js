@@ -42,12 +42,14 @@ class Vai extends Component {
 		super(props);
 
 		this.state = {
-			activeSection: "overview",
+			activeSection: "intro",
 			pageSections: [
 				{ name: "intro", },
 				{ name: "overview", },
 				{ name: "details", },
-				{ name: "vai", },
+				{ name: "player-overlay", },
+				{ name: "products", },
+				{ name: "people", },
 			],
 		}
 	}
@@ -110,23 +112,23 @@ class Vai extends Component {
 				black 
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ backgroundImage: `url(../assets/img/vai/chevrolet.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 70%" }}  
-				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(sections[2]); }}>
+				style={{ backgroundImage: `url(../assets/img/vai/one-plus.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 20%" }}  
+				onSetActive={() => { setCounter(3); this.setActiveSection(sections[2]); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-2"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
 							<p>Lead Designer</p>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
 							<h5 className="uppercase">Date</h5>
 							<p>October, 2017</p>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
 							<h5 className="uppercase">Client</h5>
 							<p>NBCUX Lab</p> 
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-6-medium">
 							<h5 className="uppercase">Team</h5>
 							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </p> 
 						</div>
@@ -138,14 +140,70 @@ class Vai extends Component {
 				black 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(sections[2]); }}>
+				onSetActive={() => { setCounter(4); this.setActiveSection(sections[3]); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1"/>*/}
-						<div className="grid__item grid__item--col-12 ">
-							<Image src="../assets/img/vai/Dark Devices Full Artboard.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h1>Player Overlay</h1>
+								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without encroaching on the viewing experience.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>
+
+				<ScrollSection 
+				name={sections[4]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { setCounter(5); this.setActiveSection(sections[4]); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h1>Products</h1>
+								<blockquote>Brands can now sponsor T.V. shows and movies to promote their products in a new and innovative way without using traditional commercials that interrupt and upset consumers. Fans of the show can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<Image src="../assets/img/vai/product.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				name={sections[5]}
+				black
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { setCounter(6); this.setActiveSection(sections[5]); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h1>People</h1>
+								<blockquote>Besides addressing the goal of advertising, V.ai aims to elevate the video viewing experience. Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+					</div>
+					<div className="grid">
+						{<div className="grid__item grid__item--col-4 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<div className="spacer spacer__sm"/>
+							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+					</div>
+				</ScrollSection>
+				
 			</article>
 		);
 	}

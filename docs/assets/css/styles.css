@@ -130,6 +130,7 @@ table {
     width: 100%;
     height: 100%;
     left: 0;
+    opacity: 0.6;
     pointer-events: none; }
   .grid__line {
     color: #dededc;
@@ -314,7 +315,7 @@ section {
     section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p, section.black blockquote, section.black a {
       color: #F8FBF7; }
     section.black .grid--lines {
-      opacity: .12; }
+      opacity: .09; }
   section.grey {
     background-color: #DEDEDC; }
     section.grey h1, section.grey h2, section.grey h3, section.grey h4, section.grey h5, section.grey h6, section.grey p, section.grey blockquote {
@@ -600,7 +601,7 @@ h1 span, h2 span, h3 span, p span, blockquote span {
 section img {
   opacity: 0;
   transition: none;
-  transform: translate3d(0, 50%, 0); }
+  transform: translate3d(0, 120px, 0); }
 
 section .grid__item:nth-child(1) img {
   transition-delay: 1.2s; }
@@ -1421,7 +1422,8 @@ section p span, section blockquote span {
   flex-direction: column;
   -ms-flex-align: center;
   align-items: center;
-  background: white; }
+  background: white;
+  z-index: 9999; }
   .nav-takeover__main {
     position: fixed;
     width: 100%;
@@ -1472,7 +1474,7 @@ section p span, section blockquote span {
       min-height: 60px; }
   .nav-takeover__line-container {
     position: absolute;
-    height: 100%;
+    height: 1440px;
     width: 72px;
     background: #F8FBF7;
     border-left: solid 1px #DEDEDC;
@@ -1756,7 +1758,10 @@ section p span, section blockquote span {
     transform: translate3d(0, -5vh, 0); }
 
 .react-parallax {
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 1; }
+  .react-parallax .nav-toggle {
+    z-index: 999; }
   .react-parallax .grid--lines {
     opacity: .18; }
   .react-parallax-contents, .react-parallax-content {
@@ -1864,7 +1869,8 @@ section p span, section blockquote span {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse; }
+  flex-direction: column-reverse;
+  z-index: 1; }
   .scroll-arrow h5, .scroll-arrow h6, .scroll-arrow i {
     color: #F8FBF7;
     margin: 0;
@@ -2058,7 +2064,7 @@ section p span, section blockquote span {
       .sidebar-container.sidebar-container--open {
         min-width: 252px; }
         .sidebar-container.sidebar-container--open .sidebar-item {
-          height: 48px; } }
+          height: 8vh; } }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

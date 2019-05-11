@@ -2,9 +2,14 @@ $baseclass: react-parallax;
 
 .#{$baseclass} {
 	overflow: hidden; 
+	@include zIndexClose();
 	
 	img {
 		// object-fit: scale-down;
+	}
+
+	.nav-toggle {
+		@include zIndexCloser();
 	}
 
 	.grid--lines {
