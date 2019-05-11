@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
 import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPanel"
+import { hoverToggle, unhoverToggle } from "../actions/navToggle"
 
 import splitLetter from '../services/splitLetter'
 
@@ -21,12 +22,12 @@ class Nav extends Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener('mousedown', this.handleClickOutside);
+		// document.addEventListener('mousedown', this.handleClickOutside);
 		window.addEventListener('resize', this.detectMobile);
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener('mousedown', this.handleClickOutside);
+		// document.removeEventListener('mousedown', this.handleClickOutside);
 		window.removeEventListener('resize', this.detectMobile);
 	}
 
@@ -36,41 +37,22 @@ class Nav extends Component {
 		})
 	}
 
-	handleClickOutside = (event) => {
-		if (this.refs.notPanels.contains(event.target)) {
-			this.props.closeTakeover();
-			this.props.closeSecondaryPanel();
-		}
-	}
+	// handleClickOutside = (event) => {
+	// 	if (this.refs.notPanels.contains(event.target)) {
+	// 		this.props.closeTakeover();
+	// 		this.props.closeSecondaryPanel();
+	// 	}
+	// }
 
 	setMenuClosed = () => {
-		if (this.props.isTakeoverOpen) {
-			this.props.closeTakeover();
-			this.props.closeSecondaryPanel();
+		this.props.closeTakeover();
+		this.props.closeSecondaryPanel();
 
-			this.state.isMobile ? this.setState({ isToggleHovered: true }) : null
-			this.state.isMobile ? setTimeout(() => { this.setState({ isToggleHovered: false }) }, 900) : null
-		}
+		setTimeout(() => { this.props.unhoverToggle(); }, 900)
 	}
 	
-	openSecondaryPanel = () => {
-		this.setState({
-			secondaryPanelOpen: true,
-		})
-	}
-
-	closeSecondaryPanel = () => {
-		this.setState({
-			secondaryPanelOpen: false,
-		})
-	}
-
-	pad = (n, width, z) => (
-		n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
-	)
-
 	setIndexHovered = (event) => {
-		const index = this.getChildIndex(event.target);
+		const index = this.getChildIndex(event.target.parentElement);
 
 		this.setState({
 			indexHovered: index,
@@ -86,7 +68,7 @@ class Nav extends Component {
 	}
 
 	getActiveIndex = () => {
-		console.log(this.props.abbreviation)
+		// console.log(this.props.abbreviation)
 		switch (this.props.abbreviation) {
 			case 'H':
 				return 0;
@@ -113,64 +95,86 @@ class Nav extends Component {
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
+		const navData = {
+			secondary: [
+				{ 
+					name: "American Made",
+					to: "/american-made",
+				},
+				{ 
+					name: "V.ai Player",
+					to: "/vai",
+				},
+				{ 
+					name: "Translator",
+					to: "/translator",
+				},
+				{ 
+					name: "J&J Home",
+					to: "/jnj-home",
+				},
+				{ 
+					name: "J&J Medical Devices",
+					to: "/jnj-mdc",
+				},
+				{ 
+					name: "Micro App Interactions",
+					to: "/micro-app-interactions",
+				},
+				{ 
+					name: "Micro App Templates",
+					to: "/micro-app-templates",
+				},
+				{ 
+					name: "Perforce",
+					to: "/perforce",
+				},
+				{ 
+					name: "Cisco Mate",
+					to: "/cisco",
+				},
+				{ 
+					name: "Protohack",
+					to: "/protohack",
+				},
+			]
+		}
+
+		const secondaryNavItems = navData.secondary.map((item, i) => 
+			<li key={i} onClick={this.setMenuClosed}>
+				<NavLink to={item.to} onMouseOver={this.setIndexHovered}>
+					<h3>{item.name}</h3>
+				</NavLink>
+			</li>
+		)
+
 		return (
 			<div>
 				<nav className={classnames}>
 					<div className="nav-takeover__main">
-						<div ref="notPanels"/>
+						<div onClick={this.setMenuClosed}/>
 						<div className="nav-takeover__panels">
-							<div className="nav-takeover__panel nav-takeover__panel--secondary">
-								<ul>
-									{ isMobile ? (<li onClick={this.props.closeSecondaryPanel}>
-										<i className="iconcss icon-arrow-right"></i>
-									</li>) : null }
-									<li onClick={this.setMenuClosed}><NavLink to="/american-made">
-										<h4 className="uppercase">American Made</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/vai">
-										<h4 className="uppercase">V.ai Player</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/translator">
-										<h4 className="uppercase">Translator</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/jnj-mdc">
-										<h4 className="uppercase">J&J MDC</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/jnj-home">
-										<h4 className="uppercase">J&J Home</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/micro-app-interactions">
-										<h4 className="uppercase">Micro App Interactions</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/micro-app-templates">
-										<h4 className="uppercase">Micro App Templates</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/perforce">
-										<h4 className="uppercase">Perforce</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/cisco">
-										<h4 className="uppercase">Cisco MATE</h4>
-									</NavLink></li>
-									<li onClick={this.setMenuClosed}><NavLink to="/protohack">
-										<h4 className="uppercase">Protohack</h4>
-									</NavLink></li>
+							<div className="nav-takeover__panel">
+								<ul className="nav-takeover__items--secondary">
+									<li onClick={this.props.closeSecondaryPanel}>
+										<h2><i className="iconcss icon-arrow-right"></i></h2>
+									</li>
+									{ secondaryNavItems }
 								</ul>
-							</div>
-							<div className="nav-takeover__panel nav-takeover__panel--primary">
-								<ul>
-									<li onClick={this.setMenuClosed} onMouseOver={this.setIndexHovered}><NavLink to="/">
+								<ul className="nav-takeover__items--primary">
+									<li onClick={this.setMenuClosed}><NavLink to="/" onMouseOver={this.setIndexHovered}>
 										<h2 className={classNames({ 'active': abbreviation == 'H' })}>Home</h2>
 									</NavLink></li>
 									<li onMouseOver={this.setIndexHovered} onClick={this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel}>
 										<h2 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h2>
 									</li>
-		 							<li onMouseOver={this.setIndexHovered} onClick={this.setMenuClosed}><NavLink to="/process">
+		 							<li onClick={this.setMenuClosed}><NavLink to="/process" onMouseOver={this.setIndexHovered}>
 			 							<h2>Process</h2>
 		 							</NavLink></li>
-		 							<li onMouseOver={this.setIndexHovered} onClick={this.setMenuClosed}><NavLink to="/about-me">
+		 							<li onClick={this.setMenuClosed}><NavLink to="/about-me" onMouseOver={this.setIndexHovered}>
 			 							<h2>About me</h2>
 			 						</NavLink></li>
-		 							<li onMouseOver={this.setIndexHovered} onClick={this.setMenuClosed}><NavLink to="/resume">
+		 							<li  onClick={this.setMenuClosed}><NavLink to="/resume" onMouseOver={this.setIndexHovered}>
 			 							<h2>Resume</h2>
 		 							</NavLink></li>
 								</ul>
@@ -199,6 +203,8 @@ const mapDispatchToProps = dispatch => ({
 	closeTakeover: () => dispatch(closeTakeover()),
 	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
 	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
+	hoverToggle: () => dispatch(hoverToggle()),
+	unhoverToggle: () => dispatch(unhoverToggle()),
 })
 
 

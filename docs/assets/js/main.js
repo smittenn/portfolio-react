@@ -37176,6 +37176,8 @@ var _navTakeover = require('../actions/navTakeover');
 
 var _secondaryPanel = require('../actions/secondaryPanel');
 
+var _navToggle = require('../actions/navToggle');
+
 var _splitLetter = require('../services/splitLetter');
 
 var _splitLetter2 = _interopRequireDefault(_splitLetter);
@@ -37202,43 +37204,17 @@ var Nav = function (_Component) {
 			});
 		};
 
-		_this.handleClickOutside = function (event) {
-			if (_this.refs.notPanels.contains(event.target)) {
-				_this.props.closeTakeover();
-				_this.props.closeSecondaryPanel();
-			}
-		};
-
 		_this.setMenuClosed = function () {
-			if (_this.props.isTakeoverOpen) {
-				_this.props.closeTakeover();
-				_this.props.closeSecondaryPanel();
+			_this.props.closeTakeover();
+			_this.props.closeSecondaryPanel();
 
-				_this.state.isMobile ? _this.setState({ isToggleHovered: true }) : null;
-				_this.state.isMobile ? setTimeout(function () {
-					_this.setState({ isToggleHovered: false });
-				}, 900) : null;
-			}
-		};
-
-		_this.openSecondaryPanel = function () {
-			_this.setState({
-				secondaryPanelOpen: true
-			});
-		};
-
-		_this.closeSecondaryPanel = function () {
-			_this.setState({
-				secondaryPanelOpen: false
-			});
-		};
-
-		_this.pad = function (n, width, z) {
-			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
+			setTimeout(function () {
+				_this.props.unhoverToggle();
+			}, 900);
 		};
 
 		_this.setIndexHovered = function (event) {
-			var index = _this.getChildIndex(event.target);
+			var index = _this.getChildIndex(event.target.parentElement);
 
 			_this.setState({
 				indexHovered: index
@@ -37256,7 +37232,7 @@ var Nav = function (_Component) {
 		};
 
 		_this.getActiveIndex = function () {
-			console.log(_this.props.abbreviation);
+			// console.log(this.props.abbreviation)
 			switch (_this.props.abbreviation) {
 				case 'H':
 					return 0;
@@ -37278,18 +37254,28 @@ var Nav = function (_Component) {
 	_createClass(Nav, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			document.addEventListener('mousedown', this.handleClickOutside);
+			// document.addEventListener('mousedown', this.handleClickOutside);
 			window.addEventListener('resize', this.detectMobile);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener('mousedown', this.handleClickOutside);
+			// document.removeEventListener('mousedown', this.handleClickOutside);
 			window.removeEventListener('resize', this.detectMobile);
 		}
+
+		// handleClickOutside = (event) => {
+		// 	if (this.refs.notPanels.contains(event.target)) {
+		// 		this.props.closeTakeover();
+		// 		this.props.closeSecondaryPanel();
+		// 	}
+		// }
+
 	}, {
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
 			var _state = this.state,
 			    isMobile = _state.isMobile,
 			    indexHovered = _state.indexHovered;
@@ -37309,6 +37295,56 @@ var Nav = function (_Component) {
 				opacity: this.props.isTakeoverOpen ? 1 : 0
 			};
 
+			var navData = {
+				secondary: [{
+					name: "American Made",
+					to: "/american-made"
+				}, {
+					name: "V.ai Player",
+					to: "/vai"
+				}, {
+					name: "Translator",
+					to: "/translator"
+				}, {
+					name: "J&J Home",
+					to: "/jnj-home"
+				}, {
+					name: "J&J Medical Devices",
+					to: "/jnj-mdc"
+				}, {
+					name: "Micro App Interactions",
+					to: "/micro-app-interactions"
+				}, {
+					name: "Micro App Templates",
+					to: "/micro-app-templates"
+				}, {
+					name: "Perforce",
+					to: "/perforce"
+				}, {
+					name: "Cisco Mate",
+					to: "/cisco"
+				}, {
+					name: "Protohack",
+					to: "/protohack"
+				}]
+			};
+
+			var secondaryNavItems = navData.secondary.map(function (item, i) {
+				return _react2.default.createElement(
+					'li',
+					{ key: i, onClick: _this2.setMenuClosed },
+					_react2.default.createElement(
+						_reactRouterDom.NavLink,
+						{ to: item.to, onMouseOver: _this2.setIndexHovered },
+						_react2.default.createElement(
+							'h3',
+							null,
+							item.name
+						)
+					)
+				);
+			});
+
 			return _react2.default.createElement(
 				'div',
 				null,
@@ -37318,165 +37354,36 @@ var Nav = function (_Component) {
 					_react2.default.createElement(
 						'div',
 						{ className: 'nav-takeover__main' },
-						_react2.default.createElement('div', { ref: 'notPanels' }),
+						_react2.default.createElement('div', { onClick: this.setMenuClosed }),
 						_react2.default.createElement(
 							'div',
 							{ className: 'nav-takeover__panels' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'nav-takeover__panel nav-takeover__panel--secondary' },
+								{ className: 'nav-takeover__panel' },
 								_react2.default.createElement(
 									'ul',
-									null,
-									isMobile ? _react2.default.createElement(
+									{ className: 'nav-takeover__items--secondary' },
+									_react2.default.createElement(
 										'li',
 										{ onClick: this.props.closeSecondaryPanel },
-										_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
-									) : null,
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
 										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/american-made' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'American Made'
-											)
+											'h2',
+											null,
+											_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 										)
 									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/vai' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'V.ai Player'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/translator' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'Translator'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/jnj-mdc' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'J&J MDC'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/jnj-home' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'J&J Home'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/micro-app-interactions' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'Micro App Interactions'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/micro-app-templates' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'Micro App Templates'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/perforce' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'Perforce'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/cisco' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'Cisco MATE'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/protohack' },
-											_react2.default.createElement(
-												'h4',
-												{ className: 'uppercase' },
-												'Protohack'
-											)
-										)
-									)
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'nav-takeover__panel nav-takeover__panel--primary' },
+									secondaryNavItems
+								),
 								_react2.default.createElement(
 									'ul',
-									null,
+									{ className: 'nav-takeover__items--primary' },
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.setMenuClosed, onMouseOver: this.setIndexHovered },
+										{ onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/' },
+											{ to: '/', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
 												'h2',
 												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
@@ -37495,10 +37402,10 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onMouseOver: this.setIndexHovered, onClick: this.setMenuClosed },
+										{ onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/process' },
+											{ to: '/process', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
 												'h2',
 												null,
@@ -37508,10 +37415,10 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onMouseOver: this.setIndexHovered, onClick: this.setMenuClosed },
+										{ onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/about-me' },
+											{ to: '/about-me', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
 												'h2',
 												null,
@@ -37521,10 +37428,10 @@ var Nav = function (_Component) {
 									),
 									_react2.default.createElement(
 										'li',
-										{ onMouseOver: this.setIndexHovered, onClick: this.setMenuClosed },
+										{ onClick: this.setMenuClosed },
 										_react2.default.createElement(
 											_reactRouterDom.NavLink,
-											{ to: '/resume' },
+											{ to: '/resume', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
 												'h2',
 												null,
@@ -37572,13 +37479,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		closeSecondaryPanel: function closeSecondaryPanel() {
 			return dispatch((0, _secondaryPanel.closeSecondaryPanel)());
+		},
+		hoverToggle: function hoverToggle() {
+			return dispatch((0, _navToggle.hoverToggle)());
+		},
+		unhoverToggle: function unhoverToggle() {
+			return dispatch((0, _navToggle.unhoverToggle)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
 
-},{"../actions/navTakeover":130,"../actions/secondaryPanel":132,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37609,6 +37522,10 @@ var _splitLetter = require('../services/splitLetter');
 
 var _splitLetter2 = _interopRequireDefault(_splitLetter);
 
+var _pad = require('../services/pad');
+
+var _pad2 = _interopRequireDefault(_pad);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37635,20 +37552,9 @@ var NavToggle = function (_Component) {
 			_this.props.closeSecondaryPanel();
 		};
 
-		_this.detectMobile = function (event) {
-			_this.setState({
-				isMobile: window.innerWidth <= 800
-			});
-		};
-
-		_this.pad = function (n, width, z) {
-			return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
-		};
-
 		_this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			isMobile: window.innerWidth <= 800,
 			countIsIncreasing: false,
 			countIsDecreasing: false
 		};
@@ -37656,18 +37562,6 @@ var NavToggle = function (_Component) {
 	}
 
 	_createClass(NavToggle, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			// document.addEventListener('mousedown', this.handleClickOutside);
-			window.addEventListener('resize', this.detectMobile);
-		}
-	}, {
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			// document.removeEventListener('mousedown', this.handleClickOutside);
-			window.removeEventListener('resize', this.detectMobile);
-		}
-	}, {
 		key: 'render',
 		value: function render() {
 			var _state = this.state,
@@ -37688,7 +37582,7 @@ var NavToggle = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames, onMouseEnter: this.props.hoverToggle, onMouseLeave: this.props.unhoverToggle,
+				{ className: classnames, onMouseEnter: this.props.hoverToggle, onMouseLeave: this.props.isTakeoverOpen ? null : this.props.unhoverToggle,
 					onClick: this.props.isTakeoverOpen ? this.closeNav : this.openNav },
 				_react2.default.createElement(
 					'h5',
@@ -37705,7 +37599,7 @@ var NavToggle = function (_Component) {
 				_react2.default.createElement(
 					'h5',
 					{ className: 'nav-toggle__count' },
-					(0, _splitLetter2.default)(this.pad(this.props.count, 2).toString())
+					(0, _splitLetter2.default)((0, _pad2.default)(this.props.count, 2).toString())
 				)
 			);
 		}
@@ -37748,7 +37642,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/pad":161,"../services/splitLetter":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37793,19 +37687,38 @@ var NextProject = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (NextProject.__proto__ || Object.getPrototypeOf(NextProject)).call(this, props));
 
-		_this.state = {};
+		_this.setArrowPosition = function (event) {
+			// console.log(event)
+			var pageX = event.pageX,
+			    pageY = event.pageY;
+
+
+			_this.setState({
+				arrowX: pageX,
+				arrowY: pageY - _this.refs.nextProject.offsetTop
+			});
+		};
+
+		_this.state = {
+			arrowX: 0,
+			arrowY: 0
+		};
 		return _this;
 	}
 
 	_createClass(NextProject, [{
 		key: "componentDidMount",
-		value: function componentDidMount() {}
+		value: function componentDidMount() {
+			// window.addEventListener('mousemove', this.setArrowPosition)
+		}
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {}
-	}, {
-		key: "componentDidUpdate",
-		value: function componentDidUpdate(prevProps) {}
+		// window.removeEventListener('mousemove', this.setArrowPosition)
+
+
+		// componentDidUpdate(prevProps) {}
+
 	}, {
 		key: "render",
 		value: function render() {
@@ -37823,7 +37736,7 @@ var NextProject = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				{ className: classnames },
+				{ className: classnames, onMouseMove: this.setArrowPosition, ref: "nextProject" },
 				_react2.default.createElement(
 					_reactRouterDom.NavLink,
 					{ to: to },
@@ -37839,13 +37752,22 @@ var NextProject = function (_Component) {
 								{ className: "grid__item grid__item--col-12" },
 								_react2.default.createElement(
 									"h2",
-									null,
+									{ className: "no-mb" },
 									"Next Up"
 								),
 								_react2.default.createElement(
 									"h1",
 									null,
 									name
+								),
+								_react2.default.createElement(
+									"h1",
+									{ style: {
+											position: 'absolute',
+											left: this.state.arrowX,
+											top: this.state.arrowY
+										} },
+									_react2.default.createElement("i", { className: "iconcss icon-arrow-right" })
 								)
 							)
 						)
@@ -37893,6 +37815,10 @@ var _reactScroll = require("react-scroll");
 var _NavToggle = require("./NavToggle");
 
 var _NavToggle2 = _interopRequireDefault(_NavToggle);
+
+var _GridLines = require("./GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
 
 var _splitWord = require("../services/splitWord");
 
@@ -38004,13 +37930,12 @@ var ParallaxHeader = function (_Component) {
 							_react2.default.createElement(
 								"div",
 								{ className: "grid" },
-								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 								_react2.default.createElement(
 									"div",
 									{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
 									_react2.default.createElement(
 										"h1",
-										{ className: "no-mb", style: { opacity: -(8 * percentage) + 5, transform: "translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" } },
+										{ className: "no-mb", style: { opacity: -(3 * percentage) + 2.5, transform: "translate3d(0," + (-400 * (1 - percentage) + 200) + "px,0)" } },
 										updatedText
 									)
 								)
@@ -38027,7 +37952,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":159,"../services/hexToRgb":160,"../services/splitLetter":163,"../services/splitWord":164,"./NavToggle":139,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],142:[function(require,module,exports){
+},{"../services/detectMobile":159,"../services/hexToRgb":160,"../services/splitLetter":163,"../services/splitWord":164,"./GridLines":136,"./NavToggle":139,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39029,7 +38954,7 @@ var AmericanMade = function (_Component) {
 						className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: pageSections[0],
-						headerText: ["The ", _react2.default.createElement(
+						headerText: ["The", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
 							"American "
@@ -39103,7 +39028,7 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-2 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
@@ -39148,7 +39073,7 @@ var AmericanMade = function (_Component) {
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-4  grid__item--col-6-medium" },
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
 								"h5",
 								{ className: "uppercase" },
@@ -39473,11 +39398,7 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12" },
-							_react2.default.createElement("object", { data: "../assets/img/american-made/map-code2.svg", style: { minWidth: "100%" }, type: "image/svg+xml" })
-						)
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-12" })
 					)
 				),
 				_react2.default.createElement(_NextProject2.default, {
@@ -40118,13 +40039,14 @@ var Vai = function (_Component) {
 						black: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: { backgroundImage: "url(../assets/img/vai/chevrolet.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6", backgroundPosition: "center 70%" },
+						style: { backgroundImage: "url(../assets/img/vai/chevrolet.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .8", backgroundPosition: "center 70%" },
 						onSetActive: function onSetActive() {
 							setCounter(3);setNavWhite();_this2.setActiveSection(sections[2]);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-2" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
@@ -40169,7 +40091,7 @@ var Vai = function (_Component) {
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-5  grid__item--col-6-medium" },
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
 								"h5",
 								{ className: "uppercase" },
@@ -40344,8 +40266,8 @@ var routes = _react2.default.createElement(
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/process', component: _Home2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/about-me', component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/resume', component: _AboutMe2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/american-made', component: _AmericanMade2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/vai', component: _Vai2.default })
+		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/american-made', component: _AmericanMade2.default }),
+		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/vai', component: _Vai2.default })
 	),
 	_react2.default.createElement(_NavTakeover2.default, null)
 );

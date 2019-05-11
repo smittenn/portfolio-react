@@ -23,30 +23,9 @@
 }
 
 
-.react-parallax {
-	&-contents {
-		* {
-			@include zIndexCloser();			
-		}
-	}
-}
-
-.parallax-header {
-	// * {
-	// 	@include zIndexCloser();
-	// }
-}
 
 section { 
-	// * {
-	// 	@include zIndexCloser();					
-	// }
-}
-
-.nav-toggle {
-	// @include zIndexFar();
-
-	// &--white {
-	// 	@include zIndexCloser();
-	// }
+	* {
+		@include zIndexFar();					
+	}
 }

@@ -7,23 +7,6 @@ $baseclass: nav-takeover;
 	align-items: center;
 	background: white;
 
-	hr {
-		margin: 0;
-		height: 2px;
-		width: 100%;
-		background-color: $brand-grey-light;
-
-		&:first-of-type {
-			background: $brand-grey-lightest;
-		}
-	}
-
-	p {
-		font-size: 21px;
-		color: $brand-grey-dark;
-		min-width: 130px;
-	}
-
 	&__main {
 		position: fixed;
 		width: 100%;
@@ -32,7 +15,6 @@ $baseclass: nav-takeover;
 		top: 0px;
 		display: flex;
 		transition: all $easing1 $duration-medium;
-		@include zIndexCloser();
 
 		> div {
 			flex: .6;
@@ -44,6 +26,7 @@ $baseclass: nav-takeover;
 	}
 
 	&__panel {
+		background: $brand-white;
 		pointer-events: auto;
 		position: absolute;
 		width: calc(40%);
@@ -72,26 +55,17 @@ $baseclass: nav-takeover;
 			height: 3px;
 		}
 
-		ul {
-			min-height: 100%;
-			height: auto;
-			// overflow-y: auto;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-end;
-			padding: 120px;
-		}
-
 		li {
 			display: flex;
 			align-items: center;
-			// opacity: 0;
+			justify-content: flex-end;
 			transform: translate3d(200%, 0,0);
 			cursor: pointer;
-			pointer-events: all;
 			transition: none;
 			width: auto;
+			min-width: 90px;
 			margin-bottom: 48px;
+			min-height: 60px;
 		}
 	}
 
@@ -107,19 +81,26 @@ $baseclass: nav-takeover;
 	}
 
 	&__line {
-		border-left: solid 1px $brand-red;
-		box-shadow: 0 3px $brand-white, 0 -3px $brand-white;
+		border-left: solid 1px lighten($brand-red, 0%);
+		box-shadow: 0 6px $brand-white, 0 -6px $brand-white;
 		height: 60px;
 		width: 100%;
 		transition: all $easing2 $duration-slow;
 	}
 
-	&__panel--primary {
-		background: $brand-white;
+	&__items--primary, &__items--secondary {
+		position: absolute;
+		right: 0;
+		min-height: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		padding: 120px;
+	}
 
-		li {
-			min-height: 60px;
-		}
+
+	&__items--primary {
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
@@ -134,29 +115,20 @@ $baseclass: nav-takeover;
 		}
 	}
 
-	&__panel--secondary {
-		background: $brand-black;
+	&__items--secondary {
+		pointer-events: none;
+		// padding-top: 10px;
 
-		h1, h2, h3, h4, h5, h6 {
-			color: $brand-white;
-
-			&:hover {
-				border-color: $brand-white;
-			}
+		li {
+			// margin-bottom: 40px;
 		}
+
 
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
 				color: transparent;
 				-webkit-text-stroke: 1px $brand-red;
 			}
-		}
-
-		.icon-arrow-right {
-			font-size: 48px;
-			color: $brand-white;
-			// transform: scaleX(-1);
-			margin-right: 12px;
 		}
 	}
 
@@ -167,7 +139,7 @@ $baseclass: nav-takeover;
 		}
 
 		.#{$baseclass}__panel {		
-			// transition-timing-function: $easing1;
+			transform: none;
 
 			li {
 				transition: all $easing1 $duration-slow;
@@ -177,20 +149,21 @@ $baseclass: nav-takeover;
 						transition-delay: (#{0.3 + ($i * 0.12)}s);
 					}
 				}
+
+				// @for $i from 1 through 4 {
+				// 	&:nth-child(#{$i}n + 1) {
+				// 		transition-delay: (#{0.3 + ($i * 0.12)}s);
+				// 	}
+				// }
 			}
 		}
 
-		.#{$baseclass}__panel--primary {
-			transform: none;
+		.#{$baseclass}__items--primary {
 
 			li {
 				transform: none;
 				// opacity: 1;
 			}
-		}
-
-		.#{$baseclass}__panel--secondary {
-			transform: none;
 		}
 	}
 
@@ -198,25 +171,26 @@ $baseclass: nav-takeover;
 		.#{$baseclass}__toggle {
 			pointer-events: none;
 		}
-		.#{$baseclass}__hamburger, .#{$baseclass}__toggle:hover .#{$baseclass}__hamburger {
-			.line {
-				background: transparent;
+		.#{$baseclass}__line-container {
+			// padding-top: 10px;
+		}
+
+		
+		.#{$baseclass}__items--primary {
+			// opacity: 0;
+			pointer-events: none;
+
+			li {
+				// opacity: 0;
+				transform: translate3d(200%,0,0);
 			}
 		}
-		.#{$baseclass}__panel--primary {
-			transform: none
-
-			// li {
-			// 	transform: translate3d(50%,0,0);
-			// 	opacity: 0;
-			// }
-		}
-		.#{$baseclass}__panel--secondary {
-			transform: translate3d(-100%,0,0);
+		.#{$baseclass}__items--secondary {
+			opacity: 1;
+			pointer-events: auto;
 
 			li {
 				transform: none;
-				opacity: 1;
 			}
 		}
 	}

@@ -9,6 +9,7 @@ import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPan
 
 
 import splitLetter from '../services/splitLetter'
+import pad from '../services/pad'
 
 class NavToggle extends Component {
 
@@ -18,20 +19,9 @@ class NavToggle extends Component {
 		this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			isMobile: window.innerWidth <= 800,
 			countIsIncreasing: false,
 			countIsDecreasing: false,
 		}
-	}
-
-	componentDidMount() {
-		// document.addEventListener('mousedown', this.handleClickOutside);
-		window.addEventListener('resize', this.detectMobile);
-	}
-
-	componentWillUnmount() {
-		// document.removeEventListener('mousedown', this.handleClickOutside);
-		window.removeEventListener('resize', this.detectMobile);
 	}
 
 	openNav = () => {
@@ -44,16 +34,6 @@ class NavToggle extends Component {
 		this.props.closeSecondaryPanel();		
 	}
 
-	detectMobile = (event) => {
-		this.setState({
-			isMobile: window.innerWidth <= 800,
-		})
-	}
-
-
-	pad = (n, width, z) => (
-		n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
-	)
 
 	render() {
 		const { secondaryPanelOpen, countIsIncreasing, countIsDecreasing } = this.state;
@@ -71,7 +51,7 @@ class NavToggle extends Component {
 
 
 		return (
-			<div className={classnames} onMouseEnter={this.props.hoverToggle} onMouseLeave={this.props.unhoverToggle}
+			<div className={classnames} onMouseEnter={this.props.hoverToggle} onMouseLeave={this.props.isTakeoverOpen ? null : this.props.unhoverToggle}
 				onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
 				<h5 className="nav-toggle__abbreviation">{this.props.abbreviation}</h5>
 				<div className="nav-toggle__hamburger">
@@ -79,7 +59,7 @@ class NavToggle extends Component {
 					<div className="line"/>
 					<div className="line"/>
 				</div>
-				<h5 className="nav-toggle__count">{splitLetter(this.pad(this.props.count, 2).toString())}</h5>
+				<h5 className="nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h5>
 			</div>
 		);
 	}

@@ -12,13 +12,13 @@
 		width: 100%;
 		height: 100%;
 		left: 0;
-		opacity: 0.33;
+		// opacity: 0.33;
 		pointer-events: none;
 		// mix-blend-mode: difference;
 	}
 
 	&__line {
-		color: rgba($brand-grey-medium, 0.33);
+		color: rgba($brand-grey-light, 1);
 		border-right: solid 1px;
 		height: 100%;
 

@@ -83,7 +83,7 @@ class AmericanMade extends Component {
 				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
 					<ParallaxHeader 
 					name={pageSections[0]}
-					headerText={[ `The `, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
+					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
@@ -125,7 +125,7 @@ class AmericanMade extends Component {
 				}}  
 				onSetActive={() => { setNavWhite(); this.setActiveSection(2); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
 							<p>Lead Designer</p>
@@ -138,7 +138,7 @@ class AmericanMade extends Component {
 							<h5 className="uppercase">Client</h5>
 							<p>NBCUX Lab</p> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Team</h5>
 							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></p> 
 						</div>
@@ -309,7 +309,7 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							{<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>}
+							{/*<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
 						</div>
 					</div>
 				</ScrollSection>}

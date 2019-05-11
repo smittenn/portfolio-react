@@ -12,7 +12,7 @@ $baseclass: sidebar-container;
 	justify-content: flex-end;
 	right: 0;
 	bottom: 0;
-	@include zIndexCloser();
+	// @include zIndexCloser();
 
 
 	p {

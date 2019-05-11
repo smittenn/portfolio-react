@@ -6,6 +6,10 @@ $baseclass: react-parallax;
 	img {
 		// object-fit: scale-down;
 	}
+
+	.grid--lines {
+		opacity: .18;
+	}
 		
 	&-contents, &-content {
 		position: relative;

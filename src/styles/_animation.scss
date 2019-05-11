@@ -11,6 +11,7 @@
 
 .react-parallax {
 	h1 span {
+		overflow: hidden;
 		transition: opacity $easing1 $duration-slower;
 		opacity: 0;
 		animation: ghostText $duration-slow $easing1;

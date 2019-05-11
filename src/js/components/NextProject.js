@@ -11,15 +11,31 @@ export default class NextProject extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
+		this.state = {	
+			arrowX: 0,
+			arrowY: 0,
 		}
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		// window.addEventListener('mousemove', this.setArrowPosition)
+	}
 
-	componentWillUnmount() {}
+	componentWillUnmount() {
+		// window.removeEventListener('mousemove', this.setArrowPosition)
+	}
 
-	componentDidUpdate(prevProps) {}
+	// componentDidUpdate(prevProps) {}
+
+	setArrowPosition = (event) => {
+		// console.log(event)
+		const { pageX, pageY } = event;
+		
+		this.setState({
+			arrowX: pageX,
+			arrowY: pageY - this.refs.nextProject.offsetTop,
+		})
+	}
 
 	render() {
 
@@ -30,14 +46,20 @@ export default class NextProject extends Component {
 		})
 		
 		return (
-			<div className={classnames}>
+			<div className={classnames} onMouseMove={this.setArrowPosition} ref="nextProject">
 				<NavLink to={to}>
 					<section className="black" style={style}>
 							<GridLines/>
 								<div className="grid">
 									<div className="grid__item grid__item--col-12">
-										<h2>Next Up</h2>
+										<h2 className="no-mb">Next Up</h2>
 										<h1>{name}</h1>
+
+										<h1 style={{
+											position: 'absolute',
+											left: this.state.arrowX,
+											top: this.state.arrowY,
+										}}><i className="iconcss icon-arrow-right"/></h1>
 									</div>
 								</div>
 					</section>

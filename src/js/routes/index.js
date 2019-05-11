@@ -16,8 +16,8 @@ const routes = (
 			<Route path="/about-me" component={AboutMe}/>
 			<Route path="/resume" component={AboutMe}/>
 
-			<Route path="/american-made" component={AmericanMade}/>
-			<Route path="/vai" component={Vai}/>
+			<Route exact path="/american-made" component={AmericanMade}/>
+			<Route exact path="/vai" component={Vai}/>
 			{/*<Route path="/translator" component={Translator}/>
 			<Route path="/jnj-mdc" component={JnjMdc}/>
 			<Route path="/jnj-home" component={JnjHome}/>

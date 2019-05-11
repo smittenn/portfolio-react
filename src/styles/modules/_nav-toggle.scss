@@ -34,7 +34,7 @@ $baseclass: nav-toggle;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	@include zIndexClosest();
+	// @include zIndexClosest();
 
 
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {

@@ -7,15 +7,24 @@ $baseclass: next-project;
 	// height: 60vh;
 	// overflow: hidden;
 
+	a {
+		cursor: none;
+	}
+
+	h1 {
+		transition: all $easing4 $duration-fast;
+	}
+
+
 	section {
-		height: 60vh;
+		height: 50vh;
 		transition: none;
 		transition: all $easing2 $duration-slow;
 	}
 
 	&:hover {
 		section {
-			height: 65vh;
+			height: 60vh;
 			transform: translate3d(0, -5vh, 0);
 		}
 	}

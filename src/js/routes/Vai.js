@@ -110,10 +110,10 @@ class Vai extends Component {
 				black 
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ backgroundImage: `url(../assets/img/vai/chevrolet.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`, backgroundPosition: "center 70%" }}  
+				style={{ backgroundImage: `url(../assets/img/vai/chevrolet.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 70%" }}  
 				onSetActive={() => { setCounter(3); setNavWhite(); this.setActiveSection(sections[2]); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1"/>*/}
+						{<div className="grid__item grid__item--col-2"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
 							<p>Lead Designer</p>
@@ -126,7 +126,7 @@ class Vai extends Component {
 							<h5 className="uppercase">Client</h5>
 							<p>NBCUX Lab</p> 
 						</div>
-						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h5 className="uppercase">Team</h5>
 							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </p> 
 						</div>

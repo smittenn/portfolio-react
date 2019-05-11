@@ -4,6 +4,7 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import NavToggle from "./NavToggle"
+import GridLines from "./GridLines"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -77,10 +78,11 @@ export default class ParallaxHeader extends Component {
 					})
 					return (
 						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage})` }}>
+							{/*<GridLines/>*/}
 							<div className="grid">
-								<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-									<h1 className="no-mb" style={{ opacity: -(8 * percentage) + 5, transform: `translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)` }}>{updatedText}</h1>
+									<h1 className="no-mb" style={{ opacity: -(3 * percentage) + 2.5, transform: `translate3d(0,${(-400 * (1 - percentage)) + 200}px,0)` }}>{updatedText}</h1>
 								</div>
 							</div>
 						</div>
