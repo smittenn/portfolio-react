@@ -77,8 +77,10 @@ class Vai extends Component {
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
 					name={sections[0]}
+					sections={sections} 
+					activeSection={activeSection}
 					headerText={[`The`, <span className="outline">V.ai </span>, `video player uses AI to identify people and products`]}
-					bgImage={"../assets/img/vai/banner.gif"}
+					bgImage={"../assets/img/vai/banner.jpg"}
 					onSetActive={() => { setCounter(1); setNavWhite(); this.setActiveSection(sections[0]);}}
 					/>
 					<Link to={sections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(sections[1]); }}>
@@ -92,7 +94,7 @@ class Vai extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(sections[1]);}}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
 								Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing.
@@ -103,6 +105,7 @@ class Vai extends Component {
 							<blockquote>
 								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 							</blockquote>
+
 						</div>
 					</div>
 				</ScrollSection>
@@ -115,7 +118,7 @@ class Vai extends Component {
 				style={{ backgroundImage: `url(../assets/img/vai/one-plus.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 20%" }}  
 				onSetActive={() => { setCounter(3); this.setActiveSection(sections[2]); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
 							<h5 className="uppercase">Role</h5>
 							<p>Lead Designer</p>

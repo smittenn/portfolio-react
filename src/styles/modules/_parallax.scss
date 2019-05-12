@@ -28,7 +28,7 @@ $baseclass: react-parallax;
 
 		h1, h2, h3, h4, h5, p {
 			color: $brand-white;
-			transition: transform $duration-medium $easing4;
+			// transition: transform $duration-medium $easing4;
 
 			span {
 				white-space: pre;

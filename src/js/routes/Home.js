@@ -25,7 +25,7 @@ class Home extends Component {
 
 		this.state = {
 			activeSection: "hello",
-			pageSections: [
+			sections: [
 				"hello",
 				"about",
 				"projects",
@@ -56,7 +56,7 @@ class Home extends Component {
 		
 	setActiveSection = (idx) => {
 		this.setState({
-			activeSection: this.state.pageSections[idx],
+			activeSection: this.state.sections[idx],
 		})
 		this.props.setCounter(idx + 1);
 	}
@@ -89,27 +89,34 @@ class Home extends Component {
 				href: "/micro-app-templates",
 				tags: [ "Visual Design", "Mobile" ],
 			},
+			{
+				name: "JJMDC",
+				href: "/micro-app-templates",
+				tags: [ "Visual Design", "Mobile" ],
+			},
 
 		]
 
-		const { activeSection, pageSections } = this.state;
+		const { activeSection, sections } = this.state;
 		
 		return (
 			<article>
 				<Element 
-				name={pageSections[0]} 
-				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
+				name={sections[0]} 
+				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
-					name={pageSections[0]}
-					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City`]} 
+					name={sections[0]}
+					sections={sections}
+					activeSection={activeSection}
+					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City.`]} 
 					bgImage={"../assets/img/terrain.gif"} 
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
 					/>
 				</Element>
 
 				<ScrollSection 
-				name={pageSections[1]} 
-				sections={pageSections} 
+				name={sections[1]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
@@ -136,9 +143,9 @@ class Home extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[2]} 
+				name={sections[2]} 
 				black
-				sections={pageSections} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(2); }}>
 					<div className="grid">
@@ -181,7 +188,7 @@ class Home extends Component {
 				</ScrollSection>
 
 
-				{<Link to={pageSections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
+				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
 					<ScrollArrow label="Read More"/>
 				</Link>}
 

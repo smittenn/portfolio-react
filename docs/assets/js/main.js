@@ -37699,9 +37699,16 @@ var NextProject = function (_Component) {
 			});
 		};
 
+		_this.handleHover = function () {
+			_this.setState({
+				isHovering: !_this.state.isHovering
+			});
+		};
+
 		_this.state = {
 			arrowX: 0,
-			arrowY: 0
+			arrowY: 0,
+			isHovering: false
 		};
 		return _this;
 	}
@@ -37736,7 +37743,7 @@ var NextProject = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				{ className: classnames, onMouseMove: this.setArrowPosition, ref: "nextProject" },
+				{ className: classnames, onMouseMove: this.setArrowPosition, onMouseEnter: this.handleHover, onMouseLeave: this.handleHover, ref: "nextProject" },
 				_react2.default.createElement(
 					_reactRouterDom.NavLink,
 					{ to: to },
@@ -37763,6 +37770,7 @@ var NextProject = function (_Component) {
 								_react2.default.createElement(
 									"h1",
 									{ style: {
+											opacity: this.state.isHovering ? 1 : 0,
 											position: 'absolute',
 											left: this.state.arrowX,
 											top: this.state.arrowY
@@ -37816,6 +37824,10 @@ var _NavToggle = require("./NavToggle");
 
 var _NavToggle2 = _interopRequireDefault(_NavToggle);
 
+var _Sidebar = require("./Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
 var _GridLines = require("./GridLines");
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
@@ -37835,6 +37847,10 @@ var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 var _detectMobile = require("../services/detectMobile");
 
 var _detectMobile2 = _interopRequireDefault(_detectMobile);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37858,9 +37874,16 @@ var ParallaxHeader = function (_Component) {
 			});
 		};
 
+		_this.handleScroll = function (event) {
+			_this.setState({
+				scrollAmount: window.pageYOffset
+			});
+		};
+
 		_this.state = {
 			isMobile: (0, _detectMobile2.default)(),
-			isAnimating: (0, _detectMobile2.default)()
+			isAnimating: (0, _detectMobile2.default)(),
+			scrollAmount: 0
 		};
 		return _this;
 	}
@@ -37868,6 +37891,7 @@ var ParallaxHeader = function (_Component) {
 	_createClass(ParallaxHeader, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
+			document.addEventListener('scroll', this.handleScroll);
 			window.addEventListener('resize', this.detectMobile);
 			// if (!this.state.isMobile) {
 			// 	setTimeout(() => {
@@ -37878,6 +37902,7 @@ var ParallaxHeader = function (_Component) {
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
+			document.removeEventListener('scroll', this.handleScroll);
 			window.removeEventListener('resize', this.detectMobile);
 		}
 	}, {
@@ -37889,7 +37914,9 @@ var ParallaxHeader = function (_Component) {
 			    headerText = _props.headerText,
 			    strength = _props.strength,
 			    name = _props.name,
-			    onSetActive = _props.onSetActive;
+			    onSetActive = _props.onSetActive,
+			    sections = _props.sections,
+			    activeSection = _props.activeSection;
 			var _state = this.state,
 			    isMobile = _state.isMobile,
 			    isAnimating = _state.isAnimating;
@@ -37897,7 +37924,7 @@ var ParallaxHeader = function (_Component) {
 
 			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
-			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)("#232021");
+			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)("#131112");
 
 			var str = strength ? strength : 600;
 			isMobile ? str /= 2 : null;
@@ -37907,11 +37934,20 @@ var ParallaxHeader = function (_Component) {
 				// "react-parallax-contents--animating" : isAnimating,			
 			});
 
-			var style = {};
+			var style = {
+				opacity: Math.min(Math.max(0, 1 - this.state.scrollAmount * 0.005), 1),
+				transform: "translateY(" + Math.min(Math.max(-60, this.state.scrollAmount * -0.2), 0) + "%) skewY(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
+			};
+
 			var updatedText = [];
+
 			headerText.forEach(function (item, idx) {
 				typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style, key: idx });
 			});
+
+			// const opacity = Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.0025))), 1);
+			// const transform = `translateY(${-100 * window.pageYOffset}px)`;
+
 
 			return _react2.default.createElement(
 				"div",
@@ -37923,7 +37959,7 @@ var ParallaxHeader = function (_Component) {
 						blur: null,
 						strength: str,
 						renderLayer: function renderLayer(percentage) {
-							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + percentage + ")" } });
+							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage + 0.1) + ")" } });
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37941,8 +37977,8 @@ var ParallaxHeader = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "clip-wrapper" },
-						_react2.default.createElement(_NavToggle2.default, { black: false }),
-						"}"
+						_react2.default.createElement(_Sidebar2.default, { sections: sections, activeSection: activeSection }),
+						_react2.default.createElement(_NavToggle2.default, { black: false })
 					)
 				),
 				_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive })
@@ -37955,7 +37991,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":160,"../services/hexToRgb":161,"../services/splitLetter":164,"../services/splitWord":165,"./GridLines":136,"./NavToggle":139,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],142:[function(require,module,exports){
+},{"../services/detectMobile":160,"../services/hexToRgb":161,"../services/palette":163,"../services/splitLetter":164,"../services/splitWord":165,"./GridLines":136,"./NavToggle":139,"./Sidebar":145,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38130,7 +38166,7 @@ var ScrollArrow = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
 		_this.handleScroll = function (e) {
-			document.body.scrollTop > 0 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
+			document.body.scrollTop > window.innerHeight / 4 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
 		};
 
 		_this.state = {
@@ -38923,14 +38959,14 @@ var AmericanMade = function (_Component) {
 
 		_this.setActiveSection = function (idx) {
 			_this.setState({
-				activeSection: _this.state.pageSections[idx]
+				activeSection: _this.state.sections[idx]
 			});
 			_this.props.setCounter(idx + 1);
 		};
 
 		_this.state = {
 			activeSection: "overview",
-			pageSections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "map"]
+			sections: ["overview", "about", "details", "cinemagraphs", "preloader", "navigation", "video-gallery", "parallax", "mobile-first", "map"]
 		};
 		return _this;
 	}
@@ -38946,7 +38982,7 @@ var AmericanMade = function (_Component) {
 			    setNavBlack = _props.setNavBlack;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
-			    pageSections = _state.pageSections;
+			    sections = _state.sections;
 
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
@@ -38957,10 +38993,12 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_reactScroll.Element,
 					{
-						name: pageSections[0],
-						className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
+						name: sections[0],
+						className: (0, _classnames2.default)({ "active-section": activeSection == sections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
-						name: pageSections[0],
+						name: sections[0],
+						sections: sections,
+						activeSection: activeSection,
 						headerText: ["The", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
@@ -38970,15 +39008,15 @@ var AmericanMade = function (_Component) {
 							{ className: "outline" },
 							"Made "
 						), "film site told the story of the movie"],
-						bgImage: "../assets/img/american-made/output.gif",
-						strength: 200,
-						onSetActive: function onSetActive() {
+						bgImage: "../assets/img/american-made/output.gif"
+						// strength={200}
+						, onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(0);
 						}
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: pageSections[1], spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+						{ to: sections[1], spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
 								setCounter(2);setNavBlack();_this2.setActiveSection(1);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
@@ -38987,8 +39025,8 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[1],
-						sections: pageSections,
+						name: sections[1],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavBlack();_this2.setActiveSection(1);
@@ -39021,9 +39059,9 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[2],
+						name: sections[2],
 						black: true,
-						sections: pageSections,
+						sections: sections,
 						activeSection: activeSection,
 						style: {
 							backgroundImage: "url(../assets/img/american-made/s07-synopsis.jpg)",
@@ -39114,8 +39152,8 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						black: true,
-						name: pageSections[3],
-						sections: pageSections,
+						name: sections[3],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(3);
@@ -39160,8 +39198,8 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[4],
-						sections: pageSections,
+						name: sections[4],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavBlack();_this2.setActiveSection(4);
@@ -39201,9 +39239,9 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[5],
+						name: sections[5],
 						black: true,
-						sections: pageSections,
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(5);
@@ -39243,8 +39281,8 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[6],
-						sections: pageSections,
+						name: sections[6],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavBlack();_this2.setActiveSection(6);
@@ -39285,8 +39323,8 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						black: true,
-						name: pageSections[7],
-						sections: pageSections,
+						name: sections[7],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(7);
@@ -39331,8 +39369,8 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[8],
-						sections: pageSections,
+						name: sections[8],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(8);
@@ -39369,8 +39407,8 @@ var AmericanMade = function (_Component) {
 					_ScrollSection2.default,
 					{
 						black: true,
-						name: pageSections[9],
-						sections: pageSections,
+						name: sections[9],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							setNavWhite();_this2.setActiveSection(9);
@@ -39411,7 +39449,7 @@ var AmericanMade = function (_Component) {
 				_react2.default.createElement(_NextProject2.default, {
 					to: "/vai",
 					name: "V.ai",
-					sections: pageSections,
+					sections: sections,
 					activeSection: activeSection,
 					style: {
 						backgroundImage: "url(../assets/img/vai/banner.jpg)",
@@ -39565,14 +39603,14 @@ var Home = function (_Component) {
 
 		_this.setActiveSection = function (idx) {
 			_this.setState({
-				activeSection: _this.state.pageSections[idx]
+				activeSection: _this.state.sections[idx]
 			});
 			_this.props.setCounter(idx + 1);
 		};
 
 		_this.state = {
 			activeSection: "hello",
-			pageSections: ["hello", "about", "projects", "experiments", "social"]
+			sections: ["hello", "about", "projects", "experiments", "social"]
 		};
 		return _this;
 	}
@@ -39617,11 +39655,15 @@ var Home = function (_Component) {
 				name: "Micro App Templates",
 				href: "/micro-app-templates",
 				tags: ["Visual Design", "Mobile"]
+			}, {
+				name: "JJMDC",
+				href: "/micro-app-templates",
+				tags: ["Visual Design", "Mobile"]
 			}];
 
 			var _state = this.state,
 			    activeSection = _state.activeSection,
-			    pageSections = _state.pageSections;
+			    sections = _state.sections;
 
 
 			return _react2.default.createElement(
@@ -39630,10 +39672,12 @@ var Home = function (_Component) {
 				_react2.default.createElement(
 					_reactScroll.Element,
 					{
-						name: pageSections[0],
-						className: (0, _classnames2.default)({ "active-section": activeSection == pageSections[0] }) },
+						name: sections[0],
+						className: (0, _classnames2.default)({ "active-section": activeSection == sections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
-						name: pageSections[0],
+						name: sections[0],
+						sections: sections,
+						activeSection: activeSection,
 						headerText: ["Eric C. Smith is an", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
@@ -39642,7 +39686,7 @@ var Home = function (_Component) {
 							"span",
 							{ className: "outline" },
 							"Designer "
-						), "in New York City"],
+						), "in New York City."],
 						bgImage: "../assets/img/terrain.gif",
 						onSetActive: function onSetActive() {
 							(0, _color.setNavWhite)();_this2.setActiveSection(0);
@@ -39652,8 +39696,8 @@ var Home = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[1],
-						sections: pageSections,
+						name: sections[1],
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							(0, _color.setNavBlack)();_this2.setActiveSection(1);
@@ -39699,9 +39743,9 @@ var Home = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: pageSections[2],
+						name: sections[2],
 						black: true,
-						sections: pageSections,
+						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							(0, _color.setNavBlack)();_this2.setActiveSection(2);
@@ -39769,7 +39813,7 @@ var Home = function (_Component) {
 				),
 				_react2.default.createElement(
 					_reactScroll.Link,
-					{ to: pageSections[1], spy: true, smooth: "easeOutQuint", duration: 1200, offset: 0, onSetActive: function onSetActive() {
+					{ to: sections[1], spy: true, smooth: "easeOutQuint", duration: 1200, offset: 0, onSetActive: function onSetActive() {
 							(0, _counter.setCounter)(2);(0, _color.setNavBlack)();_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
@@ -39987,12 +40031,14 @@ var Vai = function (_Component) {
 						className: (0, _classnames2.default)({ "active-section": activeSection == sections[0] }) },
 					_react2.default.createElement(_ParallaxHeader2.default, {
 						name: sections[0],
+						sections: sections,
+						activeSection: activeSection,
 						headerText: ["The", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
 							"V.ai "
 						), "video player uses AI to identify people and products"],
-						bgImage: "../assets/img/vai/banner.gif",
+						bgImage: "../assets/img/vai/banner.jpg",
 						onSetActive: function onSetActive() {
 							setCounter(1);setNavWhite();_this2.setActiveSection(sections[0]);
 						}
@@ -40017,7 +40063,6 @@ var Vai = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-2 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
@@ -40053,7 +40098,6 @@ var Vai = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-6-medium" },

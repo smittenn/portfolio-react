@@ -45,7 +45,7 @@ class AmericanMade extends Component {
 
 		this.state = {
 			activeSection: "overview",
-			pageSections: [
+			sections: [
 				"overview",
 				"about",
 				"details",
@@ -62,7 +62,7 @@ class AmericanMade extends Component {
 
 	setActiveSection = (idx) => {
 		this.setState({
-			activeSection: this.state.pageSections[idx],
+			activeSection: this.state.sections[idx],
 		})
 		this.props.setCounter(idx + 1);
 	}
@@ -71,7 +71,7 @@ class AmericanMade extends Component {
 	render() {
 
 		const { setCounter, setNavWhite, setNavBlack } = this.props;
-		const { activeSection, pageSections } = this.state;
+		const { activeSection, sections } = this.state;
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
@@ -79,23 +79,25 @@ class AmericanMade extends Component {
 		return (
 			<article>
 				<Element 
-				name={pageSections[0]} 
-				className={classNames({ "active-section" : activeSection == pageSections[0]})}>
+				name={sections[0]} 
+				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
-					name={pageSections[0]}
+					name={sections[0]}
+					sections={sections}
+					activeSection={activeSection}
 					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
 					bgImage={"../assets/img/american-made/output.gif"}
-					strength={200}
+					// strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
 					/>
-					{<Link to={pageSections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
+					{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
 						<ScrollArrow label="Read More"/>
 					</Link>}
 				</Element>
 
 				<ScrollSection 
-				name={pageSections[1]} 
-				sections={pageSections} 
+				name={sections[1]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
 					<div className="grid">
@@ -115,9 +117,9 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[2]}
+				name={sections[2]}
 				black 
-				sections={pageSections} 
+				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
@@ -147,8 +149,8 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				black 
-				name={pageSections[3]} 
-				sections={pageSections} 
+				name={sections[3]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(3); }}>
 					<div className="grid">
@@ -173,7 +175,7 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				{/*<ScrollSection 
-				name={pageSections[4]} 
+				name={sections[4]} 
 				onSetActive={() => { setNavWhite(); this.setActiveSection(4); }} 
 				black 
 				style={{ backgroundImage: `url(../assets/img/american-made/cloud-bg.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.95`, backgroundPosition: "center 30%" }}>
@@ -190,8 +192,8 @@ class AmericanMade extends Component {
 				</ScrollSection>*/}
 
 				<ScrollSection 
-				name={pageSections[4]} 
-				sections={pageSections} 
+				name={sections[4]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(4); }}>
 					<div className="grid">
@@ -210,9 +212,9 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[5]} 
+				name={sections[5]} 
 				black
-				sections={pageSections} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(5); }}>
 					<div className="grid">
@@ -231,8 +233,8 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[6]} 
-				sections={pageSections} 
+				name={sections[6]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavBlack(); this.setActiveSection(6); }}>
 					<div className="grid">
@@ -252,8 +254,8 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				black
-				name={pageSections[7]} 
-				sections={pageSections} 
+				name={sections[7]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(7); }}>
 					<div className="grid">
@@ -273,8 +275,8 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={pageSections[8]} 
-				sections={pageSections} 
+				name={sections[8]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(8); }}>
 					<div className="grid">
@@ -294,8 +296,8 @@ class AmericanMade extends Component {
 
 				{<ScrollSection 
 				black
-				name={pageSections[9]} 
-				sections={pageSections} 
+				name={sections[9]} 
+				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { setNavWhite(); this.setActiveSection(9); }}>
 					<div className="grid">
@@ -317,7 +319,7 @@ class AmericanMade extends Component {
 				<NextProject 
 				to="/vai"
 				name="V.ai"
-				sections={pageSections} 
+				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/vai/banner.jpg)`, 

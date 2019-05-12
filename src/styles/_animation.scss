@@ -10,24 +10,29 @@
 }
 
 .react-parallax {
-	h1 span {
-		overflow: hidden;
-		transition: opacity $easing1 $duration-slower;
-		opacity: 0;
-		animation: ghostText $duration-slow $easing1;
-		animation-fill-mode: both;
+	h1 {
+		// transform-origin: left center;
+		// transition: all $easing1 $duration-slower;
 
-
-		@for $i from 1 through 60 {
-			&:nth-child(#{$i}) {
-				animation-delay: (#{0.6 + ($i * 0.09)}s);
+		span {
+			overflow: hidden;
+			opacity: 0;
+			transition: opacity $easing1 $duration-slow, transform $easing1 $duration-slowest;
+			// animation: ghostText $duration-slow $easing1;
+			// animation-fill-mode: both;
+	
+	
+			@for $i from 1 through 60 {
+				&:nth-last-child(#{$i}) {
+					transition-delay: (#{0 + ($i * 0.06)}s);
+				}
 			}
+			// @for $i from 1 through 4 {
+			// 	&:nth-child(#{$i}n + 1) {
+			// 		transition-delay: (#{0.0 + ($i * 0.09)}s);
+			// 	}
+			// }
 		}
-		// @for $i from 1 through 4 {
-		// 	&:nth-child(#{$i}n + 1) {
-		// 		transition-delay: (#{0.0 + ($i * 0.09)}s);
-		// 	}
-		// }
 	}
 }
 

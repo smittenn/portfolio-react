@@ -14,6 +14,7 @@ export default class NextProject extends Component {
 		this.state = {	
 			arrowX: 0,
 			arrowY: 0,
+			isHovering: false,
 		}
 	}
 
@@ -37,6 +38,12 @@ export default class NextProject extends Component {
 		})
 	}
 
+	handleHover = () => {
+		this.setState({ 
+			isHovering: !this.state.isHovering 
+		})
+	}
+
 	render() {
 
 		const { to, name, style, sections, activeSection } = this.props;
@@ -46,7 +53,7 @@ export default class NextProject extends Component {
 		})
 		
 		return (
-			<div className={classnames} onMouseMove={this.setArrowPosition} ref="nextProject">
+			<div className={classnames} onMouseMove={this.setArrowPosition} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} ref="nextProject">
 				<NavLink to={to}>
 					<section className="black" style={style}>
 							<GridLines/>
@@ -56,6 +63,7 @@ export default class NextProject extends Component {
 										<h1>{name}</h1>
 
 										<h1 style={{
+											opacity: this.state.isHovering ? 1 : 0,
 											position: 'absolute',
 											left: this.state.arrowX,
 											top: this.state.arrowY,
