@@ -37936,7 +37936,7 @@ var ParallaxHeader = function (_Component) {
 
 			var style = {
 				opacity: Math.min(Math.max(0, 1 - this.state.scrollAmount * 0.005), 1),
-				transform: "translateY(" + Math.min(Math.max(-60, this.state.scrollAmount * -0.2), 0) + "%) skewY(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
+				transform: "translateY(" + Math.min(Math.max(-120, this.state.scrollAmount * -0.2), 0) + "px) skewY(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
 			};
 
 			var updatedText = [];
@@ -39002,11 +39002,19 @@ var AmericanMade = function (_Component) {
 						headerText: ["The", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"American "
+							_react2.default.createElement(
+								"span",
+								null,
+								"American "
+							)
 						), _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Made "
+							_react2.default.createElement(
+								"span",
+								null,
+								"Made "
+							)
 						), "film site told the story of the movie"],
 						bgImage: "../assets/img/american-made/output.gif"
 						// strength={200}
@@ -39681,11 +39689,19 @@ var Home = function (_Component) {
 						headerText: ["Eric C. Smith is an", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Interactive "
+							_react2.default.createElement(
+								"span",
+								null,
+								"Interactive "
+							)
 						), _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"Designer "
+							_react2.default.createElement(
+								"span",
+								null,
+								"Designer "
+							)
 						), "in New York City."],
 						bgImage: "../assets/img/terrain.gif",
 						onSetActive: function onSetActive() {
@@ -39716,7 +39732,7 @@ var Home = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								(0, _splitWord2.default)("Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I\u2019m not designing, you can find me outdoors taking photos with friends.")
+								(0, _splitWord2.default)("My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I\u2019m not designing, you can find me outdoors taking photos with friends.")
 							)
 						),
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
@@ -40036,7 +40052,11 @@ var Vai = function (_Component) {
 						headerText: ["The", _react2.default.createElement(
 							"span",
 							{ className: "outline" },
-							"V.ai "
+							_react2.default.createElement(
+								"span",
+								null,
+								"V.ai "
+							)
 						), "video player uses AI to identify people and products"],
 						bgImage: "../assets/img/vai/banner.jpg",
 						onSetActive: function onSetActive() {
@@ -40556,9 +40576,13 @@ exports.default = function (text, style) {
 	return text.split(" ").map(function (item, index) {
 		return _react2.default.createElement(
 			"span",
-			{ style: style, key: index },
-			item,
-			index != text.split(" ").length ? "\xA0" : null
+			{ key: index, style: style },
+			_react2.default.createElement(
+				"span",
+				null,
+				item,
+				index != text.split(" ").length ? "\xA0" : null
+			)
 		);
 	});
 };

@@ -85,7 +85,7 @@ class AmericanMade extends Component {
 					name={sections[0]}
 					sections={sections}
 					activeSection={activeSection}
-					headerText={[ `The`, <span className="outline">American </span>, <span className="outline">Made </span>, `film site told the story of the movie`]}
+					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					// strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}

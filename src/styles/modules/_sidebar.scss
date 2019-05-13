@@ -6,7 +6,6 @@ $baseclass: sidebar-container;
 	width: 24px;
 	position: fixed;
 	pointer-events: auto;
-	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -22,7 +21,6 @@ $baseclass: sidebar-container;
 	}
 
 	.sidebar {
-		cursor: pointer;
 		width: 94px;
 		padding: 0;
 		transition: all $easing4 $duration-fast
@@ -171,6 +169,7 @@ $baseclass: sidebar-container;
 				transition: height $easing4 $duration-fast;
 
 				a {
+					cursor: pointer;
 					pointer-events: auto;
 				}
 

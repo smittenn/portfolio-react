@@ -108,7 +108,7 @@ class Home extends Component {
 					name={sections[0]}
 					sections={sections}
 					activeSection={activeSection}
-					headerText={[`Eric C. Smith is an`, <span className="outline">Interactive </span>, <span className="outline">Designer </span>, `in New York City.`]} 
+					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
 					bgImage={"../assets/img/terrain.gif"} 
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
 					/>
@@ -123,7 +123,7 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<h1>{splitWord("Form & Function")}</h1>
 							<blockquote>
-								{splitWord(`Hi there, my name is Eric! My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

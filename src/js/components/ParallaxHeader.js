@@ -73,7 +73,7 @@ export default class ParallaxHeader extends Component {
 
 		const style = {
 			opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
-			transform: `translateY(${Math.min(Math.max(-60, this.state.scrollAmount * -0.2), 0)}%) skewY(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
+			transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.2), 0)}px) skewY(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
 		};
 
 		let updatedText = [];
