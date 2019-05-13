@@ -94,7 +94,7 @@ export default class ParallaxHeader extends Component {
 				strength={str}
 				renderLayer={percentage => {
 					return (
-						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage + 0.1})` }}></div>
+						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage + 0.1})`, 'mixBlendMode': 'multiply' }}></div>
 					)
 				}}>
 				<div className="grid">

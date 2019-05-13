@@ -16,7 +16,7 @@
 		}
 
 		&__row {
-			margin-bottom: 12px;
+			margin-bottom: 24px;
 		}
 
 		&__item {
@@ -24,39 +24,51 @@
 				display: none;
 			}   
 			&--col-1-medium {
+				min-width: 8.33%;
 				width: 8.33%;
 			}
 			&--col-2-medium {
+				min-width: 16.66%;
 				width: 16.66%;
 			}
 			&--col-3-medium {
+				min-width: 25%;
 				width: 25%;
 			}
 			&--col-4-medium {
+				min-width: 33.33%;
 				width: 33.33%;
 			}
 			&--col-5-medium {
+				min-width: 41.66%;
 				width: 41.66%;
 			}
 			&--col-6-medium {
+				min-width: 50%;
 				width: 50%;
 			}
 			&--col-7-medium {
+				min-width: 58.33%;
 				width: 58.33%;
 			}
 			&--col-8-medium {
+				min-width: 66.66%;
 				width: 66.66%;
 			}
 			&--col-9-medium {
+				min-width: 75%;
 				width: 75%;
 			}
 			&--col-10-medium {
+				min-width: 83.33%;
 				width: 83.33%;
 			}
 			&--col-11-medium {
+				min-width: 91.66%;
 				width: 91.66%;
 			}
 			&--col-12-medium {
+				min-width: 100%;
 				width: 100%;
 			}  
 		}
@@ -77,12 +89,12 @@
 	}
 
 	h1 {
-		font-size: 11vw;
+		font-size: 12vw;
 		margin-left: 0;
 		margin-bottom: 24px;
 	}
 	h2 {
-		font-size: 9vw;
+		font-size: 10vw;
 		margin-left: 0;
 		margin-bottom: 18px;
 	}

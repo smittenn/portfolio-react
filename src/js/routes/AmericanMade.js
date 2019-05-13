@@ -17,6 +17,7 @@ import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
+import SideScroller from "../components/SideScroller"
 
 import Image from "../components/Image"
 
@@ -157,21 +158,19 @@ class AmericanMade extends Component {
 						<div className="grid__row">
 							{/*<div className="grid__item grid__item--col-1"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{splitWord("Cinemagraphs")}</h2> 
+								<h2>{splitLetter("Cinemagraphs")}</h2> 
 								<blockquote>{splitWord("To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")}</blockquote>
 							</div>
 						</div>
 					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							{/*<img src="../assets/img/american-made/columbia.gif"/>*/}
+					<SideScroller>
+						<div className="grid__item grid__item--col-7 grid__item--col-10-medium">
 							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-10-medium">
 							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-					</div>
+					</SideScroller>
 				</ScrollSection>
 
 				{/*<ScrollSection 
@@ -199,7 +198,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{splitWord("Preloader")}</h2> 
+								<h2>{splitLetter("Preloader")}</h2> 
 								<blockquote>{splitWord("Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”.")}</blockquote>
 							</div>
 						</div>
@@ -261,8 +260,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Scrolling Story</h2>
-								<h3>With Parallax</h3>
+								<h2 className="no-mb">Parallax Story</h2>
 								<blockquote>In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
 								<blockquote>I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.</blockquote>
 							</div>
@@ -283,7 +281,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Mobile First</h2>
+								<h2>Mobile First Design</h2>
 								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.</blockquote>
 							</div>
 						</div>

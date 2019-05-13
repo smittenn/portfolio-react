@@ -17,6 +17,7 @@ import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import Image from "../components/Image"
+import SideScroller from "../components/SideScroller"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -193,17 +194,23 @@ class Vai extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+					<SideScroller>
+						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
 							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
+						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+
+					</SideScroller>
+					<div className="grid">
+						
 					</div>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-4 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<div className="spacer spacer__sm"/>
-							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
 					</div>
 				</ScrollSection>
 				
