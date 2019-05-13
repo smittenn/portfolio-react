@@ -25,14 +25,14 @@ export default class Image extends Component {
 			height: 0,
 			paddingBottom: pb + '%',
 			overflow: 'hidden',
-		}
+		}	
 
 		return (
 			<div style={style}>
 				<img src={src} style={{
 					display: 'block',
-					// width: '100%',
-					height: '100%',
+					width: '100%',
+					// height: '100%',
 					position: 'absolute',
 					top: 0,
 					// bottom: 0,

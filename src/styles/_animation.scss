@@ -19,7 +19,7 @@
 			transition: opacity $easing1 $duration-slow, transform $easing1 $duration-slowest;
 
 			@for $i from 1 through 60 {
-				&:nth-last-child(#{$i}) {
+				&:nth-child(#{$i}) {
 					transition-delay: (#{0.0 + ($i * 0.06)}s);
 				}
 			}
@@ -93,7 +93,7 @@ section {
 	}
 
 	h2 span > span{
-		transform: translate3d(0,60px,0) skewX(6deg);
+		transform: translate3d(0,90px,0) skewX(6deg);
 	}
 
 	p, blockquote {
@@ -115,7 +115,7 @@ section {
 			}
 		}
 
-		h1 span {
+		h1 span, h2 span {
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) span {
 					transition-delay: (#{0.6 + ($i * 0.09)}s);

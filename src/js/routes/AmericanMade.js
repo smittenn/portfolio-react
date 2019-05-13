@@ -99,12 +99,12 @@ class AmericanMade extends Component {
 				name={sections[1]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
+				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>
+						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
-								We took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees. 
+								We took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 							</blockquote> 
 							<blockquote>
 								Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
@@ -125,24 +125,24 @@ class AmericanMade extends Component {
 					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}  
-				onSetActive={() => { setNavWhite(); this.setActiveSection(2); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
+						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Role</h5>
-							<p>Lead Designer</p>
+							<h6 className="uppercase">Role</h6>
+							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Date</h5>
-							<p>June, 2017</p>
+							<h6 className="uppercase">Date</h6>
+							<blockquote>June, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Client</h5>
-							<p>NBCUX Lab</p> 
+							<h6 className="uppercase">Client</h6>
+							<blockquote>NBCUX Lab</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Team</h5>
-							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></p> 
+						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
+							<h6 className="uppercase">Team</h6>
+							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
@@ -152,12 +152,12 @@ class AmericanMade extends Component {
 				name={sections[3]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavWhite(); this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{/*<div className="grid__item grid__item--col-1"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>{splitWord("Cinemagraphs")}</h1> 
+								<h2>{splitWord("Cinemagraphs")}</h2> 
 								<blockquote>{splitWord("To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")}</blockquote>
 							</div>
 						</div>
@@ -176,7 +176,7 @@ class AmericanMade extends Component {
 
 				{/*<ScrollSection 
 				name={sections[4]} 
-				onSetActive={() => { setNavWhite(); this.setActiveSection(4); }} 
+				onSetActive={() => { this.setActiveSection(4); }} 
 				black 
 				style={{ backgroundImage: `url(../assets/img/american-made/cloud-bg.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.95`, backgroundPosition: "center 30%" }}>
 					<div className="grid">
@@ -195,7 +195,7 @@ class AmericanMade extends Component {
 				name={sections[4]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavBlack(); this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -216,11 +216,11 @@ class AmericanMade extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavWhite(); this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>“Runway” Navigation</h2>
+								<h2>Runway Navigation</h2>
 								<blockquote>I designed a unique themed navigation for the site. The nav mimic'd the bird's-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
 							</div>
 						</div>
@@ -236,7 +236,7 @@ class AmericanMade extends Component {
 				name={sections[6]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavBlack(); this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -257,11 +257,12 @@ class AmericanMade extends Component {
 				name={sections[7]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavWhite(); this.setActiveSection(7); }}>
+				onSetActive={() => { this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Scrolling Story: Parallax</h2>
+								<h2 className="no-mb">Scrolling Story</h2>
+								<h3>With Parallax</h3>
 								<blockquote>In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
 								<blockquote>I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.</blockquote>
 							</div>
@@ -278,11 +279,11 @@ class AmericanMade extends Component {
 				name={sections[8]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavWhite(); this.setActiveSection(8); }}>
+				onSetActive={() => { this.setActiveSection(8); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>Mobile First</h1>
+								<h2>Mobile First</h2>
 								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.</blockquote>
 							</div>
 						</div>
@@ -299,12 +300,12 @@ class AmericanMade extends Component {
 				name={sections[9]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavWhite(); this.setActiveSection(9); }}>
+				onSetActive={() => { this.setActiveSection(9); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1 className="no-mb">Interactive Map</h1>
-								<h2>“Fly With Barry”</h2>
+								<h2 className="no-mb">Interactive Map</h2>
+								<h3>“Fly With Barry”</h3>
 								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of his escapades through Central and South America.</blockquote>
 							</div>
 						</div>

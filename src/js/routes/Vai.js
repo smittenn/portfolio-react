@@ -80,7 +80,7 @@ class Vai extends Component {
 					sections={sections} 
 					activeSection={activeSection}
 					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products`]}
-					bgImage={"../assets/img/vai/banner.jpg"}
+					bgImage={"../assets/img/vai/banner.gif"}
 					onSetActive={() => { setCounter(1); setNavWhite(); this.setActiveSection(sections[0]);}}
 					/>
 					<Link to={sections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(sections[1]); }}>
@@ -120,20 +120,20 @@ class Vai extends Component {
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
-							<h5 className="uppercase">Role</h5>
-							<p>Lead Designer</p>
+							<h6 className="uppercase">Role</h6>
+							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
-							<h5 className="uppercase">Date</h5>
-							<p>October, 2017</p>
+							<h6 className="uppercase">Date</h6>
+							<blockquote>October, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
-							<h5 className="uppercase">Client</h5>
-							<p>NBCUX Lab</p> 
+							<h6 className="uppercase">Client</h6>
+							<blockquote>NBCUX Lab</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-5 grid__item--col-6-medium">
-							<h5 className="uppercase">Team</h5>
-							<p><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </p> 
+							<h6 className="uppercase">Team</h6>
+							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
@@ -147,7 +147,7 @@ class Vai extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>Player Overlay</h1>
+								<h2>Player Overlay</h2>
 								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without encroaching on the viewing experience.</blockquote>
 							</div>
 						</div>
@@ -167,7 +167,7 @@ class Vai extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>Products</h1>
+								<h2>Products</h2>
 								<blockquote>Brands can now sponsor T.V. shows and movies to promote their products in a new and innovative way without using traditional commercials that interrupt and upset consumers. Fans of the show can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
 							</div>
 						</div>
@@ -188,7 +188,7 @@ class Vai extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h1>People</h1>
+								<h2>People</h2>
 								<blockquote>Besides addressing the goal of advertising, V.ai aims to elevate the video viewing experience. Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question.</blockquote>
 							</div>
 						</div>

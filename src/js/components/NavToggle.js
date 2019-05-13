@@ -26,12 +26,12 @@ class NavToggle extends Component {
 
 	openNav = () => {
 		this.props.openTakeover();
-		this.props.closeSecondaryPanel();		
+		// this.props.closeSecondaryPanel();		
 	}
 
 	closeNav = () => {
 		this.props.closeTakeover();
-		this.props.closeSecondaryPanel();		
+		// this.props.closeSecondaryPanel();		
 	}
 
 
@@ -53,13 +53,13 @@ class NavToggle extends Component {
 		return (
 			<div className={classnames} onMouseEnter={this.props.hoverToggle} onMouseLeave={this.props.isTakeoverOpen ? null : this.props.unhoverToggle}
 				onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
-				<h5 className="nav-toggle__abbreviation">{this.props.abbreviation}</h5>
+				<h6 className="nav-toggle__abbreviation">{this.props.abbreviation}</h6>
 				<div className="nav-toggle__hamburger">
 					<div className="line"/>
 					<div className="line"/>
 					<div className="line"/>
 				</div>
-				<h5 className="nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h5>
+				<h6 className="nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h6>
 			</div>
 		);
 	}

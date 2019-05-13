@@ -46,7 +46,7 @@ class Nav extends Component {
 
 	setMenuClosed = () => {
 		this.props.closeTakeover();
-		this.props.closeSecondaryPanel();
+		// this.props.closeSecondaryPanel();
 
 		setTimeout(() => { this.props.unhoverToggle(); }, 900)
 	}
@@ -91,7 +91,7 @@ class Nav extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(-1px, ' + 108 * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(-1px, ' + (isMobile ? 96 : 108) * (indexHovered + 0) + 'px, 0)',
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
@@ -110,11 +110,11 @@ class Nav extends Component {
 					to: "/translator",
 				},
 				{ 
-					name: "J&J Home",
+					name: "JJ Home Intranet",
 					to: "/jnj-home",
 				},
 				{ 
-					name: "J&J Medical Devices",
+					name: "JJ Medical Devices",
 					to: "/jnj-mdc",
 				},
 				{ 
@@ -143,7 +143,7 @@ class Nav extends Component {
 		const secondaryNavItems = navData.secondary.map((item, i) => 
 			<li key={i} onClick={this.setMenuClosed}>
 				<NavLink to={item.to} onMouseOver={this.setIndexHovered}>
-					<h3>{item.name}</h3>
+					<h4>{item.name}</h4>
 				</NavLink>
 			</li>
 		)
@@ -157,25 +157,25 @@ class Nav extends Component {
 							<div className="nav-takeover__panel">
 								<ul className="nav-takeover__items--secondary">
 									<li onClick={this.props.closeSecondaryPanel}>
-										<h2><i className="iconcss icon-arrow-right"></i></h2>
+										<h3><i className="iconcss icon-arrow-right"></i></h3>
 									</li>
 									{ secondaryNavItems }
 								</ul>
 								<ul className="nav-takeover__items--primary">
 									<li onClick={this.setMenuClosed}><NavLink to="/" onMouseOver={this.setIndexHovered}>
-										<h2 className={classNames({ 'active': abbreviation == 'H' })}>Home</h2>
+										<h3 className={classNames({ 'active': abbreviation == 'H' })}>Home</h3>
 									</NavLink></li>
 									<li onMouseOver={this.setIndexHovered} onClick={this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel}>
-										<h2 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h2>
+										<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h3>
 									</li>
 		 							<li onClick={this.setMenuClosed}><NavLink to="/process" onMouseOver={this.setIndexHovered}>
-			 							<h2>Process</h2>
+			 							<h3>Process</h3>
 		 							</NavLink></li>
 		 							<li onClick={this.setMenuClosed}><NavLink to="/about-me" onMouseOver={this.setIndexHovered}>
-			 							<h2>About me</h2>
+			 							<h3>About me</h3>
 			 						</NavLink></li>
 		 							<li  onClick={this.setMenuClosed}><NavLink to="/resume" onMouseOver={this.setIndexHovered}>
-			 							<h2>Resume</h2>
+			 							<h3>Resume</h3>
 		 							</NavLink></li>
 								</ul>
 								<div className="nav-takeover__line-container">

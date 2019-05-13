@@ -224,28 +224,30 @@ h1 {
     -webkit-text-stroke: 1px #F8FBF7; }
 
 h2 {
+  font-size: 6vw;
+  line-height: 1.2;
+  margin-left: -3px;
+  margin-bottom: 40px; }
+
+h3 {
   font-size: 40px;
   line-height: 1.2;
   margin-bottom: 36px; }
 
-h3 {
+h4 {
   font-size: 30px;
   line-height: 1.2;
   margin-bottom: 24px; }
 
-h4 {
+h5 {
   font-size: 18px;
   line-height: 1.2;
   margin-bottom: 32px; }
 
-h5 {
+h6 {
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 12px; }
-
-h6 {
-  font-size: 12px;
-  line-height: 14px; }
 
 p {
   font-family: "Averta", sans-serif;
@@ -350,125 +352,125 @@ h1 span, h2 span, h3 span, p span, blockquote span {
 .react-parallax h1 > span {
   overflow: hidden;
   transition: opacity cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s, transform cubic-bezier(0.215, 0.61, 0.355, 1) 1.8s; }
-  .react-parallax h1 > span:nth-last-child(1) {
+  .react-parallax h1 > span:nth-child(1) {
     transition-delay: 0.06s; }
-  .react-parallax h1 > span:nth-last-child(2) {
+  .react-parallax h1 > span:nth-child(2) {
     transition-delay: 0.12s; }
-  .react-parallax h1 > span:nth-last-child(3) {
+  .react-parallax h1 > span:nth-child(3) {
     transition-delay: 0.18s; }
-  .react-parallax h1 > span:nth-last-child(4) {
+  .react-parallax h1 > span:nth-child(4) {
     transition-delay: 0.24s; }
-  .react-parallax h1 > span:nth-last-child(5) {
+  .react-parallax h1 > span:nth-child(5) {
     transition-delay: 0.3s; }
-  .react-parallax h1 > span:nth-last-child(6) {
+  .react-parallax h1 > span:nth-child(6) {
     transition-delay: 0.36s; }
-  .react-parallax h1 > span:nth-last-child(7) {
+  .react-parallax h1 > span:nth-child(7) {
     transition-delay: 0.42s; }
-  .react-parallax h1 > span:nth-last-child(8) {
+  .react-parallax h1 > span:nth-child(8) {
     transition-delay: 0.48s; }
-  .react-parallax h1 > span:nth-last-child(9) {
+  .react-parallax h1 > span:nth-child(9) {
     transition-delay: 0.54s; }
-  .react-parallax h1 > span:nth-last-child(10) {
+  .react-parallax h1 > span:nth-child(10) {
     transition-delay: 0.6s; }
-  .react-parallax h1 > span:nth-last-child(11) {
+  .react-parallax h1 > span:nth-child(11) {
     transition-delay: 0.66s; }
-  .react-parallax h1 > span:nth-last-child(12) {
+  .react-parallax h1 > span:nth-child(12) {
     transition-delay: 0.72s; }
-  .react-parallax h1 > span:nth-last-child(13) {
+  .react-parallax h1 > span:nth-child(13) {
     transition-delay: 0.78s; }
-  .react-parallax h1 > span:nth-last-child(14) {
+  .react-parallax h1 > span:nth-child(14) {
     transition-delay: 0.84s; }
-  .react-parallax h1 > span:nth-last-child(15) {
+  .react-parallax h1 > span:nth-child(15) {
     transition-delay: 0.9s; }
-  .react-parallax h1 > span:nth-last-child(16) {
+  .react-parallax h1 > span:nth-child(16) {
     transition-delay: 0.96s; }
-  .react-parallax h1 > span:nth-last-child(17) {
+  .react-parallax h1 > span:nth-child(17) {
     transition-delay: 1.02s; }
-  .react-parallax h1 > span:nth-last-child(18) {
+  .react-parallax h1 > span:nth-child(18) {
     transition-delay: 1.08s; }
-  .react-parallax h1 > span:nth-last-child(19) {
+  .react-parallax h1 > span:nth-child(19) {
     transition-delay: 1.14s; }
-  .react-parallax h1 > span:nth-last-child(20) {
+  .react-parallax h1 > span:nth-child(20) {
     transition-delay: 1.2s; }
-  .react-parallax h1 > span:nth-last-child(21) {
+  .react-parallax h1 > span:nth-child(21) {
     transition-delay: 1.26s; }
-  .react-parallax h1 > span:nth-last-child(22) {
+  .react-parallax h1 > span:nth-child(22) {
     transition-delay: 1.32s; }
-  .react-parallax h1 > span:nth-last-child(23) {
+  .react-parallax h1 > span:nth-child(23) {
     transition-delay: 1.38s; }
-  .react-parallax h1 > span:nth-last-child(24) {
+  .react-parallax h1 > span:nth-child(24) {
     transition-delay: 1.44s; }
-  .react-parallax h1 > span:nth-last-child(25) {
+  .react-parallax h1 > span:nth-child(25) {
     transition-delay: 1.5s; }
-  .react-parallax h1 > span:nth-last-child(26) {
+  .react-parallax h1 > span:nth-child(26) {
     transition-delay: 1.56s; }
-  .react-parallax h1 > span:nth-last-child(27) {
+  .react-parallax h1 > span:nth-child(27) {
     transition-delay: 1.62s; }
-  .react-parallax h1 > span:nth-last-child(28) {
+  .react-parallax h1 > span:nth-child(28) {
     transition-delay: 1.68s; }
-  .react-parallax h1 > span:nth-last-child(29) {
+  .react-parallax h1 > span:nth-child(29) {
     transition-delay: 1.74s; }
-  .react-parallax h1 > span:nth-last-child(30) {
+  .react-parallax h1 > span:nth-child(30) {
     transition-delay: 1.8s; }
-  .react-parallax h1 > span:nth-last-child(31) {
+  .react-parallax h1 > span:nth-child(31) {
     transition-delay: 1.86s; }
-  .react-parallax h1 > span:nth-last-child(32) {
+  .react-parallax h1 > span:nth-child(32) {
     transition-delay: 1.92s; }
-  .react-parallax h1 > span:nth-last-child(33) {
+  .react-parallax h1 > span:nth-child(33) {
     transition-delay: 1.98s; }
-  .react-parallax h1 > span:nth-last-child(34) {
+  .react-parallax h1 > span:nth-child(34) {
     transition-delay: 2.04s; }
-  .react-parallax h1 > span:nth-last-child(35) {
+  .react-parallax h1 > span:nth-child(35) {
     transition-delay: 2.1s; }
-  .react-parallax h1 > span:nth-last-child(36) {
+  .react-parallax h1 > span:nth-child(36) {
     transition-delay: 2.16s; }
-  .react-parallax h1 > span:nth-last-child(37) {
+  .react-parallax h1 > span:nth-child(37) {
     transition-delay: 2.22s; }
-  .react-parallax h1 > span:nth-last-child(38) {
+  .react-parallax h1 > span:nth-child(38) {
     transition-delay: 2.28s; }
-  .react-parallax h1 > span:nth-last-child(39) {
+  .react-parallax h1 > span:nth-child(39) {
     transition-delay: 2.34s; }
-  .react-parallax h1 > span:nth-last-child(40) {
+  .react-parallax h1 > span:nth-child(40) {
     transition-delay: 2.4s; }
-  .react-parallax h1 > span:nth-last-child(41) {
+  .react-parallax h1 > span:nth-child(41) {
     transition-delay: 2.46s; }
-  .react-parallax h1 > span:nth-last-child(42) {
+  .react-parallax h1 > span:nth-child(42) {
     transition-delay: 2.52s; }
-  .react-parallax h1 > span:nth-last-child(43) {
+  .react-parallax h1 > span:nth-child(43) {
     transition-delay: 2.58s; }
-  .react-parallax h1 > span:nth-last-child(44) {
+  .react-parallax h1 > span:nth-child(44) {
     transition-delay: 2.64s; }
-  .react-parallax h1 > span:nth-last-child(45) {
+  .react-parallax h1 > span:nth-child(45) {
     transition-delay: 2.7s; }
-  .react-parallax h1 > span:nth-last-child(46) {
+  .react-parallax h1 > span:nth-child(46) {
     transition-delay: 2.76s; }
-  .react-parallax h1 > span:nth-last-child(47) {
+  .react-parallax h1 > span:nth-child(47) {
     transition-delay: 2.82s; }
-  .react-parallax h1 > span:nth-last-child(48) {
+  .react-parallax h1 > span:nth-child(48) {
     transition-delay: 2.88s; }
-  .react-parallax h1 > span:nth-last-child(49) {
+  .react-parallax h1 > span:nth-child(49) {
     transition-delay: 2.94s; }
-  .react-parallax h1 > span:nth-last-child(50) {
+  .react-parallax h1 > span:nth-child(50) {
     transition-delay: 3s; }
-  .react-parallax h1 > span:nth-last-child(51) {
+  .react-parallax h1 > span:nth-child(51) {
     transition-delay: 3.06s; }
-  .react-parallax h1 > span:nth-last-child(52) {
+  .react-parallax h1 > span:nth-child(52) {
     transition-delay: 3.12s; }
-  .react-parallax h1 > span:nth-last-child(53) {
+  .react-parallax h1 > span:nth-child(53) {
     transition-delay: 3.18s; }
-  .react-parallax h1 > span:nth-last-child(54) {
+  .react-parallax h1 > span:nth-child(54) {
     transition-delay: 3.24s; }
-  .react-parallax h1 > span:nth-last-child(55) {
+  .react-parallax h1 > span:nth-child(55) {
     transition-delay: 3.3s; }
-  .react-parallax h1 > span:nth-last-child(56) {
+  .react-parallax h1 > span:nth-child(56) {
     transition-delay: 3.36s; }
-  .react-parallax h1 > span:nth-last-child(57) {
+  .react-parallax h1 > span:nth-child(57) {
     transition-delay: 3.42s; }
-  .react-parallax h1 > span:nth-last-child(58) {
+  .react-parallax h1 > span:nth-child(58) {
     transition-delay: 3.48s; }
-  .react-parallax h1 > span:nth-last-child(59) {
+  .react-parallax h1 > span:nth-child(59) {
     transition-delay: 3.54s; }
-  .react-parallax h1 > span:nth-last-child(60) {
+  .react-parallax h1 > span:nth-child(60) {
     transition-delay: 3.6s; }
   .react-parallax h1 > span:nth-child(1) span {
     animation-delay: 0.72s; }
@@ -791,7 +793,7 @@ section h1 span > span {
   transform: translate3d(0, 100px, 0) skewY(6deg); }
 
 section h2 span > span {
-  transform: translate3d(0, 60px, 0) skewX(6deg); }
+  transform: translate3d(0, 90px, 0) skewX(6deg); }
 
 section p span > span, section blockquote span > span {
   opacity: 0;
@@ -804,184 +806,184 @@ section p span > span, section blockquote span > span {
   -ms-transform: none;
   transform: none; }
 
-.active-section section h1 span:nth-child(1) span {
+.active-section section h1 span:nth-child(1) span, .active-section section h2 span:nth-child(1) span {
   transition-delay: 0.69s; }
 
-.active-section section h1 span:nth-child(2) span {
+.active-section section h1 span:nth-child(2) span, .active-section section h2 span:nth-child(2) span {
   transition-delay: 0.78s; }
 
-.active-section section h1 span:nth-child(3) span {
+.active-section section h1 span:nth-child(3) span, .active-section section h2 span:nth-child(3) span {
   transition-delay: 0.87s; }
 
-.active-section section h1 span:nth-child(4) span {
+.active-section section h1 span:nth-child(4) span, .active-section section h2 span:nth-child(4) span {
   transition-delay: 0.96s; }
 
-.active-section section h1 span:nth-child(5) span {
+.active-section section h1 span:nth-child(5) span, .active-section section h2 span:nth-child(5) span {
   transition-delay: 1.05s; }
 
-.active-section section h1 span:nth-child(6) span {
+.active-section section h1 span:nth-child(6) span, .active-section section h2 span:nth-child(6) span {
   transition-delay: 1.14s; }
 
-.active-section section h1 span:nth-child(7) span {
+.active-section section h1 span:nth-child(7) span, .active-section section h2 span:nth-child(7) span {
   transition-delay: 1.23s; }
 
-.active-section section h1 span:nth-child(8) span {
+.active-section section h1 span:nth-child(8) span, .active-section section h2 span:nth-child(8) span {
   transition-delay: 1.32s; }
 
-.active-section section h1 span:nth-child(9) span {
+.active-section section h1 span:nth-child(9) span, .active-section section h2 span:nth-child(9) span {
   transition-delay: 1.41s; }
 
-.active-section section h1 span:nth-child(10) span {
+.active-section section h1 span:nth-child(10) span, .active-section section h2 span:nth-child(10) span {
   transition-delay: 1.5s; }
 
-.active-section section h1 span:nth-child(11) span {
+.active-section section h1 span:nth-child(11) span, .active-section section h2 span:nth-child(11) span {
   transition-delay: 1.59s; }
 
-.active-section section h1 span:nth-child(12) span {
+.active-section section h1 span:nth-child(12) span, .active-section section h2 span:nth-child(12) span {
   transition-delay: 1.68s; }
 
-.active-section section h1 span:nth-child(13) span {
+.active-section section h1 span:nth-child(13) span, .active-section section h2 span:nth-child(13) span {
   transition-delay: 1.77s; }
 
-.active-section section h1 span:nth-child(14) span {
+.active-section section h1 span:nth-child(14) span, .active-section section h2 span:nth-child(14) span {
   transition-delay: 1.86s; }
 
-.active-section section h1 span:nth-child(15) span {
+.active-section section h1 span:nth-child(15) span, .active-section section h2 span:nth-child(15) span {
   transition-delay: 1.95s; }
 
-.active-section section h1 span:nth-child(16) span {
+.active-section section h1 span:nth-child(16) span, .active-section section h2 span:nth-child(16) span {
   transition-delay: 2.04s; }
 
-.active-section section h1 span:nth-child(17) span {
+.active-section section h1 span:nth-child(17) span, .active-section section h2 span:nth-child(17) span {
   transition-delay: 2.13s; }
 
-.active-section section h1 span:nth-child(18) span {
+.active-section section h1 span:nth-child(18) span, .active-section section h2 span:nth-child(18) span {
   transition-delay: 2.22s; }
 
-.active-section section h1 span:nth-child(19) span {
+.active-section section h1 span:nth-child(19) span, .active-section section h2 span:nth-child(19) span {
   transition-delay: 2.31s; }
 
-.active-section section h1 span:nth-child(20) span {
+.active-section section h1 span:nth-child(20) span, .active-section section h2 span:nth-child(20) span {
   transition-delay: 2.4s; }
 
-.active-section section h1 span:nth-child(21) span {
+.active-section section h1 span:nth-child(21) span, .active-section section h2 span:nth-child(21) span {
   transition-delay: 2.49s; }
 
-.active-section section h1 span:nth-child(22) span {
+.active-section section h1 span:nth-child(22) span, .active-section section h2 span:nth-child(22) span {
   transition-delay: 2.58s; }
 
-.active-section section h1 span:nth-child(23) span {
+.active-section section h1 span:nth-child(23) span, .active-section section h2 span:nth-child(23) span {
   transition-delay: 2.67s; }
 
-.active-section section h1 span:nth-child(24) span {
+.active-section section h1 span:nth-child(24) span, .active-section section h2 span:nth-child(24) span {
   transition-delay: 2.76s; }
 
-.active-section section h1 span:nth-child(25) span {
+.active-section section h1 span:nth-child(25) span, .active-section section h2 span:nth-child(25) span {
   transition-delay: 2.85s; }
 
-.active-section section h1 span:nth-child(26) span {
+.active-section section h1 span:nth-child(26) span, .active-section section h2 span:nth-child(26) span {
   transition-delay: 2.94s; }
 
-.active-section section h1 span:nth-child(27) span {
+.active-section section h1 span:nth-child(27) span, .active-section section h2 span:nth-child(27) span {
   transition-delay: 3.03s; }
 
-.active-section section h1 span:nth-child(28) span {
+.active-section section h1 span:nth-child(28) span, .active-section section h2 span:nth-child(28) span {
   transition-delay: 3.12s; }
 
-.active-section section h1 span:nth-child(29) span {
+.active-section section h1 span:nth-child(29) span, .active-section section h2 span:nth-child(29) span {
   transition-delay: 3.21s; }
 
-.active-section section h1 span:nth-child(30) span {
+.active-section section h1 span:nth-child(30) span, .active-section section h2 span:nth-child(30) span {
   transition-delay: 3.3s; }
 
-.active-section section h1 span:nth-child(31) span {
+.active-section section h1 span:nth-child(31) span, .active-section section h2 span:nth-child(31) span {
   transition-delay: 3.39s; }
 
-.active-section section h1 span:nth-child(32) span {
+.active-section section h1 span:nth-child(32) span, .active-section section h2 span:nth-child(32) span {
   transition-delay: 3.48s; }
 
-.active-section section h1 span:nth-child(33) span {
+.active-section section h1 span:nth-child(33) span, .active-section section h2 span:nth-child(33) span {
   transition-delay: 3.57s; }
 
-.active-section section h1 span:nth-child(34) span {
+.active-section section h1 span:nth-child(34) span, .active-section section h2 span:nth-child(34) span {
   transition-delay: 3.66s; }
 
-.active-section section h1 span:nth-child(35) span {
+.active-section section h1 span:nth-child(35) span, .active-section section h2 span:nth-child(35) span {
   transition-delay: 3.75s; }
 
-.active-section section h1 span:nth-child(36) span {
+.active-section section h1 span:nth-child(36) span, .active-section section h2 span:nth-child(36) span {
   transition-delay: 3.84s; }
 
-.active-section section h1 span:nth-child(37) span {
+.active-section section h1 span:nth-child(37) span, .active-section section h2 span:nth-child(37) span {
   transition-delay: 3.93s; }
 
-.active-section section h1 span:nth-child(38) span {
+.active-section section h1 span:nth-child(38) span, .active-section section h2 span:nth-child(38) span {
   transition-delay: 4.02s; }
 
-.active-section section h1 span:nth-child(39) span {
+.active-section section h1 span:nth-child(39) span, .active-section section h2 span:nth-child(39) span {
   transition-delay: 4.11s; }
 
-.active-section section h1 span:nth-child(40) span {
+.active-section section h1 span:nth-child(40) span, .active-section section h2 span:nth-child(40) span {
   transition-delay: 4.2s; }
 
-.active-section section h1 span:nth-child(41) span {
+.active-section section h1 span:nth-child(41) span, .active-section section h2 span:nth-child(41) span {
   transition-delay: 4.29s; }
 
-.active-section section h1 span:nth-child(42) span {
+.active-section section h1 span:nth-child(42) span, .active-section section h2 span:nth-child(42) span {
   transition-delay: 4.38s; }
 
-.active-section section h1 span:nth-child(43) span {
+.active-section section h1 span:nth-child(43) span, .active-section section h2 span:nth-child(43) span {
   transition-delay: 4.47s; }
 
-.active-section section h1 span:nth-child(44) span {
+.active-section section h1 span:nth-child(44) span, .active-section section h2 span:nth-child(44) span {
   transition-delay: 4.56s; }
 
-.active-section section h1 span:nth-child(45) span {
+.active-section section h1 span:nth-child(45) span, .active-section section h2 span:nth-child(45) span {
   transition-delay: 4.65s; }
 
-.active-section section h1 span:nth-child(46) span {
+.active-section section h1 span:nth-child(46) span, .active-section section h2 span:nth-child(46) span {
   transition-delay: 4.74s; }
 
-.active-section section h1 span:nth-child(47) span {
+.active-section section h1 span:nth-child(47) span, .active-section section h2 span:nth-child(47) span {
   transition-delay: 4.83s; }
 
-.active-section section h1 span:nth-child(48) span {
+.active-section section h1 span:nth-child(48) span, .active-section section h2 span:nth-child(48) span {
   transition-delay: 4.92s; }
 
-.active-section section h1 span:nth-child(49) span {
+.active-section section h1 span:nth-child(49) span, .active-section section h2 span:nth-child(49) span {
   transition-delay: 5.01s; }
 
-.active-section section h1 span:nth-child(50) span {
+.active-section section h1 span:nth-child(50) span, .active-section section h2 span:nth-child(50) span {
   transition-delay: 5.1s; }
 
-.active-section section h1 span:nth-child(51) span {
+.active-section section h1 span:nth-child(51) span, .active-section section h2 span:nth-child(51) span {
   transition-delay: 5.19s; }
 
-.active-section section h1 span:nth-child(52) span {
+.active-section section h1 span:nth-child(52) span, .active-section section h2 span:nth-child(52) span {
   transition-delay: 5.28s; }
 
-.active-section section h1 span:nth-child(53) span {
+.active-section section h1 span:nth-child(53) span, .active-section section h2 span:nth-child(53) span {
   transition-delay: 5.37s; }
 
-.active-section section h1 span:nth-child(54) span {
+.active-section section h1 span:nth-child(54) span, .active-section section h2 span:nth-child(54) span {
   transition-delay: 5.46s; }
 
-.active-section section h1 span:nth-child(55) span {
+.active-section section h1 span:nth-child(55) span, .active-section section h2 span:nth-child(55) span {
   transition-delay: 5.55s; }
 
-.active-section section h1 span:nth-child(56) span {
+.active-section section h1 span:nth-child(56) span, .active-section section h2 span:nth-child(56) span {
   transition-delay: 5.64s; }
 
-.active-section section h1 span:nth-child(57) span {
+.active-section section h1 span:nth-child(57) span, .active-section section h2 span:nth-child(57) span {
   transition-delay: 5.73s; }
 
-.active-section section h1 span:nth-child(58) span {
+.active-section section h1 span:nth-child(58) span, .active-section section h2 span:nth-child(58) span {
   transition-delay: 5.82s; }
 
-.active-section section h1 span:nth-child(59) span {
+.active-section section h1 span:nth-child(59) span, .active-section section h2 span:nth-child(59) span {
   transition-delay: 5.91s; }
 
-.active-section section h1 span:nth-child(60) span {
+.active-section section h1 span:nth-child(60) span, .active-section section h2 span:nth-child(60) span {
   transition-delay: 6s; }
 
 .active-section section img {
@@ -1412,7 +1414,7 @@ section p span > span, section blockquote span > span {
       width: auto;
       min-width: 90px;
       margin-bottom: 48px;
-      min-height: 60px; }
+      height: 60px; }
   .nav-takeover__line-container {
     position: absolute;
     height: 1440px;
@@ -1439,6 +1441,8 @@ section p span > span, section blockquote span > span {
     -ms-flex-align: end;
     align-items: flex-end;
     padding: 120px; }
+    .nav-takeover__items--primary li, .nav-takeover__items--secondary li {
+      transform: translate3d(200%, 0, 0); }
   .nav-takeover__items--primary h1:hover, .nav-takeover__items--primary h2:hover, .nav-takeover__items--primary h3:hover, .nav-takeover__items--primary h4:hover, .nav-takeover__items--primary h5:hover, .nav-takeover__items--primary h6:hover {
     border-color: #DEDEDC; }
   .nav-takeover__items--primary h1.active, .nav-takeover__items--primary h2.active, .nav-takeover__items--primary h3.active, .nav-takeover__items--primary h4.active, .nav-takeover__items--primary h5.active, .nav-takeover__items--primary h6.active {
@@ -1551,7 +1555,7 @@ section p span > span, section blockquote span > span {
       .nav-takeover .nav-takeover__panel ul {
         padding: 60px; }
       .nav-takeover .nav-takeover__panel li {
-        min-height: 48px; }
+        height: 48px; }
       .nav-takeover .nav-takeover__panel .nav-takeover__items {
         margin-bottom: 18px;
         padding: 0; }
@@ -2167,11 +2171,15 @@ section p span > span, section blockquote span > span {
     margin-left: 0;
     margin-bottom: 24px; }
   h2 {
+    font-size: 9vw;
+    margin-left: 0;
+    margin-bottom: 18px; }
+  h3 {
     font-size: 8vw;
     margin-bottom: 12px; }
-  h3 {
-    font-size: 6vw; }
   h4 {
+    font-size: 6vw; }
+  h5 {
     font-size: 4vw; }
   blockquote {
     margin-bottom: 18px; } }

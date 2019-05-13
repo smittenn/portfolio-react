@@ -66,7 +66,7 @@ $baseclass: nav-takeover;
 			width: auto;
 			min-width: 90px;
 			margin-bottom: 48px;
-			min-height: 60px;
+			height: 60px;
 		}
 	}
 
@@ -98,6 +98,10 @@ $baseclass: nav-takeover;
 		flex-direction: column;
 		align-items: flex-end;
 		padding: 120px;
+
+		li {
+			transform: translate3d(200%, 0,0);
+		}
 	}
 
 
@@ -166,6 +170,12 @@ $baseclass: nav-takeover;
 				// opacity: 1;
 			}
 		}
+
+		.#{$baseclass}__items--secondary {
+
+			li {
+			}
+		}
 	}
 
 	&--secondaryPanelOpen {
@@ -228,7 +238,7 @@ $baseclass: nav-takeover;
 				padding: 60px;
 			}
 			li {
-				min-height: 48px;
+				height: 48px;
 			}
 			.#{$baseclass}__items {
 				margin-bottom: 18px;

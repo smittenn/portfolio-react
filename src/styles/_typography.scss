@@ -45,33 +45,36 @@ h1 {
 }
 
 h2 {
+	font-size: 6vw;
+	line-height: 1.2;
+	margin-left: -3px;
+	margin-bottom: 40px;
+}
+
+h3 {
 	font-size: 40px;
 	line-height: 1.2;
 	margin-bottom: 36px;
 }
 
-h3 {
+h4 {
 	font-size: 30px;
 	line-height: 1.2;
 	margin-bottom: 24px;
 }
 
-h4 {
+h5 {
 	font-size: 18px;
 	line-height: 1.2;
 	margin-bottom: 32px;
 }
 
-h5 {
+h6 {
 	font-size: 16px;
 	line-height: 24px;
 	margin-bottom: 12px;
 }
 
-h6 {
-	font-size: 12px;
-	line-height: 14px;
-}
 
 p {
 	font-family: $font-secondary;

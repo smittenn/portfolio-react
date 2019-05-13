@@ -58,7 +58,7 @@ export default class ProjectCard extends Component {
 					</div>
 					<div className="project-card__bottom">
 						<div>
-							<h3>{name}</h3>
+							<h4>{name}</h4>
 							<blockquote>{tags.join(", ")}</blockquote>
 						</div>
 						<i className="iconcss icon-arrow-right"></i>

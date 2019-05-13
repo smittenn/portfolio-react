@@ -59,15 +59,15 @@ export default class NextProject extends Component {
 							<GridLines/>
 								<div className="grid">
 									<div className="grid__item grid__item--col-12">
-										<h2 className="no-mb">Next Up</h2>
-										<h1>{name}</h1>
+										<h3 className="no-mb">Next Up</h3>
+										<h2>{name}</h2>
 
-										<h1 style={{
+										<h2 style={{
 											opacity: this.state.isHovering ? 1 : 0,
 											position: 'absolute',
 											left: this.state.arrowX,
 											top: this.state.arrowY,
-										}}><i className="iconcss icon-arrow-right"/></h1>
+										}}><i className="iconcss icon-arrow-right"/></h2>
 									</div>
 								</div>
 					</section>

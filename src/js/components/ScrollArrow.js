@@ -44,7 +44,7 @@ export default class ScrollArrow extends Component {
 					<div className="scroll-arrow__seperator"/>
 				</div>
 				{/*<i className="iconcss icon-arrow-right"/>*/}
-				{<h5 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Scroll`)}</h5>}
+				{<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Scroll`)}</h6>}
 			</div>					
 		);
 	}

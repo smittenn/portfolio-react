@@ -36972,7 +36972,7 @@ var CodepenEmbed = function (_Component) {
 
 			return _react2.default.createElement(
 				"p",
-				{ className: "codepen", "data-height": height, "data-theme-id": "dark", "data-default-tab": "result", "data-user": handle, "data-slug-hash": slug, style: style, "data-pen-title": title },
+				{ className: "codepen", "data-height": height, "data-theme-id": this.props.theme ? this.props.theme : "dark", "data-default-tab": "result", "data-user": handle, "data-slug-hash": slug, style: style, "data-pen-title": title },
 				_react2.default.createElement(
 					"span",
 					null,
@@ -37134,8 +37134,8 @@ var Image = function (_Component) {
 				{ style: style },
 				_react2.default.createElement("img", { src: src, style: {
 						display: 'block',
-						// width: '100%',
-						height: '100%',
+						width: '100%',
+						// height: '100%',
 						position: 'absolute',
 						top: 0,
 						// bottom: 0,
@@ -37206,7 +37206,7 @@ var Nav = function (_Component) {
 
 		_this.setMenuClosed = function () {
 			_this.props.closeTakeover();
-			_this.props.closeSecondaryPanel();
+			// this.props.closeSecondaryPanel();
 
 			setTimeout(function () {
 				_this.props.unhoverToggle();
@@ -37291,7 +37291,7 @@ var Nav = function (_Component) {
 			});
 
 			var lineAnimation = {
-				transform: 'translate3d(-1px, ' + 108 * (indexHovered + 0) + 'px, 0)',
+				transform: 'translate3d(-1px, ' + (isMobile ? 96 : 108) * (indexHovered + 0) + 'px, 0)',
 				opacity: this.props.isTakeoverOpen ? 1 : 0
 			};
 
@@ -37306,10 +37306,10 @@ var Nav = function (_Component) {
 					name: "Translator",
 					to: "/translator"
 				}, {
-					name: "J&J Home",
+					name: "JJ Home Intranet",
 					to: "/jnj-home"
 				}, {
-					name: "J&J Medical Devices",
+					name: "JJ Medical Devices",
 					to: "/jnj-mdc"
 				}, {
 					name: "Micro App Interactions",
@@ -37337,7 +37337,7 @@ var Nav = function (_Component) {
 						_reactRouterDom.NavLink,
 						{ to: item.to, onMouseOver: _this2.setIndexHovered },
 						_react2.default.createElement(
-							'h3',
+							'h4',
 							null,
 							item.name
 						)
@@ -37368,7 +37368,7 @@ var Nav = function (_Component) {
 										'li',
 										{ onClick: this.props.closeSecondaryPanel },
 										_react2.default.createElement(
-											'h2',
+											'h3',
 											null,
 											_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 										)
@@ -37385,7 +37385,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
-												'h2',
+												'h3',
 												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
 												'Home'
 											)
@@ -37395,7 +37395,7 @@ var Nav = function (_Component) {
 										'li',
 										{ onMouseOver: this.setIndexHovered, onClick: this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel },
 										_react2.default.createElement(
-											'h2',
+											'h3',
 											{ className: (0, _classnames2.default)({ 'active': abbreviation.match(/[0-9]/g) }) },
 											'Projects'
 										)
@@ -37407,7 +37407,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/process', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
-												'h2',
+												'h3',
 												null,
 												'Process'
 											)
@@ -37420,7 +37420,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/about-me', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
-												'h2',
+												'h3',
 												null,
 												'About me'
 											)
@@ -37433,7 +37433,7 @@ var Nav = function (_Component) {
 											_reactRouterDom.NavLink,
 											{ to: '/resume', onMouseOver: this.setIndexHovered },
 											_react2.default.createElement(
-												'h2',
+												'h3',
 												null,
 												'Resume'
 											)
@@ -37544,12 +37544,12 @@ var NavToggle = function (_Component) {
 
 		_this.openNav = function () {
 			_this.props.openTakeover();
-			_this.props.closeSecondaryPanel();
+			// this.props.closeSecondaryPanel();		
 		};
 
 		_this.closeNav = function () {
 			_this.props.closeTakeover();
-			_this.props.closeSecondaryPanel();
+			// this.props.closeSecondaryPanel();		
 		};
 
 		_this.state = {
@@ -37585,7 +37585,7 @@ var NavToggle = function (_Component) {
 				{ className: classnames, onMouseEnter: this.props.hoverToggle, onMouseLeave: this.props.isTakeoverOpen ? null : this.props.unhoverToggle,
 					onClick: this.props.isTakeoverOpen ? this.closeNav : this.openNav },
 				_react2.default.createElement(
-					'h5',
+					'h6',
 					{ className: 'nav-toggle__abbreviation' },
 					this.props.abbreviation
 				),
@@ -37597,7 +37597,7 @@ var NavToggle = function (_Component) {
 					_react2.default.createElement('div', { className: 'line' })
 				),
 				_react2.default.createElement(
-					'h5',
+					'h6',
 					{ className: 'nav-toggle__count' },
 					(0, _splitLetter2.default)((0, _pad2.default)(this.props.count, 2).toString())
 				)
@@ -37758,17 +37758,17 @@ var NextProject = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-12" },
 								_react2.default.createElement(
-									"h2",
+									"h3",
 									{ className: "no-mb" },
 									"Next Up"
 								),
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									name
 								),
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									{ style: {
 											opacity: this.state.isHovering ? 1 : 0,
 											position: 'absolute',
@@ -37936,7 +37936,7 @@ var ParallaxHeader = function (_Component) {
 
 			var style = {
 				opacity: Math.min(Math.max(0, 1 - this.state.scrollAmount * 0.005), 1),
-				transform: "translateY(" + Math.min(Math.max(-120, this.state.scrollAmount * -0.2), 0) + "px) skewY(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
+				transform: "translateY(" + Math.min(Math.max(0, this.state.scrollAmount * 0.5), 120) + "px) skewY(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
 			};
 
 			var updatedText = [];
@@ -38098,7 +38098,7 @@ var ProjectCard = function (_Component) {
 							'div',
 							null,
 							_react2.default.createElement(
-								'h3',
+								'h4',
 								null,
 								name
 							),
@@ -38207,7 +38207,7 @@ var ScrollArrow = function (_Component) {
 					_react2.default.createElement('div', { className: 'scroll-arrow__seperator' })
 				),
 				_react2.default.createElement(
-					'h5',
+					'h6',
 					{ className: 'uppercase' },
 					this.props.label ? (0, _splitLetter2.default)(this.props.label) : (0, _splitLetter2.default)('Scroll')
 				)
@@ -38450,17 +38450,17 @@ var Sidebar = function (_Component) {
 					{ key: i, className: 'sidebar-item' },
 					_react2.default.createElement(
 						_reactScroll.Link,
-						{ to: _this2.props.isSidebarOpen ? section : "", smooth: "easeOutQuint", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }), onClick: _this2.props.closeSidebar },
+						{ to: _this2.props.isSidebarOpen ? section : "", smooth: "easeOutQuint", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }), onClick: isMobile ? _this2.props.closeSidebar : null },
 						i == 0 ? _react2.default.createElement('div', { className: 'sidebar-border sidebar-border__top' }) : null,
 						_react2.default.createElement(
-							'h5',
+							'h6',
 							{ className: 'sidebar-number' },
 							(0, _pad2.default)(i + 1, 2),
 							'.'
 						),
 						_react2.default.createElement('div', { className: 'sidebar-dash' }),
 						_react2.default.createElement(
-							'h5',
+							'h6',
 							{ className: 'sidebar-label' },
 							section
 						),
@@ -39037,12 +39037,11 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavBlack();_this2.setActiveSection(1);
+							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-2 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
@@ -39076,22 +39075,21 @@ var AmericanMade = function (_Component) {
 							backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6"
 						},
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(2);
+							_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-2 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Role"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								"Lead Designer"
 							)
@@ -39100,12 +39098,12 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Date"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								"June, 2017"
 							)
@@ -39114,26 +39112,26 @@ var AmericanMade = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Client"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								"NBCUX Lab"
 							)
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							{ className: "grid__item grid__item--col-5  grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Team"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								_react2.default.createElement(
 									"a",
@@ -39164,7 +39162,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(3);
+							_this2.setActiveSection(3);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39176,7 +39174,7 @@ var AmericanMade = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									(0, _splitWord2.default)("Cinemagraphs")
 								),
@@ -39210,7 +39208,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavBlack();_this2.setActiveSection(4);
+							_this2.setActiveSection(4);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39252,7 +39250,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(5);
+							_this2.setActiveSection(5);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39266,7 +39264,7 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"h2",
 									null,
-									"\u201CRunway\u201D Navigation"
+									"Runway Navigation"
 								),
 								_react2.default.createElement(
 									"blockquote",
@@ -39293,7 +39291,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavBlack();_this2.setActiveSection(6);
+							_this2.setActiveSection(6);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39335,7 +39333,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(7);
+							_this2.setActiveSection(7);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39348,8 +39346,13 @@ var AmericanMade = function (_Component) {
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h2",
+									{ className: "no-mb" },
+									"Scrolling Story"
+								),
+								_react2.default.createElement(
+									"h3",
 									null,
-									"Scrolling Story: Parallax"
+									"With Parallax"
 								),
 								_react2.default.createElement(
 									"blockquote",
@@ -39381,7 +39384,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(8);
+							_this2.setActiveSection(8);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39393,7 +39396,7 @@ var AmericanMade = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									"Mobile First"
 								),
@@ -39419,7 +39422,7 @@ var AmericanMade = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(9);
+							_this2.setActiveSection(9);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39431,12 +39434,12 @@ var AmericanMade = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									{ className: "no-mb" },
 									"Interactive Map"
 								),
 								_react2.default.createElement(
-									"h2",
+									"h3",
 									null,
 									"\u201CFly With Barry\u201D"
 								),
@@ -39716,7 +39719,7 @@ var Home = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							(0, _color.setNavBlack)();_this2.setActiveSection(1);
+							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39724,8 +39727,9 @@ var Home = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-4 grid__item--col-11-medium" },
+							_react2.default.createElement("div", { className: "spacer spacer__md" }),
 							_react2.default.createElement(
-								"h1",
+								"h2",
 								null,
 								(0, _splitWord2.default)("Form & Function")
 							),
@@ -39746,7 +39750,8 @@ var Home = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-4-medium" },
 							_react2.default.createElement("div", { className: "spacer spacer__lg" }),
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/me-4x3.jpg", aspectRatioWidth: 3, aspectRatioHeight: 4 })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/me-4x3.jpg", aspectRatioWidth: 3, aspectRatioHeight: 4 }),
+							_react2.default.createElement("div", { className: "spacer spacer__md" })
 						),
 						_react2.default.createElement(
 							"div",
@@ -39764,7 +39769,7 @@ var Home = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							(0, _color.setNavBlack)();_this2.setActiveSection(2);
+							_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -39773,8 +39778,9 @@ var Home = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-5 grid__item--col-11-medium" },
+							_react2.default.createElement("div", { className: "spacer spacer__sm" }),
 							_react2.default.createElement(
-								"h1",
+								"h2",
 								null,
 								(0, _splitWord2.default)("Visual & Interactive")
 							),
@@ -39828,11 +39834,40 @@ var Home = function (_Component) {
 					)
 				),
 				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[3],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(3);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-11-medium" },
+							_react2.default.createElement("div", { className: "spacer spacer__md" }),
+							_react2.default.createElement(
+								"h2",
+								null,
+								(0, _splitWord2.default)("Experiments")
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								(0, _splitWord2.default)("My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I\u2019m not designing, you can find me outdoors taking photos with friends.")
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
 					_reactScroll.Link,
 					{ to: sections[1], spy: true, smooth: "easeOutQuint", duration: 1200, offset: 0, onSetActive: function onSetActive() {
 							(0, _counter.setCounter)(2);(0, _color.setNavBlack)();_this2.setActiveSection(1);
 						} },
-					_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
+					_react2.default.createElement(_ScrollArrow2.default, { label: "Learn More" })
 				)
 			);
 		}
@@ -40058,7 +40093,7 @@ var Vai = function (_Component) {
 								"V.ai "
 							)
 						), "video player uses AI to identify people and products"],
-						bgImage: "../assets/img/vai/banner.jpg",
+						bgImage: "../assets/img/vai/banner.gif",
 						onSetActive: function onSetActive() {
 							setCounter(1);setNavWhite();_this2.setActiveSection(sections[0]);
 						}
@@ -40122,12 +40157,12 @@ var Vai = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Role"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								"Lead Designer"
 							)
@@ -40136,12 +40171,12 @@ var Vai = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Date"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								"October, 2017"
 							)
@@ -40150,12 +40185,12 @@ var Vai = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-2 grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Client"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								"NBCUX Lab"
 							)
@@ -40164,12 +40199,12 @@ var Vai = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-5 grid__item--col-6-medium" },
 							_react2.default.createElement(
-								"h5",
+								"h6",
 								{ className: "uppercase" },
 								"Team"
 							),
 							_react2.default.createElement(
-								"p",
+								"blockquote",
 								null,
 								_react2.default.createElement(
 									"a",
@@ -40219,7 +40254,7 @@ var Vai = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									"Player Overlay"
 								),
@@ -40260,7 +40295,7 @@ var Vai = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									"Products"
 								),
@@ -40302,7 +40337,7 @@ var Vai = function (_Component) {
 								"div",
 								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 								_react2.default.createElement(
-									"h1",
+									"h2",
 									null,
 									"People"
 								),

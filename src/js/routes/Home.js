@@ -118,10 +118,11 @@ class Home extends Component {
 				name={sections[1]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavBlack(); this.setActiveSection(1); }}>
+				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
-							<h1>{splitWord("Form & Function")}</h1>
+							<div className="spacer spacer__md"/>
+							<h2>{splitWord("Form & Function")}</h2>
 							<blockquote>
 								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
@@ -134,6 +135,7 @@ class Home extends Component {
 							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 								<div className="spacer spacer__lg"/>
 								<Image src="../assets/img/me-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								<div className="spacer spacer__md"/>
 							</div>
 							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 								<div className="spacer spacer__md"/>
@@ -147,12 +149,12 @@ class Home extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setNavBlack(); this.setActiveSection(2); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
-							{/*<h1>{splitWord("My Work")}</h1>*/}
-							{<h1>{splitWord("Visual & Interactive")}</h1>}
+							<div className="spacer spacer__sm"/>
+							{<h2>{splitWord("Visual & Interactive")}</h2>}
 							<blockquote>
 								{splitWord(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 								<br/><br/>
@@ -187,9 +189,26 @@ class Home extends Component {
 					</div>
 				</ScrollSection>
 
+				<ScrollSection 
+				name={sections[3]} 
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(3); }}>
+					<div className="grid">
+						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
+							<div className="spacer spacer__md"/>
+							<h2>{splitWord("Experiments")}</h2>
+							<blockquote>
+								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+							</blockquote>
+						</div>
+					</div>
+				</ScrollSection>
+
+
 
 				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
-					<ScrollArrow label="Read More"/>
+					<ScrollArrow label="Learn More"/>
 				</Link>}
 
 			</article>
