@@ -38049,7 +38049,7 @@ var ParallaxHeader = function (_Component) {
 
 			var style = {
 				opacity: Math.min(Math.max(0, 1 - this.state.scrollAmount * 0.005), 1),
-				transform: "translateY(" + Math.min(Math.max(0, this.state.scrollAmount * 0.5), 120) + "px) skewY(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
+				transform: "translateY(" + Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0) + "px) skewX(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
 			};
 
 			var updatedText = [];
@@ -38072,8 +38072,9 @@ var ParallaxHeader = function (_Component) {
 						blur: null,
 						strength: str,
 						renderLayer: function renderLayer(percentage) {
-							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage + 0.1) + ")", 'mixBlendMode': 'none' } });
+							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage + 0.2) + ")", 'mixBlendMode': 'none' } });
 						} },
+					_react2.default.createElement(_GridLines2.default, null),
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
@@ -40302,7 +40303,6 @@ var Translator = function (_Component) {
 							)
 						), "helped NBCU technicians view and archive footage."],
 						bgImage: "../assets/img/translator/banner.png",
-						bgColor: "#000000",
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						}

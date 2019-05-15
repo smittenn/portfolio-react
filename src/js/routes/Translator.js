@@ -84,7 +84,6 @@ class Translator extends Component {
 					activeSection={activeSection}
 					headerText={[ <span className="outline"><span>Translator </span></span>, `helped NBCU technicians view and archive footage.`]}
 					bgImage={"../assets/img/translator/banner.png"}
-					bgColor={"#000000"}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
 					{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>

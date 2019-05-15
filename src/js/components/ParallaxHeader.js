@@ -73,7 +73,7 @@ export default class ParallaxHeader extends Component {
 
 		const style = {
 			opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
-			transform: `translateY(${Math.min(Math.max(0, this.state.scrollAmount * 0.5), 120)}px) skewY(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
+			transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
 		};
 
 		let updatedText = [];
@@ -94,9 +94,10 @@ export default class ParallaxHeader extends Component {
 				strength={str}
 				renderLayer={percentage => {
 					return (
-						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage + 0.1})`, 'mixBlendMode': 'none' }}></div>
+						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage + 0.2})`, 'mixBlendMode': 'none' }}></div>
 					)
 				}}>
+				<GridLines/>
 				<div className="grid">
 					{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">

@@ -16,7 +16,10 @@
 
 		> span {
 			overflow: hidden;
-			transition: opacity $easing1 $duration-slow, transform $easing1 $duration-slowest;
+			// transition: opacity $easing1 $duration-slow, transform $easing1 $duration-slowest;
+			transition: none;
+			transform: none !important;
+			opacity: 1 !important;
 
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) {
