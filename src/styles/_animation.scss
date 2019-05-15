@@ -133,7 +133,7 @@ section {
 			span {
 				@for $i from 1 through 120 {
 					&:nth-child(#{$i}) span {
-						transition-delay: (#{1.2 + ($i * 0.06)}s);
+						transition-delay: (#{1.2 + ($i * 0.04)}s);
 					}
 				}
 			}

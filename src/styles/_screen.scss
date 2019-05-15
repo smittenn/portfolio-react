@@ -6,7 +6,7 @@
 
 @media screen and (max-width: $bp-medium) {
 	.cursor {
-		// display: none;
+		display: none;
 	}
 	.spacer {
 		display: none;
@@ -112,7 +112,8 @@
 		font-size: 4vw;
 	}
 	blockquote {
-		font-size: 5vw;
-		margin-bottom: 18px;
+		font-size: 19px;
+		margin-bottom: 21px;
+		// margin-right: 21px;
 	}
 }

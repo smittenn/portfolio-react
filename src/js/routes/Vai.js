@@ -79,7 +79,7 @@ class Vai extends Component {
 					name={sections[0]}
 					sections={sections} 
 					activeSection={activeSection}
-					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products`]}
+					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
 					bgImage={"../assets/img/vai/banner.gif"}
 					onSetActive={() => { this.setActiveSection(sections[0]);}}
 					/>

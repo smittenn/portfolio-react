@@ -1,3 +1,5 @@
+import darken from "./darken"
+
 export default function(color) {
 	const palette = {
 		"brand-red": "#ff483c",
@@ -13,7 +15,7 @@ export default function(color) {
 		"brand-grey-medium": "#81717A",
 		"brand-grey-dark": "#595358",
 		"brand-grey-darkest": "#333031",
-		"brand-black": "#232021",
+		"brand-black": darken("#232021", 4),
 	}
 	return palette[color]
 }

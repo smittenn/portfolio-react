@@ -20,6 +20,7 @@ body {
 	user-select: none;  
 
 	cursor: none !important;
+	color: $brand-black;
 }
 
 video {
@@ -55,7 +56,7 @@ section {
 	}
 
 	&.black {
-		background-color: darken($brand-black, 6%);
+		background-color: $brand-black;
 
 		h1, h2, h3, h4, h5, h6, p, blockquote, a {
 			color: $brand-white;

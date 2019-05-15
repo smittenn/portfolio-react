@@ -86,7 +86,7 @@ class AmericanMade extends Component {
 					name={sections[0]}
 					sections={sections}
 					activeSection={activeSection}
-					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie`]}
+					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie.`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					// strength={200}
 					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
@@ -260,7 +260,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Parallax Story</h2>
+								<h2>Parallax Story</h2>
 								<blockquote>In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
 								<blockquote>I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.</blockquote>
 							</div>
