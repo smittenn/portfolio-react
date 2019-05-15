@@ -1,7 +1,7 @@
 $baseclass: sidebar-container;
 
 .#{$baseclass} {
-	height: calc(100vh - 120px);
+	height: calc(100vh - 108px);
 	// height: 100vh;
 	width: 24px;
 	position: fixed;
@@ -10,7 +10,7 @@ $baseclass: sidebar-container;
 	align-items: center;
 	justify-content: flex-end;
 	right: 0;
-	bottom: 0;
+	top: 108px;
 	// @include zIndexCloser();
 
 
@@ -157,7 +157,7 @@ $baseclass: sidebar-container;
 
 	&--open {
 		min-width: 280px;
-		width: calc(16.667% + 40px);
+		// width: calc(16.667%);
 
 		.sidebar {
 			width: 100%;
@@ -225,6 +225,7 @@ $baseclass: sidebar-container;
 
 	@media screen and (max-width: $bp-medium) {
 		width: 24px;
+		top: 84px;
 		height: calc(100vh - 84px);
 		// height: 100vh;
 

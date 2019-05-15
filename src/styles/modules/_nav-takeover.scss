@@ -61,7 +61,7 @@ $baseclass: nav-takeover;
 			align-items: center;
 			justify-content: flex-end;
 			transform: translate3d(200%, 0,0);
-			cursor: pointer;
+			// cursor: pointer;
 			transition: none;
 			width: auto;
 			min-width: 90px;
@@ -218,7 +218,7 @@ $baseclass: nav-takeover;
 		}
 
 		.#{$baseclass}__line-container {
-			width: 40px;
+			width: 30px;
 			padding-top: 60px;
 		}
 

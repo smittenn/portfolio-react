@@ -15,11 +15,11 @@ export default class Image extends Component {
 
 	render() {
 
-		const { src, aspectRatioWidth, aspectRatioHeight } = this.props;
+		const { src, aspectRatioWidth, aspectRatioHeight, style } = this.props;
 
 		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
 		
-		const style =  {
+		const _style =  {
 			position: 'relative',
 			display: 'block',
 			height: 0,
@@ -27,8 +27,10 @@ export default class Image extends Component {
 			overflow: 'hidden',
 		}	
 
+		style ? Object.assign(_style, style) : null
+
 		return (
-			<div style={style}>
+			<div style={_style}>
 				<img src={src} style={{
 					display: 'block',
 					// width: '100%',

@@ -35,7 +35,6 @@ class Vai extends Component {
 
 		this.props.vai();
 		this.props.reset();
-		this.props.setNavWhite();
 	}
 
 
@@ -82,9 +81,9 @@ class Vai extends Component {
 					activeSection={activeSection}
 					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products`]}
 					bgImage={"../assets/img/vai/banner.gif"}
-					onSetActive={() => { setCounter(1); setNavWhite(); this.setActiveSection(sections[0]);}}
+					onSetActive={() => { this.setActiveSection(sections[0]);}}
 					/>
-					<Link to={sections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(sections[1]); }}>
+					<Link to={sections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.setActiveSection(sections[1]); }}>
 						<ScrollArrow/>
 					</Link>
 				</Element>
@@ -93,10 +92,9 @@ class Vai extends Component {
 				name={sections[1]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(sections[1]);}}>
+				onSetActive={() => { this.setActiveSection(sections[1]);}}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
 								Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing.
 							</blockquote>
@@ -108,16 +106,37 @@ class Vai extends Component {
 							</blockquote>
 
 						</div>
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+							<div className="grid__row">
+								<div className="grid__item grid__item--col-12">
+									<Image src="../assets/img/vai/chevrolet.jpg"  aspectRatioWidth={16} aspectRatioHeight={9}/>
+								</div>
+							</div>
+							<div className="grid__row">
+								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+									<blockquote>
+										As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
+									</blockquote>
+								</div>
+								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+									<blockquote>
+										Clarifi's image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
+									</blockquote>
+								</div>
+							</div>
+						</div>
 					</div>
 				</ScrollSection>
 
 				<ScrollSection 
 				name={sections[2]}
-				black 
+				black
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ backgroundImage: `url(../assets/img/vai/one-plus.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 20%" }}  
-				onSetActive={() => { setCounter(3); this.setActiveSection(sections[2]); }}>
+				style={{ backgroundImage: `url(../assets/img/vai/one-plus.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`, backgroundPosition: "center 20%" }}  
+				onSetActive={() => { this.setActiveSection(sections[2]); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
@@ -141,15 +160,15 @@ class Vai extends Component {
 
 				<ScrollSection 
 				name={sections[3]}
-				black 
+				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setCounter(4); this.setActiveSection(sections[3]); }}>
+				onSetActive={() => { this.setActiveSection(sections[3]); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Player Overlay</h2>
-								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without encroaching on the viewing experience.</blockquote>
+								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without distracting from the viewing experience.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -164,12 +183,12 @@ class Vai extends Component {
 				name={sections[4]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setCounter(5); this.setActiveSection(sections[4]); }}>
+				onSetActive={() => { this.setActiveSection(sections[4]); }}>
 					<div className="grid">
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Products</h2>
-								<blockquote>Brands can now sponsor T.V. shows and movies to promote their products in a new and innovative way without using traditional commercials that interrupt and upset consumers. Fans of the show can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
+							<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+								<h2>Products & Shopping</h2>
+								<blockquote>Brands can now sponsor T.V. shows to promote their products in an innovative way without using traditional commercials that interrupt consumers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -185,12 +204,12 @@ class Vai extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { setCounter(6); this.setActiveSection(sections[5]); }}>
+				onSetActive={() => { this.setActiveSection(sections[5]); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>People</h2>
-								<blockquote>Besides addressing the goal of advertising, V.ai aims to elevate the video viewing experience. Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question.</blockquote>
+								<blockquote>Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -206,12 +225,6 @@ class Vai extends Component {
 						</div>
 
 					</SideScroller>
-					<div className="grid">
-						
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-4 grid__item--hide-bp-medium"/>}
-					</div>
 				</ScrollSection>
 				
 			</article>

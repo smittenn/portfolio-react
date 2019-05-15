@@ -20,7 +20,7 @@
 
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) {
-					transition-delay: (#{0.0 + ($i * 0.06)}s);
+					transition-delay: (#{0.0 + ($i * 0.09)}s);
 				}
 			}
 			@for $i from 1 through 60 {

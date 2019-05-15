@@ -139,7 +139,7 @@ class AmericanMade extends Component {
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>NBCUX Lab</blockquote> 
+							<blockquote>Universal Pictures</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>

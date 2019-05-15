@@ -36624,7 +36624,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":159,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
+},{"./routes":161,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36875,7 +36875,7 @@ var render = function render() {
 
 render();
 
-},{"../App":126,"../reducers":150,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],135:[function(require,module,exports){
+},{"../App":126,"../reducers":151,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],135:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37006,7 +37006,117 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":162,"../services/palette":164,"classnames":7,"react":113}],136:[function(require,module,exports){
+},{"../services/hexToRgb":164,"../services/palette":166,"classnames":7,"react":113}],136:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import GridLines from "../components/GridLines"
+// import Sidebar from "../components/Sidebar"
+
+var Cursor = function (_Component) {
+	_inherits(Cursor, _Component);
+
+	function Cursor(props) {
+		_classCallCheck(this, Cursor);
+
+		var _this = _possibleConstructorReturn(this, (Cursor.__proto__ || Object.getPrototypeOf(Cursor)).call(this, props));
+
+		_this.setArrowPosition = function (event) {
+			// console.log(event)
+			var pageX = event.pageX,
+			    pageY = event.pageY;
+
+
+			_this.setState({
+				arrowX: pageX,
+				arrowY: pageY,
+				isVisible: true
+			});
+		};
+
+		_this.handleHover = function () {
+			_this.setState({
+				isHovering: !_this.state.isHovering
+			});
+		};
+
+		_this.state = {
+			arrowX: 0,
+			arrowY: 0,
+			isVisible: false
+		};
+		return _this;
+	}
+
+	_createClass(Cursor, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			window.addEventListener('mousemove', this.setArrowPosition);
+		}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {
+			window.removeEventListener('mousemove', this.setArrowPosition);
+		}
+
+		// componentDidUpdate(prevProps) {}
+
+	}, {
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    to = _props.to,
+			    name = _props.name,
+			    style = _props.style,
+			    sections = _props.sections,
+			    activeSection = _props.activeSection;
+
+
+			var classnames = (0, _classnames2.default)({
+				"cursor": true,
+				"cursor--visible": this.state.isVisible
+			});
+
+			return _react2.default.createElement(
+				"div",
+				{ className: classnames },
+				_react2.default.createElement("div", { className: "cursor__circle", style: { left: this.state.arrowX, top: this.state.arrowY } }),
+				_react2.default.createElement("div", { className: "cursor__lines", style: { left: this.state.arrowX, top: this.state.arrowY } })
+			);
+		}
+	}]);
+
+	return Cursor;
+}(_react.Component);
+
+exports.default = Cursor;
+
+},{"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],137:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37070,7 +37180,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":113}],137:[function(require,module,exports){
+},{"react":113}],138:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37116,12 +37226,13 @@ var Image = function (_Component) {
 			var _props = this.props,
 			    src = _props.src,
 			    aspectRatioWidth = _props.aspectRatioWidth,
-			    aspectRatioHeight = _props.aspectRatioHeight;
+			    aspectRatioHeight = _props.aspectRatioHeight,
+			    style = _props.style;
 
 
 			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
 
-			var style = {
+			var _style = {
 				position: 'relative',
 				display: 'block',
 				height: 0,
@@ -37129,9 +37240,11 @@ var Image = function (_Component) {
 				overflow: 'hidden'
 			};
 
+			style ? Object.assign(_style, style) : null;
+
 			return _react2.default.createElement(
 				"div",
-				{ style: style },
+				{ style: _style },
 				_react2.default.createElement("img", { src: src, style: {
 						display: 'block',
 						// width: '100%',
@@ -37151,7 +37264,7 @@ var Image = function (_Component) {
 
 exports.default = Image;
 
-},{"classnames":7,"react":113}],138:[function(require,module,exports){
+},{"classnames":7,"react":113}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37491,7 +37604,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
 
-},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":165,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":167,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37642,7 +37755,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/pad":163,"../services/splitLetter":165,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
+},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/pad":165,"../services/splitLetter":167,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],141:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37799,7 +37912,7 @@ var NextProject = function (_Component) {
 
 exports.default = NextProject;
 
-},{"../components/GridLines":136,"../components/Sidebar":146,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],141:[function(require,module,exports){
+},{"../components/GridLines":137,"../components/Sidebar":147,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],142:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37959,7 +38072,7 @@ var ParallaxHeader = function (_Component) {
 						blur: null,
 						strength: str,
 						renderLayer: function renderLayer(percentage) {
-							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage + 0.1) + ")", 'mixBlendMode': 'multiply' } });
+							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage + 0.1) + ")", 'mixBlendMode': 'none' } });
 						} },
 					_react2.default.createElement(
 						"div",
@@ -37991,7 +38104,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":161,"../services/hexToRgb":162,"../services/palette":164,"../services/splitLetter":165,"../services/splitWord":166,"./GridLines":136,"./NavToggle":139,"./Sidebar":146,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],142:[function(require,module,exports){
+},{"../services/detectMobile":163,"../services/hexToRgb":164,"../services/palette":166,"../services/splitLetter":167,"../services/splitWord":168,"./GridLines":137,"./NavToggle":140,"./Sidebar":147,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38120,7 +38233,7 @@ var ProjectCard = function (_Component) {
 
 exports.default = ProjectCard;
 
-},{"../services/splitLetter":165,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],143:[function(require,module,exports){
+},{"../services/splitLetter":167,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],144:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38220,7 +38333,7 @@ var ScrollArrow = function (_Component) {
 
 exports.default = ScrollArrow;
 
-},{"../services/detectMobile":161,"../services/splitLetter":165,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],144:[function(require,module,exports){
+},{"../services/detectMobile":163,"../services/splitLetter":167,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],145:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38345,7 +38458,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"../components/GridLines":136,"./NavToggle":139,"./Sidebar":146,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],145:[function(require,module,exports){
+},{"../components/GridLines":137,"./NavToggle":140,"./Sidebar":147,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],146:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38406,7 +38519,7 @@ var SideScroller = function (_Component) {
 			var isMobile = this.state.isMobile;
 
 
-			var margin = isMobile ? 18 : 60;
+			var margin = isMobile ? 12 : 60;
 
 			var style = {
 				overflowX: 'scroll',
@@ -38427,12 +38540,7 @@ var SideScroller = function (_Component) {
 				"div",
 				{ style: style },
 				items,
-				_react2.default.createElement("div", { style: { minWidth: margin + 'px' } }),
-				_react2.default.createElement(
-					"h2",
-					{ style: { position: 'absolute' } },
-					_react2.default.createElement("i", { className: "iconcss icon-arrow-right" })
-				)
+				_react2.default.createElement("div", { style: { minWidth: margin + 'px' } })
 			);
 		}
 	}]);
@@ -38442,7 +38550,7 @@ var SideScroller = function (_Component) {
 
 exports.default = SideScroller;
 
-},{"classnames":7,"react":113}],146:[function(require,module,exports){
+},{"classnames":7,"react":113}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38568,10 +38676,10 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames, ref: 'sidebar' },
+				{ className: classnames, ref: 'sidebar', onMouseEnter: isMobile ? null : this.props.openSidebar },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'sidebar', onClick: this.props.isSidebarOpen ? null : this.props.openSidebar, onMouseEnter: isMobile ? null : this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar },
+					{ className: 'sidebar', onClick: this.props.isSidebarOpen ? null : this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar },
 					sidebarItems
 				)
 			);
@@ -38602,7 +38710,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-},{"../actions/sidebar":133,"../services/createNewId":160,"../services/pad":163,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],147:[function(require,module,exports){
+},{"../actions/sidebar":133,"../services/createNewId":162,"../services/pad":165,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38644,7 +38752,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],148:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38666,7 +38774,7 @@ var colorReducer = function colorReducer() {
 
 exports.default = colorReducer;
 
-},{}],149:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38692,7 +38800,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38748,7 +38856,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":147,"./color":148,"./counter":149,"./navTakeover":151,"./navToggle":152,"./secondaryPanel":153,"./sidebar":154,"connected-react-router":11,"redux":114}],151:[function(require,module,exports){
+},{"./abbreviation":148,"./color":149,"./counter":150,"./navTakeover":152,"./navToggle":153,"./secondaryPanel":154,"./sidebar":155,"connected-react-router":11,"redux":114}],152:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38770,7 +38878,7 @@ var navTakeoverReducer = function navTakeoverReducer() {
 
 exports.default = navTakeoverReducer;
 
-},{}],152:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38792,7 +38900,7 @@ var navToggleReducer = function navToggleReducer() {
 
 exports.default = navToggleReducer;
 
-},{}],153:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38814,7 +38922,7 @@ var secondaryPanelReducer = function secondaryPanelReducer() {
 
 exports.default = secondaryPanelReducer;
 
-},{}],154:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38836,7 +38944,7 @@ var sidebarReducer = function sidebarReducer() {
 
 exports.default = sidebarReducer;
 
-},{}],155:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38946,7 +39054,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":136,"../components/ParallaxHeader":141,"react":113,"react-redux":61}],156:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":137,"../components/ParallaxHeader":142,"react":113,"react-redux":61}],157:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39220,7 +39328,7 @@ var AmericanMade = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"NBCUX Lab"
+								"Universal Pictures"
 							)
 						),
 						_react2.default.createElement(
@@ -39631,7 +39739,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/NextProject":140,"../components/ParallaxHeader":141,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/SideScroller":145,"../components/Sidebar":146,"../services/hexToRgb":162,"../services/palette":164,"../services/splitLetter":165,"../services/splitWord":166,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],157:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":137,"../components/Image":138,"../components/NextProject":141,"../components/ParallaxHeader":142,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/SideScroller":146,"../components/Sidebar":147,"../services/hexToRgb":164,"../services/palette":166,"../services/splitLetter":167,"../services/splitWord":168,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],158:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40031,7 +40139,593 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/Image":137,"../components/ParallaxHeader":141,"../components/ProjectCard":142,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/Sidebar":146,"../services/splitWord":166,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],158:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/Image":138,"../components/ParallaxHeader":142,"../components/ProjectCard":143,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/Sidebar":147,"../services/splitWord":168,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],159:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _reactCodepenEmbed = require("react-codepen-embed");
+
+var _reactCodepenEmbed2 = _interopRequireDefault(_reactCodepenEmbed);
+
+var _counter = require("../actions/counter");
+
+var _abbreviation = require("../actions/abbreviation");
+
+var _color = require("../actions/color");
+
+var _ParallaxHeader = require("../components/ParallaxHeader");
+
+var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+
+var _ScrollArrow = require("../components/ScrollArrow");
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
+
+var _ScrollSection = require("../components/ScrollSection");
+
+var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
+
+var _GridLines = require("../components/GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _Sidebar = require("../components/Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+var _CodepenEmbed = require("../components/CodepenEmbed");
+
+var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
+
+var _NextProject = require("../components/NextProject");
+
+var _NextProject2 = _interopRequireDefault(_NextProject);
+
+var _SideScroller = require("../components/SideScroller");
+
+var _SideScroller2 = _interopRequireDefault(_SideScroller);
+
+var _Image = require("../components/Image");
+
+var _Image2 = _interopRequireDefault(_Image);
+
+var _splitWord = require("../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _splitLetter = require("../services/splitLetter");
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Translator = function (_Component) {
+	_inherits(Translator, _Component);
+
+	_createClass(Translator, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.translator();
+			this.props.reset();
+		}
+	}]);
+
+	function Translator(props) {
+		_classCallCheck(this, Translator);
+
+		var _this = _possibleConstructorReturn(this, (Translator.__proto__ || Object.getPrototypeOf(Translator)).call(this, props));
+
+		_this.setActiveSection = function (idx) {
+			_this.setState({
+				activeSection: _this.state.sections[idx]
+			});
+			_this.props.setCounter(idx + 1);
+		};
+
+		_this.state = {
+			activeSection: "overview",
+			sections: ["overview", "about", "details", "collections", "metadata", "shell", "bulk"]
+		};
+		return _this;
+	}
+
+	_createClass(Translator, [{
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var _props = this.props,
+			    setCounter = _props.setCounter,
+			    setNavWhite = _props.setNavWhite,
+			    setNavBlack = _props.setNavBlack;
+			var _state = this.state,
+			    activeSection = _state.activeSection,
+			    sections = _state.sections;
+
+
+			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
+
+			return _react2.default.createElement(
+				"article",
+				null,
+				_react2.default.createElement(
+					_reactScroll.Element,
+					{
+						name: sections[0],
+						className: (0, _classnames2.default)({ "active-section": activeSection == sections[0] }) },
+					_react2.default.createElement(_ParallaxHeader2.default, {
+						name: sections[0],
+						sections: sections,
+						activeSection: activeSection,
+						headerText: [_react2.default.createElement(
+							"span",
+							{ className: "outline" },
+							_react2.default.createElement(
+								"span",
+								null,
+								"Translator "
+							)
+						), "helped NBCU technicians view and archive footage."],
+						bgImage: "../assets/img/translator/banner.png",
+						bgColor: "#000000",
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(0);
+						}
+					}),
+					_react2.default.createElement(
+						_reactScroll.Link,
+						{ to: sections[1], spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
+								setCounter(2);_this2.setActiveSection(1);
+							} },
+						_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[1],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(1);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"blockquote",
+								{ className: "drop-caps" },
+								"The process for media asset management varied greatly across NBCU\u2019s entertainment brands. Our team was asked to imagine a tool that could that works for all the brands."
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"The brands are currently very reliant on the folder structure and since search is not enabled on the brand storage systems to prevent crashing the server, users must navigate through the folder structure to find files."
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"If someone misplaces a file or accidentally drags a file into another folder, it will be difficult to recall it given the fluidity of the naming convention. Each brand has a different folder structure and each team within a brand may have a different naming convention."
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"My goal for this project as the Lead Designer was to create a flexible design system that accomidated the"
+							)
+						),
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__row" },
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-12" },
+									_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/usertesting.svg", aspectRatioWidth: 16, aspectRatioHeight: 9, style: { background: '#EAAECA' } })
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__row" },
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										"blockquote",
+										null,
+										"As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype."
+									)
+								),
+								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										"blockquote",
+										null,
+										"Clarifi's image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video."
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[2],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						style: {
+							backgroundImage: "url(../assets/img/translator/nyc-skyline.jpg)",
+							backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .12"
+						},
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(2);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Role"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"Lead Designer"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Date"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"June, 2017"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Client"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"NBCU On-Air"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-5  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Team"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/minaazimov" },
+									"Mina Azimov"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/oleksandr-lebedyev/" },
+									"Alex Lebedyev"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/poplar-bai/" },
+									"Poplar Bai"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[3],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(3);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Collections"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/mam-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[4],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(4);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Editing Metadata"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						_SideScroller2.default,
+						null,
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/metadata-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/metadata-02.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/metadata-03.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[5],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(5);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Shell Record"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/shell-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[6],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(6);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Bulk Actions"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						_SideScroller2.default,
+						null,
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/bulk-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/bulk-02.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Translator;
+}(_react.Component);
+
+Translator.propTypes = {};
+
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		count: state.count,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		},
+		vai: function vai() {
+			return dispatch((0, _abbreviation.vai)());
+		},
+		translator: function translator() {
+			return dispatch((0, _abbreviation.translator)());
+		},
+		jjMdc: function jjMdc() {
+			return dispatch((0, _abbreviation.jjMdc)());
+		},
+		jjHome: function jjHome() {
+			return dispatch((0, _abbreviation.jjHome)());
+		},
+		wrap1: function wrap1() {
+			return dispatch((0, _abbreviation.wrap1)());
+		},
+		wrap2: function wrap2() {
+			return dispatch((0, _abbreviation.wrap2)());
+		},
+		perforce: function perforce() {
+			return dispatch((0, _abbreviation.perforce)());
+		},
+		cisco: function cisco() {
+			return dispatch((0, _abbreviation.cisco)());
+		},
+		protohack: function protohack() {
+			return dispatch((0, _abbreviation.protohack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
+
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":137,"../components/Image":138,"../components/NextProject":141,"../components/ParallaxHeader":142,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/SideScroller":146,"../components/Sidebar":147,"../services/hexToRgb":164,"../services/palette":166,"../services/splitLetter":167,"../services/splitWord":168,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],160:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40130,7 +40824,6 @@ var Vai = function (_Component) {
 
 			this.props.vai();
 			this.props.reset();
-			this.props.setNavWhite();
 		}
 	}]);
 
@@ -40195,13 +40888,13 @@ var Vai = function (_Component) {
 						), "video player uses AI to identify people and products"],
 						bgImage: "../assets/img/vai/banner.gif",
 						onSetActive: function onSetActive() {
-							setCounter(1);setNavWhite();_this2.setActiveSection(sections[0]);
+							_this2.setActiveSection(sections[0]);
 						}
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: sections[1], spy: true, smooth: true, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								setCounter(2);setNavBlack();_this2.setActiveSection(sections[1]);
+								_this2.setActiveSection(sections[1]);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, null)
 					)
@@ -40213,14 +40906,14 @@ var Vai = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setCounter(2);setNavBlack();_this2.setActiveSection(sections[1]);
+							_this2.setActiveSection(sections[1]);
 						} },
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
 							_react2.default.createElement(
 								"blockquote",
 								{ className: "drop-caps" },
@@ -40236,6 +40929,43 @@ var Vai = function (_Component) {
 								null,
 								"The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees."
 							)
+						),
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__row" },
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-12" },
+									_react2.default.createElement(_Image2.default, { src: "../assets/img/vai/chevrolet.jpg", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__row" },
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										"blockquote",
+										null,
+										"As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype."
+									)
+								),
+								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										"blockquote",
+										null,
+										"Clarifi's image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video."
+									)
+								)
+							)
 						)
 					)
 				),
@@ -40246,9 +40976,9 @@ var Vai = function (_Component) {
 						black: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: { backgroundImage: "url(../assets/img/vai/one-plus.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .8", backgroundPosition: "center 20%" },
+						style: { backgroundImage: "url(../assets/img/vai/one-plus.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6", backgroundPosition: "center 20%" },
 						onSetActive: function onSetActive() {
-							setCounter(3);_this2.setActiveSection(sections[2]);
+							_this2.setActiveSection(sections[2]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -40342,7 +41072,7 @@ var Vai = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setCounter(4);_this2.setActiveSection(sections[3]);
+							_this2.setActiveSection(sections[3]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -40361,7 +41091,7 @@ var Vai = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without encroaching on the viewing experience."
+									"During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without distracting from the viewing experience."
 								)
 							)
 						)
@@ -40383,7 +41113,7 @@ var Vai = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setCounter(5);_this2.setActiveSection(sections[4]);
+							_this2.setActiveSection(sections[4]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -40393,16 +41123,16 @@ var Vai = function (_Component) {
 							{ className: "grid__row" },
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"h2",
 									null,
-									"Products"
+									"Products & Shopping"
 								),
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"Brands can now sponsor T.V. shows and movies to promote their products in a new and innovative way without using traditional commercials that interrupt and upset consumers. Fans of the show can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video."
+									"Brands can now sponsor T.V. shows to promote their products in an innovative way without using traditional commercials that interrupt consumers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video."
 								)
 							)
 						)
@@ -40425,7 +41155,7 @@ var Vai = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
-							setCounter(6);_this2.setActiveSection(sections[5]);
+							_this2.setActiveSection(sections[5]);
 						} },
 					_react2.default.createElement(
 						"div",
@@ -40444,7 +41174,7 @@ var Vai = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"Besides addressing the goal of advertising, V.ai aims to elevate the video viewing experience. Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we\u2019ve eliminated the need to whip out another device to answer that irking question."
+									"Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we\u2019ve eliminated the need to whip out another device to answer that irking question."
 								)
 							)
 						)
@@ -40467,12 +41197,6 @@ var Vai = function (_Component) {
 							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/vai/actor.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 						)
-					),
-					_react2.default.createElement("div", { className: "grid" }),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-4 grid__item--hide-bp-medium" })
 					)
 				)
 			);
@@ -40548,7 +41272,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // bgImage={"../assets/img/vai/banner.gif"}
 // headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":136,"../components/Image":137,"../components/ParallaxHeader":141,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/SideScroller":145,"../components/Sidebar":146,"../services/hexToRgb":162,"../services/palette":164,"../services/splitLetter":165,"../services/splitWord":166,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],159:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":137,"../components/Image":138,"../components/ParallaxHeader":142,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/SideScroller":146,"../components/Sidebar":147,"../services/hexToRgb":164,"../services/palette":166,"../services/splitLetter":167,"../services/splitWord":168,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],161:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40565,6 +41289,10 @@ var _NavTakeover = require('../components/NavTakeover');
 
 var _NavTakeover2 = _interopRequireDefault(_NavTakeover);
 
+var _Cursor = require('../components/Cursor');
+
+var _Cursor2 = _interopRequireDefault(_Cursor);
+
 var _Home = require('./Home');
 
 var _Home2 = _interopRequireDefault(_Home);
@@ -40576,6 +41304,10 @@ var _AmericanMade2 = _interopRequireDefault(_AmericanMade);
 var _Vai = require('./Vai');
 
 var _Vai2 = _interopRequireDefault(_Vai);
+
+var _Translator = require('./Translator');
+
+var _Translator2 = _interopRequireDefault(_Translator);
 
 var _AboutMe = require('./AboutMe');
 
@@ -40594,14 +41326,16 @@ var routes = _react2.default.createElement(
 		_react2.default.createElement(_reactRouter.Route, { path: '/about-me', component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/resume', component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/american-made', component: _AmericanMade2.default }),
-		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/vai', component: _Vai2.default })
+		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/vai', component: _Vai2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/translator', component: _Translator2.default })
 	),
-	_react2.default.createElement(_NavTakeover2.default, null)
+	_react2.default.createElement(_NavTakeover2.default, null),
+	_react2.default.createElement(_Cursor2.default, null)
 );
 
 exports.default = routes;
 
-},{"../components/NavTakeover":138,"./AboutMe":155,"./AmericanMade":156,"./Home":157,"./Vai":158,"react":113,"react-router":91}],160:[function(require,module,exports){
+},{"../components/Cursor":136,"../components/NavTakeover":139,"./AboutMe":156,"./AmericanMade":157,"./Home":158,"./Translator":159,"./Vai":160,"react":113,"react-router":91}],162:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40617,7 +41351,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],161:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40628,7 +41362,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],162:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40644,7 +41378,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],163:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40655,7 +41389,7 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],164:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40682,7 +41416,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],165:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40709,7 +41443,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}],166:[function(require,module,exports){
+},{"react":113}],168:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

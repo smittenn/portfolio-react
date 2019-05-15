@@ -29,7 +29,7 @@ export default class SideScroller extends Component {
 	render() {
 		const { isMobile } = this.state;
 
-		const margin = isMobile ? 18 : 60;
+		const margin = isMobile ? 12 : 60;
 
 		const style = {
 			overflowX: 'scroll',
@@ -50,7 +50,7 @@ export default class SideScroller extends Component {
 			<div style={style}>
 				{ items }
 				<div style={{ minWidth: margin + 'px'}}/>
-				<h2 style={{ position: 'absolute'}}><i className="iconcss icon-arrow-right"/></h2>
+				{/*<h2 style={{ position: 'absolute'}}><i className="iconcss icon-arrow-right"/></h2>*/}
 			</div>
 		);
 	}
