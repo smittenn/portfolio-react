@@ -5,7 +5,6 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { setNavWhite, setNavBlack } from "../actions/color"
 
 import ScrollSection from "../components/ScrollSection"
 import ParallaxHeader from "../components/ParallaxHeader"
@@ -41,7 +40,6 @@ class Home extends Component {
 
 		this.props.home();
 		this.props.reset();
-		this.props.setNavWhite();
 	}
 
 	componentWillUnmount() {
@@ -110,7 +108,7 @@ class Home extends Component {
 					activeSection={activeSection}
 					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
 					bgImage={"../assets/img/terrain.gif"} 
-					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
+					onSetActive={() => { this.setActiveSection(0); }}
 					/>
 				</Element>
 
@@ -128,19 +126,19 @@ class Home extends Component {
 							</blockquote>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
-								<div className="spacer spacer__sm"/>
-								<Image src="../assets/img/lands-end-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
-							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
-								<div className="spacer spacer__lg"/>
-								<Image src="../assets/img/me-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								<div className="spacer spacer__md"/>
-							</div>
-							<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
-								<div className="spacer spacer__md"/>
-								<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
+						<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+							<div className="spacer spacer__sm"/>
+							<Image src="../assets/img/lands-end-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+							<div className="spacer spacer__lg"/>
+							<Image src="../assets/img/me-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<div className="spacer spacer__md"/>
+						</div>
+						<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+							<div className="spacer spacer__md"/>
+							<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
 					</div>
 				</ScrollSection>
 
@@ -152,11 +150,11 @@ class Home extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__sm"/>
-							{<h2>{splitWord("Visual & Interactive")}</h2>}
+							{<h2>{splitWord("Visual & Motion")}</h2>}
 							<blockquote>
-								{splitWord(`I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
+								{splitWord(`I design right in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 								<br/><br/>
 								{/*splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)*/}
 							</blockquote>
@@ -207,7 +205,7 @@ class Home extends Component {
 
 
 
-				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
+				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
 					<ScrollArrow label="Learn More"/>
 				</Link>}
 
@@ -235,8 +233,6 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	setNavWhite: () => dispatch(setNavWhite()),
-	setNavBlack: () => dispatch(setNavBlack()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

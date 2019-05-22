@@ -7,7 +7,6 @@ import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { setNavWhite, setNavBlack } from "../actions/color"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -82,7 +81,7 @@ class Translator extends Component {
 					name={sections[0]}
 					sections={sections}
 					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>Translator </span></span>, `helped NBCU technicians view and archive footage.`]}
+					headerText={[ <span className="outline"><span>Translator </span></span>, `helped NBCU technicians browse and archive footage.`]}
 					bgImage={"../assets/img/translator/banner.png"}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
@@ -103,13 +102,13 @@ class Translator extends Component {
 								The process for media asset management varied greatly across NBCU’s entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
 							</blockquote>
 							<blockquote>
-								The brands are currently very reliant on the folder structure and since search is not enabled on the brand storage systems to prevent crashing the server, users must navigate through the folder structure to find files. 
+								The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or "MAM" to be stored.
 							</blockquote>
 							<blockquote>
-								If someone misplaces a file or accidentally drags a file into another folder, it will be difficult to recall it given the fluidity of the naming convention. Each brand has a different folder structure and each team within a brand may have a different naming convention.
+								The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention.
 							</blockquote>
 							<blockquote>
-								My goal for this project as the Lead Designer was to create a flexible design system that accomidated the 
+								
 							</blockquote>
 
 						</div>
@@ -117,19 +116,19 @@ class Translator extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} style={{ background: '#EAAECA' }}/>
+									<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
 								</div>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote>
-										As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
+										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
 									</blockquote>
 								</div>
 								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 									<blockquote>
-										Clarifi's image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
+										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
 									</blockquote>
 								</div>
 							</div>
@@ -164,7 +163,7 @@ class Translator extends Component {
 						</div>
 						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
+							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
@@ -179,7 +178,7 @@ class Translator extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Collections</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
+								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid view to their liking. The grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -200,7 +199,7 @@ class Translator extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Editing Metadata</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
+								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness: "Ready for Ingest", "Ready for Service" and "Search Optimized".</blockquote>
 							</div>
 						</div>
 					</div>
@@ -228,7 +227,7 @@ class Translator extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Shell Record</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
+								<blockquote>Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -249,7 +248,7 @@ class Translator extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Bulk Actions</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
+								<blockquote>Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image or Audio) across all shared metadata fields.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -263,6 +262,17 @@ class Translator extends Component {
 					</SideScroller>
 				</ScrollSection>
 
+				<NextProject 
+				to="/jnj-home"
+				name="J&J Home"
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundSize: 'contain',
+					backgroundPosition: 'center',
+				}}/>
 
 
 			</article>

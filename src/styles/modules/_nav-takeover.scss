@@ -33,6 +33,7 @@ $baseclass: nav-takeover;
 		width: calc(40%);
 		right: 0;
 		height: 100%;
+		overflow-x: hidden;
 		overflow-y: scroll;
 		transition: transform $easing5 $duration-medium $delay-slow;
 		transform: translate3d(100%, 0,0);
@@ -114,8 +115,12 @@ $baseclass: nav-takeover;
 
 			&.active {
 				color: transparent;
+				-webkit-text-stroke: 1px $brand-black;
+			}
+
+			&.hover {
+				color: transparent;
 				-webkit-text-stroke: 1px $brand-red;
-				// border-color: $brand-red;
 			}
 		}
 	}
@@ -132,7 +137,12 @@ $baseclass: nav-takeover;
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
 				color: transparent;
-				-webkit-text-stroke: 1px $brand-red;
+				-webkit-text-stroke: 1px $brand-black;
+
+				&.hover {
+					color: transparent;
+					-webkit-text-stroke: 1px $brand-red;
+				}
 			}
 		}
 	}
@@ -154,55 +164,63 @@ $baseclass: nav-takeover;
 						transition-delay: (#{0.3 + ($i * 0.12)}s);
 					}
 				}
-
-				// @for $i from 1 through 4 {
-				// 	&:nth-child(#{$i}n + 1) {
-				// 		transition-delay: (#{0.3 + ($i * 0.12)}s);
-				// 	}
-				// }
 			}
 		}
 
-		.#{$baseclass}__items--primary {
+		&.#{$baseclass}--primaryPanelOpen {
+			.#{$baseclass}__items--primary {
 
-			li {
-				transform: none;
-				// opacity: 1;
+				li {
+					transform: none;
+				}
 			}
 		}
 
-		.#{$baseclass}__items--secondary {
-
-			li {
+		&.#{$baseclass}--secondaryPanelOpen {
+			.#{$baseclass}__items--secondary {
+				li {
+					transform: none;
+				}
 			}
 		}
 	}
 
-	&--secondaryPanelOpen {
-		.#{$baseclass}__toggle {
+	&--primaryPanelOpen {
+		.#{$baseclass}__items--secondary {
+			// opacity: 0;
 			pointer-events: none;
-		}
-		.#{$baseclass}__line-container {
-			// padding-top: 10px;
-		}
 
+			li {
+				transform: translate3d(200%,0,0);
+			}
+		}
+		.#{$baseclass}__items--primary {
+			// opacity: 1;
+			pointer-events: auto;
+
+			// li {
+			// 	transform: none;
+			// }
+		}
+	}
+
+	&--secondaryPanelOpen {
 
 		.#{$baseclass}__items--primary {
 			// opacity: 0;
 			pointer-events: none;
 
 			li {
-				// opacity: 0;
 				transform: translate3d(200%,0,0);
 			}
 		}
 		.#{$baseclass}__items--secondary {
-			opacity: 1;
+			// opacity: 1;
 			pointer-events: auto;
 
-			li {
-				transform: none;
-			}
+			// li {
+			// 	transform: none;
+			// }
 		}
 	}
 

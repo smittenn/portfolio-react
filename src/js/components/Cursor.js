@@ -3,10 +3,8 @@ import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 
-// import GridLines from "../components/GridLines"
-// import Sidebar from "../components/Sidebar"
 
-export default class Cursor extends Component {
+class Cursor extends Component {
 
 	constructor(props) {
 		super(props);
@@ -19,22 +17,32 @@ export default class Cursor extends Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('mousemove', this.setArrowPosition)
+		window.addEventListener('mousemove', this.handleMouseMove)
+		// window.addEventListener('scroll', this.handleScroll)
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('mousemove', this.setArrowPosition)
+		window.removeEventListener('mousemove', this.handleMouseMove)
+		// window.removeEventListener('scroll', this.handleScroll)
 	}
 
-	// componentDidUpdate(prevProps) {}
 
-	setArrowPosition = (event) => {
+	// handleScroll = (event) => {
+	// 	// const { pageX, pageY } = event;
+		
+	// 	this.setState({
+	// 		arrowY: window.scrollY,
+	// 		isVisible: true,
+	// 	})
+	// }
+
+	handleMouseMove = (event) => {
 		// console.log(event)
-		const { pageX, pageY } = event;
+		const { clientX, clientY } = event;
 		
 		this.setState({
-			arrowX: pageX,
-			arrowY: pageY,
+			arrowX: clientX,
+			arrowY: clientY,
 			isVisible: true,
 		})
 	}
@@ -52,12 +60,13 @@ export default class Cursor extends Component {
 		const classnames = classNames({
 			"cursor": true,
 			"cursor--visible": this.state.isVisible,
+			"cursor--hovering": this.props.isCursorHovering,
 		})
 		
 		return (
 			<div className={classnames}>
-				<div className="cursor__circle" style={{ left: this.state.arrowX, top: this.state.arrowY }} />
-				<div className="cursor__lines" style={{ left: this.state.arrowX, top: this.state.arrowY }}>
+				<div className="cursor__outer" style={{ left: this.state.arrowX, top: this.state.arrowY }} />
+				<div className="cursor__inner" style={{ left: this.state.arrowX, top: this.state.arrowY }}>
 					{/*<div className="cursor__line" />*/}
 					{/*<div className="cursor__line" />*/}
 				</div>
@@ -65,3 +74,21 @@ export default class Cursor extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	isCursorHovering: state.isCursorHovering,
+})
+
+// const mapDispatchToProps = dispatch => ({
+// 	openTakeover: () => dispatch(openTakeover()),
+// 	closeTakeover: () => dispatch(closeTakeover()),
+// 	openPrimaryPanel: () => dispatch(openPrimaryPanel()),
+// 	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+// 	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
+// 	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
+// 	hoverToggle: () => dispatch(hoverToggle()),
+// 	unhoverToggle: () => dispatch(unhoverToggle()),
+// })
+
+
+export default connect(mapStateToProps)(Cursor)

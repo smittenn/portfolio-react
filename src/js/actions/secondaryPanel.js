@@ -1,8 +1,8 @@
 export const openSecondaryPanel = () => ({
-	type: 'SHOW',
+	type: 'SHOW_SECONDARY',
 })
 
 export const closeSecondaryPanel = () => ({
-	type: 'HIDE',
+	type: 'HIDE_SECONDARY',
 })
 

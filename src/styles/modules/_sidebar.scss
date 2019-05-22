@@ -1,8 +1,7 @@
-$baseclass: sidebar-container;
+$baseclass: sidebar;
 
 .#{$baseclass} {
-	height: calc(100vh - 108px);
-	// height: 100vh;
+	height: 100vh;
 	width: 24px;
 	position: fixed;
 	pointer-events: auto;
@@ -10,23 +9,18 @@ $baseclass: sidebar-container;
 	align-items: center;
 	justify-content: flex-end;
 	right: 0;
-	top: 108px;
+	top: 0px;
 	// @include zIndexCloser();
 
 
-	p {
-		font-weight: 700;
-		letter-spacing: 0.012em;
-		color: $brand-white;
-	}
-
-	.sidebar {
+	&__inner {
+		margin-top: 108px;
 		width: 94px;
 		padding: 0;
 		transition: all $easing4 $duration-fast
 	}
 
-	.sidebar-item {
+	&__item {
 		width: 100%;
 		height: 40px;
 		border-bottom: none;
@@ -34,56 +28,44 @@ $baseclass: sidebar-container;
 		position: relative;
 		transition: height $easing4 $duration-fast $duration-fast;
 
-		&:last-child {
-			.sidebar-border {
-				// display: none;
+		a {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			border: none;
+			pointer-events: none;
+
+			&.active {
+				.sidebar__dash {
+					margin: 0;
+					width: 34px;
+					transition-timing-function: $easing4;
+					transition-duration: $duration-fast;
+					transition-property: width;
+				}
+
+
+				&:after {
+					content: '';
+					display: block;
+					margin-top: -2px;
+					margin-left: 6px;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: $brand-red;
+				}
 			}
 		}
-		// &:first-child {
-		// 	border-top: solid 1px rgba($brand-black, 0.06);
-		// }
 	}
 
-	.sidebar-item a {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		border: none;
-		pointer-events: none;
 
-		&.active {
-			&:after {
-				content: '';
-				display: block;
-				margin-top: 2px;
-				margin-left: 6px;
-				width: 6px;
-				height: 6px;
-				border-radius: 50%;
-				background: $brand-red;
-			}
-		}
-	}
-
-	// .sidebar-item:before {
-	// 	content: "";
-	// 	display: block;
-	// 	position: absolute;
-	// 	top: 0;
-	// 	right: 0;
-	// 	height: 100%;
-	// 	width: 0%;
-	// 	opacity: 0;
-	// 	pointer-events: none;
-	// 	transition: all $easing2 $duration-medium;
-	// }
-
-	.sidebar-number, .sidebar-label {
-		font-family: "campton"
+	&__number, &__label {
+		font-family: "Campton";
 	} 
 
-	.sidebar-number {
+	&__number {
 		color: darken($brand-black, 0%);
 		margin: 0 16px 0 32px;
 		opacity: 0;
@@ -91,7 +73,7 @@ $baseclass: sidebar-container;
 		display: inline-block;
 	}
 
-	.sidebar-label {
+	&__label {
 		position: relative;
 		color: darken($brand-black, 0%);
 		padding: 0 0 0 48px;
@@ -101,8 +83,7 @@ $baseclass: sidebar-container;
 		white-space: nowrap;
 	}
 
-
-	.sidebar-dash {
+	&__dash {
 		margin: 0 0 0 16px;
 		width: 16px;
 		height: 1px;
@@ -114,7 +95,7 @@ $baseclass: sidebar-container;
 		// transition: all $easing4 $duration-fast;
 	}
 
-	.sidebar-border {
+	&__border {
 		display: block;
 		position: absolute;
 		bottom: 0;
@@ -123,113 +104,89 @@ $baseclass: sidebar-container;
 		height: 1px;
 		background: rgba($brand-black, .06);
 		opacity: 0;
-
-		&__top {
-			bottom: auto;
-			top: 0;
-		}
 	}
 
-	.sidebar-item a.active .sidebar-dash {
-		margin: 0;
-		width: 34px;
-		// background: #3d4e4d;
-		transition-timing-function: $easing4;
-		transition-duration: $duration-fast;
-		transition-property: width;
+	&__border--top {
+		bottom: auto;
+		top: 0;
+		display: none;
 	}
+
+
+	&--black {
+	}
+
 
 	&--white {
-		.sidebar-dash {
+		.#{$baseclass}__dash {
 			background: $brand-white;
-		}
-
-		.sidebar-number, .sidebar-label {
-			// color: $brand-white;
-		}
-		&.#{$baseclass}--open {
-			.sidebar-dash {
-				background: $brand-black;
-			}
 		}
 	}
 
 
 	&--open {
-		min-width: 280px;
+		// background: radial-gradient(circle at 500% 50%, rgba($brand-black,1), rgba($brand-black, 0));
+		// background: linear-gradient(to left, rgba($brand-black,.12) 60%, rgba($brand-black, 0));
+		min-width: 40vw;
 		// width: calc(16.667%);
 
-		.sidebar {
-			width: 100%;
-			transition: all $easing4 $duration-fast $duration-fast;
-			background: rgba($brand-white, 1);
+		.#{$baseclass}__number, .#{$baseclass}__label {
+			color: $brand-white;
+		}
 
-			.sidebar-item {
+		.#{$baseclass}__inner {
+			width: 50%;
+			transition: all $easing4 $duration-fast $duration-fast;
+			background: $brand-black;
+
+			.#{$baseclass}__item {
 				height: 60px;
 				transition: height $easing4 $duration-fast;
 
 				a {
-					cursor: pointer;
 					pointer-events: auto;
 				}
 
-				.sidebar-number {
+				.#{$baseclass}__number {
 					opacity: 1;
 					transform: translate3d(0, 0, 0);
 					// transition: all $easing4 $duration-medium;
 				}
 
-				.sidebar-dash {
+				.#{$baseclass}__border {
+					background: rgba($brand-white, .06);
+				}
+
+				.#{$baseclass}__dash {
+					background: $brand-white;
 					width: 34px;
 					margin: 0;
 				}
 
-				.sidebar-label {
+				.#{$baseclass}__label {
 					opacity: 1;
 					// transition: all $easing4 $duration-medium;
 				}
 
-				.sidebar-border {
+				.#{$baseclass}__border {
 					opacity: 1;
 					width: 100%;
 					// transition: all $easing4 $duration-medium;
-				}
-
-
-				&:hover {
-					// &:before {
-					// 	opacity: 1;
-					// 	width: 100%;
-					// 	background: $brand-grey-darkest;
-					// }
-					// .sidebar-number {
-					// 	color: $brand-white;
-					// }
-
-					// .sidebar-dash {
-					// 	background-color: $brand-white;
-					// }
-
-					// .sidebar-label {
-					// 	color: $brand-white;
-					// }
 				}
 			}
 		}
 	}
 
-	&--left {
-
-	}
-
 
 	@media screen and (max-width: $bp-medium) {
 		width: 24px;
-		top: 84px;
-		height: calc(100vh - 84px);
 		// height: 100vh;
 
-		.sidebar-item {
+		.#{$baseclass}__inner {
+			margin-top: 84px;
+		}
+
+		.#{$baseclass}__item {
 			height: 32px;
 		}
 
@@ -237,11 +194,11 @@ $baseclass: sidebar-container;
 		&.#{$baseclass}--open {
 			min-width: 252px;
 
-			.sidebar-item {
+			.#{$baseclass}__item {
 				height: 8vh;
 			}
 
-			.sidebar-number {
+			.#{$baseclass}__number {
 			    // margin: 0 16px 0 24px;
 			}
 		}

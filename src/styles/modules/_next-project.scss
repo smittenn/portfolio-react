@@ -7,8 +7,10 @@ $baseclass: next-project;
 	// height: 60vh;
 	// overflow: hidden;
 
-	a {
-		cursor: none;
+	i {
+		position: absolute;
+		right: 0;
+		top: 12px;
 	}
 
 	h1 {

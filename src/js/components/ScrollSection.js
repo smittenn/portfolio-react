@@ -44,7 +44,9 @@ export default class ScrollSection extends Component {
 						<GridLines/>
 						{ this.props.children }
 					</section>
-					<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}></Link>
+
+					<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}></Link>
+
 					<div className="clip-wrapper">
 
 						<Sidebar 

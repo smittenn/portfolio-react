@@ -1,8 +1,8 @@
 const secondaryPanelReducer = (state = false, action) => {
 	switch (action.type) {
-		case 'SHOW':
+		case 'SHOW_SECONDARY':
 			return true
-		case 'HIDE':
+		case 'HIDE_SECONDARY':
 			return false
 		default:
 			return state

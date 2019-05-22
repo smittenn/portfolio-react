@@ -56,11 +56,11 @@ table {
   src: url("../fonts/CircularStd/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd/CircularStd-Black.woff2") format("woff2"), url("../fonts/CircularStd/CircularStd-Black.woff") format("woff"), url("../fonts/CircularStd/CircularStd-Black.ttf") format("truetype"), url("../fonts/CircularStd/CircularStd-Black.svg#codropsicons") format("svg"); }
 
 @font-face {
-  font-family: 'Averta';
-  font-weight: 800;
+  font-family: 'Moderat';
+  font-weight: 600;
   font-style: normal;
-  src: url("../fonts/Averta/Averta-ExtraBold.eot");
-  src: url("../fonts/Averta/Averta-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Averta/Averta-ExtraBold.woff2") format("woff2"), url("../fonts/Averta/Averta-ExtraBold.woff") format("woff"), url("../fonts/Averta/Averta-ExtraBold.ttf") format("truetype"), url("../fonts/Averta/Averta-ExtraBold.svg#codropsicons") format("svg"); }
+  src: url("../fonts/Moderat/Moderat-Bold.eot");
+  src: url("../fonts/Moderat/Moderat-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Moderat/Moderat-Bold.woff2") format("woff2"), url("../fonts/Moderat/Moderat-Bold.woff") format("woff"), url("../fonts/Moderat/Moderat-Bold.ttf") format("truetype"), url("../fonts/Moderat/Moderat-Bold.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Averta';
@@ -219,15 +219,16 @@ a {
   outline: none;
   white-space: pre; }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, h7, blockquote, p {
   color: inherit; }
-  h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, p.uppercase {
+  h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, h7.uppercase, blockquote.uppercase, p.uppercase {
     letter-spacing: 0.006em;
     text-transform: uppercase; }
-  h1.no-mb, h2.no-mb, h3.no-mb, h4.no-mb, h5.no-mb, h6.no-mb, p.no-mb {
+  h1.no-mb, h2.no-mb, h3.no-mb, h4.no-mb, h5.no-mb, h6.no-mb, h7.no-mb, blockquote.no-mb, p.no-mb {
     margin-bottom: 0; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, h7 {
+  position: relative;
   font-family: "Circular Std", sans-serif;
   font-weight: 800; }
 
@@ -266,6 +267,11 @@ h6 {
   line-height: 24px;
   margin-bottom: 12px; }
 
+h7 {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 9px; }
+
 p {
   font-family: "Averta", sans-serif;
   color: #595358;
@@ -302,7 +308,7 @@ body {
   -o-user-select: none;
   user-select: none;
   cursor: none !important;
-  color: #181617; }
+  color: #131112; }
 
 video {
   width: 100%; }
@@ -331,12 +337,16 @@ section {
   background-position: 25% 25%; }
   section img {
     width: 100%; }
+  section .side-scroller {
+    background: linear-gradient(to left, #F8FBF7, rgba(248, 251, 247, 0) 10%); }
   section.black {
-    background-color: #181617; }
+    background-color: #131112; }
     section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.black h6, section.black p, section.black blockquote, section.black a {
       color: #F8FBF7; }
     section.black .grid--lines {
       opacity: .06; }
+    section.black .side-scroller {
+      background: linear-gradient(to left, #131112, rgba(19, 17, 18, 0) 10%); }
   section.grey {
     background-color: #DEDEDC; }
     section.grey h1, section.grey h2, section.grey h3, section.grey h4, section.grey h5, section.grey h6, section.grey p, section.grey blockquote {
@@ -360,20 +370,21 @@ h1 span, h2 span, h3 span, p span, blockquote span {
   pointer-events: none;
   clip: rect(0, auto, auto, 0); }
 
-@keyframes ghostText {
+@keyframes ghostIn {
   0% {
-    opacity: 0;
-    transform: translate3d(0, 100px, 0) skewY(-6deg); }
+    transform: translate3d(0, 120px, 0) skewY(0deg); }
   100% {
     opacity: 1;
     transform: none; } }
 
+@keyframes ghostOut {
+  0% {
+    transform: none; }
+  100% {
+    transform: translate3d(0, 120px, 0) skewY(0deg); } }
+
 .react-parallax h1 > span {
-  overflow: hidden;
-  transition: none;
-  -ms-transform: none !important;
-  transform: none !important;
-  opacity: 1 !important; }
+  overflow: hidden; }
   .react-parallax h1 > span:nth-child(1) {
     transition-delay: 0.09s; }
   .react-parallax h1 > span:nth-child(2) {
@@ -616,7 +627,7 @@ h1 span, h2 span, h3 span, p span, blockquote span {
     animation-delay: 7.8s; }
 
 .react-parallax h1 > span > span {
-  animation: ghostText 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: ghostIn 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-fill-mode: both; }
 
 section img {
@@ -624,185 +635,369 @@ section img {
   transition: none;
   transform: translate3d(0, 120px, 0); }
 
+section blockquote {
+  transition: none;
+  opacity: 0; }
+
 section .grid__item:nth-child(1) img {
   transition-delay: 1.2s; }
+
+section .grid__item:nth-child(1) blockquote {
+  transition-delay: 0.6s; }
 
 section .grid__item:nth-child(2) img {
   transition-delay: 1.5s; }
 
+section .grid__item:nth-child(2) blockquote {
+  transition-delay: 0.9s; }
+
 section .grid__item:nth-child(3) img {
   transition-delay: 1.8s; }
+
+section .grid__item:nth-child(3) blockquote {
+  transition-delay: 1.2s; }
 
 section .grid__item:nth-child(4) img {
   transition-delay: 2.1s; }
 
+section .grid__item:nth-child(4) blockquote {
+  transition-delay: 1.5s; }
+
 section .grid__item:nth-child(5) img {
   transition-delay: 2.4s; }
+
+section .grid__item:nth-child(5) blockquote {
+  transition-delay: 1.8s; }
 
 section .grid__item:nth-child(6) img {
   transition-delay: 2.7s; }
 
+section .grid__item:nth-child(6) blockquote {
+  transition-delay: 2.1s; }
+
 section .grid__item:nth-child(7) img {
   transition-delay: 3s; }
+
+section .grid__item:nth-child(7) blockquote {
+  transition-delay: 2.4s; }
 
 section .grid__item:nth-child(8) img {
   transition-delay: 3.3s; }
 
+section .grid__item:nth-child(8) blockquote {
+  transition-delay: 2.7s; }
+
 section .grid__item:nth-child(9) img {
   transition-delay: 3.6s; }
+
+section .grid__item:nth-child(9) blockquote {
+  transition-delay: 3s; }
 
 section .grid__item:nth-child(10) img {
   transition-delay: 3.9s; }
 
+section .grid__item:nth-child(10) blockquote {
+  transition-delay: 3.3s; }
+
 section .grid__item:nth-child(11) img {
   transition-delay: 4.2s; }
+
+section .grid__item:nth-child(11) blockquote {
+  transition-delay: 3.6s; }
 
 section .grid__item:nth-child(12) img {
   transition-delay: 4.5s; }
 
+section .grid__item:nth-child(12) blockquote {
+  transition-delay: 3.9s; }
+
 section .grid__item:nth-child(13) img {
   transition-delay: 4.8s; }
+
+section .grid__item:nth-child(13) blockquote {
+  transition-delay: 4.2s; }
 
 section .grid__item:nth-child(14) img {
   transition-delay: 5.1s; }
 
+section .grid__item:nth-child(14) blockquote {
+  transition-delay: 4.5s; }
+
 section .grid__item:nth-child(15) img {
   transition-delay: 5.4s; }
+
+section .grid__item:nth-child(15) blockquote {
+  transition-delay: 4.8s; }
 
 section .grid__item:nth-child(16) img {
   transition-delay: 5.7s; }
 
+section .grid__item:nth-child(16) blockquote {
+  transition-delay: 5.1s; }
+
 section .grid__item:nth-child(17) img {
   transition-delay: 6s; }
+
+section .grid__item:nth-child(17) blockquote {
+  transition-delay: 5.4s; }
 
 section .grid__item:nth-child(18) img {
   transition-delay: 6.3s; }
 
+section .grid__item:nth-child(18) blockquote {
+  transition-delay: 5.7s; }
+
 section .grid__item:nth-child(19) img {
   transition-delay: 6.6s; }
+
+section .grid__item:nth-child(19) blockquote {
+  transition-delay: 6s; }
 
 section .grid__item:nth-child(20) img {
   transition-delay: 6.9s; }
 
+section .grid__item:nth-child(20) blockquote {
+  transition-delay: 6.3s; }
+
 section .grid__item:nth-child(21) img {
   transition-delay: 7.2s; }
+
+section .grid__item:nth-child(21) blockquote {
+  transition-delay: 6.6s; }
 
 section .grid__item:nth-child(22) img {
   transition-delay: 7.5s; }
 
+section .grid__item:nth-child(22) blockquote {
+  transition-delay: 6.9s; }
+
 section .grid__item:nth-child(23) img {
   transition-delay: 7.8s; }
+
+section .grid__item:nth-child(23) blockquote {
+  transition-delay: 7.2s; }
 
 section .grid__item:nth-child(24) img {
   transition-delay: 8.1s; }
 
+section .grid__item:nth-child(24) blockquote {
+  transition-delay: 7.5s; }
+
 section .grid__item:nth-child(25) img {
   transition-delay: 8.4s; }
+
+section .grid__item:nth-child(25) blockquote {
+  transition-delay: 7.8s; }
 
 section .grid__item:nth-child(26) img {
   transition-delay: 8.7s; }
 
+section .grid__item:nth-child(26) blockquote {
+  transition-delay: 8.1s; }
+
 section .grid__item:nth-child(27) img {
   transition-delay: 9s; }
+
+section .grid__item:nth-child(27) blockquote {
+  transition-delay: 8.4s; }
 
 section .grid__item:nth-child(28) img {
   transition-delay: 9.3s; }
 
+section .grid__item:nth-child(28) blockquote {
+  transition-delay: 8.7s; }
+
 section .grid__item:nth-child(29) img {
   transition-delay: 9.6s; }
+
+section .grid__item:nth-child(29) blockquote {
+  transition-delay: 9s; }
 
 section .grid__item:nth-child(30) img {
   transition-delay: 9.9s; }
 
+section .grid__item:nth-child(30) blockquote {
+  transition-delay: 9.3s; }
+
 section .grid__item:nth-child(31) img {
   transition-delay: 10.2s; }
+
+section .grid__item:nth-child(31) blockquote {
+  transition-delay: 9.6s; }
 
 section .grid__item:nth-child(32) img {
   transition-delay: 10.5s; }
 
+section .grid__item:nth-child(32) blockquote {
+  transition-delay: 9.9s; }
+
 section .grid__item:nth-child(33) img {
   transition-delay: 10.8s; }
+
+section .grid__item:nth-child(33) blockquote {
+  transition-delay: 10.2s; }
 
 section .grid__item:nth-child(34) img {
   transition-delay: 11.1s; }
 
+section .grid__item:nth-child(34) blockquote {
+  transition-delay: 10.5s; }
+
 section .grid__item:nth-child(35) img {
   transition-delay: 11.4s; }
+
+section .grid__item:nth-child(35) blockquote {
+  transition-delay: 10.8s; }
 
 section .grid__item:nth-child(36) img {
   transition-delay: 11.7s; }
 
+section .grid__item:nth-child(36) blockquote {
+  transition-delay: 11.1s; }
+
 section .grid__item:nth-child(37) img {
   transition-delay: 12s; }
+
+section .grid__item:nth-child(37) blockquote {
+  transition-delay: 11.4s; }
 
 section .grid__item:nth-child(38) img {
   transition-delay: 12.3s; }
 
+section .grid__item:nth-child(38) blockquote {
+  transition-delay: 11.7s; }
+
 section .grid__item:nth-child(39) img {
   transition-delay: 12.6s; }
+
+section .grid__item:nth-child(39) blockquote {
+  transition-delay: 12s; }
 
 section .grid__item:nth-child(40) img {
   transition-delay: 12.9s; }
 
+section .grid__item:nth-child(40) blockquote {
+  transition-delay: 12.3s; }
+
 section .grid__item:nth-child(41) img {
   transition-delay: 13.2s; }
+
+section .grid__item:nth-child(41) blockquote {
+  transition-delay: 12.6s; }
 
 section .grid__item:nth-child(42) img {
   transition-delay: 13.5s; }
 
+section .grid__item:nth-child(42) blockquote {
+  transition-delay: 12.9s; }
+
 section .grid__item:nth-child(43) img {
   transition-delay: 13.8s; }
+
+section .grid__item:nth-child(43) blockquote {
+  transition-delay: 13.2s; }
 
 section .grid__item:nth-child(44) img {
   transition-delay: 14.1s; }
 
+section .grid__item:nth-child(44) blockquote {
+  transition-delay: 13.5s; }
+
 section .grid__item:nth-child(45) img {
   transition-delay: 14.4s; }
+
+section .grid__item:nth-child(45) blockquote {
+  transition-delay: 13.8s; }
 
 section .grid__item:nth-child(46) img {
   transition-delay: 14.7s; }
 
+section .grid__item:nth-child(46) blockquote {
+  transition-delay: 14.1s; }
+
 section .grid__item:nth-child(47) img {
   transition-delay: 15s; }
+
+section .grid__item:nth-child(47) blockquote {
+  transition-delay: 14.4s; }
 
 section .grid__item:nth-child(48) img {
   transition-delay: 15.3s; }
 
+section .grid__item:nth-child(48) blockquote {
+  transition-delay: 14.7s; }
+
 section .grid__item:nth-child(49) img {
   transition-delay: 15.6s; }
+
+section .grid__item:nth-child(49) blockquote {
+  transition-delay: 15s; }
 
 section .grid__item:nth-child(50) img {
   transition-delay: 15.9s; }
 
+section .grid__item:nth-child(50) blockquote {
+  transition-delay: 15.3s; }
+
 section .grid__item:nth-child(51) img {
   transition-delay: 16.2s; }
+
+section .grid__item:nth-child(51) blockquote {
+  transition-delay: 15.6s; }
 
 section .grid__item:nth-child(52) img {
   transition-delay: 16.5s; }
 
+section .grid__item:nth-child(52) blockquote {
+  transition-delay: 15.9s; }
+
 section .grid__item:nth-child(53) img {
   transition-delay: 16.8s; }
+
+section .grid__item:nth-child(53) blockquote {
+  transition-delay: 16.2s; }
 
 section .grid__item:nth-child(54) img {
   transition-delay: 17.1s; }
 
+section .grid__item:nth-child(54) blockquote {
+  transition-delay: 16.5s; }
+
 section .grid__item:nth-child(55) img {
   transition-delay: 17.4s; }
+
+section .grid__item:nth-child(55) blockquote {
+  transition-delay: 16.8s; }
 
 section .grid__item:nth-child(56) img {
   transition-delay: 17.7s; }
 
+section .grid__item:nth-child(56) blockquote {
+  transition-delay: 17.1s; }
+
 section .grid__item:nth-child(57) img {
   transition-delay: 18s; }
+
+section .grid__item:nth-child(57) blockquote {
+  transition-delay: 17.4s; }
 
 section .grid__item:nth-child(58) img {
   transition-delay: 18.3s; }
 
+section .grid__item:nth-child(58) blockquote {
+  transition-delay: 17.7s; }
+
 section .grid__item:nth-child(59) img {
   transition-delay: 18.6s; }
 
+section .grid__item:nth-child(59) blockquote {
+  transition-delay: 18s; }
+
 section .grid__item:nth-child(60) img {
   transition-delay: 18.9s; }
+
+section .grid__item:nth-child(60) blockquote {
+  transition-delay: 18.3s; }
 
 section h1 span, section h2 span, section p span, section blockquote span {
   overflow: hidden; }
@@ -810,9 +1005,6 @@ section h1 span, section h2 span, section p span, section blockquote span {
 section h1 span > span, section h2 span > span, section p span > span, section blockquote span > span {
   transition: none;
   opacity: 0; }
-
-section h1 span > span {
-  transform: translate3d(0, 100px, 0) skewY(6deg); }
 
 section h2 span > span {
   transform: translate3d(0, 90px, 0) skewX(6deg); }
@@ -1013,370 +1205,253 @@ section p span > span, section blockquote span > span {
   opacity: 1;
   transform: translate3d(0, 0, 0) skewX(0deg); }
 
-.active-section section p span:nth-child(1) span, .active-section section blockquote span:nth-child(1) span {
-  transition-delay: 1.24s; }
-
-.active-section section p span:nth-child(2) span, .active-section section blockquote span:nth-child(2) span {
-  transition-delay: 1.28s; }
-
-.active-section section p span:nth-child(3) span, .active-section section blockquote span:nth-child(3) span {
-  transition-delay: 1.32s; }
-
-.active-section section p span:nth-child(4) span, .active-section section blockquote span:nth-child(4) span {
-  transition-delay: 1.36s; }
-
-.active-section section p span:nth-child(5) span, .active-section section blockquote span:nth-child(5) span {
-  transition-delay: 1.4s; }
-
-.active-section section p span:nth-child(6) span, .active-section section blockquote span:nth-child(6) span {
-  transition-delay: 1.44s; }
-
-.active-section section p span:nth-child(7) span, .active-section section blockquote span:nth-child(7) span {
-  transition-delay: 1.48s; }
-
-.active-section section p span:nth-child(8) span, .active-section section blockquote span:nth-child(8) span {
-  transition-delay: 1.52s; }
-
-.active-section section p span:nth-child(9) span, .active-section section blockquote span:nth-child(9) span {
-  transition-delay: 1.56s; }
-
-.active-section section p span:nth-child(10) span, .active-section section blockquote span:nth-child(10) span {
-  transition-delay: 1.6s; }
-
-.active-section section p span:nth-child(11) span, .active-section section blockquote span:nth-child(11) span {
-  transition-delay: 1.64s; }
-
-.active-section section p span:nth-child(12) span, .active-section section blockquote span:nth-child(12) span {
-  transition-delay: 1.68s; }
-
-.active-section section p span:nth-child(13) span, .active-section section blockquote span:nth-child(13) span {
-  transition-delay: 1.72s; }
-
-.active-section section p span:nth-child(14) span, .active-section section blockquote span:nth-child(14) span {
-  transition-delay: 1.76s; }
-
-.active-section section p span:nth-child(15) span, .active-section section blockquote span:nth-child(15) span {
-  transition-delay: 1.8s; }
-
-.active-section section p span:nth-child(16) span, .active-section section blockquote span:nth-child(16) span {
-  transition-delay: 1.84s; }
-
-.active-section section p span:nth-child(17) span, .active-section section blockquote span:nth-child(17) span {
-  transition-delay: 1.88s; }
-
-.active-section section p span:nth-child(18) span, .active-section section blockquote span:nth-child(18) span {
-  transition-delay: 1.92s; }
-
-.active-section section p span:nth-child(19) span, .active-section section blockquote span:nth-child(19) span {
-  transition-delay: 1.96s; }
-
-.active-section section p span:nth-child(20) span, .active-section section blockquote span:nth-child(20) span {
-  transition-delay: 2s; }
-
-.active-section section p span:nth-child(21) span, .active-section section blockquote span:nth-child(21) span {
-  transition-delay: 2.04s; }
-
-.active-section section p span:nth-child(22) span, .active-section section blockquote span:nth-child(22) span {
-  transition-delay: 2.08s; }
-
-.active-section section p span:nth-child(23) span, .active-section section blockquote span:nth-child(23) span {
-  transition-delay: 2.12s; }
-
-.active-section section p span:nth-child(24) span, .active-section section blockquote span:nth-child(24) span {
-  transition-delay: 2.16s; }
-
-.active-section section p span:nth-child(25) span, .active-section section blockquote span:nth-child(25) span {
-  transition-delay: 2.2s; }
-
-.active-section section p span:nth-child(26) span, .active-section section blockquote span:nth-child(26) span {
-  transition-delay: 2.24s; }
-
-.active-section section p span:nth-child(27) span, .active-section section blockquote span:nth-child(27) span {
-  transition-delay: 2.28s; }
-
-.active-section section p span:nth-child(28) span, .active-section section blockquote span:nth-child(28) span {
-  transition-delay: 2.32s; }
-
-.active-section section p span:nth-child(29) span, .active-section section blockquote span:nth-child(29) span {
-  transition-delay: 2.36s; }
-
-.active-section section p span:nth-child(30) span, .active-section section blockquote span:nth-child(30) span {
-  transition-delay: 2.4s; }
-
-.active-section section p span:nth-child(31) span, .active-section section blockquote span:nth-child(31) span {
-  transition-delay: 2.44s; }
-
-.active-section section p span:nth-child(32) span, .active-section section blockquote span:nth-child(32) span {
-  transition-delay: 2.48s; }
-
-.active-section section p span:nth-child(33) span, .active-section section blockquote span:nth-child(33) span {
-  transition-delay: 2.52s; }
-
-.active-section section p span:nth-child(34) span, .active-section section blockquote span:nth-child(34) span {
-  transition-delay: 2.56s; }
-
-.active-section section p span:nth-child(35) span, .active-section section blockquote span:nth-child(35) span {
-  transition-delay: 2.6s; }
-
-.active-section section p span:nth-child(36) span, .active-section section blockquote span:nth-child(36) span {
-  transition-delay: 2.64s; }
-
-.active-section section p span:nth-child(37) span, .active-section section blockquote span:nth-child(37) span {
-  transition-delay: 2.68s; }
-
-.active-section section p span:nth-child(38) span, .active-section section blockquote span:nth-child(38) span {
-  transition-delay: 2.72s; }
-
-.active-section section p span:nth-child(39) span, .active-section section blockquote span:nth-child(39) span {
-  transition-delay: 2.76s; }
-
-.active-section section p span:nth-child(40) span, .active-section section blockquote span:nth-child(40) span {
-  transition-delay: 2.8s; }
-
-.active-section section p span:nth-child(41) span, .active-section section blockquote span:nth-child(41) span {
-  transition-delay: 2.84s; }
-
-.active-section section p span:nth-child(42) span, .active-section section blockquote span:nth-child(42) span {
-  transition-delay: 2.88s; }
-
-.active-section section p span:nth-child(43) span, .active-section section blockquote span:nth-child(43) span {
-  transition-delay: 2.92s; }
-
-.active-section section p span:nth-child(44) span, .active-section section blockquote span:nth-child(44) span {
-  transition-delay: 2.96s; }
-
-.active-section section p span:nth-child(45) span, .active-section section blockquote span:nth-child(45) span {
-  transition-delay: 3s; }
-
-.active-section section p span:nth-child(46) span, .active-section section blockquote span:nth-child(46) span {
-  transition-delay: 3.04s; }
-
-.active-section section p span:nth-child(47) span, .active-section section blockquote span:nth-child(47) span {
-  transition-delay: 3.08s; }
-
-.active-section section p span:nth-child(48) span, .active-section section blockquote span:nth-child(48) span {
-  transition-delay: 3.12s; }
-
-.active-section section p span:nth-child(49) span, .active-section section blockquote span:nth-child(49) span {
-  transition-delay: 3.16s; }
-
-.active-section section p span:nth-child(50) span, .active-section section blockquote span:nth-child(50) span {
-  transition-delay: 3.2s; }
-
-.active-section section p span:nth-child(51) span, .active-section section blockquote span:nth-child(51) span {
-  transition-delay: 3.24s; }
-
-.active-section section p span:nth-child(52) span, .active-section section blockquote span:nth-child(52) span {
-  transition-delay: 3.28s; }
-
-.active-section section p span:nth-child(53) span, .active-section section blockquote span:nth-child(53) span {
-  transition-delay: 3.32s; }
-
-.active-section section p span:nth-child(54) span, .active-section section blockquote span:nth-child(54) span {
-  transition-delay: 3.36s; }
-
-.active-section section p span:nth-child(55) span, .active-section section blockquote span:nth-child(55) span {
-  transition-delay: 3.4s; }
-
-.active-section section p span:nth-child(56) span, .active-section section blockquote span:nth-child(56) span {
-  transition-delay: 3.44s; }
-
-.active-section section p span:nth-child(57) span, .active-section section blockquote span:nth-child(57) span {
-  transition-delay: 3.48s; }
-
-.active-section section p span:nth-child(58) span, .active-section section blockquote span:nth-child(58) span {
-  transition-delay: 3.52s; }
-
-.active-section section p span:nth-child(59) span, .active-section section blockquote span:nth-child(59) span {
-  transition-delay: 3.56s; }
-
-.active-section section p span:nth-child(60) span, .active-section section blockquote span:nth-child(60) span {
-  transition-delay: 3.6s; }
-
-.active-section section p span:nth-child(61) span, .active-section section blockquote span:nth-child(61) span {
-  transition-delay: 3.64s; }
-
-.active-section section p span:nth-child(62) span, .active-section section blockquote span:nth-child(62) span {
-  transition-delay: 3.68s; }
-
-.active-section section p span:nth-child(63) span, .active-section section blockquote span:nth-child(63) span {
-  transition-delay: 3.72s; }
-
-.active-section section p span:nth-child(64) span, .active-section section blockquote span:nth-child(64) span {
-  transition-delay: 3.76s; }
-
-.active-section section p span:nth-child(65) span, .active-section section blockquote span:nth-child(65) span {
-  transition-delay: 3.8s; }
-
-.active-section section p span:nth-child(66) span, .active-section section blockquote span:nth-child(66) span {
-  transition-delay: 3.84s; }
-
-.active-section section p span:nth-child(67) span, .active-section section blockquote span:nth-child(67) span {
-  transition-delay: 3.88s; }
-
-.active-section section p span:nth-child(68) span, .active-section section blockquote span:nth-child(68) span {
-  transition-delay: 3.92s; }
-
-.active-section section p span:nth-child(69) span, .active-section section blockquote span:nth-child(69) span {
-  transition-delay: 3.96s; }
-
-.active-section section p span:nth-child(70) span, .active-section section blockquote span:nth-child(70) span {
-  transition-delay: 4s; }
-
-.active-section section p span:nth-child(71) span, .active-section section blockquote span:nth-child(71) span {
-  transition-delay: 4.04s; }
-
-.active-section section p span:nth-child(72) span, .active-section section blockquote span:nth-child(72) span {
-  transition-delay: 4.08s; }
-
-.active-section section p span:nth-child(73) span, .active-section section blockquote span:nth-child(73) span {
-  transition-delay: 4.12s; }
-
-.active-section section p span:nth-child(74) span, .active-section section blockquote span:nth-child(74) span {
-  transition-delay: 4.16s; }
-
-.active-section section p span:nth-child(75) span, .active-section section blockquote span:nth-child(75) span {
-  transition-delay: 4.2s; }
-
-.active-section section p span:nth-child(76) span, .active-section section blockquote span:nth-child(76) span {
-  transition-delay: 4.24s; }
-
-.active-section section p span:nth-child(77) span, .active-section section blockquote span:nth-child(77) span {
-  transition-delay: 4.28s; }
-
-.active-section section p span:nth-child(78) span, .active-section section blockquote span:nth-child(78) span {
-  transition-delay: 4.32s; }
-
-.active-section section p span:nth-child(79) span, .active-section section blockquote span:nth-child(79) span {
-  transition-delay: 4.36s; }
-
-.active-section section p span:nth-child(80) span, .active-section section blockquote span:nth-child(80) span {
-  transition-delay: 4.4s; }
-
-.active-section section p span:nth-child(81) span, .active-section section blockquote span:nth-child(81) span {
-  transition-delay: 4.44s; }
-
-.active-section section p span:nth-child(82) span, .active-section section blockquote span:nth-child(82) span {
-  transition-delay: 4.48s; }
-
-.active-section section p span:nth-child(83) span, .active-section section blockquote span:nth-child(83) span {
-  transition-delay: 4.52s; }
-
-.active-section section p span:nth-child(84) span, .active-section section blockquote span:nth-child(84) span {
-  transition-delay: 4.56s; }
-
-.active-section section p span:nth-child(85) span, .active-section section blockquote span:nth-child(85) span {
-  transition-delay: 4.6s; }
-
-.active-section section p span:nth-child(86) span, .active-section section blockquote span:nth-child(86) span {
-  transition-delay: 4.64s; }
-
-.active-section section p span:nth-child(87) span, .active-section section blockquote span:nth-child(87) span {
-  transition-delay: 4.68s; }
-
-.active-section section p span:nth-child(88) span, .active-section section blockquote span:nth-child(88) span {
-  transition-delay: 4.72s; }
-
-.active-section section p span:nth-child(89) span, .active-section section blockquote span:nth-child(89) span {
-  transition-delay: 4.76s; }
-
-.active-section section p span:nth-child(90) span, .active-section section blockquote span:nth-child(90) span {
-  transition-delay: 4.8s; }
-
-.active-section section p span:nth-child(91) span, .active-section section blockquote span:nth-child(91) span {
-  transition-delay: 4.84s; }
-
-.active-section section p span:nth-child(92) span, .active-section section blockquote span:nth-child(92) span {
-  transition-delay: 4.88s; }
-
-.active-section section p span:nth-child(93) span, .active-section section blockquote span:nth-child(93) span {
-  transition-delay: 4.92s; }
-
-.active-section section p span:nth-child(94) span, .active-section section blockquote span:nth-child(94) span {
-  transition-delay: 4.96s; }
-
-.active-section section p span:nth-child(95) span, .active-section section blockquote span:nth-child(95) span {
-  transition-delay: 5s; }
-
-.active-section section p span:nth-child(96) span, .active-section section blockquote span:nth-child(96) span {
-  transition-delay: 5.04s; }
-
-.active-section section p span:nth-child(97) span, .active-section section blockquote span:nth-child(97) span {
-  transition-delay: 5.08s; }
-
-.active-section section p span:nth-child(98) span, .active-section section blockquote span:nth-child(98) span {
-  transition-delay: 5.12s; }
-
-.active-section section p span:nth-child(99) span, .active-section section blockquote span:nth-child(99) span {
-  transition-delay: 5.16s; }
-
-.active-section section p span:nth-child(100) span, .active-section section blockquote span:nth-child(100) span {
-  transition-delay: 5.2s; }
-
-.active-section section p span:nth-child(101) span, .active-section section blockquote span:nth-child(101) span {
-  transition-delay: 5.24s; }
-
-.active-section section p span:nth-child(102) span, .active-section section blockquote span:nth-child(102) span {
-  transition-delay: 5.28s; }
-
-.active-section section p span:nth-child(103) span, .active-section section blockquote span:nth-child(103) span {
-  transition-delay: 5.32s; }
-
-.active-section section p span:nth-child(104) span, .active-section section blockquote span:nth-child(104) span {
-  transition-delay: 5.36s; }
-
-.active-section section p span:nth-child(105) span, .active-section section blockquote span:nth-child(105) span {
-  transition-delay: 5.4s; }
-
-.active-section section p span:nth-child(106) span, .active-section section blockquote span:nth-child(106) span {
-  transition-delay: 5.44s; }
-
-.active-section section p span:nth-child(107) span, .active-section section blockquote span:nth-child(107) span {
-  transition-delay: 5.48s; }
-
-.active-section section p span:nth-child(108) span, .active-section section blockquote span:nth-child(108) span {
-  transition-delay: 5.52s; }
-
-.active-section section p span:nth-child(109) span, .active-section section blockquote span:nth-child(109) span {
-  transition-delay: 5.56s; }
-
-.active-section section p span:nth-child(110) span, .active-section section blockquote span:nth-child(110) span {
-  transition-delay: 5.6s; }
-
-.active-section section p span:nth-child(111) span, .active-section section blockquote span:nth-child(111) span {
-  transition-delay: 5.64s; }
-
-.active-section section p span:nth-child(112) span, .active-section section blockquote span:nth-child(112) span {
-  transition-delay: 5.68s; }
-
-.active-section section p span:nth-child(113) span, .active-section section blockquote span:nth-child(113) span {
-  transition-delay: 5.72s; }
-
-.active-section section p span:nth-child(114) span, .active-section section blockquote span:nth-child(114) span {
-  transition-delay: 5.76s; }
-
-.active-section section p span:nth-child(115) span, .active-section section blockquote span:nth-child(115) span {
-  transition-delay: 5.8s; }
-
-.active-section section p span:nth-child(116) span, .active-section section blockquote span:nth-child(116) span {
-  transition-delay: 5.84s; }
-
-.active-section section p span:nth-child(117) span, .active-section section blockquote span:nth-child(117) span {
-  transition-delay: 5.88s; }
-
-.active-section section p span:nth-child(118) span, .active-section section blockquote span:nth-child(118) span {
-  transition-delay: 5.92s; }
-
-.active-section section p span:nth-child(119) span, .active-section section blockquote span:nth-child(119) span {
-  transition-delay: 5.96s; }
-
-.active-section section p span:nth-child(120) span, .active-section section blockquote span:nth-child(120) span {
-  transition-delay: 6s; }
-
-.active-section section p span > span, .active-section section blockquote span > span {
+.active-section section p, .active-section section blockquote {
   opacity: 1;
-  transform: translate3d(0, 0, 0) skewX(0deg);
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .active-section section p span:nth-child(1) span, .active-section section blockquote span:nth-child(1) span {
+    transition-delay: 1.24s; }
+  .active-section section p span:nth-child(2) span, .active-section section blockquote span:nth-child(2) span {
+    transition-delay: 1.28s; }
+  .active-section section p span:nth-child(3) span, .active-section section blockquote span:nth-child(3) span {
+    transition-delay: 1.32s; }
+  .active-section section p span:nth-child(4) span, .active-section section blockquote span:nth-child(4) span {
+    transition-delay: 1.36s; }
+  .active-section section p span:nth-child(5) span, .active-section section blockquote span:nth-child(5) span {
+    transition-delay: 1.4s; }
+  .active-section section p span:nth-child(6) span, .active-section section blockquote span:nth-child(6) span {
+    transition-delay: 1.44s; }
+  .active-section section p span:nth-child(7) span, .active-section section blockquote span:nth-child(7) span {
+    transition-delay: 1.48s; }
+  .active-section section p span:nth-child(8) span, .active-section section blockquote span:nth-child(8) span {
+    transition-delay: 1.52s; }
+  .active-section section p span:nth-child(9) span, .active-section section blockquote span:nth-child(9) span {
+    transition-delay: 1.56s; }
+  .active-section section p span:nth-child(10) span, .active-section section blockquote span:nth-child(10) span {
+    transition-delay: 1.6s; }
+  .active-section section p span:nth-child(11) span, .active-section section blockquote span:nth-child(11) span {
+    transition-delay: 1.64s; }
+  .active-section section p span:nth-child(12) span, .active-section section blockquote span:nth-child(12) span {
+    transition-delay: 1.68s; }
+  .active-section section p span:nth-child(13) span, .active-section section blockquote span:nth-child(13) span {
+    transition-delay: 1.72s; }
+  .active-section section p span:nth-child(14) span, .active-section section blockquote span:nth-child(14) span {
+    transition-delay: 1.76s; }
+  .active-section section p span:nth-child(15) span, .active-section section blockquote span:nth-child(15) span {
+    transition-delay: 1.8s; }
+  .active-section section p span:nth-child(16) span, .active-section section blockquote span:nth-child(16) span {
+    transition-delay: 1.84s; }
+  .active-section section p span:nth-child(17) span, .active-section section blockquote span:nth-child(17) span {
+    transition-delay: 1.88s; }
+  .active-section section p span:nth-child(18) span, .active-section section blockquote span:nth-child(18) span {
+    transition-delay: 1.92s; }
+  .active-section section p span:nth-child(19) span, .active-section section blockquote span:nth-child(19) span {
+    transition-delay: 1.96s; }
+  .active-section section p span:nth-child(20) span, .active-section section blockquote span:nth-child(20) span {
+    transition-delay: 2s; }
+  .active-section section p span:nth-child(21) span, .active-section section blockquote span:nth-child(21) span {
+    transition-delay: 2.04s; }
+  .active-section section p span:nth-child(22) span, .active-section section blockquote span:nth-child(22) span {
+    transition-delay: 2.08s; }
+  .active-section section p span:nth-child(23) span, .active-section section blockquote span:nth-child(23) span {
+    transition-delay: 2.12s; }
+  .active-section section p span:nth-child(24) span, .active-section section blockquote span:nth-child(24) span {
+    transition-delay: 2.16s; }
+  .active-section section p span:nth-child(25) span, .active-section section blockquote span:nth-child(25) span {
+    transition-delay: 2.2s; }
+  .active-section section p span:nth-child(26) span, .active-section section blockquote span:nth-child(26) span {
+    transition-delay: 2.24s; }
+  .active-section section p span:nth-child(27) span, .active-section section blockquote span:nth-child(27) span {
+    transition-delay: 2.28s; }
+  .active-section section p span:nth-child(28) span, .active-section section blockquote span:nth-child(28) span {
+    transition-delay: 2.32s; }
+  .active-section section p span:nth-child(29) span, .active-section section blockquote span:nth-child(29) span {
+    transition-delay: 2.36s; }
+  .active-section section p span:nth-child(30) span, .active-section section blockquote span:nth-child(30) span {
+    transition-delay: 2.4s; }
+  .active-section section p span:nth-child(31) span, .active-section section blockquote span:nth-child(31) span {
+    transition-delay: 2.44s; }
+  .active-section section p span:nth-child(32) span, .active-section section blockquote span:nth-child(32) span {
+    transition-delay: 2.48s; }
+  .active-section section p span:nth-child(33) span, .active-section section blockquote span:nth-child(33) span {
+    transition-delay: 2.52s; }
+  .active-section section p span:nth-child(34) span, .active-section section blockquote span:nth-child(34) span {
+    transition-delay: 2.56s; }
+  .active-section section p span:nth-child(35) span, .active-section section blockquote span:nth-child(35) span {
+    transition-delay: 2.6s; }
+  .active-section section p span:nth-child(36) span, .active-section section blockquote span:nth-child(36) span {
+    transition-delay: 2.64s; }
+  .active-section section p span:nth-child(37) span, .active-section section blockquote span:nth-child(37) span {
+    transition-delay: 2.68s; }
+  .active-section section p span:nth-child(38) span, .active-section section blockquote span:nth-child(38) span {
+    transition-delay: 2.72s; }
+  .active-section section p span:nth-child(39) span, .active-section section blockquote span:nth-child(39) span {
+    transition-delay: 2.76s; }
+  .active-section section p span:nth-child(40) span, .active-section section blockquote span:nth-child(40) span {
+    transition-delay: 2.8s; }
+  .active-section section p span:nth-child(41) span, .active-section section blockquote span:nth-child(41) span {
+    transition-delay: 2.84s; }
+  .active-section section p span:nth-child(42) span, .active-section section blockquote span:nth-child(42) span {
+    transition-delay: 2.88s; }
+  .active-section section p span:nth-child(43) span, .active-section section blockquote span:nth-child(43) span {
+    transition-delay: 2.92s; }
+  .active-section section p span:nth-child(44) span, .active-section section blockquote span:nth-child(44) span {
+    transition-delay: 2.96s; }
+  .active-section section p span:nth-child(45) span, .active-section section blockquote span:nth-child(45) span {
+    transition-delay: 3s; }
+  .active-section section p span:nth-child(46) span, .active-section section blockquote span:nth-child(46) span {
+    transition-delay: 3.04s; }
+  .active-section section p span:nth-child(47) span, .active-section section blockquote span:nth-child(47) span {
+    transition-delay: 3.08s; }
+  .active-section section p span:nth-child(48) span, .active-section section blockquote span:nth-child(48) span {
+    transition-delay: 3.12s; }
+  .active-section section p span:nth-child(49) span, .active-section section blockquote span:nth-child(49) span {
+    transition-delay: 3.16s; }
+  .active-section section p span:nth-child(50) span, .active-section section blockquote span:nth-child(50) span {
+    transition-delay: 3.2s; }
+  .active-section section p span:nth-child(51) span, .active-section section blockquote span:nth-child(51) span {
+    transition-delay: 3.24s; }
+  .active-section section p span:nth-child(52) span, .active-section section blockquote span:nth-child(52) span {
+    transition-delay: 3.28s; }
+  .active-section section p span:nth-child(53) span, .active-section section blockquote span:nth-child(53) span {
+    transition-delay: 3.32s; }
+  .active-section section p span:nth-child(54) span, .active-section section blockquote span:nth-child(54) span {
+    transition-delay: 3.36s; }
+  .active-section section p span:nth-child(55) span, .active-section section blockquote span:nth-child(55) span {
+    transition-delay: 3.4s; }
+  .active-section section p span:nth-child(56) span, .active-section section blockquote span:nth-child(56) span {
+    transition-delay: 3.44s; }
+  .active-section section p span:nth-child(57) span, .active-section section blockquote span:nth-child(57) span {
+    transition-delay: 3.48s; }
+  .active-section section p span:nth-child(58) span, .active-section section blockquote span:nth-child(58) span {
+    transition-delay: 3.52s; }
+  .active-section section p span:nth-child(59) span, .active-section section blockquote span:nth-child(59) span {
+    transition-delay: 3.56s; }
+  .active-section section p span:nth-child(60) span, .active-section section blockquote span:nth-child(60) span {
+    transition-delay: 3.6s; }
+  .active-section section p span:nth-child(61) span, .active-section section blockquote span:nth-child(61) span {
+    transition-delay: 3.64s; }
+  .active-section section p span:nth-child(62) span, .active-section section blockquote span:nth-child(62) span {
+    transition-delay: 3.68s; }
+  .active-section section p span:nth-child(63) span, .active-section section blockquote span:nth-child(63) span {
+    transition-delay: 3.72s; }
+  .active-section section p span:nth-child(64) span, .active-section section blockquote span:nth-child(64) span {
+    transition-delay: 3.76s; }
+  .active-section section p span:nth-child(65) span, .active-section section blockquote span:nth-child(65) span {
+    transition-delay: 3.8s; }
+  .active-section section p span:nth-child(66) span, .active-section section blockquote span:nth-child(66) span {
+    transition-delay: 3.84s; }
+  .active-section section p span:nth-child(67) span, .active-section section blockquote span:nth-child(67) span {
+    transition-delay: 3.88s; }
+  .active-section section p span:nth-child(68) span, .active-section section blockquote span:nth-child(68) span {
+    transition-delay: 3.92s; }
+  .active-section section p span:nth-child(69) span, .active-section section blockquote span:nth-child(69) span {
+    transition-delay: 3.96s; }
+  .active-section section p span:nth-child(70) span, .active-section section blockquote span:nth-child(70) span {
+    transition-delay: 4s; }
+  .active-section section p span:nth-child(71) span, .active-section section blockquote span:nth-child(71) span {
+    transition-delay: 4.04s; }
+  .active-section section p span:nth-child(72) span, .active-section section blockquote span:nth-child(72) span {
+    transition-delay: 4.08s; }
+  .active-section section p span:nth-child(73) span, .active-section section blockquote span:nth-child(73) span {
+    transition-delay: 4.12s; }
+  .active-section section p span:nth-child(74) span, .active-section section blockquote span:nth-child(74) span {
+    transition-delay: 4.16s; }
+  .active-section section p span:nth-child(75) span, .active-section section blockquote span:nth-child(75) span {
+    transition-delay: 4.2s; }
+  .active-section section p span:nth-child(76) span, .active-section section blockquote span:nth-child(76) span {
+    transition-delay: 4.24s; }
+  .active-section section p span:nth-child(77) span, .active-section section blockquote span:nth-child(77) span {
+    transition-delay: 4.28s; }
+  .active-section section p span:nth-child(78) span, .active-section section blockquote span:nth-child(78) span {
+    transition-delay: 4.32s; }
+  .active-section section p span:nth-child(79) span, .active-section section blockquote span:nth-child(79) span {
+    transition-delay: 4.36s; }
+  .active-section section p span:nth-child(80) span, .active-section section blockquote span:nth-child(80) span {
+    transition-delay: 4.4s; }
+  .active-section section p span:nth-child(81) span, .active-section section blockquote span:nth-child(81) span {
+    transition-delay: 4.44s; }
+  .active-section section p span:nth-child(82) span, .active-section section blockquote span:nth-child(82) span {
+    transition-delay: 4.48s; }
+  .active-section section p span:nth-child(83) span, .active-section section blockquote span:nth-child(83) span {
+    transition-delay: 4.52s; }
+  .active-section section p span:nth-child(84) span, .active-section section blockquote span:nth-child(84) span {
+    transition-delay: 4.56s; }
+  .active-section section p span:nth-child(85) span, .active-section section blockquote span:nth-child(85) span {
+    transition-delay: 4.6s; }
+  .active-section section p span:nth-child(86) span, .active-section section blockquote span:nth-child(86) span {
+    transition-delay: 4.64s; }
+  .active-section section p span:nth-child(87) span, .active-section section blockquote span:nth-child(87) span {
+    transition-delay: 4.68s; }
+  .active-section section p span:nth-child(88) span, .active-section section blockquote span:nth-child(88) span {
+    transition-delay: 4.72s; }
+  .active-section section p span:nth-child(89) span, .active-section section blockquote span:nth-child(89) span {
+    transition-delay: 4.76s; }
+  .active-section section p span:nth-child(90) span, .active-section section blockquote span:nth-child(90) span {
+    transition-delay: 4.8s; }
+  .active-section section p span:nth-child(91) span, .active-section section blockquote span:nth-child(91) span {
+    transition-delay: 4.84s; }
+  .active-section section p span:nth-child(92) span, .active-section section blockquote span:nth-child(92) span {
+    transition-delay: 4.88s; }
+  .active-section section p span:nth-child(93) span, .active-section section blockquote span:nth-child(93) span {
+    transition-delay: 4.92s; }
+  .active-section section p span:nth-child(94) span, .active-section section blockquote span:nth-child(94) span {
+    transition-delay: 4.96s; }
+  .active-section section p span:nth-child(95) span, .active-section section blockquote span:nth-child(95) span {
+    transition-delay: 5s; }
+  .active-section section p span:nth-child(96) span, .active-section section blockquote span:nth-child(96) span {
+    transition-delay: 5.04s; }
+  .active-section section p span:nth-child(97) span, .active-section section blockquote span:nth-child(97) span {
+    transition-delay: 5.08s; }
+  .active-section section p span:nth-child(98) span, .active-section section blockquote span:nth-child(98) span {
+    transition-delay: 5.12s; }
+  .active-section section p span:nth-child(99) span, .active-section section blockquote span:nth-child(99) span {
+    transition-delay: 5.16s; }
+  .active-section section p span:nth-child(100) span, .active-section section blockquote span:nth-child(100) span {
+    transition-delay: 5.2s; }
+  .active-section section p span:nth-child(101) span, .active-section section blockquote span:nth-child(101) span {
+    transition-delay: 5.24s; }
+  .active-section section p span:nth-child(102) span, .active-section section blockquote span:nth-child(102) span {
+    transition-delay: 5.28s; }
+  .active-section section p span:nth-child(103) span, .active-section section blockquote span:nth-child(103) span {
+    transition-delay: 5.32s; }
+  .active-section section p span:nth-child(104) span, .active-section section blockquote span:nth-child(104) span {
+    transition-delay: 5.36s; }
+  .active-section section p span:nth-child(105) span, .active-section section blockquote span:nth-child(105) span {
+    transition-delay: 5.4s; }
+  .active-section section p span:nth-child(106) span, .active-section section blockquote span:nth-child(106) span {
+    transition-delay: 5.44s; }
+  .active-section section p span:nth-child(107) span, .active-section section blockquote span:nth-child(107) span {
+    transition-delay: 5.48s; }
+  .active-section section p span:nth-child(108) span, .active-section section blockquote span:nth-child(108) span {
+    transition-delay: 5.52s; }
+  .active-section section p span:nth-child(109) span, .active-section section blockquote span:nth-child(109) span {
+    transition-delay: 5.56s; }
+  .active-section section p span:nth-child(110) span, .active-section section blockquote span:nth-child(110) span {
+    transition-delay: 5.6s; }
+  .active-section section p span:nth-child(111) span, .active-section section blockquote span:nth-child(111) span {
+    transition-delay: 5.64s; }
+  .active-section section p span:nth-child(112) span, .active-section section blockquote span:nth-child(112) span {
+    transition-delay: 5.68s; }
+  .active-section section p span:nth-child(113) span, .active-section section blockquote span:nth-child(113) span {
+    transition-delay: 5.72s; }
+  .active-section section p span:nth-child(114) span, .active-section section blockquote span:nth-child(114) span {
+    transition-delay: 5.76s; }
+  .active-section section p span:nth-child(115) span, .active-section section blockquote span:nth-child(115) span {
+    transition-delay: 5.8s; }
+  .active-section section p span:nth-child(116) span, .active-section section blockquote span:nth-child(116) span {
+    transition-delay: 5.84s; }
+  .active-section section p span:nth-child(117) span, .active-section section blockquote span:nth-child(117) span {
+    transition-delay: 5.88s; }
+  .active-section section p span:nth-child(118) span, .active-section section blockquote span:nth-child(118) span {
+    transition-delay: 5.92s; }
+  .active-section section p span:nth-child(119) span, .active-section section blockquote span:nth-child(119) span {
+    transition-delay: 5.96s; }
+  .active-section section p span:nth-child(120) span, .active-section section blockquote span:nth-child(120) span {
+    transition-delay: 6s; }
+  .active-section section p span > span, .active-section section blockquote span > span {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 /* Modules */
 .cursor {
@@ -1388,13 +1463,13 @@ section p span > span, section blockquote span > span {
   -ms-flex-align: center;
   align-items: center;
   opacity: 0; }
-  .cursor__circle, .cursor__lines {
-    position: absolute;
+  .cursor__outer, .cursor__inner {
+    position: fixed;
     mix-blend-mode: difference;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 9999; }
-  .cursor__circle {
+  .cursor__outer {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
     border: solid 1px #F8FBF7;
     width: 48px;
@@ -1402,7 +1477,8 @@ section p span > span, section blockquote span > span {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 50%; }
-  .cursor__lines {
+  .cursor__inner {
+    transition: width cubic-bezier(0.19, 1, 0.22, 1) 0.6s, height cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
     height: 9px;
     width: 9px;
     background: #F8FBF7;
@@ -1413,6 +1489,12 @@ section p span > span, section blockquote span > span {
     width: 12px; }
   .cursor--visible {
     opacity: 1; }
+  .cursor--hovering .cursor__outer {
+    width: 60px;
+    height: 60px; }
+  .cursor--hovering .cursor__inner {
+    width: 40px;
+    height: 40px; }
 
 .nav-takeover {
   position: relative;
@@ -1446,6 +1528,7 @@ section p span > span, section blockquote span > span {
     width: calc(40%);
     right: 0;
     height: 100%;
+    overflow-x: hidden;
     overflow-y: scroll;
     transition: transform cubic-bezier(0.7, 0, 0.3, 1) 0.6s 0.12s;
     transform: translate3d(100%, 0, 0); }
@@ -1455,7 +1538,7 @@ section p span > span, section blockquote span > span {
       margin: 0; }
     .nav-takeover__panel a {
       border: none;
-      color: #181617; }
+      color: #131112; }
     .nav-takeover__panel hr {
       height: 3px; }
     .nav-takeover__panel li {
@@ -1503,15 +1586,21 @@ section p span > span, section blockquote span > span {
     border-color: #DEDEDC; }
   .nav-takeover__items--primary h1.active, .nav-takeover__items--primary h2.active, .nav-takeover__items--primary h3.active, .nav-takeover__items--primary h4.active, .nav-takeover__items--primary h5.active, .nav-takeover__items--primary h6.active {
     color: transparent;
+    -webkit-text-stroke: 1px #131112; }
+  .nav-takeover__items--primary h1.hover, .nav-takeover__items--primary h2.hover, .nav-takeover__items--primary h3.hover, .nav-takeover__items--primary h4.hover, .nav-takeover__items--primary h5.hover, .nav-takeover__items--primary h6.hover {
+    color: transparent;
     -webkit-text-stroke: 1px #ff3636; }
   .nav-takeover__items--secondary {
     pointer-events: none; }
     .nav-takeover__items--secondary a.active h1, .nav-takeover__items--secondary a.active h2, .nav-takeover__items--secondary a.active h3, .nav-takeover__items--secondary a.active h4, .nav-takeover__items--secondary a.active h5, .nav-takeover__items--secondary a.active h6 {
       color: transparent;
-      -webkit-text-stroke: 1px #ff3636; }
+      -webkit-text-stroke: 1px #131112; }
+      .nav-takeover__items--secondary a.active h1.hover, .nav-takeover__items--secondary a.active h2.hover, .nav-takeover__items--secondary a.active h3.hover, .nav-takeover__items--secondary a.active h4.hover, .nav-takeover__items--secondary a.active h5.hover, .nav-takeover__items--secondary a.active h6.hover {
+        color: transparent;
+        -webkit-text-stroke: 1px #ff3636; }
   .nav-takeover--menuOpen .nav-takeover__main {
     pointer-events: auto;
-    background: rgba(24, 22, 23, 0.5); }
+    background: rgba(19, 17, 18, 0.5); }
   .nav-takeover--menuOpen .nav-takeover__panel {
     -ms-transform: none;
     transform: none; }
@@ -1577,21 +1666,24 @@ section p span > span, section blockquote span > span {
         transition-delay: 3.78s; }
       .nav-takeover--menuOpen .nav-takeover__panel li:nth-child(30) {
         transition-delay: 3.9s; }
-  .nav-takeover--menuOpen .nav-takeover__items--primary li {
+  .nav-takeover--menuOpen.nav-takeover--primaryPanelOpen .nav-takeover__items--primary li {
     -ms-transform: none;
     transform: none; }
-  .nav-takeover--secondaryPanelOpen .nav-takeover__toggle {
+  .nav-takeover--menuOpen.nav-takeover--secondaryPanelOpen .nav-takeover__items--secondary li {
+    -ms-transform: none;
+    transform: none; }
+  .nav-takeover--primaryPanelOpen .nav-takeover__items--secondary {
     pointer-events: none; }
+    .nav-takeover--primaryPanelOpen .nav-takeover__items--secondary li {
+      transform: translate3d(200%, 0, 0); }
+  .nav-takeover--primaryPanelOpen .nav-takeover__items--primary {
+    pointer-events: auto; }
   .nav-takeover--secondaryPanelOpen .nav-takeover__items--primary {
     pointer-events: none; }
     .nav-takeover--secondaryPanelOpen .nav-takeover__items--primary li {
       transform: translate3d(200%, 0, 0); }
   .nav-takeover--secondaryPanelOpen .nav-takeover__items--secondary {
-    opacity: 1;
     pointer-events: auto; }
-    .nav-takeover--secondaryPanelOpen .nav-takeover__items--secondary li {
-      -ms-transform: none;
-      transform: none; }
   @media screen and (max-width: 800px) {
     .nav-takeover .nav-takeover__main > div {
       -ms-flex: .2;
@@ -1672,6 +1764,7 @@ section p span > span, section blockquote span > span {
   .nav-toggle .nav-toggle__abbreviation {
     margin-bottom: 12px; }
   .nav-toggle .nav-toggle__count {
+    overflow: hidden;
     margin-top: 18px;
     transition-delay: 0.09s; }
     .nav-toggle .nav-toggle__count span {
@@ -1680,9 +1773,9 @@ section p span > span, section blockquote span > span {
       .nav-toggle .nav-toggle__count span:last-child {
         animation-delay: 0.12s; }
   .nav-toggle--countIsIncreasing .nav-toggle__count span {
-    animation: increasingNum 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    animation: increasingNum 0.6s cubic-bezier(0.7, 0, 0.3, 1); }
   .nav-toggle--countIsDecreasing .nav-toggle__count span {
-    animation: decreasingNum 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    animation: decreasingNum 0.6s cubic-bezier(0.7, 0, 0.3, 1); }
   .nav-toggle__hamburger {
     display: -ms-flexbox;
     display: flex;
@@ -1694,7 +1787,7 @@ section p span > span, section blockquote span > span {
     justify-content: center; }
     .nav-toggle__hamburger .line {
       transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.6s, background-color cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
-      background: #181617;
+      background: #131112;
       height: 1px;
       border-radius: 1px;
       width: 100%; }
@@ -1721,7 +1814,7 @@ section p span > span, section blockquote span > span {
   .nav-toggle--menuOpen {
     pointer-events: none; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .line {
-      background: #181617;
+      background: #131112;
       opacity: 0; }
     .nav-toggle--menuOpen .nav-toggle__abbreviation, .nav-toggle--menuOpen .nav-toggle__count {
       opacity: 0; }
@@ -1742,10 +1835,12 @@ section p span > span, section blockquote span > span {
 
 .next-project {
   position: relative;
-  background: #181617;
+  background: #131112;
   cursor: none; }
-  .next-project a {
-    cursor: none; }
+  .next-project i {
+    position: absolute;
+    right: 0;
+    top: 12px; }
   .next-project h1 {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
   .next-project section {
@@ -1756,14 +1851,200 @@ section p span > span, section blockquote span > span {
     height: 60vh;
     transform: translate3d(0, -5vh, 0); }
 
-.react-parallax {
-  overflow: hidden;
-  z-index: 1; }
-  .react-parallax .nav-toggle {
-    z-index: 999; }
-  .react-parallax .grid--lines {
-    opacity: .06; }
-  .react-parallax-contents, .react-parallax-content {
+.parallax-header--hidden h1 > span > span {
+  animation-name: ghostOut;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+
+.parallax-header--hidden h1 > span:nth-child(1) span {
+  animation-delay: 0.12s; }
+
+.parallax-header--hidden h1 > span:nth-child(2) span {
+  animation-delay: 0.24s; }
+
+.parallax-header--hidden h1 > span:nth-child(3) span {
+  animation-delay: 0.36s; }
+
+.parallax-header--hidden h1 > span:nth-child(4) span {
+  animation-delay: 0.48s; }
+
+.parallax-header--hidden h1 > span:nth-child(5) span {
+  animation-delay: 0.6s; }
+
+.parallax-header--hidden h1 > span:nth-child(6) span {
+  animation-delay: 0.72s; }
+
+.parallax-header--hidden h1 > span:nth-child(7) span {
+  animation-delay: 0.84s; }
+
+.parallax-header--hidden h1 > span:nth-child(8) span {
+  animation-delay: 0.96s; }
+
+.parallax-header--hidden h1 > span:nth-child(9) span {
+  animation-delay: 1.08s; }
+
+.parallax-header--hidden h1 > span:nth-child(10) span {
+  animation-delay: 1.2s; }
+
+.parallax-header--hidden h1 > span:nth-child(11) span {
+  animation-delay: 1.32s; }
+
+.parallax-header--hidden h1 > span:nth-child(12) span {
+  animation-delay: 1.44s; }
+
+.parallax-header--hidden h1 > span:nth-child(13) span {
+  animation-delay: 1.56s; }
+
+.parallax-header--hidden h1 > span:nth-child(14) span {
+  animation-delay: 1.68s; }
+
+.parallax-header--hidden h1 > span:nth-child(15) span {
+  animation-delay: 1.8s; }
+
+.parallax-header--hidden h1 > span:nth-child(16) span {
+  animation-delay: 1.92s; }
+
+.parallax-header--hidden h1 > span:nth-child(17) span {
+  animation-delay: 2.04s; }
+
+.parallax-header--hidden h1 > span:nth-child(18) span {
+  animation-delay: 2.16s; }
+
+.parallax-header--hidden h1 > span:nth-child(19) span {
+  animation-delay: 2.28s; }
+
+.parallax-header--hidden h1 > span:nth-child(20) span {
+  animation-delay: 2.4s; }
+
+.parallax-header--hidden h1 > span:nth-child(21) span {
+  animation-delay: 2.52s; }
+
+.parallax-header--hidden h1 > span:nth-child(22) span {
+  animation-delay: 2.64s; }
+
+.parallax-header--hidden h1 > span:nth-child(23) span {
+  animation-delay: 2.76s; }
+
+.parallax-header--hidden h1 > span:nth-child(24) span {
+  animation-delay: 2.88s; }
+
+.parallax-header--hidden h1 > span:nth-child(25) span {
+  animation-delay: 3s; }
+
+.parallax-header--hidden h1 > span:nth-child(26) span {
+  animation-delay: 3.12s; }
+
+.parallax-header--hidden h1 > span:nth-child(27) span {
+  animation-delay: 3.24s; }
+
+.parallax-header--hidden h1 > span:nth-child(28) span {
+  animation-delay: 3.36s; }
+
+.parallax-header--hidden h1 > span:nth-child(29) span {
+  animation-delay: 3.48s; }
+
+.parallax-header--hidden h1 > span:nth-child(30) span {
+  animation-delay: 3.6s; }
+
+.parallax-header--hidden h1 > span:nth-child(31) span {
+  animation-delay: 3.72s; }
+
+.parallax-header--hidden h1 > span:nth-child(32) span {
+  animation-delay: 3.84s; }
+
+.parallax-header--hidden h1 > span:nth-child(33) span {
+  animation-delay: 3.96s; }
+
+.parallax-header--hidden h1 > span:nth-child(34) span {
+  animation-delay: 4.08s; }
+
+.parallax-header--hidden h1 > span:nth-child(35) span {
+  animation-delay: 4.2s; }
+
+.parallax-header--hidden h1 > span:nth-child(36) span {
+  animation-delay: 4.32s; }
+
+.parallax-header--hidden h1 > span:nth-child(37) span {
+  animation-delay: 4.44s; }
+
+.parallax-header--hidden h1 > span:nth-child(38) span {
+  animation-delay: 4.56s; }
+
+.parallax-header--hidden h1 > span:nth-child(39) span {
+  animation-delay: 4.68s; }
+
+.parallax-header--hidden h1 > span:nth-child(40) span {
+  animation-delay: 4.8s; }
+
+.parallax-header--hidden h1 > span:nth-child(41) span {
+  animation-delay: 4.92s; }
+
+.parallax-header--hidden h1 > span:nth-child(42) span {
+  animation-delay: 5.04s; }
+
+.parallax-header--hidden h1 > span:nth-child(43) span {
+  animation-delay: 5.16s; }
+
+.parallax-header--hidden h1 > span:nth-child(44) span {
+  animation-delay: 5.28s; }
+
+.parallax-header--hidden h1 > span:nth-child(45) span {
+  animation-delay: 5.4s; }
+
+.parallax-header--hidden h1 > span:nth-child(46) span {
+  animation-delay: 5.52s; }
+
+.parallax-header--hidden h1 > span:nth-child(47) span {
+  animation-delay: 5.64s; }
+
+.parallax-header--hidden h1 > span:nth-child(48) span {
+  animation-delay: 5.76s; }
+
+.parallax-header--hidden h1 > span:nth-child(49) span {
+  animation-delay: 5.88s; }
+
+.parallax-header--hidden h1 > span:nth-child(50) span {
+  animation-delay: 6s; }
+
+.parallax-header--hidden h1 > span:nth-child(51) span {
+  animation-delay: 6.12s; }
+
+.parallax-header--hidden h1 > span:nth-child(52) span {
+  animation-delay: 6.24s; }
+
+.parallax-header--hidden h1 > span:nth-child(53) span {
+  animation-delay: 6.36s; }
+
+.parallax-header--hidden h1 > span:nth-child(54) span {
+  animation-delay: 6.48s; }
+
+.parallax-header--hidden h1 > span:nth-child(55) span {
+  animation-delay: 6.6s; }
+
+.parallax-header--hidden h1 > span:nth-child(56) span {
+  animation-delay: 6.72s; }
+
+.parallax-header--hidden h1 > span:nth-child(57) span {
+  animation-delay: 6.84s; }
+
+.parallax-header--hidden h1 > span:nth-child(58) span {
+  animation-delay: 6.96s; }
+
+.parallax-header--hidden h1 > span:nth-child(59) span {
+  animation-delay: 7.08s; }
+
+.parallax-header--hidden h1 > span:nth-child(60) span {
+  animation-delay: 7.2s; }
+
+.parallax-header .nav-toggle {
+  z-index: 999; }
+
+.parallax-header .grid--lines {
+  opacity: .06; }
+
+.parallax-header .react-parallax {
+  z-index: 1;
+  overflow: hidden; }
+  .parallax-header .react-parallax-contents, .parallax-header .react-parallax-content {
     position: relative;
     height: calc(100vh + 1px);
     opacity: 1;
@@ -1776,22 +2057,23 @@ section p span > span, section blockquote span > span {
     -ms-flex-pack: center;
     justify-content: center;
     text-align: left; }
-    .react-parallax-contents h1, .react-parallax-contents h2, .react-parallax-contents h3, .react-parallax-contents h4, .react-parallax-contents h5, .react-parallax-contents p, .react-parallax-content h1, .react-parallax-content h2, .react-parallax-content h3, .react-parallax-content h4, .react-parallax-content h5, .react-parallax-content p {
+    .parallax-header .react-parallax-contents h1, .parallax-header .react-parallax-contents h2, .parallax-header .react-parallax-contents h3, .parallax-header .react-parallax-contents h4, .parallax-header .react-parallax-contents h5, .parallax-header .react-parallax-contents p, .parallax-header .react-parallax-content h1, .parallax-header .react-parallax-content h2, .parallax-header .react-parallax-content h3, .parallax-header .react-parallax-content h4, .parallax-header .react-parallax-content h5, .parallax-header .react-parallax-content p {
       color: #F8FBF7; }
-      .react-parallax-contents h1 span, .react-parallax-contents h2 span, .react-parallax-contents h3 span, .react-parallax-contents h4 span, .react-parallax-contents h5 span, .react-parallax-contents p span, .react-parallax-content h1 span, .react-parallax-content h2 span, .react-parallax-content h3 span, .react-parallax-content h4 span, .react-parallax-content h5 span, .react-parallax-content p span {
+      .parallax-header .react-parallax-contents h1 span, .parallax-header .react-parallax-contents h2 span, .parallax-header .react-parallax-contents h3 span, .parallax-header .react-parallax-contents h4 span, .parallax-header .react-parallax-contents h5 span, .parallax-header .react-parallax-contents p span, .parallax-header .react-parallax-content h1 span, .parallax-header .react-parallax-content h2 span, .parallax-header .react-parallax-content h3 span, .parallax-header .react-parallax-content h4 span, .parallax-header .react-parallax-content h5 span, .parallax-header .react-parallax-content p span {
         white-space: pre; }
-  .react-parallax-content {
+  .parallax-header .react-parallax-content {
     position: absolute !important;
     top: 0; }
-  @media screen and (max-width: 800px) {
-    .react-parallax .react-parallax-content, .react-parallax .react-parallax-contents {
-      height: calc(100vh - 1px); } }
+
+@media screen and (max-width: 800px) {
+  .parallax-header .react-parallax-content, .parallax-header .react-parallax-contents {
+    height: calc(100vh - 1px); } }
 
 .project-card {
   position: relative; }
   .project-card a {
     border: none;
-    color: #181617; }
+    color: #131112; }
   .project-card h1, .project-card h2, .project-card h3, .project-card h4, .project-card h5, .project-card h6, .project-card blockquote {
     margin: 0; }
   .project-card i {
@@ -1843,18 +2125,17 @@ section p span > span, section blockquote span > span {
   0%, 60% {
     transform-origin: bottom;
     transform: scaleY(1); }
-  70% {
+  75% {
     transform-origin: bottom;
     transform: scaleY(0); }
-  71% {
+  76% {
     transform: scaleY(0);
     transform-origin: top; }
-  81%, 100% {
+  91%, 100% {
     transform: scaleY(1);
     transform-origin: top; } }
 
 .scroll-arrow {
-  cursor: pointer;
   pointer-events: auto;
   position: absolute;
   top: calc(100vh - 90px);
@@ -1918,7 +2199,7 @@ section p span > span, section blockquote span > span {
     height: 100%;
     width: 100%;
     background: white;
-    animation: drawInOut cubic-bezier(0.86, 0, 0.07, 1) 5s infinite; }
+    animation: drawInOut cubic-bezier(0.86, 0, 0.07, 1) 3.6s infinite; }
   .scroll-arrow--hidden h5 span, .scroll-arrow--hidden h6 span {
     opacity: 0;
     -ms-transform: translateY(12px);
@@ -1936,8 +2217,8 @@ section p span > span, section blockquote span > span {
       .scroll-arrow .scroll-arrow__seperator-container {
         height: 48px; } }
 
-.sidebar-container {
-  height: calc(100vh - 108px);
+.sidebar {
+  height: 100vh;
   width: 24px;
   position: fixed;
   pointer-events: auto;
@@ -1948,120 +2229,120 @@ section p span > span, section blockquote span > span {
   -ms-flex-pack: end;
   justify-content: flex-end;
   right: 0;
-  top: 108px; }
-  .sidebar-container p {
-    font-weight: 700;
-    letter-spacing: 0.012em;
-    color: #F8FBF7; }
-  .sidebar-container .sidebar {
+  top: 0px; }
+  .sidebar__inner {
+    margin-top: 108px;
     width: 94px;
     padding: 0;
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
-  .sidebar-container .sidebar-item {
+  .sidebar__item {
     width: 100%;
     height: 40px;
     border-bottom: none;
     overflow: hidden;
     position: relative;
     transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s; }
-  .sidebar-container .sidebar-item a {
-    width: 100%;
-    height: 100%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    border: none;
-    pointer-events: none; }
-    .sidebar-container .sidebar-item a.active:after {
-      content: '';
-      display: block;
-      margin-top: 2px;
-      margin-left: 6px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #ff3636; }
-  .sidebar-container .sidebar-number, .sidebar-container .sidebar-label {
-    font-family: "campton"; }
-  .sidebar-container .sidebar-number {
-    color: #181617;
+    .sidebar__item a {
+      width: 100%;
+      height: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      border: none;
+      pointer-events: none; }
+      .sidebar__item a.active .sidebar__dash {
+        margin: 0;
+        width: 34px;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-duration: 0.3s;
+        transition-property: width; }
+      .sidebar__item a.active:after {
+        content: '';
+        display: block;
+        margin-top: -2px;
+        margin-left: 6px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ff3636; }
+  .sidebar__number, .sidebar__label {
+    font-family: "Campton"; }
+  .sidebar__number {
+    color: #131112;
     margin: 0 16px 0 32px;
     opacity: 0;
     transform: translate3d(32px, 0, 0);
     display: inline-block; }
-  .sidebar-container .sidebar-label {
+  .sidebar__label {
     position: relative;
-    color: #181617;
+    color: #131112;
     padding: 0 0 0 48px;
     margin: 0;
     opacity: 0;
     display: inline-block;
     white-space: nowrap; }
-  .sidebar-container .sidebar-dash {
+  .sidebar__dash {
     margin: 0 0 0 16px;
     width: 16px;
     height: 1px;
-    background-color: #181617;
+    background-color: #131112;
     display: inline-block;
     position: absolute;
     top: 50%;
     left: 72px; }
-  .sidebar-container .sidebar-border {
+  .sidebar__border {
     display: block;
     position: absolute;
     bottom: 0;
     right: 0;
     width: 0%;
     height: 1px;
-    background: rgba(24, 22, 23, 0.06);
+    background: rgba(19, 17, 18, 0.06);
     opacity: 0; }
-    .sidebar-container .sidebar-border__top {
-      bottom: auto;
-      top: 0; }
-  .sidebar-container .sidebar-item a.active .sidebar-dash {
-    margin: 0;
-    width: 34px;
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-duration: 0.3s;
-    transition-property: width; }
-  .sidebar-container--white .sidebar-dash {
+  .sidebar__border--top {
+    bottom: auto;
+    top: 0;
+    display: none; }
+  .sidebar--white .sidebar__dash {
     background: #F8FBF7; }
-  .sidebar-container--white.sidebar-container--open .sidebar-dash {
-    background: #181617; }
-  .sidebar-container--open {
-    min-width: 280px; }
-    .sidebar-container--open .sidebar {
-      width: 100%;
+  .sidebar--open {
+    min-width: 40vw; }
+    .sidebar--open .sidebar__number, .sidebar--open .sidebar__label {
+      color: #F8FBF7; }
+    .sidebar--open .sidebar__inner {
+      width: 50%;
       transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s;
-      background: #f8fbf7; }
-      .sidebar-container--open .sidebar .sidebar-item {
+      background: #131112; }
+      .sidebar--open .sidebar__inner .sidebar__item {
         height: 60px;
         transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
-        .sidebar-container--open .sidebar .sidebar-item a {
-          cursor: pointer;
+        .sidebar--open .sidebar__inner .sidebar__item a {
           pointer-events: auto; }
-        .sidebar-container--open .sidebar .sidebar-item .sidebar-number {
+        .sidebar--open .sidebar__inner .sidebar__item .sidebar__number {
           opacity: 1;
           transform: translate3d(0, 0, 0); }
-        .sidebar-container--open .sidebar .sidebar-item .sidebar-dash {
+        .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
+          background: rgba(248, 251, 247, 0.06); }
+        .sidebar--open .sidebar__inner .sidebar__item .sidebar__dash {
+          background: #F8FBF7;
           width: 34px;
           margin: 0; }
-        .sidebar-container--open .sidebar .sidebar-item .sidebar-label {
+        .sidebar--open .sidebar__inner .sidebar__item .sidebar__label {
           opacity: 1; }
-        .sidebar-container--open .sidebar .sidebar-item .sidebar-border {
+        .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
           opacity: 1;
           width: 100%; }
   @media screen and (max-width: 800px) {
-    .sidebar-container {
-      width: 24px;
-      top: 84px;
-      height: calc(100vh - 84px); }
-      .sidebar-container .sidebar-item {
+    .sidebar {
+      width: 24px; }
+      .sidebar .sidebar__inner {
+        margin-top: 84px; }
+      .sidebar .sidebar__item {
         height: 32px; }
-      .sidebar-container.sidebar-container--open {
+      .sidebar.sidebar--open {
         min-width: 252px; }
-        .sidebar-container.sidebar-container--open .sidebar-item {
+        .sidebar.sidebar--open .sidebar__item {
           height: 8vh; } }
 
 /* Responsive */
@@ -2237,7 +2518,7 @@ section p span > span, section blockquote span > span {
   section {
     padding: 60px 0; }
   h1 {
-    font-size: 11vw;
+    font-size: 13vw;
     margin-left: 0;
     margin-bottom: 24px; }
   h2 {

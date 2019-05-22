@@ -6,7 +6,10 @@ import { connect } from 'react-redux'
 import splitLetter from '../services/splitLetter'
 import detectMobile from '../services/detectMobile'
 
-export default class ScrollArrow extends Component {
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+
+
+class ScrollArrow extends Component {
 
 	constructor(props) {
 		super(props);
@@ -27,7 +30,7 @@ export default class ScrollArrow extends Component {
 	}
 
 	handleScroll = (e) => {
-		(document.body.scrollTop > (window.innerHeight / 4)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
+		(document.body.scrollTop > (window.innerHeight / 2)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
 	}
 
 	render() {
@@ -39,7 +42,7 @@ export default class ScrollArrow extends Component {
 		})
 
 		return (
-			<div className={classnames}>				
+			<div className={classnames}  onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover}>				
 				<div className="scroll-arrow__seperator-container">
 					<div className="scroll-arrow__seperator"/>
 				</div>
@@ -51,3 +54,14 @@ export default class ScrollArrow extends Component {
 }
 
 
+const mapStateToProps = state => ({
+	isCursorHovering: state.isCursorHovering,
+})
+
+const mapDispatchToProps = dispatch => ({
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ScrollArrow)

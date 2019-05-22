@@ -2,18 +2,20 @@ import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 import counterReducer from './counter'
 import abbreviationReducer from './abbreviation'
-import colorReducer from './color'
+import cursorReducer from './cursor'
 import navTakeoverReducer from './navTakeover'
 import navToggleReducer from './navToggle'
+import primaryPanelReducer from './primaryPanel'
 import secondaryPanelReducer from './secondaryPanel'
 import sidebarReducer from './sidebar'
 
 const rootReducer = (history) => combineReducers({
 	count: counterReducer,
 	abbreviation: abbreviationReducer,
-	color: colorReducer,
-	isTakeoverOpen: navTakeoverReducer,
+	isCursorHovering: cursorReducer,
 	isToggleHovered: navToggleReducer,
+	isTakeoverOpen: navTakeoverReducer,
+	isPrimaryPanelOpen: primaryPanelReducer,
 	isSecondaryPanelOpen: secondaryPanelReducer,
 	isSidebarOpen: sidebarReducer,
 	router: connectRouter(history)

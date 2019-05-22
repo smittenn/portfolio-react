@@ -4,8 +4,10 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
+import { openPrimaryPanel, closePrimaryPanel } from "../actions/primaryPanel"
 import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPanel"
 import { hoverToggle, unhoverToggle } from "../actions/navToggle"
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
 import splitLetter from '../services/splitLetter'
 
@@ -46,9 +48,20 @@ class Nav extends Component {
 
 	setMenuClosed = () => {
 		this.props.closeTakeover();
+		this.props.setCursorUnhover();
 		// this.props.closeSecondaryPanel();
 
-		setTimeout(() => { this.props.unhoverToggle(); }, 900)
+		setTimeout(() => { this.props.unhoverToggle(); }, 1200)
+	}
+
+	setOpenSecondaryPanel = () => {
+		this.props.openSecondaryPanel();
+		this.props.closePrimaryPanel();
+	}
+
+	setCloseSecondaryPanel = () => {
+		this.props.openPrimaryPanel();
+		this.props.closeSecondaryPanel();
 	}
 	
 	setIndexHovered = (event) => {
@@ -68,7 +81,6 @@ class Nav extends Component {
 	}
 
 	getActiveIndex = () => {
-		// console.log(this.props.abbreviation)
 		switch (this.props.abbreviation) {
 			case 'H':
 				return 0;
@@ -87,6 +99,7 @@ class Nav extends Component {
 		const classnames = classNames({
 			"nav-takeover": true,
 			"nav-takeover--menuOpen": this.props.isTakeoverOpen,
+			"nav-takeover--primaryPanelOpen": this.props.isPrimaryPanelOpen,
 			"nav-takeover--secondaryPanelOpen": this.props.isSecondaryPanelOpen,
 		})
 
@@ -96,6 +109,31 @@ class Nav extends Component {
 		}
 
 		const navData = {
+			primary : [
+				{
+					name: "Home",
+					to: "/",
+					abbreviation: "H",
+				},
+				{
+					name: "Projects",
+				},
+				{
+					name: "Process",
+					to: "/process",
+					abbreviation: "P",
+				},
+				{
+					name: "About Me",
+					to: "about-me",
+					abbreviation: "A",
+				},
+				{
+					name: "Resume",
+					to: "/resume",
+					abbreviation: "R",
+				},
+			],
 			secondary: [
 				{ 
 					name: "American Made",
@@ -141,11 +179,32 @@ class Nav extends Component {
 		}
 
 		const secondaryNavItems = navData.secondary.map((item, i) => 
-			<li key={i} onClick={this.setMenuClosed}>
-				<NavLink to={item.to} onMouseOver={this.setIndexHovered}>
-					<h4>{item.name}</h4>
+			<li key={i}>
+				<NavLink to={item.to} onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }}
+				 onClick={this.setMenuClosed}>
+					<h4 className={classNames({ 'hover': i == indexHovered })}>{item.name}</h4>
 				</NavLink>
 			</li>
+		)
+
+		const primaryNavItems = navData.primary.map((item, i) => 
+			(i != 1) ? (
+				<li key={i}>
+					<NavLink to={item.to} 
+					onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
+					onMouseLeave={ this.props.setCursorUnhover } 
+					onClick={this.setMenuClosed}>
+						<h3 className={classNames({ 'active': abbreviation == item.abbreviation, 'hover': i == indexHovered })}>{item.name}</h3>
+					</NavLink>
+				</li>
+			) : (
+				<li key={i} 
+				onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
+				onMouseLeave={ this.props.setCursorUnhover } 
+				onClick={this.props.isSecondaryPanelOpen ? this.setCloseSecondaryPanel : this.setOpenSecondaryPanel}>
+					<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g), 'hover': i == indexHovered })}>{item.name}</h3>
+				</li>
+			)
 		)
 
 		return (
@@ -156,27 +215,13 @@ class Nav extends Component {
 						<div className="nav-takeover__panels">
 							<div className="nav-takeover__panel">
 								<ul className="nav-takeover__items--secondary">
-									<li onClick={this.props.closeSecondaryPanel}>
+									<li onClick={this.setCloseSecondaryPanel}>
 										<h3><i className="iconcss icon-arrow-right"></i></h3>
 									</li>
 									{ secondaryNavItems }
 								</ul>
 								<ul className="nav-takeover__items--primary">
-									<li onClick={this.setMenuClosed}><NavLink to="/" onMouseOver={this.setIndexHovered}>
-										<h3 className={classNames({ 'active': abbreviation == 'H' })}>Home</h3>
-									</NavLink></li>
-									<li onMouseOver={this.setIndexHovered} onClick={this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel}>
-										<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g) })}>Projects</h3>
-									</li>
-		 							<li onClick={this.setMenuClosed}><NavLink to="/process" onMouseOver={this.setIndexHovered}>
-			 							<h3>Process</h3>
-		 							</NavLink></li>
-		 							<li onClick={this.setMenuClosed}><NavLink to="/about-me" onMouseOver={this.setIndexHovered}>
-			 							<h3>About me</h3>
-			 						</NavLink></li>
-		 							<li  onClick={this.setMenuClosed}><NavLink to="/resume" onMouseOver={this.setIndexHovered}>
-			 							<h3>Resume</h3>
-		 							</NavLink></li>
+									{ primaryNavItems }
 								</ul>
 								<div className="nav-takeover__line-container">
 									<div style={ lineAnimation } className="nav-takeover__line"></div>
@@ -193,18 +238,22 @@ class Nav extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
-	color: state.color,
 	isTakeoverOpen: state.isTakeoverOpen,
+	isPrimaryPanelOpen: state.isPrimaryPanelOpen,
 	isSecondaryPanelOpen: state.isSecondaryPanelOpen,
 })
 
 const mapDispatchToProps = dispatch => ({
 	openTakeover: () => dispatch(openTakeover()),
 	closeTakeover: () => dispatch(closeTakeover()),
+	openPrimaryPanel: () => dispatch(openPrimaryPanel()),
+	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
 	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
 	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
 	hoverToggle: () => dispatch(hoverToggle()),
 	unhoverToggle: () => dispatch(unhoverToggle()),
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
 })
 
 

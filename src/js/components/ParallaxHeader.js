@@ -6,6 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
 import GridLines from "./GridLines"
+import ScrollArrow from "./ScrollArrow"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -23,6 +24,7 @@ export default class ParallaxHeader extends Component {
 			isMobile: detectMobile(),
 			isAnimating: detectMobile(),
 			scrollAmount: 0,
+			isHidden: false,
 		}
 	}
 
@@ -48,15 +50,16 @@ export default class ParallaxHeader extends Component {
 	}
 
 	handleScroll = (event) => {
-		this.setState({
-			scrollAmount: window.pageYOffset
-		});
+		(document.body.scrollTop > (window.innerHeight / 4)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
+		// this.setState({
+		// 	scrollAmount: window.pageYOffset
+		// });
 	}
 
 
 	render() {
 
-		const { bgImage, bgColor, headerText, strength, name, onSetActive, sections, activeSection } = this.props;
+		const { bgImage, bgColor, headerText, strength, name, nextName, onSetActive, sections, activeSection } = this.props;
 		const { isMobile, isAnimating } = this.state;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -67,14 +70,16 @@ export default class ParallaxHeader extends Component {
 		isMobile ? (str /= 2) : null
 
 		const classnames = classNames({
-			"react-parallax-contents" : true,
-			// "react-parallax-contents--animating" : isAnimating,			
+			"parallax-header" : true,
+			"parallax-header--hidden" : this.state.isHidden,
 		})
 
-		const style = {
-			opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
-			transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
-		};
+		// const style = {
+		// 	opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
+		// 	transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
+		// };
+
+		const style = {}
 
 		let updatedText = [];
 
@@ -87,30 +92,32 @@ export default class ParallaxHeader extends Component {
 
 
 		return (
-			<div>
+			<div className={classnames}>
 				<Parallax 
 				bgImage={imageUrl} 
 				blur={null} 
 				strength={str}
 				renderLayer={percentage => {
 					return (
-						<div className={classnames} style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage + 0.2})`, 'mixBlendMode': 'none' }}></div>
+						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage - 0.1})`, 'mixBlendMode': 'multiply' }}></div>
 					)
 				}}>
-				<GridLines/>
-				<div className="grid">
-					{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-						<h1 className="no-mb">{updatedText}</h1>
+					{/*<GridLines/>*/}
+					<div className="grid">
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<h1 className="no-mb">{updatedText}</h1>
+						</div>
 					</div>
-				</div>
 
-				<div className="clip-wrapper">
-					<Sidebar sections={sections} activeSection={activeSection}/>
-					<NavToggle black={false}/>
-				</div>
+					<div className="clip-wrapper">
+						<Sidebar sections={sections} activeSection={activeSection}/>
+						<NavToggle black={false}/>
+					</div>
 				</Parallax>
-				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={onSetActive}/>
+
+				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}/>
+				
 			</div>
 		);
 	}

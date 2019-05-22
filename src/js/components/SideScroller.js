@@ -29,6 +29,11 @@ export default class SideScroller extends Component {
 	render() {
 		const { isMobile } = this.state;
 
+		const classnames = classNames({
+			"side-scroller": true,
+		})
+
+
 		const margin = isMobile ? 12 : 60;
 
 		const style = {
@@ -36,7 +41,7 @@ export default class SideScroller extends Component {
 			display: 'flex',
 			width: '100%',
 			justifyContent: 'space-between',
-			WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 97.5%, transparent)',
+			WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 95%, transparent)',
 		}
 
 		const items = this.props.children.map((item, i) => {
@@ -47,7 +52,7 @@ export default class SideScroller extends Component {
 		})
 		
 		return (
-			<div style={style}>
+			<div style={style} className={classnames}>
 				{ items }
 				<div style={{ minWidth: margin + 'px'}}/>
 				{/*<h2 style={{ position: 'absolute'}}><i className="iconcss icon-arrow-right"/></h2>*/}

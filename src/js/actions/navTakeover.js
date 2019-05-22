@@ -1,11 +1,7 @@
 export const openTakeover = () => ({
-	type: 'OPEN',
-})
-
-export const openSecondaryPanel = () => ({
-	type: 'OPEN_SECONDARY',
+	type: 'OPEN_TAKEOVER',
 })
 
 export const closeTakeover = () => ({
-	type: 'CLOSE',
+	type: 'CLOSE_TAKEOVER',
 })

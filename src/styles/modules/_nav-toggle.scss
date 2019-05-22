@@ -49,6 +49,7 @@ $baseclass: nav-toggle;
 	}
 	
 	.#{$baseclass}__count {
+		overflow: hidden;
 		margin-top: 18px;
 		transition-delay: 0.09s;
 
@@ -64,14 +65,14 @@ $baseclass: nav-toggle;
 	&--countIsIncreasing {
 		.#{$baseclass}__count {
 			span {
-				animation: increasingNum $duration-fast $easing1;
+				animation: increasingNum $duration-medium $easing5;
 			}
 		}
 	}
 	&--countIsDecreasing {
 		.#{$baseclass}__count {
 			span {
-				animation: decreasingNum $duration-fast $easing1;
+				animation: decreasingNum $duration-medium $easing5;
 			}
 		}
 	}

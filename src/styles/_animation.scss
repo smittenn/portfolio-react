@@ -1,11 +1,22 @@
-@keyframes ghostText {
+@keyframes ghostIn {
 	0% {
-		opacity: 0;
-		transform: translate3d(0,100px,0) skewY(-6deg);
+		// opacity: 0;
+		transform: translate3d(0,120px,0) skewY(0deg);
 	}
 	100% {
 		opacity: 1;
 		transform: none;
+	}
+}
+
+@keyframes ghostOut {
+	0% {
+		// opacity: 1;
+		transform: none;
+	}
+	100% {
+		// opacity: 0;
+		transform: translate3d(0,120px,0) skewY(0deg);
 	}
 }
 
@@ -17,15 +28,16 @@
 		> span {
 			overflow: hidden;
 			// transition: opacity $easing1 $duration-slow, transform $easing1 $duration-slowest;
-			transition: none;
-			transform: none !important;
-			opacity: 1 !important;
+			// transition: none;
+			// transform: none !important;
+			// opacity: 1 !important;
 
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) {
 					transition-delay: (#{0.0 + ($i * 0.09)}s);
 				}
 			}
+
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) span {
 					animation-delay: (#{0.6 + ($i * 0.12)}s);
@@ -35,7 +47,7 @@
 		}
 
 		> span > span {
-			animation: ghostText $duration-slow $easing1;
+			animation: ghostIn $duration-slow $easing1;
 			animation-fill-mode: both;
 
 
@@ -51,7 +63,7 @@
 // .react-parallax-contents {
 // 	&--animating {
 // 		h1 span {
-// 			animation: ghostText $duration-slow $easing1;
+// 			animation: ghostIn $duration-slow $easing1;
 // 			animation-fill-mode: both;
 
 // 			@for $i from 1 through 60 {
@@ -71,11 +83,19 @@ section {
 		transform: translate3d(0,120px,0);
 	}
 
+	blockquote {
+		transition: none;
+		opacity: 0;
+	}
+
 	.grid__item {
 		@for $i from 1 through 60 {
 			&:nth-child(#{$i}) {
 				img {
 					transition-delay: (#{0.9 + ($i * 0.3)}s);
+				}
+				blockquote {
+					transition-delay: (#{0.3 + ($i * 0.3)}s);
 				}
 			}
 		}
@@ -91,9 +111,9 @@ section {
 		}
 	}
 
-	h1 span > span{
-		transform: translate3d(0,100px,0) skewY(6deg);
-	}
+	// h1 span > span{
+	// 	transform: translate3d(0,100px,0) skewY(6deg);
+	// }
 
 	h2 span > span{
 		transform: translate3d(0,90px,0) skewX(6deg);
@@ -133,6 +153,9 @@ section {
 		}
 
 		p, blockquote {
+			opacity: 1;
+			transition: all $duration-slow $easing1;
+
 			span {
 				@for $i from 1 through 120 {
 					&:nth-child(#{$i}) span {

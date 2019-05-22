@@ -1,7 +1,7 @@
 export const hoverToggle = () => ({
-	type: 'HOVER',
+	type: 'HOVER_TOGGLE',
 })
 
 export const unhoverToggle = () => ({
-	type: 'UNHOVER',
+	type: 'UNHOVER_TOGGLE',
 })

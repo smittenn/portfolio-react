@@ -61,7 +61,7 @@ export default class ProjectCard extends Component {
 							<h4>{name}</h4>
 							<blockquote>{tags.join(", ")}</blockquote>
 						</div>
-						<i className="iconcss icon-arrow-right"></i>
+						{/*<i className="iconcss icon-arrow-right"></i>*/}
 					</div>
 				</NavLink>
 			</div>

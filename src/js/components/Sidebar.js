@@ -48,27 +48,27 @@ class Sidebar extends Component {
 		const { isBlack, sections, activeSection } = this.props;
 
 		const classnames = classNames({
-			"sidebar-container": true,
-			"sidebar-container--white": !isBlack,
-			"sidebar-container--black": isBlack,
-			"sidebar-container--open": this.props.isSidebarOpen,
+			"sidebar": true,
+			"sidebar--white": !isBlack,
+			"sidebar--black": isBlack,
+			"sidebar--open": this.props.isSidebarOpen,
 		})
 
 		const sidebarItems = sections.map((section, i) => 
-			<li key={i} className="sidebar-item" >
+			<li key={i} className="sidebar__item" >
 				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutQuint"} duration={1200} className={classNames({ "active": sections[i] == activeSection })} onClick={isMobile ? this.props.closeSidebar : null}>
-					{ i == 0 ? <div className="sidebar-border sidebar-border__top"/> : null }
-					<h6 className="sidebar-number">{pad(i + 1, 2)}.</h6>
-					<div className="sidebar-dash"></div>
-					<h6 className="sidebar-label">{section}</h6>
-					<div className="sidebar-border"/>
+					{ i == 0 ? <div className="sidebar__border sidebar__border--top"/> : null }
+					<h7 className="sidebar__number uppercase">{pad(i + 1, 2)}.</h7>
+					<div className="sidebar__dash"></div>
+					<h7 className="sidebar__label uppercase">{section}</h7>
+					<div className="sidebar__border"/>
 				</Link>
 			</li>
 		)
 		
 		return (
 			<div className={classnames} ref="sidebar">
-				<ul className="sidebar" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={isMobile ? null : this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar}>
+				<ul className="sidebar__inner" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={isMobile ? null : this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar}>
 					{sidebarItems}
 				</ul>
 			</div>

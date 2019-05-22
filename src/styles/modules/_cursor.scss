@@ -8,14 +8,14 @@ $baseclass: cursor;
 	opacity: 0;
 	// transition: opacity $easing4 $duration-slow;
 
-	&__circle, &__lines {
-		position: absolute;
+	&__outer, &__inner {
+		position: fixed;
 		mix-blend-mode: difference;
 		transform: translate(-50% , -50%);
 		@include zIndexClosest();
 	}
 
-	&__circle {
+	&__outer {
 		transition: all $easing4 $duration-fast;
 		border: solid 1px $brand-white;
 		width: 48px;
@@ -24,7 +24,8 @@ $baseclass: cursor;
 		border-radius: 50%;
 	}
 
-	&__lines {
+	&__inner {
+		transition: width $easing2 $duration-medium, height $easing2 $duration-medium;
 		height: 9px;
 		width: 9px;
 		background: $brand-white;
@@ -40,6 +41,19 @@ $baseclass: cursor;
 
 	&--visible {
 		opacity: 1;
+	}
+
+	&--hovering {
+		.#{$baseclass}__outer {
+			width: 60px;
+			height: 60px;
+			// opacity: 0;
+		}
+
+		.#{$baseclass}__inner {
+			width: 40px;
+			height: 40px;
+		}
 	}
 
 		// &:first-child {

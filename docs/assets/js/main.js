@@ -36624,7 +36624,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":161,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
+},{"./routes":165,"connected-react-router":11,"prop-types":36,"react":113}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36759,21 +36759,15 @@ var setCounter = exports.setCounter = function setCounter(value) {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var openTakeover = exports.openTakeover = function openTakeover() {
+var setCursorHover = exports.setCursorHover = function setCursorHover() {
 	return {
-		type: 'OPEN'
+		type: 'CURSOR_HOVER'
 	};
 };
 
-var openSecondaryPanel = exports.openSecondaryPanel = function openSecondaryPanel() {
+var setCursorUnhover = exports.setCursorUnhover = function setCursorUnhover() {
 	return {
-		type: 'OPEN_SECONDARY'
-	};
-};
-
-var closeTakeover = exports.closeTakeover = function closeTakeover() {
-	return {
-		type: 'CLOSE'
+		type: 'CURSOR_UNHOVER'
 	};
 };
 
@@ -36783,15 +36777,15 @@ var closeTakeover = exports.closeTakeover = function closeTakeover() {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var hoverToggle = exports.hoverToggle = function hoverToggle() {
+var openTakeover = exports.openTakeover = function openTakeover() {
 	return {
-		type: 'HOVER'
+		type: 'OPEN_TAKEOVER'
 	};
 };
 
-var unhoverToggle = exports.unhoverToggle = function unhoverToggle() {
+var closeTakeover = exports.closeTakeover = function closeTakeover() {
 	return {
-		type: 'UNHOVER'
+		type: 'CLOSE_TAKEOVER'
 	};
 };
 
@@ -36801,19 +36795,55 @@ var unhoverToggle = exports.unhoverToggle = function unhoverToggle() {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+var hoverToggle = exports.hoverToggle = function hoverToggle() {
+	return {
+		type: 'HOVER_TOGGLE'
+	};
+};
+
+var unhoverToggle = exports.unhoverToggle = function unhoverToggle() {
+	return {
+		type: 'UNHOVER_TOGGLE'
+	};
+};
+
+},{}],133:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var openPrimaryPanel = exports.openPrimaryPanel = function openPrimaryPanel() {
+	return {
+		type: 'SHOW_PRIMARY'
+	};
+};
+
+var closePrimaryPanel = exports.closePrimaryPanel = function closePrimaryPanel() {
+	return {
+		type: 'HIDE_PRIMARY'
+	};
+};
+
+},{}],134:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 var openSecondaryPanel = exports.openSecondaryPanel = function openSecondaryPanel() {
 	return {
-		type: 'SHOW'
+		type: 'SHOW_SECONDARY'
 	};
 };
 
 var closeSecondaryPanel = exports.closeSecondaryPanel = function closeSecondaryPanel() {
 	return {
-		type: 'HIDE'
+		type: 'HIDE_SECONDARY'
 	};
 };
 
-},{}],133:[function(require,module,exports){
+},{}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36831,7 +36861,7 @@ var closeSidebar = exports.closeSidebar = function closeSidebar() {
 	};
 };
 
-},{}],134:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 'use strict';
 
 var _redux = require('redux');
@@ -36875,7 +36905,7 @@ var render = function render() {
 
 render();
 
-},{"../App":126,"../reducers":151,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],135:[function(require,module,exports){
+},{"../App":126,"../reducers":153,"connected-react-router":11,"history":24,"react":113,"react-dom":41,"react-redux":61,"redux":114}],137:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37006,7 +37036,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":165,"../services/palette":167,"classnames":7,"react":113}],136:[function(require,module,exports){
+},{"../services/hexToRgb":169,"../services/palette":171,"classnames":7,"react":113}],138:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37035,9 +37065,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import GridLines from "../components/GridLines"
-// import Sidebar from "../components/Sidebar"
-
 var Cursor = function (_Component) {
 	_inherits(Cursor, _Component);
 
@@ -37046,15 +37073,15 @@ var Cursor = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Cursor.__proto__ || Object.getPrototypeOf(Cursor)).call(this, props));
 
-		_this.setArrowPosition = function (event) {
+		_this.handleMouseMove = function (event) {
 			// console.log(event)
-			var pageX = event.pageX,
-			    pageY = event.pageY;
+			var clientX = event.clientX,
+			    clientY = event.clientY;
 
 
 			_this.setState({
-				arrowX: pageX,
-				arrowY: pageY,
+				arrowX: clientX,
+				arrowY: clientY,
 				isVisible: true
 			});
 		};
@@ -37076,15 +37103,24 @@ var Cursor = function (_Component) {
 	_createClass(Cursor, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
-			window.addEventListener('mousemove', this.setArrowPosition);
+			window.addEventListener('mousemove', this.handleMouseMove);
+			// window.addEventListener('scroll', this.handleScroll)
 		}
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
-			window.removeEventListener('mousemove', this.setArrowPosition);
+			window.removeEventListener('mousemove', this.handleMouseMove);
+			// window.removeEventListener('scroll', this.handleScroll)
 		}
 
-		// componentDidUpdate(prevProps) {}
+		// handleScroll = (event) => {
+		// 	// const { pageX, pageY } = event;
+
+		// 	this.setState({
+		// 		arrowY: window.scrollY,
+		// 		isVisible: true,
+		// 	})
+		// }
 
 	}, {
 		key: "render",
@@ -37099,14 +37135,15 @@ var Cursor = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"cursor": true,
-				"cursor--visible": this.state.isVisible
+				"cursor--visible": this.state.isVisible,
+				"cursor--hovering": this.props.isCursorHovering
 			});
 
 			return _react2.default.createElement(
 				"div",
 				{ className: classnames },
-				_react2.default.createElement("div", { className: "cursor__circle", style: { left: this.state.arrowX, top: this.state.arrowY } }),
-				_react2.default.createElement("div", { className: "cursor__lines", style: { left: this.state.arrowX, top: this.state.arrowY } })
+				_react2.default.createElement("div", { className: "cursor__outer", style: { left: this.state.arrowX, top: this.state.arrowY } }),
+				_react2.default.createElement("div", { className: "cursor__inner", style: { left: this.state.arrowX, top: this.state.arrowY } })
 			);
 		}
 	}]);
@@ -37114,9 +37151,27 @@ var Cursor = function (_Component) {
 	return Cursor;
 }(_react.Component);
 
-exports.default = Cursor;
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		isCursorHovering: state.isCursorHovering
+	};
+};
 
-},{"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],137:[function(require,module,exports){
+// const mapDispatchToProps = dispatch => ({
+// 	openTakeover: () => dispatch(openTakeover()),
+// 	closeTakeover: () => dispatch(closeTakeover()),
+// 	openPrimaryPanel: () => dispatch(openPrimaryPanel()),
+// 	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+// 	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
+// 	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
+// 	hoverToggle: () => dispatch(hoverToggle()),
+// 	unhoverToggle: () => dispatch(unhoverToggle()),
+// })
+
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Cursor);
+
+},{"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],139:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37180,7 +37235,7 @@ var GridLines = function (_Component) {
 
 exports.default = GridLines;
 
-},{"react":113}],138:[function(require,module,exports){
+},{"react":113}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37264,7 +37319,7 @@ var Image = function (_Component) {
 
 exports.default = Image;
 
-},{"classnames":7,"react":113}],139:[function(require,module,exports){
+},{"classnames":7,"react":113}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37287,9 +37342,13 @@ var _reactRedux = require('react-redux');
 
 var _navTakeover = require('../actions/navTakeover');
 
+var _primaryPanel = require('../actions/primaryPanel');
+
 var _secondaryPanel = require('../actions/secondaryPanel');
 
 var _navToggle = require('../actions/navToggle');
+
+var _cursor = require('../actions/cursor');
 
 var _splitLetter = require('../services/splitLetter');
 
@@ -37319,11 +37378,22 @@ var Nav = function (_Component) {
 
 		_this.setMenuClosed = function () {
 			_this.props.closeTakeover();
+			_this.props.setCursorUnhover();
 			// this.props.closeSecondaryPanel();
 
 			setTimeout(function () {
 				_this.props.unhoverToggle();
-			}, 900);
+			}, 1200);
+		};
+
+		_this.setOpenSecondaryPanel = function () {
+			_this.props.openSecondaryPanel();
+			_this.props.closePrimaryPanel();
+		};
+
+		_this.setCloseSecondaryPanel = function () {
+			_this.props.openPrimaryPanel();
+			_this.props.closeSecondaryPanel();
 		};
 
 		_this.setIndexHovered = function (event) {
@@ -37345,7 +37415,6 @@ var Nav = function (_Component) {
 		};
 
 		_this.getActiveIndex = function () {
-			// console.log(this.props.abbreviation)
 			switch (_this.props.abbreviation) {
 				case 'H':
 					return 0;
@@ -37400,6 +37469,7 @@ var Nav = function (_Component) {
 			var classnames = (0, _classnames2.default)({
 				"nav-takeover": true,
 				"nav-takeover--menuOpen": this.props.isTakeoverOpen,
+				"nav-takeover--primaryPanelOpen": this.props.isPrimaryPanelOpen,
 				"nav-takeover--secondaryPanelOpen": this.props.isSecondaryPanelOpen
 			});
 
@@ -37409,6 +37479,25 @@ var Nav = function (_Component) {
 			};
 
 			var navData = {
+				primary: [{
+					name: "Home",
+					to: "/",
+					abbreviation: "H"
+				}, {
+					name: "Projects"
+				}, {
+					name: "Process",
+					to: "/process",
+					abbreviation: "P"
+				}, {
+					name: "About Me",
+					to: "about-me",
+					abbreviation: "A"
+				}, {
+					name: "Resume",
+					to: "/resume",
+					abbreviation: "R"
+				}],
 				secondary: [{
 					name: "American Made",
 					to: "/american-made"
@@ -37445,15 +37534,52 @@ var Nav = function (_Component) {
 			var secondaryNavItems = navData.secondary.map(function (item, i) {
 				return _react2.default.createElement(
 					'li',
-					{ key: i, onClick: _this2.setMenuClosed },
+					{ key: i },
 					_react2.default.createElement(
 						_reactRouterDom.NavLink,
-						{ to: item.to, onMouseOver: _this2.setIndexHovered },
+						{ to: item.to, onMouseOver: function onMouseOver(e) {
+								_this2.setIndexHovered(e);_this2.props.setCursorHover();
+							},
+							onClick: _this2.setMenuClosed },
 						_react2.default.createElement(
 							'h4',
-							null,
+							{ className: (0, _classnames2.default)({ 'hover': i == indexHovered }) },
 							item.name
 						)
+					)
+				);
+			});
+
+			var primaryNavItems = navData.primary.map(function (item, i) {
+				return i != 1 ? _react2.default.createElement(
+					'li',
+					{ key: i },
+					_react2.default.createElement(
+						_reactRouterDom.NavLink,
+						{ to: item.to,
+							onMouseOver: function onMouseOver(e) {
+								_this2.setIndexHovered(e);_this2.props.setCursorHover();
+							},
+							onMouseLeave: _this2.props.setCursorUnhover,
+							onClick: _this2.setMenuClosed },
+						_react2.default.createElement(
+							'h3',
+							{ className: (0, _classnames2.default)({ 'active': abbreviation == item.abbreviation, 'hover': i == indexHovered }) },
+							item.name
+						)
+					)
+				) : _react2.default.createElement(
+					'li',
+					{ key: i,
+						onMouseOver: function onMouseOver(e) {
+							_this2.setIndexHovered(e);_this2.props.setCursorHover();
+						},
+						onMouseLeave: _this2.props.setCursorUnhover,
+						onClick: _this2.props.isSecondaryPanelOpen ? _this2.setCloseSecondaryPanel : _this2.setOpenSecondaryPanel },
+					_react2.default.createElement(
+						'h3',
+						{ className: (0, _classnames2.default)({ 'active': abbreviation.match(/[0-9]/g), 'hover': i == indexHovered }) },
+						item.name
 					)
 				);
 			});
@@ -37479,7 +37605,7 @@ var Nav = function (_Component) {
 									{ className: 'nav-takeover__items--secondary' },
 									_react2.default.createElement(
 										'li',
-										{ onClick: this.props.closeSecondaryPanel },
+										{ onClick: this.setCloseSecondaryPanel },
 										_react2.default.createElement(
 											'h3',
 											null,
@@ -37491,67 +37617,7 @@ var Nav = function (_Component) {
 								_react2.default.createElement(
 									'ul',
 									{ className: 'nav-takeover__items--primary' },
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/', onMouseOver: this.setIndexHovered },
-											_react2.default.createElement(
-												'h3',
-												{ className: (0, _classnames2.default)({ 'active': abbreviation == 'H' }) },
-												'Home'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onMouseOver: this.setIndexHovered, onClick: this.props.isSecondaryPanelOpen ? this.props.closeSecondaryPanel : this.props.openSecondaryPanel },
-										_react2.default.createElement(
-											'h3',
-											{ className: (0, _classnames2.default)({ 'active': abbreviation.match(/[0-9]/g) }) },
-											'Projects'
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/process', onMouseOver: this.setIndexHovered },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Process'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/about-me', onMouseOver: this.setIndexHovered },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'About me'
-											)
-										)
-									),
-									_react2.default.createElement(
-										'li',
-										{ onClick: this.setMenuClosed },
-										_react2.default.createElement(
-											_reactRouterDom.NavLink,
-											{ to: '/resume', onMouseOver: this.setIndexHovered },
-											_react2.default.createElement(
-												'h3',
-												null,
-												'Resume'
-											)
-										)
-									)
+									primaryNavItems
 								),
 								_react2.default.createElement(
 									'div',
@@ -37573,8 +37639,8 @@ var mapStateToProps = function mapStateToProps(state) {
 	return {
 		count: state.count,
 		abbreviation: state.abbreviation,
-		color: state.color,
 		isTakeoverOpen: state.isTakeoverOpen,
+		isPrimaryPanelOpen: state.isPrimaryPanelOpen,
 		isSecondaryPanelOpen: state.isSecondaryPanelOpen
 	};
 };
@@ -37587,6 +37653,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		closeTakeover: function closeTakeover() {
 			return dispatch((0, _navTakeover.closeTakeover)());
 		},
+		openPrimaryPanel: function openPrimaryPanel() {
+			return dispatch((0, _primaryPanel.openPrimaryPanel)());
+		},
+		closePrimaryPanel: function closePrimaryPanel() {
+			return dispatch((0, _primaryPanel.closePrimaryPanel)());
+		},
 		openSecondaryPanel: function openSecondaryPanel() {
 			return dispatch((0, _secondaryPanel.openSecondaryPanel)());
 		},
@@ -37598,13 +37670,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		unhoverToggle: function unhoverToggle() {
 			return dispatch((0, _navToggle.unhoverToggle)());
+		},
+		setCursorHover: function setCursorHover() {
+			return dispatch((0, _cursor.setCursorHover)());
+		},
+		setCursorUnhover: function setCursorUnhover() {
+			return dispatch((0, _cursor.setCursorUnhover)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Nav);
 
-},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/splitLetter":168,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],140:[function(require,module,exports){
+},{"../actions/cursor":130,"../actions/navTakeover":131,"../actions/navToggle":132,"../actions/primaryPanel":133,"../actions/secondaryPanel":134,"../services/splitLetter":172,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37628,6 +37706,8 @@ var _reactRedux = require('react-redux');
 var _navTakeover = require('../actions/navTakeover');
 
 var _navToggle = require('../actions/navToggle');
+
+var _cursor = require('../actions/cursor');
 
 var _secondaryPanel = require('../actions/secondaryPanel');
 
@@ -37676,7 +37756,22 @@ var NavToggle = function (_Component) {
 
 	_createClass(NavToggle, [{
 		key: 'render',
+
+
+		// componentDidUpdate(prevProps) {
+		// 	if (prevProps.count != this.props.count) { 
+		// 		this.setState({
+		// 			countIsIncreasing: (prevProps.count < this.props.count),
+		// 			countIsDecreasing: (prevProps.count > this.props.count),
+		// 		})
+		// 		setTimeout(() => {this.setState({ countIsIncreasing: false, countIsDecreasing: false })}, 600);
+		// 	}
+		// }
+
+
 		value: function render() {
+			var _this2 = this;
+
 			var _state = this.state,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    countIsIncreasing = _state.countIsIncreasing,
@@ -37695,7 +37790,13 @@ var NavToggle = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames, onMouseEnter: this.props.hoverToggle, onMouseLeave: this.props.isTakeoverOpen ? null : this.props.unhoverToggle,
+				{ className: classnames,
+					onMouseEnter: function onMouseEnter() {
+						_this2.props.hoverToggle();_this2.props.setCursorHover();
+					},
+					onMouseLeave: this.props.isTakeoverOpen ? this.props.setCursorUnhover : function () {
+						_this2.props.unhoverToggle();_this2.props.setCursorUnhover();
+					},
 					onClick: this.props.isTakeoverOpen ? this.closeNav : this.openNav },
 				_react2.default.createElement(
 					'h6',
@@ -37744,6 +37845,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		unhoverToggle: function unhoverToggle() {
 			return dispatch((0, _navToggle.unhoverToggle)());
 		},
+		setCursorHover: function setCursorHover() {
+			return dispatch((0, _cursor.setCursorHover)());
+		},
+		setCursorUnhover: function setCursorUnhover() {
+			return dispatch((0, _cursor.setCursorUnhover)());
+		},
 		openSecondaryPanel: function openSecondaryPanel() {
 			return dispatch((0, _secondaryPanel.openSecondaryPanel)());
 		},
@@ -37755,7 +37862,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/navTakeover":130,"../actions/navToggle":131,"../actions/secondaryPanel":132,"../services/pad":166,"../services/splitLetter":168,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],141:[function(require,module,exports){
+},{"../actions/cursor":130,"../actions/navTakeover":131,"../actions/navToggle":132,"../actions/secondaryPanel":134,"../services/pad":170,"../services/splitLetter":172,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],143:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37784,6 +37891,8 @@ var _Sidebar = require("../components/Sidebar");
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
+var _cursor = require("../actions/cursor");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37805,11 +37914,10 @@ var NextProject = function (_Component) {
 			var pageX = event.pageX,
 			    pageY = event.pageY;
 
-
-			_this.setState({
-				arrowX: pageX,
-				arrowY: pageY - _this.refs.nextProject.offsetTop
-			});
+			// this.setState({
+			// 	arrowX: pageX,
+			// 	arrowY: pageY - this.refs.nextProject.offsetTop,
+			// })
 		};
 
 		_this.handleHover = function () {
@@ -37842,6 +37950,14 @@ var NextProject = function (_Component) {
 	}, {
 		key: "render",
 		value: function render() {
+
+			// const style = {
+			// 	opacity: this.state.isHovering ? 1 : 0,
+			// 	position: 'absolute',
+			// 	left: this.state.arrowX,
+			// 	top: this.state.arrowY,
+			// }
+
 			var _props = this.props,
 			    to = _props.to,
 			    name = _props.name,
@@ -37856,7 +37972,7 @@ var NextProject = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				{ className: classnames, onMouseMove: this.setArrowPosition, onMouseEnter: this.handleHover, onMouseLeave: this.handleHover, ref: "nextProject" },
+				{ className: classnames, onMouseEnter: this.props.setCursorHover, onMouseLeave: this.props.setCursorUnhover, onClick: this.props.setCursorUnhover, ref: "nextProject" },
 				_react2.default.createElement(
 					_reactRouterDom.NavLink,
 					{ to: to },
@@ -37872,22 +37988,13 @@ var NextProject = function (_Component) {
 								{ className: "grid__item grid__item--col-12" },
 								_react2.default.createElement(
 									"h3",
-									{ className: "no-mb" },
+									{ className: "" },
 									"Next Up"
 								),
 								_react2.default.createElement(
 									"h2",
 									null,
-									name
-								),
-								_react2.default.createElement(
-									"h2",
-									{ style: {
-											opacity: this.state.isHovering ? 1 : 0,
-											position: 'absolute',
-											left: this.state.arrowX,
-											top: this.state.arrowY
-										} },
+									name,
 									_react2.default.createElement("i", { className: "iconcss icon-arrow-right" })
 								)
 							)
@@ -37910,9 +38017,26 @@ var NextProject = function (_Component) {
 	return NextProject;
 }(_react.Component);
 
-exports.default = NextProject;
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		isCursorHovering: state.isCursorHovering
+	};
+};
 
-},{"../components/GridLines":137,"../components/Sidebar":147,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],142:[function(require,module,exports){
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		setCursorHover: function setCursorHover() {
+			return dispatch((0, _cursor.setCursorHover)());
+		},
+		setCursorUnhover: function setCursorUnhover() {
+			return dispatch((0, _cursor.setCursorUnhover)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NextProject);
+
+},{"../actions/cursor":130,"../components/GridLines":139,"../components/Sidebar":149,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37944,6 +38068,10 @@ var _Sidebar2 = _interopRequireDefault(_Sidebar);
 var _GridLines = require("./GridLines");
 
 var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _ScrollArrow = require("./ScrollArrow");
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
 
 var _splitWord = require("../services/splitWord");
 
@@ -37988,15 +38116,17 @@ var ParallaxHeader = function (_Component) {
 		};
 
 		_this.handleScroll = function (event) {
-			_this.setState({
-				scrollAmount: window.pageYOffset
-			});
+			document.body.scrollTop > window.innerHeight / 4 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
+			// this.setState({
+			// 	scrollAmount: window.pageYOffset
+			// });
 		};
 
 		_this.state = {
 			isMobile: (0, _detectMobile2.default)(),
 			isAnimating: (0, _detectMobile2.default)(),
-			scrollAmount: 0
+			scrollAmount: 0,
+			isHidden: false
 		};
 		return _this;
 	}
@@ -38027,6 +38157,7 @@ var ParallaxHeader = function (_Component) {
 			    headerText = _props.headerText,
 			    strength = _props.strength,
 			    name = _props.name,
+			    nextName = _props.nextName,
 			    onSetActive = _props.onSetActive,
 			    sections = _props.sections,
 			    activeSection = _props.activeSection;
@@ -38043,14 +38174,16 @@ var ParallaxHeader = function (_Component) {
 			isMobile ? str /= 2 : null;
 
 			var classnames = (0, _classnames2.default)({
-				"react-parallax-contents": true
-				// "react-parallax-contents--animating" : isAnimating,			
+				"parallax-header": true,
+				"parallax-header--hidden": this.state.isHidden
 			});
 
-			var style = {
-				opacity: Math.min(Math.max(0, 1 - this.state.scrollAmount * 0.005), 1),
-				transform: "translateY(" + Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0) + "px) skewX(" + Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0) + "deg)"
-			};
+			// const style = {
+			// 	opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
+			// 	transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
+			// };
+
+			var style = {};
 
 			var updatedText = [];
 
@@ -38064,7 +38197,7 @@ var ParallaxHeader = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				null,
+				{ className: classnames },
 				_react2.default.createElement(
 					_reactParallax.Parallax,
 					{
@@ -38072,9 +38205,8 @@ var ParallaxHeader = function (_Component) {
 						blur: null,
 						strength: str,
 						renderLayer: function renderLayer(percentage) {
-							return _react2.default.createElement("div", { className: classnames, style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage + 0.2) + ")", 'mixBlendMode': 'none' } });
+							return _react2.default.createElement("div", { className: "react-parallax-contents", style: { backgroundColor: "rgba(" + color.r + ", " + color.b + ", " + color.g + ", " + (percentage - 0.1) + ")", 'mixBlendMode': 'multiply' } });
 						} },
-					_react2.default.createElement(_GridLines2.default, null),
 					_react2.default.createElement(
 						"div",
 						{ className: "grid" },
@@ -38095,7 +38227,7 @@ var ParallaxHeader = function (_Component) {
 						_react2.default.createElement(_NavToggle2.default, { black: false })
 					)
 				),
-				_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive })
+				_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: false, offset: 0, onSetActive: onSetActive })
 			);
 		}
 	}]);
@@ -38105,7 +38237,7 @@ var ParallaxHeader = function (_Component) {
 
 exports.default = ParallaxHeader;
 
-},{"../services/detectMobile":164,"../services/hexToRgb":165,"../services/palette":167,"../services/splitLetter":168,"../services/splitWord":169,"./GridLines":137,"./NavToggle":140,"./Sidebar":147,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],143:[function(require,module,exports){
+},{"../services/detectMobile":168,"../services/hexToRgb":169,"../services/palette":171,"../services/splitLetter":172,"../services/splitWord":173,"./GridLines":139,"./NavToggle":142,"./ScrollArrow":146,"./Sidebar":149,"classnames":7,"react":113,"react-parallax":50,"react-scroll":98}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38221,8 +38353,7 @@ var ProjectCard = function (_Component) {
 								null,
 								tags.join(", ")
 							)
-						),
-						_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
+						)
 					)
 				)
 			);
@@ -38234,7 +38365,7 @@ var ProjectCard = function (_Component) {
 
 exports.default = ProjectCard;
 
-},{"../services/splitLetter":168,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],144:[function(require,module,exports){
+},{"../services/splitLetter":172,"classnames":7,"react":113,"react-hover":43,"react-router-dom":79}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38263,6 +38394,8 @@ var _detectMobile = require('../services/detectMobile');
 
 var _detectMobile2 = _interopRequireDefault(_detectMobile);
 
+var _cursor = require('../actions/cursor');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38280,7 +38413,7 @@ var ScrollArrow = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (ScrollArrow.__proto__ || Object.getPrototypeOf(ScrollArrow)).call(this, props));
 
 		_this.handleScroll = function (e) {
-			document.body.scrollTop > window.innerHeight / 4 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
+			document.body.scrollTop > window.innerHeight / 2 ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
 		};
 
 		_this.state = {
@@ -38314,7 +38447,7 @@ var ScrollArrow = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: classnames },
+				{ className: classnames, onMouseEnter: this.props.setCursorHover, onMouseLeave: this.props.setCursorUnhover, onClick: this.props.setCursorUnhover },
 				_react2.default.createElement(
 					'div',
 					{ className: 'scroll-arrow__seperator-container' },
@@ -38332,9 +38465,26 @@ var ScrollArrow = function (_Component) {
 	return ScrollArrow;
 }(_react.Component);
 
-exports.default = ScrollArrow;
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		isCursorHovering: state.isCursorHovering
+	};
+};
 
-},{"../services/detectMobile":164,"../services/splitLetter":168,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],145:[function(require,module,exports){
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		setCursorHover: function setCursorHover() {
+			return dispatch((0, _cursor.setCursorHover)());
+		},
+		setCursorUnhover: function setCursorUnhover() {
+			return dispatch((0, _cursor.setCursorUnhover)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ScrollArrow);
+
+},{"../actions/cursor":130,"../services/detectMobile":168,"../services/splitLetter":172,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79}],147:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38438,7 +38588,7 @@ var ScrollSection = function (_Component) {
 						_react2.default.createElement(_GridLines2.default, null),
 						this.props.children
 					),
-					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: onSetActive }),
+					_react2.default.createElement(_reactScroll.Link, { style: { display: "none" }, to: name, spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: false, offset: 0, onSetActive: onSetActive }),
 					_react2.default.createElement(
 						"div",
 						{ className: "clip-wrapper" },
@@ -38459,7 +38609,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"../components/GridLines":137,"./NavToggle":140,"./Sidebar":147,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],146:[function(require,module,exports){
+},{"../components/GridLines":139,"./NavToggle":142,"./Sidebar":149,"classnames":7,"react":113,"react-intersection-visible":46,"react-redux":61,"react-router-dom":79,"react-scroll":98}],148:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38520,6 +38670,10 @@ var SideScroller = function (_Component) {
 			var isMobile = this.state.isMobile;
 
 
+			var classnames = (0, _classnames2.default)({
+				"side-scroller": true
+			});
+
 			var margin = isMobile ? 12 : 60;
 
 			var style = {
@@ -38527,7 +38681,7 @@ var SideScroller = function (_Component) {
 				display: 'flex',
 				width: '100%',
 				justifyContent: 'space-between',
-				WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 97.5%, transparent)'
+				WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 95%, transparent)'
 			};
 
 			var items = this.props.children.map(function (item, i) {
@@ -38539,7 +38693,7 @@ var SideScroller = function (_Component) {
 
 			return _react2.default.createElement(
 				"div",
-				{ style: style },
+				{ style: style, className: classnames },
 				items,
 				_react2.default.createElement("div", { style: { minWidth: margin + 'px' } })
 			);
@@ -38551,7 +38705,7 @@ var SideScroller = function (_Component) {
 
 exports.default = SideScroller;
 
-},{"classnames":7,"react":113}],147:[function(require,module,exports){
+},{"classnames":7,"react":113}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38644,33 +38798,33 @@ var Sidebar = function (_Component) {
 
 
 			var classnames = (0, _classnames2.default)({
-				"sidebar-container": true,
-				"sidebar-container--white": !isBlack,
-				"sidebar-container--black": isBlack,
-				"sidebar-container--open": this.props.isSidebarOpen
+				"sidebar": true,
+				"sidebar--white": !isBlack,
+				"sidebar--black": isBlack,
+				"sidebar--open": this.props.isSidebarOpen
 			});
 
 			var sidebarItems = sections.map(function (section, i) {
 				return _react2.default.createElement(
 					'li',
-					{ key: i, className: 'sidebar-item' },
+					{ key: i, className: 'sidebar__item' },
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: _this2.props.isSidebarOpen ? section : "", smooth: "easeOutQuint", duration: 1200, className: (0, _classnames2.default)({ "active": sections[i] == activeSection }), onClick: isMobile ? _this2.props.closeSidebar : null },
-						i == 0 ? _react2.default.createElement('div', { className: 'sidebar-border sidebar-border__top' }) : null,
+						i == 0 ? _react2.default.createElement('div', { className: 'sidebar__border sidebar__border--top' }) : null,
 						_react2.default.createElement(
-							'h6',
-							{ className: 'sidebar-number' },
+							'h7',
+							{ className: 'sidebar__number uppercase' },
 							(0, _pad2.default)(i + 1, 2),
 							'.'
 						),
-						_react2.default.createElement('div', { className: 'sidebar-dash' }),
+						_react2.default.createElement('div', { className: 'sidebar__dash' }),
 						_react2.default.createElement(
-							'h6',
-							{ className: 'sidebar-label' },
+							'h7',
+							{ className: 'sidebar__label uppercase' },
 							section
 						),
-						_react2.default.createElement('div', { className: 'sidebar-border' })
+						_react2.default.createElement('div', { className: 'sidebar__border' })
 					)
 				);
 			});
@@ -38680,7 +38834,7 @@ var Sidebar = function (_Component) {
 				{ className: classnames, ref: 'sidebar' },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'sidebar', onClick: this.props.isSidebarOpen ? null : this.props.openSidebar, onMouseEnter: isMobile ? null : this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar },
+					{ className: 'sidebar__inner', onClick: this.props.isSidebarOpen ? null : this.props.openSidebar, onMouseEnter: isMobile ? null : this.props.openSidebar, onMouseLeave: isMobile ? null : this.props.closeSidebar },
 					sidebarItems
 				)
 			);
@@ -38711,7 +38865,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-},{"../actions/sidebar":133,"../services/createNewId":162,"../services/pad":166,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],148:[function(require,module,exports){
+},{"../actions/sidebar":135,"../services/createNewId":166,"../services/pad":170,"classnames":7,"react":113,"react-redux":61,"react-router-dom":79,"react-scroll":98}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38753,29 +38907,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{}],149:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-var colorReducer = function colorReducer() {
-	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'WHITE';
-	var action = arguments[1];
-
-	switch (action.type) {
-		case 'WHITE':
-			return 'WHITE';
-		case 'BLACK':
-			return 'BLACK';
-		default:
-			return state;
-	}
-};
-
-exports.default = colorReducer;
-
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38801,7 +38933,29 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],151:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var cursorReducer = function cursorReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'CURSOR_HOVER':
+			return true;
+		case 'CURSOR_UNHOVER':
+			return false;
+		default:
+			return state;
+	}
+};
+
+exports.default = cursorReducer;
+
+},{}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38820,9 +38974,9 @@ var _abbreviation = require('./abbreviation');
 
 var _abbreviation2 = _interopRequireDefault(_abbreviation);
 
-var _color = require('./color');
+var _cursor = require('./cursor');
 
-var _color2 = _interopRequireDefault(_color);
+var _cursor2 = _interopRequireDefault(_cursor);
 
 var _navTakeover = require('./navTakeover');
 
@@ -38831,6 +38985,10 @@ var _navTakeover2 = _interopRequireDefault(_navTakeover);
 var _navToggle = require('./navToggle');
 
 var _navToggle2 = _interopRequireDefault(_navToggle);
+
+var _primaryPanel = require('./primaryPanel');
+
+var _primaryPanel2 = _interopRequireDefault(_primaryPanel);
 
 var _secondaryPanel = require('./secondaryPanel');
 
@@ -38846,9 +39004,10 @@ var rootReducer = function rootReducer(history) {
 	return (0, _redux.combineReducers)({
 		count: _counter2.default,
 		abbreviation: _abbreviation2.default,
-		color: _color2.default,
-		isTakeoverOpen: _navTakeover2.default,
+		isCursorHovering: _cursor2.default,
 		isToggleHovered: _navToggle2.default,
+		isTakeoverOpen: _navTakeover2.default,
+		isPrimaryPanelOpen: _primaryPanel2.default,
 		isSecondaryPanelOpen: _secondaryPanel2.default,
 		isSidebarOpen: _sidebar2.default,
 		router: (0, _connectedReactRouter.connectRouter)(history)
@@ -38857,7 +39016,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":148,"./color":149,"./counter":150,"./navTakeover":152,"./navToggle":153,"./secondaryPanel":154,"./sidebar":155,"connected-react-router":11,"redux":114}],152:[function(require,module,exports){
+},{"./abbreviation":150,"./counter":151,"./cursor":152,"./navTakeover":154,"./navToggle":155,"./primaryPanel":156,"./secondaryPanel":157,"./sidebar":158,"connected-react-router":11,"redux":114}],154:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38868,9 +39027,9 @@ var navTakeoverReducer = function navTakeoverReducer() {
 	var action = arguments[1];
 
 	switch (action.type) {
-		case 'OPEN':
+		case 'OPEN_TAKEOVER':
 			return true;
-		case 'CLOSE':
+		case 'CLOSE_TAKEOVER':
 			return false;
 		default:
 			return state;
@@ -38879,7 +39038,7 @@ var navTakeoverReducer = function navTakeoverReducer() {
 
 exports.default = navTakeoverReducer;
 
-},{}],153:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38890,9 +39049,9 @@ var navToggleReducer = function navToggleReducer() {
 	var action = arguments[1];
 
 	switch (action.type) {
-		case 'HOVER':
+		case 'HOVER_TOGGLE':
 			return true;
-		case 'UNHOVER':
+		case 'UNHOVER_TOGGLE':
 			return false;
 		default:
 			return state;
@@ -38901,7 +39060,29 @@ var navToggleReducer = function navToggleReducer() {
 
 exports.default = navToggleReducer;
 
-},{}],154:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var primaryPanelReducer = function primaryPanelReducer() {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'SHOW_PRIMARY':
+			return true;
+		case 'HIDE_PRIMARY':
+			return false;
+		default:
+			return state;
+	}
+};
+
+exports.default = primaryPanelReducer;
+
+},{}],157:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38912,9 +39093,9 @@ var secondaryPanelReducer = function secondaryPanelReducer() {
 	var action = arguments[1];
 
 	switch (action.type) {
-		case 'SHOW':
+		case 'SHOW_SECONDARY':
 			return true;
-		case 'HIDE':
+		case 'HIDE_SECONDARY':
 			return false;
 		default:
 			return state;
@@ -38923,7 +39104,7 @@ var secondaryPanelReducer = function secondaryPanelReducer() {
 
 exports.default = secondaryPanelReducer;
 
-},{}],155:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38945,7 +39126,7 @@ var sidebarReducer = function sidebarReducer() {
 
 exports.default = sidebarReducer;
 
-},{}],156:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39055,7 +39236,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":137,"../components/ParallaxHeader":142,"react":113,"react-redux":61}],157:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/GridLines":139,"../components/ParallaxHeader":144,"react":113,"react-redux":61}],160:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39186,10 +39367,7 @@ var AmericanMade = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var _props = this.props,
-			    setCounter = _props.setCounter,
-			    setNavWhite = _props.setNavWhite,
-			    setNavBlack = _props.setNavBlack;
+			var setCounter = this.props.setCounter;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    sections = _state.sections;
@@ -39229,13 +39407,13 @@ var AmericanMade = function (_Component) {
 						bgImage: "../assets/img/american-made/output.gif"
 						// strength={200}
 						, onSetActive: function onSetActive() {
-							setNavWhite();_this2.setActiveSection(0);
+							(0, _color.setNavWhite)();_this2.setActiveSection(0);
 						}
 					}),
 					_react2.default.createElement(
 						_reactScroll.Link,
 						{ to: sections[1], spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: true, offset: 0, onSetActive: function onSetActive() {
-								setCounter(2);setNavBlack();_this2.setActiveSection(1);
+								setCounter(2);(0, _color.setNavBlack)();_this2.setActiveSection(1);
 							} },
 						_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
 					)
@@ -39386,12 +39564,12 @@ var AmericanMade = function (_Component) {
 								_react2.default.createElement(
 									"h2",
 									null,
-									(0, _splitLetter2.default)("Cinemagraphs")
+									"Cinemagraphs"
 								),
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									(0, _splitWord2.default)("To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")
+									"To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."
 								)
 							)
 						)
@@ -39740,7 +39918,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":137,"../components/Image":138,"../components/NextProject":141,"../components/ParallaxHeader":142,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/SideScroller":146,"../components/Sidebar":147,"../services/hexToRgb":165,"../services/palette":167,"../services/splitLetter":168,"../services/splitWord":169,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],158:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":137,"../components/GridLines":139,"../components/Image":140,"../components/NextProject":143,"../components/ParallaxHeader":144,"../components/ScrollArrow":146,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/Sidebar":149,"../services/hexToRgb":169,"../services/palette":171,"../services/splitLetter":172,"../services/splitWord":173,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],161:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39764,8 +39942,6 @@ var _reactScroll = require("react-scroll");
 var _counter = require("../actions/counter");
 
 var _abbreviation = require("../actions/abbreviation");
-
-var _color = require("../actions/color");
 
 var _ScrollSection = require("../components/ScrollSection");
 
@@ -39839,7 +40015,6 @@ var Home = function (_Component) {
 
 			this.props.home();
 			this.props.reset();
-			this.props.setNavWhite();
 		}
 	}, {
 		key: "componentWillUnmount",
@@ -39913,7 +40088,7 @@ var Home = function (_Component) {
 						), "in New York City."],
 						bgImage: "../assets/img/terrain.gif",
 						onSetActive: function onSetActive() {
-							(0, _color.setNavWhite)();_this2.setActiveSection(0);
+							_this2.setActiveSection(0);
 						}
 					})
 				),
@@ -39982,17 +40157,17 @@ var Home = function (_Component) {
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-7 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-5 grid__item--col-11-medium" },
+							{ className: "grid__item grid__item--col-4 grid__item--col-11-medium" },
 							_react2.default.createElement("div", { className: "spacer spacer__sm" }),
 							_react2.default.createElement(
 								"h2",
 								null,
-								(0, _splitWord2.default)("Visual & Interactive")
+								(0, _splitWord2.default)("Visual & Motion")
 							),
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								(0, _splitWord2.default)("I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
+								(0, _splitWord2.default)("I design right in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I\u2019ve worked on."),
 								_react2.default.createElement("br", null),
 								_react2.default.createElement("br", null)
 							)
@@ -40070,7 +40245,7 @@ var Home = function (_Component) {
 				_react2.default.createElement(
 					_reactScroll.Link,
 					{ to: sections[1], spy: true, smooth: "easeOutQuint", duration: 1200, offset: 0, onSetActive: function onSetActive() {
-							(0, _counter.setCounter)(2);(0, _color.setNavBlack)();_this2.setActiveSection(1);
+							(0, _counter.setCounter)(2);_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ScrollArrow2.default, { label: "Learn More" })
 				)
@@ -40128,19 +40303,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		protohack: function protohack() {
 			return dispatch((0, _abbreviation.protohack)());
-		},
-		setNavWhite: function setNavWhite() {
-			return dispatch((0, _color.setNavWhite)());
-		},
-		setNavBlack: function setNavBlack() {
-			return dispatch((0, _color.setNavBlack)());
 		}
 	};
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/Image":138,"../components/ParallaxHeader":142,"../components/ProjectCard":143,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/Sidebar":147,"../services/splitWord":169,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],159:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/counter":129,"../components/Image":140,"../components/ParallaxHeader":144,"../components/ProjectCard":145,"../components/ScrollArrow":146,"../components/ScrollSection":147,"../components/Sidebar":149,"../services/splitWord":173,"classnames":7,"react":113,"react-redux":61,"react-scroll":98}],162:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40171,7 +40340,602 @@ var _counter = require("../actions/counter");
 
 var _abbreviation = require("../actions/abbreviation");
 
-var _color = require("../actions/color");
+var _ParallaxHeader = require("../components/ParallaxHeader");
+
+var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+
+var _ScrollArrow = require("../components/ScrollArrow");
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
+
+var _ScrollSection = require("../components/ScrollSection");
+
+var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
+
+var _GridLines = require("../components/GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _Sidebar = require("../components/Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+var _CodepenEmbed = require("../components/CodepenEmbed");
+
+var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
+
+var _NextProject = require("../components/NextProject");
+
+var _NextProject2 = _interopRequireDefault(_NextProject);
+
+var _SideScroller = require("../components/SideScroller");
+
+var _SideScroller2 = _interopRequireDefault(_SideScroller);
+
+var _Image = require("../components/Image");
+
+var _Image2 = _interopRequireDefault(_Image);
+
+var _splitWord = require("../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _splitLetter = require("../services/splitLetter");
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Translator = function (_Component) {
+	_inherits(Translator, _Component);
+
+	_createClass(Translator, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.jjHome();
+			this.props.reset();
+		}
+	}]);
+
+	function Translator(props) {
+		_classCallCheck(this, Translator);
+
+		var _this = _possibleConstructorReturn(this, (Translator.__proto__ || Object.getPrototypeOf(Translator)).call(this, props));
+
+		_this.setActiveSection = function (idx) {
+			_this.setState({
+				activeSection: _this.state.sections[idx]
+			});
+			_this.props.setCounter(idx + 1);
+		};
+
+		_this.state = {
+			activeSection: "overview",
+			sections: ["overview", "about", "details", "collections", "metadata", "shell", "bulk"]
+		};
+		return _this;
+	}
+
+	_createClass(Translator, [{
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var _props = this.props,
+			    setCounter = _props.setCounter,
+			    setNavWhite = _props.setNavWhite,
+			    setNavBlack = _props.setNavBlack;
+			var _state = this.state,
+			    activeSection = _state.activeSection,
+			    sections = _state.sections;
+
+
+			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
+
+			return _react2.default.createElement(
+				"article",
+				null,
+				_react2.default.createElement(
+					_reactScroll.Element,
+					{
+						name: sections[0],
+						className: (0, _classnames2.default)({ "active-section": activeSection == sections[0] }) },
+					_react2.default.createElement(_ParallaxHeader2.default, {
+						name: sections[0],
+						sections: sections,
+						activeSection: activeSection,
+						headerText: [_react2.default.createElement(
+							"span",
+							{ className: "outline" },
+							_react2.default.createElement(
+								"span",
+								null,
+								"Home "
+							)
+						), "is a place for J&J employees to connect and create."],
+						bgImage: "../assets/img/jnj-home/onboarding-mobile-16x9.png",
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(0);
+						}
+					})
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[1],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(1);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"blockquote",
+								{ className: "drop-caps" },
+								"The process for media asset management varied greatly across NBCU\u2019s entertainment brands. Our team was asked to imagine a tool that could that works for all the brands."
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or \"MAM\" to be stored."
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention."
+							),
+							_react2.default.createElement("blockquote", null)
+						),
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-7 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__row" },
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-12" },
+									_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/usertesting.svg", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__row" },
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										"blockquote",
+										null,
+										"My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later."
+									)
+								),
+								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+									_react2.default.createElement(
+										"blockquote",
+										null,
+										"With the our new design, the unified system is more efficient. It eliminates the brands\u2019 reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams."
+									)
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[2],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						style: {
+							backgroundImage: "url(../assets/img/translator/nyc-skyline.jpg)",
+							backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .12"
+						},
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(2);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-3  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Role"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"Interaction Designer"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Date"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"Fall, 2019"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-3  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Client"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								"J&J People Experience"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4  grid__item--col-6-medium" },
+							_react2.default.createElement(
+								"h6",
+								{ className: "uppercase" },
+								"Team"
+							),
+							_react2.default.createElement(
+								"blockquote",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "//www.linkedin.com/in/alex-gross-668b2218/" },
+									"Alex Gross"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/oleksandr-lebedyev/" },
+									"Alex Lebedyev"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "" },
+									"Kennix Lee"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "" },
+									"Jing Zhao"
+								),
+								" "
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[3],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(3);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Collections"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid view to their liking. The grid view allows thumbnail previews arrange themselves in masonry grid."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/mam-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[4],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(4);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Editing Metadata"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness: \"Ready for Ingest\", \"Ready for Service\" and \"Search Optimized\"."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						_SideScroller2.default,
+						null,
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/metadata-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/metadata-02.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/metadata-03.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[5],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(5);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Shell Record"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-12" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/shell-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[6],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(6);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__row" },
+							_react2.default.createElement(
+								"div",
+								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
+								_react2.default.createElement(
+									"h2",
+									null,
+									"Bulk Actions"
+								),
+								_react2.default.createElement(
+									"blockquote",
+									null,
+									"Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image or Audio) across all shared metadata fields."
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						_SideScroller2.default,
+						null,
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/bulk-01.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-8 grid__item--col-10-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/bulk-02.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
+						)
+					)
+				),
+				_react2.default.createElement(_NextProject2.default, {
+					to: "/jnj-home",
+					name: "J&J Home",
+					sections: sections,
+					activeSection: activeSection,
+					style: {
+						backgroundImage: "url(../assets/img/jnj-home/onboarding-mobile.png)",
+						backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6",
+						backgroundSize: 'contain',
+						backgroundPosition: 'center'
+					} }),
+				_react2.default.createElement(
+					_reactScroll.Link,
+					{ to: sections[1], spy: true, smooth: "easeOutCubic", duration: 1200, hashSpy: false, offset: 0, onSetActive: function onSetActive() {
+							setCounter(2);_this2.setActiveSection(1);
+						} },
+					_react2.default.createElement(_ScrollArrow2.default, { label: "Read More" })
+				)
+			);
+		}
+	}]);
+
+	return Translator;
+}(_react.Component);
+
+Translator.propTypes = {};
+
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		count: state.count,
+		abbreviation: state.abbreviation
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		},
+		vai: function vai() {
+			return dispatch((0, _abbreviation.vai)());
+		},
+		translator: function translator() {
+			return dispatch((0, _abbreviation.translator)());
+		},
+		jjMdc: function jjMdc() {
+			return dispatch((0, _abbreviation.jjMdc)());
+		},
+		jjHome: function jjHome() {
+			return dispatch((0, _abbreviation.jjHome)());
+		},
+		wrap1: function wrap1() {
+			return dispatch((0, _abbreviation.wrap1)());
+		},
+		wrap2: function wrap2() {
+			return dispatch((0, _abbreviation.wrap2)());
+		},
+		perforce: function perforce() {
+			return dispatch((0, _abbreviation.perforce)());
+		},
+		cisco: function cisco() {
+			return dispatch((0, _abbreviation.cisco)());
+		},
+		protohack: function protohack() {
+			return dispatch((0, _abbreviation.protohack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
+
+},{"../actions/abbreviation":127,"../actions/counter":129,"../components/CodepenEmbed":137,"../components/GridLines":139,"../components/Image":140,"../components/NextProject":143,"../components/ParallaxHeader":144,"../components/ScrollArrow":146,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/Sidebar":149,"../services/hexToRgb":169,"../services/palette":171,"../services/splitLetter":172,"../services/splitWord":173,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],163:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _reactCodepenEmbed = require("react-codepen-embed");
+
+var _reactCodepenEmbed2 = _interopRequireDefault(_reactCodepenEmbed);
+
+var _counter = require("../actions/counter");
+
+var _abbreviation = require("../actions/abbreviation");
 
 var _ParallaxHeader = require("../components/ParallaxHeader");
 
@@ -40301,7 +41065,7 @@ var Translator = function (_Component) {
 								null,
 								"Translator "
 							)
-						), "helped NBCU technicians view and archive footage."],
+						), "helped NBCU technicians browse and archive footage."],
 						bgImage: "../assets/img/translator/banner.png",
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
@@ -40338,18 +41102,14 @@ var Translator = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"The brands are currently very reliant on the folder structure and since search is not enabled on the brand storage systems to prevent crashing the server, users must navigate through the folder structure to find files."
+								"The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or \"MAM\" to be stored."
 							),
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"If someone misplaces a file or accidentally drags a file into another folder, it will be difficult to recall it given the fluidity of the naming convention. Each brand has a different folder structure and each team within a brand may have a different naming convention."
+								"The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention."
 							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"My goal for this project as the Lead Designer was to create a flexible design system that accomidated the"
-							)
+							_react2.default.createElement("blockquote", null)
 						),
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
@@ -40361,7 +41121,7 @@ var Translator = function (_Component) {
 								_react2.default.createElement(
 									"div",
 									{ className: "grid__item grid__item--col-12" },
-									_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/usertesting.svg", aspectRatioWidth: 16, aspectRatioHeight: 9, style: { background: '#EAAECA' } })
+									_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/usertesting.svg", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 								)
 							),
 							_react2.default.createElement(
@@ -40373,7 +41133,7 @@ var Translator = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										null,
-										"As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype."
+										"My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later."
 									)
 								),
 								_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
@@ -40383,7 +41143,7 @@ var Translator = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										null,
-										"Clarifi's image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video."
+										"With the our new design, the unified system is more efficient. It eliminates the brands\u2019 reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams."
 									)
 								)
 							)
@@ -40474,9 +41234,16 @@ var Translator = function (_Component) {
 								", ",
 								_react2.default.createElement(
 									"a",
-									{ href: "https://www.linkedin.com/in/poplar-bai/" },
-									"Poplar Bai"
-								)
+									{ href: "" },
+									"Kennix Lee"
+								),
+								", ",
+								_react2.default.createElement(
+									"a",
+									{ href: "" },
+									"Jing Zhao"
+								),
+								" "
 							)
 						)
 					)
@@ -40508,7 +41275,7 @@ var Translator = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid view to their liking. The grid view allows thumbnail previews arrange themselves in masonry grid."
 								)
 							)
 						)
@@ -40549,7 +41316,7 @@ var Translator = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+									"Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness: \"Ready for Ingest\", \"Ready for Service\" and \"Search Optimized\"."
 								)
 							)
 						)
@@ -40601,7 +41368,7 @@ var Translator = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+									"Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for."
 								)
 							)
 						)
@@ -40642,7 +41409,7 @@ var Translator = function (_Component) {
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their content image, video and audio into a collection for easy access later. Users can choose a list of grid mode to their liking. Grid view allows thumbnail previews arrange themselves in masonry grid."
+									"Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image or Audio) across all shared metadata fields."
 								)
 							)
 						)
@@ -40661,7 +41428,18 @@ var Translator = function (_Component) {
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/bulk-02.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 						)
 					)
-				)
+				),
+				_react2.default.createElement(_NextProject2.default, {
+					to: "/jnj-home",
+					name: "J&J Home",
+					sections: sections,
+					activeSection: activeSection,
+					style: {
+						backgroundImage: "url(../assets/img/jnj-home/onboarding-mobile.png)",
+						backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6",
+						backgroundSize: 'contain',
+						backgroundPosition: 'center'
+					} })
 			);
 		}
 	}]);
@@ -40725,7 +41503,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":137,"../components/Image":138,"../components/NextProject":141,"../components/ParallaxHeader":142,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/SideScroller":146,"../components/Sidebar":147,"../services/hexToRgb":165,"../services/palette":167,"../services/splitLetter":168,"../services/splitWord":169,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],160:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/counter":129,"../components/CodepenEmbed":137,"../components/GridLines":139,"../components/Image":140,"../components/NextProject":143,"../components/ParallaxHeader":144,"../components/ScrollArrow":146,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/Sidebar":149,"../services/hexToRgb":169,"../services/palette":171,"../services/splitLetter":172,"../services/splitWord":173,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],164:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40755,8 +41533,6 @@ var _reactCodepenEmbed2 = _interopRequireDefault(_reactCodepenEmbed);
 var _counter = require("../actions/counter");
 
 var _abbreviation = require("../actions/abbreviation");
-
-var _color = require("../actions/color");
 
 var _ParallaxHeader = require("../components/ParallaxHeader");
 
@@ -40789,6 +41565,10 @@ var _Image2 = _interopRequireDefault(_Image);
 var _SideScroller = require("../components/SideScroller");
 
 var _SideScroller2 = _interopRequireDefault(_SideScroller);
+
+var _NextProject = require("../components/NextProject");
+
+var _NextProject2 = _interopRequireDefault(_NextProject);
 
 var _splitWord = require("../services/splitWord");
 
@@ -40886,7 +41666,7 @@ var Vai = function (_Component) {
 								"V.ai "
 							)
 						), "video player uses AI to identify people and products."],
-						bgImage: "../assets/img/vai/banner.gif",
+						bgImage: "../assets/img/vai/banner.jpg",
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(sections[0]);
 						}
@@ -40976,7 +41756,7 @@ var Vai = function (_Component) {
 						black: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: { backgroundImage: "url(../assets/img/vai/one-plus.jpg)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6", backgroundPosition: "center 20%" },
+						style: { backgroundImage: "url(../assets/img/vai/escalade.png)", backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .8", backgroundPosition: "center 10%" },
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(sections[2]);
 						} },
@@ -41198,7 +41978,16 @@ var Vai = function (_Component) {
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/vai/actor.png", aspectRatioWidth: 16, aspectRatioHeight: 9 })
 						)
 					)
-				)
+				),
+				_react2.default.createElement(_NextProject2.default, {
+					to: "/translator",
+					name: "Translator",
+					sections: sections,
+					activeSection: activeSection,
+					style: {
+						backgroundImage: "url(../assets/img/translator/banner.png)",
+						backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", .6"
+					} })
 			);
 		}
 	}]);
@@ -41256,12 +42045,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 		},
 		protohack: function protohack() {
 			return dispatch((0, _abbreviation.protohack)());
-		},
-		setNavWhite: function setNavWhite() {
-			return dispatch((0, _color.setNavWhite)());
-		},
-		setNavBlack: function setNavBlack() {
-			return dispatch((0, _color.setNavBlack)());
 		}
 	};
 };
@@ -41272,7 +42055,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 // bgImage={"../assets/img/vai/banner.gif"}
 // headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}
 
-},{"../actions/abbreviation":127,"../actions/color":128,"../actions/counter":129,"../components/CodepenEmbed":135,"../components/GridLines":137,"../components/Image":138,"../components/ParallaxHeader":142,"../components/ScrollArrow":144,"../components/ScrollSection":145,"../components/SideScroller":146,"../components/Sidebar":147,"../services/hexToRgb":165,"../services/palette":167,"../services/splitLetter":168,"../services/splitWord":169,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],161:[function(require,module,exports){
+},{"../actions/abbreviation":127,"../actions/counter":129,"../components/CodepenEmbed":137,"../components/GridLines":139,"../components/Image":140,"../components/NextProject":143,"../components/ParallaxHeader":144,"../components/ScrollArrow":146,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/Sidebar":149,"../services/hexToRgb":169,"../services/palette":171,"../services/splitLetter":172,"../services/splitWord":173,"classnames":7,"react":113,"react-codepen-embed":38,"react-redux":61,"react-router-dom":79,"react-scroll":98}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41309,6 +42092,10 @@ var _Translator = require('./Translator');
 
 var _Translator2 = _interopRequireDefault(_Translator);
 
+var _JnjHome = require('./JnjHome');
+
+var _JnjHome2 = _interopRequireDefault(_JnjHome);
+
 var _AboutMe = require('./AboutMe');
 
 var _AboutMe2 = _interopRequireDefault(_AboutMe);
@@ -41327,7 +42114,8 @@ var routes = _react2.default.createElement(
 		_react2.default.createElement(_reactRouter.Route, { path: '/resume', component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/american-made', component: _AmericanMade2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/vai', component: _Vai2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/translator', component: _Translator2.default })
+		_react2.default.createElement(_reactRouter.Route, { path: '/translator', component: _Translator2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/jnj-home', component: _JnjHome2.default })
 	),
 	_react2.default.createElement(_NavTakeover2.default, null),
 	_react2.default.createElement(_Cursor2.default, null)
@@ -41335,7 +42123,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/Cursor":136,"../components/NavTakeover":139,"./AboutMe":156,"./AmericanMade":157,"./Home":158,"./Translator":159,"./Vai":160,"react":113,"react-router":91}],162:[function(require,module,exports){
+},{"../components/Cursor":138,"../components/NavTakeover":141,"./AboutMe":159,"./AmericanMade":160,"./Home":161,"./JnjHome":162,"./Translator":163,"./Vai":164,"react":113,"react-router":91}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41351,7 +42139,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],163:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41372,7 +42160,7 @@ var darken = function darken(color, amount) {
 
 exports.default = darken;
 
-},{}],164:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41383,7 +42171,7 @@ exports.default = function () {
     return window.innerWidth <= 800;
 };
 
-},{}],165:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41399,7 +42187,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],166:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41410,7 +42198,7 @@ exports.default = function (n, width, z) {
 	return n.length >= width ? n + '' : new Array(width - (n + '').length + 1).join(z || '0') + (n + '');
 };
 
-},{}],167:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41443,7 +42231,7 @@ var _darken2 = _interopRequireDefault(_darken);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./darken":163}],168:[function(require,module,exports){
+},{"./darken":167}],172:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41470,7 +42258,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}],169:[function(require,module,exports){
+},{"react":113}],173:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41498,6 +42286,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"react":113}]},{},[134])
+},{"react":113}]},{},[136])
 
 //# sourceMappingURL=main.js.map

@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
 import { hoverToggle, unhoverToggle } from "../actions/navToggle"
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPanel"
-
 
 import splitLetter from '../services/splitLetter'
 import pad from '../services/pad'
@@ -34,6 +34,16 @@ class NavToggle extends Component {
 		// this.props.closeSecondaryPanel();		
 	}
 
+	// componentDidUpdate(prevProps) {
+	// 	if (prevProps.count != this.props.count) { 
+	// 		this.setState({
+	// 			countIsIncreasing: (prevProps.count < this.props.count),
+	// 			countIsDecreasing: (prevProps.count > this.props.count),
+	// 		})
+	// 		setTimeout(() => {this.setState({ countIsIncreasing: false, countIsDecreasing: false })}, 600);
+	// 	}
+	// }
+
 
 	render() {
 		const { secondaryPanelOpen, countIsIncreasing, countIsDecreasing } = this.state;
@@ -51,8 +61,10 @@ class NavToggle extends Component {
 
 
 		return (
-			<div className={classnames} onMouseEnter={this.props.hoverToggle} onMouseLeave={this.props.isTakeoverOpen ? null : this.props.unhoverToggle}
-				onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
+			<div className={classnames} 
+			onMouseEnter={() => { this.props.hoverToggle(); this.props.setCursorHover();}} 
+			onMouseLeave={this.props.isTakeoverOpen ? this.props.setCursorUnhover : (() => { this.props.unhoverToggle(); this.props.setCursorUnhover(); })}
+			onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
 				<h6 className="nav-toggle__abbreviation">{this.props.abbreviation}</h6>
 				<div className="nav-toggle__hamburger">
 					<div className="line"/>
@@ -77,6 +89,8 @@ const mapDispatchToProps = dispatch => ({
 	closeTakeover: () => dispatch(closeTakeover()),
 	hoverToggle: () => dispatch(hoverToggle()),
 	unhoverToggle: () => dispatch(unhoverToggle()),
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
 	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
 	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
 })

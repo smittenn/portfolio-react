@@ -6,7 +6,10 @@ import classNames from "classnames"
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 
-export default class NextProject extends Component {
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+
+
+class NextProject extends Component {
 
 	constructor(props) {
 		super(props);
@@ -32,10 +35,10 @@ export default class NextProject extends Component {
 		// console.log(event)
 		const { pageX, pageY } = event;
 		
-		this.setState({
-			arrowX: pageX,
-			arrowY: pageY - this.refs.nextProject.offsetTop,
-		})
+		// this.setState({
+		// 	arrowX: pageX,
+		// 	arrowY: pageY - this.refs.nextProject.offsetTop,
+		// })
 	}
 
 	handleHover = () => {
@@ -46,6 +49,13 @@ export default class NextProject extends Component {
 
 	render() {
 
+		// const style = {
+		// 	opacity: this.state.isHovering ? 1 : 0,
+		// 	position: 'absolute',
+		// 	left: this.state.arrowX,
+		// 	top: this.state.arrowY,
+		// }
+
 		const { to, name, style, sections, activeSection } = this.props;
 
 		const classnames = classNames({
@@ -53,21 +63,14 @@ export default class NextProject extends Component {
 		})
 		
 		return (
-			<div className={classnames} onMouseMove={this.setArrowPosition} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} ref="nextProject">
+			<div className={classnames} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover} ref="nextProject">
 				<NavLink to={to}>
 					<section className="black" style={style}>
 							<GridLines/>
 								<div className="grid">
 									<div className="grid__item grid__item--col-12">
-										<h3 className="no-mb">Next Up</h3>
-										<h2>{name}</h2>
-
-										<h2 style={{
-											opacity: this.state.isHovering ? 1 : 0,
-											position: 'absolute',
-											left: this.state.arrowX,
-											top: this.state.arrowY,
-										}}><i className="iconcss icon-arrow-right"/></h2>
+										<h3 className="">Next Up</h3>
+										<h2>{name}<i className="iconcss icon-arrow-right"/></h2>
 									</div>
 								</div>
 					</section>
@@ -83,3 +86,15 @@ export default class NextProject extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	isCursorHovering: state.isCursorHovering,
+})
+
+const mapDispatchToProps = dispatch => ({
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NextProject)

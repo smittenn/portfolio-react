@@ -71,7 +71,7 @@ class AmericanMade extends Component {
 
 	render() {
 
-		const { setCounter, setNavWhite, setNavBlack } = this.props;
+		const { setCounter } = this.props;
 		const { activeSection, sections } = this.state;
 
 		const brandBlack = hexToRgb(palette("brand-black"));
@@ -158,8 +158,8 @@ class AmericanMade extends Component {
 						<div className="grid__row">
 							{/*<div className="grid__item grid__item--col-1"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{splitLetter("Cinemagraphs")}</h2> 
-								<blockquote>{splitWord("To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.")}</blockquote>
+								<h2>{"Cinemagraphs"}</h2> 
+								<blockquote>{"To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
 							</div>
 						</div>
 					</div>

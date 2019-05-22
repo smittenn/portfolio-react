@@ -1,8 +1,8 @@
 const navToggleReducer = (state = false, action) => {
 	switch (action.type) {
-		case 'HOVER':
+		case 'HOVER_TOGGLE':
 			return true
-		case 'UNHOVER':
+		case 'UNHOVER_TOGGLE':
 			return false
 		default:
 			return state

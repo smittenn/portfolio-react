@@ -7,7 +7,6 @@ import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { setNavWhite, setNavBlack } from "../actions/color"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -18,6 +17,7 @@ import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import Image from "../components/Image"
 import SideScroller from "../components/SideScroller"
+import NextProject from "../components/NextProject"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -80,7 +80,7 @@ class Vai extends Component {
 					sections={sections} 
 					activeSection={activeSection}
 					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
-					bgImage={"../assets/img/vai/banner.gif"}
+					bgImage={"../assets/img/vai/banner.jpg"}
 					onSetActive={() => { this.setActiveSection(sections[0]);}}
 					/>
 					<Link to={sections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.setActiveSection(sections[1]); }}>
@@ -104,7 +104,6 @@ class Vai extends Component {
 							<blockquote>
 								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 							</blockquote>
-
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
@@ -135,7 +134,7 @@ class Vai extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ backgroundImage: `url(../assets/img/vai/one-plus.jpg)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`, backgroundPosition: "center 20%" }}  
+				style={{ backgroundImage: `url(../assets/img/vai/escalade.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 10%" }}  
 				onSetActive={() => { this.setActiveSection(sections[2]); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
@@ -226,6 +225,16 @@ class Vai extends Component {
 
 					</SideScroller>
 				</ScrollSection>
+
+				<NextProject 
+				to="/translator"
+				name="Translator"
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/translator/banner.png)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+				}}/>
 				
 			</article>
 		);
@@ -251,8 +260,6 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	setNavWhite: () => dispatch(setNavWhite()),
-	setNavBlack: () => dispatch(setNavBlack()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Vai)

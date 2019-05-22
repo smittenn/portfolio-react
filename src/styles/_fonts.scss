@@ -46,17 +46,17 @@
 // 	url('../fonts/Averta/Averta-Black.svg#codropsicons') format('svg');
 // }
 
-@font-face {
-	font-family: 'Averta';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/Averta/Averta-ExtraBold.eot');
-	src: url('../fonts/Averta/Averta-ExtraBold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Averta/Averta-ExtraBold.woff2') format('woff2'), 
-	url('../fonts/Averta/Averta-ExtraBold.woff') format('woff'), 
-	url('../fonts/Averta/Averta-ExtraBold.ttf') format('truetype'),
-	url('../fonts/Averta/Averta-ExtraBold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Averta';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/Averta/Averta-ExtraBold.eot');
+// 	src: url('../fonts/Averta/Averta-ExtraBold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Averta/Averta-ExtraBold.woff2') format('woff2'), 
+// 	url('../fonts/Averta/Averta-ExtraBold.woff') format('woff'), 
+// 	url('../fonts/Averta/Averta-ExtraBold.ttf') format('truetype'),
+// 	url('../fonts/Averta/Averta-ExtraBold.svg#codropsicons') format('svg');
+// }
 
 // @font-face {
 // 	font-family: 'Averta';
@@ -105,6 +105,19 @@
 // 	url('../fonts/Averta/Averta-Thin.ttf') format('truetype'),
 // 	url('../fonts/Averta/Averta-Thin.svg#codropsicons') format('svg');
 // }
+
+
+@font-face {
+	font-family: 'Moderat';
+	font-weight: 600;
+	font-style: normal;
+	src: url('../fonts/Moderat/Moderat-Bold.eot');
+	src: url('../fonts/Moderat/Moderat-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Moderat/Moderat-Bold.woff2') format('woff2'), 
+	url('../fonts/Moderat/Moderat-Bold.woff') format('woff'), 
+	url('../fonts/Moderat/Moderat-Bold.ttf') format('truetype'),
+	url('../fonts/Moderat/Moderat-Bold.svg#codropsicons') format('svg');
+}
 
 
 @font-face {

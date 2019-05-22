@@ -8,6 +8,8 @@ import Home from './Home'
 import AmericanMade from './AmericanMade'
 import Vai from './Vai'
 import Translator from './Translator'
+import JnjHome from './JnjHome'
+
 import AboutMe from './AboutMe'
 
 const routes = (
@@ -21,6 +23,7 @@ const routes = (
 			<Route exact path="/american-made" component={AmericanMade}/>
 			<Route exact path="/vai" component={Vai}/>
 			<Route path="/translator" component={Translator}/>
+			<Route path="/jnj-home" component={JnjHome}/>
 			{/*<Route path="/jnj-mdc" component={JnjMdc}/>
 			<Route path="/jnj-home" component={JnjHome}/>
 			<Route path="/micro-app-interactions" component={MicroAppInteractions}/>
