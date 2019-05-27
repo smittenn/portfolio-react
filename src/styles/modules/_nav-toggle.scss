@@ -26,7 +26,7 @@ $baseclass: nav-toggle;
 	position: fixed;
 	right: 0;
 	top: 24px;
-	width: 61px;
+	width: 73px;
 	pointer-events: auto;
 	height: 90px;
 	display: flex;
@@ -45,12 +45,12 @@ $baseclass: nav-toggle;
 	}
 
 	.#{$baseclass}__abbreviation {
-		margin-bottom: 12px;
+		margin-bottom: 18px;
 	}
 	
 	.#{$baseclass}__count {
 		overflow: hidden;
-		margin-top: 18px;
+		margin-top: 24px;
 		transition-delay: 0.09s;
 
 		span {
@@ -117,10 +117,10 @@ $baseclass: nav-toggle;
 				opacity: 1;
 
 				&:first-child {
-					transform: translate3d(0,-9px,0);
+					transform: translate3d(0,-10px,0);
 				}
 				&:last-child {
-					transform: translate3d(0,9px,0);
+					transform: translate3d(0,10px,0);
 				}
 			}
 		}

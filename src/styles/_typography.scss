@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	color: inherit;
 
 	&.uppercase {
-		letter-spacing: $letter-spacing-sm;
+		letter-spacing: $letter-spacing-md;
 		text-transform: uppercase;
 	}
 

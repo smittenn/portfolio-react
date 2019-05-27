@@ -3,6 +3,7 @@
 }
 
 html {
+	background: $brand-black;
 	// width: 100%;
 }
 
@@ -18,6 +19,7 @@ body {
 
 	-o-user-select: none;
 	user-select: none;  
+
 
 	cursor: none !important;
 	color: $brand-black;

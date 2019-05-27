@@ -32,11 +32,11 @@
 			// transform: none !important;
 			// opacity: 1 !important;
 
-			@for $i from 1 through 60 {
-				&:nth-child(#{$i}) {
-					transition-delay: (#{0.0 + ($i * 0.09)}s);
-				}
-			}
+			// @for $i from 1 through 60 {
+			// 	&:nth-child(#{$i}) {
+			// 		transition-delay: (#{0.0 + ($i * 0.09)}s);
+			// 	}
+			// }
 
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) span {
@@ -154,7 +154,7 @@ section {
 
 		p, blockquote {
 			opacity: 1;
-			transition: all $duration-slow $easing1;
+			transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 
 			span {
 				@for $i from 1 through 120 {

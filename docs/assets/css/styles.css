@@ -56,11 +56,11 @@ table {
   src: url("../fonts/CircularStd/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd/CircularStd-Black.woff2") format("woff2"), url("../fonts/CircularStd/CircularStd-Black.woff") format("woff"), url("../fonts/CircularStd/CircularStd-Black.ttf") format("truetype"), url("../fonts/CircularStd/CircularStd-Black.svg#codropsicons") format("svg"); }
 
 @font-face {
-  font-family: 'Moderat';
+  font-family: 'Avant Garde';
   font-weight: 600;
   font-style: normal;
-  src: url("../fonts/Moderat/Moderat-Bold.eot");
-  src: url("../fonts/Moderat/Moderat-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Moderat/Moderat-Bold.woff2") format("woff2"), url("../fonts/Moderat/Moderat-Bold.woff") format("woff"), url("../fonts/Moderat/Moderat-Bold.ttf") format("truetype"), url("../fonts/Moderat/Moderat-Bold.svg#codropsicons") format("svg"); }
+  src: url("../fonts/AvantGarde/AvantGarde-Demi.eot");
+  src: url("../fonts/AvantGarde/AvantGarde-Demi.eot?#iefix") format("embedded-opentype"), url("../fonts/AvantGarde/AvantGarde-Demi.woff2") format("woff2"), url("../fonts/AvantGarde/AvantGarde-Demi.woff") format("woff"), url("../fonts/AvantGarde/AvantGarde-Demi.ttf") format("truetype"), url("../fonts/AvantGarde/AvantGarde-Demi.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Averta';
@@ -123,7 +123,7 @@ table {
   flex-wrap: wrap;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 0 60px; }
+  padding: 0 72px; }
   .grid--lines {
     position: absolute;
     top: 0;
@@ -298,6 +298,9 @@ blockquote {
 * {
   box-sizing: border-box; }
 
+html {
+  background: #131112; }
+
 body {
   background: #F8FBF7;
   -webkit-overflow-scrolling: touch;
@@ -385,126 +388,6 @@ h1 span, h2 span, h3 span, p span, blockquote span {
 
 .react-parallax h1 > span {
   overflow: hidden; }
-  .react-parallax h1 > span:nth-child(1) {
-    transition-delay: 0.09s; }
-  .react-parallax h1 > span:nth-child(2) {
-    transition-delay: 0.18s; }
-  .react-parallax h1 > span:nth-child(3) {
-    transition-delay: 0.27s; }
-  .react-parallax h1 > span:nth-child(4) {
-    transition-delay: 0.36s; }
-  .react-parallax h1 > span:nth-child(5) {
-    transition-delay: 0.45s; }
-  .react-parallax h1 > span:nth-child(6) {
-    transition-delay: 0.54s; }
-  .react-parallax h1 > span:nth-child(7) {
-    transition-delay: 0.63s; }
-  .react-parallax h1 > span:nth-child(8) {
-    transition-delay: 0.72s; }
-  .react-parallax h1 > span:nth-child(9) {
-    transition-delay: 0.81s; }
-  .react-parallax h1 > span:nth-child(10) {
-    transition-delay: 0.9s; }
-  .react-parallax h1 > span:nth-child(11) {
-    transition-delay: 0.99s; }
-  .react-parallax h1 > span:nth-child(12) {
-    transition-delay: 1.08s; }
-  .react-parallax h1 > span:nth-child(13) {
-    transition-delay: 1.17s; }
-  .react-parallax h1 > span:nth-child(14) {
-    transition-delay: 1.26s; }
-  .react-parallax h1 > span:nth-child(15) {
-    transition-delay: 1.35s; }
-  .react-parallax h1 > span:nth-child(16) {
-    transition-delay: 1.44s; }
-  .react-parallax h1 > span:nth-child(17) {
-    transition-delay: 1.53s; }
-  .react-parallax h1 > span:nth-child(18) {
-    transition-delay: 1.62s; }
-  .react-parallax h1 > span:nth-child(19) {
-    transition-delay: 1.71s; }
-  .react-parallax h1 > span:nth-child(20) {
-    transition-delay: 1.8s; }
-  .react-parallax h1 > span:nth-child(21) {
-    transition-delay: 1.89s; }
-  .react-parallax h1 > span:nth-child(22) {
-    transition-delay: 1.98s; }
-  .react-parallax h1 > span:nth-child(23) {
-    transition-delay: 2.07s; }
-  .react-parallax h1 > span:nth-child(24) {
-    transition-delay: 2.16s; }
-  .react-parallax h1 > span:nth-child(25) {
-    transition-delay: 2.25s; }
-  .react-parallax h1 > span:nth-child(26) {
-    transition-delay: 2.34s; }
-  .react-parallax h1 > span:nth-child(27) {
-    transition-delay: 2.43s; }
-  .react-parallax h1 > span:nth-child(28) {
-    transition-delay: 2.52s; }
-  .react-parallax h1 > span:nth-child(29) {
-    transition-delay: 2.61s; }
-  .react-parallax h1 > span:nth-child(30) {
-    transition-delay: 2.7s; }
-  .react-parallax h1 > span:nth-child(31) {
-    transition-delay: 2.79s; }
-  .react-parallax h1 > span:nth-child(32) {
-    transition-delay: 2.88s; }
-  .react-parallax h1 > span:nth-child(33) {
-    transition-delay: 2.97s; }
-  .react-parallax h1 > span:nth-child(34) {
-    transition-delay: 3.06s; }
-  .react-parallax h1 > span:nth-child(35) {
-    transition-delay: 3.15s; }
-  .react-parallax h1 > span:nth-child(36) {
-    transition-delay: 3.24s; }
-  .react-parallax h1 > span:nth-child(37) {
-    transition-delay: 3.33s; }
-  .react-parallax h1 > span:nth-child(38) {
-    transition-delay: 3.42s; }
-  .react-parallax h1 > span:nth-child(39) {
-    transition-delay: 3.51s; }
-  .react-parallax h1 > span:nth-child(40) {
-    transition-delay: 3.6s; }
-  .react-parallax h1 > span:nth-child(41) {
-    transition-delay: 3.69s; }
-  .react-parallax h1 > span:nth-child(42) {
-    transition-delay: 3.78s; }
-  .react-parallax h1 > span:nth-child(43) {
-    transition-delay: 3.87s; }
-  .react-parallax h1 > span:nth-child(44) {
-    transition-delay: 3.96s; }
-  .react-parallax h1 > span:nth-child(45) {
-    transition-delay: 4.05s; }
-  .react-parallax h1 > span:nth-child(46) {
-    transition-delay: 4.14s; }
-  .react-parallax h1 > span:nth-child(47) {
-    transition-delay: 4.23s; }
-  .react-parallax h1 > span:nth-child(48) {
-    transition-delay: 4.32s; }
-  .react-parallax h1 > span:nth-child(49) {
-    transition-delay: 4.41s; }
-  .react-parallax h1 > span:nth-child(50) {
-    transition-delay: 4.5s; }
-  .react-parallax h1 > span:nth-child(51) {
-    transition-delay: 4.59s; }
-  .react-parallax h1 > span:nth-child(52) {
-    transition-delay: 4.68s; }
-  .react-parallax h1 > span:nth-child(53) {
-    transition-delay: 4.77s; }
-  .react-parallax h1 > span:nth-child(54) {
-    transition-delay: 4.86s; }
-  .react-parallax h1 > span:nth-child(55) {
-    transition-delay: 4.95s; }
-  .react-parallax h1 > span:nth-child(56) {
-    transition-delay: 5.04s; }
-  .react-parallax h1 > span:nth-child(57) {
-    transition-delay: 5.13s; }
-  .react-parallax h1 > span:nth-child(58) {
-    transition-delay: 5.22s; }
-  .react-parallax h1 > span:nth-child(59) {
-    transition-delay: 5.31s; }
-  .react-parallax h1 > span:nth-child(60) {
-    transition-delay: 5.4s; }
   .react-parallax h1 > span:nth-child(1) span {
     animation-delay: 0.72s; }
   .react-parallax h1 > span:nth-child(2) span {
@@ -1207,7 +1090,7 @@ section p span > span, section blockquote span > span {
 
 .active-section section p, .active-section section blockquote {
   opacity: 1;
-  transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1); }
   .active-section section p span:nth-child(1) span, .active-section section blockquote span:nth-child(1) span {
     transition-delay: 1.24s; }
   .active-section section p span:nth-child(2) span, .active-section section blockquote span:nth-child(2) span {
@@ -1514,6 +1397,7 @@ section p span > span, section blockquote span > span {
     top: 0px;
     display: -ms-flexbox;
     display: flex;
+    overflow: hidden;
     transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
     .nav-takeover__main > div {
       -ms-flex: .6;
@@ -1586,18 +1470,12 @@ section p span > span, section blockquote span > span {
     border-color: #DEDEDC; }
   .nav-takeover__items--primary h1.active, .nav-takeover__items--primary h2.active, .nav-takeover__items--primary h3.active, .nav-takeover__items--primary h4.active, .nav-takeover__items--primary h5.active, .nav-takeover__items--primary h6.active {
     color: transparent;
-    -webkit-text-stroke: 1px #131112; }
-  .nav-takeover__items--primary h1.hover, .nav-takeover__items--primary h2.hover, .nav-takeover__items--primary h3.hover, .nav-takeover__items--primary h4.hover, .nav-takeover__items--primary h5.hover, .nav-takeover__items--primary h6.hover {
-    color: transparent;
     -webkit-text-stroke: 1px #ff3636; }
   .nav-takeover__items--secondary {
     pointer-events: none; }
     .nav-takeover__items--secondary a.active h1, .nav-takeover__items--secondary a.active h2, .nav-takeover__items--secondary a.active h3, .nav-takeover__items--secondary a.active h4, .nav-takeover__items--secondary a.active h5, .nav-takeover__items--secondary a.active h6 {
       color: transparent;
-      -webkit-text-stroke: 1px #131112; }
-      .nav-takeover__items--secondary a.active h1.hover, .nav-takeover__items--secondary a.active h2.hover, .nav-takeover__items--secondary a.active h3.hover, .nav-takeover__items--secondary a.active h4.hover, .nav-takeover__items--secondary a.active h5.hover, .nav-takeover__items--secondary a.active h6.hover {
-        color: transparent;
-        -webkit-text-stroke: 1px #ff3636; }
+      -webkit-text-stroke: 1px #ff3636; }
   .nav-takeover--menuOpen .nav-takeover__main {
     pointer-events: auto;
     background: rgba(19, 17, 18, 0.5); }
@@ -1745,7 +1623,7 @@ section p span > span, section blockquote span > span {
   position: fixed;
   right: 0;
   top: 24px;
-  width: 61px;
+  width: 73px;
   pointer-events: auto;
   height: 90px;
   display: -ms-flexbox;
@@ -1762,10 +1640,10 @@ section p span > span, section blockquote span > span {
     margin: 0;
     font-family: "Campton"; }
   .nav-toggle .nav-toggle__abbreviation {
-    margin-bottom: 12px; }
+    margin-bottom: 18px; }
   .nav-toggle .nav-toggle__count {
     overflow: hidden;
-    margin-top: 18px;
+    margin-top: 24px;
     transition-delay: 0.09s; }
     .nav-toggle .nav-toggle__count span {
       display: inline-block;
@@ -1802,9 +1680,9 @@ section p span > span, section blockquote span > span {
     .nav-toggle--hovering .nav-toggle__hamburger .line {
       opacity: 1; }
       .nav-toggle--hovering .nav-toggle__hamburger .line:first-child {
-        transform: translate3d(0, -9px, 0); }
+        transform: translate3d(0, -10px, 0); }
       .nav-toggle--hovering .nav-toggle__hamburger .line:last-child {
-        transform: translate3d(0, 9px, 0); }
+        transform: translate3d(0, 10px, 0); }
   .nav-toggle--hovering .nav-toggle__abbreviation, .nav-toggle--hovering .nav-toggle__count {
     opacity: 0; }
   .nav-toggle--hovering .nav-toggle__abbreviation {
@@ -2107,6 +1985,26 @@ section p span > span, section blockquote span > span {
       .project-card i {
         right: 0; } }
 
+[class*="react-sandbox-editor"].sandbox__header {
+  background: #232021; }
+
+[class*="react-sandbox-editor"].sandbox__tab {
+  font-family: "Circular Std", sans-serif; }
+  [class*="react-sandbox-editor"].sandbox__tab:hover {
+    color: #ff3636; }
+
+[class*="react-sandbox-editor"].sandbox__tab--selected {
+  color: #ff3636; }
+
+[class*="react-sandbox-editor"].sandbox__indicator {
+  background-color: #ff3636;
+  height: 3px;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 0.6s; }
+
+[class*="react-sandbox-editor"] .ace_print-margin {
+  display: none; }
+
 @keyframes wiggle {
   16.65% {
     transform: translateY(4px) rotate(90deg); }
@@ -2232,7 +2130,7 @@ section p span > span, section blockquote span > span {
   top: 0px; }
   .sidebar__inner {
     margin-top: 108px;
-    width: 94px;
+    width: 87px;
     padding: 0;
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
   .sidebar__item {
@@ -2270,14 +2168,14 @@ section p span > span, section blockquote span > span {
     font-family: "Campton"; }
   .sidebar__number {
     color: #131112;
-    margin: 0 16px 0 32px;
+    margin: 0 24px;
     opacity: 0;
     transform: translate3d(32px, 0, 0);
     display: inline-block; }
   .sidebar__label {
     position: relative;
     color: #131112;
-    padding: 0 0 0 48px;
+    padding: 0 0 0 40px;
     margin: 0;
     opacity: 0;
     display: inline-block;
@@ -2290,7 +2188,7 @@ section p span > span, section blockquote span > span {
     display: inline-block;
     position: absolute;
     top: 50%;
-    left: 72px; }
+    left: 60px; }
   .sidebar__border {
     display: block;
     position: absolute;
@@ -2307,7 +2205,7 @@ section p span > span, section blockquote span > span {
   .sidebar--white .sidebar__dash {
     background: #F8FBF7; }
   .sidebar--open {
-    min-width: 40vw; }
+    min-width: 36vw; }
     .sidebar--open .sidebar__number, .sidebar--open .sidebar__label {
       color: #F8FBF7; }
     .sidebar--open .sidebar__inner {
@@ -2341,7 +2239,7 @@ section p span > span, section blockquote span > span {
       .sidebar .sidebar__item {
         height: 32px; }
       .sidebar.sidebar--open {
-        min-width: 252px; }
+        min-width: 100vw; }
         .sidebar.sidebar--open .sidebar__item {
           height: 8vh; } }
 
@@ -2518,7 +2416,7 @@ section p span > span, section blockquote span > span {
   section {
     padding: 60px 0; }
   h1 {
-    font-size: 13vw;
+    font-size: 12vw;
     margin-left: 0;
     margin-bottom: 24px; }
   h2 {

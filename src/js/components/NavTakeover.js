@@ -180,8 +180,10 @@ class Nav extends Component {
 
 		const secondaryNavItems = navData.secondary.map((item, i) => 
 			<li key={i}>
-				<NavLink to={item.to} onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }}
-				 onClick={this.setMenuClosed}>
+				<NavLink to={item.to} 
+				onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }}
+				onMouseLeave={ this.props.setCursorUnhover } 
+				onClick={this.setMenuClosed}>
 					<h4 className={classNames({ 'hover': i == indexHovered })}>{item.name}</h4>
 				</NavLink>
 			</li>

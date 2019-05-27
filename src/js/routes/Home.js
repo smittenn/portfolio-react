@@ -66,31 +66,41 @@ class Home extends Component {
 				name: "American Made Film Site",
 				href: "/american-made",
 				tags: [ "UI", "Interactive" ],
+				img: "../assets/img/american-made/banner.gif"
 			},
 			{
 				name: "V.ai Player",
 				href: "/vai",
 				tags: [ "UX", "Interactive" ],
+				img: "../assets/img/vai/eye.gif",
 			},
 			{
 				name: "Translator",
 				href: "/translator",
 				tags: [ "UX", "Design System" ],
+				img: "../assets/img/translator/banner.png",
 			},
 			{
 				name: "Micro App Interactions",
 				href: "/micro-app-interactions",
 				tags: [ "Interactive", "Mobile" ],
+				img: "../assets/img/card-components/share-animation.gif",
+				aspectRatioWidth: 4,
+				aspectRatioHeight: 3,
 			},
 			{
 				name: "Micro App Templates",
 				href: "/micro-app-templates",
 				tags: [ "Visual Design", "Mobile" ],
+				img: "../assets/img/card-components/banner-alt.jpg",
+				aspectRatioWidth: 7,
+				aspectRatioHeight: 6,
 			},
 			{
-				name: "JJMDC",
-				href: "/micro-app-templates",
+				name: "J&J Home",
+				href: "/jnj-home",
 				tags: [ "Visual Design", "Mobile" ],
+				img: "../assets/img/jnj-home/onboarding-mobile.png"
 			},
 
 		]
@@ -161,27 +171,26 @@ class Home extends Component {
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<ProjectCard name="American Made Film Site" href="/american-made" tags={["UI", "Interactive"]}>
-								<Image src="../assets/img/american-made/banner.gif" aspectRatioWidth={1} aspectRatioHeight={1}/>
-								{/*<video src="../assets/img/project-1.mp4" autoPlay loop playsInline preload="auto" muted />*/}
+							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
+								<Image src={projects[0].img} aspectRatioWidth={1} aspectRatioHeight={1}/>
+							</ProjectCard>
+							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
+								<Image src={projects[2].img} aspectRatioWidth={2} aspectRatioHeight={1}/>
+							</ProjectCard>
+							<ProjectCard name={projects[4].name} href={projects[4].href} tags={projects[4].tags}>
+								<Image src={projects[4].img} aspectRatioWidth={projects[4].aspectRatioWidth} aspectRatioHeight={projects[4].aspectRatioHeight}/>
 							</ProjectCard>
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="spacer spacer__md"/>
-							<ProjectCard name="V.ai Player" href="/vai" tags={["UX", "Interactive"]}>
-								<img src="../assets/img/vai/eye.gif"/>
+							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
+								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
 							</ProjectCard>
-						</div>
-
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<div className="spacer spacer__md"/>
-							<ProjectCard name="Micro App Templates" href="/micro-app-templates" tags={["Visual Design", "Brand"]}>
-								<img src="../assets/img/card-components/banner-alt.jpg"/>
+							<ProjectCard name={projects[3].name} href={projects[3].href} tags={projects[3].tags}>
+								<Image src={projects[3].img} aspectRatioWidth={projects[3].aspectRatioWidth} aspectRatioHeight={projects[3].aspectRatioHeight}/>
 							</ProjectCard>
-						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<ProjectCard name="J&J Home" href="/jnj-home" tags={["UX", "UI"]}>
-								<img src="../assets/img/jnj-home/onboarding-kiosk-mock.png"/>
+							<ProjectCard name={projects[5].name} href={projects[5].href} tags={projects[5].tags}>
+								<Image src={projects[5].img} aspectRatioWidth={1} aspectRatioHeight={1}/>
 							</ProjectCard>
 						</div>
 					</div>

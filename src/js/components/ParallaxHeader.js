@@ -98,11 +98,12 @@ export default class ParallaxHeader extends Component {
 				blur={null} 
 				strength={str}
 				renderLayer={percentage => {
+					const gradient = `radial-gradient(rgba(${color.r}, ${color.b}, ${color.g}, ${percentage - 0.4}), rgba(${color.r}, ${color.b}, ${color.g}, ${percentage - 0.1}))`;
 					return (
-						<div className="react-parallax-contents" style={{ backgroundColor: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage - 0.1})`, 'mixBlendMode': 'multiply' }}></div>
+						<div className="react-parallax-contents" style={{ background: `rgba(${color.r}, ${color.b}, ${color.g}, ${percentage - 0.1})`, 'mixBlendMode': 'multiply' }}></div>
 					)
 				}}>
-					{/*<GridLines/>*/}
+					{<GridLines/>}
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">

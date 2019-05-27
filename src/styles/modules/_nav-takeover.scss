@@ -15,6 +15,7 @@ $baseclass: nav-takeover;
 		height: calc(100vh);
 		top: 0px;
 		display: flex;
+		overflow: hidden;
 		transition: all $easing1 $duration-medium;
 
 		> div {
@@ -115,13 +116,13 @@ $baseclass: nav-takeover;
 
 			&.active {
 				color: transparent;
-				-webkit-text-stroke: 1px $brand-black;
-			}
-
-			&.hover {
-				color: transparent;
 				-webkit-text-stroke: 1px $brand-red;
 			}
+
+			// &.hover {
+			// 	color: transparent;
+			// 	-webkit-text-stroke: 1px $brand-red;
+			// }
 		}
 	}
 
@@ -137,12 +138,12 @@ $baseclass: nav-takeover;
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
 				color: transparent;
-				-webkit-text-stroke: 1px $brand-black;
+				-webkit-text-stroke: 1px $brand-red;
 
-				&.hover {
-					color: transparent;
-					-webkit-text-stroke: 1px $brand-red;
-				}
+				// &.hover {
+				// 	color: transparent;
+				// 	-webkit-text-stroke: 1px $brand-red;
+				// }
 			}
 		}
 	}

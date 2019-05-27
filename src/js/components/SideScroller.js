@@ -34,7 +34,7 @@ export default class SideScroller extends Component {
 		})
 
 
-		const margin = isMobile ? 12 : 60;
+		const margin = isMobile ? 12 : 72;
 
 		const style = {
 			overflowX: 'scroll',

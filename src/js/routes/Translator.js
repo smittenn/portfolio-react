@@ -47,7 +47,6 @@ class Translator extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"collections",
 				"metadata",
 				"shell",
@@ -134,24 +133,11 @@ class Translator extends Component {
 							</div>
 						</div>
 					</div>
-				</ScrollSection>
-
-
-				<ScrollSection 
-				name={sections[2]}
-				black 
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/translator/nyc-skyline.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead Designer</blockquote>
+							<blockquote>Lead UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
@@ -166,14 +152,28 @@ class Translator extends Component {
 							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </blockquote> 
 						</div>
 					</div>
+
 				</ScrollSection>
 
+
+				{/*<ScrollSection 
+				name={sections[2]}
+				black 
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/translator/nyc-skyline.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
+				}}  
+				onSetActive={() => { this.setActiveSection(2); }}>
+				</ScrollSection>*/}
+
 				<ScrollSection 
-				name={sections[3]}
+				name={sections[2]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -191,10 +191,10 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -218,11 +218,11 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -240,10 +240,10 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[6]}
+				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">

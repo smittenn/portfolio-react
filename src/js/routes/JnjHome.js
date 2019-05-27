@@ -18,6 +18,8 @@ import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
 
+import NewUserSetup from "../components/sandbox/NewUserSetup"
+
 import Image from "../components/Image"
 
 import splitWord from "../services/splitWord"
@@ -26,7 +28,7 @@ import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 
 
-class Translator extends Component {
+class JnjHome extends Component {
 
 	static propTypes = {
 	}
@@ -48,10 +50,9 @@ class Translator extends Component {
 				"overview",
 				"about",
 				"details",
-				"collections",
-				"metadata",
-				"shell",
-				"bulk",
+				"new-user",
+				"meganav",
+				"links",
 			],
 		}
 	}
@@ -96,16 +97,13 @@ class Translator extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
-								The process for media asset management varied greatly across NBCU’s entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
+								We wanted a better way to J&J. So we made one. While our 128,000 colleagues around the world are building the future of healthcare, we're building a better J&J. 
 							</blockquote>
 							<blockquote>
-								The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or "MAM" to be stored.
+								But its not just about convenience and collaboration. It's about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. 
 							</blockquote>
 							<blockquote>
-								The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention.
-							</blockquote>
-							<blockquote>
-								
+								We set out to create a more connected and productive environment that generates excitement about all of the innovative, groundbreaking work happening at J&J. We also wanted to build a centralized platform to house all the links and resources our peers use every day, enabling them to access vital information from any device, anywhere. 
 							</blockquote>
 
 						</div>
@@ -113,19 +111,19 @@ class Translator extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
+									<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
 								</div>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote>
-										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
+										My goal for this project as a Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding while extending it to add motion and animation principles.
 									</blockquote>
 								</div>
 								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 									<blockquote>
-										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
+										The new design for Home helped employees find what they needed and helped bring J&J's people experience into the 21st century.
 									</blockquote>
 								</div>
 							</div>
@@ -140,8 +138,11 @@ class Translator extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/translator/nyc-skyline.jpg)`, 
+					backgroundImage: `url(../assets/img/jnj-home/city.svg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
+					backgroundPosition: '50% 80%',
+					backgroundRepeat: 'repeatX',
+					backgroundSize: 'cover',
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
@@ -160,7 +161,13 @@ class Translator extends Component {
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote><a href="//www.linkedin.com/in/alex-gross-668b2218/">Alex Gross</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </blockquote> 
+							<blockquote>
+								<a href="//www.linkedin.com/in/alex-gross-668b2218/">Alex Gross</a>, 
+								<a href="">Chris Purcell</a>, 
+								<a href="//www.linkedin.com/in/mkcorcoran/">Katrina Corcoran</a>,  
+								<a href="">Howard Chambers</a>, 
+								<a href="">Alisha Austin</a>, 
+							</blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
@@ -174,18 +181,21 @@ class Translator extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Collections</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid view to their liking. The grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
+								<h2>Onboarding</h2>
+								<blockquote>The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. After providing basic information in this short experience the new employee can visit Home to learn about services nearby, and tools necessary for their job and give them the profile links for people they will be working with frequently.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
+						{/*<div className="grid__item grid__item--col-3">
+							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-profile-setup.html" height="720"/>
+						</div>*/}
+						{/*<div className="grid__item grid__item--col-1  grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-12">
-							<Image src="../assets/img/translator/mam-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/jnj-home/onboarding-kiosk-mock.png" aspectRatioWidth={3} aspectRatioHeight={2}/>
 						</div>
 					</div>
 				</ScrollSection>
-
 
 				<ScrollSection 
 				name={sections[4]}
@@ -195,80 +205,51 @@ class Translator extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Editing Metadata</h2>
-								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness: "Ready for Ingest", "Ready for Service" and "Search Optimized".</blockquote>
+								<h2>Meganav</h2>
+								<blockquote>I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links.</blockquote>
 							</div>
 						</div>
 					</div>
-					<SideScroller>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/metadata-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html" height="720"/>
 						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/metadata-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/metadata-03.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</SideScroller>
+					</div>
 				</ScrollSection>
 
 
 				<ScrollSection 
-				name={sections[5]}
 				black
+				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Shell Record</h2>
-								<blockquote>Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for.</blockquote>
+								<h2>Links Directory</h2>
+								<blockquote>I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy and our users we theorized 12 categories that links could be bucketed into.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<Image src="../assets/img/translator/shell-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-links.html" height="720"/>
 						</div>
 					</div>
 				</ScrollSection>
 
-
-				<ScrollSection 
-				name={sections[6]}
-				sections={sections} 
-				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Bulk Actions</h2>
-								<blockquote>Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image or Audio) across all shared metadata fields.</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/bulk-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/bulk-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</SideScroller>
-				</ScrollSection>
 
 				<NextProject 
-				to="/jnj-home"
-				name="J&J Home"
+				to="/jnj-mdc"
+				name="J&J MDC"
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
+					backgroundImage: `url(../assets/img/jnj-mdc/ladies.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-					backgroundSize: 'contain',
-					backgroundPosition: 'center',
+					backgroundSize: 'cover',
+					backgroundPosition: '50% 80%',
 				}}/>
 
 				{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
@@ -301,4 +282,4 @@ const mapDispatchToProps = dispatch => ({
 	protohack: () => dispatch(protohack()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Translator)
+export default connect(mapStateToProps, mapDispatchToProps)(JnjHome)
