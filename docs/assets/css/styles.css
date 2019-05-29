@@ -236,7 +236,8 @@ h1 {
   font-size: 7vw;
   line-height: 1.3;
   margin-left: -5px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  letter-spacing: -0.012em; }
   h1 .outline {
     color: transparent;
     -webkit-text-stroke: 1px #F8FBF7; }
@@ -313,7 +314,7 @@ body {
   cursor: none !important;
   color: #131112; }
 
-video {
+video, iframe {
   width: 100%; }
 
 .active-section {
@@ -1581,7 +1582,8 @@ section p span > span, section blockquote span > span {
       .nav-takeover .nav-takeover__panel ul {
         padding: 60px; }
       .nav-takeover .nav-takeover__panel li {
-        height: 48px; }
+        height: 48px;
+        margin-bottom: 40px; }
       .nav-takeover .nav-takeover__panel .nav-takeover__items {
         margin-bottom: 18px;
         padding: 0; }

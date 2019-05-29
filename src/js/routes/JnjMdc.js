@@ -50,9 +50,11 @@ class JnjMdc extends Component {
 				"overview",
 				"about",
 				"details",
-				"new-user",
-				"meganav",
-				"links",
+				"navigation",
+				"flipper",
+				"taxonomy",
+				"buttons",
+				"cards",
 			],
 		}
 	}
@@ -82,7 +84,7 @@ class JnjMdc extends Component {
 					name={sections[0]}
 					sections={sections}
 					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>MDC </span></span>, `unified the websites for J&J Medical Device Companies.`]}
+					headerText={[ <span className="outline"><span>MDC </span></span>, `unified the experience for J&J medical device companies.`]}
 					bgImage={"../assets/img/jnj-mdc/ladies.jpg"}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
@@ -162,37 +164,34 @@ class JnjMdc extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="">Matthew Abate</a>, 
-								<a href="">Stephanie Skuzenski</a>, 
-								<a href="">Laura Hines</a>,
-								<a href="">Katrina Corcoran</a>,
-								<a href="">Jinny Kim</a>,
+								<a href="">Matthew Abate</a>, <a href="">Stephanie Skuzenski</a>, <a href="">Laura Hines</a>, <a href="">Katrina Corcoran</a>, <a href="">Jinny Kim</a>, <a href="">Mark Patience</a>
 							</blockquote> 
 						</div>
 					</div>
 				</ScrollSection>
 
+
 				<ScrollSection 
-				name={sections[3]}
 				black
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Onboarding</h2>
-								<blockquote>The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. After providing basic information in this short experience the new employee can visit Home to learn about services nearby, and tools necessary for their job and give them the profile links for people they will be working with frequently.</blockquote>
+								<h2>Navigation</h2>
+								<blockquote>I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1  grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-12">
-							{/*<Image src="../assets/img/jnj-home/onboarding-kiosk-mock.png" aspectRatioWidth={3} aspectRatioHeight={2}/>*/}
+							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-nav.html" height="720"/>
 						</div>
 					</div>
 				</ScrollSection>
+
 
 				<ScrollSection 
 				name={sections[4]}
@@ -202,19 +201,21 @@ class JnjMdc extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Meganav</h2>
-								<blockquote>I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links.</blockquote>
+								<h2>Flipper Tiles</h2>
+								<blockquote>To toggle between the HCP and Patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search to search for their symptoms or specialties respectively.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
+							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-switcher.html" height="720"/>
 						</div>
 					</div>
 				</ScrollSection>
 
 
 				<ScrollSection 
+				black
 				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
@@ -222,13 +223,57 @@ class JnjMdc extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Links Directory</h2>
-								<blockquote>I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy and our users we theorized 12 categories that links could be bucketed into.</blockquote>
+								<h2>Taxonomy</h2>
+								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our partner's favorite tool as helped our stakeholders learn the site hierarchy.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
+							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html" height="720"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+
+				<ScrollSection 
+				name={sections[6]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(6); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Buttons</h2>
+								<blockquote>Creating a design system is complicated! I created this page to document our button and card styles along with hover states.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html" height="720"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+
+				<ScrollSection 
+				black
+				name={sections[7]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(7); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Cards</h2>
+								<blockquote>Creating a design system is complicated! I created this page to document our button and card styles along with hover states.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-cards.html" height="720"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -241,7 +286,7 @@ class JnjMdc extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
 					backgroundSize: 'contain',
 					backgroundPosition: 'center',
 				}}/>

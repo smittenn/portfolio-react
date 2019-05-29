@@ -123,7 +123,7 @@ class JnjHome extends Component {
 								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 									<blockquote>
-										The new design for Home helped employees find what they needed and helped bring J&J's people experience into the 21st century.
+										The new design for Home helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century.
 									</blockquote>
 								</div>
 							</div>
@@ -162,11 +162,7 @@ class JnjHome extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="//www.linkedin.com/in/alex-gross-668b2218/">Alex Gross</a>, 
-								<a href="">Chris Purcell</a>, 
-								<a href="//www.linkedin.com/in/mkcorcoran/">Katrina Corcoran</a>,  
-								<a href="">Howard Chambers</a>, 
-								<a href="">Alisha Austin</a>, 
+								<a href="//www.linkedin.com/in/alex-gross-668b2218/">Alex Gross</a>, <a href="">Chris Purcell</a>, <a href="//www.linkedin.com/in/mkcorcoran/">Katrina Corcoran</a>, <a href="">Howard Chambers</a>, <a href="">Alisha Austin</a>,
 							</blockquote> 
 						</div>
 					</div>

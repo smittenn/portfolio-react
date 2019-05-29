@@ -84,9 +84,6 @@ class Translator extends Component {
 					bgImage={"../assets/img/translator/banner.png"}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-					{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-						<ScrollArrow label="Read More"/>
-					</Link>}
 				</Element>
 
 
@@ -274,6 +271,10 @@ class Translator extends Component {
 					backgroundPosition: 'center',
 				}}/>
 
+
+				{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
+					<ScrollArrow label="Read More"/>
+				</Link>}
 
 			</article>
 		);

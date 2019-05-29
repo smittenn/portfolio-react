@@ -104,7 +104,7 @@ class Nav extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(-1px, ' + (isMobile ? 96 : 108) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(-1px, ' + (isMobile ? 88 : 108) * (indexHovered + 0) + 'px, 0)',
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
