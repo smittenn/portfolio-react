@@ -98,19 +98,21 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps">
-								We wanted a better way to J&J. So we made one. While our 128,000 colleagues around the world are building the future of healthcare, we're building a better J&J. 
+							<blockquote className="drop-caps mr">
+								We sought to consolidate J&J's 250 websites across 6 medical device companies into a single platform that reflected the new J&J brand.
 							</blockquote>
-							<blockquote>
-								But its not just about convenience and collaboration. It's about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. 
+							<blockquote className="mr">
+								J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. 
+
+								In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
 							</blockquote>
-							<blockquote>
-								We set out to create a more connected and productive environment that generates excitement about all of the innovative, groundbreaking work happening at J&J. We also wanted to build a centralized platform to house all the links and resources our peers use every day, enabling them to access vital information from any device, anywhere. 
+							<blockquote className="mr">
+								As pioneers in medical devices, we continually focus on elevating the standard of care – working to expand patient access, improve outcomes, reduce health system costs and drive value. We create smart, people-centered healthcare to help the patients we serve recover faster and live longer and more vibrantly. 
 							</blockquote>
 
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
 									<Image src="../assets/img/jnj-mdc/running-man-16x9.png" aspectRatioWidth={16} aspectRatioHeight={9} />
@@ -118,13 +120,13 @@ class JnjMdc extends Component {
 							</div>
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote>
+									<blockquote className="mr" >
 										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
 									</blockquote>
 								</div>
-								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-									<blockquote>
+								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+									<blockquote className="mr">
 										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
 									</blockquote>
 								</div>
@@ -201,14 +203,14 @@ class JnjMdc extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Flipper Tiles</h2>
-								<blockquote>To toggle between the HCP and Patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search to search for their symptoms or specialties respectively.</blockquote>
+								<h2>HCP/Patient<br/>Flipper</h2>
+								<blockquote>To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search in the tile to search for their symptoms or specialties respectively.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-switcher.html" height="720"/>
+							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper" height="720"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -224,7 +226,7 @@ class JnjMdc extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Taxonomy</h2>
-								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our partner's favorite tool as helped our stakeholders learn the site hierarchy.</blockquote>
+								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our partner's favorite tool as helped our stakeholders learn the site structure.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -245,7 +247,7 @@ class JnjMdc extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Buttons</h2>
-								<blockquote>Creating a design system is complicated! I created this page to document our button and card styles along with hover states.</blockquote>
+								<blockquote>I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -267,7 +269,7 @@ class JnjMdc extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Cards</h2>
-								<blockquote>Creating a design system is complicated! I created this page to document our button and card styles along with hover states.</blockquote>
+								<blockquote>Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew.</blockquote>
 							</div>
 						</div>
 					</div>

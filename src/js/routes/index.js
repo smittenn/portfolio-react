@@ -10,6 +10,7 @@ import Vai from './Vai'
 import Translator from './Translator'
 import JnjHome from './JnjHome'
 import JnjMdc from './JnjMdc'
+import MicroAppInteractions from './MicroAppInteractions'
 
 import AboutMe from './AboutMe'
 
@@ -26,9 +27,8 @@ const routes = (
 			<Route path="/translator" component={Translator}/>
 			<Route path="/jnj-home" component={JnjHome}/>
 			<Route path="/jnj-mdc" component={JnjMdc}/>
-			{/*
-			<Route path="/jnj-home" component={JnjHome}/>
 			<Route path="/micro-app-interactions" component={MicroAppInteractions}/>
+			{/*
 			<Route path="/micro-app-templates" component={MicroAppTemplates}/>
 			<Route path="/perforce" component={Perforce}/>
 			<Route path="/cisco" component={Cisco}/>

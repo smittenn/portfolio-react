@@ -7,7 +7,6 @@ import GridLines from "../components/GridLines"
 
 import { reset, setCounter } from '../actions/counter'
 import { aboutMe } from '../actions/abbreviation'
-import { setNavWhite, setNavBlack } from "../actions/color"
 
 class AboutMe extends Component {
 

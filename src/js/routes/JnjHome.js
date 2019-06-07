@@ -52,6 +52,7 @@ class JnjHome extends Component {
 				"details",
 				"new-user",
 				"meganav",
+				"sitemap",
 				"links",
 			],
 		}
@@ -96,19 +97,22 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps">
+							<blockquote className="drop-caps mr">
 								We wanted a better way to J&J. So we made one. While our 128,000 colleagues around the world are building the future of healthcare, we're building a better J&J. 
 							</blockquote>
-							<blockquote>
+							<blockquote className="mr">
 								But its not just about convenience and collaboration. It's about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. 
 							</blockquote>
-							<blockquote>
-								We set out to create a more connected and productive environment that generates excitement about all of the innovative, groundbreaking work happening at J&J. We also wanted to build a centralized platform to house all the links and resources our peers use every day, enabling them to access vital information from any device, anywhere. 
+							<blockquote className="mr">
+								We set out to create a more connected and productive environment that generates excitement about all of the innovative, groundbreaking work happening at J&J. 
+							</blockquote>
+							<blockquote className="mr">
+								We also wanted to build a centralized platform to house all the links and resources our peers use every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
 							</blockquote>
 
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
 									<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
@@ -116,14 +120,14 @@ class JnjHome extends Component {
 							</div>
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote>
-										My goal for this project as a Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding while extending it to add motion and animation principles.
+									<blockquote className="mr">
+										My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
 									</blockquote>
 								</div>
-								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-									<blockquote>
-										The new design for Home helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century.
+								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+									<blockquote className="mr">
+										The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.
 									</blockquote>
 								</div>
 							</div>
@@ -170,7 +174,6 @@ class JnjHome extends Component {
 
 				<ScrollSection 
 				name={sections[3]}
-				black
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
@@ -196,6 +199,7 @@ class JnjHome extends Component {
 				<ScrollSection 
 				name={sections[4]}
 				sections={sections} 
+				black
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
@@ -215,11 +219,32 @@ class JnjHome extends Component {
 
 
 				<ScrollSection 
-				black
 				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Sitemap</h2>
+								<blockquote>I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the live map at any time.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html" height="720"/>
+						</div>
+					</div>
+				</ScrollSection>
+
+
+				<ScrollSection 
+				black
+				name={sections[6]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">

@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20170910 at Mon Apr 29 03:29:51 2019
+Created by FontForge 20170910 at Thu May 30 19:18:52 2019
  By Jimmy Wärting
 Copyright (c) 2014 by Rene' Bieder. All rights reserved.
 </metadata>
@@ -20,7 +20,7 @@ Copyright (c) 2014 by Rene' Bieder. All rights reserved.
     cap-height="680"
     bbox="-58 -265 1489 979"
     underline-thickness="50"
-    underline-position="-200"
+    underline-position="-250"
     unicode-range="U+0020-FB02"
   />
 <missing-glyph horiz-adv-x="870" 
@@ -215,8 +215,8 @@ d="M385 493v-154q-109 -4 -167 -61v-278h-163v485h163v-52q70 60 167 60z" />
     <glyph glyph-name="s" unicode="s" horiz-adv-x="521" 
 d="M22 167l144 -1q10 -62 93 -62q69 0 69 35q0 26 -44 33l-101 18q-65 10 -104 47t-39 98q0 76 59.5 119.5t157.5 43.5q90 0 155.5 -40t71.5 -128h-145q-2 27 -25 41.5t-57 14.5q-30 0 -45.5 -10t-15.5 -26q0 -30 51 -39l90 -15q152 -28 152 -144q0 -81 -63 -124t-165 -43
 q-101 0 -166.5 45t-72.5 137z" />
-    <glyph glyph-name="t" unicode="t" horiz-adv-x="470" 
-d="M426 146l18 -137q-76 -24 -147 -24q-88 0 -141.5 59.5t-53.5 157.5v144h-95v139h95v165h162v-165h165v-139h-165v-139q0 -73 76 -73q24 0 86 12z" />
+    <glyph glyph-name="t" unicode="t" horiz-adv-x="382" 
+d="M249 642v-145h97v-133h-97v-186q0 -52 55 -52q18 0 40 5v-126q-28 -14 -79 -14q-77 0 -121.5 43t-44.5 117v213h-88v133h25q38 0 57.5 22.5t19.5 58.5v64h136z" />
     <glyph glyph-name="u" unicode="u" horiz-adv-x="606" 
 d="M551 485v-485h-162v32q-61 -47 -133 -47q-93 0 -150 60t-57 163v277h162v-252q0 -50 24 -76t65 -26q46 0 89 48v306h162z" />
     <glyph glyph-name="v" unicode="v" horiz-adv-x="594" 
