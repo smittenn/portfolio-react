@@ -36,7 +36,6 @@ class AmericanMade extends Component {
 
 		this.props.americanMade();
 		this.props.reset();
-		this.props.setNavWhite();
 	}
 
 
@@ -88,9 +87,9 @@ class AmericanMade extends Component {
 					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie.`]}
 					bgImage={"../assets/img/american-made/output.gif"}
 					// strength={200}
-					onSetActive={() => { setNavWhite(); this.setActiveSection(0); }}
+					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-					{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); setNavBlack(); this.setActiveSection(1); }}>
+					{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
 						<ScrollArrow label="Read More"/>
 					</Link>}
 				</Element>
@@ -348,8 +347,6 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	setNavWhite: () => dispatch(setNavWhite()),
-	setNavBlack: () => dispatch(setNavBlack()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AmericanMade)
