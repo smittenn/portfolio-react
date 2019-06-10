@@ -97,10 +97,10 @@ class MicroAppInteractions extends Component {
 								Wrap Media aimed to garner adoption of its web based platfrom by acting like an agency. Wrap Media partnered with high profile clients such as Warner Brothers Music, Salesforce, Equinox, BMW and many more.
 							</blockquote>
 							<blockquote className="mr">
-								A quick introduction to the Wrap platform — a Wrap is a highly-focused, app-like, mobile web experience. 
+								"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
 							</blockquote>
 							<blockquote className="mr">
-								Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS.
+								Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
 							</blockquote>
 
 						</div>
@@ -112,17 +112,17 @@ class MicroAppInteractions extends Component {
 								</div>
 							</div>
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote className="mr" >
-										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
+										On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.
 									</blockquote>
-								</div>
+								</div>}
 								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote className="mr">
-										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
+										The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.
 									</blockquote>
-								</div>
+								</div>}
 							</div>
 						</div>
 					</div>
@@ -135,10 +135,8 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-mdc/forest.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
-					backgroundPosition: '50% 80%',
-					backgroundRepeat: 'repeatX',
+					backgroundImage: `url(../assets/img/card-components/perspective-cards.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundSize: 'cover',
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
@@ -146,20 +144,20 @@ class MicroAppInteractions extends Component {
 						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Sr. Interaction Designer</blockquote>
+							<blockquote>Creative Techonologist</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2018</blockquote>
+							<blockquote>Fall, 2016</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>J&J Consumer</blockquote> 
+							<blockquote>Wrap Media</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="">Matthew Abate</a>, <a href="">Stephanie Skuzenski</a>, <a href="">Laura Hines</a>, <a href="">Katrina Corcoran</a>, <a href="">Jinny Kim</a>, <a href="">Mark Patience</a>
+								<a href="">Pete Petras</a>, <a href="">Josh Bloom</a>, <a href="">Jeff Klein</a>, <a href="">Mei Chun</a>, <a href="">Theo Arguna</a>, <a href="">Cameron Myers</a>
 							</blockquote> 
 						</div>
 					</div>
@@ -167,14 +165,14 @@ class MicroAppInteractions extends Component {
 
 
 				<NextProject 
-				to="/micro-app-interactions"
-				name="Micro App Interactions"
+				to="/app-templates"
+				name="Micro App Templates"
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
+					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
-					backgroundSize: 'contain',
+					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}/>
 

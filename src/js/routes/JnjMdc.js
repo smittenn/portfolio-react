@@ -17,6 +17,7 @@ import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
+import IFrame from "../components/IFrame"
 
 import NewUserSetup from "../components/sandbox/NewUserSetup"
 
@@ -189,7 +190,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-nav.html" height="720"/>
+							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-nav.html"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -210,7 +211,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper" height="720"/>
+							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -232,7 +233,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html" height="720"/>
+							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -253,7 +254,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html" height="720"/>
+							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -275,7 +276,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="//erchsm.github.io/jnj-process/prototypes/mdc-cards.html" height="720"/>
+							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-cards.html"/>
 						</div>
 					</div>
 				</ScrollSection>

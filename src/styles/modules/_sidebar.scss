@@ -194,6 +194,10 @@ $baseclass: sidebar;
 		&.#{$baseclass}--open {
 			min-width: 100vw;
 
+			.#{$baseclass}__inner {
+				width: 72%;
+			}
+
 			.#{$baseclass}__item {
 				height: 8vh;
 			}

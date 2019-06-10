@@ -170,6 +170,7 @@ $baseclass: nav-toggle;
 	@media screen and (max-width: $bp-medium) {
 		top: 6px;
 		width: 49px;
+		height: 90px;
 
 		.#{$baseclass}__abbreviation {
 			margin-bottom: 9px;

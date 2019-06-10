@@ -17,6 +17,7 @@ import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
+import IFrame from "../components/IFrame"
 
 import NewUserSetup from "../components/sandbox/NewUserSetup"
 
@@ -212,7 +213,7 @@ class JnjHome extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html" height="720"/>
+							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -233,7 +234,7 @@ class JnjHome extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html" height="720"/>
+							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -255,7 +256,7 @@ class JnjHome extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
-							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-links.html" height="720"/>
+							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-links.html"/>
 						</div>
 					</div>
 				</ScrollSection>

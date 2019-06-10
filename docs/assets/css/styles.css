@@ -1707,7 +1707,8 @@ section p span > span, section blockquote span > span {
   @media screen and (max-width: 800px) {
     .nav-toggle {
       top: 6px;
-      width: 49px; }
+      width: 49px;
+      height: 90px; }
       .nav-toggle .nav-toggle__abbreviation {
         margin-bottom: 9px; }
       .nav-toggle .nav-toggle__count {
@@ -2244,6 +2245,8 @@ section p span > span, section blockquote span > span {
         height: 32px; }
       .sidebar.sidebar--open {
         min-width: 100vw; }
+        .sidebar.sidebar--open .sidebar__inner {
+          width: 72%; }
         .sidebar.sidebar--open .sidebar__item {
           height: 8vh; } }
 
