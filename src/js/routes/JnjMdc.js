@@ -85,8 +85,9 @@ class JnjMdc extends Component {
 					name={sections[0]}
 					sections={sections}
 					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>MDC </span></span>, `unified the experience for J&J medical device companies.`]}
+					headerText={[ <span className="outline"><span>MDC </span></span>, `unified the UX for J&J medical device companies.`]}
 					bgImage={"../assets/img/jnj-mdc/ladies.jpg"}
+					strength={300}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
 				</Element>

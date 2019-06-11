@@ -1,10 +1,11 @@
 import React, {Component} from "react"
 import classNames from "classnames"
+import { connect } from 'react-redux'
 
 import IntersectionVisible from "react-intersection-visible"
 
 
-export default class IFrame extends Component {
+class IFrame extends Component {
 
 	constructor(props) {
 		super(props);
@@ -12,12 +13,6 @@ export default class IFrame extends Component {
 		this.state = {
 			src: '',
 		}
-	}
-
-	componentDidMount() {
-	}
-
-	componentWillUnmount() {
 	}
 
 	setSource = () => {
@@ -36,13 +31,23 @@ export default class IFrame extends Component {
 
 		const { src, height } = this.props;
 
+		let adjustedHeight = height ? height : 720;
+		this.props.isMobile ? (adjustedHeight *= 0.75) : null;
+
 		return (
 			<IntersectionVisible 
 				onShow={this.setSource}
 				onHide={this.unsetSource}
+				style={{ width: '100%' }}
 				>
-				<iframe src={this.state.src} height={height ? height : "720"} />
+				<iFrame src={this.state.src} height={adjustedHeight} />
 			</IntersectionVisible>
 		);	
 	}
 }
+
+const mapStateToProps = state => ({
+	isMobile: state.isMobile,
+})
+
+export default connect(mapStateToProps)(IFrame)

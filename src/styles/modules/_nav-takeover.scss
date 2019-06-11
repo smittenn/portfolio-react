@@ -49,6 +49,7 @@ $baseclass: nav-takeover;
 		}
 
 		a {
+			white-space: pre;
 			// pointer-events: auto;
 			border: none;
 			color: $brand-black;
@@ -258,7 +259,7 @@ $baseclass: nav-takeover;
 			}
 			li {
 				height: 48px;
-			    margin-bottom: 40px;
+				margin-bottom: 24px;
 			}
 			.#{$baseclass}__items {
 				margin-bottom: 18px;

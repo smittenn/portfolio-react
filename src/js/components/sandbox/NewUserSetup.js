@@ -9,12 +9,17 @@ export default class NewUserSetup extends Component {
 		super(props);
 	}
 
-				/*'https://unpkg.com/react-autosuggest@9.4.3',
+				/*
+			'https://unpkg.com/react-autosuggest@9.4.3',
 			'https://unpkg.com/react-motion@0.5.2',
 			'https://unpkg.com/react-skroll@0.7.2	',
 
 			const { Motion, spring, presets } = window['react-motion']
-			const { ScrollProvider, Scroller, ScrollLink } = window['react-skroll']*/
+			const { ScrollProvider, Scroller, ScrollLink } = window['react-skroll']
+			const Autosuggest = window['react-autosuggest']
+
+			*/
+
 
 
 	render() {
@@ -24,10 +29,7 @@ export default class NewUserSetup extends Component {
 			'https://npmcdn.com/classnames@2.2.5',
 		]
 
-		const scriptValue = `
-const Autosuggest = window['react-autosuggest']
-
-const classNames = window['classnames']
+		const scriptValue = `const classNames = window['classnames']
 
 
 const homeProfileSetupData = {	

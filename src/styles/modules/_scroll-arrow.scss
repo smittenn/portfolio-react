@@ -53,6 +53,7 @@ $arrow-size: 40px;
 	display: flex;
 	align-items: center;
 	flex-direction: column-reverse;
+	white-space: pre;
 	@include zIndexClose();
 
 	h5, h6, i {

@@ -35,6 +35,7 @@ $baseclass: sidebar;
 			align-items: center;
 			border: none;
 			pointer-events: none;
+			white-space: pre;
 
 			&.active {
 				.sidebar__dash {

@@ -19,24 +19,7 @@ class Nav extends Component {
 		this.state = {
 			isToggleHovered: false,
 			indexHovered: this.getActiveIndex(),
-			isMobile: window.innerWidth <= 800,
 		}
-	}
-
-	componentDidMount() {
-		// document.addEventListener('mousedown', this.handleClickOutside);
-		window.addEventListener('resize', this.detectMobile);
-	}
-
-	componentWillUnmount() {
-		// document.removeEventListener('mousedown', this.handleClickOutside);
-		window.removeEventListener('resize', this.detectMobile);
-	}
-
-	detectMobile = (event) => {
-		this.setState({
-			isMobile: window.innerWidth <= 800,
-		})
 	}
 
 	// handleClickOutside = (event) => {
@@ -93,7 +76,7 @@ class Nav extends Component {
 
 
 	render() {
-		const { isMobile, indexHovered } = this.state;
+		const { indexHovered } = this.state;
 		const { abbreviation, count } = this.props;
 
 		const classnames = classNames({
@@ -104,7 +87,7 @@ class Nav extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(-1px, ' + (isMobile ? 88 : 108) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(-1px, ' + (this.props.isMobile ? 72 : 108) * (indexHovered + 0) + 'px, 0)',
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
@@ -243,6 +226,7 @@ const mapStateToProps = state => ({
 	isTakeoverOpen: state.isTakeoverOpen,
 	isPrimaryPanelOpen: state.isPrimaryPanelOpen,
 	isSecondaryPanelOpen: state.isSecondaryPanelOpen,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

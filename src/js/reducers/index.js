@@ -8,6 +8,7 @@ import navToggleReducer from './navToggle'
 import primaryPanelReducer from './primaryPanel'
 import secondaryPanelReducer from './secondaryPanel'
 import sidebarReducer from './sidebar'
+import mobileReducer from './mobile'
 
 const rootReducer = (history) => combineReducers({
 	count: counterReducer,
@@ -18,6 +19,7 @@ const rootReducer = (history) => combineReducers({
 	isPrimaryPanelOpen: primaryPanelReducer,
 	isSecondaryPanelOpen: secondaryPanelReducer,
 	isSidebarOpen: sidebarReducer,
+	isMobile: mobileReducer,
 	router: connectRouter(history)
 })
 
