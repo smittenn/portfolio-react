@@ -81,6 +81,7 @@ class MicroAppInteractions extends Component {
 					activeSection={activeSection}
 					headerText={[ `At`, <span className="outline"><span>Wrap Media </span></span>, `I created interactions within our product for our clients.`]}
 					bgImage={"../assets/img/card-components/share-animation-zoomed-out.gif"}
+					strength={300}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
 				</Element>
