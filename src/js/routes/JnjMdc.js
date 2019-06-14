@@ -78,7 +78,7 @@ class JnjMdc extends Component {
 
 		return (
 			<article>
-				<Element 
+				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
@@ -90,7 +90,27 @@ class JnjMdc extends Component {
 					strength={300}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-				</Element>
+				</Element>*/}
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/jnj-mdc/ladies.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: 'cover',
+					backgroundPosition: this.props.isMobile ? '75%' : 'center',
+				}}
+				onSetActive={() => { this.setActiveSection(0); }}>
+					<ParallaxHeader 
+					headerText={[ <span className="outline"><span>MDC </span></span>, `unified the UX for J&J medical device companies.`]}
+					/>
+				</ScrollSection>
+
+
 
 
 				<ScrollSection 
@@ -205,7 +225,8 @@ class JnjMdc extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>HCP/Patient<br/>Flipper</h2>
+								<h2 className="no-mb">HCP/Patient</h2>
+								<h3>Site Flipper</h3>
 								<blockquote>To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search in the tile to search for their symptoms or specialties respectively.</blockquote>
 							</div>
 						</div>
@@ -288,6 +309,7 @@ class JnjMdc extends Component {
 				name="Micro App Interactions"
 				sections={sections} 
 				activeSection={activeSection}
+				black
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
@@ -307,6 +329,7 @@ class JnjMdc extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

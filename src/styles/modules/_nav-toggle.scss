@@ -29,12 +29,16 @@ $baseclass: nav-toggle;
 	width: 73px;
 	pointer-events: auto;
 	height: 120px;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	// cursor: pointer;
 	// @include zIndexCloser();
+
+	.active-section & {
+		display: flex;
+	}
 
 
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {

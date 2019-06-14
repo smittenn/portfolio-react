@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import classNames from "classnames"
-
+import IntersectionVisible from "react-intersection-visible"
 
 import palette from "../services/palette"
 import hexToRgb from "../services/hexToRgb"
@@ -13,10 +13,14 @@ export default class CodepenEmbed extends Component {
 
 		this.state = {
 			codepen: false,
+			visible: false,
 		}
 	}
 
-	componentDidMount() {
+	setVisible = () => {
+		// this.setState({
+		// 	visible: true
+		// })
 		const codepen = document.getElementsByClassName('codepen');
 
 		if (codepen.length > 0) {
@@ -37,7 +41,11 @@ export default class CodepenEmbed extends Component {
 					'codepen': true
 				});
 			}
-	    }
+		}
+
+	}
+
+	componentDidMount() {
 	}
 
 		
@@ -59,11 +67,13 @@ export default class CodepenEmbed extends Component {
 		}
 
 		return (
-			<p className="codepen" data-height={height} data-theme-id={this.props.theme ? this.props.theme : "dark"} data-default-tab="result" data-user={handle} data-slug-hash={slug} style={style} data-pen-title={title}>
+			<IntersectionVisible onShow={this.setVisible} style={{ width: '100%' }}>
+				<p className="codepen" data-height={height} data-theme-id={this.props.theme ? this.props.theme : "dark"} data-default-tab="result" data-user={handle} data-slug-hash={slug} style={style} data-pen-title={title}>
 				<span>See the Pen <a href={`https://codepen.io/erchsm/pen/${slug}/`}>{title}</a>
 				 &nbsp; by Eric Smith (<a href="https://codepen.io/erchsm">@{handle}</a>)
 				on <a href="https://codepen.io">CodePen</a>.</span>
-			</p>
+				</p>
+			</IntersectionVisible>
 		);
 	}
 }

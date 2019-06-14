@@ -73,7 +73,7 @@ class Translator extends Component {
 
 		return (
 			<article>
-				<Element 
+				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
@@ -84,7 +84,26 @@ class Translator extends Component {
 					bgImage={"../assets/img/translator/banner.png"}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-				</Element>
+				</Element>*/}
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/translator/banner.png)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: 'cover',
+					backgroundPosition: this.props.isMobile ? '75%' : 'center',
+				}}
+				onSetActive={() => { this.setActiveSection(0); }}>
+					<ParallaxHeader 
+					headerText={[ <span className="outline"><span>Translator </span></span>, `helped NBCU technicians browse and archive footage.`]}
+					/>
+				</ScrollSection>
+
 
 
 				<ScrollSection 
@@ -284,6 +303,7 @@ class Translator extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

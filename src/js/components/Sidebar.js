@@ -13,27 +13,8 @@ class Sidebar extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			isMobile: window.innerWidth <= 800,
-		}
 	}
 
-	componentDidMount() {
-		// document.addEventListener('mousedown', this.handleClickOutside);
-		window.addEventListener('resize', this.detectMobile);
-	}
-
-	componentWillUnmount() {
-		// document.removeEventListener('mousedown', this.handleClickOutside);
-		window.removeEventListener('resize', this.detectMobile);
-	}
-
-	detectMobile = (event) => {
-		this.setState({
-			isMobile: window.innerWidth <= 800,
-		})
-	}
 
 	handleClickOutside = (event) => {
 		if (!this.refs.sidebar.contains(event.target)) {
@@ -44,7 +25,6 @@ class Sidebar extends Component {
 
 	render() {
 
-		const { isMobile } = this.state;
 		const { isBlack, sections, activeSection } = this.props;
 
 		const classnames = classNames({
@@ -56,7 +36,7 @@ class Sidebar extends Component {
 
 		const sidebarItems = sections.map((section, i) => 
 			<li key={i} className="sidebar__item" >
-				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutQuint"} duration={1200} className={classNames({ "active": sections[i] == activeSection })} onClick={isMobile ? this.props.closeSidebar : null}>
+				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutQuint"} duration={1200} className={classNames({ "active": sections[i] == activeSection })} onClick={this.props.isMobile ? this.props.closeSidebar : null}>
 					{ i == 0 ? <div className="sidebar__border sidebar__border--top"/> : null }
 					<h7 className="sidebar__number uppercase">{pad(i + 1, 2)}.</h7>
 					<div className="sidebar__dash"></div>
@@ -68,7 +48,7 @@ class Sidebar extends Component {
 		
 		return (
 			<div className={classnames} ref="sidebar">
-				<ul className="sidebar__inner" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={isMobile ? null : this.props.openSidebar} onMouseLeave={isMobile ? null : this.props.closeSidebar}>
+				<ul className="sidebar__inner" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={this.props.isMobile ? null : this.props.openSidebar} onMouseLeave={this.props.isMobile ? null : this.props.closeSidebar}>
 					{sidebarItems}
 				</ul>
 			</div>
@@ -80,6 +60,7 @@ const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
 	isSidebarOpen: state.isSidebarOpen,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

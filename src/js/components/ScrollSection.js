@@ -26,12 +26,14 @@ export default class ScrollSection extends Component {
 
 	render() {
 
-		const { name, onSetActive, black, style, sections, activeSection } = this.props;
+		const { name, onSetActive, black, style, sections, activeSection, fullHeight } = this.props;
 
 		const classnames = classNames({
 			"black": this.props.black,
 			"grey": this.props.grey
 		})
+
+		fullHeight ? Object.assign(style, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' }) : null
 		
 		return (
 			<Element name={name}>

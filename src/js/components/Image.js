@@ -1,17 +1,29 @@
 import React, {Component} from "react"
 import classNames from "classnames"
+import IntersectionVisible from "react-intersection-visible"
 
 export default class Image extends Component {
 
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			src: '',
+		}
 	}
 
-	componentDidMount() {
+	setSource = () => {
+		this.setState({
+			src: this.props.src
+		})
+	}
+	
+	unsetSource = () => {
+		this.setState({
+			src: ''
+		})
 	}
 
-	componentWillUnmount() {
-	}
 
 	render() {
 
@@ -30,18 +42,23 @@ export default class Image extends Component {
 		style ? Object.assign(_style, style) : null
 
 		return (
-			<div style={_style}>
-				<img src={src} style={{
-					display: 'block',
-					// width: '100%',
-					height: '100%',
-					position: 'absolute',
-					top: 0,
-					// bottom: 0,
-					left: 0,
-					// right: 0,
-				}}/>
-			</div>
+			<IntersectionVisible 
+				onShow={this.setSource}
+				onHide={this.unsetSource}
+				>
+				<div style={_style}>
+					<img src={this.state.src} style={{
+						display: 'block',
+						// width: '100%',
+						height: '100%',
+						position: 'absolute',
+						top: 0,
+						// bottom: 0,
+						left: 0,
+						// right: 0,
+					}}/>
+				</div>
+			</IntersectionVisible>
 		);
 	}
 }

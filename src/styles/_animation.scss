@@ -20,7 +20,7 @@
 	}
 }
 
-.react-parallax {
+.parallax-header {
 	h1 {
 		// transform-origin: left center;
 		// transition: all $easing1 $duration-slower;
@@ -91,7 +91,7 @@ section {
 	.grid__item {
 		@for $i from 1 through 60 {
 			&:nth-child(#{$i}) {
-				img {
+				img, video {
 					transition-delay: (#{0.9 + ($i * 0.3)}s);
 				}
 				blockquote {
@@ -146,7 +146,7 @@ section {
 			}
 		}
 
-		img {
+		img, video {
 			transition: transform $duration-slow $easing2, opacity $duration-slow $easing2;
 			opacity: 1;
 			transform: translate3d(0,0,0) skewX(0deg);

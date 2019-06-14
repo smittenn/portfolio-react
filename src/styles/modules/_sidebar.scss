@@ -5,12 +5,16 @@ $baseclass: sidebar;
 	width: 24px;
 	position: fixed;
 	pointer-events: auto;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: flex-end;
 	right: 0;
 	top: 0px;
 	// @include zIndexCloser();
+
+	.active-section & {
+		display: flex;
+	}
 
 
 	&__inner {

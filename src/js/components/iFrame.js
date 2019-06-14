@@ -46,7 +46,7 @@ class IFrame extends Component {
 				onHide={this.unsetSource}
 				style={{ width: '100%' }}
 				>
-				<iframe src={this.state.src} height={adjustedHeight} style={style}/>
+				<iframe src={this.state.src} width={this.props.isMobile ? (window.innerWidth - 48) : null} height={adjustedHeight} style={style}/>
 			</IntersectionVisible>
 		);	
 	}

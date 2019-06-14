@@ -1,6 +1,23 @@
 $baseclass: parallax-header;
 
 .#{$baseclass} {
+	// height: calc(100vh + 1px);
+	// background-blend-mode: overlay;
+	// background-size: cover;
+	// background-position: center;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: flex-start;
+	// justify-content: center;
+	// @include zIndexClose();
+
+
+	h1, h2, h3, h4, h5, p {
+		span {
+			white-space: pre;
+		}
+	}
+
 
 	&--hidden {
 		h1 > span {
@@ -15,7 +32,7 @@ $baseclass: parallax-header;
 				}
 			}
 		}
-	}
+	}	
 	
 	img {
 		// object-fit: scale-down;
@@ -30,32 +47,22 @@ $baseclass: parallax-header;
 	}
 
 	.react-parallax {
-		@include zIndexClose();
 		overflow: hidden; 
 
-		&-contents, &-content {
-			position: relative;
-			height: calc(100vh + 1px);
-			opacity: 1;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			justify-content: center;
-			text-align: left;
+		// &-contents, &-content {
+		// 	position: relative;
+		// 	height: calc(100vh + 1px);
+		// 	opacity: 1;
+		// 	display: flex;
+		// 	flex-direction: column;
+		// 	align-items: flex-start;
+		// 	justify-content: center;
+		// 	text-align: left;
 
-			h1, h2, h3, h4, h5, p {
-				color: $brand-white;
-
-				span {
-					white-space: pre;
-				}
-			}
-		}
-
-		&-content {
-			position: absolute !important;
-			top: 0;
-		}
+		// &-content {
+		// 	position: absolute !important;
+		// 	top: 0;
+		// }
 	}
 
 	@media screen and (max-width: $bp-medium) {

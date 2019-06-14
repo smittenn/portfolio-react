@@ -72,7 +72,7 @@ class Vai extends Component {
 
 		return (
 			<article>
-				<Element 
+				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
@@ -83,10 +83,26 @@ class Vai extends Component {
 					bgImage={"../assets/img/vai/banner.jpg"}
 					onSetActive={() => { this.setActiveSection(sections[0]);}}
 					/>
-					<Link to={sections[1]} spy={true} smooth={true} hashSpy={true} offset={0} onSetActive={() => { this.setActiveSection(sections[1]); }}>
-						<ScrollArrow/>
-					</Link>
-				</Element>
+				</Element>*/}
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/vai/banner.gif)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
+				onSetActive={() => { this.setActiveSection(0); }}>
+					<ParallaxHeader 
+					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
+					/>
+				</ScrollSection>
+
 
 				<ScrollSection 
 				name={sections[1]} 
@@ -226,6 +242,7 @@ class Vai extends Component {
 					</SideScroller>
 				</ScrollSection>
 
+
 				<NextProject 
 				to="/translator"
 				name="Translator"
@@ -235,6 +252,10 @@ class Vai extends Component {
 					backgroundImage: `url(../assets/img/translator/banner.png)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}/>
+
+				<Link to={sections[1]} spy={true} smooth={true} offset={0} onSetActive={() => { this.setActiveSection(sections[1]); }}>
+					<ScrollArrow/>
+				</Link>
 				
 			</article>
 		);

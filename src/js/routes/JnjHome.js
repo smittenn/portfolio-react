@@ -77,7 +77,7 @@ class JnjHome extends Component {
 
 		return (
 			<article>
-				<Element 
+				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
 					<ParallaxHeader 
@@ -88,7 +88,25 @@ class JnjHome extends Component {
 					bgImage={"../assets/img/jnj-home/onboarding-mobile-16x9.png"}
 					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-				</Element>
+				</Element>*/}
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: 'contain',
+					backgroundPosition: (this.props.isMobile ? 'right' : 'center'),
+				}}
+				onSetActive={() => { this.setActiveSection(0); }}>
+					<ParallaxHeader 
+					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for J&J employees to connect and create.`]}
+					/>
+				</ScrollSection>
 
 
 				<ScrollSection 
@@ -266,6 +284,7 @@ class JnjHome extends Component {
 				to="/jnj-mdc"
 				name="J&J MDC"
 				sections={sections} 
+				black
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-mdc/ladies.jpg)`, 
@@ -286,6 +305,7 @@ class JnjHome extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

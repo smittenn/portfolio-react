@@ -1,40 +1,21 @@
 import React, {Component} from "react"
 import classNames from "classnames"
+import { connect } from 'react-redux'
 
-export default class SideScroller extends Component {
+class SideScroller extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			isMobile: window.innerWidth <= 800,
-		}
 	}
-
-	componentDidMount() {
-		window.addEventListener('resize', this.detectMobile);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.detectMobile);
-	}
-
-	detectMobile = (event) => {
-		this.setState({
-			isMobile: window.innerWidth <= 800,
-		})
-	}
-
 
 	render() {
-		const { isMobile } = this.state;
 
 		const classnames = classNames({
 			"side-scroller": true,
 		})
 
 
-		const margin = isMobile ? 12 : 72;
+		const margin = this.props.isMobile ? 12 : 72;
 
 		const style = {
 			overflowX: 'scroll',
@@ -60,3 +41,9 @@ export default class SideScroller extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	isMobile: state.isMobile,
+})
+
+export default connect(mapStateToProps)(SideScroller)

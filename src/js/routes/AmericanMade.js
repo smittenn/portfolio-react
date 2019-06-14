@@ -77,22 +77,23 @@ class AmericanMade extends Component {
 
 		return (
 			<article>
-				<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/american-made/output.gif)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: this.props.isMobile ? 'cover' : '100% 102%',
+				}}  
+				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
 					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie.`]}
-					bgImage={"../assets/img/american-made/output.gif"}
-					// strength={200}
-					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-					{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-						<ScrollArrow label="Read More"/>
-					</Link>}
-				</Element>
+				</ScrollSection>
 
 				<ScrollSection 
 				name={sections[1]} 
@@ -157,7 +158,7 @@ class AmericanMade extends Component {
 							{/*<div className="grid__item grid__item--col-1"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>{"Cinemagraphs"}</h2> 
-								<blockquote>{"To add more subtle motion, I decided to create Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
+								<blockquote>{"To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
 							</div>
 						</div>
 					</div>
@@ -323,6 +324,10 @@ class AmericanMade extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}/>
 
+				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
+					<ScrollArrow label="Learn More"/>
+				</Link>}
+
 			</article>
 		);
 	}
@@ -331,6 +336,7 @@ class AmericanMade extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -16,6 +16,9 @@ import Sidebar from "../components/Sidebar"
 import Image from "../components/Image"
 
 import splitWord from "../services/splitWord"
+import hexToRgb from "../services/hexToRgb"
+import palette from "../services/palette"
+
 
 class Home extends Component {
 
@@ -72,7 +75,7 @@ class Home extends Component {
 				name: "V.ai Player",
 				href: "/vai",
 				tags: [ "UX", "Interactive" ],
-				img: "../assets/img/vai/eye.gif",
+				img: "../assets/img/vai/banner.jpg",
 			},
 			{
 				name: "Translator",
@@ -106,21 +109,27 @@ class Home extends Component {
 		]
 
 		const { activeSection, sections } = this.state;
+
+		const brandBlack = hexToRgb(palette("brand-black"));
 		
 		return (
 			<article>
-				<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/terrain.gif)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
+					backgroundSize: 'cover',
+				}}  
+				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
 					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
-					bgImage={"../assets/img/terrain.gif"} 
-					onSetActive={() => { this.setActiveSection(0); }}
 					/>
-				</Element>
+				</ScrollSection>
 
 				<ScrollSection 
 				name={sections[1]} 
@@ -164,7 +173,7 @@ class Home extends Component {
 							<div className="spacer spacer__sm"/>
 							{<h2>{splitWord("Visual & Motion")}</h2>}
 							<blockquote>
-								{splitWord(`I design right in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
+								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 								<br/><br/>
 								{/*splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)*/}
 							</blockquote>
@@ -206,7 +215,7 @@ class Home extends Component {
 							<div className="spacer spacer__md"/>
 							<h2>{splitWord("Experiments")}</h2>
 							<blockquote>
-								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+								{splitWord(`I enjoy trying out new technologies to create new and sometimes strange things.`)}
 							</blockquote>
 						</div>
 					</div>
@@ -226,6 +235,7 @@ class Home extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	mobile: state.mobile,
 })
 
 const mapDispatchToProps = dispatch => ({

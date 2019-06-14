@@ -87,7 +87,7 @@ class Nav extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(-1px, ' + (this.props.isMobile ? 72 : 108) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(-1px, ' + (this.props.isMobile ? '72' : 108) * (indexHovered + 0) + 'px, 0)',
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
@@ -131,19 +131,19 @@ class Nav extends Component {
 					to: "/translator",
 				},
 				{ 
-					name: "JJ Home Intranet",
+					name: "J&J Home",
 					to: "/jnj-home",
 				},
 				{ 
-					name: "JJ Medical Devices",
+					name: "J&J MDC",
 					to: "/jnj-mdc",
 				},
 				{ 
-					name: "Micro App Interactions",
+					name: "Wrap Interactions",
 					to: "/micro-app-interactions",
 				},
 				{ 
-					name: "Micro App Templates",
+					name: "Wrap Templates",
 					to: "/micro-app-templates",
 				},
 				{ 
@@ -193,29 +193,27 @@ class Nav extends Component {
 		)
 
 		return (
-			<div>
-				<nav className={classnames}>
-					<div className="nav-takeover__main">
-						<div onClick={this.setMenuClosed}/>
-						<div className="nav-takeover__panels">
-							<div className="nav-takeover__panel">
-								<ul className="nav-takeover__items--secondary">
-									<li onClick={this.setCloseSecondaryPanel}>
-										<h3><i className="iconcss icon-arrow-right"></i></h3>
-									</li>
-									{ secondaryNavItems }
-								</ul>
-								<ul className="nav-takeover__items--primary">
-									{ primaryNavItems }
-								</ul>
-								<div className="nav-takeover__line-container">
-									<div style={ lineAnimation } className="nav-takeover__line"></div>
-								</div>
+			<nav className={classnames}>
+				<div className="nav-takeover__main">
+					<div onClick={this.setMenuClosed}/>
+					<div className="nav-takeover__panels">
+						<div className="nav-takeover__panel">
+							<ul className="nav-takeover__items--secondary">
+								<li onClick={this.setCloseSecondaryPanel}>
+									<h3><i className="iconcss icon-arrow-right"></i></h3>
+								</li>
+								{ secondaryNavItems }
+							</ul>
+							<ul className="nav-takeover__items--primary">
+								{ primaryNavItems }
+							</ul>
+							<div className="nav-takeover__line-container">
+								<div style={ lineAnimation } className="nav-takeover__line"></div>
 							</div>
 						</div>
 					</div>
-				</nav>
-			</div>
+				</div>
+			</nav>
 		);
 	}
 }

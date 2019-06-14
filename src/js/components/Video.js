@@ -7,30 +7,36 @@ export default class Video extends Component {
 		super(props);
 
 		this.state = { 
-			playing: false,
+			// isPlaying: false,
 		}
 	}
 
-	componentDidMount() {
+	play = () => {
+		this.refs.vid.play();
+		// this.setState({
+		// 	isPlaying: true
+		// })
 	}
-
-	componentWillUnmount() {
-	}
-
-	componentDidUpdate(prevProps) {
+	
+	stop = () => {
+		this.refs.vid.pause();
+		// this.setState({
+		// 	isPlaying: false
+		// })
 	}
 
 	render() {
 
 		const { src } = this.props;
-		const { playing } = this.props;
-		
+		const { isPlaying } = this.state;
+
+
 		return (
 				<IntersectionVisible 
-				onShow={this.setState({ playing: true })} 
-				onHide={this.setState({ playing: false })}
+				onShow={this.play} 
+				onHide={this.stop}
 				>
-					<video src={src} autoPlay={playing} loop playsInline preload="auto" muted />
+					<video ref="vid" src={src} loop playsInline preload="auto" muted />
 				</IntersectionVisible>
 		);
 	}

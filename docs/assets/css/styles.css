@@ -157,7 +157,8 @@ table {
     display: flex;
     margin-bottom: 48px;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 100%; }
   .grid__item {
     display: -ms-flexbox;
     display: flex;
@@ -262,7 +263,7 @@ h4 {
 h5 {
   font-size: 18px;
   line-height: 1.2;
-  margin-bottom: 32px; }
+  margin-bottom: 18px; }
 
 h6 {
   font-size: 16px;
@@ -388,130 +389,130 @@ h1 span, h2 span, h3 span, p span, blockquote span {
   100% {
     transform: translate3d(0, 120px, 0) skewY(0deg); } }
 
-.react-parallax h1 > span {
+.parallax-header h1 > span {
   overflow: hidden; }
-  .react-parallax h1 > span:nth-child(1) span {
+  .parallax-header h1 > span:nth-child(1) span {
     animation-delay: 0.72s; }
-  .react-parallax h1 > span:nth-child(2) span {
+  .parallax-header h1 > span:nth-child(2) span {
     animation-delay: 0.84s; }
-  .react-parallax h1 > span:nth-child(3) span {
+  .parallax-header h1 > span:nth-child(3) span {
     animation-delay: 0.96s; }
-  .react-parallax h1 > span:nth-child(4) span {
+  .parallax-header h1 > span:nth-child(4) span {
     animation-delay: 1.08s; }
-  .react-parallax h1 > span:nth-child(5) span {
+  .parallax-header h1 > span:nth-child(5) span {
     animation-delay: 1.2s; }
-  .react-parallax h1 > span:nth-child(6) span {
+  .parallax-header h1 > span:nth-child(6) span {
     animation-delay: 1.32s; }
-  .react-parallax h1 > span:nth-child(7) span {
+  .parallax-header h1 > span:nth-child(7) span {
     animation-delay: 1.44s; }
-  .react-parallax h1 > span:nth-child(8) span {
+  .parallax-header h1 > span:nth-child(8) span {
     animation-delay: 1.56s; }
-  .react-parallax h1 > span:nth-child(9) span {
+  .parallax-header h1 > span:nth-child(9) span {
     animation-delay: 1.68s; }
-  .react-parallax h1 > span:nth-child(10) span {
+  .parallax-header h1 > span:nth-child(10) span {
     animation-delay: 1.8s; }
-  .react-parallax h1 > span:nth-child(11) span {
+  .parallax-header h1 > span:nth-child(11) span {
     animation-delay: 1.92s; }
-  .react-parallax h1 > span:nth-child(12) span {
+  .parallax-header h1 > span:nth-child(12) span {
     animation-delay: 2.04s; }
-  .react-parallax h1 > span:nth-child(13) span {
+  .parallax-header h1 > span:nth-child(13) span {
     animation-delay: 2.16s; }
-  .react-parallax h1 > span:nth-child(14) span {
+  .parallax-header h1 > span:nth-child(14) span {
     animation-delay: 2.28s; }
-  .react-parallax h1 > span:nth-child(15) span {
+  .parallax-header h1 > span:nth-child(15) span {
     animation-delay: 2.4s; }
-  .react-parallax h1 > span:nth-child(16) span {
+  .parallax-header h1 > span:nth-child(16) span {
     animation-delay: 2.52s; }
-  .react-parallax h1 > span:nth-child(17) span {
+  .parallax-header h1 > span:nth-child(17) span {
     animation-delay: 2.64s; }
-  .react-parallax h1 > span:nth-child(18) span {
+  .parallax-header h1 > span:nth-child(18) span {
     animation-delay: 2.76s; }
-  .react-parallax h1 > span:nth-child(19) span {
+  .parallax-header h1 > span:nth-child(19) span {
     animation-delay: 2.88s; }
-  .react-parallax h1 > span:nth-child(20) span {
+  .parallax-header h1 > span:nth-child(20) span {
     animation-delay: 3s; }
-  .react-parallax h1 > span:nth-child(21) span {
+  .parallax-header h1 > span:nth-child(21) span {
     animation-delay: 3.12s; }
-  .react-parallax h1 > span:nth-child(22) span {
+  .parallax-header h1 > span:nth-child(22) span {
     animation-delay: 3.24s; }
-  .react-parallax h1 > span:nth-child(23) span {
+  .parallax-header h1 > span:nth-child(23) span {
     animation-delay: 3.36s; }
-  .react-parallax h1 > span:nth-child(24) span {
+  .parallax-header h1 > span:nth-child(24) span {
     animation-delay: 3.48s; }
-  .react-parallax h1 > span:nth-child(25) span {
+  .parallax-header h1 > span:nth-child(25) span {
     animation-delay: 3.6s; }
-  .react-parallax h1 > span:nth-child(26) span {
+  .parallax-header h1 > span:nth-child(26) span {
     animation-delay: 3.72s; }
-  .react-parallax h1 > span:nth-child(27) span {
+  .parallax-header h1 > span:nth-child(27) span {
     animation-delay: 3.84s; }
-  .react-parallax h1 > span:nth-child(28) span {
+  .parallax-header h1 > span:nth-child(28) span {
     animation-delay: 3.96s; }
-  .react-parallax h1 > span:nth-child(29) span {
+  .parallax-header h1 > span:nth-child(29) span {
     animation-delay: 4.08s; }
-  .react-parallax h1 > span:nth-child(30) span {
+  .parallax-header h1 > span:nth-child(30) span {
     animation-delay: 4.2s; }
-  .react-parallax h1 > span:nth-child(31) span {
+  .parallax-header h1 > span:nth-child(31) span {
     animation-delay: 4.32s; }
-  .react-parallax h1 > span:nth-child(32) span {
+  .parallax-header h1 > span:nth-child(32) span {
     animation-delay: 4.44s; }
-  .react-parallax h1 > span:nth-child(33) span {
+  .parallax-header h1 > span:nth-child(33) span {
     animation-delay: 4.56s; }
-  .react-parallax h1 > span:nth-child(34) span {
+  .parallax-header h1 > span:nth-child(34) span {
     animation-delay: 4.68s; }
-  .react-parallax h1 > span:nth-child(35) span {
+  .parallax-header h1 > span:nth-child(35) span {
     animation-delay: 4.8s; }
-  .react-parallax h1 > span:nth-child(36) span {
+  .parallax-header h1 > span:nth-child(36) span {
     animation-delay: 4.92s; }
-  .react-parallax h1 > span:nth-child(37) span {
+  .parallax-header h1 > span:nth-child(37) span {
     animation-delay: 5.04s; }
-  .react-parallax h1 > span:nth-child(38) span {
+  .parallax-header h1 > span:nth-child(38) span {
     animation-delay: 5.16s; }
-  .react-parallax h1 > span:nth-child(39) span {
+  .parallax-header h1 > span:nth-child(39) span {
     animation-delay: 5.28s; }
-  .react-parallax h1 > span:nth-child(40) span {
+  .parallax-header h1 > span:nth-child(40) span {
     animation-delay: 5.4s; }
-  .react-parallax h1 > span:nth-child(41) span {
+  .parallax-header h1 > span:nth-child(41) span {
     animation-delay: 5.52s; }
-  .react-parallax h1 > span:nth-child(42) span {
+  .parallax-header h1 > span:nth-child(42) span {
     animation-delay: 5.64s; }
-  .react-parallax h1 > span:nth-child(43) span {
+  .parallax-header h1 > span:nth-child(43) span {
     animation-delay: 5.76s; }
-  .react-parallax h1 > span:nth-child(44) span {
+  .parallax-header h1 > span:nth-child(44) span {
     animation-delay: 5.88s; }
-  .react-parallax h1 > span:nth-child(45) span {
+  .parallax-header h1 > span:nth-child(45) span {
     animation-delay: 6s; }
-  .react-parallax h1 > span:nth-child(46) span {
+  .parallax-header h1 > span:nth-child(46) span {
     animation-delay: 6.12s; }
-  .react-parallax h1 > span:nth-child(47) span {
+  .parallax-header h1 > span:nth-child(47) span {
     animation-delay: 6.24s; }
-  .react-parallax h1 > span:nth-child(48) span {
+  .parallax-header h1 > span:nth-child(48) span {
     animation-delay: 6.36s; }
-  .react-parallax h1 > span:nth-child(49) span {
+  .parallax-header h1 > span:nth-child(49) span {
     animation-delay: 6.48s; }
-  .react-parallax h1 > span:nth-child(50) span {
+  .parallax-header h1 > span:nth-child(50) span {
     animation-delay: 6.6s; }
-  .react-parallax h1 > span:nth-child(51) span {
+  .parallax-header h1 > span:nth-child(51) span {
     animation-delay: 6.72s; }
-  .react-parallax h1 > span:nth-child(52) span {
+  .parallax-header h1 > span:nth-child(52) span {
     animation-delay: 6.84s; }
-  .react-parallax h1 > span:nth-child(53) span {
+  .parallax-header h1 > span:nth-child(53) span {
     animation-delay: 6.96s; }
-  .react-parallax h1 > span:nth-child(54) span {
+  .parallax-header h1 > span:nth-child(54) span {
     animation-delay: 7.08s; }
-  .react-parallax h1 > span:nth-child(55) span {
+  .parallax-header h1 > span:nth-child(55) span {
     animation-delay: 7.2s; }
-  .react-parallax h1 > span:nth-child(56) span {
+  .parallax-header h1 > span:nth-child(56) span {
     animation-delay: 7.32s; }
-  .react-parallax h1 > span:nth-child(57) span {
+  .parallax-header h1 > span:nth-child(57) span {
     animation-delay: 7.44s; }
-  .react-parallax h1 > span:nth-child(58) span {
+  .parallax-header h1 > span:nth-child(58) span {
     animation-delay: 7.56s; }
-  .react-parallax h1 > span:nth-child(59) span {
+  .parallax-header h1 > span:nth-child(59) span {
     animation-delay: 7.68s; }
-  .react-parallax h1 > span:nth-child(60) span {
+  .parallax-header h1 > span:nth-child(60) span {
     animation-delay: 7.8s; }
 
-.react-parallax h1 > span > span {
+.parallax-header h1 > span > span {
   animation: ghostIn 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-fill-mode: both; }
 
@@ -524,361 +525,361 @@ section blockquote {
   transition: none;
   opacity: 0; }
 
-section .grid__item:nth-child(1) img {
+section .grid__item:nth-child(1) img, section .grid__item:nth-child(1) video {
   transition-delay: 1.2s; }
 
 section .grid__item:nth-child(1) blockquote {
   transition-delay: 0.6s; }
 
-section .grid__item:nth-child(2) img {
+section .grid__item:nth-child(2) img, section .grid__item:nth-child(2) video {
   transition-delay: 1.5s; }
 
 section .grid__item:nth-child(2) blockquote {
   transition-delay: 0.9s; }
 
-section .grid__item:nth-child(3) img {
+section .grid__item:nth-child(3) img, section .grid__item:nth-child(3) video {
   transition-delay: 1.8s; }
 
 section .grid__item:nth-child(3) blockquote {
   transition-delay: 1.2s; }
 
-section .grid__item:nth-child(4) img {
+section .grid__item:nth-child(4) img, section .grid__item:nth-child(4) video {
   transition-delay: 2.1s; }
 
 section .grid__item:nth-child(4) blockquote {
   transition-delay: 1.5s; }
 
-section .grid__item:nth-child(5) img {
+section .grid__item:nth-child(5) img, section .grid__item:nth-child(5) video {
   transition-delay: 2.4s; }
 
 section .grid__item:nth-child(5) blockquote {
   transition-delay: 1.8s; }
 
-section .grid__item:nth-child(6) img {
+section .grid__item:nth-child(6) img, section .grid__item:nth-child(6) video {
   transition-delay: 2.7s; }
 
 section .grid__item:nth-child(6) blockquote {
   transition-delay: 2.1s; }
 
-section .grid__item:nth-child(7) img {
+section .grid__item:nth-child(7) img, section .grid__item:nth-child(7) video {
   transition-delay: 3s; }
 
 section .grid__item:nth-child(7) blockquote {
   transition-delay: 2.4s; }
 
-section .grid__item:nth-child(8) img {
+section .grid__item:nth-child(8) img, section .grid__item:nth-child(8) video {
   transition-delay: 3.3s; }
 
 section .grid__item:nth-child(8) blockquote {
   transition-delay: 2.7s; }
 
-section .grid__item:nth-child(9) img {
+section .grid__item:nth-child(9) img, section .grid__item:nth-child(9) video {
   transition-delay: 3.6s; }
 
 section .grid__item:nth-child(9) blockquote {
   transition-delay: 3s; }
 
-section .grid__item:nth-child(10) img {
+section .grid__item:nth-child(10) img, section .grid__item:nth-child(10) video {
   transition-delay: 3.9s; }
 
 section .grid__item:nth-child(10) blockquote {
   transition-delay: 3.3s; }
 
-section .grid__item:nth-child(11) img {
+section .grid__item:nth-child(11) img, section .grid__item:nth-child(11) video {
   transition-delay: 4.2s; }
 
 section .grid__item:nth-child(11) blockquote {
   transition-delay: 3.6s; }
 
-section .grid__item:nth-child(12) img {
+section .grid__item:nth-child(12) img, section .grid__item:nth-child(12) video {
   transition-delay: 4.5s; }
 
 section .grid__item:nth-child(12) blockquote {
   transition-delay: 3.9s; }
 
-section .grid__item:nth-child(13) img {
+section .grid__item:nth-child(13) img, section .grid__item:nth-child(13) video {
   transition-delay: 4.8s; }
 
 section .grid__item:nth-child(13) blockquote {
   transition-delay: 4.2s; }
 
-section .grid__item:nth-child(14) img {
+section .grid__item:nth-child(14) img, section .grid__item:nth-child(14) video {
   transition-delay: 5.1s; }
 
 section .grid__item:nth-child(14) blockquote {
   transition-delay: 4.5s; }
 
-section .grid__item:nth-child(15) img {
+section .grid__item:nth-child(15) img, section .grid__item:nth-child(15) video {
   transition-delay: 5.4s; }
 
 section .grid__item:nth-child(15) blockquote {
   transition-delay: 4.8s; }
 
-section .grid__item:nth-child(16) img {
+section .grid__item:nth-child(16) img, section .grid__item:nth-child(16) video {
   transition-delay: 5.7s; }
 
 section .grid__item:nth-child(16) blockquote {
   transition-delay: 5.1s; }
 
-section .grid__item:nth-child(17) img {
+section .grid__item:nth-child(17) img, section .grid__item:nth-child(17) video {
   transition-delay: 6s; }
 
 section .grid__item:nth-child(17) blockquote {
   transition-delay: 5.4s; }
 
-section .grid__item:nth-child(18) img {
+section .grid__item:nth-child(18) img, section .grid__item:nth-child(18) video {
   transition-delay: 6.3s; }
 
 section .grid__item:nth-child(18) blockquote {
   transition-delay: 5.7s; }
 
-section .grid__item:nth-child(19) img {
+section .grid__item:nth-child(19) img, section .grid__item:nth-child(19) video {
   transition-delay: 6.6s; }
 
 section .grid__item:nth-child(19) blockquote {
   transition-delay: 6s; }
 
-section .grid__item:nth-child(20) img {
+section .grid__item:nth-child(20) img, section .grid__item:nth-child(20) video {
   transition-delay: 6.9s; }
 
 section .grid__item:nth-child(20) blockquote {
   transition-delay: 6.3s; }
 
-section .grid__item:nth-child(21) img {
+section .grid__item:nth-child(21) img, section .grid__item:nth-child(21) video {
   transition-delay: 7.2s; }
 
 section .grid__item:nth-child(21) blockquote {
   transition-delay: 6.6s; }
 
-section .grid__item:nth-child(22) img {
+section .grid__item:nth-child(22) img, section .grid__item:nth-child(22) video {
   transition-delay: 7.5s; }
 
 section .grid__item:nth-child(22) blockquote {
   transition-delay: 6.9s; }
 
-section .grid__item:nth-child(23) img {
+section .grid__item:nth-child(23) img, section .grid__item:nth-child(23) video {
   transition-delay: 7.8s; }
 
 section .grid__item:nth-child(23) blockquote {
   transition-delay: 7.2s; }
 
-section .grid__item:nth-child(24) img {
+section .grid__item:nth-child(24) img, section .grid__item:nth-child(24) video {
   transition-delay: 8.1s; }
 
 section .grid__item:nth-child(24) blockquote {
   transition-delay: 7.5s; }
 
-section .grid__item:nth-child(25) img {
+section .grid__item:nth-child(25) img, section .grid__item:nth-child(25) video {
   transition-delay: 8.4s; }
 
 section .grid__item:nth-child(25) blockquote {
   transition-delay: 7.8s; }
 
-section .grid__item:nth-child(26) img {
+section .grid__item:nth-child(26) img, section .grid__item:nth-child(26) video {
   transition-delay: 8.7s; }
 
 section .grid__item:nth-child(26) blockquote {
   transition-delay: 8.1s; }
 
-section .grid__item:nth-child(27) img {
+section .grid__item:nth-child(27) img, section .grid__item:nth-child(27) video {
   transition-delay: 9s; }
 
 section .grid__item:nth-child(27) blockquote {
   transition-delay: 8.4s; }
 
-section .grid__item:nth-child(28) img {
+section .grid__item:nth-child(28) img, section .grid__item:nth-child(28) video {
   transition-delay: 9.3s; }
 
 section .grid__item:nth-child(28) blockquote {
   transition-delay: 8.7s; }
 
-section .grid__item:nth-child(29) img {
+section .grid__item:nth-child(29) img, section .grid__item:nth-child(29) video {
   transition-delay: 9.6s; }
 
 section .grid__item:nth-child(29) blockquote {
   transition-delay: 9s; }
 
-section .grid__item:nth-child(30) img {
+section .grid__item:nth-child(30) img, section .grid__item:nth-child(30) video {
   transition-delay: 9.9s; }
 
 section .grid__item:nth-child(30) blockquote {
   transition-delay: 9.3s; }
 
-section .grid__item:nth-child(31) img {
+section .grid__item:nth-child(31) img, section .grid__item:nth-child(31) video {
   transition-delay: 10.2s; }
 
 section .grid__item:nth-child(31) blockquote {
   transition-delay: 9.6s; }
 
-section .grid__item:nth-child(32) img {
+section .grid__item:nth-child(32) img, section .grid__item:nth-child(32) video {
   transition-delay: 10.5s; }
 
 section .grid__item:nth-child(32) blockquote {
   transition-delay: 9.9s; }
 
-section .grid__item:nth-child(33) img {
+section .grid__item:nth-child(33) img, section .grid__item:nth-child(33) video {
   transition-delay: 10.8s; }
 
 section .grid__item:nth-child(33) blockquote {
   transition-delay: 10.2s; }
 
-section .grid__item:nth-child(34) img {
+section .grid__item:nth-child(34) img, section .grid__item:nth-child(34) video {
   transition-delay: 11.1s; }
 
 section .grid__item:nth-child(34) blockquote {
   transition-delay: 10.5s; }
 
-section .grid__item:nth-child(35) img {
+section .grid__item:nth-child(35) img, section .grid__item:nth-child(35) video {
   transition-delay: 11.4s; }
 
 section .grid__item:nth-child(35) blockquote {
   transition-delay: 10.8s; }
 
-section .grid__item:nth-child(36) img {
+section .grid__item:nth-child(36) img, section .grid__item:nth-child(36) video {
   transition-delay: 11.7s; }
 
 section .grid__item:nth-child(36) blockquote {
   transition-delay: 11.1s; }
 
-section .grid__item:nth-child(37) img {
+section .grid__item:nth-child(37) img, section .grid__item:nth-child(37) video {
   transition-delay: 12s; }
 
 section .grid__item:nth-child(37) blockquote {
   transition-delay: 11.4s; }
 
-section .grid__item:nth-child(38) img {
+section .grid__item:nth-child(38) img, section .grid__item:nth-child(38) video {
   transition-delay: 12.3s; }
 
 section .grid__item:nth-child(38) blockquote {
   transition-delay: 11.7s; }
 
-section .grid__item:nth-child(39) img {
+section .grid__item:nth-child(39) img, section .grid__item:nth-child(39) video {
   transition-delay: 12.6s; }
 
 section .grid__item:nth-child(39) blockquote {
   transition-delay: 12s; }
 
-section .grid__item:nth-child(40) img {
+section .grid__item:nth-child(40) img, section .grid__item:nth-child(40) video {
   transition-delay: 12.9s; }
 
 section .grid__item:nth-child(40) blockquote {
   transition-delay: 12.3s; }
 
-section .grid__item:nth-child(41) img {
+section .grid__item:nth-child(41) img, section .grid__item:nth-child(41) video {
   transition-delay: 13.2s; }
 
 section .grid__item:nth-child(41) blockquote {
   transition-delay: 12.6s; }
 
-section .grid__item:nth-child(42) img {
+section .grid__item:nth-child(42) img, section .grid__item:nth-child(42) video {
   transition-delay: 13.5s; }
 
 section .grid__item:nth-child(42) blockquote {
   transition-delay: 12.9s; }
 
-section .grid__item:nth-child(43) img {
+section .grid__item:nth-child(43) img, section .grid__item:nth-child(43) video {
   transition-delay: 13.8s; }
 
 section .grid__item:nth-child(43) blockquote {
   transition-delay: 13.2s; }
 
-section .grid__item:nth-child(44) img {
+section .grid__item:nth-child(44) img, section .grid__item:nth-child(44) video {
   transition-delay: 14.1s; }
 
 section .grid__item:nth-child(44) blockquote {
   transition-delay: 13.5s; }
 
-section .grid__item:nth-child(45) img {
+section .grid__item:nth-child(45) img, section .grid__item:nth-child(45) video {
   transition-delay: 14.4s; }
 
 section .grid__item:nth-child(45) blockquote {
   transition-delay: 13.8s; }
 
-section .grid__item:nth-child(46) img {
+section .grid__item:nth-child(46) img, section .grid__item:nth-child(46) video {
   transition-delay: 14.7s; }
 
 section .grid__item:nth-child(46) blockquote {
   transition-delay: 14.1s; }
 
-section .grid__item:nth-child(47) img {
+section .grid__item:nth-child(47) img, section .grid__item:nth-child(47) video {
   transition-delay: 15s; }
 
 section .grid__item:nth-child(47) blockquote {
   transition-delay: 14.4s; }
 
-section .grid__item:nth-child(48) img {
+section .grid__item:nth-child(48) img, section .grid__item:nth-child(48) video {
   transition-delay: 15.3s; }
 
 section .grid__item:nth-child(48) blockquote {
   transition-delay: 14.7s; }
 
-section .grid__item:nth-child(49) img {
+section .grid__item:nth-child(49) img, section .grid__item:nth-child(49) video {
   transition-delay: 15.6s; }
 
 section .grid__item:nth-child(49) blockquote {
   transition-delay: 15s; }
 
-section .grid__item:nth-child(50) img {
+section .grid__item:nth-child(50) img, section .grid__item:nth-child(50) video {
   transition-delay: 15.9s; }
 
 section .grid__item:nth-child(50) blockquote {
   transition-delay: 15.3s; }
 
-section .grid__item:nth-child(51) img {
+section .grid__item:nth-child(51) img, section .grid__item:nth-child(51) video {
   transition-delay: 16.2s; }
 
 section .grid__item:nth-child(51) blockquote {
   transition-delay: 15.6s; }
 
-section .grid__item:nth-child(52) img {
+section .grid__item:nth-child(52) img, section .grid__item:nth-child(52) video {
   transition-delay: 16.5s; }
 
 section .grid__item:nth-child(52) blockquote {
   transition-delay: 15.9s; }
 
-section .grid__item:nth-child(53) img {
+section .grid__item:nth-child(53) img, section .grid__item:nth-child(53) video {
   transition-delay: 16.8s; }
 
 section .grid__item:nth-child(53) blockquote {
   transition-delay: 16.2s; }
 
-section .grid__item:nth-child(54) img {
+section .grid__item:nth-child(54) img, section .grid__item:nth-child(54) video {
   transition-delay: 17.1s; }
 
 section .grid__item:nth-child(54) blockquote {
   transition-delay: 16.5s; }
 
-section .grid__item:nth-child(55) img {
+section .grid__item:nth-child(55) img, section .grid__item:nth-child(55) video {
   transition-delay: 17.4s; }
 
 section .grid__item:nth-child(55) blockquote {
   transition-delay: 16.8s; }
 
-section .grid__item:nth-child(56) img {
+section .grid__item:nth-child(56) img, section .grid__item:nth-child(56) video {
   transition-delay: 17.7s; }
 
 section .grid__item:nth-child(56) blockquote {
   transition-delay: 17.1s; }
 
-section .grid__item:nth-child(57) img {
+section .grid__item:nth-child(57) img, section .grid__item:nth-child(57) video {
   transition-delay: 18s; }
 
 section .grid__item:nth-child(57) blockquote {
   transition-delay: 17.4s; }
 
-section .grid__item:nth-child(58) img {
+section .grid__item:nth-child(58) img, section .grid__item:nth-child(58) video {
   transition-delay: 18.3s; }
 
 section .grid__item:nth-child(58) blockquote {
   transition-delay: 17.7s; }
 
-section .grid__item:nth-child(59) img {
+section .grid__item:nth-child(59) img, section .grid__item:nth-child(59) video {
   transition-delay: 18.6s; }
 
 section .grid__item:nth-child(59) blockquote {
   transition-delay: 18s; }
 
-section .grid__item:nth-child(60) img {
+section .grid__item:nth-child(60) img, section .grid__item:nth-child(60) video {
   transition-delay: 18.9s; }
 
 section .grid__item:nth-child(60) blockquote {
@@ -1085,7 +1086,7 @@ section p span > span, section blockquote span > span {
 .active-section section h1 span:nth-child(60) span, .active-section section h2 span:nth-child(60) span {
   transition-delay: 6s; }
 
-.active-section section img {
+.active-section section img, .active-section section video {
   transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1);
   opacity: 1;
   transform: translate3d(0, 0, 0) skewX(0deg); }
@@ -1567,25 +1568,29 @@ section p span > span, section blockquote span > span {
     pointer-events: auto; }
   @media screen and (max-width: 800px) {
     .nav-takeover .nav-takeover__main > div {
-      -ms-flex: .2;
-      flex: .2; }
+      -ms-flex: .15;
+      flex: .15; }
     .nav-takeover .nav-takeover__main .nav-takeover__panels {
-      -ms-flex: .8;
-      flex: .8; }
+      -ms-flex: .85;
+      flex: .85; }
     .nav-takeover .nav-takeover__line-container {
       width: 30px;
       padding-top: 60px; }
     .nav-takeover__line {
       height: 48px; }
     .nav-takeover .nav-takeover__panel {
-      width: 80%; }
+      width: 85%; }
       .nav-takeover .nav-takeover__panel hr {
         display: block; }
       .nav-takeover .nav-takeover__panel ul {
-        padding: 60px; }
+        padding: 60px 60px 0 0;
+        width: 100%; }
       .nav-takeover .nav-takeover__panel li {
         height: 48px;
         margin-bottom: 24px; }
+      .nav-takeover .nav-takeover__panel a {
+        white-space: normal;
+        text-align: right; }
       .nav-takeover .nav-takeover__panel .nav-takeover__items {
         margin-bottom: 18px;
         padding: 0; }
@@ -1630,14 +1635,16 @@ section p span > span, section blockquote span > span {
   width: 73px;
   pointer-events: auto;
   height: 120px;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: center;
   justify-content: center;
   -ms-flex-align: center;
   align-items: center; }
+  .active-section .nav-toggle {
+    display: -ms-flexbox;
+    display: flex; }
   .nav-toggle .nav-toggle__abbreviation, .nav-toggle .nav-toggle__count {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
     letter-spacing: 0.06em;
@@ -1718,7 +1725,6 @@ section p span > span, section blockquote span > span {
 
 .next-project {
   position: relative;
-  background: #131112;
   cursor: none; }
   .next-project i {
     position: absolute;
@@ -1726,13 +1732,11 @@ section p span > span, section blockquote span > span {
     top: 12px; }
   .next-project h1 {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
-  .next-project section {
-    height: 50vh;
-    transition: none;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.9s; }
-  .next-project:hover section {
-    height: 60vh;
-    transform: translate3d(0, -5vh, 0); }
+  .next-project--black {
+    background: #131112; }
+
+.parallax-header h1 span, .parallax-header h2 span, .parallax-header h3 span, .parallax-header h4 span, .parallax-header h5 span, .parallax-header p span {
+  white-space: pre; }
 
 .parallax-header--hidden h1 > span > span {
   animation-name: ghostOut;
@@ -1925,28 +1929,7 @@ section p span > span, section blockquote span > span {
   opacity: .06; }
 
 .parallax-header .react-parallax {
-  z-index: 1;
   overflow: hidden; }
-  .parallax-header .react-parallax-contents, .parallax-header .react-parallax-content {
-    position: relative;
-    height: calc(100vh + 1px);
-    opacity: 1;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -ms-flex-pack: center;
-    justify-content: center;
-    text-align: left; }
-    .parallax-header .react-parallax-contents h1, .parallax-header .react-parallax-contents h2, .parallax-header .react-parallax-contents h3, .parallax-header .react-parallax-contents h4, .parallax-header .react-parallax-contents h5, .parallax-header .react-parallax-contents p, .parallax-header .react-parallax-content h1, .parallax-header .react-parallax-content h2, .parallax-header .react-parallax-content h3, .parallax-header .react-parallax-content h4, .parallax-header .react-parallax-content h5, .parallax-header .react-parallax-content p {
-      color: #F8FBF7; }
-      .parallax-header .react-parallax-contents h1 span, .parallax-header .react-parallax-contents h2 span, .parallax-header .react-parallax-contents h3 span, .parallax-header .react-parallax-contents h4 span, .parallax-header .react-parallax-contents h5 span, .parallax-header .react-parallax-contents p span, .parallax-header .react-parallax-content h1 span, .parallax-header .react-parallax-content h2 span, .parallax-header .react-parallax-content h3 span, .parallax-header .react-parallax-content h4 span, .parallax-header .react-parallax-content h5 span, .parallax-header .react-parallax-content p span {
-        white-space: pre; }
-  .parallax-header .react-parallax-content {
-    position: absolute !important;
-    top: 0; }
 
 @media screen and (max-width: 800px) {
   .parallax-header .react-parallax-content, .parallax-header .react-parallax-contents {
@@ -2126,14 +2109,16 @@ section p span > span, section blockquote span > span {
   width: 24px;
   position: fixed;
   pointer-events: auto;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: end;
   justify-content: flex-end;
   right: 0;
   top: 0px; }
+  .active-section .sidebar {
+    display: -ms-flexbox;
+    display: flex; }
   .sidebar__inner {
     margin-top: 108px;
     width: 87px;

@@ -229,11 +229,11 @@ $baseclass: nav-takeover;
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__main {
 			> div {
-				flex: .2;
+				flex: .15;
 			}
 
 			.#{$baseclass}__panels {
-				flex: .8;
+				flex: .85;
 			}
 		}
 
@@ -249,17 +249,22 @@ $baseclass: nav-takeover;
 
 
 		.#{$baseclass}__panel {
-			width: 80%;
+			width: 85%;
 
 			hr {
 				display: block;
 			}
 			ul {
-				padding: 60px;
+				padding: 60px 60px 0 0;
+				width: 100%;
 			}
 			li {
 				height: 48px;
 				margin-bottom: 24px;
+			}
+			a {
+				white-space: normal;
+				text-align: right;
 			}
 			.#{$baseclass}__items {
 				margin-bottom: 18px;

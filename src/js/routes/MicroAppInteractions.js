@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
@@ -20,7 +19,9 @@ import SideScroller from "../components/SideScroller"
 
 import NewUserSetup from "../components/sandbox/NewUserSetup"
 
+import IFrame from "../components/IFrame"
 import Image from "../components/Image"
+import Video from "../components/Video"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -50,6 +51,9 @@ class MicroAppInteractions extends Component {
 				"overview",
 				"about",
 				"details",
+				"minted",
+				"warner-bros",
+				"nearby",
 			],
 		}
 	}
@@ -72,19 +76,25 @@ class MicroAppInteractions extends Component {
 
 		return (
 			<article>
-				<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
+				}}
+				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
-					headerText={[ `At`, <span className="outline"><span>Wrap Media </span></span>, `I created interactions within our product for our clients.`]}
-					bgImage={"../assets/img/card-components/share-animation-zoomed-out.gif"}
-					strength={300}
-					onSetActive={() => { this.setActiveSection(0); }}
+					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `I created interactions within micro apps.`]}
 					/>
-				</Element>
+				</ScrollSection>
+
+
 
 
 				<ScrollSection 
@@ -95,7 +105,7 @@ class MicroAppInteractions extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
-								Wrap Media aimed to garner adoption of its web based platfrom by acting like an agency. Wrap Media partnered with high profile clients such as Warner Brothers Music, Salesforce, Equinox, BMW and many more.
+								Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
 							</blockquote>
 							<blockquote className="mr">
 								"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
@@ -109,7 +119,7 @@ class MicroAppInteractions extends Component {
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/card-components/banner.jpg" aspectRatioWidth={16} aspectRatioHeight={9} />
+									<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
 								</div>
 							</div>
 							<div className="grid__row">
@@ -136,9 +146,10 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/perspective-cards.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundImage: `url(../assets/img/card-components/banner.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
 					backgroundSize: 'cover',
+					backgroundPosition: 'bottom',
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
@@ -163,6 +174,92 @@ class MicroAppInteractions extends Component {
 						</div>
 					</div>
 				</ScrollSection>
+
+				<ScrollSection 
+				black
+				name={sections[3]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(3); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Realtime Poll</h2>
+								<blockquote>The Minted Challange Wrap seen above I worked on with Jeff Klein. I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+							<Video src="assets/img/card-components/minted.mp4"/>
+						</div>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<Image src="assets/img/card-components/minted-hand.jpg" aspectRatioWidth={4} aspectRatioHeight={5}/>
+						</div>
+					</div>
+				</ScrollSection>
+
+
+				<ScrollSection 
+				name={sections[4]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(4); }}>
+					<div className="grid">
+						<div className="grid__row">
+							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Cart & Share</h2>
+								{/*<h3>Warner Bros. Music</h3>*/}
+								<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>
+							</div>
+						</div>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<Video src="assets/img/card-components/share-animation.mp4"/>
+							</div>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<Image src="assets/img/card-components/cart-animation.gif" aspectRatioWidth={4} aspectRatioHeight={3}/>
+							</div>
+						</div>
+
+					</div>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<blockquote>Our approach was an immersive one, to value interaction and interface but not more than the content itself. We helped Tegan & Sara create a brand based on two basic elements; their highly curated content and the enthusiastic followers that make up their team. We avoided gimmicks by highlighting the content.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							{/*<IFrame src="//codepen.io/erchsm/embed/NRBOky/?default-tab=result"/>*/}
+							{/*<CodepenEmbed slug="NRBOky" title="Cart & Share Components" height={720} handle="erchsm"/>*/}
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				name={sections[5]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(5); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Places Nearby</h2>
+								<blockquote>Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. We later created a generic "self serve" component in our product. Anyone with an account could add this to a card. I worked on the motion and interaction here while working directly with the Google API.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
+							{/*<CodepenEmbed slug="ENNdJd" title="Nearby Services Component" height={720} handle="erchsm"/>*/}
+						</div>
+					</div>
+				</ScrollSection>
+
 
 
 				<NextProject 
@@ -189,6 +286,7 @@ class MicroAppInteractions extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({
