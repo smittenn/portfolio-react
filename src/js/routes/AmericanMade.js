@@ -88,7 +88,7 @@ class AmericanMade extends Component {
 					backgroundImage: `url(../assets/img/american-made/output.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
 					backgroundSize: this.props.isMobile ? 'cover' : '100% 102%',
-				}}  
+				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
 					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie.`]}

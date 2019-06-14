@@ -87,11 +87,7 @@ class Translator extends Component {
 				</Element>*/}
 
 				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
+				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/translator/banner.png)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,

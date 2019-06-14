@@ -1,3 +1,4 @@
+
 import React, {Component} from "react"
 import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
@@ -29,7 +30,7 @@ import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 
 
-class MicroAppInteractions extends Component {
+class MicroAppTemplates extends Component {
 
 	static propTypes = {
 	}
@@ -37,7 +38,7 @@ class MicroAppInteractions extends Component {
 	componentDidMount() {
 		window.scrollTo(0, 0);
 
-		this.props.wrap1();
+		this.props.wrap2();
 		this.props.reset();
 	}
 
@@ -84,13 +85,13 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
-					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
+					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundSize: (this.props.isMobile ? 'cover' : 'cover'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `I created interactions within micro apps.`]}
+					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `we designed 150+ app templates for our customers.`]}
 					/>
 				</ScrollSection>
 
@@ -105,7 +106,7 @@ class MicroAppInteractions extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
-								Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
+								Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
 							</blockquote>
 							<blockquote className="mr">
 								"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
@@ -119,19 +120,19 @@ class MicroAppInteractions extends Component {
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
+									<Image src="../assets/img/app-templates/templates.jpg" aspectRatioWidth={7} aspectRatioHeight={4} />
 								</div>
 							</div>
 							<div className="grid__row">
 								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote className="mr" >
-										On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.
+										On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designers would be put in charge of a single visual style family from end to end in the design process.
 									</blockquote>
 								</div>}
 								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote className="mr">
-										The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.
+										The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family.
 									</blockquote>
 								</div>}
 							</div>
@@ -156,11 +157,11 @@ class MicroAppInteractions extends Component {
 						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Creative Techonologist</blockquote>
+							<blockquote>UX/Visual Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2016</blockquote>
+							<blockquote>Fall, 2015</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
@@ -169,7 +170,7 @@ class MicroAppInteractions extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="">Pete Petras</a>, <a href="">Josh Bloom</a>, <a href="">Jeff Klein</a>, <a href="">Mei Chun</a>, <a href="">Theo Arguna</a>, <a href="">Cameron Myers</a>
+								<a href="">Pete Petras</a>, <a href="">Mei Chun</a>, <a href="">Theo Arguna</a>
 							</blockquote> 
 						</div>
 					</div>
@@ -184,17 +185,17 @@ class MicroAppInteractions extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Realtime Poll</h2>
-								<blockquote>The Minted Challange Wrap seen above I worked on with Jeff Klein. I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns.</blockquote>
+								<h2>Template Mobile Experiences</h2>
+								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<Video src="assets/img/card-components/minted.mp4"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<Video src="assets/img/app-templates/from-fb.mp4"/>
 						</div>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<Image src="assets/img/card-components/minted-hand.jpg" aspectRatioWidth={4} aspectRatioHeight={5}/>
+						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
+							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={7} aspectRatioHeight={11}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -209,19 +210,29 @@ class MicroAppInteractions extends Component {
 						<div className="grid__row">
 							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Cart & Share</h2>
-								{/*<h3>Warner Bros. Music</h3>*/}
-								<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>
+								<h2 className="no-mb">Conference</h2>
+								{<h3>Modern Sans Family</h3>}
+								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<Video src="assets/img/card-components/share-animation.mp4"/>
+						<SideScroller>
+							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+								<Image src="../assets/img/app-templates/conference/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
 							</div>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<Image src="assets/img/card-components/cart-animation.gif" aspectRatioWidth={4} aspectRatioHeight={3}/>
+							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+								<Image src="../assets/img/app-templates/conference/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
 							</div>
-						</div>
+							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+								<Image src="../assets/img/app-templates/conference/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							</div>
+							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+								<Image src="../assets/img/app-templates/conference/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							</div>
+							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+								<Image src="../assets/img/app-templates/conference/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							</div>
+						</SideScroller>
+
 
 					</div>
 					<div className="grid">
@@ -263,7 +274,7 @@ class MicroAppInteractions extends Component {
 
 
 				<NextProject 
-				to="/micro-app-templates"
+				to="/app-templates"
 				name="Micro App Templates"
 				sections={sections} 
 				activeSection={activeSection}
@@ -305,4 +316,4 @@ const mapDispatchToProps = dispatch => ({
 	protohack: () => dispatch(protohack()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MicroAppInteractions)
+export default connect(mapStateToProps, mapDispatchToProps)(MicroAppTemplates)
