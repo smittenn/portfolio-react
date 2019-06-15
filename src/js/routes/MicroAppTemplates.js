@@ -52,9 +52,11 @@ class MicroAppTemplates extends Component {
 				"overview",
 				"about",
 				"details",
-				"minted",
-				"warner-bros",
-				"nearby",
+				"templates",
+				"conference",
+				"lead-gen",
+				"commerce",
+				"agency",
 			],
 		}
 	}
@@ -177,7 +179,6 @@ class MicroAppTemplates extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				black
 				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
@@ -185,7 +186,7 @@ class MicroAppTemplates extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Template Mobile Experiences</h2>
+								<h2>Templates</h2>
 								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
 							</div>
 						</div>
@@ -203,6 +204,7 @@ class MicroAppTemplates extends Component {
 
 				<ScrollSection 
 				name={sections[4]}
+				black
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
@@ -215,72 +217,168 @@ class MicroAppTemplates extends Component {
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
-						<SideScroller>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<Image src="../assets/img/app-templates/conference/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<Image src="../assets/img/app-templates/conference/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<Image src="../assets/img/app-templates/conference/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<Image src="../assets/img/app-templates/conference/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<Image src="../assets/img/app-templates/conference/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
-							</div>
-						</SideScroller>
-
-
 					</div>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<blockquote>Our approach was an immersive one, to value interaction and interface but not more than the content itself. We helped Tegan & Sara create a brand based on two basic elements; their highly curated content and the enthusiastic followers that make up their team. We avoided gimmicks by highlighting the content.</blockquote>
-							</div>
+					<SideScroller>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-12">
-							{/*<IFrame src="//codepen.io/erchsm/embed/NRBOky/?default-tab=result"/>*/}
-							{/*<CodepenEmbed slug="NRBOky" title="Cart & Share Components" height={720} handle="erchsm"/>*/}
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/7.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/conference/8.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+					</SideScroller>
 				</ScrollSection>
+
 
 				<ScrollSection 
 				name={sections[5]}
+				black
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Places Nearby</h2>
-								<blockquote>Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. We later created a generic "self serve" component in our product. Anyone with an account could add this to a card. I worked on the motion and interaction here while working directly with the Google API.</blockquote>
+								<h2 className="no-mb">Lead Generation</h2>
+								{<h3>Bold Modern Family</h3>}
+								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
 					</div>
+					<SideScroller>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/lead-generation/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/lead-generation/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/lead-generation/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/lead-generation/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/lead-generation/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/lead-generation/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+					</SideScroller>
+				</ScrollSection>
+
+				<ScrollSection 
+				name={sections[6]}
+				black
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
-							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
-							{/*<CodepenEmbed slug="ENNdJd" title="Nearby Services Component" height={720} handle="erchsm"/>*/}
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2 className="no-mb">Fashion Commerce</h2>
+								<h3>Modern Sans Family</h3>
+							</div>
 						</div>
 					</div>
+					<SideScroller>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/7.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/8.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/commerce/9.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+					</SideScroller>
+				</ScrollSection>
+
+				<ScrollSection 
+				name={sections[7]}
+				black
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(7); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2 className="no-mb">Design Agency</h2>
+								<h3>Modern Sans Family</h3>
+							</div>
+						</div>
+					</div>
+					<SideScroller>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+							<Image src="../assets/img/app-templates/agency/7.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+						</div>
+					</SideScroller>
 				</ScrollSection>
 
 
 
 				<NextProject 
-				to="/app-templates"
-				name="Micro App Templates"
+				to="/perforce"
+				name="Perforce"
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
+					backgroundImage: `url(../assets/img/perforce/banner.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}/>
