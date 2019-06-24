@@ -39,21 +39,14 @@ class Home extends Component {
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
-		window.addEventListener('resize', this.detectMobile);
 
 		this.props.home();
 		this.props.reset();
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('resize', this.detectMobile);
 	}
 
-	detectMobile = (event) => {
-		this.setState({
-			isMobile: window.innerWidth <= 800,
-		})
-	}
 		
 	setActiveSection = (idx) => {
 		this.setState({
@@ -111,6 +104,7 @@ class Home extends Component {
 		const { activeSection, sections } = this.state;
 
 		const brandBlack = hexToRgb(palette("brand-black"));
+		const brandRed = hexToRgb(palette("brand-red"));
 		
 		return (
 			<article>
@@ -122,8 +116,9 @@ class Home extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/terrain.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
-					backgroundSize: 'cover',
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundBlendMode: `multiply`,
+					backgroundSize: this.props.isMobile ? 'cover' : '170%',
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -137,6 +132,7 @@ class Home extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__md"/>
 							<h2>{splitWord("Form & Function")}</h2>
@@ -145,9 +141,26 @@ class Home extends Component {
 							</blockquote>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							<div className="grid__row">
+								<div className="grid__item grid__item--col-4">
+									<div className="spacer spacer__sm"/>
+									<Image src="../assets/img/lands-end-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>
+								<div className="grid__item grid__item--col-4">
+									<div className="spacer spacer__lg"/>
+									<Image src="../assets/img/me-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+									<div className="spacer spacer__md"/>
+								</div>
+								<div className="grid__item grid__item--col-4">
+									<div className="spacer spacer__md"/>
+									<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>
+							</div>
+						</div>
+						{/*<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 							<div className="spacer spacer__sm"/>
-							<Image src="../assets/img/lands-end-4x3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/biking-3x4.svg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 							<div className="spacer spacer__lg"/>
@@ -157,7 +170,7 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
 							<div className="spacer spacer__md"/>
 							<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-						</div>
+						</div>*/}
 					</div>
 				</ScrollSection>
 
@@ -211,21 +224,15 @@ class Home extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
 							<div className="spacer spacer__md"/>
-							<h2>{splitWord("Experiments")}</h2>
+							<h2>{splitWord("Play & Experiment")}</h2>
 							<blockquote>
-								{splitWord(`I enjoy trying out new technologies to create new and sometimes strange things.`)}
+								{splitWord(`I enjoy trying out new tools and technologies to express myself creatively and broaden my horizons. In my free time I create visual art with code. This can lead to interesting and sometimes strange output.`)}
 							</blockquote>
 						</div>
 					</div>
 				</ScrollSection>
-
-
-
-				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-					<ScrollArrow label="Learn More"/>
-				</Link>}
 
 			</article>
 		);
@@ -235,7 +242,7 @@ class Home extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
-	mobile: state.mobile,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

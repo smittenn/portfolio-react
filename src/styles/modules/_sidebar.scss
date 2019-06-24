@@ -10,7 +10,7 @@ $baseclass: sidebar;
 	justify-content: flex-end;
 	right: 0;
 	top: 0px;
-	// @include zIndexCloser();
+	@include zIndexCloser();
 
 	.active-section & {
 		display: flex;
@@ -67,7 +67,7 @@ $baseclass: sidebar;
 
 
 	&__number, &__label {
-		font-family: "Campton";
+		font-family: $font-tertiary;
 	} 
 
 	&__number {

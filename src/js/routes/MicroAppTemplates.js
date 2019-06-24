@@ -88,7 +88,7 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
 					backgroundSize: (this.props.isMobile ? 'cover' : 'cover'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
@@ -179,6 +179,7 @@ class MicroAppTemplates extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
+				black
 				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
@@ -382,10 +383,6 @@ class MicroAppTemplates extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}/>
-
-				{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-					<ScrollArrow label="Read More"/>
-				</Link>}
 
 			</article>
 		);

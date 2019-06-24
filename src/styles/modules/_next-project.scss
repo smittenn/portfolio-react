@@ -10,11 +10,13 @@ $baseclass: next-project;
 // }
 
 .#{$baseclass} {
-	position: relative;
-	// background: $brand-black;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 	cursor: none;
 	// height: 60vh;
-	// overflow: hidden;
+	@include zIndexFar();
 
 	i {
 		position: absolute;

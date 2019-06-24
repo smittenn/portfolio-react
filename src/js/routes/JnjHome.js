@@ -98,13 +98,13 @@ class JnjHome extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundSize: 'contain',
 					backgroundPosition: (this.props.isMobile ? 'right' : 'center'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for J&J employees to connect and create.`]}
+					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for employees to connect and create at J&J.`]}
 					/>
 				</ScrollSection>
 
@@ -292,10 +292,6 @@ class JnjHome extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: '50% 80%',
 				}}/>
-
-				{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-					<ScrollArrow label="Read More"/>
-				</Link>}
 
 			</article>
 		);

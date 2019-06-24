@@ -34,7 +34,7 @@ $baseclass: nav-toggle;
 	justify-content: center;
 	align-items: center;
 	// cursor: pointer;
-	// @include zIndexCloser();
+	@include zIndexClosest();
 
 	.active-section & {
 		display: flex;
@@ -45,7 +45,7 @@ $baseclass: nav-toggle;
 		transition: all $easing2 0.3s;
 		letter-spacing: $letter-spacing-lg;
 		margin: 0;
-		font-family: "Campton";
+		font-family: $font-tertiary;
 	}
 
 	.#{$baseclass}__abbreviation {
@@ -141,22 +141,22 @@ $baseclass: nav-toggle;
 	
 
 	&--menuOpen {
-		pointer-events: none;
+		// pointer-events: none;
 
 		.#{$baseclass}__hamburger {
 			.line {
-				background: $brand-black;
-				opacity: 0;
+				background: rgba($brand-black, 1);
+				opacity: 1;
 
-				// &:first-child {
-				// 	transform: translate3d(0,0px,0) rotate(135deg);
-				// }
-				// &:nth-child(2) {
-				// 	opacity: 0;
-				// }
-				// &:last-child {
-				// 	transform: translate3d(0,-2px,0) rotate(45deg);
-				// }
+				&:first-child {
+					transform: translate3d(2px,0px,0) rotate(135deg) scaleX(0.6);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:last-child {
+					transform: translate3d(2px,-2px,0) rotate(45deg) scaleX(0.6);
+				}
 			}
 		}
 		.#{$baseclass}__abbreviation, .#{$baseclass}__count {
@@ -168,7 +168,28 @@ $baseclass: nav-toggle;
 		.#{$baseclass}__count {
 			transform: translate3d(0,12px,0);
 		}
+
+		&.#{$baseclass}--secondaryPanelOpen {
+			.#{$baseclass}__hamburger {
+				.line {
+					background: rgba($brand-black, 1);
+					opacity: 1;
+
+					&:first-child {
+						transform: translate3d(12px,6px,0) rotate(135deg) scaleX(0.2);
+					}
+					&:nth-child(2) {
+						transform: translate3d(2px,0,0) scaleX(0.4);
+						opacity: 1;
+					}
+					&:last-child {
+						transform: translate3d(12px,-6px,0) rotate(45deg) scaleX(0.2);
+					}
+				}
+			}
+		}
 	}
+
 	
 
 	@media screen and (max-width: $bp-medium) {

@@ -15,22 +15,21 @@ class NextProject extends Component {
 		super(props);
 
 		this.state = {	
-			mouseY: 50,
+			/*mouseY: 50,
 			mouseX: window.innerWidth / 2,
-			isHovering: false,
+			isHovering: false,*/
 		}
 	}
 
 
 	handleMouseMove = (event) => {
 		// console.log(event);
-		const { clientX, clientY } = event;
+		/*const { clientX, clientY } = event;
 		const threshold = clientY - this.refs.nextProject.clientHeight
 
 		this.setState({
 			mouseY: Math.min((threshold), 150),
-			// mouseX: clientX,
-		})
+		})*/
 	}
 
 	handleHover = () => {
@@ -48,20 +47,14 @@ class NextProject extends Component {
 			"next-project--black": black,
 		})
 
-		const clip = {
-		    clipPath: 'url(#clippy)'
-		}
+		// const clip = {
+		//     clipPath: 'url(#clippy)'
+		// }
 		
 		return (
-			<div className={classnames} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover} onMouseMove={this.handleMouseMove} ref="nextProject">
-				<svg viewBox={`0 0 ${window.innerWidth} 600`} width="100%" height="100%" preserveAspectRatio="none" style={{ position: 'absolute', width: '100%', height: '100%' }}>
-					<clipPath id="clippy">
-						<path d={`M 0 600 L ${window.innerWidth} 600 L ${window.innerWidth} 45 Q ${this.state.mouseX} ${this.state.mouseY} 0 45 Z`} vectorEffect="non-scaling-stroke"></path>
-					</clipPath>
-				</svg>
-				<GridLines/>
+			<div className={classnames} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover} ref="nextProject">
 				<NavLink to={to}>
-					<section className="black" style={Object.assign(clip, style)}>
+					<section className="black" style={style}>
 							<GridLines/>
 							<div className="grid">
 								<div className="grid__item grid__item--col-12">

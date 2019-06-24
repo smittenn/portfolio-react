@@ -53,6 +53,8 @@ $baseclass: cursor;
 		.#{$baseclass}__inner {
 			width: 24px;
 			height: 24px;
+			// background: transparent;
+			// border: solid 1px $brand-white;
 		}
 	}
 

@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux"
 import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
 import ReactHover from 'react-hover'
 
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+
 import splitLetter from '../services/splitLetter'
 
-export default class ProjectCard extends Component {
+class ProjectCard extends Component {
 
 	constructor(props) {
 		super(props);
@@ -28,12 +31,14 @@ export default class ProjectCard extends Component {
 		this.setState({
 			isHovered: true,
 		})
+		this.props.setCursorHover();
 	}
 
 	handleMouseLeave = () => {
 		this.setState({
 			isHovered: false,
-		})			
+		})
+		this.props.setCursorUnhover();			
 	}
 
 	render() {
@@ -52,7 +57,7 @@ export default class ProjectCard extends Component {
 
 		return (
 			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-				<NavLink to={href}>
+				<NavLink to={href} onClick={this.handleMouseLeave}>
 					<div className="project-card__asset">
 					{this.props.children}
 					</div>
@@ -72,3 +77,14 @@ export default class ProjectCard extends Component {
 
 
 
+const mapStateToProps = state => ({
+	isMobile: state.isMobile,
+})
+
+const mapDispatchToProps = dispatch => ({
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard)

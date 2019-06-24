@@ -47,6 +47,7 @@ class Translator extends Component {
 			sections: [
 				"overview",
 				"about",
+				"details",
 				"collections",
 				"metadata",
 				"shell",
@@ -145,6 +146,21 @@ class Translator extends Component {
 							</div>
 						</div>
 					</div>
+				</ScrollSection>
+
+
+				{<ScrollSection 
+				name={sections[2]}
+				black 
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/translator/tv-prod.svg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .40`,
+					backgroundSize: `60%`,
+					backgroundPosition: `100% 40%`,
+				}}  
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
@@ -165,32 +181,19 @@ class Translator extends Component {
 						</div>
 					</div>
 
-				</ScrollSection>
-
-
-				{/*<ScrollSection 
-				name={sections[2]}
-				black 
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/translator/nyc-skyline.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
-				</ScrollSection>*/}
+				</ScrollSection>}
 
 				<ScrollSection 
-				name={sections[2]}
+				name={sections[3]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(2); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Collections</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list of grid view to their liking. The grid view allows thumbnail previews arrange themselves in masonry grid.</blockquote>
+								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list or masonry grid view to their liking.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -203,15 +206,15 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[3]}
+				name={sections[4]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Editing Metadata</h2>
-								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness: "Ready for Ingest", "Ready for Service" and "Search Optimized".</blockquote>
+								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -230,11 +233,11 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[5]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -252,10 +255,10 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[6]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -287,9 +290,6 @@ class Translator extends Component {
 				}}/>
 
 
-				{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={true} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-					<ScrollArrow label="Read More"/>
-				</Link>}
 
 			</article>
 		);

@@ -18,7 +18,7 @@ class Nav extends Component {
 
 		this.state = {
 			isToggleHovered: false,
-			indexHovered: this.getActiveIndex(),
+			indexHovered: 0,
 		}
 	}
 
@@ -53,6 +53,14 @@ class Nav extends Component {
 		this.setState({
 			indexHovered: index,
 		});
+
+		// const els = document.getElementsByClassname('hovered');
+
+		// els.forEach(el => {
+		// 	el.classList.remove('hovered')
+		// })
+
+		// e.target.classList.add('hovered');
 	}
 
 	getChildIndex = (elem) => {
@@ -61,17 +69,6 @@ class Nav extends Component {
 		while ((elem = elem.previousSibling) != null) { i++; }
 
 		return i;
-	}
-
-	getActiveIndex = () => {
-		switch (this.props.abbreviation) {
-			case 'H':
-				return 0;
-			case 'P1':
-				return 1;
-			default:
-				return 1;
-		}
 	}
 
 
@@ -167,7 +164,7 @@ class Nav extends Component {
 				onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }}
 				onMouseLeave={ this.props.setCursorUnhover } 
 				onClick={this.setMenuClosed}>
-					<h4 className={classNames({ 'hover': i == indexHovered })}>{item.name}</h4>
+					<h4 className={classNames({ 'hovered': i == indexHovered })}>{item.name}</h4>
 				</NavLink>
 			</li>
 		)
@@ -179,7 +176,7 @@ class Nav extends Component {
 					onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
 					onMouseLeave={ this.props.setCursorUnhover } 
 					onClick={this.setMenuClosed}>
-						<h3 className={classNames({ 'active': abbreviation == item.abbreviation, 'hover': i == indexHovered })}>{item.name}</h3>
+						<h3 className={classNames({ 'active': abbreviation == item.abbreviation, 'hovered': i == indexHovered })}>{item.name}</h3>
 					</NavLink>
 				</li>
 			) : (
@@ -187,7 +184,7 @@ class Nav extends Component {
 				onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
 				onMouseLeave={ this.props.setCursorUnhover } 
 				onClick={this.props.isSecondaryPanelOpen ? this.setCloseSecondaryPanel : this.setOpenSecondaryPanel}>
-					<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g), 'hover': i == indexHovered })}>{item.name}</h3>
+					<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g), 'hovered': i == indexHovered })}>{item.name}</h3>
 				</li>
 			)
 		)
@@ -199,9 +196,9 @@ class Nav extends Component {
 					<div className="nav-takeover__panels">
 						<div className="nav-takeover__panel">
 							<ul className="nav-takeover__items--secondary">
-								<li onClick={this.setCloseSecondaryPanel}>
+								{/*<li onClick={this.setCloseSecondaryPanel}>
 									<h3><i className="iconcss icon-arrow-right"></i></h3>
-								</li>
+								</li>*/}
 								{ secondaryNavItems }
 							</ul>
 							<ul className="nav-takeover__items--primary">

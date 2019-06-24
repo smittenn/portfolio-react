@@ -7,7 +7,10 @@ import IntersectionVisible from "react-intersection-visible"
 
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
+import ScrollArrow from "./ScrollArrow"
 import GridLines from "../components/GridLines"
+
+import palette from "../services/palette"
 
 export default class ScrollSection extends Component {
 
@@ -34,6 +37,10 @@ export default class ScrollSection extends Component {
 		})
 
 		fullHeight ? Object.assign(style, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' }) : null
+
+		const logoStyle = { 
+			color: black ? palette('brand-white') : palette('brand-black'),
+		}
 		
 		return (
 			<Element name={name}>
@@ -47,15 +54,18 @@ export default class ScrollSection extends Component {
 						{ this.props.children }
 					</section>
 
-					<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}></Link>
-
 					<div className="clip-wrapper">
+						<Link style={name == sections[0] || name == sections[1] ? null : {display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}>
+							<ScrollArrow black={!black}/>
+						</Link>
 
 						<Sidebar 
 						isBlack={!black}
 						sections={sections} 
 						activeSection={activeSection}
 						/>
+
+						<div className="logo"><h7 className="uppercase" style={logoStyle}>{activeSection}.</h7></div>
 
 						<NavToggle black={!black}/>
 					</div>

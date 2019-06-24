@@ -274,9 +274,6 @@ class MicroAppInteractions extends Component {
 					backgroundPosition: 'center',
 				}}/>
 
-				{<Link to={sections[1]} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-					<ScrollArrow label="Read More"/>
-				</Link>}
 
 			</article>
 		);

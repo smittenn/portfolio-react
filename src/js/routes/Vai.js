@@ -97,7 +97,7 @@ class Vai extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}
-				onSetActive={() => { this.setActiveSection(0); }}>
+				onSetActive={() => { this.setActiveSection(sections[0]); }}>
 					<ParallaxHeader 
 					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
 					/>
@@ -110,6 +110,7 @@ class Vai extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(sections[1]);}}>
 					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
 								Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing.
@@ -122,20 +123,17 @@ class Vai extends Component {
 							</blockquote>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
 									<Image src="../assets/img/vai/chevrolet.jpg"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 								</div>
 							</div>
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
 									<blockquote>
 										As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
 									</blockquote>
-								</div>
-								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 									<blockquote>
 										Clarifi's image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
 									</blockquote>
@@ -153,7 +151,7 @@ class Vai extends Component {
 				style={{ backgroundImage: `url(../assets/img/vai/escalade.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 10%" }}  
 				onSetActive={() => { this.setActiveSection(sections[2]); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
@@ -166,7 +164,7 @@ class Vai extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCUX Lab</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-5 grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-4 grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="">Kennix Lee</a>, <a href="">Jing Zhao</a> </blockquote> 
 						</div>
@@ -253,9 +251,6 @@ class Vai extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}/>
 
-				<Link to={sections[1]} spy={true} smooth={true} offset={0} onSetActive={() => { this.setActiveSection(sections[1]); }}>
-					<ScrollArrow/>
-				</Link>
 				
 			</article>
 		);

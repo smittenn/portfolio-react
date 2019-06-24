@@ -21,12 +21,10 @@ class ScrollArrow extends Component {
 
 	componentDidMount() {
 		document.addEventListener('scroll', this.handleScroll);
-		// document.addEventListener('touchmove', this.handleScroll);
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('scroll', this.handleScroll);
-		// document.removeEventListener('touchmove', this.handleScroll);
 	}
 
 	handleScroll = (e) => {
@@ -34,11 +32,12 @@ class ScrollArrow extends Component {
 	}
 
 	render() {
-		const { label } = this.props;
+		const { label, black } = this.props;
 
 		const classnames = classNames({
 			"scroll-arrow": true,
-			"scroll-arrow--hidden": this.state.isHidden
+			"scroll-arrow--hidden": this.state.isHidden,
+			"scroll-arrow--black": this.props.black,
 		})
 
 		return (
@@ -46,8 +45,7 @@ class ScrollArrow extends Component {
 				<div className="scroll-arrow__seperator-container">
 					<div className="scroll-arrow__seperator"/>
 				</div>
-				{/*<i className="iconcss icon-arrow-right"/>*/}
-				{<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Scroll`)}</h6>}
+				{<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Read More`)}</h6>}
 			</div>					
 		);
 	}

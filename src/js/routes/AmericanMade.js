@@ -7,6 +7,8 @@ import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { openSecondaryPanel } from "../actions/secondaryPanel"
+import { closePrimaryPanel } from "../actions/primaryPanel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -36,6 +38,8 @@ class AmericanMade extends Component {
 
 		this.props.americanMade();
 		this.props.reset();
+		this.props.openSecondaryPanel();
+		this.props.closePrimaryPanel();
 	}
 
 
@@ -101,17 +105,31 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<blockquote className="drop-caps">
-								We took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<blockquote className="drop-caps mr">
+								My team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. 
+							</blockquote>
+							<blockquote className="mr">
+								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 							</blockquote> 
-							<blockquote>
+							<blockquote className="mr">
 								Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
 							</blockquote>
-							<blockquote>
-								My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. As the first film site in a series of film sites to be developed in the partnership I wanted to create reusable components that could be leveraged in later sites. 
-							</blockquote>
+						</div>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<div className="grid__row">
+								<div className="grid__item grid__item--col-12">
+									<Image src="../assets/img/american-made/half-still.jpg"  aspectRatioWidth={9} aspectRatioHeight={5}/> 
+								</div>
+							</div>
+							<div className="grid__row">
+								<div className="grid__item grid__item--col-12">
+									<blockquote className="mr">
+										My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+									</blockquote>
+								</div>
+							</div>
 						</div>
 					</div>
 				</ScrollSection>
@@ -127,20 +145,20 @@ class AmericanMade extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote>June, 2017</blockquote>
+							<blockquote>Summer, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>Universal Pictures</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
 						</div>
@@ -197,8 +215,8 @@ class AmericanMade extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{splitLetter("Preloader")}</h2> 
-								<blockquote>{splitWord("Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \“Sky is Never The Limit\”.")}</blockquote>
+								<h2>Preloader</h2> 
+								<blockquote>Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -287,6 +305,7 @@ class AmericanMade extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
+							<Image src="../assets/img/american-made/mobile.svg" aspectRatioWidth={16} aspectRatioHeight={9}/>
 							{/*<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
 						</div>
 					</div>
@@ -324,10 +343,6 @@ class AmericanMade extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}/>
 
-				{<Link to={sections[1]} spy={true} smooth={"easeOutQuint"} duration={1200} offset={0} onSetActive={() => { setCounter(2); this.setActiveSection(1); }}>
-					<ScrollArrow label="Learn More"/>
-				</Link>}
-
 			</article>
 		);
 	}
@@ -353,6 +368,8 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
+	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AmericanMade)

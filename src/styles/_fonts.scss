@@ -95,29 +95,29 @@
 // }
 
 // @font-face {
-// 	font-family: 'Averta';
-// 	font-weight: 300;
+// 	font-family: 'CentraNo2';
+// 	font-weight: 700;
 // 	font-style: normal;
-// 	src: url('../fonts/Averta/Averta-Thin.eot');
-// 	src: url('../fonts/Averta/Averta-Thin.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/Averta/Averta-Thin.woff2') format('woff2'), 
-// 	url('../fonts/Averta/Averta-Thin.woff') format('woff'), 
-// 	url('../fonts/Averta/Averta-Thin.ttf') format('truetype'),
-// 	url('../fonts/Averta/Averta-Thin.svg#codropsicons') format('svg');
+// 	src: url('../fonts/CentraNo2/CentraNo2-Bold.eot');
+// 	src: url('../fonts/CentraNo2/CentraNo2-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/CentraNo2/CentraNo2-Bold.woff2') format('woff2'), 
+// 	url('../fonts/CentraNo2/CentraNo2-Bold.woff') format('woff'), 
+// 	url('../fonts/CentraNo2/CentraNo2-Bold.ttf') format('truetype'),
+// 	url('../fonts/CentraNo2/CentraNo2-Bold.svg#codropsicons') format('svg');
 // }
 
 
-@font-face {
-	font-family: 'Avant Garde';
-	font-weight: 600;
-	font-style: normal;
-	src: url('../fonts/AvantGarde/AvantGarde-Demi.eot');
-	src: url('../fonts/AvantGarde/AvantGarde-Demi.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/AvantGarde/AvantGarde-Demi.woff2') format('woff2'), 
-	url('../fonts/AvantGarde/AvantGarde-Demi.woff') format('woff'), 
-	url('../fonts/AvantGarde/AvantGarde-Demi.ttf') format('truetype'),
-	url('../fonts/AvantGarde/AvantGarde-Demi.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Avant Garde';
+// 	font-weight: 600;
+// 	font-style: normal;
+// 	src: url('../fonts/AvantGarde/AvantGarde-Demi.eot');
+// 	src: url('../fonts/AvantGarde/AvantGarde-Demi.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/AvantGarde/AvantGarde-Demi.woff2') format('woff2'), 
+// 	url('../fonts/AvantGarde/AvantGarde-Demi.woff') format('woff'), 
+// 	url('../fonts/AvantGarde/AvantGarde-Demi.ttf') format('truetype'),
+// 	url('../fonts/AvantGarde/AvantGarde-Demi.svg#codropsicons') format('svg');
+// }
 
 
 @font-face {
@@ -157,6 +157,18 @@
 	url('../fonts/Campton/Campton-Bold.svg#codropsicons') format('svg');
 }
 
+@font-face {
+	font-family: 'Campton';
+	font-weight: 400;
+	font-style: normal;
+	src: url('../fonts/Campton/Campton-Book.eot');
+	src: url('../fonts/Campton/Campton-Book.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Campton/Campton-Book.woff2') format('woff2'), 
+	url('../fonts/Campton/Campton-Book.woff') format('woff'), 
+	url('../fonts/Campton/Campton-Book.ttf') format('truetype'),
+	url('../fonts/Campton/Campton-Book.svg#codropsicons') format('svg');
+}
+
 // @font-face {
 // 	font-family: 'GTWalsheim';
 // 	font-weight: 400;
@@ -181,17 +193,17 @@
 // 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.svg#codropsicons') format('svg');
 // }
 
-// @font-face {
-// 	font-family: 'GTWalsheim';
-// 	font-weight: 700;
-// 	font-style: normal;
-// 	src: url('../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.eot');
-// 	src: url('../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.woff2') format('woff2'), 
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.woff') format('woff'), 
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.ttf') format('truetype'),
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Bold.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'Ivar Display';
+	font-weight: 700;
+	font-style: normal;
+	src: url('../fonts/IvarDisplay/IvarDisplay-SemiBold.eot');
+	src: url('../fonts/IvarDisplay/IvarDisplay-SemiBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/IvarDisplay/IvarDisplay-SemiBold.woff2') format('woff2'), 
+	url('../fonts/IvarDisplay/IvarDisplay-SemiBold.woff') format('woff'), 
+	url('../fonts/IvarDisplay/IvarDisplay-SemiBold.ttf') format('truetype'),
+	url('../fonts/IvarDisplay/IvarDisplay-SemiBold.svg#codropsicons') format('svg');
+}
 
 // @font-face {
 // 	font-family: 'GTWalsheim';

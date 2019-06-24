@@ -6,7 +6,7 @@ $baseclass: nav-takeover;
 	flex-direction: column;
 	align-items: center;
 	background: white;
-	@include zIndexClosest();
+	@include zIndexCloser();
 
 	&__main {
 		position: fixed;
@@ -42,10 +42,8 @@ $baseclass: nav-takeover;
 		h1, h2, h3, h4, h5, h6 {
 			display: inline;
 			pointer-events: none;
-			// border-bottom: solid 1px transparent;
-			// transition: border-color 0.3s $easing1;
+			transition: all $duration-medium $easing2;
 			margin: 0;
-			// padding-bottom: 2px;
 		}
 
 		a {
@@ -81,7 +79,7 @@ $baseclass: nav-takeover;
 		border-left: solid 1px rgba($brand-grey-light, 0.6);
 		right: 0;
 		top: 0;
-		padding-top: 120px;
+		padding-top: 160px;
 	}
 
 	&__line {
@@ -100,7 +98,7 @@ $baseclass: nav-takeover;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		padding: 120px;
+		padding: 160px 120px;
 
 		li {
 			transform: translate3d(200%, 0,0);
@@ -111,40 +109,36 @@ $baseclass: nav-takeover;
 	&__items--primary {
 
 		h1, h2, h3, h4, h5, h6 {
-			&:hover {
-				border-color: $brand-grey-light;
+			&.active {
+				color: transparent;
+				-webkit-text-stroke: 1px $brand-black;
 			}
 
-			&.active {
+			&.hovered {
 				color: transparent;
 				-webkit-text-stroke: 1px $brand-red;
 			}
-
-			// &.hover {
-			// 	color: transparent;
-			// 	-webkit-text-stroke: 1px $brand-red;
-			// }
 		}
 	}
 
 	&__items--secondary {
-		pointer-events: none;
-		// padding-top: 10px;
-
-		li {
-			// margin-bottom: 40px;
-		}
-
 
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
 				color: transparent;
-				-webkit-text-stroke: 1px $brand-red;
+				-webkit-text-stroke: 1px $brand-black;
 
-				// &.hover {
-				// 	color: transparent;
-				// 	-webkit-text-stroke: 1px $brand-red;
-				// }
+				&.hovered {
+					color: transparent;
+					-webkit-text-stroke: 1px $brand-red;
+				}
+			}
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			&.hovered {
+				color: transparent;
+				-webkit-text-stroke: 1px $brand-red;
 			}
 		}
 	}
@@ -189,7 +183,6 @@ $baseclass: nav-takeover;
 
 	&--primaryPanelOpen {
 		.#{$baseclass}__items--secondary {
-			// opacity: 0;
 			pointer-events: none;
 
 			li {
@@ -197,19 +190,13 @@ $baseclass: nav-takeover;
 			}
 		}
 		.#{$baseclass}__items--primary {
-			// opacity: 1;
 			pointer-events: auto;
-
-			// li {
-			// 	transform: none;
-			// }
 		}
 	}
 
 	&--secondaryPanelOpen {
 
 		.#{$baseclass}__items--primary {
-			// opacity: 0;
 			pointer-events: none;
 
 			li {
@@ -217,29 +204,24 @@ $baseclass: nav-takeover;
 			}
 		}
 		.#{$baseclass}__items--secondary {
-			// opacity: 1;
 			pointer-events: auto;
-
-			// li {
-			// 	transform: none;
-			// }
 		}
 	}
 
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__main {
 			> div {
-				flex: .15;
+				flex: .10;
 			}
 
 			.#{$baseclass}__panels {
-				flex: .85;
+				flex: .90;
 			}
 		}
 
 		.#{$baseclass}__line-container {
-			width: 30px;
-			padding-top: 60px;
+			width: 48px;
+			padding-top: 80px;
 		}
 
 
@@ -249,13 +231,13 @@ $baseclass: nav-takeover;
 
 
 		.#{$baseclass}__panel {
-			width: 85%;
+			width: 90%;
 
 			hr {
 				display: block;
 			}
 			ul {
-				padding: 60px 60px 0 0;
+				padding: 80px 72px 0 0;
 				width: 100%;
 			}
 			li {

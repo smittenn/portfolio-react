@@ -20,6 +20,19 @@
 	}
 }
 
+// @keyframes fadeIn {
+// 	50% {
+// 		opacity: 0;
+// 	}
+// 	25%, 75% {
+// 		opacity: 1;
+// 	}
+// }
+
+// article {
+// 	animation: fadeIn 0.9s $easing1;
+// }
+
 .parallax-header {
 	h1 {
 		// transform-origin: left center;
@@ -88,7 +101,10 @@ section {
 		opacity: 0;
 	}
 
+	.grid__item  .grid__item,
 	.grid__item {
+	// .grid ~ .grid__item,
+	// .grid__row .grid__item {
 		@for $i from 1 through 60 {
 			&:nth-child(#{$i}) {
 				img, video {

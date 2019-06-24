@@ -20,19 +20,19 @@
 }
 
 @keyframes drawInOut {
-	0%, 60% {
+	0%, 40% {
 		transform-origin: bottom;
 		transform: scaleY(1);
 	}
-	75% {
+	45% {
 		transform-origin: bottom;
 		transform: scaleY(0);
 	}
-	76% {
+	65% {
 		transform: scaleY(0);
 		transform-origin: top;
 	}
-	91%, 100% {
+	70%, 100% {
 		transform: scaleY(1);
 		transform-origin: top;
 	}
@@ -44,19 +44,24 @@ $arrow-size: 40px;
 .#{$baseclass} {
 	// cursor: pointer;
 	pointer-events: auto;
-	position: absolute;
+	position: fixed;
 	top: calc(100vh - 90px);
 	left: 50%;
 	height: 90px;
 	width: 80px;
 	transform: translateX(-41px);
-	display: flex;
+	display: none;
 	align-items: center;
 	flex-direction: column-reverse;
 	white-space: pre;
 	@include zIndexClose();
 
-	h5, h6, i {
+	.active-section & {
+		display: flex;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $font-tertiary;
 		color: $brand-white;
 		margin: 0;
 		margin-bottom: 6px;
@@ -93,12 +98,25 @@ $arrow-size: 40px;
 	&__seperator {
 		height: 100%;
 		width: 100%;
-		background: white;
-		animation: drawInOut $easing3 3.6s infinite;
+		background: $brand-white;
+		animation: drawInOut $easing3 3s infinite;
+	}
+
+	&--black {
+		h1, h2, h3, h4, h5, h6 {
+			color: $brand-black;
+		}
+		.#{$baseclass}__seperator-container {
+			background: rgba($brand-black, .24);
+		}
+
+		.#{$baseclass}__seperator {
+			background: $brand-black;
+		}
 	}
 
 	&--hidden {
-		h5, h6 {
+		h1, h2, h3, h4, h5, h6 {			
 			span {
 				opacity: 0;
 				transform: translateY(12px);
@@ -115,7 +133,7 @@ $arrow-size: 40px;
 	@media screen and (max-width: $bp-medium) {
 		position: fixed;
 
-		h5, h6, i {
+		h1, h2, h3, h4, h5, h6 {
 			margin-bottom: 3px;
 		}
 		.#{$baseclass}__seperator-container {

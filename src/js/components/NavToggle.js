@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
 import { hoverToggle, unhoverToggle } from "../actions/navToggle"
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+import { openPrimaryPanel, closePrimaryPanel } from "../actions/primaryPanel"
 import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPanel"
 
 import splitLetter from '../services/splitLetter'
@@ -34,6 +35,12 @@ class NavToggle extends Component {
 		// this.props.closeSecondaryPanel();		
 	}
 
+	setCloseSecondaryPanel = () => {
+		this.props.openPrimaryPanel();
+		this.props.closeSecondaryPanel();
+	}
+
+
 	// componentDidUpdate(prevProps) {
 	// 	if (prevProps.count != this.props.count) { 
 	// 		this.setState({
@@ -55,6 +62,7 @@ class NavToggle extends Component {
 			"nav-toggle--white": !black,
 			"nav-toggle--hovering": this.props.isToggleHovered,
 			"nav-toggle--menuOpen": this.props.isTakeoverOpen,
+			"nav-toggle--secondaryPanelOpen": this.props.isSecondaryPanelOpen,
 			"nav-toggle--countIsIncreasing": countIsIncreasing,
 			"nav-toggle--countIsDecreasing": countIsDecreasing,
 		})
@@ -64,7 +72,7 @@ class NavToggle extends Component {
 			<div className={classnames} 
 			onMouseEnter={() => { this.props.hoverToggle(); this.props.setCursorHover();}} 
 			onMouseLeave={this.props.isTakeoverOpen ? this.props.setCursorUnhover : (() => { this.props.unhoverToggle(); this.props.setCursorUnhover(); })}
-			onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
+			onClick={this.props.isTakeoverOpen ? (this.props.isSecondaryPanelOpen ? this.setCloseSecondaryPanel : this.closeNav) : this.openNav}>
 				<h6 className="nav-toggle__abbreviation">{this.props.abbreviation}</h6>
 				<div className="nav-toggle__hamburger">
 					<div className="line"/>
@@ -82,6 +90,7 @@ const mapStateToProps = state => ({
 	abbreviation: state.abbreviation,
 	isTakeoverOpen: state.isTakeoverOpen,
 	isToggleHovered: state.isToggleHovered,
+	isSecondaryPanelOpen: state.isSecondaryPanelOpen,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -91,6 +100,7 @@ const mapDispatchToProps = dispatch => ({
 	unhoverToggle: () => dispatch(unhoverToggle()),
 	setCursorHover: () => dispatch(setCursorHover()),
 	setCursorUnhover: () => dispatch(setCursorUnhover()),
+	openPrimaryPanel: () => dispatch(openPrimaryPanel()),
 	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
 	closeSecondaryPanel: () => dispatch(closeSecondaryPanel()),
 })
