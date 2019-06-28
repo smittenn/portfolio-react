@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
+import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import splitLetter from '../services/splitLetter'
 import detectMobile from '../services/detectMobile'
@@ -32,7 +33,7 @@ class ScrollArrow extends Component {
 	}
 
 	render() {
-		const { label, black } = this.props;
+		const { label, black, to, onSetActive } = this.props;
 
 		const classnames = classNames({
 			"scroll-arrow": true,
@@ -41,12 +42,14 @@ class ScrollArrow extends Component {
 		})
 
 		return (
-			<div className={classnames}  onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover}>				
-				<div className="scroll-arrow__seperator-container">
-					<div className="scroll-arrow__seperator"/>
-				</div>
-				{<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Read More`)}</h6>}
-			</div>					
+			<Link to={this.state.isHidden ? null : to} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}>
+				<div className={classnames}  onMouseEnter={this.state.isHidden ? null : this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover}>				
+					<div className="scroll-arrow__seperator-container">
+						<div className="scroll-arrow__seperator"/>
+					</div>
+					<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Read More`)}</h6>
+				</div>					
+			</Link>
 		);
 	}
 }

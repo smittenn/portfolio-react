@@ -9,6 +9,7 @@ import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
 import ScrollArrow from "./ScrollArrow"
 import GridLines from "../components/GridLines"
+import ClipWrapper from "../components/ClipWrapper"
 
 import palette from "../services/palette"
 
@@ -20,12 +21,6 @@ export default class ScrollSection extends Component {
 		this.state = {
 		}
 	}
-
-	componentDidMount() {}
-
-	componentWillUnmount() {}
-
-	componentDidUpdate(prevProps) {}
 
 	render() {
 
@@ -54,21 +49,8 @@ export default class ScrollSection extends Component {
 						{ this.props.children }
 					</section>
 
-					<div className="clip-wrapper">
-						<Link style={name == sections[0] || name == sections[1] ? null : {display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}>
-							<ScrollArrow black={!black}/>
-						</Link>
+					<ClipWrapper name={name} onSetActive={onSetActive} black={black} sections={sections} activeSection={activeSection} />
 
-						<Sidebar 
-						isBlack={!black}
-						sections={sections} 
-						activeSection={activeSection}
-						/>
-
-						<div className="logo"><h7 className="uppercase" style={logoStyle}>{activeSection}.</h7></div>
-
-						<NavToggle black={!black}/>
-					</div>
 				</IntersectionVisible>
 			</Element>
 		);

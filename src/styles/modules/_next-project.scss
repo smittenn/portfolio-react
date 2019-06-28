@@ -10,13 +10,8 @@ $baseclass: next-project;
 // }
 
 .#{$baseclass} {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
 	cursor: none;
 	// height: 60vh;
-	@include zIndexFar();
 
 	i {
 		position: absolute;
@@ -32,8 +27,18 @@ $baseclass: next-project;
 		background: $brand-black;
 	}
 
+	&__spacer {
+		
+	}
+
 
 	section {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		@include zIndexFar();
+
 		// height: 50vh;
 		// animation: none;
 		// animation-fill-mode: forwards;

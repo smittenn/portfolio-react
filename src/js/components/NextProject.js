@@ -52,26 +52,27 @@ class NextProject extends Component {
 		// }
 		
 		return (
-			<div className={classnames} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover} ref="nextProject">
-				<NavLink to={to}>
-					<section className="black" style={style}>
-							<GridLines/>
-							<div className="grid">
-								<div className="grid__item grid__item--col-12">
-									<h3 className="">Next Up</h3>
-									<h2>{name}<i className="iconcss icon-arrow-right"/></h2>
+			<IntersectionVisible onShow={(i) => i[0].target.classList.add("active-section")} onHide={(i) => i[0].target.classList.remove("active-section")}>
+				<div className={classnames} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover}>
+					
+					<div className="next-project__spacer" style={this.refs.nextProject ? { height: this.refs.nextProject.clientHeight + 'px' } : null}/>
+					
+					<NavLink to={to}>
+						<section className="black" style={style} ref="nextProject">
+								<GridLines/>
+								<div className="grid">
+									<div className="grid__item grid__item--col-12">
+										<h3 className="">Next Up</h3>
+										<h2>{name}<i className="iconcss icon-arrow-right"/></h2>
+									</div>
 								</div>
-							</div>
-					</section>
-				</NavLink>
-				<div className="clip-wrapper">
-					<Sidebar 
-					isBlack={false}
-					sections={sections} 
-					activeSection={activeSection}
-					/>
+						</section>
+					</NavLink>
+
+					<ClipWrapper name={name} onSetActive={onSetActive} black={black} sections={sections} activeSection={activeSection} />
+
 				</div>
-			</div>
+			</IntersectionVisible>
 		);
 	}
 }

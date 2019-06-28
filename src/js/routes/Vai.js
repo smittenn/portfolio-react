@@ -43,48 +43,36 @@ class Vai extends Component {
 
 		this.state = {
 			activeSection: "intro",
-			pageSections: [
-				{ name: "intro", },
-				{ name: "overview", },
-				{ name: "details", },
-				{ name: "player-overlay", },
-				{ name: "products", },
-				{ name: "people", },
+			sections: [
+				"intro",
+				"overview",
+				"details",
+				"player",
+				"products",
+				"people",
 			],
 		}
 	}
 
-	setActiveSection = (name) => {
+	setActiveSection = (idx) => {
 		this.setState({
-			activeSection: name,
+			activeSection: this.state.sections[idx],
 		})
+		this.props.setCounter(idx + 1);
 	}
 
 
 	render() {
 
 		const { setCounter, setNavWhite, setNavBlack } = this.props;
-		const { activeSection, pageSections } = this.state;
+		const { activeSection, sections } = this.state;
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
-		const sections = pageSections.map(i => i.name)
+		// const sections = pageSections.map(i => i.name)
 
 		return (
 			<article>
-				{/*<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
-					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections} 
-					activeSection={activeSection}
-					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
-					bgImage={"../assets/img/vai/banner.jpg"}
-					onSetActive={() => { this.setActiveSection(sections[0]);}}
-					/>
-				</Element>*/}
-
 				<ScrollSection 
 				name={sections[0]}
 				black 
@@ -92,12 +80,12 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/vai/banner.gif)`, 
+					backgroundImage: `url(../assets/img/vai/banner-mod.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}
-				onSetActive={() => { this.setActiveSection(sections[0]); }}>
+				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
 					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
 					/>
@@ -108,7 +96,7 @@ class Vai extends Component {
 				name={sections[1]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(sections[1]);}}>
+				onSetActive={() => { this.setActiveSection(1);}}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
@@ -149,7 +137,7 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ backgroundImage: `url(../assets/img/vai/escalade.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 10%" }}  
-				onSetActive={() => { this.setActiveSection(sections[2]); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
@@ -176,11 +164,11 @@ class Vai extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(sections[3]); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Player Overlay</h2>
+								<h2>The Player</h2>
 								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without distracting from the viewing experience.</blockquote>
 							</div>
 						</div>
@@ -196,7 +184,7 @@ class Vai extends Component {
 				name={sections[4]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(sections[4]); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
@@ -217,7 +205,7 @@ class Vai extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(sections[5]); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">

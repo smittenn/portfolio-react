@@ -131,8 +131,13 @@ section {
 	// 	transform: translate3d(0,100px,0) skewY(6deg);
 	// }
 
-	h2 span > span{
-		transform: translate3d(0,90px,0) skewX(6deg);
+	h2 {
+		transition: none;
+		opacity: 0;
+
+		span > span{
+			transform: translate3d(0,90px,0) skewX(6deg);
+		}
 	}
 
 	p, blockquote {
@@ -152,6 +157,11 @@ section {
 				opacity: 1;
 				transform: none;
 			}
+		}
+
+		h2 {
+			opacity: 1;
+			transition: transform $duration-slow $delay-medium $easing1, opacity $duration-slow $delay-medium $easing1;
 		}
 
 		h1 span, h2 span {

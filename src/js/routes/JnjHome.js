@@ -165,7 +165,7 @@ class JnjHome extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
-					backgroundSize: 'cover',
+					backgroundSize: '50%',
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">

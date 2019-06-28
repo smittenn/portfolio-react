@@ -141,21 +141,19 @@ $baseclass: nav-toggle;
 	
 
 	&--menuOpen {
-		// pointer-events: none;
-
 		.#{$baseclass}__hamburger {
 			.line {
 				background: rgba($brand-black, 1);
 				opacity: 1;
 
 				&:first-child {
-					transform: translate3d(2px,0px,0) rotate(135deg) scaleX(0.6);
+					transform: translate3d(2px,0px,0) rotate(135deg) scaleX(0.48);
 				}
 				&:nth-child(2) {
 					opacity: 0;
 				}
 				&:last-child {
-					transform: translate3d(2px,-2px,0) rotate(45deg) scaleX(0.6);
+					transform: translate3d(2px,-2px,0) rotate(45deg) scaleX(0.48);
 				}
 			}
 		}
@@ -168,23 +166,24 @@ $baseclass: nav-toggle;
 		.#{$baseclass}__count {
 			transform: translate3d(0,12px,0);
 		}
+	}
 
-		&.#{$baseclass}--secondaryPanelOpen {
-			.#{$baseclass}__hamburger {
-				.line {
-					background: rgba($brand-black, 1);
+
+	&--secondaryPanelOpen.#{$baseclass}--menuOpen {
+		.#{$baseclass}__hamburger {
+			.line {
+				background: rgba($brand-black, 1);
+				opacity: 1;
+
+				&:first-child {
+					transform: translate3d(12px,6px,0) rotate(135deg) scaleX(0.2);
+				}
+				&:nth-child(2) {
+					transform: translate3d(4px,0,0) scaleX(0.3);
 					opacity: 1;
-
-					&:first-child {
-						transform: translate3d(12px,6px,0) rotate(135deg) scaleX(0.2);
-					}
-					&:nth-child(2) {
-						transform: translate3d(2px,0,0) scaleX(0.4);
-						opacity: 1;
-					}
-					&:last-child {
-						transform: translate3d(12px,-6px,0) rotate(45deg) scaleX(0.2);
-					}
+				}
+				&:last-child {
+					transform: translate3d(12px,-6px,0) rotate(45deg) scaleX(0.2);
 				}
 			}
 		}

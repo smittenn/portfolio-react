@@ -250,8 +250,8 @@ h1 {
     -webkit-text-stroke: 1px #F8FBF7; }
 
 h2 {
-  font-size: 80px;
-  line-height: 1.2;
+  font-size: 84px;
+  line-height: 1.1;
   margin-left: -3px;
   margin-bottom: 40px; }
 
@@ -283,7 +283,7 @@ h7 {
 p {
   font-family: "Averta", sans-serif;
   color: #595358;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   white-space: pre-line;
   margin-bottom: 24px; }
@@ -1096,8 +1096,11 @@ section h1 span > span, section h2 span > span, section p span > span, section b
   transition: none;
   opacity: 0; }
 
-section h2 span > span {
-  transform: translate3d(0, 90px, 0) skewX(6deg); }
+section h2 {
+  transition: none;
+  opacity: 0; }
+  section h2 span > span {
+    transform: translate3d(0, 90px, 0) skewX(6deg); }
 
 section p span > span, section blockquote span > span {
   opacity: 0;
@@ -1109,6 +1112,10 @@ section p span > span, section blockquote span > span {
   opacity: 1;
   -ms-transform: none;
   transform: none; }
+
+.active-section section h2 {
+  opacity: 1;
+  transition: transform 0.9s 0.09s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.9s 0.09s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 .active-section section h1 span:nth-child(1) span, .active-section section h2 span:nth-child(1) span {
   transition-delay: 0.69s; }
@@ -1626,7 +1633,7 @@ section p span > span, section blockquote span > span {
     .nav-takeover__panel h1, .nav-takeover__panel h2, .nav-takeover__panel h3, .nav-takeover__panel h4, .nav-takeover__panel h5, .nav-takeover__panel h6 {
       display: inline;
       pointer-events: none;
-      transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
       margin: 0; }
     .nav-takeover__panel a {
       white-space: pre;
@@ -1915,26 +1922,26 @@ section p span > span, section blockquote span > span {
     background: #131112;
     opacity: 1; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .line:first-child {
-      transform: translate3d(2px, 0px, 0) rotate(135deg) scaleX(0.6); }
+      transform: translate3d(2px, 0px, 0) rotate(135deg) scaleX(0.48); }
     .nav-toggle--menuOpen .nav-toggle__hamburger .line:nth-child(2) {
       opacity: 0; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .line:last-child {
-      transform: translate3d(2px, -2px, 0) rotate(45deg) scaleX(0.6); }
+      transform: translate3d(2px, -2px, 0) rotate(45deg) scaleX(0.48); }
   .nav-toggle--menuOpen .nav-toggle__abbreviation, .nav-toggle--menuOpen .nav-toggle__count {
     opacity: 0; }
   .nav-toggle--menuOpen .nav-toggle__abbreviation {
     transform: translate3d(0, -12px, 0); }
   .nav-toggle--menuOpen .nav-toggle__count {
     transform: translate3d(0, 12px, 0); }
-  .nav-toggle--menuOpen.nav-toggle--secondaryPanelOpen .nav-toggle__hamburger .line {
+  .nav-toggle--secondaryPanelOpen.nav-toggle--menuOpen .nav-toggle__hamburger .line {
     background: #131112;
     opacity: 1; }
-    .nav-toggle--menuOpen.nav-toggle--secondaryPanelOpen .nav-toggle__hamburger .line:first-child {
+    .nav-toggle--secondaryPanelOpen.nav-toggle--menuOpen .nav-toggle__hamburger .line:first-child {
       transform: translate3d(12px, 6px, 0) rotate(135deg) scaleX(0.2); }
-    .nav-toggle--menuOpen.nav-toggle--secondaryPanelOpen .nav-toggle__hamburger .line:nth-child(2) {
-      transform: translate3d(2px, 0, 0) scaleX(0.4);
+    .nav-toggle--secondaryPanelOpen.nav-toggle--menuOpen .nav-toggle__hamburger .line:nth-child(2) {
+      transform: translate3d(4px, 0, 0) scaleX(0.3);
       opacity: 1; }
-    .nav-toggle--menuOpen.nav-toggle--secondaryPanelOpen .nav-toggle__hamburger .line:last-child {
+    .nav-toggle--secondaryPanelOpen.nav-toggle--menuOpen .nav-toggle__hamburger .line:last-child {
       transform: translate3d(12px, -6px, 0) rotate(45deg) scaleX(0.2); }
   @media screen and (max-width: 800px) {
     .nav-toggle {
@@ -1949,12 +1956,7 @@ section p span > span, section blockquote span > span {
         opacity: 0; } }
 
 .next-project {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  cursor: none;
-  z-index: 0; }
+  cursor: none; }
   .next-project i {
     position: absolute;
     right: 0;
@@ -1963,6 +1965,12 @@ section p span > span, section blockquote span > span {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
   .next-project--black {
     background: #131112; }
+  .next-project section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0; }
 
 .parallax-header h1 span, .parallax-header h2 span, .parallax-header h3 span, .parallax-header h4 span, .parallax-header h5 span, .parallax-header p span {
   white-space: pre; }

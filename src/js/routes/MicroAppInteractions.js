@@ -234,7 +234,7 @@ class MicroAppInteractions extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
 							{/*<IFrame src="//codepen.io/erchsm/embed/NRBOky/?default-tab=result"/>*/}
-							{/*<CodepenEmbed slug="NRBOky" title="Cart & Share Components" height={720} handle="erchsm"/>*/}
+							{<CodepenEmbed slug="NRBOky" title="Cart & Share Components" height={720} handle="erchsm"/>}
 						</div>
 					</div>
 				</ScrollSection>
@@ -255,7 +255,7 @@ class MicroAppInteractions extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-12">
 							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
-							{/*<CodepenEmbed slug="ENNdJd" title="Nearby Services Component" height={720} handle="erchsm"/>*/}
+							{<CodepenEmbed slug="ENNdJd" title="Nearby Services Component" height={720} handle="erchsm"/>}
 						</div>
 					</div>
 				</ScrollSection>
