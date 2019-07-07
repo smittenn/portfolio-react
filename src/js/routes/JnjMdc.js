@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
@@ -18,15 +17,15 @@ import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
 import IFrame from "../components/IFrame"
-
-import NewUserSetup from "../components/sandbox/NewUserSetup"
-
 import Image from "../components/Image"
+import TextLink from "../components/TextLink"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+
+import people from "../data/people"
 
 
 class JnjMdc extends Component {
@@ -129,7 +128,7 @@ class JnjMdc extends Component {
 								In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
 							</blockquote>
 							<blockquote className="mr">
-								As pioneers in medical devices, we continually focus on elevating the standard of care – working to expand patient access, improve outcomes, reduce health system costs and drive value. We create smart, people-centered healthcare to help the patients we serve recover faster and live longer and more vibrantly. 
+								J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs. Our team additionally pioneeded modern agile software development within the company.
 							</blockquote>
 
 						</div>
@@ -143,13 +142,13 @@ class JnjMdc extends Component {
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote className="mr" >
-										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
+										My role as Interaction designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
 									</blockquote>
 								</div>
 								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 									<blockquote className="mr">
-										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
+										Our design system was wildly successful and was eventually genericised into J&J's own website builder.
 									</blockquote>
 								</div>
 							</div>
@@ -188,7 +187,13 @@ class JnjMdc extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="">Matthew Abate</a>, <a href="">Stephanie Skuzenski</a>, <a href="">Laura Hines</a>, <a href="">Katrina Corcoran</a>, <a href="">Jinny Kim</a>, <a href="">Mark Patience</a>
+								<TextLink><a href={people["Matthew Abate"]}>Matthew Abate</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Stephanie Skuzenski"]}>Stephanie Skuzenski</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Laura Hines"]}>Laura Hines</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Jinny Kim"]}>Jinny Kim</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Mark Patience"]}>Mark Patience</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Kate Peoples"]}>Kate Peoples</a></TextLink>
 							</blockquote> 
 						</div>
 					</div>

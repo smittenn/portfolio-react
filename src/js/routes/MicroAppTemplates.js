@@ -17,6 +17,7 @@ import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
+import TextLink from "../components/TextLink"
 
 import NewUserSetup from "../components/sandbox/NewUserSetup"
 
@@ -28,6 +29,8 @@ import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+
+import people from "../data/people"
 
 
 class MicroAppTemplates extends Component {
@@ -172,7 +175,10 @@ class MicroAppTemplates extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="">Pete Petras</a>, <a href="">Mei Chun</a>, <a href="">Theo Arguna</a>
+								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Mei Yeh"]}>Mei Yeh</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Theo Arguna"]}>Theo Arguna</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Cameron Myers"]}>Cameron Myers</a></TextLink>
 							</blockquote> 
 						</div>
 					</div>

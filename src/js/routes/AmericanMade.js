@@ -19,6 +19,7 @@ import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
+import TextLink from "../components/TextLink"
 
 import Image from "../components/Image"
 
@@ -26,6 +27,8 @@ import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+
+import people from "../data/people"
 
 
 class AmericanMade extends Component {
@@ -160,7 +163,11 @@ class AmericanMade extends Component {
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote><a href="https://www.linkedin.com/in/minaazimov">Mina Azimov</a>, <a href="https://www.linkedin.com/in/oleksandr-lebedyev/">Alex Lebedyev</a>, <a href="https://www.linkedin.com/in/poplar-bai/">Poplar Bai</a></blockquote> 
+							<blockquote>
+								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Oleksandr Lebedyev"]} target="_blank">Oleksandr Lebedyev</a></TextLink>,&nbsp; 
+								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink>
+							</blockquote> 
 						</div>
 					</div>
 				</ScrollSection>

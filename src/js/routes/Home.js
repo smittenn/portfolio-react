@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import { connect } from "react-redux"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
+import {NavLink} from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
@@ -10,6 +11,7 @@ import ScrollSection from "../components/ScrollSection"
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
 import ProjectCard from "../components/ProjectCard"
+import TextLink from "../components/TextLink"
 
 import Sidebar from "../components/Sidebar"
 
@@ -139,6 +141,11 @@ class Home extends Component {
 							<blockquote>
 								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
+							<h6 className="uppercase">
+								<TextLink isBlack>
+									<NavLink to="about">Learn More</NavLink>
+								</TextLink>
+							</h6>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">

@@ -2,9 +2,11 @@ import React, {Component} from "react"
 import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
+import IntersectionVisible from "react-intersection-visible"
 
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
+import ClipWrapper from "../components/ClipWrapper"
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
@@ -69,7 +71,7 @@ class NextProject extends Component {
 						</section>
 					</NavLink>
 
-					<ClipWrapper name={name} onSetActive={onSetActive} black={black} sections={sections} activeSection={activeSection} />
+					<ClipWrapper name={name} onSetActive={() => {}} black={true} sections={sections} activeSection={activeSection} />
 
 				</div>
 			</IntersectionVisible>

@@ -110,8 +110,20 @@ $baseclass: nav-takeover;
 
 		h1, h2, h3, h4, h5, h6 {
 			&.active {
-				color: transparent;
-				-webkit-text-stroke: 1px $brand-black;
+				// color: transparent;
+				// -webkit-text-stroke: 1px $brand-black;
+
+				&:after {
+					content: '';
+					border: solid 1px $brand-red;
+					width: 9px;
+					height: 9px;
+					display: block;
+					border-radius: 50%;
+					position: absolute;
+					left: -24px;
+					top: 18px;
+				}
 			}
 
 			&.hovered {
@@ -125,8 +137,17 @@ $baseclass: nav-takeover;
 
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
-				color: transparent;
-				-webkit-text-stroke: 1px $brand-black;
+				&:after {
+					content: '';
+					border: solid 1px $brand-red;
+					width: 6px;
+					height: 6px;
+					display: block;
+					border-radius: 50%;
+					position: absolute;
+					left: -18px;
+					top: 14px;
+				}
 
 				&.hovered {
 					color: transparent;

@@ -16,6 +16,7 @@ import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
+import TextLink from "../components/TextLink"
 
 import NewUserSetup from "../components/sandbox/NewUserSetup"
 
@@ -27,6 +28,8 @@ import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+
+import people from "../data/people"
 
 
 class MicroAppInteractions extends Component {
@@ -53,7 +56,8 @@ class MicroAppInteractions extends Component {
 				"details",
 				"minted",
 				"warner-bros",
-				"nearby",
+				"equinox",
+				"salesforce",
 			],
 		}
 	}
@@ -169,7 +173,11 @@ class MicroAppInteractions extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="">Pete Petras</a>, <a href="">Josh Bloom</a>, <a href="">Jeff Klein</a>, <a href="">Mei Chun</a>, <a href="">Theo Arguna</a>, <a href="">Cameron Myers</a>
+								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Josh Bloom"]}>Josh Bloom</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Jeff Klein"]}>Jeff Klein</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Mei Yeh"]}>Mei Yeh</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Theo Arguna"]}>Theo Arguna</a></TextLink>,&nbsp;
 							</blockquote> 
 						</div>
 					</div>
@@ -210,7 +218,6 @@ class MicroAppInteractions extends Component {
 							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Cart & Share</h2>
-								{/*<h3>Warner Bros. Music</h3>*/}
 								<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>
 							</div>
 						</div>
@@ -239,8 +246,10 @@ class MicroAppInteractions extends Component {
 					</div>
 				</ScrollSection>
 
+
 				<ScrollSection 
 				name={sections[5]}
+				black
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
@@ -260,6 +269,27 @@ class MicroAppInteractions extends Component {
 					</div>
 				</ScrollSection>
 
+
+				<ScrollSection 
+				name={sections[6]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(6); }}>
+					<div className="grid">
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2 className="">Starry Night</h2>
+								<blockquote>Partnering with Salesforce Trailblazers we created a lead generation form to collect leads at their international conference in San Francisco. I worked on the interactive splash screen featuring a starry night sky. This aspirational backdrop helped connect with the trailblazers boosting the conversion rate on the form.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-12">
+							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
+							{<CodepenEmbed slug="BLbpoZ" title="Starry Night" height={720} handle="erchsm"/>}
+						</div>
+					</div>
+				</ScrollSection>
 
 
 				<NextProject 

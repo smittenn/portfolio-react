@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
@@ -18,6 +17,7 @@ import CodepenEmbed from "../components/CodepenEmbed"
 import NextProject from "../components/NextProject"
 import SideScroller from "../components/SideScroller"
 import IFrame from "../components/IFrame"
+import TextLink from "../components/TextLink"
 
 import NewUserSetup from "../components/sandbox/NewUserSetup"
 
@@ -27,6 +27,8 @@ import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+
+import people from "../data/people"
 
 
 class JnjHome extends Component {
@@ -185,7 +187,11 @@ class JnjHome extends Component {
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
-								<a href="//www.linkedin.com/in/alex-gross-668b2218/">Alex Gross</a>, <a href="">Chris Purcell</a>, <a href="//www.linkedin.com/in/mkcorcoran/">Katrina Corcoran</a>, <a href="">Howard Chambers</a>, <a href="">Alisha Austin</a>,
+								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 
+								<TextLink><a href={people["Chris Purcell"]}>Chris Purcell</a></TextLink>,&nbsp; 
+								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>,&nbsp; 
+								<TextLink><a href={people["Howard Chambers"]}>Howard Chambers</a></TextLink>,&nbsp; 
+								<TextLink><a href={people["Alisha Austin"]}>Alisha Austin</a></TextLink>
 							</blockquote> 
 						</div>
 					</div>
@@ -263,7 +269,7 @@ class JnjHome extends Component {
 				name={sections[6]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(6) }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
