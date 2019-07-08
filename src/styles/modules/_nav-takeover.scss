@@ -105,6 +105,18 @@ $baseclass: nav-takeover;
 		}
 	}
 
+	@mixin orangeDot() {
+		content: '';
+		border: solid 1px $brand-red;
+		width: 6px;
+		height: 6px;
+		display: block;
+		border-radius: 50%;
+		position: absolute;
+		left: -18px;
+		top: 14px;
+	}
+
 
 	&__items--primary {
 
@@ -114,14 +126,7 @@ $baseclass: nav-takeover;
 				// -webkit-text-stroke: 1px $brand-black;
 
 				&:after {
-					content: '';
-					border: solid 1px $brand-red;
-					width: 9px;
-					height: 9px;
-					display: block;
-					border-radius: 50%;
-					position: absolute;
-					left: -24px;
+					@include orangeDot();
 					top: 18px;
 				}
 			}
@@ -138,15 +143,7 @@ $baseclass: nav-takeover;
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
 				&:after {
-					content: '';
-					border: solid 1px $brand-red;
-					width: 6px;
-					height: 6px;
-					display: block;
-					border-radius: 50%;
-					position: absolute;
-					left: -18px;
-					top: 14px;
+					@include orangeDot();
 				}
 
 				&.hovered {

@@ -89,7 +89,7 @@ class MicroAppInteractions extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>

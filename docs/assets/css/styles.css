@@ -1684,12 +1684,13 @@ section p span > span, section blockquote span > span {
   .nav-takeover__items--primary h1.active:after, .nav-takeover__items--primary h2.active:after, .nav-takeover__items--primary h3.active:after, .nav-takeover__items--primary h4.active:after, .nav-takeover__items--primary h5.active:after, .nav-takeover__items--primary h6.active:after {
     content: '';
     border: solid 1px #ff3636;
-    width: 9px;
-    height: 9px;
+    width: 6px;
+    height: 6px;
     display: block;
     border-radius: 50%;
     position: absolute;
-    left: -24px;
+    left: -18px;
+    top: 14px;
     top: 18px; }
   .nav-takeover__items--primary h1.hovered, .nav-takeover__items--primary h2.hovered, .nav-takeover__items--primary h3.hovered, .nav-takeover__items--primary h4.hovered, .nav-takeover__items--primary h5.hovered, .nav-takeover__items--primary h6.hovered {
     color: transparent;
