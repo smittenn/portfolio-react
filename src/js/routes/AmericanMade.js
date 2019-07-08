@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import Codepen from "react-codepen-embed"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
@@ -95,6 +94,7 @@ class AmericanMade extends Component {
 					backgroundImage: `url(../assets/img/american-made/output.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
 					backgroundSize: this.props.isMobile ? 'cover' : '100% 102%',
+					backgroundPosition: 'center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
