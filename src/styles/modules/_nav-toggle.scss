@@ -45,7 +45,6 @@ $baseclass: nav-toggle;
 		transition: all $easing2 0.3s;
 		letter-spacing: $letter-spacing-lg;
 		margin: 0;
-		font-family: $font-tertiary;
 	}
 
 	.#{$baseclass}__abbreviation {

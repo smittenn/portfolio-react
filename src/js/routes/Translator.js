@@ -111,40 +111,35 @@ class Translator extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
 								The process for media asset management varied greatly across NBCU’s entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
 							</blockquote>
 							<blockquote>
-								The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or "MAM" to be stored.
+								The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored.
 							</blockquote>
 							<blockquote>
 								The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention.
 							</blockquote>
-							<blockquote>
-								
-							</blockquote>
-
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-12">
 									<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
 								</div>
 							</div>
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote>
-										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
-									</blockquote>
-								</div>
-								{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-								<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-									<blockquote>
-										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
-									</blockquote>
-								</div>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<blockquote>
+									My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
+								</blockquote>
+							</div>
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<blockquote>
+									With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
+								</blockquote>
 							</div>
 						</div>
 					</div>

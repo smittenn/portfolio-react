@@ -123,20 +123,24 @@ h1, h2, h3, p, blockquote, {
 
 .logo {
 	position: fixed;
+	pointer-events: auto;
 	left: 28px;
-	bottom: 104px; 
-	transform: rotate(-90deg);
-	transform-origin: 48px 48px;
 	border: none;
 	display: none;
-	@include zIndexClose();
-
-	h1, h2, h3, h4, h6, h7 {
-		font-family: $font-tertiary;
-	}
+	transform: rotate(-90deg);
+	transform-origin: 48px 48px;
+	@include zIndexCloser();
 
 	.active-section & {
 		display: block;
+	}
+
+	&--top {
+		top: -18px;
+	}
+
+	&--bottom {
+		bottom: 104px; 
 	}
 }
 

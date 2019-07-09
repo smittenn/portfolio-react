@@ -9,6 +9,7 @@ import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
 import ScrollArrow from "./ScrollArrow"
 import GridLines from "../components/GridLines"
+import TextLink from "../components/TextLink"
 
 import palette from "../services/palette"
 
@@ -51,7 +52,9 @@ export default class ClipWrapper extends Component {
 				activeSection={activeSection}
 				/>
 
-				<div className="logo"><h7 className="uppercase" style={logoStyle}>{activeSection}.</h7></div>
+				<div className="logo logo--top"><TextLink isBlack={!black}><h7 className="uppercase" style={logoStyle}>Home</h7></TextLink></div>
+				
+				<div className="logo logo--bottom"><h7 className="uppercase" style={logoStyle}>{activeSection}</h7></div>
 
 				<NavToggle black={!black}/>
 			</div>

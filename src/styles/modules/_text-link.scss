@@ -30,6 +30,7 @@ $baseclass: text-link;
 		background: rgba($brand-white, .24);
 		width: 100%;
 		display: block;
+		overflow: hidden;
 	}
 
 	&__line {

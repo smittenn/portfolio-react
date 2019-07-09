@@ -166,7 +166,7 @@ class MicroAppInteractions extends Component {
 							<h6 className="uppercase">Date</h6>
 							<blockquote>Fall, 2016</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>Wrap Media</blockquote> 
 						</div>

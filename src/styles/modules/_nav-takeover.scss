@@ -42,7 +42,8 @@ $baseclass: nav-takeover;
 		h1, h2, h3, h4, h5, h6 {
 			display: inline;
 			pointer-events: none;
-			transition: all $duration-fast $easing2;
+			// transition: all $duration-fast $easing2;
+			transition: none;
 			margin: 0;
 		}
 
@@ -105,7 +106,7 @@ $baseclass: nav-takeover;
 		}
 	}
 
-	@mixin orangeDot() {
+	@mixin activeDot() {
 		content: '';
 		border: solid 1px $brand-red;
 		width: 6px;
@@ -114,7 +115,7 @@ $baseclass: nav-takeover;
 		border-radius: 50%;
 		position: absolute;
 		left: -18px;
-		top: 14px;
+		top: calc(50% - 3px);
 	}
 
 
@@ -126,8 +127,7 @@ $baseclass: nav-takeover;
 				// -webkit-text-stroke: 1px $brand-black;
 
 				&:after {
-					@include orangeDot();
-					top: 18px;
+					@include activeDot();
 				}
 			}
 
@@ -143,7 +143,7 @@ $baseclass: nav-takeover;
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
 				&:after {
-					@include orangeDot();
+					@include activeDot();
 				}
 
 				&.hovered {
@@ -250,6 +250,11 @@ $baseclass: nav-takeover;
 
 		.#{$baseclass}__panel {
 			width: 90%;
+
+			// h1, h2, h3, h4, h5, h6 {
+				// transition: none;
+			// }
+
 
 			hr {
 				display: block;
