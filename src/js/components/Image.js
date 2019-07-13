@@ -13,15 +13,15 @@ export default class Image extends Component {
 	}
 
 	setSource = () => {
-		this.setState({
-			src: this.props.src
-		})
+		// this.setState({
+		// 	src: this.props.src
+		// })
 	}
 	
 	unsetSource = () => {
-		this.setState({
-			src: ''
-		})
+		// this.setState({
+		// 	src: ''
+		// })
 	}
 
 
@@ -42,23 +42,18 @@ export default class Image extends Component {
 		style ? Object.assign(_style, style) : null
 
 		return (
-			<IntersectionVisible 
-				onShow={this.setSource}
-				onHide={this.unsetSource}
-				>
-				<div style={_style}>
-					<img src={this.state.src} style={{
-						display: 'block',
-						// width: '100%',
-						height: '100%',
-						position: 'absolute',
-						top: 0,
-						// bottom: 0,
-						left: 0,
-						// right: 0,
-					}}/>
-				</div>
-			</IntersectionVisible>
+			<div style={_style}>
+				<img src={src} style={{
+					display: 'block',
+					// width: '100%',
+					height: '100%',
+					position: 'absolute',
+					top: 0,
+					// bottom: 0,
+					left: 0,
+					// right: 0,
+				}}/>
+			</div>
 		);
 	}
 }

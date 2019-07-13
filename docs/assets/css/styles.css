@@ -107,7 +107,8 @@ table {
   flex-wrap: wrap;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 0 72px; }
+  padding: 0 72px;
+  max-width: 1440px; }
   .grid--lines {
     position: absolute;
     top: 0;
@@ -372,15 +373,15 @@ h1 span, h2 span, h3 span, p span, blockquote span {
   display: none;
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  -ms-transform-origin: 48px 48px;
-  transform-origin: 48px 48px;
+  -ms-transform-origin: 60px 60px;
+  transform-origin: 60px 60px;
   z-index: 999; }
   .active-section .logo {
     display: block; }
   .logo--top {
     top: -18px; }
   .logo--bottom {
-    bottom: 104px; }
+    bottom: 140px; }
 
 @keyframes ghostIn {
   0% {
@@ -1951,7 +1952,10 @@ section p span > span, section blockquote span > span {
         opacity: 0; } }
 
 .next-project {
-  cursor: none; }
+  cursor: none;
+  opacity: 0; }
+  .active-section .next-project {
+    opacity: 1; }
   .next-project i {
     position: absolute;
     right: 0;
@@ -2501,10 +2505,10 @@ section p span > span, section blockquote span > span {
   flex-direction: column; }
   .text-link__line-container {
     height: 1px;
-    background: rgba(251, 253, 250, 0.24);
     width: 100%;
     display: block;
-    overflow: hidden; }
+    overflow: hidden;
+    background: rgba(251, 253, 250, 0.24); }
   .text-link__line {
     height: 100%;
     background: #fbfdfa;
@@ -2519,6 +2523,8 @@ section p span > span, section blockquote span > span {
     background: transparent; }
   .text-link--black .text-link__line {
     background: #131112; }
+  .text-link--hide-underline .text-link__line-container {
+    background: transparent; }
   .text-link--hovered .text-link__line {
     -ms-transform: scaleX(1);
     transform: scaleX(1);

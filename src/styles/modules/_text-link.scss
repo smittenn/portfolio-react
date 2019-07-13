@@ -27,10 +27,11 @@ $baseclass: text-link;
 
 	&__line-container {
 		height: 1px;
-		background: rgba($brand-white, .24);
 		width: 100%;
 		display: block;
 		overflow: hidden;
+		background: rgba($brand-white, .24);
+		// transition: all 0s $duration-slow linear;
 	}
 
 	&__line {
@@ -52,7 +53,18 @@ $baseclass: text-link;
 		}
 	}
 
+	&--hide-underline {
+		.#{$baseclass}__line-container {
+			background: transparent;
+		}
+	}
+
+
 	&--hovered {
+		.#{$baseclass}__line-container {
+			// background: transparent;
+			// transition: none;
+		}
 		.#{$baseclass}__line {
 			// animation: drawOutInRight $easing2 $duration-slowest;
 			transform: scaleX(1);

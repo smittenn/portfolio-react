@@ -115,43 +115,43 @@ class Nav extends Component {
 				},
 			],
 			secondary: [
-				{ 
+				{
 					name: "American Made",
 					to: "/american-made",
 				},
-				{ 
+				{
 					name: "V.ai Player",
 					to: "/vai",
 				},
-				{ 
+				{
 					name: "Translator",
 					to: "/translator",
 				},
-				{ 
+				{
 					name: "J&J Home",
 					to: "/jnj-home",
 				},
-				{ 
+				{
 					name: "J&J MDC",
 					to: "/jnj-mdc",
 				},
-				{ 
+				{
 					name: "Wrap Interactions",
 					to: "/micro-app-interactions",
 				},
-				{ 
+				{
 					name: "Wrap Templates",
 					to: "/micro-app-templates",
 				},
-				{ 
+				{
 					name: "Perforce",
 					to: "/perforce",
 				},
-				{ 
+				{
 					name: "Cisco Mate",
 					to: "/cisco",
 				},
-				{ 
+				{
 					name: "Protohack",
 					to: "/protohack",
 				},

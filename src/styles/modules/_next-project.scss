@@ -11,7 +11,12 @@ $baseclass: next-project;
 
 .#{$baseclass} {
 	cursor: none;
+	opacity: 0;
 	// height: 60vh;
+
+	.active-section & {
+		opacity: 1;
+	}
 
 	i {
 		position: absolute;

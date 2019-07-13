@@ -142,12 +142,12 @@ class Home extends Component {
 								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
 							<h6 className="uppercase">
-								<TextLink isBlack>
+								<TextLink isBlack hideUnderline>
 									<NavLink to="about">Learn More</NavLink>
 								</TextLink>
 							</h6>
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-4">
@@ -194,9 +194,12 @@ class Home extends Component {
 							{<h2>{splitWord("Visual & Motion")}</h2>}
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
-								<br/><br/>
-								{/*splitWord(`Some of the clients that I have worked for include Warner Brothers Music, Perforce, Minted, BMW, Cisco, NBC Universal, Johnson & Johnson and many more.`)*/}
 							</blockquote>
+							<h6 className="uppercase">
+								<TextLink hideUnderline>
+									<NavLink to="about">Learn More</NavLink>
+								</TextLink>
+							</h6>
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>

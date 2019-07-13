@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import IntersectionVisible from "react-intersection-visible"
@@ -52,7 +52,13 @@ export default class ClipWrapper extends Component {
 				activeSection={activeSection}
 				/>
 
-				<div className="logo logo--top"><TextLink isBlack={!black}><h7 className="uppercase" style={logoStyle}>Home</h7></TextLink></div>
+				<div className="logo logo--top">
+					<TextLink isBlack={!black} hideUnderline>
+						<NavLink to="/">
+							<h7 className="uppercase" style={logoStyle}>Home</h7>
+						</NavLink>
+					</TextLink>
+				</div>
 				
 				<div className="logo logo--bottom"><h7 className="uppercase" style={logoStyle}>{activeSection}</h7></div>
 

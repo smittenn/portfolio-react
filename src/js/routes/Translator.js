@@ -172,7 +172,7 @@ class Translator extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCU On-Air</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-5  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
