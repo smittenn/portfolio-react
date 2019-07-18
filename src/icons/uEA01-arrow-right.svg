@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
     <title>uEA01-arrow-right</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
     <g id="uEA01-arrow-right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="fills" transform="translate(4.000000, 12.000000)" fill="#000000" fill-rule="nonzero">
-            <polygon id="Path" points="0 9.5 0 7.5 30.7147965 7.5 30.7147965 9.5"></polygon>
-            <polygon id="Path-2" points="24.2788801 1.69281031 25.7211199 0.307189693 33.5257418 8.43072355 25.7269477 16.6866929 24.2730523 15.3133071 30.763489 8.44239284"></polygon>
+        <g id="fills" transform="translate(5.000000, 10.000000)" fill="#000000" fill-rule="nonzero">
+            <polygon id="Path" points="0 10.5 0 9.5 30 9.5 30 10.5"></polygon>
+            <polygon id="Path-2" points="20.6479515 1.35505188 21.3520485 0.644948123 30.7071131 9.92087908 21.3550393 19.3520612 20.6449607 18.6479388 29.2928869 9.92686059"></polygon>
         </g>
     </g>
 </svg>

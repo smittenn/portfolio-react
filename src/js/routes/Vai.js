@@ -195,7 +195,7 @@ class Vai extends Component {
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-								<h2>Products & Shopping</h2>
+								<h2>Products</h2>
 								<blockquote>Brands can now sponsor T.V. shows to promote their products in an innovative way without using traditional commercials that interrupt consumers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
 							</div>
 						</div>

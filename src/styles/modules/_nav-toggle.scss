@@ -168,25 +168,25 @@ $baseclass: nav-toggle;
 	}
 
 
-	&--secondaryPanelOpen.#{$baseclass}--menuOpen {
-		.#{$baseclass}__hamburger {
-			.line {
-				background: rgba($brand-black, 1);
-				opacity: 1;
+	// &--secondaryPanelOpen.#{$baseclass}--menuOpen {
+	// 	.#{$baseclass}__hamburger {
+	// 		.line {
+	// 			background: rgba($brand-black, 1);
+	// 			opacity: 1;
 
-				&:first-child {
-					transform: translate3d(12px,6px,0) rotate(135deg) scaleX(0.2);
-				}
-				&:nth-child(2) {
-					transform: translate3d(4px,0,0) scaleX(0.3);
-					opacity: 1;
-				}
-				&:last-child {
-					transform: translate3d(12px,-6px,0) rotate(45deg) scaleX(0.2);
-				}
-			}
-		}
-	}
+	// 			&:first-child {
+	// 				transform: translate3d(12px,6px,0) rotate(135deg) scaleX(0.2);
+	// 			}
+	// 			&:nth-child(2) {
+	// 				transform: translate3d(4px,0,0) scaleX(0.3);
+	// 				opacity: 1;
+	// 			}
+	// 			&:last-child {
+	// 				transform: translate3d(12px,-6px,0) rotate(45deg) scaleX(0.2);
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	
 

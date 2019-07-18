@@ -68,7 +68,7 @@ class Nav extends Component {
 
 		while ((elem = elem.previousSibling) != null) { i++; }
 
-		return i;
+		return (this.props.isSecondaryPanelOpen ? i - 1 : i);
 	}
 
 
@@ -196,9 +196,9 @@ class Nav extends Component {
 					<div className="nav-takeover__panels">
 						<div className="nav-takeover__panel">
 							<ul className="nav-takeover__items--secondary">
-								{/*<li onClick={this.setCloseSecondaryPanel}>
+								<li className="nav-takeover__arrow" onClick={this.setCloseSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
 									<h3><i className="iconcss icon-arrow-right"></i></h3>
-								</li>*/}
+								</li>
 								{ secondaryNavItems }
 							</ul>
 							<ul className="nav-takeover__items--primary">

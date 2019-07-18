@@ -12,6 +12,7 @@ import JnjHome from './JnjHome'
 import JnjMdc from './JnjMdc'
 import MicroAppInteractions from './MicroAppInteractions'
 import MicroAppTemplates from './MicroAppTemplates'
+import Perforce from './Perforce'
 
 import AboutMe from './AboutMe'
 
@@ -30,9 +31,8 @@ const routes = (
 			<Route path="/jnj-mdc" component={JnjMdc}/>
 			<Route path="/micro-app-interactions" component={MicroAppInteractions}/>
 			<Route path="/micro-app-templates" component={MicroAppTemplates}/>
-			{/*
-			<Route path="/micro-app-templates" component={MicroAppTemplates}/>
 			<Route path="/perforce" component={Perforce}/>
+			{/*
 			<Route path="/cisco" component={Cisco}/>
 			<Route path="/protohack" component={Protohack}/>*/}
 		</Switch>

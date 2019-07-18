@@ -53,14 +53,18 @@ export default class ClipWrapper extends Component {
 				/>
 
 				<div className="logo logo--top">
-					<TextLink isBlack={!black} hideUnderline>
-						<NavLink to="/">
-							<h7 className="uppercase" style={logoStyle}>Home</h7>
-						</NavLink>
-					</TextLink>
+					{<h4 style={logoStyle}><i className="iconcss icon-logo"/></h4>}
 				</div>
 				
-				<div className="logo logo--bottom"><h7 className="uppercase" style={logoStyle}>{activeSection}</h7></div>
+				<div className="logo logo--bottom">
+					<TextLink isBlack={!black} hideUnderline>
+						<NavLink to="/">
+							{<h7 className="uppercase no-mb" style={logoStyle}>Home</h7>}
+						</NavLink>
+					</TextLink>
+					<h5 className="no-mb" style={logoStyle}><i className="iconcss icon-caret-right"/></h5>
+					<h7 className="uppercase no-mb" style={logoStyle}>{activeSection}</h7>
+				</div>
 
 				<NavToggle black={!black}/>
 			</div>

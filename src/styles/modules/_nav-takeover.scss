@@ -104,6 +104,11 @@ $baseclass: nav-takeover;
 		li {
 			transform: translate3d(200%, 0,0);
 		}
+
+		.#{$baseclass}__arrow {
+			position: absolute;
+			margin-top: -110px;
+		}
 	}
 
 	@mixin activeDot() {

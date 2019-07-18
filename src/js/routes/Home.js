@@ -134,7 +134,7 @@ class Home extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__md"/>
 							<h2>{splitWord("Form & Function")}</h2>
@@ -147,7 +147,7 @@ class Home extends Component {
 								</TextLink>
 							</h6>
 						</div>
-						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-4">
