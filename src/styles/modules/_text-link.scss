@@ -35,8 +35,8 @@ $baseclass: text-link;
 	}
 
 	&__line {
+		background: $brand-black;
 		height: 100%;
-		background: $brand-white;
 		width: 100%;
 		display: block;
 		transform: scaleX(0);
@@ -44,12 +44,9 @@ $baseclass: text-link;
 		transition: transform $easing2 $duration-slow;
 	}
 
-	&--black {
-		.#{$baseclass}__line-container {
-			background: transparent;
-		}
+	.#{$scrolling-section-classname}--black & {
 		.#{$baseclass}__line {
-			background: $brand-black;
+			background: $brand-white;
 		}
 	}
 

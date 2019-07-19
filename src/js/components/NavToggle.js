@@ -54,12 +54,10 @@ class NavToggle extends Component {
 
 	render() {
 		const { secondaryPanelOpen, countIsIncreasing, countIsDecreasing } = this.state;
-		const { black } = this.props;
 
 
 		const classnames = classNames({
 			"nav-toggle": true,
-			"nav-toggle--white": !black,
 			"nav-toggle--hovering": this.props.isToggleHovered,
 			"nav-toggle--menuOpen": this.props.isTakeoverOpen,
 			"nav-toggle--secondaryPanelOpen": this.props.isSecondaryPanelOpen,

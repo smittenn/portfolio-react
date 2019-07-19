@@ -25,6 +25,11 @@ body {
 	color: $brand-black;
 }
 
+hr {
+	background: $brand-black;
+	height: 1px;
+}
+
 video, iframe {
 	width: 100%;
 }
@@ -40,7 +45,6 @@ video, iframe {
 
 section {
 	padding: 90px 0;
-	// min-height: 100vh;
 	position: relative;
 	overflow: hidden;
 	flex-direction: column;
@@ -60,36 +64,22 @@ section {
 
 	img {
 		width: 100%;
-		// padding-right: 12px;
 	}
 
 	.side-scroller {
 		background: linear-gradient(to left, $brand-white, rgba($brand-white, 0) 10%);
-	}
 
-	&.black {
-		background-color: $brand-black;
-
-		h1, h2, h3, h4, h5, h6, p, blockquote, a {
-			color: $brand-white;
-		}
-
-		.grid--lines {
-			opacity: .06;
-		}
-
-		.side-scroller {
-			background: linear-gradient(to left, $brand-black, rgba($brand-black, 0) 10%);
-		}
-
-	}
-
-	&.grey {
-		background-color: $brand-grey-light;
-
-		h1, h2, h3, h4, h5, h6, p, blockquote {
-			color: $brand-white;
-		}
+		// &:after {
+		// 	content: '';
+		// 	display: block;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	@include zIndexClose();
+		// 	background: linear-gradient(to left, $brand-white, rgba($brand-white, 0) 10%);
+		// }
 	}
 
 	.spacer {
@@ -103,6 +93,46 @@ section {
 			min-height: 240px;
 		}
 	}
+}
+
+.#{$scrolling-section-classname} {
+	&--black {
+		section {
+			background-color: $brand-black;			
+		}
+
+		h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
+			color: $brand-white;
+		}
+
+		hr {
+			background-color: $brand-white;
+		}
+
+		.grid--lines {
+			opacity: .06;
+		}
+
+		.side-scroller {
+			background: linear-gradient(to left, $brand-black, rgba($brand-black, 0) 10%);
+		}
+
+		text {
+			fill: $brand-white;
+		}
+
+	}
+
+	&--grey {
+		section {
+			background-color: $brand-grey-light;
+		}
+
+		h1, h2, h3, h4, h5, h6, p, blockquote {
+			color: $brand-white;
+		}
+	}
+
 }
 
 h1, h2, h3, p, blockquote, {
@@ -124,24 +154,34 @@ h1, h2, h3, p, blockquote, {
 .logo {
 	position: fixed;
 	pointer-events: auto;
-	left: 28px;
+	left: 0px;
 	border: none;
 	display: none;
+	justify-content: center;
+	align-items: center;
 	@include zIndexCloser();
+
+	hr {
+		width: 60px;
+		margin: 6px 18px;
+		border: 0;
+	}
 
 	.active-section & {
 		display: flex;
 	}
 
 	&--top {
-		top: 40px;
-		left: 6px;
+		top: 36px;
+		width: 72px;
+		left: 0px;
 	}
 
 	&--bottom {
 		transform: rotate(-90deg);
 		transform-origin: 60px 60px;
-		bottom: 140px; 
+		bottom: 72px; 
+		height: 72px; 
 	}
 
 	i {

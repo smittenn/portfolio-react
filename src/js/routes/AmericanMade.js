@@ -82,7 +82,7 @@ class AmericanMade extends Component {
 
 
 		return (
-			<article>
+			<main>
 
 				<ScrollSection 
 				name={sections[0]}
@@ -350,7 +350,7 @@ class AmericanMade extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}/>
 
-			</article>
+			</main>
 		);
 	}
 }

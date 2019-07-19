@@ -25,12 +25,10 @@ class Sidebar extends Component {
 
 	render() {
 
-		const { isBlack, sections, activeSection } = this.props;
+		const { sections, activeSection } = this.props;
 
 		const classnames = classNames({
 			"sidebar": true,
-			"sidebar--white": !isBlack,
-			"sidebar--black": isBlack,
 			"sidebar--open": this.props.isSidebarOpen,
 		})
 

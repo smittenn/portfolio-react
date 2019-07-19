@@ -26,47 +26,50 @@ export default class ClipWrapper extends Component {
 
 		const { name, onSetActive, black, sections, activeSection } = this.props;
 
-		const logoStyle = { 
-			color: black ? palette('brand-white') : palette('brand-black'),
-		}
-
 		const classnames = classNames({
 			"clip-wrapper": true,
 		})
+
+		const textPath = `<textPath xlink:href="#curve">  Home  —  ${ name } —————————————  </textPath>`;
 
 		return (
 			<div className={classnames}>
 				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}/>
 
 				{(name == sections[0]) ? (
-					<ScrollArrow black={!black} to={sections[1]} onSetActive={onSetActive}/>
+					<ScrollArrow to={sections[1]} onSetActive={onSetActive}/>
 				) : null}
 
 				{(name == sections[1]) ? (
-					<ScrollArrow black={!black} to={name} onSetActive={onSetActive}/>
+					<ScrollArrow to={name} onSetActive={onSetActive}/>
 				) : null}
 
 				<Sidebar 
-				isBlack={!black}
 				sections={sections} 
 				activeSection={activeSection}
 				/>
 
 				<div className="logo logo--top">
-					{<h4 style={logoStyle}><i className="iconcss icon-logo"/></h4>}
+					<NavLink to="/">
+						<h4><i className="iconcss icon-logo"/></h4>
+					</NavLink>
 				</div>
 				
 				<div className="logo logo--bottom">
-					<TextLink isBlack={!black} hideUnderline>
-						<NavLink to="/">
-							{<h7 className="uppercase no-mb" style={logoStyle}>Home</h7>}
-						</NavLink>
-					</TextLink>
-					<h5 className="no-mb" style={logoStyle}><i className="iconcss icon-caret-right"/></h5>
-					<h7 className="uppercase no-mb" style={logoStyle}>{activeSection}</h7>
+					{/*<svg viewBox="0 0 96 96" width="96px" height="96px">
+						<defs>
+							<path id="curve" d="M 84 48 A 12 12 0 1 1 12 48 A 12 12 0 1 1 84 48"/>
+						</defs>
+						<text width="96" dangerouslySetInnerHTML={{__html: textPath }}></text>
+					</svg>*/}
+					
+					<h7 className="uppercase no-mb">{name}</h7>
+					<hr/>
+					{/*<h5 className="no-mb" style={logoStyle}><i className="iconcss icon-caret-right"/></h5>*/}
+					{/*<h7 className="uppercase no-mb" style={logoStyle}>{activeSection}</h7>*/}
 				</div>
 
-				<NavToggle black={!black}/>
+				<NavToggle/>
 			</div>
 		);
 	}

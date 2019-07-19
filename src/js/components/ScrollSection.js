@@ -27,8 +27,9 @@ export default class ScrollSection extends Component {
 		const { name, onSetActive, black, style, sections, activeSection, fullHeight } = this.props;
 
 		const classnames = classNames({
-			"black": this.props.black,
-			"grey": this.props.grey
+			"scrolling-section": true,
+			"scrolling-section--black": this.props.black,
+			"scrolling-section--grey": this.props.grey
 		})
 
 		fullHeight ? Object.assign(style, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' }) : null
@@ -38,13 +39,13 @@ export default class ScrollSection extends Component {
 		}
 		
 		return (
-			<Element name={name}>
+			<Element name={name} className={classnames}>
 				<IntersectionVisible 
 				onShow={(i) => i[0].target.classList.add("active-section")} 
 				onHide={(i) => i[0].target.classList.remove("active-section")}
 				>
 
-					<section className={classnames} style={style}>
+					<section style={style}>
 						<GridLines/>
 						{ this.props.children }
 					</section>

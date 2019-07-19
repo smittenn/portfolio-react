@@ -33,12 +33,11 @@ class ScrollArrow extends Component {
 	}
 
 	render() {
-		const { label, black, to, onSetActive } = this.props;
+		const { label, to, onSetActive } = this.props;
 
 		const classnames = classNames({
 			"scroll-arrow": true,
-			"scroll-arrow--hidden": this.state.isHidden,
-			"scroll-arrow--black": this.props.black,
+			"scroll-arrow--hidden": this.state.isHidden
 		})
 
 		return (

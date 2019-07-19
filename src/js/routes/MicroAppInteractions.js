@@ -79,7 +79,7 @@ class MicroAppInteractions extends Component {
 
 
 		return (
-			<article>
+			<main>
 
 				<ScrollSection 
 				name={sections[0]}
@@ -88,7 +88,7 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
+					backgroundImage: `url(../assets/img/card-components/share-animation.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
 				}}
@@ -305,7 +305,7 @@ class MicroAppInteractions extends Component {
 				}}/>
 
 
-			</article>
+			</main>
 		);
 	}
 }

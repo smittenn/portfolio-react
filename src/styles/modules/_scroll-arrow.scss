@@ -62,7 +62,7 @@ $arrow-size: 40px;
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: $font-tertiary;
-		color: $brand-white;
+		color: $brand-black;
 		margin: 0;
 		margin-bottom: 6px;
 
@@ -87,7 +87,7 @@ $arrow-size: 40px;
 	}
 
 	&__seperator-container {
-		background: rgba($brand-white, .24);
+		background: rgba($brand-black, 0);
 		height: 60px;
 		width: 1px;
 		transform-origin: bottom;
@@ -96,22 +96,22 @@ $arrow-size: 40px;
 	}
 
 	&__seperator {
+		background: $brand-black;
 		height: 100%;
 		width: 100%;
-		background: $brand-white;
 		animation: drawInOut $easing2 3s infinite;
 	}
 
-	&--black {
+	.#{$scrolling-section-classname}--black & {
 		h1, h2, h3, h4, h5, h6 {
-			color: $brand-black;
+			color: $brand-white;
 		}
 		.#{$baseclass}__seperator-container {
-			background: rgba($brand-black, .24);
+			background: rgba($brand-white, .24);
 		}
 
 		.#{$baseclass}__seperator {
-			background: $brand-black;
+			background: $brand-white;
 		}
 	}
 

@@ -100,7 +100,7 @@ $baseclass: nav-toggle;
 		}
 	}
 
-	&--white {
+	.#{$scrolling-section-classname}--black & {
 		.#{$baseclass}__hamburger {
 			.line {
 				background-color: $brand-white;

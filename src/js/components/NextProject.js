@@ -46,7 +46,7 @@ class NextProject extends Component {
 
 		const classnames = classNames({
 			"next-project": true,
-			"next-project--black": black,
+			"scrolling-section--black": true
 		})
 
 		// const clip = {
@@ -60,7 +60,7 @@ class NextProject extends Component {
 					<div className="next-project__spacer" style={this.refs.nextProject ? { height: this.refs.nextProject.clientHeight + 'px' } : null}/>
 					
 					<NavLink to={to}>
-						<section className="black" style={style} ref="nextProject">
+						<section style={style} ref="nextProject">
 								<GridLines/>
 								<div className="grid">
 									<div className="grid__item grid__item--col-12">

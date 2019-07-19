@@ -6,7 +6,7 @@ $bp-small: 600px;
 $bp-xsmall: 480px;
 
 $font-primary: 'Circular Std', sans-serif;
-$font-secondary: 'Averta', sans-serif;
+$font-secondary: 'Moderat', sans-serif;
 $font-tertiary: 'Campton', sans-serif;
 $font-serif: 'GT Sectra Display', serif;
 
@@ -19,7 +19,7 @@ $brand-yellow: #F4E285;
 $brand-orange: #fd8451;
 $brand-pink: #fed1cf;
 
-$brand-white: lighten(#F8FBF7, 0%);
+$brand-white: lighten(#F8FBF7, 1%);
 $brand-grey-lightest: #F4F4F0;
 $brand-grey-light: #DEDEDC;
 $brand-grey-medium: #81717A;
@@ -49,3 +49,6 @@ $delay-fast: 0.06s;
 $delay-medium: 0.09s;
 $delay-slow: 0.12s;
 $delay-slower: 0.18s;
+
+
+$scrolling-section-classname: "scrolling-section";

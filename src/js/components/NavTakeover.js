@@ -195,7 +195,7 @@ class Nav extends Component {
 					<div onClick={this.setMenuClosed}/>
 					<div className="nav-takeover__panels">
 						<div className="nav-takeover__panel">
-							<ul className="nav-takeover__items--secondary">
+							<ul className="nav-takeover__items--secondary" ref="secondary">
 								<li className="nav-takeover__arrow" onClick={this.setCloseSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
 									<h3><i className="iconcss icon-arrow-right"></i></h3>
 								</li>
@@ -204,7 +204,7 @@ class Nav extends Component {
 							<ul className="nav-takeover__items--primary">
 								{ primaryNavItems }
 							</ul>
-							<div className="nav-takeover__line-container">
+							<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
 								<div style={ lineAnimation } className="nav-takeover__line"></div>
 							</div>
 						</div>

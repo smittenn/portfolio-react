@@ -34,12 +34,11 @@ class TextLink extends Component {
 
 	render() {
 
-		const { isBlack, hideUnderline } = this.props;
+		const { hideUnderline } = this.props;
 		const { isHovered } = this.state;
 
 		const classnames = classNames({
 			"text-link": true,
-			"text-link--black": isBlack,
 			"text-link--hide-underline": hideUnderline,
 			"text-link--hovered": isHovered,
 		})

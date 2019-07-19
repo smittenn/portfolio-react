@@ -34,6 +34,7 @@ class SideScroller extends Component {
 		
 		return (
 			<div style={style} className={classnames}>
+				{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 				{ items }
 				<div style={{ minWidth: margin + 'px'}}/>
 				{/*<h2 style={{ position: 'absolute'}}><i className="iconcss icon-arrow-right"/></h2>*/}
