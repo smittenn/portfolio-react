@@ -28,6 +28,9 @@ body {
 hr {
 	background: $brand-black;
 	height: 1px;
+	width: 60px;
+	border: 0;
+	display: inline-block;
 }
 
 video, iframe {
@@ -44,7 +47,7 @@ video, iframe {
 }
 
 section {
-	padding: 90px 0;
+	padding: 108px 0;
 	position: relative;
 	overflow: hidden;
 	flex-direction: column;
@@ -125,11 +128,16 @@ section {
 
 	&--grey {
 		section {
-			background-color: $brand-grey-light;
+			background-color: $brand-grey-lightest;
 		}
 
-		h1, h2, h3, h4, h5, h6, p, blockquote {
-			color: $brand-white;
+		.grid--lines {
+			opacity: .06;
+		}
+
+
+		h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
+			color: rgba($brand-grey-dark, .6);
 		}
 	}
 
@@ -162,9 +170,7 @@ h1, h2, h3, p, blockquote, {
 	@include zIndexCloser();
 
 	hr {
-		width: 60px;
 		margin: 6px 18px;
-		border: 0;
 	}
 
 	.active-section & {

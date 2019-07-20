@@ -87,24 +87,24 @@ $baseclass: nav-toggle;
 		flex-direction: column;
 		justify-content: center;
 
-		.line {
-			transition: transform $easing2 $duration-medium, background-color $easing2 $duration-medium;
-			background: $brand-black;
-			height: 1px;
-			border-radius: 1px;
-			width: 100%;
+	}
 
-			&:first-child, &:last-child {
-				opacity: 0;
-			}
+	&__line {
+		transition: transform $easing2 $duration-medium, background-color $easing2 $duration-medium;
+		background-color: $brand-black;
+		height: 1px;
+		border-radius: 1px;
+		width: 100%;
+
+		&:first-child, &:last-child {
+			opacity: 0;
 		}
 	}
 
+
 	.#{$scrolling-section-classname}--black & {
-		.#{$baseclass}__hamburger {
-			.line {
-				background-color: $brand-white;
-			}
+		.#{$baseclass}__line {
+			background-color: $brand-white;
 		}
 		.#{$baseclass}__abbreviation, .#{$baseclass}__count {
 			color: $brand-white;
@@ -115,18 +115,18 @@ $baseclass: nav-toggle;
 	&--hovering {
 		.#{$baseclass}__hamburger {
 			height: 18px;
+		}
+		.#{$baseclass}__line {					
+			opacity: 1;
 
-			.line {					
-				opacity: 1;
-
-				&:first-child {
-					transform: translate3d(0,-10px,0);
-				}
-				&:last-child {
-					transform: translate3d(0,10px,0);
-				}
+			&:first-child {
+				transform: translate3d(0,-10px,0);
+			}
+			&:last-child {
+				transform: translate3d(0,10px,0);
 			}
 		}
+
 		.#{$baseclass}__abbreviation, .#{$baseclass}__count {
 			opacity: 0;
 		}
@@ -141,8 +141,8 @@ $baseclass: nav-toggle;
 
 	&--menuOpen {
 		.#{$baseclass}__hamburger {
-			.line {
-				background: rgba($brand-black, 1);
+			.#{$baseclass}__line {
+				background-color: rgba($brand-black, 1);
 				opacity: 1;
 
 				&:first-child {

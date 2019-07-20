@@ -19,6 +19,7 @@ import SideScroller from "../components/SideScroller"
 import TextLink from "../components/TextLink"
 
 import Image from "../components/Image"
+import Video from "../components/Video"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -99,7 +100,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, `our team designed a suite of digital version control products.` ]}
+					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, ` our team designed a suite of digital version control products.` ]}
 					/>
 				</ScrollSection>
 
@@ -131,7 +132,7 @@ class Perforce extends Component {
 							</div>
 							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 								<blockquote>
-									My role on this project involved creating the visual designs and prototype shown in the video below. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project.
+									My role on this project involved creating the visual designs and prototyping. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project.
 								</blockquote>
 							</div>
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -151,29 +152,30 @@ class Perforce extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/translator/tv-prod.svg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .40`,
-					backgroundSize: `60%`,
-					backgroundPosition: `100% 40%`,
+					backgroundImage: `url(../assets/img/perforce/prototype.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .60`,
+					backgroundPosition: `100% -30px`,
+					background: `linear-gradient(45deg, #2f4c86 20%, #d06e16)`,
+					backgroundSize: `cover`,
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead UI/UX Designer</blockquote>
+							<blockquote>UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote>June, 2017</blockquote>
+							<blockquote>Summer, 2015</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>NBCU On-Air</blockquote> 
+							<blockquote>Perforce</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="no-mb">
 								<TextLink><a href={people["Janet Taylor"]}>Janet Taylor</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Rebecca Jablonski"]}>Rebecca Jablonski</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Sean Ardley"]}>Sean Ardley</a></TextLink>,&nbsp;
@@ -192,15 +194,17 @@ class Perforce extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Collections</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list or masonry grid view to their liking.</blockquote>
+								<h2>Sync N’ Share</h2>
+								<blockquote>The design team with Perforce saw an opportunity to create a Dropbox-like versioning tool for techincal-minded designers. We designed two different application flows: Manual & Auto mode but which worked best for our target user group?</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
-							<Image src="../assets/img/translator/mam-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<Video src="assets/img/perforce/manual-sync-flow.mp4"/>
 						</div>
 					</div>
 				</ScrollSection>

@@ -73,9 +73,9 @@ class NavToggle extends Component {
 			onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
 				<h6 className="nav-toggle__abbreviation">{this.props.abbreviation}</h6>
 				<div className="nav-toggle__hamburger">
-					<div className="line"/>
-					<div className="line"/>
-					<div className="line"/>
+					<div className="nav-toggle__line"/>
+					<div className="nav-toggle__line"/>
+					<div className="nav-toggle__line"/>
 				</div>
 				<h6 className="nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h6>
 			</div>
