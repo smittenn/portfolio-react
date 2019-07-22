@@ -114,7 +114,7 @@ class Translator extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps">
-								The process for media asset management varied greatly across NBCU’s entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
+								The process for media asset management varied greatly across NBCU’s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
 							</blockquote>
 							<blockquote>
 								The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored.
@@ -159,7 +159,7 @@ class Translator extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead UI/UX Designer</blockquote>
@@ -172,7 +172,7 @@ class Translator extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCU On-Air</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;

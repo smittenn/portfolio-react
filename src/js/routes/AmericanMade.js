@@ -98,7 +98,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the movie.`]}
+					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the Barry Seal.`]}
 					/>
 				</ScrollSection>
 
@@ -244,7 +244,7 @@ class AmericanMade extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Runway Navigation</h2>
-								<blockquote>I designed a unique themed navigation for the site. The nav mimic'd the bird's-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
+								<blockquote>I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -329,7 +329,7 @@ class AmericanMade extends Component {
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">Interactive Map</h2>
 								<h3>“Fly With Barry”</h3>
-								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of his escapades through Central and South America.</blockquote>
+								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America.</blockquote>
 							</div>
 						</div>
 					</div>

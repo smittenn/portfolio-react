@@ -63,7 +63,8 @@ class NextProject extends Component {
 						<section style={style} ref="nextProject">
 								<GridLines/>
 								<div className="grid">
-									<div className="grid__item grid__item--col-12">
+									{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+									<div className="grid__item grid__item--col-10">
 										<h3 className="">Next Up</h3>
 										<h2>{name}<i className="iconcss icon-arrow-right"/></h2>
 									</div>

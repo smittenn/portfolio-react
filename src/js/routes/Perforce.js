@@ -100,7 +100,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, ` our team designed a suite of digital version control products.` ]}
+					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, ` version control products helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
 
@@ -155,7 +155,7 @@ class Perforce extends Component {
 					backgroundImage: `url(../assets/img/perforce/prototype.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .60`,
 					backgroundPosition: `100% -30px`,
-					background: `linear-gradient(45deg, #2f4c86 20%, #d06e16)`,
+					background: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
 					backgroundSize: `cover`,
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>

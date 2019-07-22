@@ -26,17 +26,14 @@ class SideScroller extends Component {
 		}
 
 		const items = this.props.children.map((item, i) => {
-			// let style = {};
-
-			// i == this.props.children.length - 1 ? style = { margin: margin + 'px 0' + (2 * margin) + 'px' } :  style = { marginLeft: margin + 'px' }
-			return React.cloneElement(item, { style: { marginLeft: margin + 'px' }, key: i })
+			return React.cloneElement(item, { style: { marginLeft: (i == 0 ? 0 : margin) + 'px' }, key: i })
 		})
 		
 		return (
 			<div style={style} className={classnames}>
 				{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 				{ items }
-				<div style={{ minWidth: margin + 'px'}}/>
+				{/*<div style={{ minWidth: margin + 'px'}}/>*/}
 				{/*<h2 style={{ position: 'absolute'}}><i className="iconcss icon-arrow-right"/></h2>*/}
 			</div>
 		);

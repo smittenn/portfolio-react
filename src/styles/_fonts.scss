@@ -241,4 +241,28 @@
 // 	url('../fonts/Moderat/Moderat-Black.svg#codropsicons') format('svg');
 // }
 
+@font-face {
+	font-family: 'Apercu Pro';
+	font-weight: 800;
+	font-style: normal;
+	src: url('../fonts/ApercuPro/ApercuPro-Black.eot');
+	src: url('../fonts/ApercuPro/ApercuPro-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/ApercuPro/ApercuPro-Black.woff2') format('woff2'), 
+	url('../fonts/ApercuPro/ApercuPro-Black.woff') format('woff'), 
+	url('../fonts/ApercuPro/ApercuPro-Black.ttf') format('truetype'),
+	url('../fonts/ApercuPro/ApercuPro-Black.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Apercu Pro';
+	font-weight: 700;
+	font-style: normal;
+	src: url('../fonts/ApercuPro/ApercuPro-Bold.eot');
+	src: url('../fonts/ApercuPro/ApercuPro-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/ApercuPro/ApercuPro-Bold.woff2') format('woff2'), 
+	url('../fonts/ApercuPro/ApercuPro-Bold.woff') format('woff'), 
+	url('../fonts/ApercuPro/ApercuPro-Bold.ttf') format('truetype'),
+	url('../fonts/ApercuPro/ApercuPro-Bold.svg#codropsicons') format('svg');
+}
+
 

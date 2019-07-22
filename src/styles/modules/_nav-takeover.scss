@@ -168,7 +168,7 @@ $baseclass: nav-takeover;
 	&--menuOpen {
 		.#{$baseclass}__main {
 			pointer-events: auto;
-			background: rgba($brand-black, .5);
+			background: rgba($brand-black, .6);
 		}
 
 		.#{$baseclass}__panel {		

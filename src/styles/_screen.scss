@@ -80,16 +80,6 @@
 		}
 	}
 
-	.react-parallax {
-		h1 span {
-			@for $i from 1 through 60 {
-				&:nth-last-child(#{$i}) {
-					transition-delay: (#{0.1 + ($i * 0.02)}s);
-				}
-			}
-		}
-	}
-
 	section {
 		padding: 60px 0;
 	}
@@ -123,6 +113,5 @@
 	blockquote {
 		font-size: 19px;
 		margin-bottom: 21px;
-		// margin-right: 21px;
 	}
 }

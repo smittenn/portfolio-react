@@ -125,7 +125,7 @@ class Vai extends Component {
 										As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
 									</blockquote>
 									<blockquote>
-										Clarifi's image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
+										Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
 									</blockquote>
 								</div>
 							</div>
@@ -154,7 +154,7 @@ class Vai extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCUX Lab</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4 grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
@@ -174,14 +174,16 @@ class Vai extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>The Player</h2>
+								<h2>Video Playback</h2>
 								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without distracting from the viewing experience.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
@@ -194,14 +196,16 @@ class Vai extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 								<h2>Products</h2>
-								<blockquote>Brands can now sponsor T.V. shows to promote their products in an innovative way without using traditional commercials that interrupt consumers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
+								<blockquote>Brands could sponsor T.V. shows to promote their products in an innovative way without using commercials that interrupt viewers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10">
 							<Image src="../assets/img/vai/product.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
@@ -215,6 +219,7 @@ class Vai extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>People</h2>
 								<blockquote>Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question.</blockquote>
@@ -222,13 +227,14 @@ class Vai extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
 							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
 							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
 							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 
