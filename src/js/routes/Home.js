@@ -109,7 +109,7 @@ class Home extends Component {
 		const brandRed = hexToRgb(palette("brand-red"));
 		
 		return (
-			<main>
+			<article>
 				<ScrollSection 
 				name={sections[0]}
 				black 
@@ -244,7 +244,7 @@ class Home extends Component {
 					</div>
 				</ScrollSection>
 
-			</main>
+			</article>
 		);
 	}
 }

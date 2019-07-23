@@ -76,7 +76,7 @@ class Perforce extends Component {
 
 
 		return (
-			<main>
+			<article>
 				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
@@ -100,7 +100,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, ` version control products helped designers version their assets.` ]}
+					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, ` our version control tools helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
 
@@ -296,7 +296,7 @@ class Perforce extends Component {
 
 
 
-			</main>
+			</article>
 		);
 	}
 }

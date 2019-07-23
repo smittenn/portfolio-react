@@ -79,7 +79,7 @@ class MicroAppInteractions extends Component {
 
 
 		return (
-			<main>
+			<article>
 
 				<ScrollSection 
 				name={sections[0]}
@@ -310,7 +310,7 @@ class MicroAppInteractions extends Component {
 				}}/>
 
 
-			</main>
+			</article>
 		);
 	}
 }

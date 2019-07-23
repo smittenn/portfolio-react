@@ -17,7 +17,7 @@ import Perforce from './Perforce'
 import AboutMe from './AboutMe'
 
 const routes = (
-	<div>
+	<main>
 		<Switch>
 			<Route exact path="/" component={Home}/>
 			<Route exact path="/process" component={Home}/>
@@ -38,7 +38,7 @@ const routes = (
 		</Switch>
 		<NavTakeover/>
 		<Cursor/>
-	</div>
+	</main>
 )
 
 export default routes

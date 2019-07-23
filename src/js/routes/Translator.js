@@ -75,7 +75,7 @@ class Translator extends Component {
 
 
 		return (
-			<main>
+			<article>
 				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
@@ -301,7 +301,7 @@ class Translator extends Component {
 
 
 
-			</main>
+			</article>
 		);
 	}
 }

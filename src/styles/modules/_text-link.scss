@@ -30,7 +30,7 @@ $baseclass: text-link;
 		width: 100%;
 		display: block;
 		overflow: hidden;
-		background: rgba($brand-white, .24);
+		background: rgba($brand-black, .24);
 		// transition: all 0s $duration-slow linear;
 	}
 
@@ -45,12 +45,15 @@ $baseclass: text-link;
 	}
 
 	.#{$scrolling-section-classname}--black & {
+		.#{$baseclass}__line-container {
+			background: rgba($brand-white, .24);
+		}
 		.#{$baseclass}__line {
 			background: $brand-white;
 		}
 	}
 
-	&--hide-underline {
+	&.#{$baseclass}--hide-underline {
 		.#{$baseclass}__line-container {
 			background: transparent;
 		}
@@ -67,5 +70,11 @@ $baseclass: text-link;
 			transform: scaleX(1);
 			transform-origin: left;
 		}
+	}
+
+	.active-section & {
+		// .#{$baseclass}__line-container {
+		// 	animation: drawOutInRight $easing5 $duration-slowest;
+		// }
 	}
 }

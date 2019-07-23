@@ -32,7 +32,9 @@ class NavToggle extends Component {
 
 	closeNav = () => {
 		this.props.closeTakeover();
-		// this.props.closeSecondaryPanel();		
+		// this.props.closeSecondaryPanel();
+
+		(this.props.isMobile ? setTimeout(() => { this.props.unhoverToggle(); }, 1200) : null)		
 	}
 
 	setCloseSecondaryPanel = () => {
@@ -86,6 +88,7 @@ class NavToggle extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 	isTakeoverOpen: state.isTakeoverOpen,
 	isToggleHovered: state.isToggleHovered,
 	isSecondaryPanelOpen: state.isSecondaryPanelOpen,

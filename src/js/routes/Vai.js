@@ -74,7 +74,7 @@ class Vai extends Component {
 		// const sections = pageSections.map(i => i.name)
 
 		return (
-			<main>
+			<article>
 				<ScrollSection 
 				name={sections[0]}
 				black 
@@ -252,7 +252,7 @@ class Vai extends Component {
 				}}/>
 
 				
-			</main>
+			</article>
 		);
 	}
 }

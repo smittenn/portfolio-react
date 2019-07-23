@@ -82,7 +82,7 @@ class AmericanMade extends Component {
 
 
 		return (
-			<main>
+			<article>
 
 				<ScrollSection 
 				name={sections[0]}
@@ -149,19 +149,19 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
 							<blockquote>Summer, 2017</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>Universal Pictures</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-4  grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
@@ -180,7 +180,7 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
-							{/*<div className="grid__item grid__item--col-1"/>*/}
+							{<div className="grid__item grid__item--col-1"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>{"Cinemagraphs"}</h2> 
 								<blockquote>{"To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
@@ -188,10 +188,10 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-7 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-11-medium">
 							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-7 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-11-medium">
 							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</SideScroller>
@@ -350,7 +350,7 @@ class AmericanMade extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 				}}/>
 
-			</main>
+			</article>
 		);
 	}
 }

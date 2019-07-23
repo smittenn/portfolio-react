@@ -35,40 +35,19 @@
 
 .parallax-header {
 	h1 {
-		// transform-origin: left center;
-		// transition: all $easing1 $duration-slower;
-
 		> span {
 			overflow: hidden;
-			// transition: opacity $easing1 $duration-slow, transform $easing1 $duration-slowest;
-			// transition: none;
-			// transform: none !important;
-			// opacity: 1 !important;
-
-			// @for $i from 1 through 60 {
-			// 	&:nth-child(#{$i}) {
-			// 		transition-delay: (#{0.0 + ($i * 0.09)}s);
-			// 	}
-			// }
 
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) span {
 					animation-delay: (#{0.6 + ($i * 0.12)}s);
 				}
 			}
-
 		}
 
 		> span > span {
 			animation: ghostIn $duration-slow $easing1;
 			animation-fill-mode: both;
-
-
-			// @for $i from 1 through 4 {
-			// 	&:nth-child(#{$i}n + 1) {
-			// 		transition-delay: (#{0.0 + ($i * 0.09)}s);
-			// 	}
-			// }
 		}
 	}
 }
@@ -89,8 +68,6 @@ section {
 
 	.grid__item  .grid__item,
 	.grid__item {
-	// .grid ~ .grid__item,
-	// .grid__row .grid__item {
 		@for $i from 1 through 60 {
 			&:nth-child(#{$i}) {
 				img, video {
@@ -106,10 +83,11 @@ section {
 	h2, p, blockquote {
 		span {
 			overflow: hidden;
-		}
-		span > span{
-			transition: none;
-			opacity: 0;
+
+			> span {
+				transition: none;
+				opacity: 0;
+			}
 		}
 	}
 
@@ -121,7 +99,7 @@ section {
 		transition: none;
 		opacity: 0;
 
-		span > span{
+		span > span {
 			transform: translate3d(0,90px,0) skewX(6deg);
 		}
 	}
@@ -129,7 +107,7 @@ section {
 	p, blockquote {
 		span > span{
 			opacity: 0;
-			transform: translate3d(0,24px,0) skewX(6deg);
+			transform: translate3d(0,100%,0) skewX(6deg);
 			transition: none;
 		}
 	}
@@ -138,16 +116,14 @@ section {
 .active-section {
 	section {
 		h2 {
-			span > span{
+			opacity: 1;
+			transition: transform $duration-slow $delay-medium $easing1, opacity $duration-slow $delay-medium $easing1;
+
+			span > span {
 				transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 				opacity: 1;
 				transform: none;
 			}
-		}
-
-		h2 {
-			opacity: 1;
-			transition: transform $duration-slow $delay-medium $easing1, opacity $duration-slow $delay-medium $easing1;
 		}
 
 		h2 span {

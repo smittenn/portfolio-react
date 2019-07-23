@@ -81,7 +81,7 @@ class MicroAppTemplates extends Component {
 
 
 		return (
-			<main>
+			<article>
 
 				<ScrollSection 
 				name={sections[0]}
@@ -390,7 +390,7 @@ class MicroAppTemplates extends Component {
 					backgroundPosition: 'center',
 				}}/>
 
-			</main>
+			</article>
 		);
 	}
 }

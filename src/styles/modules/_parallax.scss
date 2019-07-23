@@ -24,10 +24,11 @@ $baseclass: parallax-header;
 			> span {
 				animation-name: ghostOut;
 				animation-timing-function: $easing5;
+				// animation-duration: $duration-slow
 			}
 
 			@for $i from 1 through 60 {
-				&:nth-child(#{$i}) span {
+				&:nth-last-child(#{$i}) span {
 					animation-delay: (#{0.0 + ($i * 0.12)}s);
 				}
 			}

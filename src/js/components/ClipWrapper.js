@@ -44,11 +44,6 @@ export default class ClipWrapper extends Component {
 					<ScrollArrow to={name} onSetActive={onSetActive}/>
 				) : null}
 
-				<Sidebar 
-				sections={sections} 
-				activeSection={activeSection}
-				/>
-
 				<div className="logo logo--top">
 					<NavLink to="/">
 						<h4><i className="iconcss icon-logo"/></h4>
@@ -70,6 +65,11 @@ export default class ClipWrapper extends Component {
 				</div>
 
 				<NavToggle/>
+
+				<Sidebar 
+				sections={sections} 
+				activeSection={activeSection}
+				/>
 			</div>
 		);
 	}

@@ -78,7 +78,7 @@ class JnjHome extends Component {
 
 
 		return (
-			<main>
+			<article>
 				{/*<Element 
 				name={sections[0]} 
 				className={classNames({ "active-section" : activeSection == sections[0]})}>
@@ -117,6 +117,7 @@ class JnjHome extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
 								We wanted a better way to J&J. So we made one. While our 128,000 colleagues around the world are building the future of healthcare, we're building a better J&J. 
@@ -132,10 +133,9 @@ class JnjHome extends Component {
 							</blockquote>
 
 						</div>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
+								<div className="grid__item grid__item--col-11">
 									<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
 								</div>
 							</div>
@@ -171,7 +171,7 @@ class JnjHome extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Interaction Designer</blockquote>
@@ -180,11 +180,11 @@ class JnjHome extends Component {
 							<h6 className="uppercase">Date</h6>
 							<blockquote>Fall, 2019</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>J&J People Experience</blockquote> 
+							<blockquote>J&J People XD</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 
@@ -204,6 +204,7 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Onboarding</h2>
 								<blockquote>The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. After providing basic information in this short experience the new employee can visit Home to learn about services nearby, and tools necessary for their job and give them the profile links for people they will be working with frequently.</blockquote>
@@ -215,7 +216,8 @@ class JnjHome extends Component {
 							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-profile-setup.html" height="720"/>
 						</div>*/}
 						{/*<div className="grid__item grid__item--col-1  grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10">
 							<Image src="../assets/img/jnj-home/onboarding-kiosk-mock.png" aspectRatioWidth={3} aspectRatioHeight={2}/>
 						</div>
 					</div>
@@ -229,6 +231,7 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Meganav</h2>
 								<blockquote>I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links.</blockquote>
@@ -236,7 +239,8 @@ class JnjHome extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
 							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html"/>
 						</div>
 					</div>
@@ -250,6 +254,7 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Sitemap</h2>
 								<blockquote>I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the live map at any time.</blockquote>
@@ -257,7 +262,8 @@ class JnjHome extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
 							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html"/>
 						</div>
 					</div>
@@ -272,6 +278,7 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(6) }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Links Directory</h2>
 								<blockquote>I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy and our users we theorized 12 categories that links could be bucketed into.</blockquote>
@@ -279,7 +286,8 @@ class JnjHome extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
 							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-links.html"/>
 						</div>
 					</div>
@@ -299,7 +307,7 @@ class JnjHome extends Component {
 					backgroundPosition: '50% 80%',
 				}}/>
 
-			</main>
+			</article>
 		);
 	}
 }
