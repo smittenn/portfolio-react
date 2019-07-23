@@ -388,10 +388,10 @@ section {
   background-color: #F4F4F0; }
 
 .scrolling-section--grey .grid--lines {
-  opacity: .06; }
+  opacity: .4; }
 
 .scrolling-section--grey h1, .scrolling-section--grey h2, .scrolling-section--grey h3, .scrolling-section--grey h4, .scrolling-section--grey h5, .scrolling-section--grey h6, .scrolling-section--grey h7, .scrolling-section--grey p, .scrolling-section--grey blockquote, .scrolling-section--grey a {
-  color: rgba(89, 83, 88, 0.6); }
+  color: #333031; }
 
 h1 span, h2 span, h3 span, p span, blockquote span {
   display: inline-block; }
@@ -1124,10 +1124,10 @@ section .grid__item .grid__item:nth-child(60) blockquote,
 section .grid__item:nth-child(60) blockquote {
   transition-delay: 18.3s; }
 
-section h1 span, section h2 span, section p span, section blockquote span {
+section h2 span, section p span, section blockquote span {
   overflow: hidden; }
 
-section h1 span > span, section h2 span > span, section p span > span, section blockquote span > span {
+section h2 span > span, section p span > span, section blockquote span > span {
   transition: none;
   opacity: 0; }
 
@@ -1142,7 +1142,7 @@ section p span > span, section blockquote span > span {
   transform: translate3d(0, 24px, 0) skewX(6deg);
   transition: none; }
 
-.active-section section h1 span > span, .active-section section h2 span > span {
+.active-section section h2 span > span {
   transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
   opacity: 1;
   -ms-transform: none;
@@ -1152,184 +1152,184 @@ section p span > span, section blockquote span > span {
   opacity: 1;
   transition: transform 0.9s 0.09s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.9s 0.09s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-.active-section section h1 span:nth-child(1) span, .active-section section h2 span:nth-child(1) span {
+.active-section section h2 span:nth-child(1) span {
   transition-delay: 0.69s; }
 
-.active-section section h1 span:nth-child(2) span, .active-section section h2 span:nth-child(2) span {
+.active-section section h2 span:nth-child(2) span {
   transition-delay: 0.78s; }
 
-.active-section section h1 span:nth-child(3) span, .active-section section h2 span:nth-child(3) span {
+.active-section section h2 span:nth-child(3) span {
   transition-delay: 0.87s; }
 
-.active-section section h1 span:nth-child(4) span, .active-section section h2 span:nth-child(4) span {
+.active-section section h2 span:nth-child(4) span {
   transition-delay: 0.96s; }
 
-.active-section section h1 span:nth-child(5) span, .active-section section h2 span:nth-child(5) span {
+.active-section section h2 span:nth-child(5) span {
   transition-delay: 1.05s; }
 
-.active-section section h1 span:nth-child(6) span, .active-section section h2 span:nth-child(6) span {
+.active-section section h2 span:nth-child(6) span {
   transition-delay: 1.14s; }
 
-.active-section section h1 span:nth-child(7) span, .active-section section h2 span:nth-child(7) span {
+.active-section section h2 span:nth-child(7) span {
   transition-delay: 1.23s; }
 
-.active-section section h1 span:nth-child(8) span, .active-section section h2 span:nth-child(8) span {
+.active-section section h2 span:nth-child(8) span {
   transition-delay: 1.32s; }
 
-.active-section section h1 span:nth-child(9) span, .active-section section h2 span:nth-child(9) span {
+.active-section section h2 span:nth-child(9) span {
   transition-delay: 1.41s; }
 
-.active-section section h1 span:nth-child(10) span, .active-section section h2 span:nth-child(10) span {
+.active-section section h2 span:nth-child(10) span {
   transition-delay: 1.5s; }
 
-.active-section section h1 span:nth-child(11) span, .active-section section h2 span:nth-child(11) span {
+.active-section section h2 span:nth-child(11) span {
   transition-delay: 1.59s; }
 
-.active-section section h1 span:nth-child(12) span, .active-section section h2 span:nth-child(12) span {
+.active-section section h2 span:nth-child(12) span {
   transition-delay: 1.68s; }
 
-.active-section section h1 span:nth-child(13) span, .active-section section h2 span:nth-child(13) span {
+.active-section section h2 span:nth-child(13) span {
   transition-delay: 1.77s; }
 
-.active-section section h1 span:nth-child(14) span, .active-section section h2 span:nth-child(14) span {
+.active-section section h2 span:nth-child(14) span {
   transition-delay: 1.86s; }
 
-.active-section section h1 span:nth-child(15) span, .active-section section h2 span:nth-child(15) span {
+.active-section section h2 span:nth-child(15) span {
   transition-delay: 1.95s; }
 
-.active-section section h1 span:nth-child(16) span, .active-section section h2 span:nth-child(16) span {
+.active-section section h2 span:nth-child(16) span {
   transition-delay: 2.04s; }
 
-.active-section section h1 span:nth-child(17) span, .active-section section h2 span:nth-child(17) span {
+.active-section section h2 span:nth-child(17) span {
   transition-delay: 2.13s; }
 
-.active-section section h1 span:nth-child(18) span, .active-section section h2 span:nth-child(18) span {
+.active-section section h2 span:nth-child(18) span {
   transition-delay: 2.22s; }
 
-.active-section section h1 span:nth-child(19) span, .active-section section h2 span:nth-child(19) span {
+.active-section section h2 span:nth-child(19) span {
   transition-delay: 2.31s; }
 
-.active-section section h1 span:nth-child(20) span, .active-section section h2 span:nth-child(20) span {
+.active-section section h2 span:nth-child(20) span {
   transition-delay: 2.4s; }
 
-.active-section section h1 span:nth-child(21) span, .active-section section h2 span:nth-child(21) span {
+.active-section section h2 span:nth-child(21) span {
   transition-delay: 2.49s; }
 
-.active-section section h1 span:nth-child(22) span, .active-section section h2 span:nth-child(22) span {
+.active-section section h2 span:nth-child(22) span {
   transition-delay: 2.58s; }
 
-.active-section section h1 span:nth-child(23) span, .active-section section h2 span:nth-child(23) span {
+.active-section section h2 span:nth-child(23) span {
   transition-delay: 2.67s; }
 
-.active-section section h1 span:nth-child(24) span, .active-section section h2 span:nth-child(24) span {
+.active-section section h2 span:nth-child(24) span {
   transition-delay: 2.76s; }
 
-.active-section section h1 span:nth-child(25) span, .active-section section h2 span:nth-child(25) span {
+.active-section section h2 span:nth-child(25) span {
   transition-delay: 2.85s; }
 
-.active-section section h1 span:nth-child(26) span, .active-section section h2 span:nth-child(26) span {
+.active-section section h2 span:nth-child(26) span {
   transition-delay: 2.94s; }
 
-.active-section section h1 span:nth-child(27) span, .active-section section h2 span:nth-child(27) span {
+.active-section section h2 span:nth-child(27) span {
   transition-delay: 3.03s; }
 
-.active-section section h1 span:nth-child(28) span, .active-section section h2 span:nth-child(28) span {
+.active-section section h2 span:nth-child(28) span {
   transition-delay: 3.12s; }
 
-.active-section section h1 span:nth-child(29) span, .active-section section h2 span:nth-child(29) span {
+.active-section section h2 span:nth-child(29) span {
   transition-delay: 3.21s; }
 
-.active-section section h1 span:nth-child(30) span, .active-section section h2 span:nth-child(30) span {
+.active-section section h2 span:nth-child(30) span {
   transition-delay: 3.3s; }
 
-.active-section section h1 span:nth-child(31) span, .active-section section h2 span:nth-child(31) span {
+.active-section section h2 span:nth-child(31) span {
   transition-delay: 3.39s; }
 
-.active-section section h1 span:nth-child(32) span, .active-section section h2 span:nth-child(32) span {
+.active-section section h2 span:nth-child(32) span {
   transition-delay: 3.48s; }
 
-.active-section section h1 span:nth-child(33) span, .active-section section h2 span:nth-child(33) span {
+.active-section section h2 span:nth-child(33) span {
   transition-delay: 3.57s; }
 
-.active-section section h1 span:nth-child(34) span, .active-section section h2 span:nth-child(34) span {
+.active-section section h2 span:nth-child(34) span {
   transition-delay: 3.66s; }
 
-.active-section section h1 span:nth-child(35) span, .active-section section h2 span:nth-child(35) span {
+.active-section section h2 span:nth-child(35) span {
   transition-delay: 3.75s; }
 
-.active-section section h1 span:nth-child(36) span, .active-section section h2 span:nth-child(36) span {
+.active-section section h2 span:nth-child(36) span {
   transition-delay: 3.84s; }
 
-.active-section section h1 span:nth-child(37) span, .active-section section h2 span:nth-child(37) span {
+.active-section section h2 span:nth-child(37) span {
   transition-delay: 3.93s; }
 
-.active-section section h1 span:nth-child(38) span, .active-section section h2 span:nth-child(38) span {
+.active-section section h2 span:nth-child(38) span {
   transition-delay: 4.02s; }
 
-.active-section section h1 span:nth-child(39) span, .active-section section h2 span:nth-child(39) span {
+.active-section section h2 span:nth-child(39) span {
   transition-delay: 4.11s; }
 
-.active-section section h1 span:nth-child(40) span, .active-section section h2 span:nth-child(40) span {
+.active-section section h2 span:nth-child(40) span {
   transition-delay: 4.2s; }
 
-.active-section section h1 span:nth-child(41) span, .active-section section h2 span:nth-child(41) span {
+.active-section section h2 span:nth-child(41) span {
   transition-delay: 4.29s; }
 
-.active-section section h1 span:nth-child(42) span, .active-section section h2 span:nth-child(42) span {
+.active-section section h2 span:nth-child(42) span {
   transition-delay: 4.38s; }
 
-.active-section section h1 span:nth-child(43) span, .active-section section h2 span:nth-child(43) span {
+.active-section section h2 span:nth-child(43) span {
   transition-delay: 4.47s; }
 
-.active-section section h1 span:nth-child(44) span, .active-section section h2 span:nth-child(44) span {
+.active-section section h2 span:nth-child(44) span {
   transition-delay: 4.56s; }
 
-.active-section section h1 span:nth-child(45) span, .active-section section h2 span:nth-child(45) span {
+.active-section section h2 span:nth-child(45) span {
   transition-delay: 4.65s; }
 
-.active-section section h1 span:nth-child(46) span, .active-section section h2 span:nth-child(46) span {
+.active-section section h2 span:nth-child(46) span {
   transition-delay: 4.74s; }
 
-.active-section section h1 span:nth-child(47) span, .active-section section h2 span:nth-child(47) span {
+.active-section section h2 span:nth-child(47) span {
   transition-delay: 4.83s; }
 
-.active-section section h1 span:nth-child(48) span, .active-section section h2 span:nth-child(48) span {
+.active-section section h2 span:nth-child(48) span {
   transition-delay: 4.92s; }
 
-.active-section section h1 span:nth-child(49) span, .active-section section h2 span:nth-child(49) span {
+.active-section section h2 span:nth-child(49) span {
   transition-delay: 5.01s; }
 
-.active-section section h1 span:nth-child(50) span, .active-section section h2 span:nth-child(50) span {
+.active-section section h2 span:nth-child(50) span {
   transition-delay: 5.1s; }
 
-.active-section section h1 span:nth-child(51) span, .active-section section h2 span:nth-child(51) span {
+.active-section section h2 span:nth-child(51) span {
   transition-delay: 5.19s; }
 
-.active-section section h1 span:nth-child(52) span, .active-section section h2 span:nth-child(52) span {
+.active-section section h2 span:nth-child(52) span {
   transition-delay: 5.28s; }
 
-.active-section section h1 span:nth-child(53) span, .active-section section h2 span:nth-child(53) span {
+.active-section section h2 span:nth-child(53) span {
   transition-delay: 5.37s; }
 
-.active-section section h1 span:nth-child(54) span, .active-section section h2 span:nth-child(54) span {
+.active-section section h2 span:nth-child(54) span {
   transition-delay: 5.46s; }
 
-.active-section section h1 span:nth-child(55) span, .active-section section h2 span:nth-child(55) span {
+.active-section section h2 span:nth-child(55) span {
   transition-delay: 5.55s; }
 
-.active-section section h1 span:nth-child(56) span, .active-section section h2 span:nth-child(56) span {
+.active-section section h2 span:nth-child(56) span {
   transition-delay: 5.64s; }
 
-.active-section section h1 span:nth-child(57) span, .active-section section h2 span:nth-child(57) span {
+.active-section section h2 span:nth-child(57) span {
   transition-delay: 5.73s; }
 
-.active-section section h1 span:nth-child(58) span, .active-section section h2 span:nth-child(58) span {
+.active-section section h2 span:nth-child(58) span {
   transition-delay: 5.82s; }
 
-.active-section section h1 span:nth-child(59) span, .active-section section h2 span:nth-child(59) span {
+.active-section section h2 span:nth-child(59) span {
   transition-delay: 5.91s; }
 
-.active-section section h1 span:nth-child(60) span, .active-section section h2 span:nth-child(60) span {
+.active-section section h2 span:nth-child(60) span {
   transition-delay: 6s; }
 
 .active-section section img, .active-section section video {
@@ -1969,14 +1969,14 @@ section p span > span, section blockquote span > span {
   .nav-toggle--hovering .nav-toggle__count {
     transform: translate3d(0, 12px, 0); }
   .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line {
-    background-color: #dededc;
+    background-color: #131112;
     opacity: 1; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:first-child {
-      transform: translate3d(2px, 0px, 0) rotate(135deg) scaleX(0.6); }
+      transform: translate3d(2px, 0px, 0) rotate(135deg) scaleX(0.4); }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:nth-child(2) {
       opacity: 0; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:last-child {
-      transform: translate3d(2px, -2px, 0) rotate(45deg) scaleX(0.6); }
+      transform: translate3d(2px, -2px, 0) rotate(45deg) scaleX(0.4); }
   .nav-toggle--menuOpen .nav-toggle__abbreviation, .nav-toggle--menuOpen .nav-toggle__count {
     opacity: 0; }
   .nav-toggle--menuOpen .nav-toggle__abbreviation {
@@ -2580,50 +2580,50 @@ section p span > span, section blockquote span > span {
     display: none; }
   .spacer {
     display: none; }
-  .grid {
+  .grid, section .side-scroller {
     padding: 0 24px; }
-    .grid--lines {
-      padding: 0 48px; }
-    .grid__row {
-      margin-bottom: 24px; }
-    .grid__item--hide-bp-medium {
-      display: none; }
-    .grid__item--col-1-medium {
-      min-width: 8.33%;
-      width: 8.33%; }
-    .grid__item--col-2-medium {
-      min-width: 16.66%;
-      width: 16.66%; }
-    .grid__item--col-3-medium {
-      min-width: 25%;
-      width: 25%; }
-    .grid__item--col-4-medium {
-      min-width: 33.33%;
-      width: 33.33%; }
-    .grid__item--col-5-medium {
-      min-width: 41.66%;
-      width: 41.66%; }
-    .grid__item--col-6-medium {
-      min-width: 50%;
-      width: 50%; }
-    .grid__item--col-7-medium {
-      min-width: 58.33%;
-      width: 58.33%; }
-    .grid__item--col-8-medium {
-      min-width: 66.66%;
-      width: 66.66%; }
-    .grid__item--col-9-medium {
-      min-width: 75%;
-      width: 75%; }
-    .grid__item--col-10-medium {
-      min-width: 83.33%;
-      width: 83.33%; }
-    .grid__item--col-11-medium {
-      min-width: 91.66%;
-      width: 91.66%; }
-    .grid__item--col-12-medium {
-      min-width: 100%;
-      width: 100%; }
+  .grid--lines {
+    padding: 0 48px; }
+  .grid__row {
+    margin-bottom: 24px; }
+  .grid__item--hide-bp-medium {
+    display: none; }
+  .grid__item--col-1-medium {
+    min-width: 8.33%;
+    width: 8.33%; }
+  .grid__item--col-2-medium {
+    min-width: 16.66%;
+    width: 16.66%; }
+  .grid__item--col-3-medium {
+    min-width: 25%;
+    width: 25%; }
+  .grid__item--col-4-medium {
+    min-width: 33.33%;
+    width: 33.33%; }
+  .grid__item--col-5-medium {
+    min-width: 41.66%;
+    width: 41.66%; }
+  .grid__item--col-6-medium {
+    min-width: 50%;
+    width: 50%; }
+  .grid__item--col-7-medium {
+    min-width: 58.33%;
+    width: 58.33%; }
+  .grid__item--col-8-medium {
+    min-width: 66.66%;
+    width: 66.66%; }
+  .grid__item--col-9-medium {
+    min-width: 75%;
+    width: 75%; }
+  .grid__item--col-10-medium {
+    min-width: 83.33%;
+    width: 83.33%; }
+  .grid__item--col-11-medium {
+    min-width: 91.66%;
+    width: 91.66%; }
+  .grid__item--col-12-medium {
+    min-width: 100%;
+    width: 100%; }
   section {
     padding: 60px 0; }
   h1 {
@@ -2642,6 +2642,19 @@ section p span > span, section blockquote span > span {
     font-size: 7vw; }
   h5 {
     font-size: 4vw; }
+  blockquote {
+    font-size: 19px;
+    margin-bottom: 21px; } }
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 38px; }
+  h2 {
+    font-size: 34px; }
+  h3 {
+    font-size: 26px; }
+  h4 {
+    font-size: 21px; }
   blockquote {
     font-size: 19px;
     margin-bottom: 21px; } }

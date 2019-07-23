@@ -142,17 +142,17 @@ $baseclass: nav-toggle;
 	&--menuOpen {
 		.#{$baseclass}__hamburger {
 			.#{$baseclass}__line {
-				background-color: rgba($brand-grey-light, 1);
+				background-color: rgba($brand-black, 1);
 				opacity: 1;
 
 				&:first-child {
-					transform: translate3d(2px,0px,0) rotate(135deg) scaleX(0.6);
+					transform: translate3d(2px,0px,0) rotate(135deg) scaleX(0.4);
 				}
 				&:nth-child(2) {
 					opacity: 0;
 				}
 				&:last-child {
-					transform: translate3d(2px,-2px,0) rotate(45deg) scaleX(0.6);
+					transform: translate3d(2px,-2px,0) rotate(45deg) scaleX(0.4);
 				}
 			}
 		}

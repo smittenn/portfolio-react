@@ -227,7 +227,6 @@ class Vai extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
 							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>

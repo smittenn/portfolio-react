@@ -73,20 +73,6 @@
 	}
 }
 
-// .react-parallax-contents {
-// 	&--animating {
-// 		h1 span {
-// 			animation: ghostIn $duration-slow $easing1;
-// 			animation-fill-mode: both;
-
-// 			@for $i from 1 through 60 {
-// 				&:nth-child(#{$i}) {
-// 					animation-delay: (#{0.6 + ($i * 0.09)}s);
-// 				}
-// 			}
-// 		}
-// 	}
-// }
 
 
 section {
@@ -117,7 +103,7 @@ section {
 		}
 	}
 
-	h1, h2, p, blockquote {
+	h2, p, blockquote {
 		span {
 			overflow: hidden;
 		}
@@ -151,7 +137,7 @@ section {
 
 .active-section {
 	section {
-		h1, h2, {
+		h2 {
 			span > span{
 				transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
 				opacity: 1;
@@ -164,7 +150,7 @@ section {
 			transition: transform $duration-slow $delay-medium $easing1, opacity $duration-slow $delay-medium $easing1;
 		}
 
-		h1 span, h2 span {
+		h2 span {
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) span {
 					transition-delay: (#{0.6 + ($i * 0.09)}s);
@@ -200,26 +186,4 @@ section {
 	}
 }
 
-
-
-// .react-parallax {
-// 	opacity: 0;
-//   	filter: blur(3px);
-// 	clip-path: inset(60px 60px 60px 60px);
-
-
-// 	@keyframes spreadOut {
-// 		0% {
-// 			opacity: 0;
-// 			clip-path: inset(60px 60px 60px 60px);
-// 			filter: blur(3px);
-// 		}
-// 		100% {
-// 			opacity: 1;
-// 			clip-path: inset(0px 0px 0px 0px);
-// 			filter: blur(0px);
-// 		}
-// 	}
-
-// }
 

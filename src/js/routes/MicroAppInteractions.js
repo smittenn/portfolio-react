@@ -107,6 +107,7 @@ class MicroAppInteractions extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
 								Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
@@ -120,9 +121,9 @@ class MicroAppInteractions extends Component {
 
 						</div>
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
+								<div className="grid__item grid__item--col-11">
 									<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
 								</div>
 							</div>
@@ -157,7 +158,7 @@ class MicroAppInteractions extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Creative Techonologist</blockquote>
@@ -170,7 +171,7 @@ class MicroAppInteractions extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>Wrap Media</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
@@ -191,6 +192,7 @@ class MicroAppInteractions extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Realtime Poll</h2>
 								<blockquote>The Minted Challange Wrap seen above I worked on with Jeff Klein. I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns.</blockquote>
@@ -215,10 +217,10 @@ class MicroAppInteractions extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
-							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Cart & Share</h2>
-								<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>
+								<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working with the coolest visual designer around, Theo Arguna, I designed and developed the interactions shown below.</blockquote>
 							</div>
 						</div>
 						<div className="grid__row">
@@ -233,6 +235,7 @@ class MicroAppInteractions extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<blockquote>Our approach was an immersive one, to value interaction and interface but not more than the content itself. We helped Tegan & Sara create a brand based on two basic elements; their highly curated content and the enthusiastic followers that make up their team. We avoided gimmicks by highlighting the content.</blockquote>
 							</div>
@@ -255,9 +258,10 @@ class MicroAppInteractions extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Places Nearby</h2>
-								<blockquote>Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. We later created a generic "self serve" component in our product. Anyone with an account could add this to a card. I worked on the motion and interaction here while working directly with the Google API.</blockquote>
+								<blockquote>Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. We later created a generic component in our product so that anyone with a wrap account could add this to a card. I worked on the motion and interaction here while working directly with the API.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -277,6 +281,7 @@ class MicroAppInteractions extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="">Starry Night</h2>
 								<blockquote>Partnering with Salesforce Trailblazers we created a lead generation form to collect leads at their international conference in San Francisco. I worked on the interactive splash screen featuring a starry night sky. This aspirational backdrop helped connect with the trailblazers boosting the conversion rate on the form.</blockquote>

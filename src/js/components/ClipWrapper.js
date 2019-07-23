@@ -63,10 +63,10 @@ export default class ClipWrapper extends Component {
 						<text width="96" dangerouslySetInnerHTML={{__html: textPath }}></text>
 					</svg>*/}
 					
-					<h7 className="uppercase no-mb">{name}</h7>
+					{/*<h6 className="uppercase no-mb">{name.split('')[0]}</h6>*/}
+					{<h7 className="uppercase no-mb">{name}</h7>}
 					<hr/>
 					{/*<h5 className="no-mb" style={logoStyle}><i className="iconcss icon-caret-right"/></h5>*/}
-					{/*<h7 className="uppercase no-mb" style={logoStyle}>{activeSection}</h7>*/}
 				</div>
 
 				<NavToggle/>

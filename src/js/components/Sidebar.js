@@ -5,6 +5,8 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import { openSidebar, closeSidebar } from '../actions/sidebar'
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+
 import createNewId from '../services/createNewId'
 
 import pad from '../services/pad'
@@ -64,6 +66,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	openSidebar: () => dispatch(openSidebar()),
 	closeSidebar: () => dispatch(closeSidebar()),
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)
