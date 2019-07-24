@@ -65,6 +65,8 @@ class Home extends Component {
 				href: "/american-made",
 				tags: [ "UI", "Interactive" ],
 				img: "../assets/img/american-made/banner.gif"
+				aspectRatioWidth: 1,
+				aspectRatioHeight: 1,
 			},
 			{
 				name: "V.ai Player",
@@ -76,7 +78,9 @@ class Home extends Component {
 				name: "Translator",
 				href: "/translator",
 				tags: [ "UX", "Design System" ],
-				img: "../assets/img/translator/banner.png",
+				img: "../assets/img/translator/mam-01.png",
+				aspectRatioWidth: 16,
+				aspectRatioHeight: 9,
 			},
 			{
 				name: "Micro App Interactions",
@@ -137,9 +141,10 @@ class Home extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__md"/>
+							<p className="no-mb">{splitWord("02")}</p>
 							<h2>{splitWord("Form & Function")}</h2>
 							<blockquote>
-								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends or cycling.`)}
 							</blockquote>
 							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
@@ -148,21 +153,21 @@ class Home extends Component {
 							</h6>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-4">
+								<div className="grid__item grid__item--col-6">
 									<div className="spacer spacer__sm"/>
 									<Image src="../assets/img/lands-end-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 								</div>
-								<div className="grid__item grid__item--col-4">
-									<div className="spacer spacer__lg"/>
+								<div className="grid__item grid__item--col-6">
+									<div className="spacer spacer__md"/>
 									<Image src="../assets/img/me-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 									<div className="spacer spacer__md"/>
 								</div>
-								<div className="grid__item grid__item--col-4">
+								{/*<div className="grid__item grid__item--col-4">
 									<div className="spacer spacer__md"/>
 									<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>
+								</div>*/}
 							</div>
 						</div>
 						{/*<div className="grid__item grid__item--col-2 grid__item--col-4-medium">
@@ -191,7 +196,8 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__sm"/>
-							{<h2>{splitWord("Visual & Motion")}</h2>}
+							<p className="no-mb">{splitWord("03")}</p>
+							<h2>{splitWord("Visual & Motion")}</h2>
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 							</blockquote>
@@ -207,7 +213,7 @@ class Home extends Component {
 								<Image src={projects[0].img} aspectRatioWidth={1} aspectRatioHeight={1}/>
 							</ProjectCard>
 							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
-								<Image src={projects[2].img} aspectRatioWidth={2} aspectRatioHeight={1}/>
+								<Image src={projects[2].img} aspectRatioWidth={projects[2].aspectRatioWidth} aspectRatioHeight={projects[2].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[4].name} href={projects[4].href} tags={projects[4].tags}>
 								<Image src={projects[4].img} aspectRatioWidth={projects[4].aspectRatioWidth} aspectRatioHeight={projects[4].aspectRatioHeight}/>

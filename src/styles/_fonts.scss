@@ -229,17 +229,17 @@
 	url('../fonts/Moderat/Moderat-Regular.svg#codropsicons') format('svg');
 }
 
-// @font-face {
-// 	font-family: 'Moderat';
-// 	font-weight: 800;
-// 	font-style: normal;
-// 	src: url('../fonts/Moderat/Moderat-Black.eot');
-// 	src: url('../fonts/Moderat/Moderat-Black.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/Moderat/Moderat-Black.woff2') format('woff2'), 
-// 	url('../fonts/Moderat/Moderat-Black.woff') format('woff'), 
-// 	url('../fonts/Moderat/Moderat-Black.ttf') format('truetype'),
-// 	url('../fonts/Moderat/Moderat-Black.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'Moderat';
+	font-weight: 800;
+	font-style: normal;
+	src: url('../fonts/Moderat/Moderat-Black.eot');
+	src: url('../fonts/Moderat/Moderat-Black.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Moderat/Moderat-Black.woff2') format('woff2'), 
+	url('../fonts/Moderat/Moderat-Black.woff') format('woff'), 
+	url('../fonts/Moderat/Moderat-Black.ttf') format('truetype'),
+	url('../fonts/Moderat/Moderat-Black.svg#codropsicons') format('svg');
+}
 
 @font-face {
 	font-family: 'Apercu Pro';

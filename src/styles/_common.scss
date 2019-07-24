@@ -86,6 +86,10 @@ section {
 		// }
 	}
 
+	p {
+		transform: translateX(-30px);
+	}
+
 	.spacer {
 		&__sm {
 			min-height: 60px;

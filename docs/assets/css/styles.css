@@ -70,6 +70,13 @@ table {
   src: url("../fonts/Moderat/Moderat-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Moderat/Moderat-Regular.woff2") format("woff2"), url("../fonts/Moderat/Moderat-Regular.woff") format("woff"), url("../fonts/Moderat/Moderat-Regular.ttf") format("truetype"), url("../fonts/Moderat/Moderat-Regular.svg#codropsicons") format("svg"); }
 
 @font-face {
+  font-family: 'Moderat';
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/Moderat/Moderat-Black.eot");
+  src: url("../fonts/Moderat/Moderat-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Moderat/Moderat-Black.woff2") format("woff2"), url("../fonts/Moderat/Moderat-Black.woff") format("woff"), url("../fonts/Moderat/Moderat-Black.ttf") format("truetype"), url("../fonts/Moderat/Moderat-Black.svg#codropsicons") format("svg"); }
+
+@font-face {
   font-family: 'Apercu Pro';
   font-weight: 800;
   font-style: normal;
@@ -112,6 +119,9 @@ table {
 
 .icon-logo:before {
   content: "\EA03"; }
+
+.icon-arrow-right-thin:before {
+  content: "\EA04"; }
 
 .grid {
   display: -ms-flexbox;
@@ -279,7 +289,6 @@ h7 {
 
 p {
   font-family: "Moderat", sans-serif;
-  color: #595358;
   font-size: 18px;
   line-height: 1.5;
   white-space: pre-line;
@@ -359,6 +368,9 @@ section {
   section .side-scroller {
     padding: 0 72px;
     background: linear-gradient(to left, #fbfdfa, rgba(251, 253, 250, 0) 10%); }
+  section p {
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px); }
   section .spacer__sm {
     min-height: 60px; }
   section .spacer__md {
@@ -1968,13 +1980,14 @@ section p span > span, section blockquote span > span {
     transform: translate3d(0, 12px, 0); }
   .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line {
     background-color: #131112;
-    opacity: 1; }
+    opacity: 1;
+    height: 2px; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:first-child {
-      transform: translate3d(2px, 0px, 0) rotate(135deg) scaleX(0.4); }
+      transform: translate3d(3px, 2px, 0) rotate(135deg) scaleX(0.4); }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:nth-child(2) {
       opacity: 0; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:last-child {
-      transform: translate3d(2px, -2px, 0) rotate(45deg) scaleX(0.4); }
+      transform: translate3d(3px, -2px, 0) rotate(45deg) scaleX(0.4); }
   .nav-toggle--menuOpen .nav-toggle__abbreviation, .nav-toggle--menuOpen .nav-toggle__count {
     opacity: 0; }
   .nav-toggle--menuOpen .nav-toggle__abbreviation {
