@@ -289,7 +289,7 @@ h7 {
 
 p {
   font-family: "Moderat", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   white-space: pre-line;
   margin-bottom: 24px; }
@@ -1980,14 +1980,13 @@ section p span > span, section blockquote span > span {
     transform: translate3d(0, 12px, 0); }
   .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line {
     background-color: #131112;
-    opacity: 1;
-    height: 2px; }
+    opacity: 1; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:first-child {
-      transform: translate3d(3px, 2px, 0) rotate(135deg) scaleX(0.4); }
+      transform: translate3d(3px, 0px, 0) rotate(135deg) scaleX(0); }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:nth-child(2) {
       opacity: 0; }
     .nav-toggle--menuOpen .nav-toggle__hamburger .nav-toggle__line:last-child {
-      transform: translate3d(3px, -2px, 0) rotate(45deg) scaleX(0.4); }
+      transform: translate3d(3px, -2px, 0) rotate(45deg) scaleX(0); }
   .nav-toggle--menuOpen .nav-toggle__abbreviation, .nav-toggle--menuOpen .nav-toggle__count {
     opacity: 0; }
   .nav-toggle--menuOpen .nav-toggle__abbreviation {
@@ -2659,6 +2658,19 @@ section p span > span, section blockquote span > span {
     font-size: 24px; } }
 
 @media screen and (max-width: 480px) {
+  h1 {
+    font-size: 48px; }
+  h2 {
+    font-size: 34px; }
+  h3 {
+    font-size: 26px; }
+  h4 {
+    font-size: 21px; }
+  blockquote {
+    font-size: 19px;
+    margin-bottom: 21px; } }
+
+@media screen and (max-width: 320px) {
   h1 {
     font-size: 38px; }
   h2 {

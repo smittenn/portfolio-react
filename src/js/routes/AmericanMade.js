@@ -54,8 +54,8 @@ class AmericanMade extends Component {
 				"overview",
 				"about",
 				"details",
-				"cinemagraphs",
 				"preloader",
+				"cinemagraphs",
 				"navigation",
 				"video-gallery",
 				"parallax",
@@ -92,7 +92,7 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/american-made/output.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
 					backgroundSize: this.props.isMobile ? 'cover' : '100% 102%',
 					backgroundPosition: 'center',
 				}}
@@ -172,31 +172,6 @@ class AmericanMade extends Component {
 					</div>
 				</ScrollSection>
 
-				<ScrollSection 
-				black 
-				name={sections[3]} 
-				sections={sections} 
-				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{"Cinemagraphs"}</h2> 
-								<blockquote>{"To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
-						<div className="grid__item grid__item--col-7 grid__item--col-11-medium">
-							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-						<div className="grid__item grid__item--col-7 grid__item--col-11-medium">
-							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</SideScroller>
-				</ScrollSection>
-
 				{/*<ScrollSection 
 				name={sections[4]} 
 				onSetActive={() => { this.setActiveSection(4); }} 
@@ -215,12 +190,13 @@ class AmericanMade extends Component {
 				</ScrollSection>*/}
 
 				<ScrollSection 
-				name={sections[4]} 
+				name={sections[3]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Preloader</h2> 
 								<blockquote>Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”.</blockquote>
@@ -228,11 +204,39 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<CodepenEmbed slug="RyGNYm" title="Preloader: American Made Film Site" height={720} handle="erchsm"/>
 						</div>
 					</div>
 				</ScrollSection>
+
+
+				<ScrollSection 
+				black 
+				name={sections[4]} 
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(4); }}>
+					<div className="grid">
+						<div className="grid__row">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>{"Cinemagraphs"}</h2> 
+								<blockquote>{"To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
+							</div>
+						</div>
+					</div>
+					<SideScroller>
+						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+					</SideScroller>
+				</ScrollSection>
+
 
 				<ScrollSection 
 				name={sections[5]} 

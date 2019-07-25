@@ -116,6 +116,30 @@
 }
 
 
+@media screen and (max-width: $bp-small) {
+	h1 {
+		font-size: 48px;
+	}
+
+	h2 {
+		font-size: 34px;
+	}
+
+	h3 {
+		font-size: 26px;
+	}
+
+	h4 {
+		font-size: 21px;
+	}
+	
+	blockquote {
+		font-size: 19px;
+		margin-bottom: 21px;
+	}
+}
+
+
 @media screen and (max-width: $bp-xsmall) {
 	h1 {
 		font-size: 38px;
