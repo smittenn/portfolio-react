@@ -63,6 +63,13 @@ table {
   src: url("../fonts/Campton/Campton-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Campton/Campton-Bold.woff2") format("woff2"), url("../fonts/Campton/Campton-Bold.woff") format("woff"), url("../fonts/Campton/Campton-Bold.ttf") format("truetype"), url("../fonts/Campton/Campton-Bold.svg#codropsicons") format("svg"); }
 
 @font-face {
+  font-family: 'Futura Maxi';
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/FuturaMaxi/FuturaMaxi-Bold.eot");
+  src: url("../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2") format("woff2"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.woff") format("woff"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf") format("truetype"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons") format("svg"); }
+
+@font-face {
   font-family: 'Moderat';
   font-weight: 400;
   font-style: normal;
@@ -239,7 +246,7 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 
 h1, h2, h3, h4, h5, h6, h7 {
   position: relative;
-  font-family: "Circular Std", sans-serif;
+  font-family: "Futura Maxi", sans-serif;
   font-weight: 800; }
 
 h5, h6, h7 {
@@ -263,12 +270,12 @@ h2 {
   letter-spacing: -0.012em; }
 
 h3 {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.2;
   margin-bottom: 36px; }
 
 h4 {
-  font-size: 30px;
+  font-size: 26px;
   line-height: 1.2;
   margin-bottom: 24px; }
 
@@ -2265,7 +2272,7 @@ section p span > span, section blockquote span > span {
   background: #232021; }
 
 [class*="react-sandbox-editor"].sandbox__tab {
-  font-family: "Circular Std", sans-serif; }
+  font-family: "Futura Maxi", sans-serif; }
   [class*="react-sandbox-editor"].sandbox__tab:hover {
     color: #ff3636; }
 
@@ -2659,7 +2666,7 @@ section p span > span, section blockquote span > span {
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 48px; }
+    font-size: 40px; }
   h2 {
     font-size: 34px; }
   h3 {
@@ -2672,7 +2679,7 @@ section p span > span, section blockquote span > span {
 
 @media screen and (max-width: 320px) {
   h1 {
-    font-size: 38px; }
+    font-size: 36px; }
   h2 {
     font-size: 34px; }
   h3 {

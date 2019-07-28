@@ -21,6 +21,7 @@ import SideScroller from "../components/SideScroller"
 import TextLink from "../components/TextLink"
 
 import Image from "../components/Image"
+import iFrame from "../components/iFrame"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -98,7 +99,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of the Barry Seal.`]}
+					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of Barry Seal.`]}
 					/>
 				</ScrollSection>
 
@@ -246,6 +247,7 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Runway Navigation</h2>
 								<blockquote>I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
@@ -253,7 +255,8 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<CodepenEmbed slug="qoQajr" title="Navigation: American Made Film Site" height={625} handle="erchsm"/>
 						</div>
 					</div>
@@ -266,6 +269,7 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Video Gallery</h2>
 								<blockquote>To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content.</blockquote>
@@ -273,7 +277,8 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<CodepenEmbed slug="MGedbG" title="Video Gallery: American Made Film Site" height={625} handle="erchsm"/>
 						</div>
 					</div>
@@ -287,6 +292,7 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Parallax Story</h2>
 								<blockquote>In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
@@ -295,7 +301,8 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<CodepenEmbed slug="ZoBVbY" title="Story: American Made Film Site" height={625} handle="erchsm"/>
 						</div>
 					</div>
@@ -308,16 +315,19 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(8); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Mobile First Design</h2>
+								<h2>Mobile</h2>
 								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
-							<Image src="../assets/img/american-made/mobile.svg" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							{/*<Image src="../assets/img/american-made/mobile.svg" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
 							{/*<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
+							{<iFrame src="../assets/img/american-made/mobile.svg"/>}
 						</div>
 					</div>
 				</ScrollSection>
@@ -330,6 +340,7 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(9); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">Interactive Map</h2>
 								<h3>“Fly With Barry”</h3>
@@ -338,7 +349,8 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{/*<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
 						</div>
 					</div>

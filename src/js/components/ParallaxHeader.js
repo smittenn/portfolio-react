@@ -38,7 +38,7 @@ class ParallaxHeader extends Component {
 
 
 	handleScroll = (event) => {
-		(document.body.scrollTop > (window.innerHeight / 4)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
+		(document.body.scrollTop > (window.innerHeight)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
 		// this.setState({
 		// 	scrollAmount: window.pageYOffset
 		// });

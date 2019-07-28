@@ -157,6 +157,7 @@ class Translator extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .40`,
 					backgroundSize: `60%`,
 					backgroundPosition: `100% 40%`,
+					background: `linear-gradient(45deg, #3C5D78 50%, #426581 50%)`,
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
