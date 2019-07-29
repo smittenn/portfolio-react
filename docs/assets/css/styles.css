@@ -149,7 +149,8 @@ table {
     height: 100%;
     left: auto;
     opacity: 0.4;
-    pointer-events: none; }
+    pointer-events: none;
+    display: none; }
   .grid__line {
     color: #dededc;
     border-right: solid 1px;
@@ -253,14 +254,14 @@ h5, h6, h7 {
   font-family: "Campton", sans-serif; }
 
 h1 {
-  font-size: 96px;
+  font-size: 90px;
   line-height: 1.3;
   margin-left: -5px;
   margin-bottom: 40px;
   letter-spacing: -0.012em; }
   h1 .outline {
     color: transparent;
-    -webkit-text-stroke: 1px #fbfdfa; }
+    -webkit-text-stroke: 1px #f8fbf7; }
 
 h2 {
   font-size: 84px;
@@ -324,7 +325,7 @@ html {
   background: #131112; }
 
 body {
-  background: #fbfdfa;
+  background: #f8fbf7;
   -webkit-overflow-scrolling: touch;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -339,6 +340,7 @@ hr {
   background: #131112;
   height: 1px;
   width: 60px;
+  min-width: 60px;
   border: 0;
   display: inline-block; }
 
@@ -353,7 +355,7 @@ video, iframe {
   background: transparent; }
 
 section {
-  padding: 108px 0;
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
   -ms-flex-direction: column;
@@ -363,7 +365,7 @@ section {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #fbfdfa;
+  background-color: #f8fbf7;
   background-blend-mode: multiply;
   background-size: cover;
   background-position: 25% 25%;
@@ -374,7 +376,7 @@ section {
     width: 100%; }
   section .side-scroller {
     padding: 0 72px;
-    background: linear-gradient(to left, #fbfdfa, rgba(251, 253, 250, 0) 10%); }
+    background: linear-gradient(to left, #f8fbf7, rgba(248, 251, 247, 0) 10%); }
   section p {
     -ms-transform: translateX(-30px);
     transform: translateX(-30px); }
@@ -389,10 +391,10 @@ section {
   background-color: #131112; }
 
 .scrolling-section--black h1, .scrolling-section--black h2, .scrolling-section--black h3, .scrolling-section--black h4, .scrolling-section--black h5, .scrolling-section--black h6, .scrolling-section--black h7, .scrolling-section--black p, .scrolling-section--black blockquote, .scrolling-section--black a {
-  color: #fbfdfa; }
+  color: #f8fbf7; }
 
 .scrolling-section--black hr {
-  background-color: #fbfdfa; }
+  background-color: #f8fbf7; }
 
 .scrolling-section--black .grid--lines {
   opacity: .06; }
@@ -401,7 +403,7 @@ section {
   background: linear-gradient(to left, #131112, rgba(19, 17, 18, 0) 10%); }
 
 .scrolling-section--black text {
-  fill: #fbfdfa; }
+  fill: #f8fbf7; }
 
 .scrolling-section--grey section {
   background-color: #F4F4F0; }
@@ -427,30 +429,28 @@ h1 span, h2 span, h3 span, p span, blockquote span {
 .logo {
   position: fixed;
   pointer-events: auto;
+  top: 63px;
+  width: 72px;
+  height: calc(100% - 126px);
   left: 0px;
   border: none;
-  display: none;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-align: center;
   align-items: center;
+  display: none;
   z-index: 999; }
   .logo hr {
-    margin: 6px 18px; }
+    margin: 6px 18px;
+    width: 100%; }
   .active-section .logo {
     display: -ms-flexbox;
     display: flex; }
-  .logo--top {
-    top: 36px;
-    width: 72px;
-    left: 0px; }
-  .logo--bottom {
+  .logo__bottom {
     -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    -ms-transform-origin: 60px 60px;
-    transform-origin: 60px 60px;
-    bottom: 72px;
-    height: 72px; }
+    transform: rotate(-90deg); }
   .logo i {
     margin: 0 12px; }
 
@@ -1620,7 +1620,7 @@ section p span > span, section blockquote span > span {
     z-index: 9999; }
   .cursor__outer {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-    border: solid 1px #fbfdfa;
+    border: solid 1px #f8fbf7;
     width: 40px;
     height: 40px;
     -ms-transform: translate(-50%, -50%);
@@ -1630,10 +1630,10 @@ section p span > span, section blockquote span > span {
     transition: width cubic-bezier(0.19, 1, 0.22, 1) 0.6s, height cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
     height: 9px;
     width: 9px;
-    background: #fbfdfa;
+    background: #f8fbf7;
     border-radius: 50%; }
   .cursor__line {
-    background: #fbfdfa;
+    background: #f8fbf7;
     height: 1px;
     width: 12px; }
   .cursor--visible {
@@ -1666,16 +1666,16 @@ section p span > span, section blockquote span > span {
     overflow: hidden;
     transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
     .nav-takeover__main > div {
-      -ms-flex: .6;
-      flex: .6; }
+      -ms-flex: .666;
+      flex: .666; }
     .nav-takeover__main .nav-takeover__panels {
-      -ms-flex: .4;
-      flex: .4; }
+      -ms-flex: .333;
+      flex: .333; }
   .nav-takeover__panel {
-    background: #fbfdfa;
+    background: #f8fbf7;
     pointer-events: auto;
     position: absolute;
-    width: calc(40%);
+    width: calc(33.333%);
     right: 0;
     height: 100%;
     overflow-x: hidden;
@@ -1709,7 +1709,7 @@ section p span > span, section blockquote span > span {
   .nav-takeover__line-container {
     position: absolute;
     width: 72px;
-    background: #fbfdfa;
+    background: #f8fbf7;
     border-left: solid 1px rgba(222, 222, 220, 0.6);
     right: 0;
     top: 0;
@@ -1916,10 +1916,9 @@ section p span > span, section blockquote span > span {
 .nav-toggle {
   position: fixed;
   right: 0;
-  top: 24px;
-  width: 73px;
+  top: 36px;
+  width: 72px;
   pointer-events: auto;
-  height: 120px;
   display: none;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1968,9 +1967,9 @@ section p span > span, section blockquote span > span {
     .nav-toggle__line:first-child, .nav-toggle__line:last-child {
       opacity: 0; }
   .scrolling-section--black .nav-toggle .nav-toggle__line {
-    background-color: #fbfdfa; }
+    background-color: #f8fbf7; }
   .scrolling-section--black .nav-toggle .nav-toggle__abbreviation, .scrolling-section--black .nav-toggle .nav-toggle__count {
-    color: #fbfdfa; }
+    color: #f8fbf7; }
   .nav-toggle--hovering .nav-toggle__hamburger {
     height: 18px; }
   .nav-toggle--hovering .nav-toggle__line {
@@ -2385,11 +2384,11 @@ section p span > span, section blockquote span > span {
     width: 100%;
     animation: drawInOut cubic-bezier(0.19, 1, 0.22, 1) 3s infinite; }
   .scrolling-section--black .scroll-arrow h1, .scrolling-section--black .scroll-arrow h2, .scrolling-section--black .scroll-arrow h3, .scrolling-section--black .scroll-arrow h4, .scrolling-section--black .scroll-arrow h5, .scrolling-section--black .scroll-arrow h6 {
-    color: #fbfdfa; }
+    color: #f8fbf7; }
   .scrolling-section--black .scroll-arrow .scroll-arrow__seperator-container {
-    background: rgba(251, 253, 250, 0.24); }
+    background: rgba(248, 251, 247, 0.24); }
   .scrolling-section--black .scroll-arrow .scroll-arrow__seperator {
-    background: #fbfdfa; }
+    background: #f8fbf7; }
   .scroll-arrow--hidden h1 span, .scroll-arrow--hidden h2 span, .scroll-arrow--hidden h3 span, .scroll-arrow--hidden h4 span, .scroll-arrow--hidden h5 span, .scroll-arrow--hidden h6 span {
     opacity: 0;
     -ms-transform: translateY(12px);
@@ -2446,7 +2445,7 @@ section p span > span, section blockquote span > span {
       pointer-events: none; }
       .sidebar__item a.active .sidebar__dash {
         margin: 0;
-        width: 34px;
+        width: 36px;
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transition-duration: 0.3s;
         transition-property: width; }
@@ -2468,20 +2467,17 @@ section p span > span, section blockquote span > span {
   .sidebar__label {
     position: relative;
     color: #131112;
-    padding: 0 0 0 40px;
+    padding: 0 0 0 24px;
     margin: 0;
     opacity: 0;
     display: inline-block;
     white-space: nowrap; }
   .sidebar__dash {
     margin: 0 0 0 16px;
-    width: 16px;
+    width: 18px;
     height: 1px;
-    background-color: #131112;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 60px; }
+    background: #131112;
+    display: inline-block; }
   .sidebar__border {
     display: block;
     position: absolute;
@@ -2495,16 +2491,11 @@ section p span > span, section blockquote span > span {
     bottom: auto;
     top: 0;
     display: none; }
-  .scrolling-section--black .sidebar .sidebar__dash {
-    background: #fbfdfa; }
   .sidebar--open {
     min-width: 36vw; }
-    .sidebar--open .sidebar__number, .sidebar--open .sidebar__label {
-      color: #fbfdfa; }
     .sidebar--open .sidebar__inner {
       width: 50%;
-      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s;
-      background: #131112; }
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s 0.3s; }
       .sidebar--open .sidebar__inner .sidebar__item {
         height: 60px;
         transition: height cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s; }
@@ -2514,16 +2505,19 @@ section p span > span, section blockquote span > span {
           opacity: 1;
           transform: translate3d(0, 0, 0); }
         .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
-          background: rgba(251, 253, 250, 0.06); }
+          background: rgba(19, 17, 18, 0.06); }
         .sidebar--open .sidebar__inner .sidebar__item .sidebar__dash {
-          background: #fbfdfa;
-          width: 34px;
+          width: 36px;
           margin: 0; }
         .sidebar--open .sidebar__inner .sidebar__item .sidebar__label {
           opacity: 1; }
         .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
           opacity: 1;
           width: 100%; }
+  .scrolling-section--black .sidebar .sidebar__dash {
+    background: #f8fbf7; }
+  .scrolling-section--black .sidebar--open .sidebar__inner .sidebar__border {
+    background: rgba(248, 251, 247, 0.06); }
   @media screen and (max-width: 800px) {
     .sidebar {
       width: 24px; }
@@ -2576,9 +2570,9 @@ section p span > span, section blockquote span > span {
     transform-origin: right;
     transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.9s; }
   .scrolling-section--black .text-link .text-link__line-container {
-    background: rgba(251, 253, 250, 0.24); }
+    background: rgba(248, 251, 247, 0.24); }
   .scrolling-section--black .text-link .text-link__line {
-    background: #fbfdfa; }
+    background: #f8fbf7; }
   .text-link.text-link--hide-underline .text-link__line-container {
     background: transparent; }
   .text-link--hovered .text-link__line {

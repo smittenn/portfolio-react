@@ -19,11 +19,11 @@ $baseclass: nav-takeover;
 		transition: all $easing1 $duration-medium;
 
 		> div {
-			flex: .6;
+			flex: .666;
 		}
 
 		.#{$baseclass}__panels {
-			flex: .4;
+			flex: .333;
 		}
 	}
 
@@ -31,7 +31,7 @@ $baseclass: nav-takeover;
 		background: $brand-white;
 		pointer-events: auto;
 		position: absolute;
-		width: calc(40%);
+		width: calc(33.333%);
 		right: 0;
 		height: 100%;
 		overflow-x: hidden;

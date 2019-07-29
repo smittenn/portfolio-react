@@ -200,11 +200,12 @@ class MicroAppInteractions extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Video src="assets/img/card-components/minted.mp4"/>
 						</div>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<Image src="assets/img/card-components/minted-hand.jpg" aspectRatioWidth={4} aspectRatioHeight={5}/>
+						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
+							<Image src="assets/img/card-components/minted-hand.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -224,10 +225,11 @@ class MicroAppInteractions extends Component {
 							</div>
 						</div>
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 								<Video src="assets/img/card-components/share-animation.mp4"/>
 							</div>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 								<Image src="assets/img/card-components/cart-animation.gif" aspectRatioWidth={4} aspectRatioHeight={3}/>
 							</div>
 						</div>
@@ -289,7 +291,8 @@ class MicroAppInteractions extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
 							{<CodepenEmbed slug="BLbpoZ" title="Starry Night" height={720} handle="erchsm"/>}
 						</div>

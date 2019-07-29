@@ -92,8 +92,8 @@ class Translator extends Component {
 				<ScrollSection 
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/translator/banner.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundImage: `url(../assets/img/translator/banner.gif)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .0`,
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
 				}}
@@ -157,7 +157,7 @@ class Translator extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .40`,
 					backgroundSize: `60%`,
 					backgroundPosition: `100% 40%`,
-					background: `linear-gradient(45deg, #3C5D78 50%, #426581 50%)`,
+					background: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">

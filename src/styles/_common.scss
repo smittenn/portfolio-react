@@ -29,6 +29,7 @@ hr {
 	background: $brand-black;
 	height: 1px;
 	width: 60px;
+	min-width: 60px;
 	border: 0;
 	display: inline-block;
 }
@@ -47,7 +48,7 @@ video, iframe {
 }
 
 section {
-	padding: 108px 0;
+	padding: 120px 0;
 	position: relative;
 	overflow: hidden;
 	flex-direction: column;
@@ -167,32 +168,32 @@ h1, h2, h3, p, blockquote, {
 .logo {
 	position: fixed;
 	pointer-events: auto;
+	top: 63px;
+	width: 72px;
+	height:  calc(100% - 126px); 
 	left: 0px;
 	border: none;
-	display: none;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
+	display: none;
 	@include zIndexCloser();
 
 	hr {
 		margin: 6px 18px;
+		width: 100%;
 	}
 
 	.active-section & {
 		display: flex;
 	}
 
-	&--top {
-		top: 36px;
-		width: 72px;
-		left: 0px;
+	&__top {
 	}
 
-	&--bottom {
+	&__bottom {
 		transform: rotate(-90deg);
-		transform-origin: 60px 60px;
-		bottom: 72px; 
-		height: 72px; 
+		// transform-origin: 25% -135%;
 	}
 
 	i {

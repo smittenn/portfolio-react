@@ -44,7 +44,7 @@ $baseclass: sidebar;
 			&.active {
 				.sidebar__dash {
 					margin: 0;
-					width: 34px;
+					width: 36px;
 					transition-timing-function: $easing4;
 					transition-duration: $duration-fast;
 					transition-property: width;
@@ -76,7 +76,7 @@ $baseclass: sidebar;
 	&__label {
 		position: relative;
 		color: darken($brand-black, 0%);
-		padding: 0 0 0 40px;
+		padding: 0 0 0 24px;
 		margin: 0;
 		opacity: 0;
 		display: inline-block;
@@ -85,13 +85,13 @@ $baseclass: sidebar;
 
 	&__dash {
 		margin: 0 0 0 16px;
-		width: 16px;
+		width: 18px;
 		height: 1px;
-		background-color: darken($brand-black, 0%);
+		background: darken($brand-black, 0%);
 		display: inline-block;
-		position: absolute;
-		top: 50%;
-		left: 60px;
+		// position: absolute;
+		// top: 50%;
+		// left: 60px;
 		// transition: all $easing4 $duration-fast;
 	}
 
@@ -113,27 +113,13 @@ $baseclass: sidebar;
 	}
 
 
-	.#{$scrolling-section-classname}--black & {
-		.#{$baseclass}__dash {
-			background: $brand-white;
-		}
-	}
-
-
 	&--open {
-		// background: radial-gradient(circle at 500% 50%, rgba($brand-black,1), rgba($brand-black, 0));
-		// background: linear-gradient(to left, rgba($brand-black,.12) 60%, rgba($brand-black, 0));
 		min-width: 36vw;
-		// width: calc(16.667%);
-
-		.#{$baseclass}__number, .#{$baseclass}__label {
-			color: $brand-white;
-		}
 
 		.#{$baseclass}__inner {
 			width: 50%;
 			transition: all $easing4 $duration-fast $duration-fast;
-			background: $brand-black;
+			// background: $brand-black;
 
 			.#{$baseclass}__item {
 				height: 60px;
@@ -146,16 +132,14 @@ $baseclass: sidebar;
 				.#{$baseclass}__number {
 					opacity: 1;
 					transform: translate3d(0, 0, 0);
-					// transition: all $easing4 $duration-medium;
 				}
 
 				.#{$baseclass}__border {
-					background: rgba($brand-white, .06);
+					background: rgba($brand-black, .06);
 				}
 
 				.#{$baseclass}__dash {
-					background: $brand-white;
-					width: 34px;
+					width: 36px;
 					margin: 0;
 				}
 
@@ -168,6 +152,19 @@ $baseclass: sidebar;
 					opacity: 1;
 					width: 100%;
 					// transition: all $easing4 $duration-medium;
+				}
+			}
+		}
+	}
+
+	.#{$scrolling-section-classname}--black & {
+		.#{$baseclass}__dash {
+			background: $brand-white;
+		}
+		&--open {
+			.#{$baseclass}__inner {
+				.#{$baseclass}__border {
+					background: rgba($brand-white, .06);
 				}
 			}
 		}
