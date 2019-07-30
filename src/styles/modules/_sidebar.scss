@@ -2,7 +2,7 @@ $baseclass: sidebar;
 
 .#{$baseclass} {
 	height: 100vh;
-	width: 24px;
+	width: auto;
 	position: fixed;
 	pointer-events: auto;
 	display: none;
@@ -10,16 +10,17 @@ $baseclass: sidebar;
 	justify-content: flex-end;
 	right: 0;
 	top: 0px;
+	transition: all $duration-fast $easing4;
+	transform: translateX(62%);
 	@include zIndexCloser();
 
 	.active-section & {
 		display: flex;
 	}
 
-
 	&__inner {
-		margin-top: 108px;
-		width: 87px;
+		margin-top: 46px;
+		width: 100%;
 		padding: 0;
 		transition: all $easing4 $duration-fast
 	}
@@ -38,27 +39,26 @@ $baseclass: sidebar;
 			display: flex;
 			align-items: center;
 			border: none;
+			padding: 0 18px 0 0;
 			pointer-events: none;
-			// white-space: pre;
+
+			&:after {
+				content: '';
+				display: block;
+				margin-top: -2px;
+				margin-left: 6px;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: transparent;
+			}
 
 			&.active {
 				.sidebar__dash {
-					margin: 0;
-					width: 36px;
-					transition-timing-function: $easing4;
-					transition-duration: $duration-fast;
-					transition-property: width;
+					transform: scaleX(1);
 				}
 
-
 				&:after {
-					content: '';
-					display: block;
-					margin-top: -2px;
-					margin-left: 6px;
-					width: 6px;
-					height: 6px;
-					border-radius: 50%;
 					background: $brand-red;
 				}
 			}
@@ -67,7 +67,7 @@ $baseclass: sidebar;
 
 	&__number {
 		color: darken($brand-black, 0%);
-		margin: 0 24px;
+		margin: 0 18px;
 		opacity: 0;
 		transform: translate3d(32px, 0, 0);
 		display: inline-block;
@@ -76,7 +76,7 @@ $baseclass: sidebar;
 	&__label {
 		position: relative;
 		color: darken($brand-black, 0%);
-		padding: 0 0 0 24px;
+		padding: 0 0 0 18px;
 		margin: 0;
 		opacity: 0;
 		display: inline-block;
@@ -84,15 +84,15 @@ $baseclass: sidebar;
 	}
 
 	&__dash {
-		margin: 0 0 0 16px;
-		width: 18px;
+		margin: 0;
+		// margin: 0 0 0 16px;
+		width: 36px;
 		height: 1px;
 		background: darken($brand-black, 0%);
 		display: inline-block;
-		// position: absolute;
-		// top: 50%;
-		// left: 60px;
-		// transition: all $easing4 $duration-fast;
+		transform-origin: right;
+		transform: scaleX(0.5);
+		transition: all $easing4 $duration-fast;
 	}
 
 	&__border {
@@ -114,12 +114,11 @@ $baseclass: sidebar;
 
 
 	&--open {
-		min-width: 36vw;
+		transform: none;
+		transition: all $duration-fast $duration-fast $easing4;
 
 		.#{$baseclass}__inner {
-			width: 50%;
-			transition: all $easing4 $duration-fast $duration-fast;
-			// background: $brand-black;
+			background: $brand-white;
 
 			.#{$baseclass}__item {
 				height: 60px;
@@ -139,8 +138,7 @@ $baseclass: sidebar;
 				}
 
 				.#{$baseclass}__dash {
-					width: 36px;
-					margin: 0;
+					transform: scaleX(1);
 				}
 
 				.#{$baseclass}__label {
@@ -163,6 +161,8 @@ $baseclass: sidebar;
 		}
 		&--open {
 			.#{$baseclass}__inner {
+				background: $brand-black;
+
 				.#{$baseclass}__border {
 					background: rgba($brand-white, .06);
 				}
