@@ -244,7 +244,8 @@ class MicroAppInteractions extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{/*<IFrame src="//codepen.io/erchsm/embed/NRBOky/?default-tab=result"/>*/}
 							{<CodepenEmbed slug="NRBOky" title="Cart & Share Components" height={720} handle="erchsm"/>}
 						</div>
@@ -268,7 +269,8 @@ class MicroAppInteractions extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
 							{<CodepenEmbed slug="ENNdJd" title="Nearby Services Component" height={720} handle="erchsm"/>}
 						</div>

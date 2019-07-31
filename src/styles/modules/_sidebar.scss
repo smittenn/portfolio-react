@@ -116,9 +116,10 @@ $baseclass: sidebar;
 	&--open {
 		transform: none;
 		transition: all $duration-fast $duration-fast $easing4;
+		background: linear-gradient(-90deg, $brand-white, transparent);
 
 		.#{$baseclass}__inner {
-			background: $brand-white;
+			// background: $brand-white;
 
 			.#{$baseclass}__item {
 				height: 60px;
@@ -160,15 +161,22 @@ $baseclass: sidebar;
 			background: $brand-white;
 		}
 		&--open {
+			background: linear-gradient(-90deg, $brand-black, transparent);
 			.#{$baseclass}__inner {
-				background: $brand-black;
-
 				.#{$baseclass}__border {
 					background: rgba($brand-white, .06);
 				}
 			}
 		}
 	}
+
+	// .#{$scrolling-section-classname}--black:first-child & {
+	// 	&--open {
+	// 		.#{$baseclass}__inner {
+	// 			background: transparent;
+	// 		}
+	// 	}
+	// }
 
 
 	@media screen and (max-width: $bp-medium) {

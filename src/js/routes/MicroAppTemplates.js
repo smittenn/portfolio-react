@@ -109,6 +109,7 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
 								Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
@@ -122,10 +123,10 @@ class MicroAppTemplates extends Component {
 
 						</div>
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/app-templates/templates.jpg" aspectRatioWidth={7} aspectRatioHeight={4} />
+								<div className="grid__item grid__item--col-11">
+									<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
 								</div>
 							</div>
 							<div className="grid__row">
@@ -159,7 +160,7 @@ class MicroAppTemplates extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>UX/Visual Designer</blockquote>
@@ -168,11 +169,11 @@ class MicroAppTemplates extends Component {
 							<h6 className="uppercase">Date</h6>
 							<blockquote>Fall, 2015</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>Wrap Media</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
@@ -192,6 +193,7 @@ class MicroAppTemplates extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Templates</h2>
 								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
@@ -199,11 +201,12 @@ class MicroAppTemplates extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Video src="assets/img/app-templates/from-fb.mp4"/>
 						</div>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={7} aspectRatioHeight={11}/>
+							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={5} aspectRatioHeight={6}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -217,7 +220,7 @@ class MicroAppTemplates extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
-							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">Conference</h2>
 								{<h3>Modern Sans Family</h3>}
@@ -262,7 +265,7 @@ class MicroAppTemplates extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
-							{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">Lead Generation</h2>
 								{<h3>Bold Modern Family</h3>}
@@ -300,6 +303,7 @@ class MicroAppTemplates extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">Fashion Commerce</h2>
 								<h3>Modern Sans Family</h3>
@@ -345,6 +349,7 @@ class MicroAppTemplates extends Component {
 				onSetActive={() => { this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">Design Agency</h2>
 								<h3>Modern Sans Family</h3>

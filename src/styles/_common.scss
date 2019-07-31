@@ -194,6 +194,10 @@ h1, h2, h3, p, blockquote, {
 	&__bottom {
 		transform: rotate(-90deg) translateX(40%);
 		// transform-origin: 25% -135%;
+
+		h1, h2, h3, h4, h5, h6, h7 {
+			white-space: nowrap;
+		}
 	}
 
 	i {
