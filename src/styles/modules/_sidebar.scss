@@ -9,6 +9,7 @@ $baseclass: sidebar;
 	align-items: center;
 	justify-content: flex-end;
 	right: 0;
+	// left: 0;
 	top: 0px;
 	transition: all $duration-fast $easing4;
 	transform: translateX(62%);
@@ -57,10 +58,6 @@ $baseclass: sidebar;
 				.sidebar__dash {
 					transform: scaleX(1);
 				}
-
-				&:after {
-					background: $brand-red;
-				}
 			}
 		}
 	}
@@ -69,7 +66,6 @@ $baseclass: sidebar;
 		color: darken($brand-black, 0%);
 		margin: 0 18px;
 		opacity: 0;
-		transform: translate3d(32px, 0, 0);
 		display: inline-block;
 	}
 
@@ -91,6 +87,7 @@ $baseclass: sidebar;
 		background: darken($brand-black, 0%);
 		display: inline-block;
 		transform-origin: right;
+		// transform-origin: left;
 		transform: scaleX(0.5);
 		transition: all $easing4 $duration-fast;
 	}
@@ -115,11 +112,10 @@ $baseclass: sidebar;
 
 	&--open {
 		transform: none;
-		transition: all $duration-fast $duration-fast $easing4;
-		background: linear-gradient(-90deg, $brand-white, transparent);
+		transition: all $duration-fast $duration-fast $easing2;
+		background: linear-gradient(-90deg, $brand-white 40%, transparent);
 
 		.#{$baseclass}__inner {
-			// background: $brand-white;
 
 			.#{$baseclass}__item {
 				height: 60px;
@@ -127,6 +123,13 @@ $baseclass: sidebar;
 
 				a {
 					pointer-events: auto;
+
+					&.active {
+						&:after {
+							background: $brand-red;
+						}
+					}
+
 				}
 
 				.#{$baseclass}__number {
@@ -162,6 +165,7 @@ $baseclass: sidebar;
 		}
 		&--open {
 			background: linear-gradient(-90deg, $brand-black, transparent);
+
 			.#{$baseclass}__inner {
 				.#{$baseclass}__border {
 					background: rgba($brand-white, .06);

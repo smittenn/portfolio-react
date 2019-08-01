@@ -20,7 +20,7 @@
 }
 
 @keyframes drawInOut {
-	0%, 40% {
+	0%, 30% {
 		transform-origin: bottom;
 		transform: scaleY(1);
 	}
@@ -32,7 +32,7 @@
 		transform: scaleY(0);
 		transform-origin: top;
 	}
-	70%, 100% {
+	80%, 100% {
 		transform: scaleY(1);
 		transform-origin: top;
 	}

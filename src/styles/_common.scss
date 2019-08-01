@@ -182,14 +182,17 @@ h1, h2, h3, p, blockquote, {
 	hr {
 		margin: 6px 18px;
 		width: 100%;
+		transform: scaleX(0.5);
+		transform-origin: left;
 	}
 
 	.active-section & {
 		display: flex;
 	}
 
-	&__top {
-	}
+	// hr {
+	// 	transform: rotate(-90deg);
+	// }
 
 	&__bottom {
 		transform: rotate(-90deg) translateX(40%);

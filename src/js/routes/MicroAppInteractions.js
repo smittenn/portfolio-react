@@ -309,7 +309,7 @@ class MicroAppInteractions extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .5`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}/>

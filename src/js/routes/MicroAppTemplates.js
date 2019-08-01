@@ -91,7 +91,7 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .5`,
 					backgroundSize: (this.props.isMobile ? 'cover' : 'cover'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
@@ -202,10 +202,10 @@ class MicroAppTemplates extends Component {
 					</div>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<Video src="assets/img/app-templates/from-fb.mp4"/>
 						</div>
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={5} aspectRatioHeight={6}/>
 						</div>
 					</div>

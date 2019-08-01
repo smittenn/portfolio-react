@@ -67,7 +67,7 @@ $baseclass: nav-takeover;
 			transition: none;
 			width: auto;
 			min-width: 90px;
-			margin-bottom: 48px;
+			margin-bottom: 40px;
 			height: 60px;
 		}
 	}
@@ -106,7 +106,7 @@ $baseclass: nav-takeover;
 
 		.#{$baseclass}__arrow {
 			position: absolute;
-			margin-top: -110px;
+			margin-top: -100px;
 		}
 	}
 

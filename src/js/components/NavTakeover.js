@@ -84,7 +84,7 @@ class Nav extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(-1px, ' + (this.props.isMobile ? '72' : 108) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(-1px, ' + (this.props.isMobile ? 72 : 100) * (indexHovered + 0) + 'px, 0)',
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
@@ -128,11 +128,11 @@ class Nav extends Component {
 					to: "/translator",
 				},
 				{
-					name: "J&J Home",
+					name: "Home Intranet",
 					to: "/jnj-home",
 				},
 				{
-					name: "J&J MDC",
+					name: "Med Device Center",
 					to: "/jnj-mdc",
 				},
 				{
