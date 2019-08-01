@@ -89,7 +89,7 @@ class Vai extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `video player uses AI to identify people and products.`]}
+					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify people and products.`]}
 					/>
 				</ScrollSection>
 

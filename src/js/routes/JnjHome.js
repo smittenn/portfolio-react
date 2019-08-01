@@ -120,22 +120,19 @@ class JnjHome extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
-								We wanted a better way to J&J. So we made one. While our 128,000 colleagues around the world are building the future of healthcare, we're building a better J&J. 
+								The Home team dreamed of a better way to J&J. While J&J's 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J. 
 							</blockquote>
 							<blockquote className="mr">
-								But its not just about convenience and collaboration. It's about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. 
+								Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.  
 							</blockquote>
 							<blockquote className="mr">
-								We set out to create a more connected and productive environment that generates excitement about all of the innovative, groundbreaking work happening at J&J. 
-							</blockquote>
-							<blockquote className="mr">
-								We also wanted to build a centralized platform to house all the links and resources our peers use every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
+								Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
 							</blockquote>
 
 						</div>
 						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-11">
+								<div className="grid__item grid__item--col-11 grid__item--col-12-medium">
 									<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
 								</div>
 							</div>
@@ -217,7 +214,7 @@ class JnjHome extends Component {
 						</div>*/}
 						{/*<div className="grid__item grid__item--col-1  grid__item--hide-bp-medium"/>*/}
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/jnj-home/onboarding-kiosk-mock.png" aspectRatioWidth={3} aspectRatioHeight={2}/>
 						</div>
 					</div>

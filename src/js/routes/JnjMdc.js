@@ -118,6 +118,7 @@ class JnjMdc extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<blockquote className="drop-caps mr">
 								We sought to consolidate J&J's 250 websites across 6 medical device companies into a single platform that reflected the new J&J brand.
@@ -132,10 +133,9 @@ class JnjMdc extends Component {
 							</blockquote>
 
 						</div>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
 							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
+								<div className="grid__item grid__item--col-11 grid__item--col-12-medium">
 									<Image src="../assets/img/jnj-mdc/running-man-16x9.png" aspectRatioWidth={16} aspectRatioHeight={9} />
 								</div>
 							</div>
@@ -171,7 +171,7 @@ class JnjMdc extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>*/}
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Sr. Interaction Designer</blockquote>
@@ -180,7 +180,7 @@ class JnjMdc extends Component {
 							<h6 className="uppercase">Date</h6>
 							<blockquote>Fall, 2018</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>J&J Consumer</blockquote> 
 						</div>
@@ -208,6 +208,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Navigation</h2>
 								<blockquote>I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items.</blockquote>
@@ -215,7 +216,7 @@ class JnjMdc extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-nav.html"/>
 						</div>
 					</div>
@@ -223,12 +224,14 @@ class JnjMdc extends Component {
 
 
 				<ScrollSection 
+				grey
 				name={sections[4]}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="no-mb">HCP/Patient</h2>
 								<h3>Site Flipper</h3>
@@ -237,7 +240,7 @@ class JnjMdc extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper"/>
 						</div>
 					</div>
@@ -252,6 +255,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Taxonomy</h2>
 								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our partner's favorite tool as helped our stakeholders learn the site structure.</blockquote>
@@ -259,7 +263,7 @@ class JnjMdc extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html"/>
 						</div>
 					</div>
@@ -273,6 +277,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Buttons</h2>
 								<blockquote>I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.</blockquote>
@@ -280,7 +285,7 @@ class JnjMdc extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html"/>
 						</div>
 					</div>
@@ -295,6 +300,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Cards</h2>
 								<blockquote>Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew.</blockquote>
@@ -302,7 +308,7 @@ class JnjMdc extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
+						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-cards.html"/>
 						</div>
 					</div>

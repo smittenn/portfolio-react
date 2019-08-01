@@ -206,7 +206,7 @@ class MicroAppTemplates extends Component {
 							<Video src="assets/img/app-templates/from-fb.mp4"/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={5} aspectRatioHeight={6}/>
+							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={7} aspectRatioHeight={13}/>
 						</div>
 					</div>
 				</ScrollSection>

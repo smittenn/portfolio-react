@@ -8,11 +8,11 @@ $baseclass: sidebar;
 	display: none;
 	align-items: center;
 	justify-content: flex-end;
-	right: 0;
-	// left: 0;
+	// right: 0;
+	left: 0;
 	top: 0px;
 	transition: all $duration-fast $easing4;
-	transform: translateX(62%);
+	transform: translateX(-24%);
 	@include zIndexCloser();
 
 	.active-section & {
@@ -64,7 +64,7 @@ $baseclass: sidebar;
 
 	&__number {
 		color: darken($brand-black, 0%);
-		margin: 0 18px;
+		margin: 0 18px 0 24px;
 		opacity: 0;
 		display: inline-block;
 	}
@@ -86,8 +86,8 @@ $baseclass: sidebar;
 		height: 1px;
 		background: darken($brand-black, 0%);
 		display: inline-block;
-		transform-origin: right;
-		// transform-origin: left;
+		// transform-origin: right;
+		transform-origin: left;
 		transform: scaleX(0.5);
 		transition: all $easing4 $duration-fast;
 	}
@@ -112,8 +112,8 @@ $baseclass: sidebar;
 
 	&--open {
 		transform: none;
-		transition: all $duration-fast $duration-fast $easing2;
-		background: linear-gradient(-90deg, $brand-white 40%, transparent);
+		transition: all $duration-fast $duration-fast $easing3;
+		background: linear-gradient(90deg, $brand-white 40%, transparent);
 
 		.#{$baseclass}__inner {
 
@@ -164,7 +164,7 @@ $baseclass: sidebar;
 			background: $brand-white;
 		}
 		&--open {
-			background: linear-gradient(-90deg, $brand-black, transparent);
+			background: linear-gradient(90deg, $brand-black, transparent);
 
 			.#{$baseclass}__inner {
 				.#{$baseclass}__border {
@@ -184,7 +184,7 @@ $baseclass: sidebar;
 
 
 	@media screen and (max-width: $bp-medium) {
-		width: 24px;
+		// width: 24px;
 		// height: 100vh;
 
 		.#{$baseclass}__inner {
@@ -197,11 +197,11 @@ $baseclass: sidebar;
 
 
 		&.#{$baseclass}--open {
-			min-width: 100vw;
+			// min-width: 100vw;
 
 			.#{$baseclass}__inner {
 				// width: auto;
-				width: 80%;
+				// width: 80%;
 			}
 
 			.#{$baseclass}__item {

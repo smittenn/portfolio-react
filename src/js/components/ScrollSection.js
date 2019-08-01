@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import IntersectionVisible  from "react-intersection-visible"
+import IntersectionObserver  from "intersection-observer"
 
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"

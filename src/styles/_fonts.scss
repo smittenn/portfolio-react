@@ -132,17 +132,17 @@
 // 	url('../fonts/Averta/Averta-Regular.svg#codropsicons') format('svg');
 // }
 
-// @font-face {
-// 	font-family: 'Tiempos';
-// 	font-weight: 400;
-// 	font-style: normal;
-// 	src: url('../fonts/Tiempos/Tiempos-Regular.eot');
-// 	src: url('../fonts/Tiempos/Tiempos-Regular.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/Tiempos/Tiempos-Regular.woff2') format('woff2'), 
-// 	url('../fonts/Tiempos/Tiempos-Regular.woff') format('woff'), 
-// 	url('../fonts/Tiempos/Tiempos-Regular.ttf') format('truetype'),
-// 	url('../fonts/Tiempos/Tiempos-Regular.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'Financier Display';
+	font-weight: 800;
+	font-style: normal;
+	src: url('../fonts/FinancierDisplay/FinancierDisplay-Bold.eot');
+	src: url('../fonts/FinancierDisplay/FinancierDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.woff2') format('woff2'), 
+	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.woff') format('woff'), 
+	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.ttf') format('truetype'),
+	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.svg#codropsicons') format('svg');
+}
 
 
 @font-face {
