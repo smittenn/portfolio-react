@@ -94,7 +94,7 @@ class AmericanMade extends Component {
 				style={{ 
 					backgroundImage: `url(../assets/img/american-made/output.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
-					backgroundSize: this.props.isMobile ? 'cover' : '100% 102%',
+					backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
 					backgroundPosition: 'center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
@@ -199,6 +199,7 @@ class AmericanMade extends Component {
 						<div className="grid__row">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<p className="mb0">04.</p>
 								<h2>Preloader</h2> 
 								<blockquote>Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”.</blockquote>
 							</div>
@@ -342,7 +343,7 @@ class AmericanMade extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Interactive Map</h2>
+								<h2 className="mb0">Interactive Map</h2>
 								<h3>“Fly With Barry”</h3>
 								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America.</blockquote>
 							</div>

@@ -25,9 +25,9 @@ export default class GridLines extends Component {
 		return (
 			<div className="grid grid--lines">
 				{/*<div className="grid__item--col-2 grid__item--hide-bp-medium grid__line"/>*/}
-				<div className="grid__item--col-3 grid__item--col-3-medium grid__line"/>
-				<div className="grid__item--col-3 grid__item--col-3-medium grid__line"/>
-				{<div className="grid__item--col-3 grid__item--col-3-medium grid__line"/>}
+				<div className="grid__item--col-1 grid__item--col-3-medium grid__line"/>
+				<div className="grid__item--col-5 grid__item--col-3-medium grid__line"/>
+				{<div className="grid__item--col-5 grid__item--col-3-medium grid__line"/>}
 				{/*<div className="grid__item--col-2 grid__item--hide-bp-medium grid__line"/>*/}
 				{/*<div className="grid__item--col-2 grid__item--hide-bp-medium grid__line"/>*/}
 				<div className="grid__item--col-3 grid__item--col-3-medium grid__line"/>

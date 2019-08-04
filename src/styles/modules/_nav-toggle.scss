@@ -40,10 +40,9 @@ $baseclass: nav-toggle;
 		display: flex;
 	}
 
-
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
 		transition: all $easing2 0.3s;
-		letter-spacing: $letter-spacing-lg;
+		letter-spacing: $letter-spacing-xl;
 		margin: 0;
 	}
 
@@ -105,10 +104,6 @@ $baseclass: nav-toggle;
 	.#{$scrolling-section-classname}--black & {
 		.#{$baseclass}__line {
 			background-color: $brand-white;
-		}
-		.#{$baseclass}__abbreviation, .#{$baseclass}__count {
-			color: $brand-white;
-			// font-weight: 700;
 		}
 	}
 

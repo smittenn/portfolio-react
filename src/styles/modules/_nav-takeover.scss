@@ -36,7 +36,7 @@ $baseclass: nav-takeover;
 		height: 100%;
 		overflow-x: hidden;
 		overflow-y: scroll;
-		transition: transform $easing5 $duration-medium $delay-slow;
+		transition: transform $easing3 $duration-slow $delay-slow;
 		transform: translate3d(100%, 0,0);
 
 		h1, h2, h3, h4, h5, h6 {
@@ -103,12 +103,13 @@ $baseclass: nav-takeover;
 		li {
 			transform: translate3d(200%, 0,0);
 		}
-
-		.#{$baseclass}__arrow {
-			position: absolute;
-			margin-top: -100px;
-		}
 	}
+
+	&__arrow {
+		position: absolute;
+		margin-top: -100px;
+	}
+
 
 	@mixin activeDot() {
 		content: '';
@@ -251,14 +252,13 @@ $baseclass: nav-takeover;
 			height: 48px;
 		}
 
+		.#{$baseclass}__arrow {
+			margin-top: -62px;
+		}
+
 
 		.#{$baseclass}__panel {
 			width: 90%;
-
-			// h1, h2, h3, h4, h5, h6 {
-				// transition: none;
-			// }
-
 
 			hr {
 				display: block;

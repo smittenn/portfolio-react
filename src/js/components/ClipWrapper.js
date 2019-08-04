@@ -47,12 +47,12 @@ export default class ClipWrapper extends Component {
 				{/*<div className="logo">
 					<div className="logo__top">
 						<NavLink to="/">
-							<h3 className="no-mb"><i className="iconcss icon-logo"/></h3>
+							<h3 className="mb0"><i className="iconcss icon-logo"/></h3>
 						</NavLink>
 					</div>
 					<hr/>
 					<div className="logo__bottom">
-						{<h7 className="uppercase no-mb">{name}</h7>}
+						{<h7 className="uppercase mb0">{name}</h7>}
 					</div>
 				</div>*/}
 

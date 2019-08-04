@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import IntersectionVisible from "react-intersection-visible"
+import createNewId from '../services/createNewId'
 
 export default class Video extends Component {
 
@@ -11,15 +12,21 @@ export default class Video extends Component {
 		}
 	}
 
+	componentWillMount() {
+        this.id = createNewId('video');
+    }
+
 	play = () => {
-		this.refs.vid.play();
+		document.getElementById(this.id).play();
+		// this.refs.vid.play();
 		// this.setState({
 		// 	isPlaying: true
 		// })
 	}
 	
 	stop = () => {
-		this.refs.vid.pause();
+		document.getElementById(this.id).pause();
+		// this.refs.vid.pause();
 		// this.setState({
 		// 	isPlaying: false
 		// })
@@ -36,7 +43,7 @@ export default class Video extends Component {
 				onShow={this.play} 
 				onHide={this.stop}
 				>
-					<video ref="vid" src={src} loop playsInline preload="auto" muted />
+					<video ref="vid" id={this.id} src={src} playsInline preload="auto" muted />
 				</IntersectionVisible>
 		);
 	}

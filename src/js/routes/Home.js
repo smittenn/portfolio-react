@@ -82,7 +82,7 @@ class Home extends Component {
 				name: "Micro App Interactions",
 				href: "/micro-app-interactions",
 				tags: [ "Interactive", "Mobile" ],
-				img: "../assets/img/card-components/share-animation.gif",
+				img: "../assets/img/card-components/share-animation.jpg",
 				aspectRatioWidth: 4,
 				aspectRatioHeight: 3,
 			},
@@ -138,9 +138,9 @@ class Home extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__md"/>
-							<h2>{splitWord("Form & Function")}</h2>
+							<h2>{splitWord("Hello — There")}</h2>
 							<blockquote>
-								{splitWord(`My design philosophy is about keeping it minimal and functional, the best design solution is the simplest and most direct. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
 							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
@@ -149,7 +149,7 @@ class Home extends Component {
 							</h6>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-4">
 									<div className="spacer spacer__sm"/>
@@ -180,7 +180,7 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__sm"/>
-							{<h2>{splitWord("Visual & Motion")}</h2>}
+							{<h2>{splitWord("My — Works")}</h2>}
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 							</blockquote>

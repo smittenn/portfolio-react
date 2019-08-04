@@ -40,7 +40,7 @@ class Sidebar extends Component {
 					{ i == 0 ? <div className="sidebar__border sidebar__border--top"/> : null }
 					<h7 className="sidebar__number uppercase">{pad(i + 1, 2)}.</h7>
 					<div className="sidebar__dash"></div>
-					<h7 className="sidebar__label uppercase">{section}</h7>
+					<h7 className="sidebar__label uppercase">{section}<span>·</span></h7>
 					<div className="sidebar__border"/>
 				</Link>
 			</li>

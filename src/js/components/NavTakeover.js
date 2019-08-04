@@ -132,7 +132,7 @@ class Nav extends Component {
 					to: "/jnj-home",
 				},
 				{
-					name: "Med Device Center",
+					name: "MDC Megasite",
 					to: "/jnj-mdc",
 				},
 				{
@@ -197,7 +197,7 @@ class Nav extends Component {
 						<div className="nav-takeover__panel">
 							<ul className="nav-takeover__items--secondary" ref="secondary">
 								<li className="nav-takeover__arrow" onClick={this.setCloseSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-									<h3><i className="iconcss icon-arrow-right"></i></h3>
+									<h4>→</h4>
 								</li>
 								{ secondaryNavItems }
 							</ul>

@@ -87,8 +87,14 @@ section {
 		// }
 	}
 
+	* {
+		&.mb0 {
+			margin-bottom: 0;
+		}
+	}
+
 	p {
-		transform: translateX(-30px);
+		transform: translateX(-24px);
 	}
 
 	.spacer {

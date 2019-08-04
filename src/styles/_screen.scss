@@ -8,6 +8,9 @@
 }
 
 @media screen and (max-width: $bp-medium) {
+	body {
+		cursor: auto !important;
+	}
 	.cursor {
 		display: none;
 	}
@@ -23,6 +26,12 @@
 	.grid {
 		&--lines {
 			padding: 0 48px;
+		}
+
+		&__line {
+			&:first-child {
+				border-left: solid 1px;
+			}
 		}
 
 		&__row {
@@ -150,11 +159,11 @@
 	}
 
 	h3 {
-		font-size: 26px;
+		font-size: 24px;
 	}
 
 	h4 {
-		font-size: 21px;
+		font-size: 18px;
 	}
 	
 	blockquote {

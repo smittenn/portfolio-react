@@ -8,11 +8,11 @@ $baseclass: sidebar;
 	display: none;
 	align-items: center;
 	justify-content: flex-end;
-	// right: 0;
 	left: 0;
 	top: 0px;
-	transition: all $duration-fast $easing4;
-	transform: translateX(-24%);
+	background-blend-mode: multiply;
+	transition: transform $duration-fast $easing4;
+	transform: translateX(-66px);
 	@include zIndexCloser();
 
 	.active-section & {
@@ -20,7 +20,7 @@ $baseclass: sidebar;
 	}
 
 	&__inner {
-		margin-top: 46px;
+		margin-top: 60px;
 		width: 100%;
 		padding: 0;
 		transition: all $easing4 $duration-fast
@@ -43,17 +43,6 @@ $baseclass: sidebar;
 			padding: 0 18px 0 0;
 			pointer-events: none;
 
-			&:after {
-				content: '';
-				display: block;
-				margin-top: -2px;
-				margin-left: 6px;
-				width: 6px;
-				height: 6px;
-				border-radius: 50%;
-				background: transparent;
-			}
-
 			&.active {
 				.sidebar__dash {
 					transform: scaleX(1);
@@ -67,6 +56,7 @@ $baseclass: sidebar;
 		margin: 0 18px 0 24px;
 		opacity: 0;
 		display: inline-block;
+		width: 24px;
 	}
 
 	&__label {
@@ -77,6 +67,11 @@ $baseclass: sidebar;
 		opacity: 0;
 		display: inline-block;
 		white-space: nowrap;
+
+		span {
+			margin-left: 9px;
+			color: transparent;
+		}
 	}
 
 	&__dash {
@@ -112,8 +107,8 @@ $baseclass: sidebar;
 
 	&--open {
 		transform: none;
-		transition: all $duration-fast $duration-fast $easing3;
-		background: linear-gradient(90deg, $brand-white 40%, transparent);
+		transition: transform $duration-fast $duration-fast $easing3;
+		background-image: linear-gradient(90deg, rgba($brand-white, .8) 60%, transparent);
 
 		.#{$baseclass}__inner {
 
@@ -125,8 +120,9 @@ $baseclass: sidebar;
 					pointer-events: auto;
 
 					&.active {
-						&:after {
-							background: $brand-red;
+						.#{$baseclass}__label span {
+							color: $brand-red;
+							-webkit-text-stroke-width: 4px;
 						}
 					}
 
@@ -164,7 +160,7 @@ $baseclass: sidebar;
 			background: $brand-white;
 		}
 		&--open {
-			background: linear-gradient(90deg, $brand-black, transparent);
+			background-image: linear-gradient(90deg, rgba($brand-black, .4), transparent);
 
 			.#{$baseclass}__inner {
 				.#{$baseclass}__border {
@@ -184,19 +180,31 @@ $baseclass: sidebar;
 
 
 	@media screen and (max-width: $bp-medium) {
-		// width: 24px;
-		// height: 100vh;
+		right: 0;
+		left: auto;
+		transform: translateX(158px);
 
 		.#{$baseclass}__inner {
 			margin-top: 84px;
 		}
 
 		.#{$baseclass}__item {
-			height: 32px;
+			height: 30px;
+		}
+
+		.#{$baseclass}__dash {
+			width: 26px;
+			transform-origin: right;
+		}
+
+		.#{$baseclass}__label {
+			width: 140px;
 		}
 
 
 		&.#{$baseclass}--open {
+			transform: none;
+			background-image: linear-gradient(-90deg, rgba($brand-white, .8) 60%, transparent);
 			// min-width: 100vw;
 
 			.#{$baseclass}__inner {
@@ -211,6 +219,11 @@ $baseclass: sidebar;
 
 			.#{$baseclass}__number {
 			    // margin: 0 16px 0 24px;
+			}
+		}
+		.#{$scrolling-section-classname}--black & {
+			&--open {
+				background-image: linear-gradient(-90deg, rgba($brand-black, .4), transparent);
 			}
 		}
 	}

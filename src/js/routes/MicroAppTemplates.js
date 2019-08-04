@@ -222,7 +222,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Conference</h2>
+								<h2 className="mb0">Conference</h2>
 								{<h3>Modern Sans Family</h3>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
@@ -267,7 +267,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Lead Generation</h2>
+								<h2 className="mb0">Lead Generation</h2>
 								{<h3>Bold Modern Family</h3>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
@@ -305,7 +305,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Fashion Commerce</h2>
+								<h2 className="mb0">Fashion Commerce</h2>
 								<h3>Modern Sans Family</h3>
 							</div>
 						</div>
@@ -351,7 +351,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="no-mb">Design Agency</h2>
+								<h2 className="mb0">Design Agency</h2>
 								<h3>Modern Sans Family</h3>
 							</div>
 						</div>
