@@ -98,7 +98,10 @@ class Home extends Component {
 				name: "J&J Home",
 				href: "/jnj-home",
 				tags: [ "Visual Design", "Mobile" ],
-				img: "../assets/img/jnj-home/onboarding-mobile.png"
+				img: "../assets/img/jnj-home/connected.svg",
+				aspectRatioWidth: 16,
+				aspectRatioHeight: 9,
+
 			},
 
 		]
@@ -117,7 +120,7 @@ class Home extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/untitled.gif)`, 
+					backgroundImage: `url(../assets/img/leaf.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundBlendMode: `multiply`,
 					backgroundSize: this.props.isMobile ? 'cover' : 'cover',
@@ -211,7 +214,7 @@ class Home extends Component {
 								<Image src={projects[3].img} aspectRatioWidth={projects[3].aspectRatioWidth} aspectRatioHeight={projects[3].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[5].name} href={projects[5].href} tags={projects[5].tags}>
-								<Image src={projects[5].img} aspectRatioWidth={1} aspectRatioHeight={1}/>
+								<Image src={projects[5].img} aspectRatioWidth={projects[5].aspectRatioWidth} aspectRatioHeight={projects[5].aspectRatioHeight}/>
 							</ProjectCard>
 						</div>
 					</div>

@@ -2512,7 +2512,7 @@ section p span > span, section blockquote span > span {
       .sidebar .sidebar__item {
         height: 30px; }
       .sidebar .sidebar__dash {
-        width: 26px;
+        width: 30px;
         -ms-transform-origin: right;
         transform-origin: right; }
       .sidebar .sidebar__label {

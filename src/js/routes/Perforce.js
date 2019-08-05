@@ -93,10 +93,14 @@ class Perforce extends Component {
 				<ScrollSection 
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/perforce/banner.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-					backgroundSize: 'cover',
-					backgroundPosition: this.props.isMobile ? '75%' : 'center',
+					backgroundImage: `
+					  linear-gradient(rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24), rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24)),
+					  url(../assets/img/perforce/banner.jpg),
+					  linear-gradient(#2b8bb5, #178ab9)`, 
+					backgroundSize: this.props.isMobile ? 'cover' : 'contain',
+					backgroundBlendMode: 'normal',
+					backgroundRepeat: 'no-repeat',
+					backgroundPosition: this.props.isMobile ? '75%' : '200% center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -153,7 +157,7 @@ class Perforce extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/perforce/prototype.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .60`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .60)`,
 					backgroundPosition: `100% -30px`,
 					background: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
 					backgroundSize: `cover`,
@@ -173,9 +177,9 @@ class Perforce extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>Perforce</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
+							<blockquote className="no-mb">
 								<TextLink><a href={people["Janet Taylor"]}>Janet Taylor</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Rebecca Jablonski"]}>Rebecca Jablonski</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Sean Ardley"]}>Sean Ardley</a></TextLink>,&nbsp;
@@ -196,7 +200,6 @@ class Perforce extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<p className="mb0">04.</p>
 								<h2>Sync N’ Share</h2>
 								<blockquote>The design team with Perforce saw an opportunity to create a Dropbox-like versioning tool for techincal-minded designers. We designed two different application flows: Manual & Auto mode but which worked best for our target user group?</blockquote>
 							</div>
@@ -218,20 +221,23 @@ class Perforce extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<p className="mb0">05.</p>
-								<h2>Auto Upload Mode</h2>
-								<blockquote>Auto upload followed a similar sync and share paradigm to Dropbox, Google Drive, or Box. In our first round of research we we're looking to learn what mode of the product worked best for them.</blockquote>
+								<h2>Editing Metadata</h2>
+								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.</blockquote>
 							</div>
 						</div>
 					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Video src="assets/img/perforce/auto.mp4"/>
+					<SideScroller>
+						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+							<Image src="../assets/img/translator/metadata-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-					</div>
+						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+							<Image src="../assets/img/translator/metadata-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
+							<Image src="../assets/img/translator/metadata-03.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						</div>
+					</SideScroller>
 				</ScrollSection>
 
 
