@@ -99,7 +99,7 @@ class Translator extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Translator </span></span>, `helped technicians at NBCU browse and archive footage.`]}
+					headerText={[ <span className="outline"><span>Translator </span></span>, `helped film crews at NBCU catalog footage.`]}
 					/>
 				</ScrollSection>
 

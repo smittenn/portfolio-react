@@ -18,6 +18,7 @@ import Sidebar from "../components/Sidebar"
 import Image from "../components/Image"
 
 import splitWord from "../services/splitWord"
+import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 
@@ -64,7 +65,9 @@ class Home extends Component {
 				name: "American Made Film Site",
 				href: "/american-made",
 				tags: [ "UI", "Interactive" ],
-				img: "../assets/img/american-made/banner.gif"
+				img: "../assets/img/american-made/banner.png",
+				aspectRatioWidth: 5,
+				aspectRatioHeight: 6,
 			},
 			{
 				name: "V.ai Player",
@@ -75,8 +78,10 @@ class Home extends Component {
 			{
 				name: "Translator",
 				href: "/translator",
-				tags: [ "UX", "Design System" ],
-				img: "../assets/img/translator/banner.png",
+				tags: [ "UX", "User Testing" ],
+				img: "../assets/img/translator/usertesting.svg",
+				aspectRatioWidth: 16,
+				aspectRatioHeight: 9,
 			},
 			{
 				name: "Micro App Interactions",
@@ -103,6 +108,24 @@ class Home extends Component {
 				aspectRatioHeight: 9,
 
 			},
+			{
+				name: "J&J MDC",
+				href: "/jnj-mdc",
+				tags: [ "Design System", "UX" ],
+				img: "../assets/img/jnj-mdc/ladies.jpg",
+				aspectRatioWidth: 16,
+				aspectRatioHeight: 9,
+
+			},
+			{
+				name: "Perforce",
+				href: "/perforce",
+				tags: [ "Product Design", "UX", "UI" ],
+				img: "../assets/img/perforce/banner.jpg",
+				aspectRatioWidth: 16,
+				aspectRatioHeight: 9,
+
+			},
 
 		]
 
@@ -122,7 +145,7 @@ class Home extends Component {
 				style={{ 
 					backgroundImage: `url(../assets/img/leaf.gif)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-					backgroundBlendMode: `multiply`,
+					backgroundBlendMode: `overlay`,
 					backgroundSize: this.props.isMobile ? 'cover' : 'cover',
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
@@ -140,9 +163,10 @@ class Home extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
-							<div className="spacer spacer__md"/>
+							<div className="spacer spacer__sm"/>
+							<p className="mb0">{splitLetter("02.")}</p>
 							<h2>{splitWord("Hello — There")}</h2>
-							<blockquote>
+							<blockquote className="mr">
 								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
 							<h6 className="uppercase">
@@ -183,7 +207,8 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__sm"/>
-							{<h2>{splitWord("My — Works")}</h2>}
+							<p className="mb0">{splitLetter("03.")}</p>
+							{<h2>{splitWord("Recent Works")}</h2>}
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 							</blockquote>
@@ -193,19 +218,26 @@ class Home extends Component {
 								</TextLink>
 							</h6>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
 							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
-								<Image src={projects[0].img} aspectRatioWidth={1} aspectRatioHeight={1}/>
+								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
-								<Image src={projects[2].img} aspectRatioWidth={2} aspectRatioHeight={1}/>
+								<Image src={projects[2].img} aspectRatioWidth={projects[2].aspectRatioWidth} aspectRatioHeight={projects[2].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[4].name} href={projects[4].href} tags={projects[4].tags}>
 								<Image src={projects[4].img} aspectRatioWidth={projects[4].aspectRatioWidth} aspectRatioHeight={projects[4].aspectRatioHeight}/>
 							</ProjectCard>
+							<ProjectCard name={projects[6].name} href={projects[6].href} tags={projects[6].tags}>
+								<Image src={projects[6].img} aspectRatioWidth={projects[6].aspectRatioWidth} aspectRatioHeight={projects[6].aspectRatioHeight}/>
+							</ProjectCard>
+
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="spacer spacer__md"/>
 							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
 								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
@@ -215,6 +247,9 @@ class Home extends Component {
 							</ProjectCard>
 							<ProjectCard name={projects[5].name} href={projects[5].href} tags={projects[5].tags}>
 								<Image src={projects[5].img} aspectRatioWidth={projects[5].aspectRatioWidth} aspectRatioHeight={projects[5].aspectRatioHeight}/>
+							</ProjectCard>
+							<ProjectCard name={projects[7].name} href={projects[7].href} tags={projects[7].tags}>
+								<Image src={projects[7].img} aspectRatioWidth={projects[7].aspectRatioWidth} aspectRatioHeight={projects[7].aspectRatioHeight}/>
 							</ProjectCard>
 						</div>
 					</div>
@@ -226,6 +261,7 @@ class Home extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
 							<div className="spacer spacer__md"/>
 							<h2>{splitWord("Play & Experiment")}</h2>

@@ -224,7 +224,7 @@ h5, h6, h7 {
 
 h1 {
   font-size: 90px;
-  line-height: 1.3;
+  line-height: 1.4;
   margin-left: -5px;
   margin-bottom: 40px;
   letter-spacing: -0.024em; }
@@ -351,8 +351,8 @@ section {
   section *.mb0 {
     margin-bottom: 0; }
   section p {
-    -ms-transform: translateX(-24px);
-    transform: translateX(-24px); }
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px); }
   section .spacer__sm {
     min-height: 60px; }
   section .spacer__md {
@@ -2229,9 +2229,14 @@ section p span > span, section blockquote span > span {
     -webkit-clip-path: none;
     clip-path: none; }
     .project-card__asset, .project-card__asset img, .project-card__asset video {
-      transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s 0s !important; }
+      transition: all cubic-bezier(0.7, 0, 0.3, 1) 0.9s 0s !important; }
     .project-card__asset img, .project-card__asset video {
       transition-delay: 0.06s; }
+  .active-section .project-card__asset img, .active-section .project-card__asset video {
+    transform: translate3d(0, 100%, 0); }
+  .project-card--visible .project-card__asset img, .project-card--visible .project-card__asset video {
+    -ms-transform: none;
+    transform: none; }
   .project-card--hovered .project-card__asset img, .project-card--hovered .project-card__asset video {
     -ms-transform: scale(1.06);
     transform: scale(1.06); }
@@ -2389,6 +2394,7 @@ section p span > span, section blockquote span > span {
   position: fixed;
   pointer-events: auto;
   display: none;
+  opacity: 0;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: end;
@@ -2402,7 +2408,8 @@ section p span > span, section blockquote span > span {
   z-index: 999; }
   .active-section .sidebar {
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    opacity: 1; }
   .sidebar__inner {
     margin-top: 60px;
     width: 100%;
@@ -2578,9 +2585,9 @@ section p span > span, section blockquote span > span {
 /* Responsive */
 @media screen and (max-width: 1100px) {
   h1 {
-    font-size: 84px; }
+    font-size: 72px; }
   h2 {
-    font-size: 72px; } }
+    font-size: 60px; } }
 
 @media screen and (max-width: 800px) {
   body {
@@ -2640,12 +2647,12 @@ section p span > span, section blockquote span > span {
   section {
     padding: 60px 0; }
   h1 {
-    font-size: 72px;
+    font-size: 60px;
     margin-left: 0;
     margin-bottom: 24px;
     letter-spacing: -0.024em; }
   h2 {
-    font-size: 60px;
+    font-size: 48px;
     margin-left: 0;
     margin-bottom: 18px; }
   h3 {
@@ -2671,7 +2678,7 @@ section p span > span, section blockquote span > span {
 
 @media screen and (max-width: 320px) {
   h1 {
-    font-size: 36px; }
+    font-size: 40px; }
   h2 {
     font-size: 34px; }
   h3 {

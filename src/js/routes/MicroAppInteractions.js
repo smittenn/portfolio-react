@@ -94,7 +94,7 @@ class MicroAppInteractions extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `I created interactions within micro apps.`]}
+					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `we created interactions within micro apps.`]}
 					/>
 				</ScrollSection>
 

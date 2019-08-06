@@ -84,6 +84,7 @@ class ParallaxHeader extends Component {
 			<div className={classnames}>
 				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+					<p className="mb0">{splitLetter("01.")}</p>
 					<h1 className="mb0">{updatedText}</h1>
 				</div>
 			</div>				

@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
 import ReactHover from 'react-hover'
+import IntersectionVisible  from "react-intersection-visible"
+import IntersectionObserver  from "intersection-observer"
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
@@ -15,6 +17,7 @@ class ProjectCard extends Component {
 
 		this.state = {
 			isHovered: false,
+			isVisible: false,
 		}
 	}
 
@@ -41,14 +44,27 @@ class ProjectCard extends Component {
 		this.props.setCursorUnhover();			
 	}
 
+	setVisible = () => {
+		this.setState({
+			isVisible: true
+		})
+	}
+
+	setInvisible = () => {
+		this.setState({
+			isVisible: false
+		})
+	}
+
 	render() {
 
 		const { name, tags, href } = this.props;
-		const { isHovered } = this.state;
+		const { isHovered, isVisible } = this.state;
 
 		const classnames = classNames({
 			"project-card": true,
 			"project-card--hovered": isHovered,
+			"project-card--visible": isVisible,
 		})
 
 		// const tags = tags.map((item, index) => {
@@ -56,20 +72,22 @@ class ProjectCard extends Component {
 		// })
 
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-				<NavLink to={href} onClick={this.handleMouseLeave}>
-					<div className="project-card__asset">
-					{this.props.children}
-					</div>
-					<div className="project-card__bottom">
-						<div>
-							<h4>{name}</h4>
-							<blockquote>{tags.join(", ")}</blockquote>
+			<IntersectionVisible onShow={this.setVisible} onHide={this.setInvisible}>
+				<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+					<NavLink to={href} onClick={this.handleMouseLeave}>
+						<div className="project-card__asset">
+						{this.props.children}
 						</div>
-						{/*<i className="iconcss icon-arrow-right"></i>*/}
-					</div>
-				</NavLink>
-			</div>
+						<div className="project-card__bottom">
+							<div>
+								<h4>{name}</h4>
+								<blockquote>{tags.join(", ")}</blockquote>
+							</div>
+							{/*<i className="iconcss icon-arrow-right"></i>*/}
+						</div>
+					</NavLink>
+				</div>
+			</IntersectionVisible>
 		);
 	}
 }

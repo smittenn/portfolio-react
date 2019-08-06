@@ -33,13 +33,30 @@ $baseclass: project-card;
 		clip-path: none;
 
 		&, img, video  {
-			transition: all $easing1 $duration-slow 0s !important;
+			transition: all $easing5 $duration-slow 0s !important;
 		}
 
 		img, video {
 			transition-delay: $delay-fast;
 		}
 	}
+
+	.active-section & {
+		&__asset {
+			img, video {
+				transform: translate3d(0,100%,0);
+			}
+		}
+	}
+
+	&--visible {
+		.#{$baseclass}__asset {
+			img, video {
+				transform: none;
+			}
+		}
+	}
+	
 
 	&--hovered {
 		.#{$baseclass}__asset {
