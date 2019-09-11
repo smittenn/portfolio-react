@@ -1,14 +1,14 @@
-@font-face {
-	font-family: 'Circular Std';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/CircularStd/CircularStd-Black.eot');
-	src: url('../fonts/CircularStd/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/CircularStd/CircularStd-Black.woff2') format('woff2'), 
-	url('../fonts/CircularStd/CircularStd-Black.woff') format('woff'), 
-	url('../fonts/CircularStd/CircularStd-Black.ttf') format('truetype'),
-	url('../fonts/CircularStd/CircularStd-Black.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Circular Std';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/CircularStd/CircularStd-Black.eot');
+// 	src: url('../fonts/CircularStd/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/CircularStd/CircularStd-Black.woff2') format('woff2'), 
+// 	url('../fonts/CircularStd/CircularStd-Black.woff') format('woff'), 
+// 	url('../fonts/CircularStd/CircularStd-Black.ttf') format('truetype'),
+// 	url('../fonts/CircularStd/CircularStd-Black.svg#codropsicons') format('svg');
+// }
 
 // @font-face {
 // 	font-family: 'Circular Std';
@@ -133,29 +133,41 @@
 // }
 
 @font-face {
-	font-family: 'Financier Display';
+	font-family: 'Gilroy';
 	font-weight: 800;
 	font-style: normal;
-	src: url('../fonts/FinancierDisplay/FinancierDisplay-Bold.eot');
-	src: url('../fonts/FinancierDisplay/FinancierDisplay-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.woff2') format('woff2'), 
-	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.woff') format('woff'), 
-	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.ttf') format('truetype'),
-	url('../fonts/FinancierDisplay/FinancierDisplay-Bold.svg#codropsicons') format('svg');
+	src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot');
+	src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2'), 
+	url('../fonts/Gilroy/Gilroy-ExtraBold.woff') format('woff'), 
+	url('../fonts/Gilroy/Gilroy-ExtraBold.ttf') format('truetype'),
+	url('../fonts/Gilroy/Gilroy-ExtraBold.svg#codropsicons') format('svg');
 }
-
 
 @font-face {
-	font-family: 'Campton';
-	font-weight: 800;
+	font-family: 'Gilroy';
+	font-weight: 300;
 	font-style: normal;
-	src: url('../fonts/Campton/Campton-Bold.eot');
-	src: url('../fonts/Campton/Campton-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Campton/Campton-Bold.woff2') format('woff2'), 
-	url('../fonts/Campton/Campton-Bold.woff') format('woff'), 
-	url('../fonts/Campton/Campton-Bold.ttf') format('truetype'),
-	url('../fonts/Campton/Campton-Bold.svg#codropsicons') format('svg');
+	src: url('../fonts/Gilroy/Gilroy-Light.eot');
+	src: url('../fonts/Gilroy/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Gilroy/Gilroy-Light.woff2') format('woff2'), 
+	url('../fonts/Gilroy/Gilroy-Light.woff') format('woff'), 
+	url('../fonts/Gilroy/Gilroy-Light.ttf') format('truetype'),
+	url('../fonts/Gilroy/Gilroy-Light.svg#codropsicons') format('svg');
 }
+
+
+// @font-face {
+// 	font-family: 'Campton';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/Campton/Campton-Bold.eot');
+// 	src: url('../fonts/Campton/Campton-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Campton/Campton-Bold.woff2') format('woff2'), 
+// 	url('../fonts/Campton/Campton-Bold.woff') format('woff'), 
+// 	url('../fonts/Campton/Campton-Bold.ttf') format('truetype'),
+// 	url('../fonts/Campton/Campton-Bold.svg#codropsicons') format('svg');
+// }
 
 // @font-face {
 // 	font-family: 'Campton';
@@ -205,17 +217,17 @@
 // 	url('../fonts/IvarDisplay/IvarDisplay-SemiBold.svg#codropsicons') format('svg');
 // }
 
-@font-face {
-	font-family: 'Futura Maxi';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
-	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Futura Maxi';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
+// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
+// }
 
 @font-face {
 	font-family: 'Moderat';

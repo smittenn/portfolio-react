@@ -41,12 +41,12 @@ class ScrollArrow extends Component {
 		})
 
 		return (
-			<Link to={this.state.isHidden ? null : to} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}>
+			<Link to={to} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}>
 				<div className={classnames}  onMouseEnter={this.state.isHidden ? null : this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover} onClick={this.props.setCursorUnhover}>				
 					<div className="scroll-arrow__seperator-container">
 						<div className="scroll-arrow__seperator"/>
 					</div>
-					<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Read More`)}</h6>
+					<h5 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Read More`)}</h5>
 				</div>					
 			</Link>
 		);

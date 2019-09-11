@@ -43,7 +43,6 @@ $baseclass: nav-toggle;
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
 		transition: all $easing2 0.3s;
 		letter-spacing: $letter-spacing-xl;
-		margin: 0;
 	}
 
 	.#{$baseclass}__abbreviation {
@@ -142,13 +141,13 @@ $baseclass: nav-toggle;
 				// height: 2px;
 
 				&:first-child {
-					transform: translate3d(3px,0px,0) rotate(135deg) scaleX(0);
+					transform: translate3d(3px,0px,0) rotate(135deg) scaleX(.5);
 				}
 				&:nth-child(2) {
 					opacity: 0;
 				}
 				&:last-child {
-					transform: translate3d(3px,-2px,0) rotate(45deg) scaleX(0);
+					transform: translate3d(3px,-2px,0) rotate(45deg) scaleX(.5);
 				}
 			}
 		}

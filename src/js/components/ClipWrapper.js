@@ -51,7 +51,7 @@ export default class ClipWrapper extends Component {
 					</div>
 					<hr/>
 					<div className="logo__bottom">
-						{<h7 className="uppercase mb0">{name}</h7>}
+						{<h6 className="uppercase mb0">{name}</h6>}
 					</div>
 				</div>*/}
 

@@ -27,7 +27,7 @@ class NavToggle extends Component {
 
 	openNav = () => {
 		this.props.openTakeover();
-		this.props.setCursorUnhover();
+		// this.props.setCursorUnhover();
 		// this.props.closeSecondaryPanel();		
 	}
 
@@ -71,16 +71,16 @@ class NavToggle extends Component {
 
 		return (
 			<div className={classnames} 
-			onMouseEnter={this.props.isTakeoverOpen ? null : (() => { this.props.hoverToggle(); this.props.setCursorHover();}) } 
+			onMouseEnter={this.props.isTakeoverOpen ? this.props.setCursorHover : (() => { this.props.hoverToggle(); this.props.setCursorHover();}) } 
 			onMouseLeave={this.props.isTakeoverOpen ? this.props.setCursorUnhover : (() => { this.props.unhoverToggle(); this.props.setCursorUnhover(); })}
-			onClick={this.props.isTakeoverOpen ? null : this.openNav}>
-				<h6 className="nav-toggle__abbreviation">{this.props.abbreviation}</h6>
+			onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
+				<h5 className="uppercase mb0 nav-toggle__abbreviation">{this.props.abbreviation}</h5>
 				<div className="nav-toggle__hamburger">
 					<div className="nav-toggle__line"/>
 					<div className="nav-toggle__line"/>
 					<div className="nav-toggle__line"/>
 				</div>
-				<h6 className="nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h6>
+				<h5 className="uppercase mb0 nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h5>
 			</div>
 		);
 	}

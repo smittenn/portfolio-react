@@ -170,19 +170,19 @@ class JnjHome extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Role</h6>
+							<h5 className="uppercase">Role</h5>
 							<blockquote>Interaction Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Date</h6>
+							<h5 className="uppercase">Date</h5>
 							<blockquote>Fall, 2019</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Client</h6>
+							<h5 className="uppercase">Client</h5>
 							<blockquote>J&J People XD</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Team</h6>
+							<h5 className="uppercase">Team</h5>
 							<blockquote>
 								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 
 								<TextLink><a href={people["Chris Purcell"]}>Chris Purcell</a></TextLink>,&nbsp; 

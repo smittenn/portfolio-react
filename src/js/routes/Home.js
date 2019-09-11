@@ -169,25 +169,25 @@ class Home extends Component {
 							<blockquote className="mr">
 								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
-							<h6 className="uppercase">
+							<h5 className="uppercase">
 								<TextLink isBlack hideUnderline>
 									<NavLink to="about">Learn More</NavLink>
 								</TextLink>
-							</h6>
+							</h5>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-4">
 									<div className="spacer spacer__sm"/>
 									<Image src="../assets/img/lands-end-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 								</div>
-								<div className="grid__item grid__item--col-4">
+								<div className="grid__item grid__item--col-4 shift--left">
 									<div className="spacer spacer__lg"/>
 									<Image src="../assets/img/me-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 									<div className="spacer spacer__md"/>
 								</div>
-								<div className="grid__item grid__item--col-4">
+								<div className="grid__item grid__item--col-4 shift--left">
 									<div className="spacer spacer__md"/>
 									<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 								</div>
@@ -212,11 +212,11 @@ class Home extends Component {
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 							</blockquote>
-							<h6 className="uppercase">
+							<h5 className="uppercase">
 								<TextLink hideUnderline>
 									<NavLink to="about">Learn More</NavLink>
 								</TextLink>
-							</h6>
+							</h5>
 						</div>
 					</div>
 					<div className="grid">

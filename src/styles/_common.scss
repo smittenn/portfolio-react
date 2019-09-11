@@ -108,6 +108,16 @@ section {
 			min-height: 240px;
 		}
 	}
+
+	.shift {
+		&--left {
+			transform: translateX(-25%);
+			
+			&:nth-child(3) {
+				transform: translateX(-50%);
+			}
+		}
+	}
 }
 
 .#{$scrolling-section-classname} {

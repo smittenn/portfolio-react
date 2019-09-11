@@ -95,6 +95,16 @@
 
 	section {
 		padding: 60px 0;
+
+		p {
+			transform: none;
+		}
+
+		.shift {
+			&--left {
+				transform: none;
+			}
+		}
 	}
 
 	h1 {
@@ -118,10 +128,6 @@
 	h4 {
 		font-size: 28px;
 	}
-
-	h5 {
-		font-size: 24px;
-	}	
 }
 
 
@@ -135,11 +141,11 @@
 	}
 
 	h3 {
-		font-size: 26px;
+		font-size: 30px;
 	}
 
 	h4 {
-		font-size: 21px;
+		font-size: 24px;
 	}
 	
 	blockquote {
@@ -159,15 +165,10 @@
 	}
 
 	h3 {
-		font-size: 24px;
+		font-size: 28px;
 	}
 
 	h4 {
-		font-size: 18px;
-	}
-	
-	blockquote {
-		font-size: 19px;
-		margin-bottom: 21px;
+		font-size: 21px;
 	}
 }

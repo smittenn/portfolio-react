@@ -166,19 +166,19 @@ class Perforce extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Role</h6>
+							<h5 className="uppercase">Role</h5>
 							<blockquote>UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Date</h6>
+							<h5 className="uppercase">Date</h5>
 							<blockquote>Summer, 2015</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Client</h6>
+							<h5 className="uppercase">Client</h5>
 							<blockquote>Perforce</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Team</h6>
+							<h5 className="uppercase">Team</h5>
 							<blockquote className="no-mb">
 								<TextLink><a href={people["Janet Taylor"]}>Janet Taylor</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Rebecca Jablonski"]}>Rebecca Jablonski</a></TextLink>,&nbsp;

@@ -21,7 +21,7 @@ import SideScroller from "../components/SideScroller"
 import TextLink from "../components/TextLink"
 
 import Image from "../components/Image"
-import iFrame from "../components/iFrame"
+import IFrame from "../components/IFrame"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -99,7 +99,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of Barry’s adventure.`]}
+					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `film site told the story of Barry Seal.`]}
 					/>
 				</ScrollSection>
 
@@ -151,19 +151,19 @@ class AmericanMade extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
+							<h5 className="uppercase">Role</h5>
 							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h6 className="uppercase">Date</h6>
+							<h5 className="uppercase">Date</h5>
 							<blockquote>Summer, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h6 className="uppercase">Client</h6>
+							<h5 className="uppercase">Client</h5>
 							<blockquote>Universal Pictures</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
+							<h5 className="uppercase">Team</h5>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Oleksandr Lebedyev"]} target="_blank">Oleksandr Lebedyev</a></TextLink>,&nbsp; 
@@ -328,7 +328,7 @@ class AmericanMade extends Component {
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{/*<Image src="../assets/img/american-made/mobile.svg" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
 							{/*<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
-							{<iFrame src="../assets/img/american-made/mobile.svg"/>}
+							{<IFrame src="../assets/img/american-made/mobile.svg"/>}
 						</div>
 					</div>
 				</ScrollSection>

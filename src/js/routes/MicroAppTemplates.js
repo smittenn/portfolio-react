@@ -162,19 +162,19 @@ class MicroAppTemplates extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Role</h6>
+							<h5 className="uppercase">Role</h5>
 							<blockquote>UX/Visual Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Date</h6>
+							<h5 className="uppercase">Date</h5>
 							<blockquote>Fall, 2015</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Client</h6>
+							<h5 className="uppercase">Client</h5>
 							<blockquote>Wrap Media</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Team</h6>
+							<h5 className="uppercase">Team</h5>
 							<blockquote>
 								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Mei Yeh"]}>Mei Yeh</a></TextLink>,&nbsp;

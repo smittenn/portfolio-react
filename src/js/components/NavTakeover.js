@@ -84,7 +84,7 @@ class Nav extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(-1px, ' + (this.props.isMobile ? 72 : 100) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 100) * (indexHovered + 0) + 'px, 0)',
 			opacity: (this.props.isTakeoverOpen ? 1 : 0)
 		}
 
@@ -176,7 +176,7 @@ class Nav extends Component {
 					onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
 					onMouseLeave={ this.props.setCursorUnhover } 
 					onClick={this.setMenuClosed}>
-						<h3 className={classNames({ 'active': abbreviation == item.abbreviation, 'hovered': i == indexHovered })}>{item.name}</h3>
+						<h3 className={classNames({ 'active': abbreviation == item.abbreviation, 'hovered': i == indexHovered, 'mb0': true })}>{item.name}</h3>
 					</NavLink>
 				</li>
 			) : (
@@ -184,7 +184,7 @@ class Nav extends Component {
 				onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
 				onMouseLeave={ this.props.setCursorUnhover } 
 				onClick={this.props.isSecondaryPanelOpen ? this.setCloseSecondaryPanel : this.setOpenSecondaryPanel}>
-					<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g), 'hovered': i == indexHovered })}>{item.name}</h3>
+					<h3 className={classNames({ 'active': abbreviation.match(/[0-9]/g), 'hovered': i == indexHovered, 'mb0': true })}>{item.name}</h3>
 				</li>
 			)
 		)
@@ -195,18 +195,21 @@ class Nav extends Component {
 					<div onClick={this.setMenuClosed}/>
 					<div className="nav-takeover__panels">
 						<div className="nav-takeover__panel">
-							<ul className="nav-takeover__items--secondary" ref="secondary">
-								<li className="nav-takeover__arrow" onClick={this.setCloseSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-									<h4>→</h4>
-								</li>
-								{ secondaryNavItems }
-							</ul>
-							<ul className="nav-takeover__items--primary">
-								{ primaryNavItems }
-							</ul>
+							<div className="nav-takeover__item-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
+								<ul className="nav-takeover__items--secondary" ref="secondary">
+									<li className="nav-takeover__arrow" onClick={this.setCloseSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+										<h4>Back →</h4>
+									</li>
+									{ secondaryNavItems }
+								</ul>
+								<ul className="nav-takeover__items--primary">
+									{ primaryNavItems }
+								</ul>
+							</div>
 							<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
 								<div style={ lineAnimation } className="nav-takeover__line"></div>
 							</div>
+							<div className="nav-takeover__spacer"/>
 						</div>
 					</div>
 				</div>

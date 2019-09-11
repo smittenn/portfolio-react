@@ -44,12 +44,12 @@ class TextLink extends Component {
 		})
 
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleMouseLeave}>
+			<span className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleMouseLeave}>
 				{ this.props.children }
 				<div className="text-link__line-container">
 					<div className="text-link__line"/>
 				</div>
-			</div>
+			</span>
 		);
 	}
 }
