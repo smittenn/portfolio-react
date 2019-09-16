@@ -201,7 +201,7 @@ class Nav extends Component {
 						<div className="nav-takeover__item-container" ref="container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
 							<ul className="nav-takeover__items--secondary" ref="secondary">
 								<li className="nav-takeover__arrow" onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-									<h4>→</h4>
+									<h3>→</h3>
 								</li>
 								{ secondaryNavItems }
 							</ul>

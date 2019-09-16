@@ -100,7 +100,7 @@ class JnjHome extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
 					backgroundSize: 'contain',
 					backgroundPosition: (this.props.isMobile ? 'right' : 'center'),
 				}}
