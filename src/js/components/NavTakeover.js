@@ -116,6 +116,10 @@ class Nav extends Component {
 			],
 			secondary: [
 				{
+					name: "Google Design",
+					to: "/google-design",
+				},
+				{
 					name: "American Made",
 					to: "/american-made",
 				},
@@ -192,25 +196,23 @@ class Nav extends Component {
 		return (
 			<nav className={classnames}>
 				<div className="nav-takeover__main">
-					<div onClick={this.setMenuClosed}/>
-					<div className="nav-takeover__panels">
-						<div className="nav-takeover__panel">
-							<div className="nav-takeover__item-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
-								<ul className="nav-takeover__items--secondary" ref="secondary">
-									<li className="nav-takeover__arrow" onClick={this.setCloseSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-										<h4>Back →</h4>
-									</li>
-									{ secondaryNavItems }
-								</ul>
-								<ul className="nav-takeover__items--primary">
-									{ primaryNavItems }
-								</ul>
-							</div>
-							<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
-								<div style={ lineAnimation } className="nav-takeover__line"></div>
-							</div>
-							<div className="nav-takeover__spacer"/>
+					<div className="nav-takeover__overlay" onClick={this.setMenuClosed}/>
+					<div className="nav-takeover__panel">
+						<div className="nav-takeover__item-container" ref="container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
+							<ul className="nav-takeover__items--secondary" ref="secondary">
+								<li className="nav-takeover__arrow" onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+									<h4>→</h4>
+								</li>
+								{ secondaryNavItems }
+							</ul>
+							<ul className="nav-takeover__items--primary">
+								{ primaryNavItems }
+							</ul>
 						</div>
+						<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
+							<div style={ lineAnimation } className="nav-takeover__line"></div>
+						</div>
+						<div className="nav-takeover__spacer"/>
 					</div>
 				</div>
 			</nav>

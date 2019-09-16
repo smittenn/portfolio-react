@@ -6,14 +6,10 @@ body, button, input, select, textarea {
 	letter-spacing: -0.006em;
 }
 
-a {
-	cursor: none;
-	color: $brand-black;  
-	// border-bottom: solid 1px;
-	text-decoration: none;
-	outline: none;
-	// white-space: normal;
+html {
+	font-size: 12px;
 }
+
 
 h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	color: inherit;
@@ -21,6 +17,10 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	&.uppercase {
 		letter-spacing: $letter-spacing-lg;
 		text-transform: uppercase;
+	}
+
+	&.initial-caps {
+		text-transform: capitalize;
 	}
 
 	&.mr {
@@ -39,8 +39,8 @@ h1, h2, h3, h4, h5, h6, h7 {
 // }
 
 h1 {
-	font-size: 108px;
-	line-height: 1.2;
+	font-size: 120px;
+	line-height: 1.125;
 	margin-left: -5px;
 	margin-bottom: 40px;
 	letter-spacing: $letter-spacing-xs;
@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-	font-size: 96px;
+	font-size: 108px;
 	line-height: 1.1;
 	margin-left: -3px;
 	margin-bottom: 40px;
@@ -60,15 +60,15 @@ h2 {
 }
 
 h3 {
-	font-size: 32px;
+	font-size: 60px;
 	line-height: 1.2;
 	margin-bottom: 36px;
 	letter-spacing: $letter-spacing-sm;
 }
 
 h4 {
-	font-size: 26px;
-	line-height: 1.2;
+	font-size: 48px;
+	line-height: 1.1;
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-md;
 }

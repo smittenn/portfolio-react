@@ -80,8 +80,8 @@ class ProjectCard extends Component {
 						</div>
 						<div className="project-card__bottom">
 							<div>
-								<h4>{name}</h4>
-								<blockquote>{tags.join(", ")}</blockquote>
+								<h4 className="mb0">{name}</h4>
+								<blockquote className="mb0">{tags.join(", ")}</blockquote>
 							</div>
 							{/*<i className="iconcss icon-arrow-right"></i>*/}
 						</div>

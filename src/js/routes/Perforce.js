@@ -51,10 +51,9 @@ class Perforce extends Component {
 				"overview",
 				"about",
 				"details",
-				"collections",
-				"metadata",
-				"shell",
-				"bulk",
+				"sync-share",
+				"auto",
+				"manual",
 			],
 		}
 	}
@@ -208,7 +207,7 @@ class Perforce extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Video src="assets/img/perforce/manual-sync-flow.mp4"/>
+							<Video src="assets/img/perforce/helix-sync-uploading.mp4"/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -221,25 +220,20 @@ class Perforce extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Editing Metadata</h2>
-								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.</blockquote>
+								<h2>Auto Sync</h2>
+								<blockquote>In our first round of research we we're looking to learn what mode of the product worked best for them. Auto sync mode worked similar to dropbox – new versions of assets were automatically created and shared.</blockquote>
 							</div>
 						</div>
 					</div>
-					<SideScroller>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/metadata-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<Video src="assets/img/perforce/auto.mp4"/>
 						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/metadata-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/metadata-03.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</SideScroller>
+					</div>
 				</ScrollSection>
-
 
 				<ScrollSection 
 				name={sections[5]}
@@ -249,53 +243,31 @@ class Perforce extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Shell Record</h2>
-								<blockquote>Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for.</blockquote>
+								<h2>Manual Sync</h2>
+								<blockquote>Manual sync mode functioned similar to a tools like github – new versions of assets were explicitly created and shared along with a quick message to your team telling them what changed.</blockquote>
 							</div>
 						</div>
 					</div>
 					<div className="grid">
-						<div className="grid__item grid__item--col-12">
-							<Image src="../assets/img/translator/shell-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<Video src="assets/img/perforce/manual-sync-flow.mp4"/>
 						</div>
 					</div>
-				</ScrollSection>
-
-
-				<ScrollSection 
-				name={sections[6]}
-				sections={sections} 
-				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Bulk Actions</h2>
-								<blockquote>Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image or Audio) across all shared metadata fields.</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/bulk-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-						<div className="grid__item grid__item--col-8 grid__item--col-10-medium">
-							<Image src="../assets/img/translator/bulk-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</SideScroller>
 				</ScrollSection>
 
 				<NextProject 
-				to="/jnj-home"
-				name="J&J Home"
+				to="/cisco"
+				name="Cisco Mate"
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
+					backgroundImage: `url(../assets/img/cisco/banner.png)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-					backgroundSize: 'contain',
-					backgroundPosition: 'center',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center 25%',
 				}}/>
 
 

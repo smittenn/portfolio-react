@@ -3,7 +3,7 @@
 }
 
 html {
-	background: $brand-black;
+	background: $brand-grey-darkest;
 	// width: 100%;
 }
 
@@ -22,11 +22,21 @@ body {
 
 
 	cursor: none !important;
-	color: $brand-black;
+	color: $brand-grey-darkest;
 }
 
+a {
+	cursor: none;
+	color: $brand-grey-darkest;  
+	// border-bottom: solid 1px;
+	text-decoration: none;
+	outline: none;
+	// white-space: normal;
+}
+
+
 hr {
-	background: $brand-black;
+	background: $brand-grey-darkest;
 	height: 1px;
 	width: 60px;
 	min-width: 60px;
@@ -94,7 +104,8 @@ section {
 	}
 
 	p {
-		transform: translateX(-20px);
+		height: 0;
+		transform: translate(-36px, -12px);
 	}
 
 	.spacer {

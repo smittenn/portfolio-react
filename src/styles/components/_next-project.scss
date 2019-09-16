@@ -1,0 +1,59 @@
+$baseclass: next-project;
+
+// @keyframes clip {
+// 	0% {
+// 		clip-path: url(#clippy-from);
+// 	}
+// 	100% {
+// 		clip-path: url(#clippy-to);
+// 	}
+// }
+
+.#{$baseclass} {
+	cursor: none;
+	opacity: 0;
+	// height: 60vh;
+
+	.active-section & {
+		opacity: 1;
+	}
+
+	i {
+		position: absolute;
+		right: 0;
+		top: 12px;
+	}
+
+	h1 {
+		transition: all $easing4 $duration-fast;
+	}
+
+	&__spacer {
+		
+	}
+
+
+	section {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		@include zIndexFar();
+
+		// height: 50vh;
+		// animation: none;
+		// animation-fill-mode: forwards;
+		// transition: none;
+		// transition: all $easing2 $duration-slow;
+	    // clip-path: url(#clippy-from);
+	}
+
+	&:hover {
+		section {
+			// animation: clip $easing2 $duration-slow;
+		    // clip-path: url(#clippy-to);
+			// height: 60vh;
+			// transform: translate3d(0, -5vh, 0);
+		}
+	}
+}

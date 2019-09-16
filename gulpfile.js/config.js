@@ -30,7 +30,7 @@ module.exports = {
 			dest: 'assets/js',
 			output: 'app.js',
 			sources: [
-				{ input: 'main.js', output: 'main.js'},
+			{ input: 'main.js', output: 'main.js'},
 			],
 			extensions: ['js']
 		},
@@ -53,7 +53,7 @@ module.exports = {
 			src: 'styles',
 			dest: 'assets/css',
 			sources: [
-			{ input: 'styles.scss', output: 'styles.css'},
+				{ input: 'styles.scss', output: 'styles.css'},
 			],
 			extensions: ['scss','sass','css']
 		},

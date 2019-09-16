@@ -8,6 +8,7 @@
 
 /* Libraries */
 @import 'variables.scss';
+@import 'mixins.scss';
 @import 'fonts.scss';
 // @import 'icons.scss';
 @import 'grid.scss';
@@ -16,8 +17,8 @@
 @import 'common.scss';
 @import 'animation.scss';
 
-/* Modules */
-@import 'modules/*';
+/* Components */
+@import 'components/*';
 
 /* Responsive */
 @import 'screen.scss';

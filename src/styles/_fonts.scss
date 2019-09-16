@@ -217,17 +217,17 @@
 // 	url('../fonts/IvarDisplay/IvarDisplay-SemiBold.svg#codropsicons') format('svg');
 // }
 
-// @font-face {
-// 	font-family: 'Futura Maxi';
-// 	font-weight: 800;
-// 	font-style: normal;
-// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
-// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'Futura Maxi';
+	font-weight: 800;
+	font-style: normal;
+	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
+	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
+	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
+	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
+	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
+}
 
 @font-face {
 	font-family: 'Moderat';
