@@ -3,7 +3,7 @@
 }
 
 html {
-	background: $brand-grey-darkest;
+	background: $brand-grey-dark;
 	// width: 100%;
 }
 
@@ -22,12 +22,12 @@ body {
 
 
 	cursor: none !important;
-	color: $brand-grey-darkest;
+	color: $brand-grey-dark;
 }
 
 a {
 	cursor: none;
-	color: $brand-grey-darkest;  
+	color: $brand-grey-dark;  
 	// border-bottom: solid 1px;
 	text-decoration: none;
 	outline: none;
@@ -36,7 +36,7 @@ a {
 
 
 hr {
-	background: $brand-grey-darkest;
+	background: $brand-grey-dark;
 	height: 1px;
 	width: 60px;
 	min-width: 60px;
@@ -170,7 +170,7 @@ section {
 
 
 		h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
-			color: rgba($brand-grey-darkest, 1);
+			color: rgba($brand-grey-dark, 1);
 		}
 	}
 

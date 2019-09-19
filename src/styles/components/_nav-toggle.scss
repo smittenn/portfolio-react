@@ -33,7 +33,6 @@ $baseclass: nav-toggle;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// cursor: pointer;
 	@include zIndexClosest();
 
 	.active-section & {
@@ -186,16 +185,16 @@ $baseclass: nav-toggle;
 	
 
 	@media screen and (max-width: $bp-medium) {
-		top: 6px;
+		top: 12px;
 		width: 49px;
 		height: 90px;
 
 		.#{$baseclass}__abbreviation {
-			margin-bottom: 9px;
+			margin-bottom: 12px;
 		}
 
 		.#{$baseclass}__count {
-			margin-top: 12px;
+			margin-top: 14px;
 		}
 		
 		.#{$baseclass}--menuOpen {

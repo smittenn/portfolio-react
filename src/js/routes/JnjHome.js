@@ -106,7 +106,7 @@ class JnjHome extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for J&J employees to connect and create.`]}
+					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for employees at J&J to connect & create.`]}
 					/>
 				</ScrollSection>
 
@@ -170,19 +170,19 @@ class JnjHome extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h5 className="uppercase">Role</h5>
+							<h6 className="uppercase">Role</h6>
 							<blockquote>Interaction Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Date</h5>
+							<h6 className="uppercase">Date</h6>
 							<blockquote>Fall, 2019</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Client</h5>
+							<h6 className="uppercase">Client</h6>
 							<blockquote>J&J People XD</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h5 className="uppercase">Team</h5>
+							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 
 								<TextLink><a href={people["Chris Purcell"]}>Chris Purcell</a></TextLink>,&nbsp; 

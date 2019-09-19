@@ -82,7 +82,7 @@ $baseclass: nav-takeover;
 		height: 60px;
 		width: 100%;
 		transform: translate3d(0,-300%,0);
-		transition: all $easing5 $duration-fast;
+		transition: all $easing2 $duration-slow;
 	}
 
 	&__item-container {
@@ -263,6 +263,9 @@ $baseclass: nav-takeover;
 
 
 		.#{$baseclass}__panel {
+			width: 100%;
+			background: rgba($brand-white, 0.97);
+
 			hr {
 				display: block;
 			}

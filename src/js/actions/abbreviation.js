@@ -6,6 +6,10 @@ export const aboutMe = () => ({
 	type: 'ABOUTME',
 })
 
+export const process = () => ({
+	type: 'PROCESS',
+})
+
 // Projects
 
 export const americanMade = () => ({

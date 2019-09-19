@@ -103,7 +103,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Perforce</span></span>, ` our products helped designers version their assets.` ]}
+					headerText={[ `At`, <span className="outline"><span>Perforce </span></span>, `our products helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
 
@@ -165,19 +165,19 @@ class Perforce extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Role</h5>
+							<h6 className="uppercase">Role</h6>
 							<blockquote>UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Date</h5>
+							<h6 className="uppercase">Date</h6>
 							<blockquote>Summer, 2015</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Client</h5>
+							<h6 className="uppercase">Client</h6>
 							<blockquote>Perforce</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h5 className="uppercase">Team</h5>
+							<h6 className="uppercase">Team</h6>
 							<blockquote className="no-mb">
 								<TextLink><a href={people["Janet Taylor"]}>Janet Taylor</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Rebecca Jablonski"]}>Rebecca Jablonski</a></TextLink>,&nbsp;

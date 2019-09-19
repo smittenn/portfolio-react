@@ -150,7 +150,7 @@ class Home extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
+					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in NYC.`]} 
 					/>
 				</ScrollSection>
 
@@ -162,21 +162,21 @@ class Home extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
 							<p className="mb0">{splitLetter("02.")}</p>
 							<h2>{splitWord("Hello — There")}</h2>
 							<blockquote className="mr">
 								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
-							<h5 className="uppercase">
+							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
 									<NavLink to="about">Learn More</NavLink>
 								</TextLink>
-							</h5>
+							</h6>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
 							<div className="grid__row">
 								<div className="grid__item grid__item--col-4">
 									<div className="spacer spacer__sm"/>
@@ -212,11 +212,11 @@ class Home extends Component {
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 							</blockquote>
-							<h5 className="uppercase">
+							<h6 className="uppercase">
 								<TextLink hideUnderline>
 									<NavLink to="about">Learn More</NavLink>
 								</TextLink>
-							</h5>
+							</h6>
 						</div>
 					</div>
 					<div className="grid">

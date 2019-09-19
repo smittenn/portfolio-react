@@ -5,7 +5,7 @@ $bp-medium: 800px;
 $bp-small: 480px;
 $bp-xsmall: 320px;
 
-$font-primary: 'Gilroy', sans-serif;
+$font-primary: 'Futura Maxi', sans-serif;
 $font-secondary: 'Moderat', sans-serif;
 // $font-tertiary: 'Campton', sans-serif;
 // $font-serif: 'GT Sectra Display', serif;
@@ -23,12 +23,12 @@ $brand-white: lighten(#F8FBF7, 2%);
 $brand-grey-lightest: #F4F4F0;
 $brand-grey-light: #DEDEDC;
 $brand-grey-medium: #81717A;
-$brand-grey-dark: #595358;
-$brand-grey-darkest: #232021;
+$brand-grey-dark: #232021;
+$brand-grey-darkest: darken(#232021, 3%);
 $brand-black: darken(#232021, 6%);
 
-$letter-spacing-xs: -0.024em;
-$letter-spacing-sm: -0.018em;
+$letter-spacing-xs: -0.036em;
+$letter-spacing-sm: -0.024em;
 $letter-spacing-md: -0.012em;
 $letter-spacing-lg: 0.024em;
 $letter-spacing-xl: 0.06em;

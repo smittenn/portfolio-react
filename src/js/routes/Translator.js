@@ -163,23 +163,23 @@ class Translator extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
-							<h5 className="uppercase">Role</h5>
+							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Date</h5>
+							<h6 className="uppercase">Date</h6>
 							<blockquote>June, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h5 className="uppercase">Client</h5>
+							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCU On-Air</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
-							<h5 className="uppercase">Team</h5>
+							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Kennix Lee"]}>Kennix Lee</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Jing Zhao"]}>Jing Zhao</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink> 
 							</blockquote> 
@@ -295,7 +295,7 @@ class Translator extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
 					backgroundSize: 'contain',
 					backgroundPosition: 'center',
 				}}/>

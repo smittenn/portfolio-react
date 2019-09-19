@@ -47,7 +47,7 @@ class ParallaxHeader extends Component {
 
 	render() {
 
-		const { bgImage, bgColor, headerText, strength, name, nextName, onSetActive, sections, activeSection } = this.props;
+		const { bgImage, bgColor, headerText, light } = this.props;
 		const { isAnimating } = this.state;
 
 		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
@@ -85,7 +85,7 @@ class ParallaxHeader extends Component {
 				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 					<p className="mb0">{splitLetter("01.")}</p>
-					<h1 className="mb0">{updatedText}</h1>
+					<h1 className={ classNames({ "mb0": true, "light": light })}>{updatedText}</h1>
 				</div>
 			</div>				
 		);

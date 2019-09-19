@@ -151,19 +151,19 @@ class AmericanMade extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h5 className="uppercase">Role</h5>
+							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h5 className="uppercase">Date</h5>
+							<h6 className="uppercase">Date</h6>
 							<blockquote>Summer, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h5 className="uppercase">Client</h5>
+							<h6 className="uppercase">Client</h6>
 							<blockquote>Universal Pictures</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-4  grid__item--col-12-medium">
-							<h5 className="uppercase">Team</h5>
+							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Oleksandr Lebedyev"]} target="_blank">Oleksandr Lebedyev</a></TextLink>,&nbsp; 

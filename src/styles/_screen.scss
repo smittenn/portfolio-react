@@ -32,6 +32,9 @@
 			&:first-child {
 				border-left: solid 1px;
 			}
+			&:last-child {
+				border-right: solid 1px;
+			}
 		}
 
 		&__row {
@@ -98,6 +101,7 @@
 
 		p {
 			transform: none;
+			height: auto;
 		}
 
 		.shift {
@@ -164,11 +168,11 @@
 		font-size: 34px;
 	}
 
-	h3 {
-		font-size: 28px;
-	}
+	// h3 {
+	// 	font-size: 28px;
+	// }
 
-	h4 {
-		font-size: 21px;
-	}
+	// h4 {
+	// 	font-size: 21px;
+	// }
 }

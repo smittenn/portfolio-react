@@ -89,7 +89,7 @@ class Vai extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify people and products.`]}
+					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify objects in video.`]}
 					/>
 				</ScrollSection>
 
@@ -138,28 +138,32 @@ class Vai extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ backgroundImage: `url(../assets/img/vai/escalade.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`, backgroundPosition: "center 10%" }}  
+				style={{ 
+					backgroundImage: `url(../assets/img/vai/mr-robot.jpg)`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .85`,
+				 	backgroundPosition: "center 30%" 
+				}}  
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
-							<h5 className="uppercase">Role</h5>
+							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
-							<h5 className="uppercase">Date</h5>
+							<h6 className="uppercase">Date</h6>
 							<blockquote>October, 2017</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
-							<h5 className="uppercase">Client</h5>
+							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCUX Lab</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-6-medium">
-							<h5 className="uppercase">Team</h5>
+							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Kennix Lee"]}>Kennix Lee</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Jing Zhao"]}>Jing Zhao</a></TextLink> 
 							</blockquote> 
 						</div>
