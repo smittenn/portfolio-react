@@ -33,15 +33,22 @@ export default class ClipWrapper extends Component {
 
 		return (
 			<div className={classnames}>
-				<Link style={{display: "none"}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}/>
-
-				{(name == sections[0]) ? (
-					<ScrollArrow to={sections[1]} onSetActive={onSetActive}/>
-				) : null}
-
-				{(name == sections[1]) ? (
-					<ScrollArrow to={name} onSetActive={onSetActive}/>
-				) : null}
+				{ sections.length > 1 ? [
+					<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}/>,
+					,
+					((name == sections[0]) ? (
+						<ScrollArrow to={sections[1]} onSetActive={onSetActive}/>
+					) : null)
+					,
+					((name == sections[1]) ? (
+						<ScrollArrow to={name} onSetActive={onSetActive}/>
+					) : null)
+					,
+					<Sidebar 
+					sections={sections} 
+					activeSection={activeSection}
+					/>
+				] : null }
 
 				{/*<div className="logo">
 					<div className="logo__top">
@@ -64,11 +71,6 @@ export default class ClipWrapper extends Component {
 
 
 				<NavToggle/>
-
-				<Sidebar 
-				sections={sections} 
-				activeSection={activeSection}
-				/>
 			</div>
 		);
 	}

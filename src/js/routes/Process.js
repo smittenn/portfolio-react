@@ -22,7 +22,6 @@ class Process extends Component {
 		this.state = {
 			activeSection: "intro",
 			sections: [
-				"intro",
 				"diagram",
 			],
 		}
@@ -74,19 +73,6 @@ class Process extends Component {
 					</div>
 
 				</ScrollSection>
-
-
-				<ScrollSection 
-				name={sections[1]} 
-				sections={sections} 
-				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(1); }}>
-					<ParallaxHeader
-					light
-					headerText={[`I specialize in prototypes, visual design and front-end code.`]} 
-					/>
-				</ScrollSection>
-
 			</article>
 		);
 	}

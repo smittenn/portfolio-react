@@ -13,61 +13,37 @@
   text-align: center;
   opacity: 1;
 }
-.super-q {
-  position: relative;
-}
-.q {
-  position: absolute;
-  width: 55%;
-  height: 55%;
-  background: #FFF;
-}
-.q1 {
-  top: 0;
-  left: 0;
-}
-.q2 {
-  top: 0;
-  left: 50%;
-}
-.q3 {
-  top: 50%;
-  left: 0;
-}
-.q4 {
-  top: 50%;
-  left: 50%;
-}
 .step {
   position: absolute;
   transform: translate(-50%, -50%);
 }
 .step__arc {
   stroke-width: 1px;
-  stroke: $brand-white;
+  stroke: $brand-red;
   stroke-dashoffset: 220;
   stroke-dasharray: 220;
   stroke-dasharray: 440;
   fill: transparent;
   vector-effect: non-scaling-stroke;
-  transition: stroke-dasharray $duration-slow $easing3;
+  transition: stroke-dasharray $duration-slowest $easing2;
+}
+.circle__arc {
+  stroke: rgba($brand-white, 0.24);
+  stroke-width: 1;
+  fill: transparent;
+  vector-effect: non-scaling-stroke;
 }
 .step__number {
   position: absolute;
-  top: 14px;
+  top: 12px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: $font-primary;
   font-size: 12px;
-  color: #999999;
+  color: $brand-black;
   line-height: 1.4;
   height: 14px;
   text-align: center;
   opacity: 1;
-}
-.is-checked .step__number {
-  color: #ffffff;
-  font-weight: 700;
 }
 .step__info {
   position: absolute;
@@ -90,45 +66,6 @@
   font-family: $font-primary;
   text-transform: uppercase;
   text-align: center;
-}
-.step-1 .step__role {
-  bottom: -10px;
-  left: 0px;
-}
-.step-2 .step__role {
-  top: 40px;
-  left: -10px;
-  width: 191px;
-}
-.step-3 .step__role {
-  top: 0;
-}
-.step-4 .step__role {
-  top: -40px;
-  left: 30px;
-}
-.step-5 .step__role {
-  top: 0;
-  left: 0;
-  width: 191px;
-}
-.step-6 .step__role {
-  top: 30px;
-  right: 30px;
-  width: 191px;
-}
-.step-7 .step__role {
-  top: 80px;
-  right: 30px;
-}
-.step-8 .step__role {
-  top: 110px;
-  right: 50px;
-  width: 191px;
-}
-.iconize {
-  position: relative;
-  width: 35px;
 }
 .step__icon {
   position: relative;
@@ -250,14 +187,10 @@
   fill: $brand-white;
 }
 .step__spot-circle {
-  fill: transparent;
+  fill: $brand-black;
   stroke: $brand-white;
   vector-effect: non-scaling-stroke;
   stroke-width: 1;
-}
-.is-checked .step__number {
-  color: #ffffff;
-  font-weight: 700;
 }
 .step__info {
   position: absolute;
