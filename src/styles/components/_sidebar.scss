@@ -4,21 +4,20 @@ $baseclass: sidebar;
 	height: 100vh;
 	width: auto;
 	position: fixed;
-	pointer-events: auto;
+	pointer-events: none;
 	display: none;
-	opacity: 0;
 	align-items: center;
 	justify-content: flex-end;
 	left: 0;
 	top: 0px;
 	background-blend-mode: multiply;
 	transition: transform $duration-fast $easing4;
-	transform: translateX(-66px);
+	transform: translateX(-60px);
 	@include zIndexCloser();
 
 	.active-section & {
 		display: flex;
-		opacity: 1;
+		pointer-events: auto;
 	}
 
 	&__inner {

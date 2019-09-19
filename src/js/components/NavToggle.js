@@ -74,13 +74,13 @@ class NavToggle extends Component {
 			onMouseEnter={this.props.isTakeoverOpen ? this.props.setCursorHover : (() => { this.props.hoverToggle(); this.props.setCursorHover();}) } 
 			onMouseLeave={this.props.isTakeoverOpen ? this.props.setCursorUnhover : (() => { this.props.unhoverToggle(); this.props.setCursorUnhover(); })}
 			onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
-				<h5 className="uppercase mb0 nav-toggle__abbreviation">{this.props.abbreviation}</h5>
+				<h6 className="uppercase mb0 nav-toggle__abbreviation">{this.props.abbreviation}</h6>
 				<div className="nav-toggle__hamburger">
 					<div className="nav-toggle__line"/>
 					<div className="nav-toggle__line"/>
 					<div className="nav-toggle__line"/>
 				</div>
-				<h5 className="uppercase mb0 nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h5>
+				<h6 className="uppercase mb0 nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h6>
 			</div>
 		);
 	}

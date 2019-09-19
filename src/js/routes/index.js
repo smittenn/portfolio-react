@@ -5,6 +5,7 @@ import NavTakeover from '../components/NavTakeover'
 import Cursor from '../components/Cursor'
 
 import Home from './Home'
+import Process from './Process'
 import AmericanMade from './AmericanMade'
 import Vai from './Vai'
 import Translator from './Translator'
@@ -20,7 +21,7 @@ const routes = (
 	<main>
 		<Switch>
 			<Route exact path="/" component={Home}/>
-			<Route exact path="/process" component={Home}/>
+			<Route exact path="/process" component={Process}/>
 			<Route path="/about-me" component={AboutMe}/>
 			<Route path="/resume" component={AboutMe}/>
 

@@ -4,7 +4,7 @@
 	width: 100%;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	padding: 0 72px;
+	padding: 0 120px;
 	max-width: 1440px;
 
 	&--lines {
@@ -24,25 +24,29 @@
 		border-right: solid 1px;
 		height: 100%;
 
+		&:last-child {
+			border: none;
+		}
+
 		// transform: scaleY(0);
 		// animation: drawIn $duration-slow $duration-slow $easing1;
 		// animation-fill-mode: forwards;
 		// transform-origin: top;
 
-		@for $i from 1 through 4 {
-			&:nth-child(#{$i}n + #{$i}) {
-				animation-delay: (#{($i * 0.09)}s);
-			}
-		}
+		// @for $i from 1 through 4 {
+		// 	&:nth-child(#{$i}n + #{$i}) {
+		// 		animation-delay: (#{($i * 0.09)}s);
+		// 	}
+		// }
 
-		@keyframes drawIn {
-			0% {
-				transform: scaleY(0);
-			}
-			100% {
-				transform: scaleY(1);
-			}
-		}
+		// @keyframes drawIn {
+		// 	0% {
+		// 		transform: scaleY(0);
+		// 	}
+		// 	100% {
+		// 		transform: scaleY(1);
+		// 	}
+		// }
 	}
 
 	&__row {

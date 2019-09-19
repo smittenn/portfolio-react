@@ -4,6 +4,8 @@ const abbreviationReducer = (state = 'H', action) => {
 			return 'H'
 		case 'ABOUTME':
 			return 'A'
+		case 'PROCESS':
+			return 'P'
 		case 'AMERICANMADE':
 			return 'P1'
 		case 'VAI':
