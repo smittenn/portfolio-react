@@ -218,6 +218,30 @@
 // }
 
 @font-face {
+	font-family: 'Hurme';
+	font-weight: 600;
+	font-style: normal;
+	src: url('../fonts/Hurme/Hurme-SemiBold.eot');
+	src: url('../fonts/Hurme/Hurme-SemiBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Hurme/Hurme-SemiBold.woff2') format('woff2'), 
+	url('../fonts/Hurme/Hurme-SemiBold.woff') format('woff'), 
+	url('../fonts/Hurme/Hurme-SemiBold.otf') format('truetype'),
+	url('../fonts/Hurme/Hurme-SemiBold.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Hurme';
+	font-weight: 700;
+	font-style: normal;
+	src: url('../fonts/Hurme/Hurme-Bold.eot');
+	src: url('../fonts/Hurme/Hurme-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Hurme/Hurme-Bold.woff2') format('woff2'), 
+	url('../fonts/Hurme/Hurme-Bold.woff') format('woff'), 
+	url('../fonts/Hurme/Hurme-Bold.otf') format('truetype'),
+	url('../fonts/Hurme/Hurme-Bold.svg#codropsicons') format('svg');
+}
+
+@font-face {
 	font-family: 'Futura Maxi';
 	font-weight: 800;
 	font-style: normal;

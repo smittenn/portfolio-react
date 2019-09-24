@@ -43,8 +43,9 @@ h1, h2, h3, h4, h5, h6, h7 {
 // }
 
 h1 {
-	font-size: 102px;
-	line-height: 1.3;
+	font-size: 120px;
+	line-height: 1.1;
+	font-weight: 600;
 	margin-left: -5px;
 	margin-bottom: 40px;
 	letter-spacing: $letter-spacing-xs;
@@ -56,7 +57,7 @@ h1 {
 }
 
 h2 {
-	font-size: 90px;
+	font-size: 108px;
 	line-height: 1.1;
 	margin-left: -3px;
 	margin-bottom: 40px;
@@ -64,15 +65,15 @@ h2 {
 }
 
 h3 {
-	font-size: 54px;
+	font-size: 60px;
 	line-height: 1.2;
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-sm;
 }
 
 h4 {
-	font-size: 40px;
-	line-height: 1.1;
+	font-size: 48px;
+	line-height: 1.2;
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-md;
 }
@@ -85,15 +86,14 @@ h4 {
 
 h5 {
 	font-size: 16px;
-	line-height: 24px;
+	line-height: 1.3;
 	margin-bottom: 9px;
 }
 
 h6 {
 	font-size: 14px;
-	line-height: 16px;
-	margin-bottom: 12px;
 	line-height: 1.3;
+	margin-bottom: 12px;
 }
 
 

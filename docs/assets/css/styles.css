@@ -63,6 +63,20 @@ table {
   src: url("../fonts/Gilroy/Gilroy-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy/Gilroy-Light.woff2") format("woff2"), url("../fonts/Gilroy/Gilroy-Light.woff") format("woff"), url("../fonts/Gilroy/Gilroy-Light.ttf") format("truetype"), url("../fonts/Gilroy/Gilroy-Light.svg#codropsicons") format("svg"); }
 
 @font-face {
+  font-family: 'Hurme';
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/Hurme/Hurme-SemiBold.eot");
+  src: url("../fonts/Hurme/Hurme-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-SemiBold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-SemiBold.woff") format("woff"), url("../fonts/Hurme/Hurme-SemiBold.otf") format("truetype"), url("../fonts/Hurme/Hurme-SemiBold.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Hurme';
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Hurme/Hurme-Bold.eot");
+  src: url("../fonts/Hurme/Hurme-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Bold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Bold.woff") format("woff"), url("../fonts/Hurme/Hurme-Bold.otf") format("truetype"), url("../fonts/Hurme/Hurme-Bold.svg#codropsicons") format("svg"); }
+
+@font-face {
   font-family: 'Futura Maxi';
   font-weight: 800;
   font-style: normal;
@@ -174,7 +188,6 @@ table {
       width: 100%; }
 
 body, button, input, select, textarea {
-  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
@@ -198,12 +211,13 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 
 h1, h2, h3, h4, h5, h6, h7 {
   position: relative;
-  font-family: "Futura Maxi", sans-serif;
+  font-family: "Hurme", sans-serif;
   font-weight: 800; }
 
 h1 {
-  font-size: 102px;
-  line-height: 1.3;
+  font-size: 120px;
+  line-height: 1.1;
+  font-weight: 600;
   margin-left: -5px;
   margin-bottom: 40px;
   letter-spacing: -0.036em; }
@@ -212,34 +226,33 @@ h1 {
     -webkit-text-stroke: 1px #fefefe; }
 
 h2 {
-  font-size: 90px;
+  font-size: 108px;
   line-height: 1.1;
   margin-left: -3px;
   margin-bottom: 40px;
   letter-spacing: -0.024em; }
 
 h3 {
-  font-size: 54px;
+  font-size: 60px;
   line-height: 1.2;
   margin-bottom: 24px;
   letter-spacing: -0.024em; }
 
 h4 {
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 48px;
+  line-height: 1.2;
   margin-bottom: 24px;
   letter-spacing: -0.012em; }
 
 h5 {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.3;
   margin-bottom: 9px; }
 
 h6 {
   font-size: 14px;
-  line-height: 16px;
-  margin-bottom: 12px;
-  line-height: 1.3; }
+  line-height: 1.3;
+  margin-bottom: 12px; }
 
 p {
   font-family: "Moderat", sans-serif;
@@ -264,7 +277,7 @@ blockquote {
   .drop-caps:first-letter {
     float: left;
     font-size: 60px;
-    font-family: "Futura Maxi", sans-serif;
+    font-family: "Hurme", sans-serif;
     font-weight: 800;
     margin: 0 12px -30px 0;
     line-height: 61px; }
@@ -2513,7 +2526,7 @@ section p span > span, section blockquote span > span {
   background: #232021; }
 
 [class*="react-sandbox-editor"].sandbox__tab {
-  font-family: "Futura Maxi", sans-serif; }
+  font-family: "Hurme", sans-serif; }
   [class*="react-sandbox-editor"].sandbox__tab:hover {
     color: #ff3636; }
 
