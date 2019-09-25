@@ -16,7 +16,7 @@ export default class ProcessDiagram extends Component {
 			hoveringIndex: null,
 			activeItem: {
 				title: `My User Experience Process`,
-				body: ``
+				body: null
 			}
 		}
 
@@ -166,7 +166,7 @@ export default class ProcessDiagram extends Component {
 
 			<div className="title">
 				<h3 className={ activeIndex ? null : "mb0"}>{ activeItem.title }</h3>
-				<blockquote className="mb0">{ splitWord(activeItem.body) }</blockquote>
+				<blockquote className="mb0">{ activeItem.body ? splitWord(activeItem.body) : null }</blockquote>
 			</div>
 
 			<ul>
