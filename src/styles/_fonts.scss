@@ -219,6 +219,18 @@
 
 @font-face {
 	font-family: 'Hurme';
+	font-weight: 300;
+	font-style: normal;
+	src: url('../fonts/Hurme/Hurme-Light.eot');
+	src: url('../fonts/Hurme/Hurme-Light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Hurme/Hurme-Light.woff2') format('woff2'), 
+	url('../fonts/Hurme/Hurme-Light.woff') format('woff'), 
+	url('../fonts/Hurme/Hurme-Light.otf') format('truetype'),
+	url('../fonts/Hurme/Hurme-Light.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Hurme';
 	font-weight: 600;
 	font-style: normal;
 	src: url('../fonts/Hurme/Hurme-SemiBold.eot');
