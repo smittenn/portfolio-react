@@ -216,15 +216,19 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
   h1.light, h2.light, h3.light, h4.light, h5.light, h6.light, h7.light, blockquote.light, p.light {
     font-weight: 300; }
 
-h1, h2, h3, h4, h5, h6, h7 {
+h1, h2, h3, h4, h5, h6 {
   position: relative;
-  font-family: "Hurme", sans-serif;
-  font-weight: 800; }
+  font-family: "Hurme", sans-serif; }
+
+h1, h2, h3, h4 {
+  font-weight: 600; }
+
+h5, h6 {
+  font-weight: 700; }
 
 h1 {
   font-size: 120px;
   line-height: 1.1;
-  font-weight: 600;
   margin-left: -5px;
   margin-bottom: 40px;
   letter-spacing: -0.036em; }
