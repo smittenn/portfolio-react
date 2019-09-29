@@ -34,19 +34,20 @@ export default class ClipWrapper extends Component {
 		return (
 			<div className={classnames}>
 				{ sections.length > 1 ? [
-					<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive}/>,
+					<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
 					,
 					((name == sections[0]) ? (
-						<ScrollArrow to={sections[1]} onSetActive={onSetActive}/>
+						<ScrollArrow to={sections[1]} onSetActive={onSetActive} key={1}/>
 					) : null)
 					,
 					((name == sections[1]) ? (
-						<ScrollArrow to={name} onSetActive={onSetActive}/>
+						<ScrollArrow to={name} onSetActive={onSetActive} key={2}/>
 					) : null)
 					,
 					<Sidebar 
 					sections={sections} 
 					activeSection={activeSection}
+					key={3}
 					/>
 				] : null }
 

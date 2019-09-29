@@ -13,7 +13,7 @@ module.exports = {
 		src: path.join(__dirname, '../src'),
 		dest: path.join(__dirname, '../docs')
 	},
-	watchableTasks: ['copyScripts', 'copyImg', 'copyFonts', 'ejs', 'scripts', 'styles', 'iconfont'],
+	watchableTasks: ['copyScripts', 'copyImg', 'copyFonts', 'ejs', 'scripts', 'styles', /*'iconfont'*/],
 	tasks: {
 		browserSync: {
 			server: {

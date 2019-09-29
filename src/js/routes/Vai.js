@@ -6,6 +6,8 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { openSecondaryPanel } from "../actions/secondaryPanel"
+import { closePrimaryPanel } from "../actions/primaryPanel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -37,6 +39,8 @@ class Vai extends Component {
 
 		this.props.vai();
 		this.props.reset();
+		this.props.openSecondaryPanel();
+		this.props.closePrimaryPanel();
 	}
 
 
@@ -90,6 +94,7 @@ class Vai extends Component {
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
 					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify objects in video.`]}
+					// headerText={[`The`, <span className="outline"><span>Rationalized </span></span>, `player unified the UX across NBCU video players.`]}
 					/>
 				</ScrollSection>
 
@@ -280,6 +285,8 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
+	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Vai)

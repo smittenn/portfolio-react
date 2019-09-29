@@ -1,27 +1,30 @@
+import navData from "../data/nav";
+
 const abbreviationReducer = (state = 'H', action) => {
 	switch (action.type) {
 		case 'HOME':
-			return 'H'
-		case 'ABOUTME':
-			return 'A'
+			return navData.primary[0].abbreviation
 		case 'PROCESS':
-			return 'P'
+			return navData.primary[2].abbreviation
+		case 'ABOUTME':
+			return navData.primary[3].abbreviation
+		// PROJECTS 
 		case 'AMERICANMADE':
-			return 'P1'
+			return navData.secondary[1].abbreviation
 		case 'VAI':
-			return 'P2'
+			return navData.secondary[2].abbreviation
 		case 'TRANSLATOR':
-			return 'P3'
-		case 'JJMDC':
-			return 'P4'
+			return navData.secondary[3].abbreviation
 		case 'JJHOME':
-			return 'P5'
+			return navData.secondary[4].abbreviation
+		case 'JJMDC':
+			return navData.secondary[5].abbreviation
 		case 'WRAP1':
-			return 'P6'
+			return navData.secondary[6].abbreviation
 		case 'WRAP2':
-			return 'P7'
+			return navData.secondary[7].abbreviation
 		case 'PERFORCE':
-			return 'P8'
+			return navData.secondary[8].abbreviation
 		case 'CISCO':
 			return 'P9'
 		case 'PROTOHACK':

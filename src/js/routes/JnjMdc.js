@@ -6,6 +6,8 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { openSecondaryPanel } from "../actions/secondaryPanel"
+import { closePrimaryPanel } from "../actions/primaryPanel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -38,6 +40,8 @@ class JnjMdc extends Component {
 
 		this.props.jjMdc();
 		this.props.reset();
+		this.props.openSecondaryPanel();
+		this.props.closePrimaryPanel();
 	}
 
 
@@ -354,6 +358,8 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
+	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(JnjMdc)

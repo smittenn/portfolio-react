@@ -82,6 +82,12 @@
 	position: absolute;
 	transform: translate(-50%, -50%);
 
+	&__spot-fill {
+		fill: $brand-white;
+		transform: scale(0);
+		transition: transform $duration-fast $easing5;
+	}
+
 	&:nth-child(1) {
 		top: 1%;
 		left: 50%;
@@ -167,14 +173,23 @@
 		.step__info > .step__text {
 			transform: none;
 		}
+		.step__spot-fill {
+			transform: scale(1);
+		}
+	}
+	&--active {
+		.step__info > .step__text {
+			transform: none;
+		}
+		.step__spot-fill {
+			transform: scale(1);
+			fill: $brand-red;
+		}
 	}
 }
 .step__spot-svg {
 	width: 30px;
 	height: 30px;
-}
-.step__spot-fill {
-	fill: $brand-white;
 }
 .step__spot-circle {
 	fill: $brand-black;

@@ -99,7 +99,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `The`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `site told the story of the movie.`]}
+					headerText={[ `Universal Pictures' site for`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `told the story of the film.`]}
 					/>
 				</ScrollSection>
 

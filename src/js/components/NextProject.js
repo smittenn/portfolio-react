@@ -66,7 +66,7 @@ class NextProject extends Component {
 									{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 									<div className="grid__item grid__item--col-10">
 										<h3 className="">Next Up</h3>
-										<h2>{name}{/*<i className="iconcss icon-arrow-right"/>*/}</h2>
+										<h2 className="mb0">{name}{/*<i className="iconcss icon-arrow-right"/>*/}</h2>
 									</div>
 								</div>
 						</section>

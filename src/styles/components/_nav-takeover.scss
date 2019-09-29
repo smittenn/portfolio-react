@@ -132,9 +132,9 @@ $baseclass: nav-takeover;
 				// color: transparent;
 				// -webkit-text-stroke: 1px $brand-black;
 
-				&:after {
-					@include activeDot();
-				}
+				// &:after {
+				// 	@include activeDot();
+				// }
 			}
 
 			&.hovered {
@@ -147,9 +147,9 @@ $baseclass: nav-takeover;
 	&__items--secondary {
 		a.active {
 			h1, h2, h3, h4, h5, h6 {
-				&:after {
-					@include activeDot();
-				}
+				// &:after {
+				// 	@include activeDot();
+				// }
 
 				&.hovered {
 					color: transparent;

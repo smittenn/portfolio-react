@@ -3,30 +3,33 @@ import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 
+import Icon from "../components/Icon"
+
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
 import { openPrimaryPanel, closePrimaryPanel } from "../actions/primaryPanel"
 import { openSecondaryPanel, closeSecondaryPanel } from "../actions/secondaryPanel"
 import { hoverToggle, unhoverToggle } from "../actions/navToggle"
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
-import splitLetter from '../services/splitLetter'
+import navData from '../data/nav'
 
-class Nav extends Component {
+import splitLetter from '../services/splitLetter'
+import palette from '../services/palette'
+
+class NavTakeover extends Component {
 
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isToggleHovered: false,
-			indexHovered: 0,
+			indexHovered: null,
 		}
 	}
 
-	// handleClickOutside = (event) => {
-	// 	if (this.refs.notPanels.contains(event.target)) {
-	// 		this.props.closeTakeover();
-	// 		this.props.closeSecondaryPanel();
-	// 	}
+	// componentDidMount() {
+	// 	navData.primary.forEach((item, i) => {
+	// 		if (this.props.abbreviation == item.abbreviation) { this.setState({ indexHovered : i }) }
+	// 	});
 	// }
 
 	setMenuClosed = () => {
@@ -53,113 +56,41 @@ class Nav extends Component {
 		this.setState({
 			indexHovered: index,
 		});
-
-		// const els = document.getElementsByClassname('hovered');
-
-		// els.forEach(el => {
-		// 	el.classList.remove('hovered')
-		// })
-
-		// e.target.classList.add('hovered');
 	}
 
 	getChildIndex = (elem) => {
 		let i = 0;
 
-		while ((elem = elem.previousSibling) != null) { i++; }
+		while ((elem = elem.previousSibling) != null) { i++ }
 
 		return (this.props.isSecondaryPanelOpen ? i - 1 : i);
 	}
 
 
 	render() {
-		const { indexHovered } = this.state;
-		const { abbreviation, count } = this.props;
+		let { indexHovered } = this.state;
+		const { abbreviation, count, isTakeoverOpen, isPrimaryPanelOpen, isSecondaryPanelOpen } = this.props;
+
+		const brandBlack = palette("brand-black");
+
+		if ( indexHovered == null) {
+			const data = isPrimaryPanelOpen ? navData.primary : navData.secondary;
+
+			data.forEach((item, i) => {
+				if (this.props.abbreviation == item.abbreviation) { indexHovered = i }
+			});
+		}
 
 		const classnames = classNames({
 			"nav-takeover": true,
-			"nav-takeover--menuOpen": this.props.isTakeoverOpen,
-			"nav-takeover--primaryPanelOpen": this.props.isPrimaryPanelOpen,
-			"nav-takeover--secondaryPanelOpen": this.props.isSecondaryPanelOpen,
+			"nav-takeover--menuOpen": isTakeoverOpen,
+			"nav-takeover--primaryPanelOpen": isPrimaryPanelOpen,
+			"nav-takeover--secondaryPanelOpen": isSecondaryPanelOpen,
 		})
 
 		const lineAnimation = {
 			transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 100) * (indexHovered + 0) + 'px, 0)',
-			opacity: (this.props.isTakeoverOpen ? 1 : 0)
-		}
-
-		const navData = {
-			primary : [
-				{
-					name: "Home",
-					to: "/",
-					abbreviation: "H",
-				},
-				{
-					name: "Projects",
-				},
-				{
-					name: "Process",
-					to: "/process",
-					abbreviation: "P",
-				},
-				{
-					name: "About Me",
-					to: "about-me",
-					abbreviation: "A",
-				},
-				{
-					name: "Resume",
-					to: "/resume",
-					abbreviation: "R",
-				},
-			],
-			secondary: [
-				{
-					name: "Google Design",
-					to: "/google-design",
-				},
-				{
-					name: "American Made",
-					to: "/american-made",
-				},
-				{
-					name: "V.ai Player",
-					to: "/vai",
-				},
-				{
-					name: "Translator",
-					to: "/translator",
-				},
-				{
-					name: "Home Intranet",
-					to: "/jnj-home",
-				},
-				{
-					name: "MDC Megasite",
-					to: "/jnj-mdc",
-				},
-				{
-					name: "Wrap Interactions",
-					to: "/micro-app-interactions",
-				},
-				{
-					name: "Wrap Templates",
-					to: "/micro-app-templates",
-				},
-				{
-					name: "Perforce",
-					to: "/perforce",
-				},
-				{
-					name: "Cisco Mate",
-					to: "/cisco",
-				},
-				{
-					name: "Protohack",
-					to: "/protohack",
-				},
-			]
+			opacity: (isTakeoverOpen ? 1 : 0)
 		}
 
 		const secondaryNavItems = navData.secondary.map((item, i) => 
@@ -201,7 +132,7 @@ class Nav extends Component {
 						<div className="nav-takeover__item-container" ref="container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
 							<ul className="nav-takeover__items--secondary" ref="secondary">
 								<li className="nav-takeover__arrow" onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-									<h3>→</h3>
+									<h3><Icon icon='arrow' size={60} color={brandBlack}/></h3>
 								</li>
 								{ secondaryNavItems }
 							</ul>
@@ -243,7 +174,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+export default connect(mapStateToProps, mapDispatchToProps)(NavTakeover)
 
 
 

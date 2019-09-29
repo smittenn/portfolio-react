@@ -23,41 +23,49 @@ export default class ProcessDiagram extends Component {
 		this.data = [
 			{
 				title: `Discover`,
+				iconName: `discover`,
 				body: `Interview users to understand their current process and workflow.`,
 				arcPath: `M 50 1 A 49 49 0 0 1 84.64823227814082 15.351767721859176`
 			},
 			{
 				title: `Ideate`,
+				iconName: `ideate`,
 				body: `Meet with stakeholders and developers to collaboratively generate design ideas.`,
 				arcPath: `M 84.64823227814082 15.351767721859176 A 49 49 0 0 1 99 50`
 			},
 			{
 				title: `Wireframe`,
+				iconName: `wireframe`,
 				body: `Consolidate the ideas and create a wireframe to communicate the design and functionality with developers.`,
 				arcPath: `M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082`
 			},
 			{
 				title: `Prototype`,
+				iconName: `prototype`,
 				body: `Create a responsive and clickable coded prototype built with HTML, CSS, and JavaScript.`,
 				arcPath: `M 84.64823227814082 84.64823227814082 A 49 49 0 0 1 50 99`
 			},
 			{
 				title: `User Testing`,
+				iconName: `user-testing`,
 				body: `Test the prototype using Usability Testing methods to gather thorough feedback.`,
 				arcPath: `M 50 99 A 49 49 0 0 1 15.351767721859176 84.64823227814082`
 			},
 			{
 				title: `Experience Mapping`,
+				iconName: `experience-mapping`,
 				body: `Synthesize the feedback and map the users' experience with the prototype to improve it in the future iterations.`,
 				arcPath: `M 15.351767721859176 84.64823227814082 A 49 49 0 0 1 1 50.00000000000001`
 			},
 			{
 				title: `Refining`,
+				iconName: `refining`,
 				body: `Refine and iterate on the design to further improve the users' experience.`,
 				arcPath: `M 1 50.00000000000001 A 49 49 0 0 1 15.351767721859161 15.351767721859176`
 			},
 			{
 				title: `Deliver & Backlog`,
+				iconName: `backlog`,
 				body: `Deliver changes to the prototype and list the possible improvements for the future.`,
 				arcPath: `M 15.351767721859161 15.351767721859176 A 49 49 0 0 1 49.99999999999999 1`
 			}
@@ -84,7 +92,7 @@ export default class ProcessDiagram extends Component {
 
 
 		const steps = this.data.map((item, i) => (
-			<li className={classNames({ "step": true, "step--hovering" : hoveringIndex == i + 1 })} key={i + 1} onClick={() => this.setActiveStep(i+1)}>
+			<li className={classNames({ "step": true, "step--hovering" : hoveringIndex == i + 1, "step--active": (activeIndex > i) })} key={i + 1} onClick={() => this.setActiveStep(i+1)}>
 				<div className="step__spot" onMouseOver={() => this.setHoveringIndex(i+1)} onMouseOut={() => this.setHoveringIndex(null)}>
 					<svg className="step__spot-svg" viewBox="0 0 100 100">
 						<circle cx="50" cy="50" r="24" className="step__spot-circle"></circle>
@@ -165,6 +173,7 @@ export default class ProcessDiagram extends Component {
 			</svg>
 
 			<div className="title">
+				<h2><i className={"iconcss icon-" + activeItem.iconName }/></h2>
 				<h3 className={ activeIndex ? null : "mb0"}>{ activeItem.title }</h3>
 				<blockquote className="mb0">{ activeItem.body ? splitWord(activeItem.body) : null }</blockquote>
 			</div>
