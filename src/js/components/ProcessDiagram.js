@@ -4,6 +4,7 @@ import IntersectionVisible from "react-intersection-visible"
 
 import pad from '../services/pad'
 import splitWord from '../services/splitWord'
+import palette from '../services/palette'
 
 export default class ProcessDiagram extends Component {
 
@@ -15,6 +16,7 @@ export default class ProcessDiagram extends Component {
 			activeIndex: null,
 			hoveringIndex: null,
 			activeItem: {
+				color: palette('brand-black'),
 				title: `My User Experience Process`,
 				body: null
 			}
@@ -22,48 +24,56 @@ export default class ProcessDiagram extends Component {
 
 		this.data = [
 			{
+				color: palette('brand-red'),
 				title: `Discover`,
 				iconName: `discover`,
 				body: `Interview users to understand their current process and workflow.`,
 				arcPath: `M 50 1 A 49 49 0 0 1 84.64823227814082 15.351767721859176`
 			},
 			{
+				color: palette('brand-purple'),
 				title: `Ideate`,
 				iconName: `ideate`,
 				body: `Meet with stakeholders and developers to collaboratively generate design ideas.`,
 				arcPath: `M 84.64823227814082 15.351767721859176 A 49 49 0 0 1 99 50`
 			},
 			{
+				color: palette('brand-green'),
 				title: `Wireframe`,
 				iconName: `wireframe`,
 				body: `Consolidate the ideas and create a wireframe to communicate the design and functionality with developers.`,
 				arcPath: `M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082`
 			},
 			{
+				color: palette('brand-yellow'),
 				title: `Prototype`,
 				iconName: `prototype`,
 				body: `Create a responsive and clickable coded prototype built with HTML, CSS, and JavaScript.`,
 				arcPath: `M 84.64823227814082 84.64823227814082 A 49 49 0 0 1 50 99`
 			},
 			{
+				color: palette('brand-orange'),
 				title: `User Testing`,
 				iconName: `user-testing`,
 				body: `Test the prototype using Usability Testing methods to gather thorough feedback.`,
 				arcPath: `M 50 99 A 49 49 0 0 1 15.351767721859176 84.64823227814082`
 			},
 			{
+				color: palette('brand-pink'),
 				title: `Experience Mapping`,
 				iconName: `experience-mapping`,
 				body: `Synthesize the feedback and map the users' experience with the prototype to improve it in the future iterations.`,
 				arcPath: `M 15.351767721859176 84.64823227814082 A 49 49 0 0 1 1 50.00000000000001`
 			},
 			{
-				title: `Refining`,
+				color: palette('brand-blue'),
+				title: `Refinement`,
 				iconName: `refining`,
 				body: `Refine and iterate on the design to further improve the users' experience.`,
 				arcPath: `M 1 50.00000000000001 A 49 49 0 0 1 15.351767721859161 15.351767721859176`
 			},
 			{
+				color: palette('brand-mint'),
 				title: `Deliver & Backlog`,
 				iconName: `backlog`,
 				body: `Deliver changes to the prototype and list the possible improvements for the future.`,
@@ -84,6 +94,18 @@ export default class ProcessDiagram extends Component {
 		this.setState({
 			hoveringIndex: i,
 		});	
+	}
+
+	setDelay = (i) => {
+		let style = { "transitionDelay": '0s' };
+
+		if (this.state.activeIndex > i+1) { 
+			if (this.state.activeIndex > this.state.prevIndex) {
+				console.log(i);
+			}
+		}
+
+		return style
 	}
 
 	render() {
@@ -115,8 +137,14 @@ export default class ProcessDiagram extends Component {
 		))
 
 		const arcs = this.data.map((item, i) => (
-			<path className={ classNames({ "step__arc" : true, "step__arc--active" : (activeIndex > i+1) })} id={"step__arc-" + (i + 1)} d={item.arcPath} key={i+1} style={(activeIndex > i+1) ? { transitionDelay: activeIndex > prevIndex ? (activeIndex - prevIndex) * 0.3 + 's' : (prevIndex - activeIndex) * 0.3 + 's' } : null}/>
+			<path className={ classNames({ "step__arc" : true, "step__arc--active" : (activeIndex > i+1) })} id={"step__arc-" + (i + 1)} d={item.arcPath} key={i+1}/>
 		))
+
+		const section = document.getElementsByTagName('section')[0];
+		const circles = document.getElementsByClassName('step__spot-circle');
+
+		section ? section.style.backgroundColor = this.state.activeItem.color : null;
+		circles ? Array.from(circles).forEach((item) => item.style.fill = this.state.activeItem.color) : null;
 
 		return (
 		 <div className="process" id='process'>

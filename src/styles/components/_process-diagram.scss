@@ -23,7 +23,7 @@
 }
 .step__arc {
 	stroke-width: 1px;
-	stroke: $brand-red;
+	stroke: $brand-white;
 	stroke-dashoffset: 350;
 	stroke-dasharray: 350;
 	fill: transparent;
@@ -52,24 +52,6 @@
 	text-align: center;
 	opacity: 1;
 }
-.step__info {
-	position: absolute;
-	width: 200px;
-	pointer-events: all;
-	overflow: hidden;
-
-	> .step__text {
-		height: auto;
-		transition: transform $duration-slow $easing2 0s;
-		transform: translateX(-100%);
-
-		@for $i from 1 through 8 {
-			&:nth-child(#{$i}) {
-				transition-delay: ($i - 1) * $delay-slow;
-			}
-		}
-	}
-}
 .step__icon {
 	position: relative;
 	width: 60px;
@@ -85,17 +67,42 @@
 	&__spot-fill {
 		fill: $brand-white;
 		transform: scale(0);
+		transform-origin: center;
 		transition: transform $duration-fast $easing5;
 	}
+
+	&__info {
+		position: absolute;
+		width: 200px;
+		pointer-events: all;
+		overflow: hidden;
+	}
+
+	&__text {
+		height: auto;
+		transition: transform $duration-slow $easing2 0s;
+		transform: translateX(-100%);
+
+		.step:nth-child(n + 6) & {
+			transform: translateX(100%);
+		}
+
+		@for $i from 1 through 8 {
+			&:nth-child(#{$i}) {
+				transition-delay: ($i - 1) * $delay-slow;
+			}
+		}
+	}
+
 
 	&:nth-child(1) {
 		top: 1%;
 		left: 50%;
 
 		.step__info {
-			bottom: calc(100% + 20px);
-			left: 0px;
-			transform: translate(10px, 0);
+			bottom: 0;
+			left: 0;
+			transform: translate(25%, -50%);
 		}
 	}
 	&:nth-child(2) {
@@ -103,9 +110,9 @@
 		left: 85.35533906%;
 
 		.step__info {
-			top: 0;
-			left: 80px;
-			transform: translate(0, -40%);
+			bottom: 0;
+			left: 0;
+			transform: translate(25%, -25%);
 		}
 	}
 	&:nth-child(3) {
@@ -114,8 +121,8 @@
 
 		.step__info {
 			top: 0;
-			left: 60px;
-			transform: translate(0, 0);
+			left: 0;
+			transform: translate(25%, 0);
 		}
 	}
 	&:nth-child(4) {
@@ -123,9 +130,9 @@
 		left: 85.35533906%;
 
 		.step__info {
-			top: 100%;
-			left: 20px;
-			transform: translate(0, 20px);
+			top: 0;
+			left: 0;
+			transform: translate(25%, 25%);
 		}
 	}
 	&:nth-child(5) {
@@ -133,9 +140,9 @@
 		left: 50%;
 
 		.step__info {
-			top: calc(100% + 20px);
-			left: 50%;
-			transform: translate(-45%, 0);
+			top: 0;
+			left: 0;
+			transform: translate(25%, 50%);
 		}
 	}
 	&:nth-child(6) {
@@ -144,8 +151,9 @@
 
 		.step__info {
 			top: 0;
-			right: 30px;
-			transform: translate(0, -15%);
+			right: 0;
+			transform: translate(-25%, 25%);
+			text-align: right;
 		}
 	}
 	&:nth-child(7) {
@@ -154,8 +162,9 @@
 
 		.step__info {
 			top: 0;
-			right: 40px;
-			transform: translate(0, -65%);
+			right: 0;
+			transform: translate(-25%, -25%);
+			text-align: right;
 		}
 	}
 	&:nth-child(8) {
@@ -163,9 +172,10 @@
 		left: 14.64466094%;
 
 		.step__info {
-			top: -20px;
+			top: 0;
 			right: 0px;
-			transform: translate(0, -100%);
+			transform: translate(-25%, -50%);
+			text-align: right;
 		}
 	}
 
@@ -183,7 +193,7 @@
 		}
 		.step__spot-fill {
 			transform: scale(1);
-			fill: $brand-red;
+			// fill: $brand-red;
 		}
 	}
 }

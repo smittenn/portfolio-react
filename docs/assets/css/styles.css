@@ -408,6 +408,7 @@ section {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: 25% 25%;
+  transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
   z-index: 1; }
   section * {
     z-index: 1; }
@@ -2366,7 +2367,7 @@ section p span > span, section blockquote span > span {
 
 .step__arc {
   stroke-width: 1px;
-  stroke: #ff3636;
+  stroke: #fefefe;
   stroke-dashoffset: 350;
   stroke-dasharray: 350;
   fill: transparent;
@@ -2394,33 +2395,6 @@ section p span > span, section blockquote span > span {
   text-align: center;
   opacity: 1; }
 
-.step__info {
-  position: absolute;
-  width: 200px;
-  pointer-events: all;
-  overflow: hidden; }
-  .step__info > .step__text {
-    height: auto;
-    transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%); }
-    .step__info > .step__text:nth-child(1) {
-      transition-delay: 0s; }
-    .step__info > .step__text:nth-child(2) {
-      transition-delay: 0.12s; }
-    .step__info > .step__text:nth-child(3) {
-      transition-delay: 0.24s; }
-    .step__info > .step__text:nth-child(4) {
-      transition-delay: 0.36s; }
-    .step__info > .step__text:nth-child(5) {
-      transition-delay: 0.48s; }
-    .step__info > .step__text:nth-child(6) {
-      transition-delay: 0.6s; }
-    .step__info > .step__text:nth-child(7) {
-      transition-delay: 0.72s; }
-    .step__info > .step__text:nth-child(8) {
-      transition-delay: 0.84s; }
-
 .step__icon {
   position: relative;
   width: 60px;
@@ -2437,71 +2411,105 @@ section p span > span, section blockquote span > span {
     fill: #fefefe;
     -ms-transform: scale(0);
     transform: scale(0);
+    -ms-transform-origin: center;
+    transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
+  .step__info {
+    position: absolute;
+    width: 200px;
+    pointer-events: all;
+    overflow: hidden; }
+  .step__text {
+    height: auto;
+    transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%); }
+    .step:nth-child(n + 6) .step__text {
+      -ms-transform: translateX(100%);
+      transform: translateX(100%); }
+    .step__text:nth-child(1) {
+      transition-delay: 0s; }
+    .step__text:nth-child(2) {
+      transition-delay: 0.12s; }
+    .step__text:nth-child(3) {
+      transition-delay: 0.24s; }
+    .step__text:nth-child(4) {
+      transition-delay: 0.36s; }
+    .step__text:nth-child(5) {
+      transition-delay: 0.48s; }
+    .step__text:nth-child(6) {
+      transition-delay: 0.6s; }
+    .step__text:nth-child(7) {
+      transition-delay: 0.72s; }
+    .step__text:nth-child(8) {
+      transition-delay: 0.84s; }
   .step:nth-child(1) {
     top: 1%;
     left: 50%; }
     .step:nth-child(1) .step__info {
-      bottom: calc(100% + 20px);
-      left: 0px;
-      -ms-transform: translate(10px, 0);
-      transform: translate(10px, 0); }
+      bottom: 0;
+      left: 0;
+      -ms-transform: translate(25%, -50%);
+      transform: translate(25%, -50%); }
   .step:nth-child(2) {
     top: 15.64466094%;
     left: 85.35533906%; }
     .step:nth-child(2) .step__info {
-      top: 0;
-      left: 80px;
-      -ms-transform: translate(0, -40%);
-      transform: translate(0, -40%); }
+      bottom: 0;
+      left: 0;
+      -ms-transform: translate(25%, -25%);
+      transform: translate(25%, -25%); }
   .step:nth-child(3) {
     top: 50%;
     left: 99%; }
     .step:nth-child(3) .step__info {
       top: 0;
-      left: 60px;
-      -ms-transform: translate(0, 0);
-      transform: translate(0, 0); }
+      left: 0;
+      -ms-transform: translate(25%, 0);
+      transform: translate(25%, 0); }
   .step:nth-child(4) {
     top: 84.35533906%;
     left: 85.35533906%; }
     .step:nth-child(4) .step__info {
-      top: 100%;
-      left: 20px;
-      -ms-transform: translate(0, 20px);
-      transform: translate(0, 20px); }
+      top: 0;
+      left: 0;
+      -ms-transform: translate(25%, 25%);
+      transform: translate(25%, 25%); }
   .step:nth-child(5) {
     top: 99%;
     left: 50%; }
     .step:nth-child(5) .step__info {
-      top: calc(100% + 20px);
-      left: 50%;
-      -ms-transform: translate(-45%, 0);
-      transform: translate(-45%, 0); }
+      top: 0;
+      left: 0;
+      -ms-transform: translate(25%, 50%);
+      transform: translate(25%, 50%); }
   .step:nth-child(6) {
     top: 84.35533906%;
     left: 14.64466094%; }
     .step:nth-child(6) .step__info {
       top: 0;
-      right: 30px;
-      -ms-transform: translate(0, -15%);
-      transform: translate(0, -15%); }
+      right: 0;
+      -ms-transform: translate(-25%, 25%);
+      transform: translate(-25%, 25%);
+      text-align: right; }
   .step:nth-child(7) {
     top: 50%;
     left: 1%; }
     .step:nth-child(7) .step__info {
       top: 0;
-      right: 40px;
-      -ms-transform: translate(0, -65%);
-      transform: translate(0, -65%); }
+      right: 0;
+      -ms-transform: translate(-25%, -25%);
+      transform: translate(-25%, -25%);
+      text-align: right; }
   .step:nth-child(8) {
     top: 15.64466094%;
     left: 14.64466094%; }
     .step:nth-child(8) .step__info {
-      top: -20px;
+      top: 0;
       right: 0px;
-      -ms-transform: translate(0, -100%);
-      transform: translate(0, -100%); }
+      -ms-transform: translate(-25%, -50%);
+      transform: translate(-25%, -50%);
+      text-align: right; }
   .step--hovering .step__info > .step__text {
     -ms-transform: none;
     transform: none; }
@@ -2513,8 +2521,7 @@ section p span > span, section blockquote span > span {
     transform: none; }
   .step--active .step__spot-fill {
     -ms-transform: scale(1);
-    transform: scale(1);
-    fill: #ff3636; }
+    transform: scale(1); }
 
 .step__spot-svg {
   width: 30px;
