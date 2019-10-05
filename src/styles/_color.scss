@@ -1,0 +1,18 @@
+$colors: (
+  brand-red: $brand-red,
+  brand-orange: $brand-orange,
+  brand-yellow: $brand-yellow,
+  brand-green: $brand-green,
+  brand-purple: $brand-purple,
+  brand-pink: $brand-pink,
+  brand-blue: $brand-blue,
+  brand-tea: $brand-teal
+);
+
+.inherit {
+  @each $key, $val in $colors {
+    &--#{$key} {
+      color: $val;
+    }
+  }
+}

@@ -92,13 +92,18 @@ class MicroAppTemplates extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/banner-alt.jpg`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .5`,
-					backgroundSize: (this.props.isMobile ? 'cover' : 'cover'),
+					backgroundImage: `
+					  linear-gradient(rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24), rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24)),
+					  url(../assets/img/card-components/banner-alt.jpg),
+					  linear-gradient(#f3f4f8, #f3f4f8)`, 
+					backgroundSize: this.props.isMobile ? 'cover' : 'contain',
+					backgroundBlendMode: 'normal',
+					backgroundRepeat: 'no-repeat',
+					backgroundPosition: this.props.isMobile ? '-25% center' : '150% center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `we designed 150+ app templates for our customers.`]}
+					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `we designed 150+ app templates for customers.`]}
 					/>
 				</ScrollSection>
 

@@ -25,6 +25,11 @@ body {
 	color: $brand-grey-dark;
 }
 
+ul {
+	list-style: disc;
+	margin-left: 30px;
+}
+
 a {
 	cursor: none;
 	color: $brand-grey-dark;  
@@ -34,11 +39,22 @@ a {
 	// white-space: normal;
 }
 
+* {
+	&.mb0 {
+		margin-bottom: 0;
+	}
+
+	&.m0 {
+		margin: 0;
+	}
+}
+
+
 
 hr {
 	background: $brand-grey-dark;
 	height: 1px;
-	width: 60px;
+	width: 100%;
 	min-width: 60px;
 	border: 0;
 	display: inline-block;
@@ -76,9 +92,14 @@ section {
 		@include zIndexClose();					
 	}
 
-
 	img {
 		width: 100%;
+	}
+
+	h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
+		.outline {
+			-webkit-text-stroke-color: $brand-red;
+		}
 	}
 
 	.side-scroller {
@@ -96,12 +117,6 @@ section {
 		// 	@include zIndexClose();
 		// 	background: linear-gradient(to left, $brand-white, rgba($brand-white, 0) 10%);
 		// }
-	}
-
-	* {
-		&.mb0 {
-			margin-bottom: 0;
-		}
 	}
 
 	p {
@@ -140,6 +155,10 @@ section {
 
 		h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
 			color: $brand-white;
+
+			.outline {
+				-webkit-text-stroke-color: $brand-white;
+			}
 		}
 
 		hr {
@@ -193,7 +212,7 @@ h1, h2, h3, p, blockquote, {
 	clip: rect(0,auto,auto,0);
 }
 
-.logo {
+.left-rail {
 	position: fixed;
 	pointer-events: auto;
 	top: 63px;

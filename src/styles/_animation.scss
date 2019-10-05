@@ -80,7 +80,7 @@ section {
 		}
 	}
 
-	h2, p, blockquote {
+	h2, h3, h4, p, blockquote {
 		span {
 			overflow: hidden;
 
@@ -95,7 +95,7 @@ section {
 	// 	transform: translate3d(0,100px,0) skewY(6deg);
 	// }
 
-	h2 {
+	h2, h3, h4 {
 		transition: none;
 		opacity: 0;
 
@@ -115,7 +115,7 @@ section {
 
 .active-section {
 	section {
-		h2 {
+		h2, h3, h4 {
 			opacity: 1;
 			transition: transform $duration-slow $delay-medium $easing1, opacity $duration-slow $delay-medium $easing1;
 
@@ -126,10 +126,20 @@ section {
 			}
 		}
 
-		h2 span {
-			@for $i from 1 through 60 {
-				&:nth-child(#{$i}) span {
-					transition-delay: (#{0.6 + ($i * 0.09)}s);
+		h3 {
+			transition-delay: $delay-slow;
+		}
+
+		h4 {
+			transition-delay: $delay-slowest;
+		}
+
+		h2 {
+			span {
+				@for $i from 1 through 60 {
+					&:nth-child(#{$i}) span {
+						transition-delay: (#{0.6 + ($i * 0.09)}s);
+					}
 				}
 			}
 		}

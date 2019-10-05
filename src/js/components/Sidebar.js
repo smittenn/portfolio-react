@@ -48,7 +48,7 @@ class Sidebar extends Component {
 		
 		return (
 			<div className={classnames} ref="sidebar">
-				<ul className="sidebar__inner" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={this.props.isMobile ? null : this.props.openSidebar} onMouseLeave={this.props.isMobile ? null : this.props.closeSidebar}>
+				<ul className="m0 sidebar__inner" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={this.props.isMobile ? null : this.props.openSidebar} onMouseLeave={this.props.isMobile ? null : this.props.closeSidebar}>
 					{sidebarItems}
 				</ul>
 			</div>

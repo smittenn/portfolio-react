@@ -10,6 +10,10 @@ export const process = () => ({
 	type: 'PROCESS',
 })
 
+export const resume = () => ({
+	type: 'RESUME',
+})
+
 // Projects
 
 export const americanMade = () => ({

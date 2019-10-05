@@ -99,7 +99,7 @@ class NavTakeover extends Component {
 				onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }}
 				onMouseLeave={ this.props.setCursorUnhover } 
 				onClick={this.setMenuClosed}>
-					<h4 className={classNames({ 'hovered': i == indexHovered })}>{item.name}</h4>
+					<h3 className={classNames({ 'hovered': i == indexHovered })}>{item.name}</h3>
 				</NavLink>
 			</li>
 		)
@@ -130,13 +130,13 @@ class NavTakeover extends Component {
 					<div className="nav-takeover__overlay" onClick={this.setMenuClosed}/>
 					<div className="nav-takeover__panel">
 						<div className="nav-takeover__item-container" ref="container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
-							<ul className="nav-takeover__items--secondary" ref="secondary">
+							<ul className="m0 nav-takeover__items--secondary" ref="secondary">
 								<li className="nav-takeover__arrow" onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
 									<h3><Icon icon='arrow' size={60} color={brandBlack}/></h3>
 								</li>
 								{ secondaryNavItems }
 							</ul>
-							<ul className="nav-takeover__items--primary">
+							<ul className="m0 nav-takeover__items--primary">
 								{ primaryNavItems }
 							</ul>
 						</div>
@@ -175,6 +175,3 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavTakeover)
-
-
-

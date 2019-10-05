@@ -9,6 +9,7 @@ import Sidebar from "./Sidebar"
 import ScrollArrow from "./ScrollArrow"
 import GridLines from "../components/GridLines"
 import TextLink from "../components/TextLink"
+import Icon from "../components/Icon"
 
 import palette from "../services/palette"
 
@@ -33,6 +34,11 @@ export default class ClipWrapper extends Component {
 
 		return (
 			<div className={classnames}>
+				{ name == "resume" ? <div className="left-rail">
+					<TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink>
+				</div> : null}
+
+
 				{ sections.length > 1 ? [
 					<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
 					,
@@ -50,18 +56,6 @@ export default class ClipWrapper extends Component {
 					key={3}
 					/>
 				] : null }
-
-				{/*<div className="logo">
-					<div className="logo__top">
-						<NavLink to="/">
-							<h3 className="mb0"><i className="iconcss icon-logo"/></h3>
-						</NavLink>
-					</div>
-					<hr/>
-					<div className="logo__bottom">
-						{<h6 className="uppercase mb0">{name}</h6>}
-					</div>
-				</div>*/}
 
 				{/*<svg viewBox="0 0 96 96" width="96px" height="96px">
 					<defs>

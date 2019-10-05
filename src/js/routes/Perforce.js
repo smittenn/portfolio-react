@@ -97,9 +97,9 @@ class Perforce extends Component {
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
 					backgroundImage: `
-					  linear-gradient(rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24), rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24)),
-					  url(../assets/img/perforce/banner.jpg),
-					  linear-gradient(#2b8bb5, #178ab9)`, 
+						linear-gradient(rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24), rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24)),
+						url(../assets/img/perforce/banner.jpg),
+						linear-gradient(#2b8bb5, #178ab9)`, 
 					backgroundSize: this.props.isMobile ? 'cover' : 'contain',
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',

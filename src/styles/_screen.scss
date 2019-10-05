@@ -81,6 +81,10 @@
 	.grid, section .side-scroller {
 		padding: 0 24px;
 	}
+	.left-rail {
+		top: 36px;
+		width: 49px;
+	}
 	.grid {
 		&--lines {
 			padding: 0 48px;
