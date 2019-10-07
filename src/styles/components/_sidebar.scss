@@ -18,9 +18,14 @@ $baseclass: sidebar;
 	.active-section & {
 		display: flex;
 		pointer-events: auto;
+
+		&__inner {
+			pointer-events: auto;
+		}
 	}
 
 	&__inner {
+		pointer-events: none;
 		list-style: none;
 		margin-top: 60px;
 		width: 100%;

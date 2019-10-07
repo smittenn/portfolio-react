@@ -21,7 +21,7 @@ export default class CodepenEmbed extends Component {
 
 		if (codepen.length > 0) {
 
-			if (!document.getElementById('codepen-script') || !this.state.codepen) {
+			if (!document.getElementById('codepen-script')) {
 
 				const s = document.createElement('script')
 				s.async = s.defer = true

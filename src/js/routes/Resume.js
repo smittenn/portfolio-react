@@ -67,15 +67,15 @@ class Resume extends Component {
 								<h2 className="mb0">{[splitWord(`Eric C. Smith is an`), <span key={0} className="outline"><span>Interactive&nbsp;</span></span>, <span key={1} className="outline"><span>Designer&nbsp;</span></span>, splitWord(`in New York City.`)]}</h2>
 							</div>
 							<div className="grid__row">
-								<hr/>
 								<blockquote className="mb0" style={{ minHeight: '48px', alignItems: 'center'}}>
+									<hr/>
 									<TextLink hideUnderline><a href="mailto:hi@ericsmithux.com">hi@ericsmithux.com</a></TextLink>
 									<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5> 
 									<TextLink hideUnderline><a href="call:5087334510">+15087334510</a></TextLink>
 									<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5>
 									 Brooklyn, NY
+	 								<hr/>
 								 </blockquote>
-								<hr/>
 							</div>
 							<div className="grid__row">
 								<blockquote className="mb0">July 2018 – August 2019. New York, NY.</blockquote>

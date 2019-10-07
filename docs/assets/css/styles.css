@@ -49,18 +49,11 @@ table {
 
 /* Libraries */
 @font-face {
-  font-family: 'Gilroy';
-  font-weight: 800;
+  font-family: 'GTSectraDisplay';
+  font-weight: 500;
   font-style: normal;
-  src: url("../fonts/Gilroy/Gilroy-ExtraBold.eot");
-  src: url("../fonts/Gilroy/Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy/Gilroy-ExtraBold.woff2") format("woff2"), url("../fonts/Gilroy/Gilroy-ExtraBold.woff") format("woff"), url("../fonts/Gilroy/Gilroy-ExtraBold.ttf") format("truetype"), url("../fonts/Gilroy/Gilroy-ExtraBold.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Gilroy';
-  font-weight: 300;
-  font-style: normal;
-  src: url("../fonts/Gilroy/Gilroy-Light.eot");
-  src: url("../fonts/Gilroy/Gilroy-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy/Gilroy-Light.woff2") format("woff2"), url("../fonts/Gilroy/Gilroy-Light.woff") format("woff"), url("../fonts/Gilroy/Gilroy-Light.ttf") format("truetype"), url("../fonts/Gilroy/Gilroy-Light.svg#codropsicons") format("svg"); }
+  src: url("../fonts/GTSectraDisplay/GTSectraDisplay-Regular.eot");
+  src: url("../fonts/GTSectraDisplay/GTSectraDisplay-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GTSectraDisplay/GTSectraDisplay-Regular.woff2") format("woff2"), url("../fonts/GTSectraDisplay/GTSectraDisplay-Regular.woff") format("woff"), url("../fonts/GTSectraDisplay/GTSectraDisplay-Regular.ttf") format("truetype"), url("../fonts/GTSectraDisplay/GTSectraDisplay-Regular.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Hurme';
@@ -68,6 +61,13 @@ table {
   font-style: normal;
   src: url("../fonts/Hurme/Hurme-Light.eot");
   src: url("../fonts/Hurme/Hurme-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Light.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Light.woff") format("woff"), url("../fonts/Hurme/Hurme-Light.otf") format("truetype"), url("../fonts/Hurme/Hurme-Light.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Hurme';
+  font-weight: 200;
+  font-style: normal;
+  src: url("../fonts/Hurme/Hurme-Thin.eot");
+  src: url("../fonts/Hurme/Hurme-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Thin.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Thin.woff") format("woff"), url("../fonts/Hurme/Hurme-Thin.otf") format("truetype"), url("../fonts/Hurme/Hurme-Thin.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Hurme';
@@ -84,39 +84,11 @@ table {
   src: url("../fonts/Hurme/Hurme-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Bold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Bold.woff") format("woff"), url("../fonts/Hurme/Hurme-Bold.otf") format("truetype"), url("../fonts/Hurme/Hurme-Bold.svg#codropsicons") format("svg"); }
 
 @font-face {
-  font-family: 'Futura Maxi';
-  font-weight: 800;
-  font-style: normal;
-  src: url("../fonts/FuturaMaxi/FuturaMaxi-Bold.eot");
-  src: url("../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2") format("woff2"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.woff") format("woff"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf") format("truetype"), url("../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons") format("svg"); }
-
-@font-face {
   font-family: 'Moderat';
   font-weight: 400;
   font-style: normal;
   src: url("../fonts/Moderat/Moderat-Regular.eot");
   src: url("../fonts/Moderat/Moderat-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Moderat/Moderat-Regular.woff2") format("woff2"), url("../fonts/Moderat/Moderat-Regular.woff") format("woff"), url("../fonts/Moderat/Moderat-Regular.ttf") format("truetype"), url("../fonts/Moderat/Moderat-Regular.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Moderat';
-  font-weight: 800;
-  font-style: normal;
-  src: url("../fonts/Moderat/Moderat-Black.eot");
-  src: url("../fonts/Moderat/Moderat-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Moderat/Moderat-Black.woff2") format("woff2"), url("../fonts/Moderat/Moderat-Black.woff") format("woff"), url("../fonts/Moderat/Moderat-Black.ttf") format("truetype"), url("../fonts/Moderat/Moderat-Black.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Apercu Pro';
-  font-weight: 800;
-  font-style: normal;
-  src: url("../fonts/ApercuPro/ApercuPro-Black.eot");
-  src: url("../fonts/ApercuPro/ApercuPro-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/ApercuPro/ApercuPro-Black.woff2") format("woff2"), url("../fonts/ApercuPro/ApercuPro-Black.woff") format("woff"), url("../fonts/ApercuPro/ApercuPro-Black.ttf") format("truetype"), url("../fonts/ApercuPro/ApercuPro-Black.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Apercu Pro';
-  font-weight: 700;
-  font-style: normal;
-  src: url("../fonts/ApercuPro/ApercuPro-Bold.eot");
-  src: url("../fonts/ApercuPro/ApercuPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ApercuPro/ApercuPro-Bold.woff2") format("woff2"), url("../fonts/ApercuPro/ApercuPro-Bold.woff") format("woff"), url("../fonts/ApercuPro/ApercuPro-Bold.ttf") format("truetype"), url("../fonts/ApercuPro/ApercuPro-Bold.svg#codropsicons") format("svg"); }
 
 /* SASS partial for grunt-webfont, autogenerated, do not edit! */
 @font-face {
@@ -192,7 +164,7 @@ table {
     top: 0;
     width: 100%;
     height: 100%;
-    left: auto;
+    left: 0;
     opacity: 0.06;
     pointer-events: none; }
   .grid__line {
@@ -304,6 +276,8 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   font-family: "Hurme", sans-serif; }
+  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    white-space: pre; }
 
 h1, h2, h3, h4 {
   font-weight: 600; }
@@ -495,7 +469,7 @@ section {
 .scrolling-section--grey h1, .scrolling-section--grey h2, .scrolling-section--grey h3, .scrolling-section--grey h4, .scrolling-section--grey h5, .scrolling-section--grey h6, .scrolling-section--grey h7, .scrolling-section--grey p, .scrolling-section--grey blockquote, .scrolling-section--grey a {
   color: #232021; }
 
-h1 span, h2 span, h3 span, p span, blockquote span {
+h1 span, h2 span, h3 span, h4 span, p span, blockquote span {
   display: inline-block; }
 
 .clip-wrapper {
@@ -1262,184 +1236,184 @@ section p span > span, section blockquote span > span {
 .active-section section h4 {
   transition-delay: 0.24s; }
 
-.active-section section h2 span:nth-child(1) span {
+.active-section section h2 span:nth-child(1) span, .active-section section h3 span:nth-child(1) span {
   transition-delay: 0.69s; }
 
-.active-section section h2 span:nth-child(2) span {
+.active-section section h2 span:nth-child(2) span, .active-section section h3 span:nth-child(2) span {
   transition-delay: 0.78s; }
 
-.active-section section h2 span:nth-child(3) span {
+.active-section section h2 span:nth-child(3) span, .active-section section h3 span:nth-child(3) span {
   transition-delay: 0.87s; }
 
-.active-section section h2 span:nth-child(4) span {
+.active-section section h2 span:nth-child(4) span, .active-section section h3 span:nth-child(4) span {
   transition-delay: 0.96s; }
 
-.active-section section h2 span:nth-child(5) span {
+.active-section section h2 span:nth-child(5) span, .active-section section h3 span:nth-child(5) span {
   transition-delay: 1.05s; }
 
-.active-section section h2 span:nth-child(6) span {
+.active-section section h2 span:nth-child(6) span, .active-section section h3 span:nth-child(6) span {
   transition-delay: 1.14s; }
 
-.active-section section h2 span:nth-child(7) span {
+.active-section section h2 span:nth-child(7) span, .active-section section h3 span:nth-child(7) span {
   transition-delay: 1.23s; }
 
-.active-section section h2 span:nth-child(8) span {
+.active-section section h2 span:nth-child(8) span, .active-section section h3 span:nth-child(8) span {
   transition-delay: 1.32s; }
 
-.active-section section h2 span:nth-child(9) span {
+.active-section section h2 span:nth-child(9) span, .active-section section h3 span:nth-child(9) span {
   transition-delay: 1.41s; }
 
-.active-section section h2 span:nth-child(10) span {
+.active-section section h2 span:nth-child(10) span, .active-section section h3 span:nth-child(10) span {
   transition-delay: 1.5s; }
 
-.active-section section h2 span:nth-child(11) span {
+.active-section section h2 span:nth-child(11) span, .active-section section h3 span:nth-child(11) span {
   transition-delay: 1.59s; }
 
-.active-section section h2 span:nth-child(12) span {
+.active-section section h2 span:nth-child(12) span, .active-section section h3 span:nth-child(12) span {
   transition-delay: 1.68s; }
 
-.active-section section h2 span:nth-child(13) span {
+.active-section section h2 span:nth-child(13) span, .active-section section h3 span:nth-child(13) span {
   transition-delay: 1.77s; }
 
-.active-section section h2 span:nth-child(14) span {
+.active-section section h2 span:nth-child(14) span, .active-section section h3 span:nth-child(14) span {
   transition-delay: 1.86s; }
 
-.active-section section h2 span:nth-child(15) span {
+.active-section section h2 span:nth-child(15) span, .active-section section h3 span:nth-child(15) span {
   transition-delay: 1.95s; }
 
-.active-section section h2 span:nth-child(16) span {
+.active-section section h2 span:nth-child(16) span, .active-section section h3 span:nth-child(16) span {
   transition-delay: 2.04s; }
 
-.active-section section h2 span:nth-child(17) span {
+.active-section section h2 span:nth-child(17) span, .active-section section h3 span:nth-child(17) span {
   transition-delay: 2.13s; }
 
-.active-section section h2 span:nth-child(18) span {
+.active-section section h2 span:nth-child(18) span, .active-section section h3 span:nth-child(18) span {
   transition-delay: 2.22s; }
 
-.active-section section h2 span:nth-child(19) span {
+.active-section section h2 span:nth-child(19) span, .active-section section h3 span:nth-child(19) span {
   transition-delay: 2.31s; }
 
-.active-section section h2 span:nth-child(20) span {
+.active-section section h2 span:nth-child(20) span, .active-section section h3 span:nth-child(20) span {
   transition-delay: 2.4s; }
 
-.active-section section h2 span:nth-child(21) span {
+.active-section section h2 span:nth-child(21) span, .active-section section h3 span:nth-child(21) span {
   transition-delay: 2.49s; }
 
-.active-section section h2 span:nth-child(22) span {
+.active-section section h2 span:nth-child(22) span, .active-section section h3 span:nth-child(22) span {
   transition-delay: 2.58s; }
 
-.active-section section h2 span:nth-child(23) span {
+.active-section section h2 span:nth-child(23) span, .active-section section h3 span:nth-child(23) span {
   transition-delay: 2.67s; }
 
-.active-section section h2 span:nth-child(24) span {
+.active-section section h2 span:nth-child(24) span, .active-section section h3 span:nth-child(24) span {
   transition-delay: 2.76s; }
 
-.active-section section h2 span:nth-child(25) span {
+.active-section section h2 span:nth-child(25) span, .active-section section h3 span:nth-child(25) span {
   transition-delay: 2.85s; }
 
-.active-section section h2 span:nth-child(26) span {
+.active-section section h2 span:nth-child(26) span, .active-section section h3 span:nth-child(26) span {
   transition-delay: 2.94s; }
 
-.active-section section h2 span:nth-child(27) span {
+.active-section section h2 span:nth-child(27) span, .active-section section h3 span:nth-child(27) span {
   transition-delay: 3.03s; }
 
-.active-section section h2 span:nth-child(28) span {
+.active-section section h2 span:nth-child(28) span, .active-section section h3 span:nth-child(28) span {
   transition-delay: 3.12s; }
 
-.active-section section h2 span:nth-child(29) span {
+.active-section section h2 span:nth-child(29) span, .active-section section h3 span:nth-child(29) span {
   transition-delay: 3.21s; }
 
-.active-section section h2 span:nth-child(30) span {
+.active-section section h2 span:nth-child(30) span, .active-section section h3 span:nth-child(30) span {
   transition-delay: 3.3s; }
 
-.active-section section h2 span:nth-child(31) span {
+.active-section section h2 span:nth-child(31) span, .active-section section h3 span:nth-child(31) span {
   transition-delay: 3.39s; }
 
-.active-section section h2 span:nth-child(32) span {
+.active-section section h2 span:nth-child(32) span, .active-section section h3 span:nth-child(32) span {
   transition-delay: 3.48s; }
 
-.active-section section h2 span:nth-child(33) span {
+.active-section section h2 span:nth-child(33) span, .active-section section h3 span:nth-child(33) span {
   transition-delay: 3.57s; }
 
-.active-section section h2 span:nth-child(34) span {
+.active-section section h2 span:nth-child(34) span, .active-section section h3 span:nth-child(34) span {
   transition-delay: 3.66s; }
 
-.active-section section h2 span:nth-child(35) span {
+.active-section section h2 span:nth-child(35) span, .active-section section h3 span:nth-child(35) span {
   transition-delay: 3.75s; }
 
-.active-section section h2 span:nth-child(36) span {
+.active-section section h2 span:nth-child(36) span, .active-section section h3 span:nth-child(36) span {
   transition-delay: 3.84s; }
 
-.active-section section h2 span:nth-child(37) span {
+.active-section section h2 span:nth-child(37) span, .active-section section h3 span:nth-child(37) span {
   transition-delay: 3.93s; }
 
-.active-section section h2 span:nth-child(38) span {
+.active-section section h2 span:nth-child(38) span, .active-section section h3 span:nth-child(38) span {
   transition-delay: 4.02s; }
 
-.active-section section h2 span:nth-child(39) span {
+.active-section section h2 span:nth-child(39) span, .active-section section h3 span:nth-child(39) span {
   transition-delay: 4.11s; }
 
-.active-section section h2 span:nth-child(40) span {
+.active-section section h2 span:nth-child(40) span, .active-section section h3 span:nth-child(40) span {
   transition-delay: 4.2s; }
 
-.active-section section h2 span:nth-child(41) span {
+.active-section section h2 span:nth-child(41) span, .active-section section h3 span:nth-child(41) span {
   transition-delay: 4.29s; }
 
-.active-section section h2 span:nth-child(42) span {
+.active-section section h2 span:nth-child(42) span, .active-section section h3 span:nth-child(42) span {
   transition-delay: 4.38s; }
 
-.active-section section h2 span:nth-child(43) span {
+.active-section section h2 span:nth-child(43) span, .active-section section h3 span:nth-child(43) span {
   transition-delay: 4.47s; }
 
-.active-section section h2 span:nth-child(44) span {
+.active-section section h2 span:nth-child(44) span, .active-section section h3 span:nth-child(44) span {
   transition-delay: 4.56s; }
 
-.active-section section h2 span:nth-child(45) span {
+.active-section section h2 span:nth-child(45) span, .active-section section h3 span:nth-child(45) span {
   transition-delay: 4.65s; }
 
-.active-section section h2 span:nth-child(46) span {
+.active-section section h2 span:nth-child(46) span, .active-section section h3 span:nth-child(46) span {
   transition-delay: 4.74s; }
 
-.active-section section h2 span:nth-child(47) span {
+.active-section section h2 span:nth-child(47) span, .active-section section h3 span:nth-child(47) span {
   transition-delay: 4.83s; }
 
-.active-section section h2 span:nth-child(48) span {
+.active-section section h2 span:nth-child(48) span, .active-section section h3 span:nth-child(48) span {
   transition-delay: 4.92s; }
 
-.active-section section h2 span:nth-child(49) span {
+.active-section section h2 span:nth-child(49) span, .active-section section h3 span:nth-child(49) span {
   transition-delay: 5.01s; }
 
-.active-section section h2 span:nth-child(50) span {
+.active-section section h2 span:nth-child(50) span, .active-section section h3 span:nth-child(50) span {
   transition-delay: 5.1s; }
 
-.active-section section h2 span:nth-child(51) span {
+.active-section section h2 span:nth-child(51) span, .active-section section h3 span:nth-child(51) span {
   transition-delay: 5.19s; }
 
-.active-section section h2 span:nth-child(52) span {
+.active-section section h2 span:nth-child(52) span, .active-section section h3 span:nth-child(52) span {
   transition-delay: 5.28s; }
 
-.active-section section h2 span:nth-child(53) span {
+.active-section section h2 span:nth-child(53) span, .active-section section h3 span:nth-child(53) span {
   transition-delay: 5.37s; }
 
-.active-section section h2 span:nth-child(54) span {
+.active-section section h2 span:nth-child(54) span, .active-section section h3 span:nth-child(54) span {
   transition-delay: 5.46s; }
 
-.active-section section h2 span:nth-child(55) span {
+.active-section section h2 span:nth-child(55) span, .active-section section h3 span:nth-child(55) span {
   transition-delay: 5.55s; }
 
-.active-section section h2 span:nth-child(56) span {
+.active-section section h2 span:nth-child(56) span, .active-section section h3 span:nth-child(56) span {
   transition-delay: 5.64s; }
 
-.active-section section h2 span:nth-child(57) span {
+.active-section section h2 span:nth-child(57) span, .active-section section h3 span:nth-child(57) span {
   transition-delay: 5.73s; }
 
-.active-section section h2 span:nth-child(58) span {
+.active-section section h2 span:nth-child(58) span, .active-section section h3 span:nth-child(58) span {
   transition-delay: 5.82s; }
 
-.active-section section h2 span:nth-child(59) span {
+.active-section section h2 span:nth-child(59) span, .active-section section h3 span:nth-child(59) span {
   transition-delay: 5.91s; }
 
-.active-section section h2 span:nth-child(60) span {
+.active-section section h2 span:nth-child(60) span, .active-section section h3 span:nth-child(60) span {
   transition-delay: 6s; }
 
 .active-section section img, .active-section section video {
@@ -1712,7 +1686,7 @@ section p span > span, section blockquote span > span {
     transform: translate(-50%, -50%);
     z-index: 9999; }
   .cursor__outer {
-    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s;
     border: solid 1px #fefefe;
     width: 40px;
     height: 40px;
@@ -2026,7 +2000,7 @@ section p span > span, section blockquote span > span {
       .nav-takeover .nav-takeover__panel hr {
         display: block; }
       .nav-takeover .nav-takeover__panel ul {
-        padding: 96px 24px 0 0;
+        padding: 96px 18px 0 0;
         width: 100%; }
       .nav-takeover .nav-takeover__panel li {
         height: 48px;
@@ -2184,9 +2158,6 @@ section p span > span, section blockquote span > span {
     left: 0;
     width: 100%;
     z-index: 0; }
-
-.parallax-header h1 span, .parallax-header h2 span, .parallax-header h3 span, .parallax-header h4 span, .parallax-header h5 span, .parallax-header p span {
-  white-space: pre; }
 
 .parallax-header--hidden h1 > span > span {
   animation-name: ghostOut;
@@ -2391,61 +2362,83 @@ section p span > span, section blockquote span > span {
   height: auto; }
   .process ul {
     list-style: none; }
-
-.title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -55%);
-  transform: translate(-50%, -55%);
-  text-align: center;
-  opacity: 1; }
-  .title > * {
-    -ms-flex-pack: center;
-    justify-content: center; }
-
-.step {
-  position: absolute;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
-.step__arc {
-  stroke-width: 1px;
-  stroke: #fefefe;
-  stroke-dashoffset: 350;
-  stroke-dasharray: 350;
-  fill: transparent;
-  vector-effect: non-scaling-stroke;
-  transition: stroke-dasharray 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
-  .step__arc--active {
-    stroke-dasharray: 700; }
-
-.circle__arc {
-  stroke: rgba(254, 254, 254, 0.24);
-  stroke-width: 1;
-  fill: transparent;
-  vector-effect: non-scaling-stroke; }
-
-.step__number {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 12px;
-  color: #131112;
-  line-height: 1.4;
-  height: 14px;
-  text-align: center;
-  opacity: 1; }
-
-.step__icon {
-  position: relative;
-  width: 60px;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  opacity: 0;
-  margin-bottom: 8px; }
+  .process .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -55%);
+    transform: translate(-50%, -55%);
+    text-align: center;
+    opacity: 1; }
+    .process .title > * {
+      -ms-flex-pack: center;
+      justify-content: center; }
+  .process .step {
+    position: absolute;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .process .step__arc {
+    stroke-width: 2px;
+    stroke: #fefefe;
+    stroke-dashoffset: 350;
+    stroke-dasharray: 350;
+    fill: transparent;
+    vector-effect: non-scaling-stroke;
+    transition: stroke-dasharray 0.3s cubic-bezier(0.7, 0, 0.3, 1); }
+    .process .step__arc--active {
+      stroke-dasharray: 700; }
+  .process .circle__arc {
+    stroke: rgba(254, 254, 254, 0.24);
+    stroke-width: 1;
+    fill: transparent;
+    vector-effect: non-scaling-stroke; }
+  .process .step__number {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #131112;
+    line-height: 1.4;
+    height: 14px;
+    text-align: center;
+    opacity: 1; }
+  .process .step__icon {
+    position: relative;
+    width: 60px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    opacity: 0;
+    margin-bottom: 8px; }
+  .process .step__spot-svg {
+    width: 30px;
+    height: 30px; }
+  .process .step__spot-circle {
+    fill: #131112;
+    stroke: #fefefe;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1; }
+  .process .step__icon {
+    position: relative;
+    width: 60px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    opacity: 0;
+    margin-bottom: 8px; }
+  .process .step__svg {
+    position: relative;
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 40px; }
+  @media screen and (max-width: 800px) {
+    .process {
+      width: 105%;
+      -ms-transform: translateX(-2.5%);
+      transform: translateX(-2.5%); }
+      .process .title {
+        width: 90%; } }
 
 .step {
   position: absolute;
@@ -2566,31 +2559,6 @@ section p span > span, section blockquote span > span {
   .step--active .step__spot-fill {
     -ms-transform: scale(1);
     transform: scale(1); }
-
-.step__spot-svg {
-  width: 30px;
-  height: 30px; }
-
-.step__spot-circle {
-  fill: #131112;
-  stroke: #fefefe;
-  vector-effect: non-scaling-stroke;
-  stroke-width: 1; }
-
-.step__icon {
-  position: relative;
-  width: 60px;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  opacity: 0;
-  margin-bottom: 8px; }
-
-.step__svg {
-  position: relative;
-  bottom: 0;
-  width: 48px;
-  height: 48px;
-  font-size: 40px; }
 
 .project-card {
   position: relative; }
@@ -2795,7 +2763,10 @@ section p span > span, section blockquote span > span {
     display: -ms-flexbox;
     display: flex;
     pointer-events: auto; }
+    .active-section .sidebar__inner {
+      pointer-events: auto; }
   .sidebar__inner {
+    pointer-events: none;
     list-style: none;
     margin-top: 60px;
     width: 100%;

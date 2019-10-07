@@ -9,8 +9,9 @@ import IntersectionObserver  from "intersection-observer"
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
 import ScrollArrow from "./ScrollArrow"
-import GridLines from "../components/GridLines"
-import ClipWrapper from "../components/ClipWrapper"
+import GridLines from "./GridLines"
+import TextLink from "./TextLink"
+import Icon from "./Icon"
 
 import palette from "../services/palette"
 
@@ -40,6 +41,7 @@ export default class ScrollSection extends Component {
 		}
 		
 		return (
+			name ? (
 			<Element name={name} className={classnames}>
 				<IntersectionVisible 
 				onShow={(i) => i[0].target.classList.add("active-section")} 
@@ -47,14 +49,58 @@ export default class ScrollSection extends Component {
 				>
 
 					<section style={style}>
-						<GridLines/>
+						{<GridLines/>}
 						{ this.props.children }
 					</section>
 
-					<ClipWrapper name={name} onSetActive={onSetActive} black={black} sections={sections} activeSection={activeSection} />
+					{/*<ClipWrapper name={name} onSetActive={onSetActive} black={black} sections={sections} activeSection={activeSection} />*/}
+					<div className="clip-wrapper">
+						{ name == "resume" ? <div className="left-rail">
+							<TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink>
+						</div> : null}
 
+
+						{ sections.length > 1 ? [
+							<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
+							,
+							((name == sections[0]) ? (
+								<ScrollArrow to={sections[1]} onSetActive={onSetActive} key={1}/>
+							) : null)
+							,
+							((name == sections[1]) ? (
+								<ScrollArrow to={name} onSetActive={onSetActive} key={2}/>
+							) : null)
+							,
+							<Sidebar 
+							sections={sections} 
+							activeSection={activeSection}
+							key={3}/>
+						] : null }
+
+						<NavToggle/>
+					</div>
 				</IntersectionVisible>
 			</Element>
+			) : (
+			<div className={classnames}>
+				<IntersectionVisible 
+				onShow={(i) => i[0].target.classList.add("active-section")} 
+				onHide={(i) => i[0].target.classList.remove("active-section")}>
+					
+					<section style={style}>
+						{<GridLines/>}
+						{ this.props.children }
+					</section>
+
+					<div className="clip-wrapper">
+						<Sidebar 
+						sections={sections} 
+						activeSection={activeSection}
+						key={3}/>
+					</div>
+				</IntersectionVisible>
+			</div>
+			)
 		);
 	}
 }

@@ -56,12 +56,12 @@ class MicroAppTemplates extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"templates",
 				"conference",
 				"lead-gen",
 				"commerce",
 				"agency",
+				"Retrospective",
 			],
 		}
 	}
@@ -100,6 +100,7 @@ class MicroAppTemplates extends Component {
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',
 					backgroundPosition: this.props.isMobile ? '-25% center' : '150% center',
+					backgroundAttachment: 'fixed',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -155,7 +156,6 @@ class MicroAppTemplates extends Component {
 
 
 				<ScrollSection 
-				name={sections[2]}
 				black 
 				sections={sections} 
 				activeSection={activeSection}
@@ -164,8 +164,7 @@ class MicroAppTemplates extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
@@ -194,10 +193,10 @@ class MicroAppTemplates extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[3]}
+				name={sections[2]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -220,17 +219,17 @@ class MicroAppTemplates extends Component {
 
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[3]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Conference</h2>
-								{<h3>Modern Sans Family</h3>}
+								{<h3 className="light">Modern Sans Family</h3>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
@@ -265,17 +264,17 @@ class MicroAppTemplates extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Lead Generation</h2>
-								{<h3>Bold Modern Family</h3>}
+								{<h3 className="light">Bold Modern Family</h3>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
@@ -303,17 +302,17 @@ class MicroAppTemplates extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[6]}
+				name={sections[5]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Fashion Commerce</h2>
-								<h3>Modern Sans Family</h3>
+								<h3 className="light">Modern Sans Family</h3>
 							</div>
 						</div>
 					</div>
@@ -349,17 +348,17 @@ class MicroAppTemplates extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[7]}
+				name={sections[6]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(7); }}>
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Design Agency</h2>
-								<h3>Modern Sans Family</h3>
+								<h3 className="light">Modern Sans Family</h3>
 							</div>
 						</div>
 					</div>
@@ -367,9 +366,9 @@ class MicroAppTemplates extends Component {
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
 							<Image src="../assets/img/app-templates/agency/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
+						{/*<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
 							<Image src="../assets/img/app-templates/agency/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
-						</div>
+						</div>*/}
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
 							<Image src="../assets/img/app-templates/agency/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
@@ -388,9 +387,46 @@ class MicroAppTemplates extends Component {
 					</SideScroller>
 				</ScrollSection>
 
+				<ScrollSection 
+				name={sections[7]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(7); }}>
+					<div className="grid">
+						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2 className="light">Retrospective</h2>
+								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. We attached analytics data to our templates and measured the effectiveness of each template. ended up being very effective for our customers. gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
+								<blockquote>We attached analytics data to our templates and measured the effectiveness of each template. That way we were able to track the templates that our customers used and iterate on the ones that worked for them.</blockquote>
+							</div>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				black
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundImage: `url(../assets/img/perforce/banner.jpg)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+					backgroundAttachment: 'fixed',
+				}}>
+					<NavLink to={"perforce"} className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<h3 className="light">Next Up</h3>
+							<h2 className="mb0">Perforce</h2>
+						</div>
+					</NavLink>
+				</ScrollSection>
 
 
-				<NextProject 
+
+				{/*<NextProject 
 				to="/perforce"
 				name="Perforce"
 				sections={sections} 
@@ -400,7 +436,7 @@ class MicroAppTemplates extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
-				}}/>
+				}}/>*/}
 
 			</article>
 		);

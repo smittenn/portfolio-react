@@ -12,13 +12,6 @@ $baseclass: parallax-header;
 	// @include zIndexClose();
 
 
-	h1, h2, h3, h4, h5, p {
-		span {
-			white-space: pre;
-		}
-	}
-
-
 	&--hidden {
 		h1 > span {
 			> span {

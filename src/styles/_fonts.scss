@@ -132,29 +132,29 @@
 // 	url('../fonts/Averta/Averta-Regular.svg#codropsicons') format('svg');
 // }
 
-@font-face {
-	font-family: 'Gilroy';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot');
-	src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2'), 
-	url('../fonts/Gilroy/Gilroy-ExtraBold.woff') format('woff'), 
-	url('../fonts/Gilroy/Gilroy-ExtraBold.ttf') format('truetype'),
-	url('../fonts/Gilroy/Gilroy-ExtraBold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Gilroy';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot');
+// 	src: url('../fonts/Gilroy/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Gilroy/Gilroy-ExtraBold.woff2') format('woff2'), 
+// 	url('../fonts/Gilroy/Gilroy-ExtraBold.woff') format('woff'), 
+// 	url('../fonts/Gilroy/Gilroy-ExtraBold.ttf') format('truetype'),
+// 	url('../fonts/Gilroy/Gilroy-ExtraBold.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Gilroy';
-	font-weight: 300;
-	font-style: normal;
-	src: url('../fonts/Gilroy/Gilroy-Light.eot');
-	src: url('../fonts/Gilroy/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Gilroy/Gilroy-Light.woff2') format('woff2'), 
-	url('../fonts/Gilroy/Gilroy-Light.woff') format('woff'), 
-	url('../fonts/Gilroy/Gilroy-Light.ttf') format('truetype'),
-	url('../fonts/Gilroy/Gilroy-Light.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Gilroy';
+// 	font-weight: 300;
+// 	font-style: normal;
+// 	src: url('../fonts/Gilroy/Gilroy-Light.eot');
+// 	src: url('../fonts/Gilroy/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Gilroy/Gilroy-Light.woff2') format('woff2'), 
+// 	url('../fonts/Gilroy/Gilroy-Light.woff') format('woff'), 
+// 	url('../fonts/Gilroy/Gilroy-Light.ttf') format('truetype'),
+// 	url('../fonts/Gilroy/Gilroy-Light.svg#codropsicons') format('svg');
+// }
 
 
 // @font-face {
@@ -193,17 +193,17 @@
 // 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Regular.svg#codropsicons') format('svg');
 // }
 
-// @font-face {
-// 	font-family: 'GTWalsheim';
-// 	font-weight: 500;
-// 	font-style: normal;
-// 	src: url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.eot');
-// 	src: url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.woff2') format('woff2'), 
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.woff') format('woff'), 
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.ttf') format('truetype'),
-// 	url('../fonts/GTWalsheim/GT-Walsheim-Pro-Medium.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'GTSectraDisplay';
+	font-weight: 500;
+	font-style: normal;
+	src: url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.eot');
+	src: url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.woff2') format('woff2'), 
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.woff') format('woff'), 
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.ttf') format('truetype'),
+	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.svg#codropsicons') format('svg');
+}
 
 // @font-face {
 // 	font-family: 'Ivar Display';
@@ -231,6 +231,18 @@
 
 @font-face {
 	font-family: 'Hurme';
+	font-weight: 200;
+	font-style: normal;
+	src: url('../fonts/Hurme/Hurme-Thin.eot');
+	src: url('../fonts/Hurme/Hurme-Thin.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Hurme/Hurme-Thin.woff2') format('woff2'), 
+	url('../fonts/Hurme/Hurme-Thin.woff') format('woff'), 
+	url('../fonts/Hurme/Hurme-Thin.otf') format('truetype'),
+	url('../fonts/Hurme/Hurme-Thin.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Hurme';
 	font-weight: 600;
 	font-style: normal;
 	src: url('../fonts/Hurme/Hurme-SemiBold.eot');
@@ -253,17 +265,17 @@
 	url('../fonts/Hurme/Hurme-Bold.svg#codropsicons') format('svg');
 }
 
-@font-face {
-	font-family: 'Futura Maxi';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
-	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
-	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Futura Maxi';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
+// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
+// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
+// }
 
 @font-face {
 	font-family: 'Moderat';
@@ -277,40 +289,40 @@
 	url('../fonts/Moderat/Moderat-Regular.svg#codropsicons') format('svg');
 }
 
-@font-face {
-	font-family: 'Moderat';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/Moderat/Moderat-Black.eot');
-	src: url('../fonts/Moderat/Moderat-Black.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Moderat/Moderat-Black.woff2') format('woff2'), 
-	url('../fonts/Moderat/Moderat-Black.woff') format('woff'), 
-	url('../fonts/Moderat/Moderat-Black.ttf') format('truetype'),
-	url('../fonts/Moderat/Moderat-Black.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Moderat';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/Moderat/Moderat-Black.eot');
+// 	src: url('../fonts/Moderat/Moderat-Black.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Moderat/Moderat-Black.woff2') format('woff2'), 
+// 	url('../fonts/Moderat/Moderat-Black.woff') format('woff'), 
+// 	url('../fonts/Moderat/Moderat-Black.ttf') format('truetype'),
+// 	url('../fonts/Moderat/Moderat-Black.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Apercu Pro';
-	font-weight: 800;
-	font-style: normal;
-	src: url('../fonts/ApercuPro/ApercuPro-Black.eot');
-	src: url('../fonts/ApercuPro/ApercuPro-Black.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/ApercuPro/ApercuPro-Black.woff2') format('woff2'), 
-	url('../fonts/ApercuPro/ApercuPro-Black.woff') format('woff'), 
-	url('../fonts/ApercuPro/ApercuPro-Black.ttf') format('truetype'),
-	url('../fonts/ApercuPro/ApercuPro-Black.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Apercu Pro';
+// 	font-weight: 800;
+// 	font-style: normal;
+// 	src: url('../fonts/ApercuPro/ApercuPro-Black.eot');
+// 	src: url('../fonts/ApercuPro/ApercuPro-Black.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/ApercuPro/ApercuPro-Black.woff2') format('woff2'), 
+// 	url('../fonts/ApercuPro/ApercuPro-Black.woff') format('woff'), 
+// 	url('../fonts/ApercuPro/ApercuPro-Black.ttf') format('truetype'),
+// 	url('../fonts/ApercuPro/ApercuPro-Black.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Apercu Pro';
-	font-weight: 700;
-	font-style: normal;
-	src: url('../fonts/ApercuPro/ApercuPro-Bold.eot');
-	src: url('../fonts/ApercuPro/ApercuPro-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/ApercuPro/ApercuPro-Bold.woff2') format('woff2'), 
-	url('../fonts/ApercuPro/ApercuPro-Bold.woff') format('woff'), 
-	url('../fonts/ApercuPro/ApercuPro-Bold.ttf') format('truetype'),
-	url('../fonts/ApercuPro/ApercuPro-Bold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Apercu Pro';
+// 	font-weight: 700;
+// 	font-style: normal;
+// 	src: url('../fonts/ApercuPro/ApercuPro-Bold.eot');
+// 	src: url('../fonts/ApercuPro/ApercuPro-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/ApercuPro/ApercuPro-Bold.woff2') format('woff2'), 
+// 	url('../fonts/ApercuPro/ApercuPro-Bold.woff') format('woff'), 
+// 	url('../fonts/ApercuPro/ApercuPro-Bold.ttf') format('truetype'),
+// 	url('../fonts/ApercuPro/ApercuPro-Bold.svg#codropsicons') format('svg');
+// }
 
 

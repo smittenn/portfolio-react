@@ -72,7 +72,7 @@ class NextProject extends Component {
 						</section>
 					</NavLink>
 
-					<ClipWrapper name={name} onSetActive={() => {}} black={true} sections={sections} activeSection={activeSection} />
+					{/*<ClipWrapper name={name} onSetActive={() => {}} black={true} sections={sections} activeSection={activeSection} />*/}
 
 				</div>
 			</IntersectionVisible>

@@ -134,7 +134,7 @@ section {
 			transition-delay: $delay-slowest;
 		}
 
-		h2 {
+		h2, h3 {
 			span {
 				@for $i from 1 through 60 {
 					&:nth-child(#{$i}) span {

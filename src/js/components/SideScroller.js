@@ -11,6 +11,7 @@ class SideScroller extends Component {
 	render() {
 
 		const classnames = classNames({
+			"grid" : true,
 			"side-scroller": true,
 		})
 
@@ -20,6 +21,7 @@ class SideScroller extends Component {
 		const style = {
 			overflowX: 'scroll',
 			display: 'flex',
+			flexWrap: 'nowrap',
 			width: '100%',
 			justifyContent: 'space-between',
 			WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 95%, transparent)',

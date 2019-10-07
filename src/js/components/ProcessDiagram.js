@@ -4,23 +4,13 @@ import IntersectionVisible from "react-intersection-visible"
 
 import pad from '../services/pad'
 import splitWord from '../services/splitWord'
+import splitLetter from '../services/splitLetter'
 import palette from '../services/palette'
 
 export default class ProcessDiagram extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			prevIndex: null,
-			activeIndex: null,
-			hoveringIndex: null,
-			activeItem: {
-				color: palette('brand-black'),
-				title: `My User Experience Process`,
-				body: null
-			}
-		}
 
 		this.data = [
 			{
@@ -80,6 +70,19 @@ export default class ProcessDiagram extends Component {
 				arcPath: `M 15.351767721859161 15.351767721859176 A 49 49 0 0 1 49.99999999999999 1`
 			}
 		]
+
+
+		this.state = {
+			prevIndex: null,
+			activeIndex: 1,
+			hoveringIndex: 1,
+			activeItem: this.data[0]
+			// activeItem: {
+			// 	color: palette('brand-black'),
+			// 	title: `My User Experience Process`,
+			// 	body: null
+			// }
+		}
 	}
 
 	setActiveStep = (i) => {
@@ -107,6 +110,16 @@ export default class ProcessDiagram extends Component {
 
 		return style
 	}
+
+	generateTitle = () => (
+		<div className="title" key={this.state.activeIndex}>
+			<h2>
+				<i className={"iconcss icon-" + this.state.activeItem.iconName }/>
+			</h2>
+			<h3 /*className={ activeIndex ? null : "mb0"}*/>{ splitLetter(this.state.activeItem.title) }</h3>
+			<blockquote className="mb0">{ this.state.activeItem.body ? splitWord(this.state.activeItem.body) : null }</blockquote>
+		</div>
+	)
 
 	render() {
 
@@ -150,40 +163,6 @@ export default class ProcessDiagram extends Component {
 		 <div className="process" id='process'>
 			<div className="process__list">
 				<svg viewBox="0 0 100 100">
-				<defs>
-				  <linearGradient id='grad-arc-1'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-2'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-3'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-4'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-5'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-6'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-7'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				  <linearGradient id='grad-arc-8'>
-					<stop/>
-					<stop offset='100%'/>
-				  </linearGradient>
-				</defs>
 
 				<path className="circle__arc circle__arc-1" id="circle__arc-1" d="M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"/>
 				<path className="circle__arc circle__arc-2" id="circle__arc-2" d="M 68.7514881858894 4.729902906946947 A 49 49 0 0 1 95.27009709305305 31.2485118141106"/>
@@ -200,11 +179,7 @@ export default class ProcessDiagram extends Component {
 
 			</svg>
 
-			<div className="title">
-				<h2><i className={"iconcss icon-" + activeItem.iconName }/></h2>
-				<h3 className={ activeIndex ? null : "mb0"}>{ activeItem.title }</h3>
-				<blockquote className="mb0">{ activeItem.body ? splitWord(activeItem.body) : null }</blockquote>
-			</div>
+			{ this.generateTitle() }
 
 			<ul>
 			{ steps }
