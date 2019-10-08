@@ -67,13 +67,24 @@ $arrow-size: 40px;
 
 		span {
 			display: inline-block;
-			opacity: 1;
-			transform: none;
-			transition: all $duration-slow $easing2;
+		}
 
-			@for $i from 1 through 10 {
-				&:nth-child(#{$i}) {
-					transition-delay: (#{0.0 + ($i * 0.09)}s);
+		> span {
+			overflow: hidden;
+
+			&:first-child {
+				margin-right: 5px;
+			}
+
+			> span {
+				// opacity: 1;
+				transform: none;
+				transition: transform $duration-slow $easing1;
+
+				@for $i from 1 through 10 {
+					&:nth-child(#{$i}) {
+						transition-delay: (#{0.0 + ($i * 0.09)}s);
+					}
 				}
 			}
 		}
@@ -118,9 +129,10 @@ $arrow-size: 40px;
 		pointer-events: none;
 		
 		h1, h2, h3, h4, h5, h6 {			
-			span {
-				opacity: 0;
-				transform: translateY(12px);
+			span > span {
+				// opacity: 0;
+				transition: transform $duration-slow $easing5;
+				transform: translateY(24px);
 			}
 		}
 		.#{$baseclass}__seperator-container {

@@ -46,7 +46,7 @@ class ScrollArrow extends Component {
 					<div className="scroll-arrow__seperator-container">
 						<div className="scroll-arrow__seperator"/>
 					</div>
-					<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter(`Read More`)}</h6>
+					<h6 className="uppercase">{this.props.label ? splitLetter(this.props.label) : splitLetter('Read More')}</h6>
 				</div>					
 			</Link>
 		);

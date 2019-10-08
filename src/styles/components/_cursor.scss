@@ -16,7 +16,7 @@ $baseclass: cursor;
 	}
 
 	&__outer {
-		transition: all $easing1 $duration-medium;
+		transition: all $easing4 $duration-fast;
 		border: solid 1px $brand-white;
 		width: 40px;
 		height: 40px;

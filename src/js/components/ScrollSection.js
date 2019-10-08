@@ -95,8 +95,9 @@ export default class ScrollSection extends Component {
 					<div className="clip-wrapper">
 						<Sidebar 
 						sections={sections} 
-						activeSection={activeSection}
-						key={3}/>
+						activeSection={activeSection}/>
+
+						<NavToggle/>
 					</div>
 				</IntersectionVisible>
 			</div>

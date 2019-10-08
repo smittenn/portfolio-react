@@ -2,6 +2,8 @@ import React, {Component} from "react"
 import classNames from "classnames"
 import IntersectionVisible from "react-intersection-visible"
 
+import Icon from './Icon'
+
 import pad from '../services/pad'
 import splitWord from '../services/splitWord'
 import splitLetter from '../services/splitLetter'
@@ -16,14 +18,14 @@ export default class ProcessDiagram extends Component {
 			{
 				color: palette('brand-red'),
 				title: `Discover`,
-				iconName: `discover`,
+				iconName: `binoculars`,
 				body: `Interview users to understand their current process and workflow.`,
 				arcPath: `M 50 1 A 49 49 0 0 1 84.64823227814082 15.351767721859176`
 			},
 			{
 				color: palette('brand-orange'),
 				title: `Ideate`,
-				iconName: `ideate`,
+				iconName: `lightbulb`,
 				body: `Meet with stakeholders and developers to collaboratively generate design ideas.`,
 				arcPath: `M 84.64823227814082 15.351767721859176 A 49 49 0 0 1 99 50`
 			},
@@ -31,7 +33,7 @@ export default class ProcessDiagram extends Component {
 				color: palette('brand-yellow'),
 				title: `Wireframe`,
 				iconName: `wireframe`,
-				body: `Consolidate the ideas and create a wireframe to communicate the design and functionality with developers.`,
+				body: `Consolidate the ideas into a wireframe to communicate the design and functionality.`,
 				arcPath: `M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082`
 			},
 			{
@@ -44,7 +46,7 @@ export default class ProcessDiagram extends Component {
 			{
 				color: palette('brand-teal'),
 				title: `User Testing`,
-				iconName: `user-testing`,
+				iconName: `conversation`,
 				body: `Test the prototype using Usability Testing methods to gather thorough feedback.`,
 				arcPath: `M 50 99 A 49 49 0 0 1 15.351767721859176 84.64823227814082`
 			},
@@ -112,10 +114,11 @@ export default class ProcessDiagram extends Component {
 	}
 
 	generateTitle = () => (
-		<div className="title" key={this.state.activeIndex}>
-			<h2>
-				<i className={"iconcss icon-" + this.state.activeItem.iconName }/>
-			</h2>
+		<div className="title" key={this.state.act}>
+			<h3>
+				<Icon icon={this.state.activeItem.iconName} size={96} strokeWidth={2} color={palette('brand-white')}/>
+				{/*<i className={"iconcss icon-" + this.state.activeItem.iconName }/>*/}
+			</h3>
 			<h3 /*className={ activeIndex ? null : "mb0"}*/>{ splitLetter(this.state.activeItem.title) }</h3>
 			<blockquote className="mb0">{ this.state.activeItem.body ? splitWord(this.state.activeItem.body) : null }</blockquote>
 		</div>

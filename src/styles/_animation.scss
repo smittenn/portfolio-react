@@ -137,8 +137,17 @@ section {
 		h2, h3 {
 			span {
 				@for $i from 1 through 60 {
-					&:nth-child(#{$i}) span {
-						transition-delay: (#{0.6 + ($i * 0.09)}s);
+					&:nth-child(#{$i}) {
+						span {
+							transition-delay: (#{0.6 + ($i * 0.09)}s);							
+						}
+					}
+				}
+			}
+			span > span {
+				@for $i from 1 through 60 {
+					&:nth-child(#{$i}) {
+							transition-delay: (#{0.6 + ($i * 0.09)}s);							
 					}
 				}
 			}
