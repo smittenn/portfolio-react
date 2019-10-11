@@ -1,3 +1,3 @@
-export default function(n, width, z) {
-	return n.length >= width ? (n + '') : new Array(width - (n + '').length + 1).join(z || '0') + (n + '')
+export default function(num, digits, z) {
+	return num.length >= digits ? (num + '') : new Array(digits - (num + '').length + 1).join(z || '0') + (num + '')
 }

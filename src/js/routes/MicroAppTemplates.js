@@ -114,41 +114,44 @@ class MicroAppTemplates extends Component {
 				<ScrollSection 
 				name={sections[1]} 
 				sections={sections} 
+				disableNumber
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
-							</blockquote>
-							<blockquote className="mr">
-								"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
-							</blockquote>
-							<blockquote className="mr">
-								Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
-							</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="drop-caps ">
+									Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
+								</blockquote>
+								<blockquote className="">
+									"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
+								</blockquote>
+								<blockquote className="">
+									Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
+								</blockquote>
 
+							</div>
 						</div>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-11">
-									<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12">
+										<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
+									</div>
 								</div>
 							</div>
-							<div className="grid__row">
-								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr" >
-										On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designers would be put in charge of a single visual style family from end to end in the design process.
-									</blockquote>
-								</div>}
-								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family.
-									</blockquote>
-								</div>}
+						</div>
+						<div className="grid__row m0">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="" >
+									On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designers would be put in charge of a single visual style family from end to end in the design process.
+								</blockquote>
+								<blockquote className="">
+									The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family.
+								</blockquote>
 							</div>
 						</div>
 					</div>
@@ -229,7 +232,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Conference</h2>
-								{<h3 className="light">Modern Sans Family</h3>}
+								{<h4 className="light">Modern Sans Family</h4>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
@@ -274,7 +277,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Lead Generation</h2>
-								{<h3 className="light">Bold Modern Family</h3>}
+								{<h4 className="light">Bold Modern Family</h4>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
@@ -312,7 +315,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Fashion Commerce</h2>
-								<h3 className="light">Modern Sans Family</h3>
+								<h4 className="light">Modern Sans Family</h4>
 							</div>
 						</div>
 					</div>
@@ -358,7 +361,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Design Agency</h2>
-								<h3 className="light">Modern Sans Family</h3>
+								<h4 className="light">Modern Sans Family</h4>
 							</div>
 						</div>
 					</div>
@@ -396,7 +399,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="light">Retrospective</h2>
+								<h2 className="">Retrospective</h2>
 								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. We attached analytics data to our templates and measured the effectiveness of each template. ended up being very effective for our customers. gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
 								<blockquote>We attached analytics data to our templates and measured the effectiveness of each template. That way we were able to track the templates that our customers used and iterate on the ones that worked for them.</blockquote>
 							</div>
@@ -418,7 +421,7 @@ class MicroAppTemplates extends Component {
 					<NavLink to={"perforce"} className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h3 className="light">Next Up</h3>
+							<h4 className="light">Next Up</h4>
 							<h2 className="mb0">Perforce</h2>
 						</div>
 					</NavLink>

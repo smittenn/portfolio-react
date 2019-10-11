@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { connect } from 'react-redux'
 
 import Icon from "../components/Icon"
+import GridLines from "../components/GridLines"
 
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
 import { openPrimaryPanel, closePrimaryPanel } from "../actions/primaryPanel"
@@ -63,7 +64,7 @@ class NavTakeover extends Component {
 
 		while ((elem = elem.previousSibling) != null) { i++ }
 
-		return (this.props.isSecondaryPanelOpen ? i - 1 : i);
+		return i;
 	}
 
 
@@ -89,7 +90,7 @@ class NavTakeover extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 100) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
 			opacity: (isTakeoverOpen ? 1 : 0)
 		}
 
@@ -127,23 +128,33 @@ class NavTakeover extends Component {
 		return (
 			<nav className={classnames}>
 				<div className="nav-takeover__main">
-					<div className="nav-takeover__overlay" onClick={this.setMenuClosed}/>
+					{/*<div className="nav-takeover__overlay" onClick={this.setMenuClosed}/>*/}
 					<div className="nav-takeover__panel">
-						<div className="nav-takeover__item-container" ref="container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
-							<ul className="m0 nav-takeover__items--secondary" ref="secondary">
-								<li className="nav-takeover__arrow" onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-									<h3><Icon icon='arrow' size={60} color={brandBlack}/></h3>
-								</li>
-								{ secondaryNavItems }
-							</ul>
-							<ul className="m0 nav-takeover__items--primary">
-								{ primaryNavItems }
-							</ul>
+						<div className="nav-takeover__controls">
+							<div style={{ transform: 'scaleX(-1)' }} onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+								<Icon icon='arrow' size={60} color={brandBlack}/>
+							</div>
 						</div>
-						<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
-							<div style={ lineAnimation } className="nav-takeover__line"></div>
+						<div className="grid">
+							<GridLines/>
+							<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item--col-10 grid__item--col-12-medium" style={{ display: 'flex' }}>
+								<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
+									<div style={ lineAnimation } className="nav-takeover__line"></div>
+								</div>
+								<div className="nav-takeover__item-container" ref="container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
+									<ul className="m0 nav-takeover__items--secondary" ref="secondary">
+										{/*<li className="nav-takeover__arrow" onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+											<h3><Icon icon='arrow' size={60} color={brandBlack}/></h3>
+										</li>*/}
+										{ secondaryNavItems }
+									</ul>
+									<ul className="m0 nav-takeover__items--primary">
+										{ primaryNavItems }
+									</ul>
+								</div>
+							</div>
 						</div>
-						<div className="nav-takeover__spacer"/>
 					</div>
 				</div>
 			</nav>

@@ -54,7 +54,6 @@ class AmericanMade extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"preloader",
 				"cinemagraphs",
 				"navigation",
@@ -99,7 +98,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `Universal’s site for`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `told the story of the film.`]}
+					headerText={[ `The NBCUX Lab’s site for`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `told the story of the film.`]}
 					/>
 				</ScrollSection>
 
@@ -109,50 +108,55 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								My team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. 
-							</blockquote>
-							<blockquote className="mr">
-								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
-							</blockquote> 
-							<blockquote className="mr">
-								Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
-							</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="drop-caps ">
+									My team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+								</blockquote>
+								<blockquote className="">
+									The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
+								</blockquote> 
+								<blockquote className="">
+									Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
+								</blockquote>
+							</div>
 						</div>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/american-made/half-still.jpg"  aspectRatioWidth={9} aspectRatioHeight={5}/> 
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12">
+										<Image src="../assets/img/american-made/half-still.jpg"  aspectRatioWidth={9} aspectRatioHeight={5}/> 
+									</div>
 								</div>
 							</div>
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
-									<blockquote className="mr">
-										My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
-									</blockquote>
-								</div>
+						</div>
+						<div className="grid__row m0">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="">
+									My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+								</blockquote>
 							</div>
 						</div>
 					</div>
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[2]}
 				black 
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+					backgroundPosition: `20% 70%`,
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead Designer</blockquote>
+							<blockquote>Lead UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
@@ -160,14 +164,15 @@ class AmericanMade extends Component {
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>Universal Pictures</blockquote> 
+							<blockquote>Universal</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote>
 								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Oleksandr Lebedyev"]} target="_blank">Oleksandr Lebedyev</a></TextLink>,&nbsp; 
-								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink>
+								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Audrey Tse"]} target="_blank">Audrey Tse</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Oleksandr Lebedyev"]} target="_blank">Oleksandr Lebedyev</a></TextLink>
 							</blockquote> 
 						</div>
 					</div>
@@ -191,15 +196,14 @@ class AmericanMade extends Component {
 				</ScrollSection>*/}
 
 				<ScrollSection 
-				name={sections[3]} 
+				name={sections[2]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<p className="mb0">04.</p>
 								<h2>Preloader</h2> 
 								<blockquote>Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”.</blockquote>
 							</div>
@@ -216,10 +220,10 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				black 
-				name={sections[4]} 
+				name={sections[3]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -241,11 +245,11 @@ class AmericanMade extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]} 
+				name={sections[4]} 
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -264,10 +268,11 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[6]} 
+				black
+				name={sections[5]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -287,10 +292,10 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[7]} 
+				name={sections[6]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(7); }}>
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -310,10 +315,10 @@ class AmericanMade extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[8]} 
+				name={sections[7]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(8); }}>
+				onSetActive={() => { this.setActiveSection(7); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -335,10 +340,10 @@ class AmericanMade extends Component {
 
 				{<ScrollSection 
 				black
-				name={sections[9]} 
+				name={sections[8]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(9); }}>
+				onSetActive={() => { this.setActiveSection(8); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

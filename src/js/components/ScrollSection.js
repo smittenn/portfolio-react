@@ -14,6 +14,8 @@ import TextLink from "./TextLink"
 import Icon from "./Icon"
 
 import palette from "../services/palette"
+import pad from "../services/pad"
+import splitLetter from "../services/splitLetter"
 
 export default class ScrollSection extends Component {
 
@@ -26,7 +28,7 @@ export default class ScrollSection extends Component {
 
 	render() {
 
-		const { name, onSetActive, black, style, sections, activeSection, fullHeight } = this.props;
+		const { name, onSetActive, black, style, sections, activeSection, fullHeight, disableNumber } = this.props;
 
 		const classnames = classNames({
 			"scrolling-section": true,
@@ -49,11 +51,18 @@ export default class ScrollSection extends Component {
 				>
 
 					<section style={style}>
-						{<GridLines/>}
+						<GridLines/>
+						{ !disableNumber ? (
+							<div className="grid">
+								<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
+								<div className="grid__item--col-10 grid__item--col-12-medium">
+									<p className="mb0">{splitLetter(pad((sections.indexOf(name) + 1), 2) + ".")}</p>
+								</div>
+							</div>
+						) : null }
 						{ this.props.children }
 					</section>
 
-					{/*<ClipWrapper name={name} onSetActive={onSetActive} black={black} sections={sections} activeSection={activeSection} />*/}
 					<div className="clip-wrapper">
 						{ name == "resume" ? <div className="left-rail">
 							<TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink>
@@ -88,7 +97,7 @@ export default class ScrollSection extends Component {
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
 					
 					<section style={style}>
-						{<GridLines/>}
+						<GridLines/>
 						{ this.props.children }
 					</section>
 

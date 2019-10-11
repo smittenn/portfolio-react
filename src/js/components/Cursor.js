@@ -64,11 +64,10 @@ class Cursor extends Component {
 		})
 		
 		return (
-			<div className={classnames}>
-				<div className="cursor__outer" style={{ left: this.state.arrowX, top: this.state.arrowY }} />
-				<div className="cursor__inner" style={{ left: this.state.arrowX, top: this.state.arrowY }}>
-					{/*<div className="cursor__line" />*/}
-					{/*<div className="cursor__line" />*/}
+			<div className={classnames} style={{ transform: 'translate(' + this.state.arrowX + 'px, ' + this.state.arrowY + 'px)' }}/*left: this.state.arrowX, top: this.state.arrowY*/ >
+				<div className="cursor__wrapper">
+					<div className="cursor__outer"/>
+					<div className="cursor__inner"/>
 				</div>
 			</div>
 		);

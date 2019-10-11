@@ -164,7 +164,6 @@ class Home extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<p className="mb0">{splitLetter("02.")}</p>
 							<h2>{splitWord("Hello There")}</h2>
 							<blockquote className="mr">
 								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
@@ -207,7 +206,6 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__sm"/>
-							<p className="mb0">{splitLetter("03.")}</p>
 							{<h2>{splitWord("Recent Works")}</h2>}
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
