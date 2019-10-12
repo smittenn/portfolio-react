@@ -105,6 +105,7 @@ class AmericanMade extends Component {
 				<ScrollSection 
 				name={sections[1]} 
 				sections={sections} 
+				disableNumber
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
@@ -164,7 +165,7 @@ class AmericanMade extends Component {
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>Universal</blockquote> 
+							<blockquote>Universal Pictures</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
@@ -333,7 +334,7 @@ class AmericanMade extends Component {
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{/*<Image src="../assets/img/american-made/mobile.svg" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
 							{/*<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
-							{<IFrame src="../assets/img/american-made/mobile.svg"/>}
+							{<IFrame src="../assets/img/american-made/mobile.svg" height={512}/>}
 						</div>
 					</div>
 				</ScrollSection>
@@ -349,7 +350,7 @@ class AmericanMade extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Interactive Map</h2>
-								<h3>“Fly With Barry”</h3>
+								<h3>Fly With Barry</h3>
 								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America.</blockquote>
 							</div>
 						</div>
@@ -357,7 +358,7 @@ class AmericanMade extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{/*<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
+							{<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>}
 						</div>
 					</div>
 				</ScrollSection>}

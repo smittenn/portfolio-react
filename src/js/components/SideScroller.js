@@ -18,21 +18,12 @@ class SideScroller extends Component {
 
 		const margin = this.props.isMobile ? 12 : 72;
 
-		const style = {
-			overflowX: 'scroll',
-			display: 'flex',
-			flexWrap: 'nowrap',
-			width: '100%',
-			justifyContent: 'space-between',
-			WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 1) 95%, transparent)',
-		}
-
 		const items = this.props.children.map((item, i) => {
 			return React.cloneElement(item, { style: { marginRight: margin + 'px' }, key: i })
 		})
 		
 		return (
-			<div style={style} className={classnames}>
+			<div className={classnames}>
 				{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 				{ items }
 				{/*<div style={{ minWidth: margin + 'px'}}/>*/}

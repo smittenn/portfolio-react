@@ -5,7 +5,6 @@ $baseclass: nav-takeover;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: white;
 	@include zIndexCloser();
 
 	&__main {
@@ -16,7 +15,7 @@ $baseclass: nav-takeover;
 		top: 0px;
 		display: flex;
 		overflow: hidden;
-		transition: all $easing2 $duration-slow;
+		// transition: all $easing2 $duration-slow;
 	}
 
 	&__overlay {
@@ -26,19 +25,25 @@ $baseclass: nav-takeover;
 	&__panel {
 		background: rgba($brand-white, .99);
 		display: flex;
+		justify-content: center;
 		flex-direction: row-reverse;
 		width: calc(100%);
 		height: 100%;
 		overflow-x: hidden;
 		overflow-y: scroll;
-		opacity: 0;		
-		transition: opacity $easing6 $duration-fast;
-		transform: /*scale(1,0.6153846154)*/ translate3d(100%, 0,0);
+		// opacity: 0;		
+		transform-origin: right;
+		transition: transform $easing6 $duration-slow;
+		transform: scale3d(0, 1,1);
+
+		> * {
+			opacity: 0;
+			transition: none;
+		}
 
 		h1, h2, h3, h4, h5, h6 {
 			display: inline;
 			pointer-events: none;
-			// transition: all $duration-fast $easing2;
 			transition: none;
 			margin: 0;
 		}
@@ -46,9 +51,7 @@ $baseclass: nav-takeover;
 		a {
 			white-space: pre;
 			height: 100%;
-			// pointer-events: auto;
 			border: none;
-			color: $brand-black;
 		}
 
 		hr {
@@ -169,14 +172,19 @@ $baseclass: nav-takeover;
 	&--menuOpen {
 		.#{$baseclass}__main {
 			pointer-events: auto;
-			background: rgba($brand-black, .24);
+			// background: rgba($brand-black, .24);
 		}
 
 		.#{$baseclass}__panel {
+			transform-origin: left;
 			opacity: 1;		
 			transform: none;
-			// transition: transform $easing6 $duration-fast;
 			// @include boxShadow;
+
+			> * {
+				opacity: 1;
+				transition: opacity $easing2 $duration-medium $duration-medium;
+			}
 
 			li {
 				transition: transform $easing2 $duration-slow;
@@ -271,7 +279,7 @@ $baseclass: nav-takeover;
 				display: block;
 			}
 			ul {
-				padding: 96px 18px 0 0;
+				padding: 96px 0 0 18px;
 				width: 100%;
 			}
 			li {

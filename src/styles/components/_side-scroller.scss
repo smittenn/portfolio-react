@@ -1,0 +1,14 @@
+$baseclass: side-scroller;
+
+.#{$baseclass} {
+	overflow-x: scroll;
+	flex-wrap: nowrap;
+	width: 100%;
+	justify-content: space-between;
+	-webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 95%, transparent);
+	background: linear-gradient(to left, $brand-white, rgba($brand-white, 0) 10%);
+
+	.#{$scrolling-section-classname}--black & {
+		background: linear-gradient(to left, $brand-black, rgba($brand-black, 0) 10%);
+	}
+}

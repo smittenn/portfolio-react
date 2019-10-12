@@ -61,7 +61,7 @@ class MicroAppTemplates extends Component {
 				"lead-gen",
 				"commerce",
 				"agency",
-				"Retrospective",
+				"retrospective",
 			],
 		}
 	}
@@ -100,7 +100,6 @@ class MicroAppTemplates extends Component {
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',
 					backgroundPosition: this.props.isMobile ? '-25% center' : '150% center',
-					backgroundAttachment: 'fixed',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -416,7 +415,6 @@ class MicroAppTemplates extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
-					backgroundAttachment: 'fixed',
 				}}>
 					<NavLink to={"perforce"} className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

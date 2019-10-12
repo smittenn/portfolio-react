@@ -53,21 +53,21 @@ export default class ProcessDiagram extends Component {
 			{
 				color: palette('brand-blue'),
 				title: `Experience Mapping`,
-				iconName: `experience-mapping`,
-				body: `Synthesize the feedback and map the users' experience with the prototype to improve it in the future iterations.`,
+				iconName: `directions`,
+				body: `Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.`,
 				arcPath: `M 15.351767721859176 84.64823227814082 A 49 49 0 0 1 1 50.00000000000001`
 			},
 			{
 				color: palette('brand-purple'),
 				title: `Refinement`,
-				iconName: `refining`,
+				iconName: `filter`,
 				body: `Refine and iterate on the design to further improve the users' experience.`,
 				arcPath: `M 1 50.00000000000001 A 49 49 0 0 1 15.351767721859161 15.351767721859176`
 			},
 			{
 				color: palette('brand-pink'),
 				title: `Deliver & Backlog`,
-				iconName: `backlog`,
+				iconName: `clipboard`,
 				body: `Deliver changes to the prototype and list the possible improvements for the future.`,
 				arcPath: `M 15.351767721859161 15.351767721859176 A 49 49 0 0 1 49.99999999999999 1`
 			}

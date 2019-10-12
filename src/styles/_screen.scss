@@ -1,68 +1,39 @@
-@mixin gridStuff($bp) {
-	&__item {
-		&--hide-bp-#{$bp} {
-			display: none;
-		}
-		&--col-1-#{$bp} {
-			min-width: 8.33%;
-			width: 8.33%;
-		}
-		&--col-2-#{$bp} {
-			min-width: 16.66%;
-			width: 16.66%;
-		}
-		&--col-3-#{$bp} {
-			min-width: 25%;
-			width: 25%;
-		}
-		&--col-4-#{$bp} {
-			min-width: 33.33%;
-			width: 33.33%;
-		}
-		&--col-5-#{$bp} {
-			min-width: 41.66%;
-			width: 41.66%;
-		}
-		&--col-6-#{$bp} {
-			min-width: 50%;
-			width: 50%;
-		}
-		&--col-7-#{$bp} {
-			min-width: 58.33%;
-			width: 58.33%;
-		}
-		&--col-8-#{$bp} {
-			min-width: 66.66%;
-			width: 66.66%;
-		}
-		&--col-9-#{$bp} {
-			min-width: 75%;
-			width: 75%;
-		}
-		&--col-10-#{$bp} {
-			min-width: 83.33%;
-			width: 83.33%;
-		}
-		&--col-11-#{$bp} {
-			min-width: 91.66%;
-			width: 91.66%;
-		}
-		&--col-12-#{$bp} {
-			min-width: 100%;
-			width: 100%;
-		}
-	}
-}
-
-@media screen and (max-width: $bp-desktop) {
+@media screen and (max-width: $bp-xlarge) {
 	h1 {
-		font-size: 72px;
+		font-size: 108px;
 	}
 	h2 {
-		font-size: 60px;
+		font-size: 96px;
 	}
 
-	@include gridStuff(desktop);
+	section {
+		padding: 108px 0;
+	}
+
+	.grid {
+		padding: 0 72px;
+	}
+
+	@include grid-at-bp(xlarge);
+}
+
+@media screen and (max-width: $bp-large) {
+	h1 {
+		font-size: 96px;
+	}
+	h2 {
+		font-size: 72px;
+	}
+
+	section {
+		padding: 96px 0;
+	}
+
+	.grid {
+		padding: 0 60px;
+	}
+
+	@include grid-at-bp(large);
 }
 
 @media screen and (max-width: $bp-medium) {
@@ -78,7 +49,7 @@
 	.spacer {
 		display: none;
 	}
-	.grid, section .side-scroller {
+	.grid {
 		padding: 0 24px;
 	}
 	.left-rail {
@@ -87,7 +58,7 @@
 	}
 	.grid {
 		&--lines {
-			padding: 0 48px;
+			padding-right: 48px;
 		}
 
 		&__line {
@@ -102,9 +73,9 @@
 		&__row {
 			margin-bottom: 24px;
 		}
-
-		@include gridStuff(medium);
 	}
+
+	@include grid-at-bp(medium);
 
 	section {
 		padding: 60px 0;

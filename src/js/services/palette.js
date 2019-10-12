@@ -6,10 +6,10 @@ export default function(color) {
 		"brand-purple": "#7366fb",
 		"brand-green": "#8CB369",
 		"brand-yellow": "#F3B600",
-		"brand-orange": "#fd8451",
+		"brand-orange": "#f9763e",
 		"brand-pink": "#FEC3CB",
 		"brand-blue": "#00CAE0",
-		"brand-teal": "#2FACAC",
+		"brand-teal": "#05937E",
 
 		"brand-white": "#F8FBF7",
 		"brand-grey-lightest": "#F4F4F0",

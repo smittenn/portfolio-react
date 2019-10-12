@@ -1,6 +1,5 @@
-$bp-xlarge: 1800px;
-$bp-large: 1400px;
-$bp-desktop: 1100px;
+$bp-xlarge: 1280px;
+$bp-large: 1024px;
 $bp-medium: 800px;
 $bp-small: 480px;
 $bp-xsmall: 320px;
@@ -13,14 +12,14 @@ $font-secondary: 'Moderat', sans-serif;
 $brand-red: #ff3636;
 // $brand-red: #ff483c;
 // $brand-red: #ff4716;
-$brand-orange: #fd8451;
+$brand-orange: #f9763e;
 $brand-yellow: #F3B600;
 $brand-green: #8CB369;
 $brand-purple: #7366fb;
 // $brand-yellow: #F4E285;
 $brand-pink: #FEC3CB;
 $brand-blue: #00CAE0;
-$brand-teal: #2FACAC;
+$brand-teal: #05937E;
 
 $brand-white: lighten(#F8FBF7, 2%);
 $brand-grey-lightest: #F4F4F0;
@@ -41,7 +40,7 @@ $easing2: cubic-bezier(.19,1,.22,1);
 $easing3: cubic-bezier(0.86, 0, 0.07, 1);
 $easing4: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $easing5: cubic-bezier(0.7, 0, 0.3, 1);
-$easing6: cubic-bezier(0.645, 0.045, 0.355, 1);
+$easing6: cubic-bezier(.77,0,.175,1);
 
 $duration-fast: 0.3s;
 $duration-medium: 0.6s;

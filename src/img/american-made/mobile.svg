@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="720px" height="328px" viewBox="0 0 720 328" enable-background="new 0 0 720 328" xml:space="preserve">	
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="720px" height="328px" viewBox="0 0 720 328" enable-background="new 0 0 720 328" xml:space="preserve" preserveAspectRatio="xMinYMin meet">	
 	<script type="text/javascript"><![CDATA[
 		window.addEventListener('load',function(){
 			var isFirefox = typeof InstallTrigger !== 'undefined';
@@ -11,6 +11,8 @@
 	]]></script>
 	<style>
 		svg {
+			min-width: 100%;
+			min-height: 100%;
 		}
 
 		#cloud4 {

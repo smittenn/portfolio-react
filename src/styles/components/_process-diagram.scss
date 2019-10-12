@@ -1,3 +1,5 @@
+$step-classname: "step";
+
 .process {
 	position: relative;
 	width: 100%;
@@ -7,9 +9,6 @@
 		list-style: none;
 	}
 
-
-	.process__list {
-	}
 	.title {
 		position: absolute;
 		top: 50%;

@@ -58,6 +58,7 @@ class Process extends Component {
 				name={sections[0]}
 				black 
 				fullHeight
+				disableNumber
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
@@ -66,8 +67,8 @@ class Process extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-3 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-6 grid__item--col-8-desktop grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-1-large grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-6 grid__item--col-10-large grid__item--col-12-medium">
 							<ProcessDiagram/>
 						</div>
 					</div>

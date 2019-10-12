@@ -134,9 +134,12 @@ class NavTakeover extends Component {
 							<div style={{ transform: 'scaleX(-1)' }} onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
 								<Icon icon='arrow' size={60} color={brandBlack}/>
 							</div>
+							<div onClick={this.setOpenSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+								<Icon icon='arrow' size={60} color={brandBlack}/>
+							</div>
 						</div>
+						<GridLines/>
 						<div className="grid">
-							<GridLines/>
 							<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item--col-10 grid__item--col-12-medium" style={{ display: 'flex' }}>
 								<div className="nav-takeover__line-container" style={this.refs.secondary ? { height: this.refs.secondary.clientHeight + 'px' } : null}>
