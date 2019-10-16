@@ -87,7 +87,7 @@ section {
 	background-blend-mode: multiply;
 	background-size: cover;
 	background-position: 25% 25%;
-	transition: background-color $easing2 $duration-fast;
+	transition: background-color $easing2 $duration-short;
 	@include zIndexClose();					
 
 	* {

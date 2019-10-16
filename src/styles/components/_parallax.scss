@@ -17,7 +17,7 @@ $baseclass: parallax-header;
 			> span {
 				animation-name: ghostOut;
 				animation-timing-function: $easing5;
-				// animation-duration: $duration-slow
+				// animation-duration: $duration-long
 			}
 
 			@for $i from 1 through 60 {

@@ -31,7 +31,7 @@ $baseclass: text-link;
 		display: block;
 		overflow: hidden;
 		background: rgba($brand-black, .24);
-		// transition: all 0s $duration-slow linear;
+		// transition: all 0s $duration-long linear;
 	}
 
 	&__line {
@@ -41,7 +41,7 @@ $baseclass: text-link;
 		display: block;
 		transform: scaleX(0);
 		transform-origin: right;
-		transition: transform $easing2 $duration-slow;
+		transition: transform $easing2 $duration-long;
 	}
 
 	.#{$scrolling-section-classname}--black & {
@@ -66,7 +66,7 @@ $baseclass: text-link;
 			// transition: none;
 		}
 		.#{$baseclass}__line {
-			// animation: drawOutInRight $easing2 $duration-slowest;
+			// animation: drawOutInRight $easing2 $duration-longest;
 			transform: scaleX(1);
 			transform-origin: left;
 		}
@@ -74,7 +74,7 @@ $baseclass: text-link;
 
 	.active-section & {
 		// .#{$baseclass}__line-container {
-		// 	animation: drawOutInRight $easing5 $duration-slowest;
+		// 	animation: drawOutInRight $easing5 $duration-longest;
 		// }
 	}
 }

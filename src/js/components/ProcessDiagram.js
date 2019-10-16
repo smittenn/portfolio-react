@@ -1,3 +1,5 @@
+import { connect } from "react-redux"
+
 import React, {Component} from "react"
 import classNames from "classnames"
 import IntersectionVisible from "react-intersection-visible"
@@ -9,7 +11,9 @@ import splitWord from '../services/splitWord'
 import splitLetter from '../services/splitLetter'
 import palette from '../services/palette'
 
-export default class ProcessDiagram extends Component {
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+
+class ProcessDiagram extends Component {
 
 	constructor(props) {
 		super(props);
@@ -66,25 +70,23 @@ export default class ProcessDiagram extends Component {
 			},
 			{
 				color: palette('brand-pink'),
-				title: `Deliver & Backlog`,
+				title: `Iterate`,
 				iconName: `clipboard`,
-				body: `Deliver changes to the prototype and list the possible improvements for the future.`,
+				body: `Deliver changes to the prototype and backlog improvements for the future.`,
 				arcPath: `M 15.351767721859161 15.351767721859176 A 49 49 0 0 1 49.99999999999999 1`
 			}
 		]
-
 
 		this.state = {
 			prevIndex: null,
 			activeIndex: 1,
 			hoveringIndex: 1,
 			activeItem: this.data[0]
-			// activeItem: {
-			// 	color: palette('brand-black'),
-			// 	title: `My User Experience Process`,
-			// 	body: null
-			// }
 		}
+	}
+
+	componentDidMount() {
+		this.setColor();
 	}
 
 	setActiveStep = (i) => {
@@ -101,20 +103,16 @@ export default class ProcessDiagram extends Component {
 		});	
 	}
 
-	setDelay = (i) => {
-		let style = { "transitionDelay": '0s' };
+	setColor = () => {
+		const section = document.getElementsByTagName('section')[0];
+		const circles = document.getElementsByClassName('step__spot-circle');
 
-		if (this.state.activeIndex > i+1) { 
-			if (this.state.activeIndex > this.state.prevIndex) {
-				console.log(i);
-			}
-		}
-
-		return style
+		section ? section.style.backgroundColor = this.state.activeItem.color : null;
+		circles ? Array.from(circles).forEach((item) => item.style.fill = this.state.activeItem.color) : null;
 	}
 
 	generateTitle = () => (
-		<div className="title" key={this.state.act}>
+		<div className="title" key={this.data.indexOf(this.state.activeItem)}>
 			<h3>
 				<Icon icon={this.state.activeItem.iconName} size={96} strokeWidth={2} color={palette('brand-white')}/>
 				{/*<i className={"iconcss icon-" + this.state.activeItem.iconName }/>*/}
@@ -131,7 +129,7 @@ export default class ProcessDiagram extends Component {
 
 		const steps = this.data.map((item, i) => (
 			<li className={classNames({ "step": true, "step--hovering" : hoveringIndex == i + 1, "step--active": (activeIndex > i) })} key={i + 1} onClick={() => this.setActiveStep(i+1)}>
-				<div className="step__spot" onMouseOver={() => this.setHoveringIndex(i+1)} onMouseOut={() => this.setHoveringIndex(null)}>
+				<div className="step__spot" onMouseOver={() => { this.setHoveringIndex(i+1); this.props.setCursorHover(); }} onMouseOut={() => { this.setHoveringIndex(null); this.props.setCursorUnhover(); }}>
 					<svg className="step__spot-svg" viewBox="0 0 100 100">
 						<circle cx="50" cy="50" r="24" className="step__spot-circle"></circle>
 						<circle cx="50" cy="50" r="12" className="step__spot-fill"></circle>
@@ -156,25 +154,21 @@ export default class ProcessDiagram extends Component {
 			<path className={ classNames({ "step__arc" : true, "step__arc--active" : (activeIndex > i+1) })} id={"step__arc-" + (i + 1)} d={item.arcPath} key={i+1}/>
 		))
 
-		const section = document.getElementsByTagName('section')[0];
-		const circles = document.getElementsByClassName('step__spot-circle');
-
-		section ? section.style.backgroundColor = this.state.activeItem.color : null;
-		circles ? Array.from(circles).forEach((item) => item.style.fill = this.state.activeItem.color) : null;
+		this.setColor();
 
 		return (
 		 <div className="process" id='process'>
 			<div className="process__list">
 				<svg viewBox="0 0 100 100">
 
-				<path className="circle__arc circle__arc-1" id="circle__arc-1" d="M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"/>
-				<path className="circle__arc circle__arc-2" id="circle__arc-2" d="M 68.7514881858894 4.729902906946947 A 49 49 0 0 1 95.27009709305305 31.2485118141106"/>
-				<path className="circle__arc circle__arc-3" id="circle__arc-3" d="M 95.27009709305305 31.2485118141106 A 49 49 0 0 1 95.27009709305305 68.7514881858894"/>
-				<path className="circle__arc circle__arc-4" id="circle__arc-4" d="M 95.27009709305305 68.7514881858894 A 49 49 0 0 1 68.7514881858894 95.27009709305305"/>
-				<path className="circle__arc circle__arc-5" id="circle__arc-5" d="M 68.7514881858894 95.27009709305305 A 49 49 0 0 1 31.248511814110604 95.27009709305305"/>
-				<path className="circle__arc circle__arc-6" id="circle__arc-6" d="M 31.248511814110604 95.27009709305305 A 49 49 0 0 1 4.729902906946947 68.7514881858894"/>
-				<path className="circle__arc circle__arc-7" id="circle__arc-7" d="M 4.729902906946947 68.7514881858894 A 49 49 0 0 1 4.72990290694694 31.24851181411063"/>
-				<path className="circle__arc circle__arc-8" id="circle__arc-8" d="M 4.72990290694694 31.24851181411063 A 49 49 0 0 1 31.248511814110614 4.729902906946947"/>
+				<path className="circle__arc circle__arc-1" d="M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"/>
+				<path className="circle__arc circle__arc-2" d="M 68.7514881858894 4.729902906946947 A 49 49 0 0 1 95.27009709305305 31.2485118141106"/>
+				<path className="circle__arc circle__arc-3" d="M 95.27009709305305 31.2485118141106 A 49 49 0 0 1 95.27009709305305 68.7514881858894"/>
+				<path className="circle__arc circle__arc-4" d="M 95.27009709305305 68.7514881858894 A 49 49 0 0 1 68.7514881858894 95.27009709305305"/>
+				<path className="circle__arc circle__arc-5" d="M 68.7514881858894 95.27009709305305 A 49 49 0 0 1 31.248511814110604 95.27009709305305"/>
+				<path className="circle__arc circle__arc-6" d="M 31.248511814110604 95.27009709305305 A 49 49 0 0 1 4.729902906946947 68.7514881858894"/>
+				<path className="circle__arc circle__arc-7" d="M 4.729902906946947 68.7514881858894 A 49 49 0 0 1 4.72990290694694 31.24851181411063"/>
+				<path className="circle__arc circle__arc-8" d="M 4.72990290694694 31.24851181411063 A 49 49 0 0 1 31.248511814110614 4.729902906946947"/>
 
 				<g>
 					{ arcs }
@@ -185,7 +179,7 @@ export default class ProcessDiagram extends Component {
 			{ this.generateTitle() }
 
 			<ul>
-			{ steps }
+				{ steps }
 			</ul>
 
 			</div>
@@ -193,3 +187,14 @@ export default class ProcessDiagram extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	isCursorHovering: state.isCursorHovering,
+})
+
+const mapDispatchToProps = dispatch => ({
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProcessDiagram)

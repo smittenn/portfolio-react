@@ -98,14 +98,14 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `The NBCUX Lab’s site for`, <span className="outline"><span>American </span></span>, <span className="outline"><span>Made </span></span>, `told the story of the film.`]}
+					headerText={[ `The`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `site told the story of the movie.`]}
 					/>
 				</ScrollSection>
 
 				<ScrollSection 
 				name={sections[1]} 
 				sections={sections} 
-				disableNumber
+				disableSectionNumber
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">

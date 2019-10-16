@@ -212,7 +212,7 @@ class Home extends Component {
 							</blockquote>
 							<h6 className="uppercase">
 								<TextLink hideUnderline>
-									<NavLink to="about">Learn More</NavLink>
+									<NavLink to="process">Learn More</NavLink>
 								</TextLink>
 							</h6>
 						</div>
@@ -253,7 +253,7 @@ class Home extends Component {
 					</div>
 				</ScrollSection>
 
-				<ScrollSection 
+				{/*<ScrollSection 
 				name={sections[3]} 
 				sections={sections} 
 				activeSection={activeSection}
@@ -268,7 +268,7 @@ class Home extends Component {
 							</blockquote>
 						</div>
 					</div>
-				</ScrollSection>
+				</ScrollSection>*/}
 
 			</article>
 		);

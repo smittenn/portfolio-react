@@ -9,7 +9,7 @@ $baseclass: cursor;
 	position: fixed;
 	mix-blend-mode: difference;
 	@include zIndexClosest();
-	// transition: opacity $easing4 $duration-slow;
+	// transition: opacity $easing4 $duration-long;
 
 	&__wrapper {
 		transform: translate(-50% , -50%);
@@ -20,20 +20,17 @@ $baseclass: cursor;
 		align-items: center;
 	}
 
-	&__outer, &__inner {
-		transition: all $easing4 $duration-fast;
-		position: absolute;
-	}
-
 	&__outer {
-		border: solid 1px $brand-white;
+		position: fixed;
 		width: 100%;
 		height: 100%;
+		border: solid 1px $brand-white;
 		border-radius: 50%;
 	}
 
 	&__inner {
-		// transition: width $easing2 $duration-medium, height $easing2 $duration-medium;
+		transition: transform $easing4 $duration-short;
+		position: absolute;
 		height: 6px;
 		width: 6px;
 		background: $brand-white;
@@ -52,13 +49,14 @@ $baseclass: cursor;
 
 	&--hovering {
 		.#{$baseclass}__outer {
-			transform: scale(0.6);
+			// transform: scale(0.6);
 			// opacity: 0;
 		}
 
 		.#{$baseclass}__inner {
-			transform: scale(0);
-			// border: solid 1px $brand-white;
+			transform: scale(3);
+			// background: transparent;
+			// border: solid .1px $brand-white;
 		}
 	}
 

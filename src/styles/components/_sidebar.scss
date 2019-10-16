@@ -11,7 +11,7 @@ $baseclass: sidebar;
 	left: 0;
 	top: 0px;
 	background-blend-mode: multiply;
-	transition: transform $duration-fast $easing4;
+	transition: transform $duration-short $easing4;
 	transform: translateX(-60px);
 	@include zIndexCloser();
 
@@ -30,7 +30,7 @@ $baseclass: sidebar;
 		margin-top: 60px;
 		width: 100%;
 		padding: 0;
-		transition: all $easing4 $duration-fast
+		transition: all $easing4 $duration-short
 	}
 
 	&__item {
@@ -39,7 +39,7 @@ $baseclass: sidebar;
 		border-bottom: none;
 		overflow: hidden;
 		position: relative;
-		transition: height $easing4 $duration-fast $duration-fast;
+		transition: height $easing4 $duration-short $duration-short;
 
 		a {
 			width: 100%;
@@ -91,7 +91,7 @@ $baseclass: sidebar;
 		// transform-origin: right;
 		transform-origin: left;
 		transform: scaleX(0.5);
-		transition: all $easing4 $duration-fast;
+		transition: all $easing4 $duration-short;
 	}
 
 	&__border {
@@ -114,14 +114,14 @@ $baseclass: sidebar;
 
 	&--open {
 		transform: none;
-		transition: transform $duration-fast $duration-fast $easing3;
+		transition: transform $duration-short $duration-short $easing3;
 		// background-image: linear-gradient(90deg, rgba($brand-white, .8) 60%, transparent);
 
 		.#{$baseclass}__inner {
 
 			.#{$baseclass}__item {
 				height: 60px;
-				transition: height $easing4 $duration-fast;
+				transition: height $easing4 $duration-short;
 
 				a {
 					pointer-events: auto;
@@ -190,6 +190,7 @@ $baseclass: sidebar;
 
 		.#{$baseclass}__inner {
 			margin-top: 84px;
+			pointer-events: none;
 		}
 
 		.#{$baseclass}__item {

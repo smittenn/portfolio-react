@@ -58,7 +58,7 @@ class Process extends Component {
 				name={sections[0]}
 				black 
 				fullHeight
-				disableNumber
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 

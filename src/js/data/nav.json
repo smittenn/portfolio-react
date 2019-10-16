@@ -36,7 +36,7 @@
 			"abbreviation": "P1",
 		},
 		{
-			"name": "Rationalized Player",
+			"name": "Visual AI Player",
 			"to": "/vai",
 			"abbreviation": "P2",
 		},
@@ -51,7 +51,7 @@
 			"abbreviation": "P4",
 		},
 		{
-			"name": "Medical Device Center",
+			"name": "J&J MDC",
 			"to": "/jnj-mdc",
 			"abbreviation": "P5",
 		},

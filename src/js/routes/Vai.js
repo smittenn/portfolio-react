@@ -52,8 +52,7 @@ class Vai extends Component {
 			sections: [
 				"intro",
 				"overview",
-				"details",
-				"player",
+				"overlay",
 				"products",
 				"people",
 			],
@@ -101,45 +100,50 @@ class Vai extends Component {
 
 				<ScrollSection 
 				name={sections[1]} 
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1);}}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps">
-								Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing.
-							</blockquote>
-							<blockquote>
-								The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience.
-							</blockquote>
-							<blockquote>
-								The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
-							</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="drop-caps">
+									Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing.
+								</blockquote>
+								<blockquote>
+									The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience.
+								</blockquote>
+								<blockquote>
+									The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
+								</blockquote>
+							</div>
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/vai/chevrolet.jpg"  aspectRatioWidth={16} aspectRatioHeight={9}/>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12">
+										<Image src="../assets/img/vai/chevrolet.jpg"  aspectRatioWidth={16} aspectRatioHeight={9}/>
+									</div>
 								</div>
 							</div>
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
-									<blockquote>
-										As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
-									</blockquote>
-									<blockquote>
-										Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
-									</blockquote>
-								</div>
+						</div>
+						<div className="grid__row mb0">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote>
+									As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
+								</blockquote>
+								<blockquote>
+									Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
+								</blockquote>
 							</div>
 						</div>
 					</div>
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[2]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
@@ -147,8 +151,7 @@ class Vai extends Component {
 					backgroundImage: `url(../assets/img/vai/mr-robot.jpg)`,
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .85`,
 				 	backgroundPosition: "center 30%" 
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
@@ -176,16 +179,16 @@ class Vai extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[3]}
+				name={sections[2]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Video Playback</h2>
+								<h2>Overlay</h2>
 								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without distracting from the viewing experience.</blockquote>
 							</div>
 						</div>
@@ -199,10 +202,10 @@ class Vai extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -221,11 +224,11 @@ class Vai extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -250,16 +253,24 @@ class Vai extends Component {
 				</ScrollSection>
 
 
-				<NextProject 
-				to="/translator"
-				name="Translator"
+				<ScrollSection 
+				black
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/translator/banner.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-				}}/>
-
+					backgroundImage: `url(../assets/img/translator/banner.gif)`, 
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}>
+					<NavLink to="translator" className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<h4 className="light">Next Up</h4>
+							<h2 className="mb0">Translator</h2>
+						</div>
+					</NavLink>
+				</ScrollSection>
 				
 			</article>
 		);
@@ -290,8 +301,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Vai)
-
-
-				// <ParallaxHeader 
-				// bgImage={"../assets/img/vai/banner.gif"}
-				// headerText={[`The`, <span className="outline">V.ai&nbsp;</span>, <span className="outline">player&nbsp;</span>,`uses AI to identify people and objects in video`]}

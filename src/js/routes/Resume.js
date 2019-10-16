@@ -10,6 +10,7 @@ import { home, process, resume, americanMade, vai, translator, jjMdc, jjHome, wr
 import ScrollSection from "../components/ScrollSection"
 import ParallaxHeader from "../components/ParallaxHeader"
 import TextLink from "../components/TextLink"
+import Icon from "../components/Icon"
 
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
@@ -56,15 +57,19 @@ class Resume extends Component {
 		return (
 			<article>
 				<ScrollSection 
-				name={sections[0]} 
+				name={sections[0]}
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(0); }}>
+					<div className="left-rail">
+						<TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink>
+					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
-								<h2 className="mb0">{[splitWord(`Eric C. Smith is an`), <span key={0} className="outline"><span>Interactive&nbsp;</span></span>, <span key={1} className="outline"><span>Designer&nbsp;</span></span>, splitWord(`in New York City.`)]}</h2>
+								<h3 className="mb0">{[splitWord(`Eric C. Smith is an`), <span key={0} className="outline"><span>Interactive&nbsp;</span></span>, <span key={1} className="outline"><span>Designer&nbsp;</span></span>, splitWord(`in New York City.`)]}</h3>
 							</div>
 							<div className="grid__row">
 								<blockquote className="mb0" style={{ minHeight: '48px', alignItems: 'center'}}>

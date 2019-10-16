@@ -25,7 +25,7 @@ $baseclass: next-project;
 	}
 
 	h1 {
-		transition: all $easing4 $duration-fast;
+		transition: all $easing4 $duration-short;
 	}
 
 	&__spacer {
@@ -44,13 +44,13 @@ $baseclass: next-project;
 		// animation: none;
 		// animation-fill-mode: forwards;
 		// transition: none;
-		// transition: all $easing2 $duration-slow;
+		// transition: all $easing2 $duration-long;
 	    // clip-path: url(#clippy-from);
 	}
 
 	&:hover {
 		section {
-			// animation: clip $easing2 $duration-slow;
+			// animation: clip $easing2 $duration-long;
 		    // clip-path: url(#clippy-to);
 			// height: 60vh;
 			// transform: translate3d(0, -5vh, 0);

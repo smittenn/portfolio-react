@@ -21,13 +21,13 @@ $brand-pink: #FEC3CB;
 $brand-blue: #00CAE0;
 $brand-teal: #05937E;
 
-$brand-white: lighten(#F8FBF7, 2%);
-$brand-grey-lightest: #F4F4F0;
-$brand-grey-light: #DEDEDC;
-$brand-grey-medium: #81717A;
-$brand-grey-dark: #232021;
-$brand-grey-darkest: darken(#232021, 3%);
 $brand-black: darken(#232021, 6%);
+$brand-grey-darkest: darken(#232021, 3%);
+$brand-grey-dark: #232021;
+
+$brand-white: lighten(#F8FBF7, 2%);
+$brand-grey-lightest: mix($brand-white, $brand-black, 94%);
+$brand-grey-light: mix($brand-white, $brand-black, 88%);
 
 $letter-spacing-xs: -0.04em;
 $letter-spacing-sm: -0.024em;
@@ -42,17 +42,17 @@ $easing4: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $easing5: cubic-bezier(0.7, 0, 0.3, 1);
 $easing6: cubic-bezier(.77,0,.175,1);
 
-$duration-fast: 0.3s;
+$duration-short: 0.3s;
 $duration-medium: 0.6s;
-$duration-slow: 0.9s;
-$duration-slower: 1.2s;
-$duration-slowest: 1.8s;
+$duration-long: 0.9s;
+$duration-longer: 1.2s;
+$duration-longest: 1.8s;
 
-$delay-fast: 0.06s;
+$delay-short: 0.06s;
 $delay-medium: 0.09s;
-$delay-slow: 0.12s;
-$delay-slower: 0.18s;
-$delay-slowest: 0.24s;
+$delay-long: 0.12s;
+$delay-longer: 0.18s;
+$delay-longest: 0.24s;
 
 $scrolling-section-classname: "scrolling-section";
 

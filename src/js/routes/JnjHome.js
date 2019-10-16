@@ -54,7 +54,6 @@ class JnjHome extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"new-user",
 				"meganav",
 				"sitemap",
@@ -102,54 +101,58 @@ class JnjHome extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
 					backgroundSize: 'contain',
 					backgroundPosition: (this.props.isMobile ? 'right' : 'center'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for employees at J&J to connect & create.`]}
+					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for employees to connect and create.`]}
 					/>
 				</ScrollSection>
 
 
 				<ScrollSection 
 				name={sections[1]} 
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								The Home team dreamed of a better way to J&J. While J&J's 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J. 
-							</blockquote>
-							<blockquote className="mr">
-								Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.  
-							</blockquote>
-							<blockquote className="mr">
-								Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
-							</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="drop-caps ">
+									The Home team dreamed of a better employee experience for J&J employees. While J&J's 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J. 
+								</blockquote>
+								<blockquote className="">
+									Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.  
+								</blockquote>
+								<blockquote className="">
+									Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
+								</blockquote>
 
+							</div>
 						</div>
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-11 grid__item--col-12-medium">
-									<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12">
+										<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
+									</div>
 								</div>
 							</div>
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
-									</blockquote>
-								</div>
-								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.
-									</blockquote>
-								</div>
+						</div>
+						<div className="grid__row m0">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="">
+									My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
+								</blockquote>
+								<blockquote className="mb0">
+									The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.
+								</blockquote>
 							</div>
 						</div>
 					</div>
@@ -157,7 +160,6 @@ class JnjHome extends Component {
 
 
 				<ScrollSection 
-				name={sections[2]}
 				black 
 				sections={sections} 
 				activeSection={activeSection}
@@ -167,8 +169,7 @@ class JnjHome extends Component {
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
 					backgroundSize: '50%',
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
@@ -197,10 +198,10 @@ class JnjHome extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[3]}
+				name={sections[2]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -223,11 +224,11 @@ class JnjHome extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[3]}
 				sections={sections} 
 				black
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -247,10 +248,10 @@ class JnjHome extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -271,16 +272,16 @@ class JnjHome extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[6]}
+				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6) }}>
+				onSetActive={() => { this.setActiveSection(5) }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Links Directory</h2>
-								<blockquote>I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy and our users we theorized 12 categories that links could be bucketed into.</blockquote>
+								<h2>Links</h2>
+								<blockquote>I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed. The scrolling page with side navigation, sorting functionality and starring animation made for a delightful experience.</blockquote>
 							</div>
 						</div>
 					</div>

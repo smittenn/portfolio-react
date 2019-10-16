@@ -53,7 +53,6 @@ class JnjMdc extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"navigation",
 				"flipper",
 				"taxonomy",
@@ -118,43 +117,46 @@ class JnjMdc extends Component {
 
 				<ScrollSection 
 				name={sections[1]} 
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								We sought to consolidate J&J's 250 websites across 6 medical device companies into a single platform that reflected the new J&J brand.
-							</blockquote>
-							<blockquote className="mr">
-								J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. 
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="drop-caps ">
+									We sought to consolidate J&J’s 250 websites across 6 medical device companies into a single platform that reflected the new J&J brand. The final result, J&J MDC or “Medical Device Center” was a flexible design system which created a centralized experience for the companies.
+								</blockquote>
+								<blockquote className="">
+									J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. 
 
-								In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
-							</blockquote>
-							<blockquote className="mr">
-								J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs. Our team additionally pioneeded modern agile software development within the company.
-							</blockquote>
-
+									In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
+								</blockquote>
+								<blockquote className="">
+									J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs. Our team additionally pioneeded modern agile software development within the company.
+								</blockquote>
+							</div>
 						</div>
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-11 grid__item--col-12-medium">
-									<Image src="../assets/img/jnj-mdc/running-man-16x9.png" aspectRatioWidth={16} aspectRatioHeight={9} />
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12">
+										<Image src="../assets/img/jnj-mdc/running-man-16x9.png" aspectRatioWidth={16} aspectRatioHeight={9} />
+									</div>
 								</div>
 							</div>
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr" >
-										My role as Interaction designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
-									</blockquote>
-								</div>
-								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										Our design system was wildly successful and was eventually genericised into J&J's own website builder.
-									</blockquote>
-								</div>
+						</div>
+						<div className="grid__row m0">
+							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
+								<blockquote className="">
+									My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding.
+								</blockquote>
+								<blockquote className="mb0">
+									During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.
+								</blockquote>
 							</div>
 						</div>
 					</div>
@@ -162,7 +164,6 @@ class JnjMdc extends Component {
 
 
 				<ScrollSection 
-				name={sections[2]}
 				black 
 				sections={sections} 
 				activeSection={activeSection}
@@ -172,8 +173,7 @@ class JnjMdc extends Component {
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
 					backgroundSize: 'cover',
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
@@ -206,10 +206,10 @@ class JnjMdc extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[3]}
+				name={sections[2]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -229,10 +229,10 @@ class JnjMdc extends Component {
 
 				<ScrollSection 
 				grey
-				name={sections[4]}
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -253,10 +253,10 @@ class JnjMdc extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[5]}
+				name={sections[4]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -275,10 +275,10 @@ class JnjMdc extends Component {
 
 
 				<ScrollSection 
-				name={sections[6]}
+				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -298,10 +298,10 @@ class JnjMdc extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[7]}
+				name={sections[6]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(7); }}>
+				onSetActive={() => { this.setActiveSection(6); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

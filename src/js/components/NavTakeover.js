@@ -128,16 +128,8 @@ class NavTakeover extends Component {
 		return (
 			<nav className={classnames}>
 				<div className="nav-takeover__main">
-					{/*<div className="nav-takeover__overlay" onClick={this.setMenuClosed}/>*/}
+					<div className="nav-takeover__overlay"/>
 					<div className="nav-takeover__panel">
-						<div className="nav-takeover__controls">
-							<div style={{ transform: 'scaleX(-1)' }} onClick={() => { this.setCloseSecondaryPanel(); this.refs.container.scroll(0,0); }} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-								<Icon icon='arrow' size={60} color={brandBlack}/>
-							</div>
-							<div onClick={this.setOpenSecondaryPanel} onMouseOver={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-								<Icon icon='arrow' size={60} color={brandBlack}/>
-							</div>
-						</div>
 						<GridLines/>
 						<div className="grid">
 							<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
@@ -156,6 +148,14 @@ class NavTakeover extends Component {
 										{ primaryNavItems }
 									</ul>
 								</div>
+							</div>
+						</div>
+						<div className="nav-takeover__controls">
+							<div style={{ transform: 'scaleX(-1)' }} onClick={() => { this.setCloseSecondaryPanel(); this.props.setCursorUnhover(); }} onMouseOver={this.props.isSecondaryPanelOpen ? this.props.setCursorHover : null} onMouseLeave={this.props.setCursorUnhover}>
+								<Icon icon='arrow' size={60} color={brandBlack} disabled={this.props.isPrimaryPanelOpen}/>
+							</div>
+							<div onClick={() => { this.setOpenSecondaryPanel(); this.props.setCursorUnhover();}} onMouseOver={this.props.isPrimaryPanelOpen ? this.props.setCursorHover : null} onMouseLeave={this.props.setCursorUnhover}>
+								<Icon icon='arrow' size={60} color={brandBlack} disabled={this.props.isSecondaryPanelOpen}/>
 							</div>
 						</div>
 					</div>

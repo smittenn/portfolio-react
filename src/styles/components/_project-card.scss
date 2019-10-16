@@ -33,11 +33,11 @@ $baseclass: project-card;
 		clip-path: none;
 
 		&, img, video  {
-			transition: all $easing5 $duration-slow 0s !important;
+			transition: all $easing5 $duration-long 0s !important;
 		}
 
 		img, video {
-			transition-delay: $delay-fast;
+			transition-delay: $delay-short;
 		}
 	}
 

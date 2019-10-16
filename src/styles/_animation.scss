@@ -46,7 +46,7 @@
 		}
 
 		> span > span {
-			animation: ghostIn $duration-slow $easing1;
+			animation: ghostIn $duration-long $easing1;
 			animation-fill-mode: both;
 		}
 	}
@@ -91,10 +91,6 @@ section {
 		}
 	}
 
-	// h1 span > span{
-	// 	transform: translate3d(0,100px,0) skewY(6deg);
-	// }
-
 	h2, h3, h4 {
 		transition: none;
 		opacity: 0;
@@ -117,21 +113,21 @@ section {
 	section {
 		h2, h3, h4 {
 			opacity: 1;
-			transition: transform $duration-slow $delay-medium $easing1, opacity $duration-slow $delay-medium $easing1;
+			transition: transform $duration-long $delay-medium $easing1, opacity $duration-long $delay-medium $easing1;
 
 			span > span {
-				transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
+				transition: transform $duration-long $easing1, opacity $duration-long $easing1;
 				opacity: 1;
 				transform: none;
 			}
 		}
 
 		h3 {
-			transition-delay: $delay-slow;
+			transition-delay: $delay-short;
 		}
 
 		h4 {
-			transition-delay: $delay-slowest;
+			transition-delay: $delay-longest;
 		}
 
 		h2, h3 {
@@ -147,21 +143,21 @@ section {
 			span > span {
 				@for $i from 1 through 60 {
 					&:nth-child(#{$i}) {
-							transition-delay: (#{0.6 + ($i * 0.09)}s);							
+						transition-delay: (#{0.6 + ($i * 0.09)}s);							
 					}
 				}
 			}
 		}
 
 		img, video {
-			transition: transform $duration-slow $easing2, opacity $duration-slow $easing2;
+			transition: transform $duration-long $easing2, opacity $duration-long $easing2;
 			opacity: 1;
 			transform: translate3d(0,0,0) skewX(0deg);
 		}
 
 		p, blockquote {
 			opacity: 1;
-			transition: transform $duration-slow $easing1, opacity $duration-slow $easing1;
+			transition: transform $duration-long $easing1, opacity $duration-long $easing1;
 
 			span {
 				@for $i from 1 through 120 {

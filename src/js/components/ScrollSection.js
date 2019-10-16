@@ -28,7 +28,7 @@ export default class ScrollSection extends Component {
 
 	render() {
 
-		const { name, onSetActive, black, style, sections, activeSection, fullHeight, disableNumber } = this.props;
+		const { name, onSetActive, black, style, sections, activeSection, fullHeight, disableSectionNumber } = this.props;
 
 		const classnames = classNames({
 			"scrolling-section": true,
@@ -47,12 +47,11 @@ export default class ScrollSection extends Component {
 			<Element name={name} className={classnames}>
 				<IntersectionVisible 
 				onShow={(i) => i[0].target.classList.add("active-section")} 
-				onHide={(i) => i[0].target.classList.remove("active-section")}
-				>
+				onHide={(i) => i[0].target.classList.remove("active-section")}>
 
 					<section style={style}>
 						<GridLines/>
-						{ !disableNumber ? (
+						{ !disableSectionNumber ? (
 							<div className="grid">
 								<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
 								<div className="grid__item--col-10 grid__item--col-12-medium">
@@ -64,11 +63,6 @@ export default class ScrollSection extends Component {
 					</section>
 
 					<div className="clip-wrapper">
-						{ name == "resume" ? <div className="left-rail">
-							<TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink>
-						</div> : null}
-
-
 						{ sections.length > 1 ? [
 							<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
 							,

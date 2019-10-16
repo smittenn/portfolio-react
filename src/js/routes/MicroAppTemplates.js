@@ -61,7 +61,7 @@ class MicroAppTemplates extends Component {
 				"lead-gen",
 				"commerce",
 				"agency",
-				"retrospective",
+				"reflection",
 			],
 		}
 	}
@@ -103,7 +103,7 @@ class MicroAppTemplates extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span className="outline"><span>Wrap </span></span>, <span className="outline"><span>Media </span></span>, `we designed 150+ app templates for customers.`]}
+					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed 150+ app templates for our users.`]}
 					/>
 				</ScrollSection>
 
@@ -113,7 +113,7 @@ class MicroAppTemplates extends Component {
 				<ScrollSection 
 				name={sections[1]} 
 				sections={sections} 
-				disableNumber
+				disableSectionNumber
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
@@ -395,13 +395,11 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(7); }}>
 					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="">Retrospective</h2>
-								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. We attached analytics data to our templates and measured the effectiveness of each template. ended up being very effective for our customers. gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
-								<blockquote>We attached analytics data to our templates and measured the effectiveness of each template. That way we were able to track the templates that our customers used and iterate on the ones that worked for them.</blockquote>
-							</div>
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<h2 className="">Reflection</h2>
+							<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. We attached analytics data to our templates and measured the effectiveness of each template. ended up being very effective for our customers. gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
+							<blockquote>We attached analytics data to our templates and measured the effectiveness of each template. That way we were able to track the templates that our customers used and iterate on the ones that worked for them.</blockquote>
 						</div>
 					</div>
 				</ScrollSection>
@@ -424,21 +422,6 @@ class MicroAppTemplates extends Component {
 						</div>
 					</NavLink>
 				</ScrollSection>
-
-
-
-				{/*<NextProject 
-				to="/perforce"
-				name="Perforce"
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/perforce/banner.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}/>*/}
-
 			</article>
 		);
 	}

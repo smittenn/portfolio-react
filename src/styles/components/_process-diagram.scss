@@ -32,7 +32,7 @@ $step-classname: "step";
 		stroke-dasharray: 350;
 		fill: transparent;
 		vector-effect: non-scaling-stroke;
-		transition: stroke-dasharray $duration-fast $easing5;
+		transition: stroke-dasharray $duration-short $easing5;
 
 		&--active {
 			stroke-dasharray: 700;
@@ -109,7 +109,7 @@ $step-classname: "step";
 		fill: $brand-white;
 		transform: scale(0);
 		transform-origin: center;
-		transition: transform $duration-fast $easing5;
+		transition: transform $duration-short $easing5;
 	}
 
 	&__info {
@@ -121,7 +121,7 @@ $step-classname: "step";
 
 	&__text {
 		height: auto;
-		transition: transform $duration-slow $easing2 0s;
+		transition: transform $duration-long $easing2 0s;
 		transform: translateX(-100%);
 
 		.step:nth-child(n + 6) & {
@@ -130,7 +130,7 @@ $step-classname: "step";
 
 		@for $i from 1 through 8 {
 			&:nth-child(#{$i}) {
-				transition-delay: ($i - 1) * $delay-slow;
+				transition-delay: ($i - 1) * $delay-short;
 			}
 		}
 	}
