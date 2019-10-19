@@ -150,7 +150,7 @@ class Home extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in NYC.`]} 
+					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
 					/>
 				</ScrollSection>
 

@@ -80,14 +80,23 @@ section {
 		}
 	}
 
-	h2, h3, h4, p, blockquote {
-		span {
-			overflow: hidden;
+	// h2, h3, h4, p, blockquote {
+	// 	span {
+	// 		overflow: hidden;
 
-			> span {
-				transition: none;
-				opacity: 0;
-			}
+	// 		> span {
+	// 			transition: none;
+	// 			opacity: 0;
+	// 		}
+	// 	}
+	// }
+
+	.split--word, .split--letter {
+		overflow: hidden;
+
+		> span {
+			transition: none;
+			opacity: 0;
 		}
 	}
 
@@ -104,7 +113,6 @@ section {
 		span > span{
 			opacity: 0;
 			transform: translate3d(0,100%,0) skewX(6deg);
-			transition: none;
 		}
 	}
 }
@@ -115,11 +123,13 @@ section {
 			opacity: 1;
 			transition: transform $duration-long $delay-medium $easing1, opacity $duration-long $delay-medium $easing1;
 
-			span > span {
-				transition: transform $duration-long $easing1, opacity $duration-long $easing1;
-				opacity: 1;
-				transform: none;
-			}
+			.split--word, .split--letter {
+				> span {
+					transition: transform $duration-long $easing1, opacity $duration-long $easing1;
+					opacity: 1;
+					transform: none;
+				}
+			} 
 		}
 
 		h3 {
@@ -131,7 +141,7 @@ section {
 		}
 
 		h2, h3 {
-			span {
+			.split--word {
 				@for $i from 1 through 60 {
 					&:nth-child(#{$i}) {
 						span {
@@ -140,7 +150,7 @@ section {
 					}
 				}
 			}
-			span > span {
+			.split--letter > span {
 				@for $i from 1 through 60 {
 					&:nth-child(#{$i}) {
 						transition-delay: (#{0.6 + ($i * 0.09)}s);							
@@ -159,7 +169,7 @@ section {
 			opacity: 1;
 			transition: transform $duration-long $easing1, opacity $duration-long $easing1;
 
-			span {
+			.split--word {
 				@for $i from 1 through 120 {
 					&:nth-child(#{$i}) span {
 						transition-delay: (#{1.2 + ($i * 0.04)}s);
@@ -167,12 +177,21 @@ section {
 				}
 			}
 
-			span > span {
-				opacity: 1;
-				transform: translate3d(0,0,0) skewX(0deg);
-				transition: all $duration-medium $easing1;
-
+			.split--letter > span {
+				@for $i from 1 through 120 {
+					&:nth-child(#{$i}) {
+						transition-delay: (#{1.2 + ($i * 0.04)}s);
+					}
+				}
 			}
+
+			.split--word, .split--letter {
+				> span {
+					opacity: 1;
+					transform: translate3d(0,0,0) skewX(0deg);
+					transition: all $duration-medium $easing1;
+				}	
+			} 
 		}
 	}
 }

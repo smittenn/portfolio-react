@@ -10,11 +10,12 @@ class SideScroller extends Component {
 
 	render() {
 
+		const { style } = this.props;
+
 		const classnames = classNames({
 			"grid" : true,
 			"side-scroller": true,
 		})
-
 
 		const margin = this.props.isMobile ? 12 : 72;
 
@@ -23,7 +24,7 @@ class SideScroller extends Component {
 		})
 		
 		return (
-			<div className={classnames}>
+			<div className={classnames} style={style}>
 				{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 				{ items }
 				{/*<div style={{ minWidth: margin + 'px'}}/>*/}

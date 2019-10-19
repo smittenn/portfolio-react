@@ -34,7 +34,7 @@ export default class Video extends Component {
 
 	render() {
 
-		const { src } = this.props;
+		const { src, loop } = this.props;
 		const { isPlaying } = this.state;
 
 
@@ -43,7 +43,7 @@ export default class Video extends Component {
 				onShow={this.play} 
 				onHide={this.stop}
 				>
-					<video ref="vid" id={this.id} src={src} playsInline preload="auto" muted />
+					<video ref="vid" id={this.id} src={src} playsInline preload="auto" muted loop={loop ? true : false} />
 				</IntersectionVisible>
 		);
 	}

@@ -9,7 +9,6 @@ import { home, process, americanMade, vai, translator, jjMdc, jjHome, wrap1, wra
 
 import ProcessDiagram from "../components/ProcessDiagram"
 import ScrollSection from "../components/ScrollSection"
-import ParallaxHeader from "../components/ParallaxHeader"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 
