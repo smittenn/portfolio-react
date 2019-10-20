@@ -29,6 +29,7 @@ class SideScroller extends Component {
 				{ items }
 				{/*<div style={{ minWidth: margin + 'px'}}/>*/}
 				{/*<h2 style={{ position: 'absolute'}}><i className="iconcss icon-arrow-right"/></h2>*/}
+				{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 			</div>
 		);
 	}

@@ -49,7 +49,7 @@ $baseclass: nav-takeover;
 			transition: none;
 		}
 
-		h1, h2, h3, h4, h5, h6 {
+		h1, h2, h3, h4 {
 			display: inline;
 			pointer-events: none;
 			transition: none;
@@ -76,6 +76,18 @@ $baseclass: nav-takeover;
 			min-width: 90px;
 			margin-bottom: 40px;
 			height: 72px;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		transform: translateY(-72px);
+
+		.icon-caret {
+			margin: 0 12px;
+			margin-bottom: 2px;
 		}
 	}
 
@@ -106,6 +118,7 @@ $baseclass: nav-takeover;
 		flex: 1;
 		position: relative;
 		overflow: hidden;
+		padding: 160px 40px 72px;
 	}
 
 	&__items--primary, &__items--secondary {
@@ -116,7 +129,6 @@ $baseclass: nav-takeover;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		padding: 160px 40px 72px;
 
 		li {
 			transform: translate3d(-125%, 0,0);
@@ -187,6 +199,10 @@ $baseclass: nav-takeover;
 			transform: none;
 			transition-delay: 0s;
 		}
+
+		// .#{$baseclass}__overlay {
+		// 	transform: scale3d(2,1,1);
+		// }
 
 		.#{$baseclass}__panel {
 			transition-delay: $delay-medium;
@@ -273,7 +289,8 @@ $baseclass: nav-takeover;
 			right: 12px;
 			bottom: 12px;
 		}
-		.#{$baseclass}__line-container {
+
+		.#{$baseclass}__line-container, .#{$baseclass}__item-container {
 			padding-top: 96px;
 		}
 
@@ -281,14 +298,17 @@ $baseclass: nav-takeover;
 			width: 48px;
 		}
 
-		&__line {
+		.#{$baseclass}__line {
 			height: 48px;
 		}
 
-		.#{$baseclass}__arrow {
-			margin-top: -66px;
+		.#{$baseclass}__item-container {
+			padding-left: 18px;
 		}
 
+		.#{$baseclass}__arrow {
+			transform: translateY(-48px);
+		}
 
 		.#{$baseclass}__panel {
 			width: 100%;
@@ -297,14 +317,20 @@ $baseclass: nav-takeover;
 				display: block;
 			}
 			ul {
-				padding: 96px 0 0 18px;
 				width: 100%;
 			}
 			li {
 				height: 48px;
 				margin-bottom: 24px;
 			}
+
+			h1, h2, h5, h4 {
+				line-height: 1;
+			}
+			
 			a {
+				display: flex;
+				align-items: center;
 				white-space: normal;
 			}
 			.#{$baseclass}__items {

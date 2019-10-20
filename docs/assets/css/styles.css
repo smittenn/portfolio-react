@@ -2174,7 +2174,7 @@ section p span > span, section blockquote span > span {
     .nav-takeover__panel > * {
       opacity: 0;
       transition: none; }
-    .nav-takeover__panel h1, .nav-takeover__panel h2, .nav-takeover__panel h3, .nav-takeover__panel h4, .nav-takeover__panel h5, .nav-takeover__panel h6 {
+    .nav-takeover__panel h1, .nav-takeover__panel h2, .nav-takeover__panel h3, .nav-takeover__panel h4 {
       display: inline;
       pointer-events: none;
       transition: none;
@@ -2196,6 +2196,17 @@ section p span > span, section blockquote span > span {
       min-width: 90px;
       margin-bottom: 40px;
       height: 72px; }
+  .nav-takeover__arrow {
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-transform: translateY(-72px);
+    transform: translateY(-72px); }
+    .nav-takeover__arrow .icon-caret {
+      margin: 0 12px;
+      margin-bottom: 2px; }
   .nav-takeover__line-container {
     width: 1px;
     -ms-transform: translateX(-1px);
@@ -2218,7 +2229,8 @@ section p span > span, section blockquote span > span {
     -ms-flex: 1;
     flex: 1;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 160px 40px 72px; }
   .nav-takeover__items--primary, .nav-takeover__items--secondary {
     position: absolute;
     min-height: 100%;
@@ -2229,8 +2241,7 @@ section p span > span, section blockquote span > span {
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-align: start;
-    align-items: flex-start;
-    padding: 160px 40px 72px; }
+    align-items: flex-start; }
     .nav-takeover__items--primary li, .nav-takeover__items--secondary li {
       transform: translate3d(-125%, 0, 0); }
   .nav-takeover__items--primary h1.hovered, .nav-takeover__items--primary h2.hovered, .nav-takeover__items--primary h3.hovered, .nav-takeover__items--primary h4.hovered, .nav-takeover__items--primary h5.hovered, .nav-takeover__items--primary h6.hovered {
@@ -2427,25 +2438,33 @@ section p span > span, section blockquote span > span {
       top: auto;
       right: 12px;
       bottom: 12px; }
-    .nav-takeover .nav-takeover__line-container {
+    .nav-takeover .nav-takeover__line-container, .nav-takeover .nav-takeover__item-container {
       padding-top: 96px; }
     .nav-takeover .nav-takeover__spacer {
       width: 48px; }
-    .nav-takeover__line {
+    .nav-takeover .nav-takeover__line {
       height: 48px; }
+    .nav-takeover .nav-takeover__item-container {
+      padding-left: 18px; }
     .nav-takeover .nav-takeover__arrow {
-      margin-top: -66px; }
+      -ms-transform: translateY(-48px);
+      transform: translateY(-48px); }
     .nav-takeover .nav-takeover__panel {
       width: 100%; }
       .nav-takeover .nav-takeover__panel hr {
         display: block; }
       .nav-takeover .nav-takeover__panel ul {
-        padding: 96px 0 0 18px;
         width: 100%; }
       .nav-takeover .nav-takeover__panel li {
         height: 48px;
         margin-bottom: 24px; }
+      .nav-takeover .nav-takeover__panel h1, .nav-takeover .nav-takeover__panel h2, .nav-takeover .nav-takeover__panel h5, .nav-takeover .nav-takeover__panel h4 {
+        line-height: 1; }
       .nav-takeover .nav-takeover__panel a {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
         white-space: normal; }
       .nav-takeover .nav-takeover__panel .nav-takeover__items {
         margin-bottom: 18px;
@@ -3189,12 +3208,9 @@ section p span > span, section blockquote span > span {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   width: 100%;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-mask-image: linear-gradient(to right, black 95%, transparent);
-  background: linear-gradient(to left, #fefefe, rgba(254, 254, 254, 0) 10%); }
-  .scrolling-section--black .side-scroller {
-    background: linear-gradient(to left, #131112, rgba(19, 17, 18, 0) 10%); }
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-mask-image: linear-gradient(to right, black 95%, transparent); }
 
 .sidebar {
   height: 100vh;
