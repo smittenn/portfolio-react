@@ -144,8 +144,7 @@ class NavTakeover extends Component {
 										<div onClick={() => { this.setCloseSecondaryPanel(); this.props.setCursorUnhover(); }}>
 											<TextLink hideUnderline>All Pages</TextLink>
 										</div>
-										<Icon icon='caret' size={16} color={brandBlack}/>
-										{ this.props.isSecondaryPanelOpen ? `Projects` : null }
+										{ this.props.isSecondaryPanelOpen ? [<Icon icon='caret' size={16} color={brandBlack}/>, `Projects`] : null }
 									</h6>}
 									<ul className="m0 nav-takeover__items--secondary" ref="secondary">
 										{ secondaryNavItems }

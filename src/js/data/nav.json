@@ -7,6 +7,26 @@
 		},
 		{
 			"name": "Projects",
+			"items": [
+				{
+					"name": "Google Design"
+				},
+				{
+					"name": "J&J Design Studio"
+				},
+				{
+					"name": "NBCUX Lab"
+				},
+				{
+					"name": "Wrap Media"
+				},
+				{
+					"name": "Perforce"
+				},
+				{
+					"name": "Cisco"
+				},
+			]
 		},
 		{
 			"name": "Process",

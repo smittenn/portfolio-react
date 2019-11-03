@@ -9,7 +9,7 @@ export default function(color) {
 		"brand-orange": "#f9763e",
 		"brand-pink": "#FEC3CB",
 		"brand-blue": "#00CAE0",
-		"brand-teal": "#05937E",
+		"brand-teal": "#0AB489",
 
 		"brand-white": "#F8FBF7",
 		"brand-grey-lightest": "#F4F4F0",
