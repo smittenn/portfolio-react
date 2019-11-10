@@ -222,32 +222,72 @@ table {
       min-width: 100%;
       width: 100%; }
 
+/*
+create color utility classes in the format
+
+.inherit--brand-[COLOR]
+.inherit-bg--brand-[COLOR]
+*/
 .inherit--brand-red {
   color: #ff3636; }
+
+.inherit-bg--brand-red {
+  background-color: #ff3636; }
 
 .inherit--brand-orange {
   color: #f9763e; }
 
+.inherit-bg--brand-orange {
+  background-color: #f9763e; }
+
 .inherit--brand-yellow {
   color: #F3B600; }
 
+.inherit-bg--brand-yellow {
+  background-color: #F3B600; }
+
 .inherit--brand-green {
-  color: #8CB369; }
+  color: #7EAF53; }
+
+.inherit-bg--brand-green {
+  background-color: #7EAF53; }
 
 .inherit--brand-purple {
-  color: #7366fb; }
+  color: #7366FB; }
+
+.inherit-bg--brand-purple {
+  background-color: #7366FB; }
 
 .inherit--brand-pink {
-  color: #FEC3CB; }
+  color: #FED1CF; }
+
+.inherit-bg--brand-pink {
+  background-color: #FED1CF; }
 
 .inherit--brand-blue {
   color: #00CAE0; }
 
-.inherit--brand-tea {
+.inherit-bg--brand-blue {
+  background-color: #00CAE0; }
+
+.inherit--brand-teal {
   color: #0AB489; }
 
+.inherit-bg--brand-teal {
+  background-color: #0AB489; }
+
+/* Create CSS Variables */
+:root {
+  --brand-red: #ff3636;
+  --brand-orange: #f9763e;
+  --brand-yellow: #F3B600;
+  --brand-green: #7EAF53;
+  --brand-purple: #7366FB;
+  --brand-pink: #FED1CF;
+  --brand-blue: #00CAE0;
+  --brand-teal: #0AB489; }
+
 body, button, input, select, textarea {
-  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
@@ -1210,7 +1250,7 @@ section .split--word, section .split--letter {
 section h2, section h3, section h4 {
   transition: none;
   opacity: 0; }
-  section h2 span > span, section h3 span > span, section h4 span > span {
+  section h2 .split--word > span, section h2 .split--letter > span, section h3 .split--word > span, section h3 .split--letter > span, section h4 .split--word > span, section h4 .split--letter > span {
     transform: translate3d(0, 90px, 0) skewX(6deg); }
 
 section p span > span, section blockquote span > span {

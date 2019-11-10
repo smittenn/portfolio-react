@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default function(text, style) {
+export default (text, style) => {
 	return text.split(" ").map((word, i) =>
 		<span key={i} className="split--letter">
 			{ word.split("").map((letter, j) => <span key={j} style={style}>{letter}</span>) }

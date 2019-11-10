@@ -104,8 +104,10 @@ section {
 		transition: none;
 		opacity: 0;
 
-		span > span {
-			transform: translate3d(0,90px,0) skewX(6deg);
+		.split--word, .split--letter {
+			> span {
+				transform: translate3d(0,90px,0) skewX(6deg);
+			}
 		}
 	}
 

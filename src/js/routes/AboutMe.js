@@ -56,7 +56,8 @@ class About extends Component {
 
 		const { activeSection, sections } = this.state;
 
-		const brandTeal = hexToRgb(palette("brand-teal"));
+		const brandPurple = hexToRgb(palette("brand-purple"));
+		const brandTeal = palette("brand-teal");
 		const brandPink = hexToRgb(palette("brand-pink"));
 		
 		return (
@@ -67,10 +68,15 @@ class About extends Component {
 				fullHeight
 				sections={sections} 
 				activeSection={activeSection}
-				style={{}}
+				style={{ 
+					backgroundImage: `url(../assets/img/about/room.jpg)`, 
+					backgroundColor: `rgba(${brandPurple.r}, ${brandPurple.g}, ${brandPurple.b}, 1`,
+					backgroundSize: 'cover',
+					backgroundPosition: this.props.isMobile ? 'center' : 'center 80%'
+				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`In my free time make`, <span><span className="outline">3d art,</span></span>, `snap`, <span><span className="outline">photos </span></span>, `and create prints.`]} 
+					headerText={[`In my free time make`, <span><span className="outline">3d art, </span></span>, `snap`, <span><span className="outline">photos </span></span>, `and create prints.`]} 
 					/>
 				</ScrollSection>
 
@@ -78,7 +84,7 @@ class About extends Component {
 				name={sections[1]}
 				black
 				style={{ 
-					backgroundColor: `rgba(${brandTeal.r}, ${brandTeal.b}, ${brandTeal.g}, 1`,
+					backgroundColor: brandTeal,
 				}}
 				sections={sections} 
 				activeSection={activeSection}
@@ -110,7 +116,7 @@ class About extends Component {
 				<ScrollSection 
 				name={sections[2]}
 				style={{ 
-					backgroundColor: `rgba(${brandPink.r}, ${brandPink.b}, ${brandPink.g}, 1`,
+					backgroundColor: `rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 1`,
 				}}
 				sections={sections} 
 				activeSection={activeSection}
@@ -119,7 +125,7 @@ class About extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Photos</h2>
+								<h2>Photography</h2>
 								<blockquote>I have been shooting small and medium format film for the past 9 years. I love the imperfections, mistakes, learning and happy accidents that comes with the shooting film and its development process.</blockquote>
 							</div>
 						</div>

@@ -41,35 +41,35 @@ class ProcessDiagram extends Component {
 				arcPath: `M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082`
 			},
 			{
-				color: palette('brand-green'),
+				color: palette('brand-purple'),
 				title: `Prototype`,
 				iconName: `prototype`,
 				body: `Create a responsive and clickable coded prototype built with HTML, CSS, and JavaScript.`,
 				arcPath: `M 84.64823227814082 84.64823227814082 A 49 49 0 0 1 50 99`
 			},
 			{
-				color: palette('brand-teal'),
+				color: palette('brand-green'),
 				title: `User Testing`,
 				iconName: `conversation`,
 				body: `Test the prototype using Usability Testing methods to gather thorough feedback.`,
 				arcPath: `M 50 99 A 49 49 0 0 1 15.351767721859176 84.64823227814082`
 			},
 			{
-				color: palette('brand-blue'),
+				color: palette('brand-pink'),
 				title: `Experience Mapping`,
 				iconName: `directions`,
 				body: `Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.`,
 				arcPath: `M 15.351767721859176 84.64823227814082 A 49 49 0 0 1 1 50.00000000000001`
 			},
 			{
-				color: palette('brand-purple'),
+				color: palette('brand-blue'),
 				title: `Refinement`,
 				iconName: `filter`,
 				body: `Refine and iterate on the design to further improve the users' experience.`,
 				arcPath: `M 1 50.00000000000001 A 49 49 0 0 1 15.351767721859161 15.351767721859176`
 			},
 			{
-				color: palette('brand-pink'),
+				color: palette('brand-teal'),
 				title: `Iterate`,
 				iconName: `clipboard`,
 				body: `Deliver changes to the prototype and backlog improvements for the future.`,

@@ -150,7 +150,7 @@ class Home extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
+					headerText={[`Eric C. Smith is an`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City—`]} 
 					/>
 				</ScrollSection>
 
@@ -170,7 +170,7 @@ class Home extends Component {
 							</blockquote>
 							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
-									<NavLink to="about">Learn More</NavLink>
+									<NavLink to="about-me">Learn More</NavLink>
 								</TextLink>
 							</h6>
 						</div>

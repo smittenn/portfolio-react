@@ -97,7 +97,7 @@ class Translator extends Component {
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/translator/banner.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .0`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .0`,
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
 				}}

@@ -6,13 +6,30 @@ $colors: (
   brand-purple: $brand-purple,
   brand-pink: $brand-pink,
   brand-blue: $brand-blue,
-  brand-tea: $brand-teal
+  brand-teal: $brand-teal
 );
+
+/*
+create color utility classes in the format
+
+.inherit--brand-[COLOR]
+.inherit-bg--brand-[COLOR]
+*/
 
 .inherit {
   @each $key, $val in $colors {
     &--#{$key} {
       color: $val;
     }
+    &-bg--#{$key} {
+      background-color: $val;
+    }
+  }
+}
+
+/* Create CSS Variables */
+:root {
+  @each $key, $val in $colors {
+    --#{$key}: $val;
   }
 }

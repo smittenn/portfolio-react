@@ -1,0 +1,74 @@
+{
+	"name": "All Pages",
+	"items" : [
+		{
+			"name": "Home",
+			"to": "/",
+			"abbreviation": "H",
+		},
+		{
+			"name": "Projects",
+			"items": [
+				{
+					"name": "Google Design",
+					"items": [
+						{ "name": "Span 2019", "to": "/span-2019" },
+						{ "name": "design.google", "to": "/design.google" }
+					]
+				},
+				{
+					"name": "NBCUX Lab",
+					"items": [
+						{ "name": "American Made", "to": "/american-made" },
+						{ "name": "Rationalized Player", "to": "/rationalized-player" },
+						{ "name": "vAI Player", "to": "/vai" },
+						{ "name": "Translator", "to": "/translator" },
+						{ "name": "Release Notes", "to": "/release-notes" },
+					]
+				},
+				{
+					"name": "J&J Design Studio",
+					"items": [
+						{ "name": "J&J Home", "to": "/jnj-home" },
+						{ "name": "J&J MDC", "to": "/jnj-mdc" }
+					]
+				},
+				{
+					"name": "Wrap Media",
+					"items": [
+						{ "name": "Micro-App Interactions", "to": "/micro-app-interactions" },
+						{ "name": "Micro-App Interactions", "to": "/micro-app-templates" },
+					]
+				},
+				{
+					"name": "Perforce",
+					"items": [
+						{ "name": "Helix Sync", "to": "/helix-sync" },
+						{ "name": "Helix Cloud", "to": "/helix-cloud" },
+					]
+				},
+				{
+					"name": "Cisco",
+					"items": [
+						{ "name": "Cisco MATE", "to": "/cisco-mate" },
+					]
+				},
+			]
+		},
+		{
+			"name": "Process",
+			"to": "/process",
+			"abbreviation": "P",
+		},
+		{
+			"name": "About Me",
+			"to": "about-me",
+			"abbreviation": "A",
+		},
+		{
+			"name": "Resume",
+			"to": "/resume",
+			"abbreviation": "R",
+		}
+	]
+}

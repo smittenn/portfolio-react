@@ -3,11 +3,11 @@ import darken from "./darken"
 export default function(color) {
 	const palette = {
 		"brand-red": "#ff483c",
-		"brand-purple": "#7366fb",
-		"brand-green": "#8CB369",
+		"brand-purple": "#7366FB",
+		"brand-green": "#7EAF53",
 		"brand-yellow": "#F3B600",
 		"brand-orange": "#f9763e",
-		"brand-pink": "#FEC3CB",
+		"brand-pink": "#FED1CF",
 		"brand-blue": "#00CAE0",
 		"brand-teal": "#0AB489",
 
