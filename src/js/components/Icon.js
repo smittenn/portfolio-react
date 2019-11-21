@@ -24,14 +24,9 @@ class Icon extends Component {
 		};
 
 
-		const { icon, size, color, strokeWidth, isMobile, disabled } = this.props;
+		const { icon, size, color, strokeWidth, isMobile } = this.props;
 
 		const adjustedSize = isMobile ? size * 0.75 : size;
-
-		const disabledStyle = {
-			opacity: 0.24,
-			pointerEvents: 'none'
-		}
 
 		return (
 			<svg 
@@ -43,8 +38,7 @@ class Icon extends Component {
 			strokeWidth={strokeWidth ? strokeWidth + "" : "1"} 
 			fill="none"
 			strokeLinecap="round"
-			strokeLinejoin="round"
-			style={disabled ? disabledStyle : null}>
+			strokeLinejoin="round">
 				<path d={icons[icon]} vectorEffect="non-scaling-stroke"/>
 			</svg>
 		);

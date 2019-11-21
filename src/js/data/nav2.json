@@ -12,8 +12,17 @@
 				{
 					"name": "Google Design",
 					"items": [
+						{ "name": "Best of 2019", "to": "/best-of-2019" },
 						{ "name": "Span 2019", "to": "/span-2019" },
-						{ "name": "design.google", "to": "/design.google" }
+						{ "name": "Design.Google", "to": "design-dot-google" }
+					]
+				},
+				{
+					"name": "J&J Design Studio",
+					"items": [
+						{ "name": "J&J Home", "to": "/jnj-home" },
+						{ "name": "Medical Devices", "to": "/jnj-mdc" },
+						{ "name": "Zyrtec Allergy Cast", "to": "/jnj-mdc" },
 					]
 				},
 				{
@@ -21,23 +30,16 @@
 					"items": [
 						{ "name": "American Made", "to": "/american-made" },
 						{ "name": "Rationalized Player", "to": "/rationalized-player" },
-						{ "name": "vAI Player", "to": "/vai" },
+						{ "name": "V.AI Player", "to": "/vai" },
 						{ "name": "Translator", "to": "/translator" },
 						{ "name": "Release Notes", "to": "/release-notes" },
-					]
-				},
-				{
-					"name": "J&J Design Studio",
-					"items": [
-						{ "name": "J&J Home", "to": "/jnj-home" },
-						{ "name": "J&J MDC", "to": "/jnj-mdc" }
 					]
 				},
 				{
 					"name": "Wrap Media",
 					"items": [
 						{ "name": "Micro-App Interactions", "to": "/micro-app-interactions" },
-						{ "name": "Micro-App Interactions", "to": "/micro-app-templates" },
+						{ "name": "Micro-App Templates", "to": "/micro-app-templates" },
 					]
 				},
 				{
@@ -47,12 +49,12 @@
 						{ "name": "Helix Cloud", "to": "/helix-cloud" },
 					]
 				},
-				{
+				/*{
 					"name": "Cisco",
 					"items": [
 						{ "name": "Cisco MATE", "to": "/cisco-mate" },
 					]
-				},
+				}*/
 			]
 		},
 		{

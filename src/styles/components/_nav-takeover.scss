@@ -54,6 +54,11 @@ $baseclass: nav-takeover;
 			pointer-events: none;
 			transition: none;
 			margin: 0;
+
+			&.hovered {
+				color: transparent;
+				-webkit-text-stroke: 1px $brand-red;
+			}
 		}
 
 		a {
@@ -118,10 +123,12 @@ $baseclass: nav-takeover;
 		flex: 1;
 		position: relative;
 		overflow: hidden;
+		min-height: 100vh;
 		padding: 160px 40px 72px;
 	}
 
-	&__items--primary, &__items--secondary {
+	&__items {
+		pointer-events: none;
 		position: absolute;
 		min-height: 100%;
 		height: auto;
@@ -132,6 +139,13 @@ $baseclass: nav-takeover;
 
 		li {
 			transform: translate3d(-125%, 0,0);
+			transition: transform $easing5 $duration-long;
+
+			@for $i from 1 through 24 {
+				&:nth-child(#{$i}) {
+					transition-delay: (#{0.0 + ($i * 0.09)}s);
+				}
+			}
 		}
 	}
 
@@ -148,7 +162,7 @@ $baseclass: nav-takeover;
 	}
 
 
-	&__items--primary {
+	&__items--active {
 
 		h1, h2, h3, h4, h5, h6 {
 			&.active {
@@ -158,11 +172,6 @@ $baseclass: nav-takeover;
 				// &:after {
 				// 	@include activeDot();
 				// }
-			}
-
-			&.hovered {
-				color: transparent;
-				-webkit-text-stroke: 1px $brand-red;
 			}
 		}
 	}
@@ -213,9 +222,14 @@ $baseclass: nav-takeover;
 				opacity: 1;
 				transition: opacity $easing6 $duration-medium $duration-medium;
 			}
+		}
 
-			li {
-				transition: transform $easing2 $duration-long;
+		.#{$baseclass}__items--active {
+			pointer-events: auto;
+
+			> li {
+				transform: none;
+				transition-timing-function: $easing2;
 
 				@for $i from 1 through 24 {
 					&:nth-child(#{$i}) {
@@ -223,64 +237,64 @@ $baseclass: nav-takeover;
 					}
 				}
 			}
-		}
 
-		&.#{$baseclass}--primaryPanelOpen {
-			.#{$baseclass}__items--primary {
-				li {
-					transform: none;
-				}
-			}
-		}
-
-		&.#{$baseclass}--secondaryPanelOpen {
-			.#{$baseclass}__items--secondary {
-				li {
-					transform: none;
-				}
+			.#{$baseclass}__items {
+				pointer-events: none;
 			}
 		}
 	}
 
-	&--primaryPanelOpen {
-		.#{$baseclass}__items--secondary {
-			pointer-events: none;
+	// &--primaryPanelOpen {
+		// .#{$baseclass}__items {
+		// 	pointer-events: none;
 
-			li {
-				transform: translate3d(-125%,0,0);
-				transition-timing-function: $easing5;
+		// 	li {
+		// 		transform: translate3d(-125%,0,0);
+		// 	}
+		// }
 
-				@for $i from 1 through 24 {
-					&:nth-child(#{$i}) {
-						transition-delay: (#{0.0 + ($i * 0.09)}s);
-					}
-				}
-			}
-		}
-		.#{$baseclass}__items--primary {
-			pointer-events: auto;
-		}
-	}
+		// .#{$baseclass}__items--secondary {
+		// 	pointer-events: none;
 
-	&--secondaryPanelOpen {
-		.#{$baseclass}__items--primary {
-			pointer-events: none;
+		// 	li {
+		// 		transform: translate3d(-125%,0,0);
+		// 		transition-timing-function: $easing5;
 
-			li {
-				transform: translate3d(-125%,0,0);
-				transition-timing-function: $easing5;
+		// 		@for $i from 1 through 24 {
+		// 			&:nth-child(#{$i}) {
+		// 				transition-delay: (#{0.0 + ($i * 0.09)}s);
+		// 			}
+		// 		}
+		// 	}
+		// }
+		// .#{$baseclass}__items--active {
+		// 	pointer-events: auto;
 
-				@for $i from 1 through 24 {
-					&:nth-child(#{$i}) {
-						transition-delay: (#{0.0 + ($i * 0.09)}s);
-					}
-				}
-			}
-		}
-		.#{$baseclass}__items--secondary {
-			pointer-events: auto;
-		}
-	}
+		// 	> li {
+		// 		transform: none;
+		// 	}
+		// }
+	// }
+
+	// &--secondaryPanelOpen {
+	// 	.#{$baseclass}__items--active {
+	// 		pointer-events: none;
+
+	// 		li {
+	// 			transform: translate3d(-125%,0,0);
+	// 			transition-timing-function: $easing5;
+
+	// 			@for $i from 1 through 24 {
+	// 				&:nth-child(#{$i}) {
+	// 					transition-delay: (#{0.0 + ($i * 0.09)}s);
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	.#{$baseclass}__items--secondary {
+	// 		pointer-events: auto;
+	// 	}
+	// }
 
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__controls {

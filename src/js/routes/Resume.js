@@ -72,7 +72,7 @@ class Resume extends Component {
 								<h3 className="mb0">{[`Eric C. Smith is an` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
 							</div>
 							<div className="grid__row">
-								<blockquote className="mb0" style={{ minHeight: '48px', alignItems: 'center'}}>
+								<blockquote className="mb0" style={{ minHeight: '48px', alignItems: 'center', width: '100%' }}>
 									<hr/>
 									<TextLink hideUnderline><a href="mailto:hi@ericsmithux.com">hi@ericsmithux.com</a></TextLink>
 									<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5> 

@@ -74,6 +74,12 @@ video, iframe {
 	background: transparent; 
 }
 
+.disabled {
+	transition: opacity $duration-short $easing2;
+	opacity: 0.24;
+	pointer-events: none;
+}
+
 section {
 	padding: 120px 0;
 	position: relative;

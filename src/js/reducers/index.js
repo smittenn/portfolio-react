@@ -5,6 +5,7 @@ import abbreviationReducer from './abbreviation'
 import cursorReducer from './cursor'
 import navTakeoverReducer from './navTakeover'
 import navToggleReducer from './navToggle'
+import panelReducer from './panel'
 import primaryPanelReducer from './primaryPanel'
 import secondaryPanelReducer from './secondaryPanel'
 import sidebarReducer from './sidebar'
@@ -16,6 +17,7 @@ const rootReducer = (history) => combineReducers({
 	isCursorHovering: cursorReducer,
 	isToggleHovered: navToggleReducer,
 	isTakeoverOpen: navTakeoverReducer,
+	openNavPanel: panelReducer,
 	isPrimaryPanelOpen: primaryPanelReducer,
 	isSecondaryPanelOpen: secondaryPanelReducer,
 	isSidebarOpen: sidebarReducer,
