@@ -100,12 +100,7 @@ class NavTakeover extends Component {
 						</li>	
 					) : (
 						<li key={j}>
-							<NavLink to={item.to} 
-							onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
-							onMouseLeave={ this.props.setCursorUnhover } 
-							onClick={this.setMenuClosed}>
-								<h3 className={classNames({ 'active': this.props.abbreviation == item.abbreviation, 'hovered': j == this.state.indexHovered, 'mb0': true })}>{item.name}</h3>
-							</NavLink>
+							{ this.handleExternalLinks(item, j) }
 						</li>
 					)
 				)) }
@@ -113,12 +108,30 @@ class NavTakeover extends Component {
 		))
 	)
 
+	handleExternalLinks = (item, idx) => (
+
+		(/^\/\//).test(item.to) ? (
+			<a href={item.to} target="_blank"
+			onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
+			onMouseLeave={ this.props.setCursorUnhover }>
+				<h3 className={classNames({ 'active': this.props.abbreviation == item.abbreviation, 'hovered': idx == this.state.indexHovered, 'mb0': true })}>{item.name}</h3>
+			</a>
+		) : (
+			<NavLink to={item.to} 
+			onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
+			onMouseLeave={ this.props.setCursorUnhover } 
+			onClick={this.setMenuClosed}>
+				<h3 className={classNames({ 'active': this.props.abbreviation == item.abbreviation, 'hovered': idx == this.state.indexHovered, 'mb0': true })}>{item.name}</h3>
+			</NavLink>
+		)
+	)
+
 	createBreadcrumbs = (menus) => (
 		menus.map((menu, i) => (
 			(toCamelCase(menu.name) == this.props.openNavPanel) ? (
-				<h6 className="nav-takeover__arrow uppercase">
-					{ this.createBreadcrumbItem(menu) }
+				<h6 className="nav-takeover__breadcrumbs uppercase">
 					{ menu.name }
+					{ this.createBreadcrumbItem(menu) }
 				</h6>
 			) : null
 		))
@@ -126,11 +139,11 @@ class NavTakeover extends Component {
 
 	createBreadcrumbItem = (menu) => (
 		menu.hasOwnProperty('parent') ? (
-			<div style={{ display: 'flex' }}>
+			<div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+			<Icon icon='caret' size={16} color={palette("brand-black")}/>
 			<div onClick={() => { this.props.setPanel(menu.parent.name); this.props.setCursorUnhover(); }}>
 				<TextLink hideUnderline>{menu.parent.name}</TextLink>
 			</div>
-			<Icon icon='caret' size={16} color={palette("brand-black")}/>
 			{ this.createBreadcrumbItem(menu.parent) }
 			</div>
 		) : null

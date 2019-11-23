@@ -2237,15 +2237,21 @@ section p span > span, section blockquote span > span {
       min-width: 90px;
       margin-bottom: 40px;
       height: 72px; }
-  .nav-takeover__arrow {
+  .nav-takeover__breadcrumbs {
     position: absolute;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     -ms-transform: translateY(-72px);
     transform: translateY(-72px); }
-    .nav-takeover__arrow .icon-caret {
+    .nav-takeover__breadcrumbs .icon-caret {
       margin: 0 12px;
       margin-bottom: 2px; }
   .nav-takeover__line-container {
@@ -2425,9 +2431,11 @@ section p span > span, section blockquote span > span {
       height: 48px; }
     .nav-takeover .nav-takeover__item-container {
       padding-left: 18px; }
-    .nav-takeover .nav-takeover__arrow {
+    .nav-takeover .nav-takeover__breadcrumbs {
       -ms-transform: translateY(-48px);
       transform: translateY(-48px); }
+      .nav-takeover .nav-takeover__breadcrumbs .icon-caret {
+        margin: 0 6px; }
     .nav-takeover .nav-takeover__panel {
       width: 100%; }
       .nav-takeover .nav-takeover__panel hr {

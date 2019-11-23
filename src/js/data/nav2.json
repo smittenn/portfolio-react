@@ -13,14 +13,14 @@
 					"name": "Google Design",
 					"items": [
 						{ "name": "Best of 2019", "to": "/best-of-2019" },
-						{ "name": "Span 2019", "to": "/span-2019" },
-						{ "name": "Design.Google", "to": "design-dot-google" }
+						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
+						{ "name": "Design.Google", "to": "//design.google" }
 					]
 				},
 				{
 					"name": "J&J Design Studio",
 					"items": [
-						{ "name": "J&J Home", "to": "/jnj-home" },
+						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },
 						{ "name": "Zyrtec Allergy Cast", "to": "/jnj-mdc" },
 					]
@@ -32,7 +32,7 @@
 						{ "name": "Rationalized Player", "to": "/rationalized-player" },
 						{ "name": "V.AI Player", "to": "/vai" },
 						{ "name": "Translator", "to": "/translator" },
-						{ "name": "Release Notes", "to": "/release-notes" },
+						{ "name": "Release Notes", "to": "//release-notes.nbcuxlab.com/" },
 					]
 				},
 				{
