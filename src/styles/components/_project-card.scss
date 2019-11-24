@@ -1,42 +1,63 @@
 $baseclass: project-card;
 
 .#{$baseclass} {
-	// margin-right: 24px;
+	margin-bottom: 12px;
 	position: relative;
+	// overflow: hidden;
 	// background: $brand-black;
 
 	a {
 		border: none;
 		color: $brand-black;
-	}
-
-	// h1, h2, h3, h4, h5, h6, blockquote {
-	// 	margin: 0;
-	// }
-
-	i {
-		font-size: 40px;
-	}
-
-	&__bottom {
 		display: flex;
 		align-items: center;
-		padding: 40px 48px;
 
-		> div {
-			flex: 1;
-		}
+				// > div {
+		// 	flex: 1;
+		// }
+
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		// @include zIndexClose;
+	}
+
+	&__tags {
+		opacity: 0;
+	}
+
+	&__tags, 
+	&__asset {
+		transition: all $easing4 $duration-medium;
+	}
+
+	// &__asset,
+	// &__asset img,
+	// &__asset div {
+	// 	@include zIndexFarthest;
+	// }
+
+	&__bottom {
+		display: block;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+		min-width: 100%;
+		@include zIndexClose;
+		// transform: translateY(20%);
 	}
 
 	&__asset {
-		overflow: hidden;
-		clip-path: none;
-
-		&, img, video  {
-			transition: all $easing5 $duration-long 0s !important;
-		}
+		position: absolute;
+		transform: translateX(-8.3333%);
+		opacity: 0;
+		pointer-events: none;
+		width: 116.6666%;
+		@include zIndexFar;
 
 		img, video {
+			// transform: none;
 			transition-delay: $delay-short;
 		}
 	}
@@ -44,28 +65,18 @@ $baseclass: project-card;
 	.active-section & {
 		&__asset {
 			img, video {
-				transform: translate3d(0,100%,0);
-			}
-		}
-	}
-
-	&--visible {
-		.#{$baseclass}__asset {
-			img, video {
 				transform: none;
 			}
 		}
 	}
-	
 
 	&--hovered {
-		.#{$baseclass}__asset {
-			// margin: 6px;
-			// clip-path: inset(12px 12px 12px 12px);
-
-			img, video {
-				transform: scale(1.06);
-			}
+		.#{$baseclass}__asset, 
+		.#{$baseclass}__tags {
+			opacity: 1;
+		}
+		.#{$baseclass}__bottom {
+			transform: none;
 		}
 	}
 
@@ -73,8 +84,8 @@ $baseclass: project-card;
 		margin: 0;
 
 		.#{$baseclass}__bottom {
-			padding: 24px 0;
-			padding-bottom: 40px;
+			// padding: 24px 0;
+			// padding-bottom: 40px;
 		}
 
 		i {

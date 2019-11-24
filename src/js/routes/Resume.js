@@ -83,6 +83,14 @@ class Resume extends Component {
 								 </blockquote>
 							</div>
 							<div className="grid__row">
+								<blockquote className="mb0">August 2019 - Present. New York, NY.</blockquote>
+								<h4 className="mb0">Google Design <span className="outline">•</span> UX Developer</h4>
+								<blockquote>HTML, CSS, Javascript, Python, Django</blockquote>
+								<blockquote className="mb0"><ul>
+									<li>Lead developer on design.google, Google Design's editorial platform and hub for all things design at Google.</li>
+								</ul></blockquote>
+							</div>
+							<div className="grid__row">
 								<blockquote className="mb0">July 2018 – August 2019. New York, NY.</blockquote>
 								<h4 className="mb0">J&J Design Studio <span className="outline">•</span> Sr. Interaction Designer</h4>
 								<blockquote>Sketch, Invision, Webflow, HTML, CSS, React, Javascript</blockquote>

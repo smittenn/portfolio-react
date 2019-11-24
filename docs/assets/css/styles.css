@@ -281,8 +281,10 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
+  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
   font-family: "Moderat", sans-serif;
   letter-spacing: -0.006em; }
@@ -456,10 +458,7 @@ section {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: 25% 25%;
-  transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
-  z-index: 1; }
-  section * {
-    z-index: 1; }
+  transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 0.3s; }
   section img {
     width: 100%; }
   section h1 .outline, section h2 .outline, section h3 .outline, section h4 .outline, section h5 .outline, section h6 .outline, section h7 .outline, section p .outline, section blockquote .outline, section a .outline {
@@ -3006,43 +3005,53 @@ section p span > span, section blockquote span > span {
     transform: scale(1); }
 
 .project-card {
+  margin-bottom: 12px;
   position: relative; }
   .project-card a {
     border: none;
-    color: #131112; }
-  .project-card i {
-    font-size: 40px; }
-  .project-card__bottom {
+    color: #131112;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center;
-    padding: 40px 48px; }
-    .project-card__bottom > div {
-      -ms-flex: 1;
-      flex: 1; }
+    align-items: center; }
+  .project-card__tags {
+    opacity: 0; }
+  .project-card__tags, .project-card__asset {
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
+  .project-card__bottom {
+    display: block;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 100%;
+    z-index: 1; }
   .project-card__asset {
-    overflow: hidden;
-    -webkit-clip-path: none;
-    clip-path: none; }
-    .project-card__asset, .project-card__asset img, .project-card__asset video {
-      transition: all cubic-bezier(0.7, 0, 0.3, 1) 0.9s 0s !important; }
+    position: absolute;
+    -ms-transform: translateX(-8.3333%);
+    transform: translateX(-8.3333%);
+    opacity: 0;
+    pointer-events: none;
+    width: 116.6666%;
+    z-index: 0; }
     .project-card__asset img, .project-card__asset video {
       transition-delay: 0.06s; }
   .active-section .project-card__asset img, .active-section .project-card__asset video {
-    transform: translate3d(0, 100%, 0); }
-  .project-card--visible .project-card__asset img, .project-card--visible .project-card__asset video {
     -ms-transform: none;
     transform: none; }
-  .project-card--hovered .project-card__asset img, .project-card--hovered .project-card__asset video {
-    -ms-transform: scale(1.06);
-    transform: scale(1.06); }
+  .project-card--hovered .project-card__asset,
+  .project-card--hovered .project-card__tags {
+    opacity: 1; }
+  .project-card--hovered .project-card__bottom {
+    -ms-transform: none;
+    transform: none; }
   @media screen and (max-width: 800px) {
     .project-card {
       margin: 0; }
-      .project-card .project-card__bottom {
-        padding: 24px 0;
-        padding-bottom: 40px; }
       .project-card i {
         right: 0; } }
 

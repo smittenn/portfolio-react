@@ -94,11 +94,7 @@ section {
 	background-size: cover;
 	background-position: 25% 25%;
 	transition: background-color $easing2 $duration-short;
-	@include zIndexClose();					
-
-	* {
-		@include zIndexClose();					
-	}
+	// @include zIndexClose();					
 
 	img {
 		width: 100%;

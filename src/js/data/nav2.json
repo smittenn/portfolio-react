@@ -12,9 +12,9 @@
 				{
 					"name": "Google Design",
 					"items": [
-						{ "name": "Best of 2019", "to": "/best-of-2019" },
-						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
-						{ "name": "Design.Google", "to": "//design.google" }
+						// { "name": "Best of 2019", "to": "/best-of-2019" },
+						{ "name": "SPAN 2019", "to": "//design.google/library/span2019" },
+						{ "name": "Google Design", "to": "//design.google" }
 					]
 				},
 				{
@@ -29,17 +29,18 @@
 					"name": "NBCUX Lab",
 					"items": [
 						{ "name": "American Made", "to": "/american-made" },
-						{ "name": "Rationalized Player", "to": "/rationalized-player" },
-						{ "name": "V.AI Player", "to": "/vai" },
+						/*{ "name": "Rationalized Player", "to": "/rationalized-player" },*/
+						{ "name": "V.ai Player", "to": "/vai" },
 						{ "name": "Translator", "to": "/translator" },
+						{ "name": "NBCUX’s Portfolio", "to": "//portfolio.nbcuxlab.com" },
 						{ "name": "Release Notes", "to": "//release-notes.nbcuxlab.com/" },
 					]
 				},
 				{
 					"name": "Wrap Media",
 					"items": [
-						{ "name": "Micro-App Interactions", "to": "/micro-app-interactions" },
-						{ "name": "Micro-App Templates", "to": "/micro-app-templates" },
+						{ "name": "Wrap Interactions", "to": "/micro-app-interactions" },
+						{ "name": "Wrap Templates", "to": "/micro-app-templates" },
 					]
 				},
 				{

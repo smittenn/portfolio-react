@@ -1,6 +1,7 @@
 body, button, input, select, textarea {
 	font-variant-ligatures: none;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeSpeed;
 	font-family: $font-secondary;
 	letter-spacing: -0.006em;

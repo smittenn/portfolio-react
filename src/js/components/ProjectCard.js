@@ -8,6 +8,8 @@ import IntersectionObserver  from "intersection-observer"
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
+import TextLink from '../components/TextLink'
+
 import splitLetter from '../services/splitLetter'
 
 class ProjectCard extends Component {
@@ -72,22 +74,20 @@ class ProjectCard extends Component {
 		// })
 
 		return (
-			<IntersectionVisible onShow={this.setVisible} onHide={this.setInvisible}>
-				<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-					<NavLink to={href} onClick={this.handleMouseLeave}>
-						<div className="project-card__asset">
-						{this.props.children}
-						</div>
-						<div className="project-card__bottom">
-							<div>
-								<h4 className="mb0">{name}</h4>
-								<blockquote className="mb0">{tags.join(", ")}</blockquote>
-							</div>
-							{/*<i className="iconcss icon-arrow-right"></i>*/}
-						</div>
-					</NavLink>
-				</div>
-			</IntersectionVisible>
+			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+				<NavLink to={href} onClick={this.handleMouseLeave}>
+					<div className="project-card__asset">
+					{this.props.children}
+					</div>
+					<div className="project-card__bottom">
+						<TextLink hideUnderline><h3 className="mb0">{name}</h3></TextLink>
+						{/*<i className="iconcss icon-arrow-right"></i>*/}
+					</div>
+					<div className="project-card__tags">
+						<blockquote className="mb0">{tags.join(", ")}</blockquote>
+					</div>
+				</NavLink>
+			</div>
 		);
 	}
 }

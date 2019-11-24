@@ -129,7 +129,7 @@ class NavTakeover extends Component {
 	createBreadcrumbs = (menus) => (
 		menus.map((menu, i) => (
 			(toCamelCase(menu.name) == this.props.openNavPanel) ? (
-				<h6 className="nav-takeover__breadcrumbs uppercase">
+				<h6 className="nav-takeover__breadcrumbs uppercase" key={i}>
 					{ menu.name }
 					{ this.createBreadcrumbItem(menu) }
 				</h6>

@@ -62,18 +62,20 @@ class Home extends Component {
 
 		const projects = [
 			{
-				name: "American Made Film Site",
+				name: "American Made",
 				href: "/american-made",
 				tags: [ "UI", "Interactive" ],
-				img: "../assets/img/american-made/banner.png",
-				aspectRatioWidth: 5,
-				aspectRatioHeight: 6,
+				img: "../assets/img/american-made/columbia.gif",
+				aspectRatioWidth: 2,
+				aspectRatioHeight: 1,
 			},
 			{
 				name: "V.ai Player",
 				href: "/vai",
 				tags: [ "UX", "Interactive" ],
-				img: "../assets/img/vai/banner.jpg",
+				img: "../assets/img/vai/banner.svg",
+				aspectRatioWidth: 2,
+				aspectRatioHeight: 1,
 			},
 			{
 				name: "Translator",
@@ -219,32 +221,28 @@ class Home extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<div className="spacer spacer__sm"/>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<div className="spacer spacer__md"/>
 							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
+							</ProjectCard>
+							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
+								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
 							</ProjectCard>
 							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
 								<Image src={projects[2].img} aspectRatioWidth={projects[2].aspectRatioWidth} aspectRatioHeight={projects[2].aspectRatioHeight}/>
 							</ProjectCard>
-							<ProjectCard name={projects[4].name} href={projects[4].href} tags={projects[4].tags}>
-								<Image src={projects[4].img} aspectRatioWidth={projects[4].aspectRatioWidth} aspectRatioHeight={projects[4].aspectRatioHeight}/>
-							</ProjectCard>
-							<ProjectCard name={projects[6].name} href={projects[6].href} tags={projects[6].tags}>
-								<Image src={projects[6].img} aspectRatioWidth={projects[6].aspectRatioWidth} aspectRatioHeight={projects[6].aspectRatioHeight}/>
-							</ProjectCard>
-
-						</div>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<div className="spacer spacer__md"/>
-							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
-								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
-							</ProjectCard>
 							<ProjectCard name={projects[3].name} href={projects[3].href} tags={projects[3].tags}>
 								<Image src={projects[3].img} aspectRatioWidth={projects[3].aspectRatioWidth} aspectRatioHeight={projects[3].aspectRatioHeight}/>
 							</ProjectCard>
+							<ProjectCard name={projects[4].name} href={projects[4].href} tags={projects[4].tags}>
+								<Image src={projects[4].img} aspectRatioWidth={projects[4].aspectRatioWidth} aspectRatioHeight={projects[4].aspectRatioHeight}/>
+							</ProjectCard>
 							<ProjectCard name={projects[5].name} href={projects[5].href} tags={projects[5].tags}>
 								<Image src={projects[5].img} aspectRatioWidth={projects[5].aspectRatioWidth} aspectRatioHeight={projects[5].aspectRatioHeight}/>
+							</ProjectCard>
+							<ProjectCard name={projects[6].name} href={projects[6].href} tags={projects[6].tags}>
+								<Image src={projects[6].img} aspectRatioWidth={projects[6].aspectRatioWidth} aspectRatioHeight={projects[6].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[7].name} href={projects[7].href} tags={projects[7].tags}>
 								<Image src={projects[7].img} aspectRatioWidth={projects[7].aspectRatioWidth} aspectRatioHeight={projects[7].aspectRatioHeight}/>
