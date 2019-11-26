@@ -29,12 +29,33 @@ class NavTakeover extends Component {
 
 		this.state = {
 			indexHovered: null,
-			menus: []
+			menus: [],
+			activeMenu: null
 		}
 	}
 
 	componentDidMount() {
-		this.flattenData(navData2);
+		this.formatData(navData2);
+
+		this.state.menus.forEach((menu, i) => {
+			if (toCamelCase(menu.name) == this.props.openNavPanel) {
+				this.setState({
+					activeMenu: menu
+				})
+			}
+		})
+
+		// console.log(this.state.menus[this.props.openNavPanel]);
+
+		// const data = isPrimaryPanelOpen ? navData.primary : navData.secondary;
+
+		// data.forEach((item, i) => {
+		// 	if (this.props.abbreviation == item.abbreviation) { 
+		// 		this.setState({
+		// 			indexHovered: i
+		// 		});
+		// 	}
+		// });
 	}
 
 	setMenuClosed = () => {
@@ -43,16 +64,6 @@ class NavTakeover extends Component {
 		// this.props.closeSecondaryPanel();
 
 		setTimeout(() => { this.props.unhoverToggle(); }, 1200)
-	}
-
-	setOpenSecondaryPanel = () => {
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
-	}
-
-	setCloseSecondaryPanel = () => {
-		this.props.openPrimaryPanel();
-		this.props.closeSecondaryPanel();
 	}
 	
 	setIndexHovered = (event) => {
@@ -71,14 +82,19 @@ class NavTakeover extends Component {
 		return i;
 	}
 
-	flattenData = (data) => {
+	formatData = (data) => {
 		this.setState(prevState => ({
 			menus: prevState.menus.concat(data)
 		}));
+		/*if (toCamelCase(data.name) == this.props.openNavPanel) {
+			this.setState({
+				activeMenu: data
+			})
+		}*/
 		data.items.forEach(child => {
 			child.parent = data;
 			if (child.items != null) {
-				this.flattenData(child);
+				this.formatData(child);
 			} 
 		})
 	}
@@ -140,11 +156,11 @@ class NavTakeover extends Component {
 	createBreadcrumbItem = (menu) => (
 		menu.hasOwnProperty('parent') ? (
 			<div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
-			<Icon icon='caret' size={16} color={palette("brand-black")}/>
-			<div onClick={() => { this.props.setPanel(menu.parent.name); this.props.setCursorUnhover(); }}>
-				<TextLink hideUnderline>{menu.parent.name}</TextLink>
-			</div>
-			{ this.createBreadcrumbItem(menu.parent) }
+				<Icon icon='caret' size={16} color={palette("brand-black")}/>
+				<div onClick={() => { this.props.setPanel(menu.parent.name); this.props.setCursorUnhover(); }}>
+					<TextLink hideUnderline>{menu.parent.name}</TextLink>
+				</div>
+				{ this.createBreadcrumbItem(menu.parent) }
 			</div>
 		) : null
 	)
@@ -171,18 +187,9 @@ class NavTakeover extends Component {
 		))
 	)
 
-	render() {
+	render() {				
 		let { indexHovered } = this.state;
 		const { abbreviation, count, isTakeoverOpen, isPrimaryPanelOpen, isSecondaryPanelOpen } = this.props;
-
-
-		if ( indexHovered == null) {
-			const data = isPrimaryPanelOpen ? navData.primary : navData.secondary;
-
-			data.forEach((item, i) => {
-				if (this.props.abbreviation == item.abbreviation) { indexHovered = i }
-			});
-		}
 
 		const classnames = classNames({
 			"nav-takeover": true,
@@ -195,6 +202,10 @@ class NavTakeover extends Component {
 			transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
 			opacity: (isTakeoverOpen ? 1 : 0)
 		}
+
+
+		console.log(this.state.activeMenu);
+
 
 		return (
 			<nav className={classnames}>

@@ -110,14 +110,16 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="drop-caps ">
-									My team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
+									Our team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
 								</blockquote>
 								<blockquote className="">
 									The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 								</blockquote> 
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 								<blockquote className="">
 									Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
 								</blockquote>
@@ -363,7 +365,7 @@ class AmericanMade extends Component {
 					</div>
 				</ScrollSection>}
 
-				<NextProject 
+				{/*<NextProject 
 				to="/vai"
 				name="V.ai"
 				sections={sections} 
@@ -371,7 +373,7 @@ class AmericanMade extends Component {
 				style={{ 
 					backgroundImage: `url(../assets/img/vai/banner.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-				}}/>
+				}}/>*/}
 
 			</article>
 		);

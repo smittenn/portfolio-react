@@ -120,11 +120,11 @@ class Perforce extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<blockquote className="drop-caps mr">
 								The design team with Perforce saw an opportunity to create a Dropbox-like versioning tool for techincal-minded designers.
 							</blockquote>
-							<blockquote>
+							<blockquote className="mr">
 								Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.
 							</blockquote>
 							<blockquote>
@@ -262,7 +262,7 @@ class Perforce extends Component {
 					</div>
 				</ScrollSection>
 
-				<NextProject 
+				{/*<NextProject 
 				to="/cisco"
 				name="Cisco Mate"
 				sections={sections} 
@@ -272,7 +272,7 @@ class Perforce extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center 25%',
-				}}/>
+				}}/>*/}
 
 
 

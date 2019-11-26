@@ -319,18 +319,18 @@ class JnjMdc extends Component {
 				</ScrollSection>
 
 
-				<NextProject 
-				to="/micro-app-interactions"
-				name="Micro App Interactions"
-				sections={sections} 
-				activeSection={activeSection}
-				black
-				style={{ 
-					backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
-					backgroundSize: 'contain',
-					backgroundPosition: 'center',
-				}}/>
+				{/*<NextProject 
+								to="/micro-app-interactions"
+								name="Micro App Interactions"
+								sections={sections} 
+								activeSection={activeSection}
+								black
+								style={{ 
+									backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
+									backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
+									backgroundSize: 'contain',
+									backgroundPosition: 'center',
+								}}/>*/}
 
 
 			</article>

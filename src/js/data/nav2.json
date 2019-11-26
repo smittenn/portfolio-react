@@ -13,12 +13,13 @@
 					"name": "Google Design",
 					"items": [
 						// { "name": "Best of 2019", "to": "/best-of-2019" },
-						{ "name": "SPAN 2019", "to": "//design.google/library/span2019" },
+						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
+						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
 						{ "name": "Google Design", "to": "//design.google" }
 					]
 				},
 				{
-					"name": "J&J Design Studio",
+					"name": "JNJ Design Studio",
 					"items": [
 						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },
@@ -32,7 +33,7 @@
 						/*{ "name": "Rationalized Player", "to": "/rationalized-player" },*/
 						{ "name": "V.ai Player", "to": "/vai" },
 						{ "name": "Translator", "to": "/translator" },
-						{ "name": "NBCUX’s Portfolio", "to": "//portfolio.nbcuxlab.com" },
+						{ "name": "NBCUX Portfolio", "to": "//portfolio.nbcuxlab.com" },
 						{ "name": "Release Notes", "to": "//release-notes.nbcuxlab.com/" },
 					]
 				},

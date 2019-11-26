@@ -3006,7 +3006,8 @@ section p span > span, section blockquote span > span {
 
 .project-card {
   margin-bottom: 12px;
-  position: relative; }
+  position: relative;
+  opacity: 0.6; }
   .project-card a {
     border: none;
     color: #131112;
@@ -3016,7 +3017,7 @@ section p span > span, section blockquote span > span {
     align-items: center; }
   .project-card__tags {
     opacity: 0; }
-  .project-card__tags, .project-card__asset {
+  .project-card, .project-card__tags, .project-card__asset {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
   .project-card__bottom {
     display: block;
@@ -3043,12 +3044,14 @@ section p span > span, section blockquote span > span {
   .active-section .project-card__asset img, .active-section .project-card__asset video {
     -ms-transform: none;
     transform: none; }
-  .project-card--hovered .project-card__asset,
-  .project-card--hovered .project-card__tags {
+  .project-card--hovered {
     opacity: 1; }
-  .project-card--hovered .project-card__bottom {
-    -ms-transform: none;
-    transform: none; }
+    .project-card--hovered .project-card__asset,
+    .project-card--hovered .project-card__tags {
+      opacity: 1; }
+    .project-card--hovered .project-card__bottom {
+      -ms-transform: none;
+      transform: none; }
   @media screen and (max-width: 800px) {
     .project-card {
       margin: 0; }
@@ -3571,7 +3574,7 @@ section p span > span, section blockquote span > span {
     font-size: 60px;
     margin-left: 0;
     margin-bottom: 24px;
-    letter-spacing: -0.04em; }
+    letter-spacing: -0.036em; }
   h2 {
     font-size: 48px;
     margin-left: 0;

@@ -86,20 +86,20 @@ class Home extends Component {
 				aspectRatioHeight: 9,
 			},
 			{
-				name: "Micro App Interactions",
+				name: "Wrap Interactions",
 				href: "/micro-app-interactions",
 				tags: [ "Interactive", "Mobile" ],
-				img: "../assets/img/card-components/share-animation.jpg",
+				img: "../assets/img/card-components/share-animation-zoomed-out.gif",
 				aspectRatioWidth: 4,
 				aspectRatioHeight: 3,
 			},
 			{
-				name: "Micro App Templates",
+				name: "Wrap Templates",
 				href: "/micro-app-templates",
 				tags: [ "Visual Design", "Mobile" ],
-				img: "../assets/img/card-components/banner-alt.jpg",
-				aspectRatioWidth: 7,
-				aspectRatioHeight: 6,
+				img: "../assets/img/card-components/perspective-cards.jpg",
+				aspectRatioWidth: 8,
+				aspectRatioHeight: 5,
 			},
 			{
 				name: "J&J Home",
@@ -208,7 +208,7 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
 							<div className="spacer spacer__sm"/>
-							{<h2>{splitWord("Recent Works")}</h2>}
+							{<h2>{splitWord("Select Projects—")}</h2>}
 							<blockquote>
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
 							</blockquote>

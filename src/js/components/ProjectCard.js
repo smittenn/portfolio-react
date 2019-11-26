@@ -80,7 +80,7 @@ class ProjectCard extends Component {
 					{this.props.children}
 					</div>
 					<div className="project-card__bottom">
-						<TextLink hideUnderline><h3 className="mb0">{name}</h3></TextLink>
+						<TextLink hideUnderline><h2 className="mb0">{name}</h2></TextLink>
 						{/*<i className="iconcss icon-arrow-right"></i>*/}
 					</div>
 					<div className="project-card__tags">
