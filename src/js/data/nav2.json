@@ -19,7 +19,7 @@
 					]
 				},
 				{
-					"name": "JNJ Design Studio",
+					"name": "J&J Design Studio",
 					"items": [
 						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },

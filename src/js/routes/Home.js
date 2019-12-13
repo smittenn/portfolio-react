@@ -33,6 +33,7 @@ class Home extends Component {
 			sections: [
 				"hello",
 				"about",
+				"process",
 				"projects",
 				"experiments",
 				"social",
@@ -186,7 +187,7 @@ class Home extends Component {
 								<div className="grid__item grid__item--col-4 shift--left">
 									<div className="spacer spacer__lg"/>
 									<Image src="../assets/img/me-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-									<div className="spacer spacer__md"/>
+									<div className="spacer spacer__sm"/>
 								</div>
 								<div className="grid__item grid__item--col-4 shift--left">
 									<div className="spacer spacer__md"/>
@@ -199,22 +200,63 @@ class Home extends Component {
 
 
 				<ScrollSection 
+				grey
 				name={sections[2]} 
-				black
-				sections={sections} 
+				sections={sections}
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-7 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-4 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
+							<div className="grid__row m0">
+								<div className="grid__item grid__item--col-4">
+									<div className="spacer spacer__sm"/>
+									<Image src="../assets/img/roof.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>
+								<div className="grid__item grid__item--col-4 shift--left">
+									<div className="spacer spacer__lg"/>
+									<Image src="../assets/img/brooklyn-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+									<div className="spacer spacer__md"/>
+								</div>
+								<div className="grid__item grid__item--col-4 shift--left">
+									<div className="spacer spacer__md"/>
+									<Image src="../assets/img/window.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>
+							</div>
+						</div>
+
+						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
+						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							{<h2>{splitWord("Select Projects—")}</h2>}
-							<blockquote>
-								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code. Here are some of the recent projects I’ve worked on.`)}
+							<h2>{splitWord("Motion in Code")}</h2>
+							<blockquote className="mr">
+								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code.`)}
 							</blockquote>
 							<h6 className="uppercase">
-								<TextLink hideUnderline>
+								<TextLink isBlack hideUnderline>
 									<NavLink to="process">Learn More</NavLink>
+								</TextLink>
+							</h6>
+						</div>
+					</div>
+				</ScrollSection>
+
+
+				<ScrollSection 
+				name={sections[3]} 
+				black
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(3); }}>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
+							<h4>{splitWord("Select Projects")}</h4>
+						</div>
+						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
+							<h6 className="uppercase">
+								<TextLink isBlack hideUnderline>
+									<NavLink to="process">See All Projects</NavLink>
 								</TextLink>
 							</h6>
 						</div>
@@ -222,11 +264,11 @@ class Home extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<div className="spacer spacer__md"/>
+							<div className="spacer spacer__lg"/>
 							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
-							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
+							{/*<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
 								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
 							</ProjectCard>
 							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
@@ -246,7 +288,7 @@ class Home extends Component {
 							</ProjectCard>
 							<ProjectCard name={projects[7].name} href={projects[7].href} tags={projects[7].tags}>
 								<Image src={projects[7].img} aspectRatioWidth={projects[7].aspectRatioWidth} aspectRatioHeight={projects[7].aspectRatioHeight}/>
-							</ProjectCard>
+							</ProjectCard>*/}
 						</div>
 					</div>
 				</ScrollSection>

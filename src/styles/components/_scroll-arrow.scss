@@ -79,7 +79,7 @@ $arrow-size: 40px;
 			> span {
 				// opacity: 1;
 				transform: none;
-				transition: transform $duration-long $easing5;
+				transition: transform $duration-long $easing1;
 
 				@for $i from 1 through 10 {
 					&:nth-child(#{$i}) {

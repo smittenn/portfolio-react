@@ -39,9 +39,12 @@ $baseclass: nav-toggle;
 		display: flex;
 	}
 
-	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
-		transition: all $easing2 0.3s;
+	h4, h6, h6 {
 		letter-spacing: $letter-spacing-xl;
+	}
+
+	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
+		transition: all $easing2 $duration-short;
 	}
 
 	.#{$baseclass}__abbreviation {
@@ -51,17 +54,26 @@ $baseclass: nav-toggle;
 	.#{$baseclass}__count {
 		overflow: hidden;
 		margin-top: 24px;
-		transition-delay: 0.09s;
+		transition-delay: $delay-medium;
 
 		span {
+			transition: all $easing2 $duration-medium;
 			display: inline-block;
 			animation: none;
 
 			&:last-child {
-				animation-delay: $delay-short;
+				transition-delay: $delay-short;
 			}			
 		}
 	}
+
+	.#{$baseclass}__count {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		height: 18px;
+	}
+
 	&--countIsIncreasing {
 		.#{$baseclass}__count {
 			span {

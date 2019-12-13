@@ -28,7 +28,7 @@ class NavTakeover extends Component {
 		super(props);
 
 		this.state = {
-			indexHovered: null,
+			indexHovered: 0,
 			menus: [],
 			activeMenu: null
 		}

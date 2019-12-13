@@ -58,7 +58,6 @@ class NavToggle extends Component {
 	render() {
 		const { secondaryPanelOpen, countIsIncreasing, countIsDecreasing } = this.state;
 
-
 		const classnames = classNames({
 			"nav-toggle": true,
 			"nav-toggle--hovering": this.props.isToggleHovered,
@@ -80,7 +79,16 @@ class NavToggle extends Component {
 					<div className="nav-toggle__line"/>
 					<div className="nav-toggle__line"/>
 				</div>
-				<h6 className="uppercase mb0 nav-toggle__count">{splitLetter(pad(this.props.count, 2).toString())}</h6>
+				<div className="nav-toggle__count">
+					{/*<div className="nav-toggle__count-items">*/}
+						{ this.props.sections.map((item, i) => (
+							 <h6 className="uppercase mb0">
+								 {splitLetter(pad(i + 1, 2).toString(), { transform: `translate3d(0, ${ -16 * (this.props.count - 1)}px, 0)` })}
+							 </h6>
+							))
+						}
+					{/*</div>*/}
+				</div>
 			</div>
 		);
 	}

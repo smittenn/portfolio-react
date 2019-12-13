@@ -80,7 +80,7 @@ export default class ScrollSection extends Component {
 							key={3}/>
 						] : null }
 
-						<NavToggle/>
+						<NavToggle sections={sections}/>
 					</div>
 				</IntersectionVisible>
 			</Element>
@@ -100,7 +100,7 @@ export default class ScrollSection extends Component {
 						sections={sections} 
 						activeSection={activeSection}/>
 
-						<NavToggle/>
+						<NavToggle sections={sections}/>
 					</div>
 				</IntersectionVisible>
 			</div>
