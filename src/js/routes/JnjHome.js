@@ -6,8 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -41,8 +40,7 @@ class JnjHome extends Component {
 
 		this.props.jjHome();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("J&J Design Studio");
 	}
 
 
@@ -80,18 +78,6 @@ class JnjHome extends Component {
 
 		return (
 			<article>
-				{/*<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
-					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for J&J employees to connect and create.`]}
-					bgImage={"../assets/img/jnj-home/onboarding-mobile-16x9.png"}
-					onSetActive={() => { this.setActiveSection(0); }}
-					/>
-				</Element>*/}
 
 				<ScrollSection 
 				name={sections[0]}
@@ -102,8 +88,8 @@ class JnjHome extends Component {
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
-					backgroundSize: 'contain',
-					backgroundPosition: (this.props.isMobile ? 'right' : 'center'),
+					backgroundSize: this.props.isMobile ? 'contain' : '60%',
+					backgroundPosition: this.props.isMobile ? 'right' : '100% 810%',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -120,18 +106,21 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="drop-caps ">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
 									The Home team dreamed of a better employee experience for J&J employees. While J&J's 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J. 
 								</blockquote>
-								<blockquote className="">
-									Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees. Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.  
-								</blockquote>
-								<blockquote className="">
+								<blockquote className="mr">
 									Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
 								</blockquote>
-
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees.   
+								</blockquote>
+								<blockquote className="mr">
+									Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.								</blockquote>
 							</div>
 						</div>
 						<div className="grid__row">
@@ -145,12 +134,14 @@ class JnjHome extends Component {
 							</div>
 						</div>
 						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
 									My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
 								</blockquote>
-								<blockquote className="mb0">
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
 									The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.
 								</blockquote>
 							</div>
@@ -172,13 +163,13 @@ class JnjHome extends Component {
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Interaction Designer</blockquote>
+							<blockquote>UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2019</blockquote>
+							<blockquote>October 2019</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
@@ -186,7 +177,7 @@ class JnjHome extends Component {
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="mb0">
 								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 
 								<TextLink><a href={people["Chris Purcell"]}>Chris Purcell</a></TextLink>,&nbsp; 
 								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>,&nbsp; 
@@ -293,19 +284,25 @@ class JnjHome extends Component {
 					</div>
 				</ScrollSection>
 
-
-				<NextProject 
-				to="/jnj-mdc"
-				name="J&J MDC"
-				sections={sections} 
+				<ScrollSection 
 				black
+				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-mdc/ladies.jpg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
 					backgroundSize: 'cover',
 					backgroundPosition: '50% 80%',
-				}}/>
+				}}>
+					<NavLink to="jnj-mdc" className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<h4 className="light">Next Up</h4>
+							<h2 className="mb0">J&J MDC</h2>
+						</div>
+					</NavLink>
+				</ScrollSection>
+
 
 			</article>
 		);
@@ -332,10 +329,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(JnjHome)

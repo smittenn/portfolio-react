@@ -50,8 +50,6 @@ a {
 	}
 }
 
-
-
 hr {
 	background: $brand-grey-dark;
 	height: 1px;
@@ -66,7 +64,7 @@ video, iframe {
 }
 
 .active-section {
-	position: relative;
+	// position: relative;
 }
 
 *::-webkit-scrollbar {
@@ -100,7 +98,7 @@ section {
 		width: 100%;
 	}
 
-	h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
+	h1, h2, h3, h4, h5, h6, p, blockquote, a {
 		.outline {
 			-webkit-text-stroke-color: $brand-red;
 		}
@@ -135,12 +133,16 @@ section {
 }
 
 .#{$scrolling-section-classname} {
+	> div {
+		position: relative;
+	}
+
 	&--black {
 		section {
 			background-color: $brand-black;			
 		}
 
-		h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
+		h1, h2, h3, h4, h5, h6, p, blockquote, a {
 			color: $brand-white;
 
 			.outline {
@@ -172,7 +174,7 @@ section {
 		}
 
 
-		h1, h2, h3, h4, h5, h6, h7, p, blockquote, a {
+		h1, h2, h3, h4, h5, h6, p, blockquote, a {
 			color: rgba($brand-grey-dark, 1);
 		}
 	}
@@ -228,7 +230,7 @@ h1, h2, h3, h4, p, blockquote, {
 		transform: rotate(-90deg) translateX(40%);
 		// transform-origin: 25% -135%;
 
-		h1, h2, h3, h4, h5, h6, h7 {
+		h1, h2, h3, h4, h5, h6 {
 			white-space: nowrap;
 		}
 	}

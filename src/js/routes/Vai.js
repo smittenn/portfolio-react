@@ -6,8 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -16,6 +15,7 @@ import ScrollSection from "../components/ScrollSection"
 import GridLines from "../components/GridLines"
 import Sidebar from "../components/Sidebar"
 import CodepenEmbed from "../components/CodepenEmbed"
+import Video from "../components/Video"
 import Image from "../components/Image"
 import SideScroller from "../components/SideScroller"
 import NextProject from "../components/NextProject"
@@ -39,8 +39,7 @@ class Vai extends Component {
 
 		this.props.vai();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("NBCUX Lab");
 	}
 
 
@@ -86,7 +85,7 @@ class Vai extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/vai/banner-mod.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}
@@ -156,7 +155,7 @@ class Vai extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/vai/mr-robot.jpg)`,
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .85`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85`,
 				 	backgroundPosition: "center 30%" 
 				}}>
 					<div className="grid">
@@ -203,16 +202,32 @@ class Vai extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Video src="assets/img/vai/player.mp4"/>
+							{/*<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
 						</div>
 					</div>
 				</ScrollSection>
 
 				<ScrollSection 
+				black
 				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(3); }}
+				style={{ 
+					backgroundImage: `
+						linear-gradient(
+							to right, 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95), 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85), 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95)
+						),
+						url(../assets/img/vai/escalade.png)
+					`,
+					backgroundColor: `transparent`,
+				 	backgroundPosition: "center top",
+				 	backgroundBlendMode: "normal"
+				}}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -303,8 +318,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Vai)

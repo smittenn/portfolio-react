@@ -7,8 +7,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -43,8 +42,7 @@ class MicroAppTemplates extends Component {
 
 		this.props.wrap2();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("Wrap Media");
 	}
 
 
@@ -118,18 +116,19 @@ class MicroAppTemplates extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="drop-caps ">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
 									Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
 								</blockquote>
-								<blockquote className="">
+								<blockquote className="mr">
 									“Well what is a Wrap?” might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
 								</blockquote>
-								<blockquote className="">
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
 									Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new “page” of the traditional “app” is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
 								</blockquote>
-
 							</div>
 						</div>
 						<div className="grid__row">
@@ -143,12 +142,14 @@ class MicroAppTemplates extends Component {
 							</div>
 						</div>
 						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="" >
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr" >
 									On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designers would be put in charge of a single visual style family from end to end in the design process.
 								</blockquote>
-								<blockquote className="">
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
 									The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family.
 								</blockquote>
 							</div>
@@ -225,7 +226,11 @@ class MicroAppTemplates extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(3); }}
+				style={{
+					backgroundColor: '#3E7C95'
+				}}
+				>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -275,7 +280,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Lead Generation</h2>
+								<h2 className="mb0">Lead Gen</h2>
 								{<h4 className="light">Bold Modern Family</h4>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
@@ -308,12 +313,16 @@ class MicroAppTemplates extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(5); }}
+				style={{
+					backgroundColor: '#DE918E'
+				}}
+				>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Fashion Commerce</h2>
+								<h2 className="mb0">Fashion</h2>
 								<h4 className="light">Modern Sans Family</h4>
 							</div>
 						</div>
@@ -359,7 +368,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Design Agency</h2>
+								<h2 className="mb0">Agency</h2>
 								<h4 className="light">Modern Sans Family</h4>
 							</div>
 						</div>
@@ -447,8 +456,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MicroAppTemplates)

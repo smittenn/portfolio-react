@@ -6,8 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -40,8 +39,7 @@ class Translator extends Component {
 
 		this.props.translator();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("NBCUX Lab");
 	}
 
 
@@ -53,11 +51,11 @@ class Translator extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"collections",
 				"metadata",
 				"shell",
 				"bulk",
+				"reflection",
 			],
 		}
 	}
@@ -113,38 +111,46 @@ class Translator extends Component {
 				name={sections[1]} 
 				sections={sections} 
 				activeSection={activeSection}
+				disableSectionNumber
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								The process for media asset management varied greatly across NBCU’s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
-							</blockquote>
-							<blockquote className="mr">
-								The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored.
-							</blockquote>
-							<blockquote className="mr">
-								The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention.
-							</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
+									The process for media asset management varied greatly across NBCU’s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
+								</blockquote>
+								<blockquote className="mr">
+									The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored.
+								</blockquote>
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention.
+								</blockquote>
+							</div>
 						</div>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-11">
-									<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12">
+										<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
+									</div>
 								</div>
 							</div>
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
-									</blockquote>
-								</div>
-								<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
-									</blockquote>
-								</div>
+						</div>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
+									My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
+								</blockquote>
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
+									With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
+								</blockquote>
 							</div>
 						</div>
 					</div>
@@ -155,20 +161,17 @@ class Translator extends Component {
 				name={sections[2]}
 				black 
 				sections={sections} 
+				disableSectionNumber
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/translator/tv-prod.svg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .40`,
-					backgroundSize: `60%`,
-					backgroundPosition: `100% 40%`,
+					backgroundBlendMode: `normal`,
 					background: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead UI/UX Designer</blockquote>
+							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>
@@ -180,7 +183,7 @@ class Translator extends Component {
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="mb0">
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Kennix Lee"]}>Kennix Lee</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
@@ -193,11 +196,11 @@ class Translator extends Component {
 				</ScrollSection>}
 
 				<ScrollSection 
-				name={sections[3]}
+				name={sections[2]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
@@ -216,16 +219,20 @@ class Translator extends Component {
 				</ScrollSection>
 
 
-				<ScrollSection 
-				name={sections[4]}
+				<ScrollSection
+				black
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}
+				style={{ 
+					backgroundColor: `#5B7E9A`
+				}}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Edit Metadata</h2>
+								<h2>Metadata</h2>
 								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.</blockquote>
 							</div>
 						</div>
@@ -245,11 +252,11 @@ class Translator extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
@@ -268,11 +275,16 @@ class Translator extends Component {
 				</ScrollSection>
 
 
-				<ScrollSection 
-				name={sections[6]}
+				<ScrollSection
+				black
+				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(5); }}
+				style={{ 
+					backgroundColor: `#5B7E9A`
+				}}
+				>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
@@ -292,7 +304,7 @@ class Translator extends Component {
 					</SideScroller>
 				</ScrollSection>
 
-				<NextProject 
+				{/*<NextProject 
 				to="/jnj-home"
 				name="J&J Home"
 				sections={sections} 
@@ -302,8 +314,52 @@ class Translator extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
 					backgroundSize: 'contain',
 					backgroundPosition: 'center',
-				}}/>
+				}}/>*/}
 
+				<ScrollSection 
+				name={sections[6]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(6); }}>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<h2 className="">Reflection</h2>
+							<blockquote>
+								With the new Translator MAM, we imagine the unified system would be more efficient. It would reduce the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand SANs, as well as significantly reduce the communication between teams. It will also save a lot of waiting time when notifications are not sent in time.
+							</blockquote>
+							<blockquote>
+								Instead of archiving files to a storage system separate from their current brand SAN and then having to request restores, Prod MAM will allow users to store all assets on the cloud, regardless of whether they want to keep short-term or long-term. Before assets can be fully ingested, users will need to register the content by providing metadata.
+							</blockquote>
+							<blockquote>
+								Users can retrieve the content themselves without reaching out to the MAMs to have content restored and archived. There will be higher accountability and users will be able to own the assets more. With the establishment of content registration and an enforced naming convention, users will be able to search keywords against these assets.
+							</blockquote>
+						</div>
+					</div>
+				</ScrollSection>
+
+				<NavLink to="jnj-home">
+					<ScrollSection 
+					black
+					sections={sections} 
+					activeSection={activeSection}
+					style={{ 
+						backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
+						backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
+						backgroundSize: '40%',
+						backgroundPosition: '-36% -180%',
+					}}>
+						<div className="grid">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h4 className="light">Next Up</h4>
+									<h2 className="mb0">
+										<TextLink hideUnderline>J&J Home</TextLink>
+									</h2>
+							</div>
+						</div>
+					</ScrollSection>
+				</NavLink>
 
 
 			</article>
@@ -331,8 +387,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Translator)

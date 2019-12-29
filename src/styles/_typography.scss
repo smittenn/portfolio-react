@@ -29,7 +29,13 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	}
 
 	&.light {
-		font-weight: 300;
+		font-weight: 400;
+	}
+
+	&.fade {
+		.active-section section & {
+			opacity: 0.5;
+		}
 	}
 
 	.outline {
@@ -48,23 +54,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4 {
-	font-weight: 600;
+	font-weight: 500;
 }
-
-// h3, h4 {
-// 	font-weight: 400;
-// }
 
 h5, h6 {
 	font-weight: 700;
 }
-// h5, h6, h7 {
-// 	font-family: $font-tertiary;
-// }
 
 h1 {
 	font-size: 120px;
-	line-height: 1;
+	line-height: 1.12;
 	margin-left: 2 * $letter-spacing-sm;
 	margin-bottom: 48px;
 	letter-spacing: $letter-spacing-sm;
@@ -91,12 +90,6 @@ h4 {
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-md;
 }
-
-// h5 {
-// 	font-size: 18px;
-// 	line-height: 1.2;
-// 	margin-bottom: 18px;
-// }
 
 h5 {
 	font-size: 16px;
@@ -136,11 +129,11 @@ blockquote {
 
 	&:first-letter {
 		float: left;
-		font-size: 60px;
+		font-size: 72px;
 		font-family: $font-primary;
 		font-weight: 800;
-		margin: 0 12px -30px 0;
-		line-height: 72px;
+		margin: 0 24px 0 0;
+		line-height: 78px;
 	}
 
 }

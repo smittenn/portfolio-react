@@ -6,8 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -40,8 +39,7 @@ class JnjMdc extends Component {
 
 		this.props.jjMdc();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("J&J Design Studio");
 	}
 
 
@@ -123,18 +121,21 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						<div className="grid__row">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="drop-caps ">
-									We sought to consolidate J&J’s 250 websites across 6 medical device companies into a single platform that reflected the new J&J brand. The final result, J&J MDC or “Medical Device Center” was a flexible design system which created a centralized experience for the companies.
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
+									We sought to consolidate J&J’s 250 websites across 6 medical device companies into a unified platform that reflected the new J&J brand. The final result, J&J MDC or “Medical Device Center” was a flexible design system which created a centralized experience for the companies.
 								</blockquote>
-								<blockquote className="">
-									J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. 
-
+								<blockquote className="mr">
+									J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs.
+								</blockquote>
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
 									In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
 								</blockquote>
-								<blockquote className="">
-									J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs. Our team additionally pioneeded modern agile software development within the company.
+								<blockquote className="mr">
+									J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. 
 								</blockquote>
 							</div>
 						</div>
@@ -149,12 +150,14 @@ class JnjMdc extends Component {
 							</div>
 						</div>
 						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="">
-									My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding.
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.
 								</blockquote>
-								<blockquote className="mb0">
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
 									During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.
 								</blockquote>
 							</div>
@@ -176,7 +179,7 @@ class JnjMdc extends Component {
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Sr. Interaction Designer</blockquote>
 						</div>
@@ -238,7 +241,7 @@ class JnjMdc extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">HCP/Patient</h2>
-								<h3>Site Flipper</h3>
+								<h4>Site Flipper</h4>
 								<blockquote>To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search in the tile to search for their symptoms or specialties respectively.</blockquote>
 							</div>
 						</div>
@@ -274,11 +277,15 @@ class JnjMdc extends Component {
 				</ScrollSection>
 
 
-				<ScrollSection 
+				<ScrollSection
+				grey
 				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(5); }}
+				style={{ 
+					backgroundColor: `#f3f3f3`,
+				}}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -358,8 +365,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(JnjMdc)

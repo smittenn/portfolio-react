@@ -39,12 +39,15 @@ $baseclass: nav-toggle;
 		display: flex;
 	}
 
-	h4, h6, h6 {
+	h4, h5, h6 {
+		line-height: 1;
 		letter-spacing: $letter-spacing-xl;
 	}
 
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
-		transition: all $easing2 $duration-short;
+		transition-timing-function: $easing2;
+		transition-duration: $duration-short;
+		transition-property: transform, opacity;
 	}
 
 	.#{$baseclass}__abbreviation {
@@ -57,7 +60,7 @@ $baseclass: nav-toggle;
 		transition-delay: $delay-medium;
 
 		span {
-			transition: all $easing2 $duration-medium;
+			transition: transform $easing2 $duration-medium;
 			display: inline-block;
 			animation: none;
 
@@ -71,7 +74,11 @@ $baseclass: nav-toggle;
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
-		height: 18px;
+		height: 16px;
+
+		h4, h5, h6 {
+			margin: 1px 0;
+		}
 	}
 
 	&--countIsIncreasing {

@@ -41,8 +41,6 @@ class AmericanMade extends Component {
 		this.props.americanMade();
 		this.props.reset();
 		this.props.setPanel("NBCUX Lab");
-		// this.props.openSecondaryPanel();
-		// this.props.closePrimaryPanel();
 	}
 
 
@@ -341,7 +339,7 @@ class AmericanMade extends Component {
 					</div>
 				</ScrollSection>
 
-				{<ScrollSection 
+				<ScrollSection 
 				black
 				name={sections[8]} 
 				sections={sections} 
@@ -352,7 +350,7 @@ class AmericanMade extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Interactive Map</h2>
-								<h3>Fly With Barry</h3>
+								<h4>Fly With Barry</h4>
 								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America.</blockquote>
 							</div>
 						</div>
@@ -363,7 +361,28 @@ class AmericanMade extends Component {
 							{<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>}
 						</div>
 					</div>
-				</ScrollSection>}
+				</ScrollSection>
+
+				<NavLink to="vai">
+					<ScrollSection 
+					black
+					sections={sections} 
+					activeSection={activeSection}
+					style={{ 
+						backgroundImage: `url(../assets/img/vai/banner.jpg)`, 
+						backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					}}>
+						<div className="grid">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h4 className="light">Next Up</h4>
+									<h2 className="mb0">
+										<TextLink hideUnderline>V.ai</TextLink>
+									</h2>
+							</div>
+						</div>
+					</ScrollSection>
+				</NavLink>
 
 				{/*<NextProject 
 				to="/vai"
@@ -400,7 +419,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	setPanel: (n) => dispatch(setPanel(n)),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AmericanMade)

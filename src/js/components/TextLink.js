@@ -34,17 +34,23 @@ class TextLink extends Component {
 
 	render() {
 
-		const { hideUnderline } = this.props;
+		const { hideUnderline, hideLine, style } = this.props;
 		const { isHovered } = this.state;
 
 		const classnames = classNames({
 			"text-link": true,
 			"text-link--hide-underline": hideUnderline,
+			"text-link--hide-line": hideLine,
 			"text-link--hovered": isHovered,
 		})
 
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleMouseLeave}>
+			<div 
+			className={classnames} 
+			onMouseEnter={this.handleMouseEnter} 
+			onMouseLeave={this.handleMouseLeave} 
+			onClick={this.handleMouseLeave}
+			style={style ? style : null}>
 				{ this.props.children }
 				<div className="text-link__line-container">
 					<div className="text-link__line"/>

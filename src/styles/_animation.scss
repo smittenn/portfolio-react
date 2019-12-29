@@ -80,17 +80,6 @@ section {
 		}
 	}
 
-	// h2, h3, h4, p, blockquote {
-	// 	span {
-	// 		overflow: hidden;
-
-	// 		> span {
-	// 			transition: none;
-	// 			opacity: 0;
-	// 		}
-	// 	}
-	// }
-
 	.split--word, .split--letter {
 		overflow: hidden;
 
@@ -106,7 +95,7 @@ section {
 
 		.split--word, .split--letter {
 			> span {
-				transform: translate3d(0,90px,0) skewX(6deg);
+				transform: translate3d(0,90px,0) skewX(9deg);
 			}
 		}
 	}
@@ -134,7 +123,7 @@ section {
 			} 
 		}
 
-		h3 {
+		h2, h3 {
 			transition-delay: $delay-short;
 		}
 
@@ -147,7 +136,7 @@ section {
 				@for $i from 1 through 60 {
 					&:nth-child(#{$i}) {
 						span {
-							transition-delay: (#{0.6 + ($i * 0.09)}s);							
+							transition-delay: (#{0.6 + ($i * 0.18)}s);							
 						}
 					}
 				}
@@ -174,7 +163,7 @@ section {
 			.split--word {
 				@for $i from 1 through 120 {
 					&:nth-child(#{$i}) span {
-						transition-delay: (#{1.2 + ($i * 0.04)}s);
+						transition-delay: (#{1.2 + ($i * 0.03)}s);
 					}
 				}
 			}
@@ -182,7 +171,7 @@ section {
 			.split--letter > span {
 				@for $i from 1 through 120 {
 					&:nth-child(#{$i}) {
-						transition-delay: (#{1.2 + ($i * 0.04)}s);
+						transition-delay: (#{1.2 + ($i * 0.03)}s);
 					}
 				}
 			}

@@ -6,8 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -41,8 +40,7 @@ class Perforce extends Component {
 
 		this.props.perforce();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("Perforce");
 	}
 
 
@@ -54,7 +52,6 @@ class Perforce extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"sync-share",
 				"auto",
 				"manual",
@@ -99,7 +96,7 @@ class Perforce extends Component {
 					backgroundImage: `
 						linear-gradient(rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24), rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24)),
 						url(../assets/img/perforce/banner.jpg),
-						linear-gradient(#2b8bb5, #178ab9)`, 
+						linear-gradient(#2b8bb5, #178ab9)`,
 					backgroundSize: this.props.isMobile ? 'cover' : 'contain',
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',
@@ -117,34 +114,44 @@ class Perforce extends Component {
 				name={sections[1]} 
 				sections={sections} 
 				activeSection={activeSection}
+				disableSectionNumber
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								The design team with Perforce saw an opportunity to create a Dropbox-like versioning tool for techincal-minded designers.
-							</blockquote>
-							<blockquote className="mr">
-								Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.
-							</blockquote>
-							<blockquote>
-							</blockquote>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
+									The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. 
+								</blockquote>
+								<blockquote className="mr">
+									Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files.
+								</blockquote>
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.
+								</blockquote>
+							</div>
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-12">
-									<Image src="../assets/img/perforce/sean.png" aspectRatioWidth={4} aspectRatioHeight={3} />
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__row">
+									<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
+										<Image src="../assets/img/perforce/sean.png" aspectRatioWidth={4} aspectRatioHeight={3} />
+									</div>
 								</div>
 							</div>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<blockquote>
+						</div>
+						<div className="grid__row m0">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
 									My role on this project involved creating the visual designs and prototyping. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project.
 								</blockquote>
 							</div>
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<blockquote>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
 									With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
 								</blockquote>
 							</div>
@@ -155,17 +162,15 @@ class Perforce extends Component {
 
 				{<ScrollSection 
 				name={sections[2]}
-				black 
+				black
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/perforce/prototype.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .60)`,
-					backgroundPosition: `100% -30px`,
-					background: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
-					backgroundSize: `cover`,
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+					backgroundColor: `transparent`,
+					backgroundImage: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
+					backgroundBlendMode: 'normal',
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
@@ -178,11 +183,11 @@ class Perforce extends Component {
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>Perforce</blockquote> 
+							<blockquote>Perforce Cloud</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote className="no-mb">
+							<blockquote className="mb0">
 								<TextLink><a href={people["Janet Taylor"]}>Janet Taylor</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Rebecca Jablonski"]}>Rebecca Jablonski</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Sean Ardley"]}>Sean Ardley</a></TextLink>,&nbsp;
@@ -194,11 +199,11 @@ class Perforce extends Component {
 				</ScrollSection>}
 
 				<ScrollSection 
-				name={sections[3]}
+				name={sections[2]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
@@ -218,10 +223,10 @@ class Perforce extends Component {
 
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
@@ -240,11 +245,11 @@ class Perforce extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
@@ -301,8 +306,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Perforce)

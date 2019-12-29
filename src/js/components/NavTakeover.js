@@ -204,7 +204,7 @@ class NavTakeover extends Component {
 		}
 
 
-		console.log(this.state.activeMenu);
+		// console.log(this.state.activeMenu);
 
 
 		return (

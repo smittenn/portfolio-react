@@ -69,8 +69,15 @@ class About extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/about/room.jpg)`, 
-					backgroundColor: `rgba(${brandPurple.r}, ${brandPurple.g}, ${brandPurple.b}, 1`,
+					backgroundImage: `
+						linear-gradient(
+							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.72),
+							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.72)
+						),
+						url(../assets/img/about/room.jpg)
+					`, 
+					backgroundColor: `transparent`,
+					backgroundBlendMode: `normal`,
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? 'center' : 'center 80%'
 				}}
@@ -83,9 +90,6 @@ class About extends Component {
 				<ScrollSection 
 				name={sections[1]}
 				black
-				style={{ 
-					backgroundColor: brandTeal,
-				}}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
@@ -115,9 +119,6 @@ class About extends Component {
 
 				<ScrollSection 
 				name={sections[2]}
-				style={{ 
-					backgroundColor: `rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 1`,
-				}}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
@@ -130,7 +131,7 @@ class About extends Component {
 							</div>
 						</div>
 					</div>
-					<SideScroller style={{ filter: 'grayscale(1)' }}>
+					<SideScroller style={{ filter: 'grayscale(0)' }}>
 						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
 							<Image src="../assets/img/ocean.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>

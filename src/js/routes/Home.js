@@ -228,7 +228,7 @@ class Home extends Component {
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<h2>{splitWord("Motion in Code")}</h2>
+							<h2>{splitWord("Process makes perfect")}</h2>
 							<blockquote className="mr">
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code.`)}
 							</blockquote>
@@ -251,14 +251,7 @@ class Home extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
-							<h4>{splitWord("Select Projects")}</h4>
-						</div>
-						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
-							<h6 className="uppercase">
-								<TextLink isBlack hideUnderline>
-									<NavLink to="process">See All Projects</NavLink>
-								</TextLink>
-							</h6>
+							<h4>Select Projects</h4>
 						</div>
 					</div>
 					<div className="grid">
@@ -268,7 +261,7 @@ class Home extends Component {
 							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
-							{/*<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
+							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
 								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
 							</ProjectCard>
 							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
@@ -288,7 +281,18 @@ class Home extends Component {
 							</ProjectCard>
 							<ProjectCard name={projects[7].name} href={projects[7].href} tags={projects[7].tags}>
 								<Image src={projects[7].img} aspectRatioWidth={projects[7].aspectRatioWidth} aspectRatioHeight={projects[7].aspectRatioHeight}/>
-							</ProjectCard>*/}
+							</ProjectCard>
+							<div className="spacer spacer__md"/>
+						</div>
+					</div>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<h6 className="uppercase">
+								<TextLink isBlack hideUnderline>
+									<NavLink to="process">See All Projects</NavLink>
+								</TextLink>
+							</h6>
 						</div>
 					</div>
 				</ScrollSection>

@@ -79,7 +79,7 @@ $arrow-size: 40px;
 			> span {
 				// opacity: 1;
 				transform: none;
-				transition: transform $duration-long $easing1;
+				transition: transform $duration-long $easing5;
 
 				@for $i from 1 through 10 {
 					&:nth-child(#{$i}) {
@@ -131,7 +131,7 @@ $arrow-size: 40px;
 		h1, h2, h3, h4, h5, h6 {			
 			span > span {
 				// opacity: 0;
-				// transition: transform $duration-long $easing5;
+				transition: transform $duration-long $easing1;
 				transform: translateY(24px);
 			}
 		}

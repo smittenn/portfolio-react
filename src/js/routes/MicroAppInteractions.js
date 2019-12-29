@@ -6,8 +6,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
-import { openSecondaryPanel } from "../actions/secondaryPanel"
-import { closePrimaryPanel } from "../actions/primaryPanel"
+import { setPanel } from "../actions/panel"
 
 import ParallaxHeader from "../components/ParallaxHeader"
 import ScrollArrow from "../components/ScrollArrow"
@@ -44,8 +43,7 @@ class MicroAppInteractions extends Component {
 
 		this.props.wrap1();
 		this.props.reset();
-		this.props.openSecondaryPanel();
-		this.props.closePrimaryPanel();
+		this.props.setPanel("Wrap Media");
 	}
 
 
@@ -57,7 +55,6 @@ class MicroAppInteractions extends Component {
 			sections: [
 				"overview",
 				"about",
-				"details",
 				"minted",
 				"warner-bros",
 				"equinox",
@@ -93,7 +90,7 @@ class MicroAppInteractions extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/card-components/share-animation.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6`,
 					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
@@ -107,42 +104,44 @@ class MicroAppInteractions extends Component {
 
 				<ScrollSection 
 				name={sections[1]} 
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<blockquote className="drop-caps mr">
-								Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
-							</blockquote>
-							<blockquote className="mr">
-								"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
-							</blockquote>
-							<blockquote className="mr">
-								Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
-							</blockquote>
-
-						</div>
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-							<div className="grid__row">
-								<div className="grid__item grid__item--col-11">
-									<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
-								</div>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="drop-caps mr">
+									Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
+								</blockquote>
+								<blockquote className="mr">
+									"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
+								</blockquote>
 							</div>
-							<div className="grid__row">
-								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr" >
-										On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.
-									</blockquote>
-								</div>}
-								{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
-								{<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-									<blockquote className="mr">
-										The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.
-									</blockquote>
-								</div>}
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
+								</blockquote>
+							</div>
+						</div>
+						<div className="grid__row">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
+							</div>
+						</div>
+						<div className="grid__row m0">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
+									On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.
+								</blockquote>
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mb0 mr">
+									The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.
+								</blockquote>
 							</div>
 						</div>
 					</div>
@@ -152,15 +151,18 @@ class MicroAppInteractions extends Component {
 				<ScrollSection 
 				name={sections[2]}
 				black 
+				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/banner.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
+					backgroundImage: `
+						linear-gradient(to right, rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}), rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85), rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})),
+						url(../assets/img/card-components/banner.jpg)`, 
+					backgroundColor: `transparent`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
-				}}  
-				onSetActive={() => { this.setActiveSection(2); }}>
+					backgroundBlendMode: 'normal',
+				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
@@ -190,10 +192,10 @@ class MicroAppInteractions extends Component {
 
 				<ScrollSection 
 				black
-				name={sections[3]}
+				name={sections[2]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}>
+				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -216,10 +218,10 @@ class MicroAppInteractions extends Component {
 
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -258,11 +260,11 @@ class MicroAppInteractions extends Component {
 
 
 				<ScrollSection 
-				name={sections[5]}
+				name={sections[4]}
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -283,10 +285,10 @@ class MicroAppInteractions extends Component {
 
 
 				<ScrollSection 
-				name={sections[6]}
+				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -306,9 +308,8 @@ class MicroAppInteractions extends Component {
 				</ScrollSection>
 
 
-				<NextProject 
-				to="/micro-app-templates"
-				name="Micro App Templates"
+				<ScrollSection 
+				black
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
@@ -316,7 +317,16 @@ class MicroAppInteractions extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .5`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
-				}}/>
+				}}>
+					<NavLink to="micro-app-templates" className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+							<h4 className="light">Next Up</h4>
+							<h2 className="mb0">Micro App Templates</h2>
+						</div>
+					</NavLink>
+				</ScrollSection>
+
 
 
 			</article>
@@ -344,8 +354,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
-	openSecondaryPanel: () => dispatch(openSecondaryPanel()),
-	closePrimaryPanel: () => dispatch(closePrimaryPanel()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MicroAppInteractions)

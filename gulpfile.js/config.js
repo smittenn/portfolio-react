@@ -1,25 +1,41 @@
 var path = require('path');
 var historyApiFallback = require('connect-history-api-fallback');
 
-// var webpack = require('webpack');
-// var webpackDevMiddleware = require('webpack-dev-middleware');
-// var webpackHotMiddleware = require('webpack-hot-middleware');
+/*var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
 
-// var webpackConfig = require('./webpack.config');
-// var bundler = webpack(webpackConfig);
+var webpackConfig = require('../webpack.config');
+var bundler = webpack(webpackConfig);*/
 
 module.exports = {
 	root: {
 		src: path.join(__dirname, '../src'),
 		dest: path.join(__dirname, '../docs')
 	},
-	watchableTasks: ['copyScripts', 'copyImg', 'copyFonts', 'ejs', 'scripts', 'styles', /*'iconfont'*/],
+	watchableTasks: [
+		'copyScripts',
+		'copyImg',
+		'copyFonts',
+		'ejs',
+		'scripts',
+		'styles',
+		/*'iconfont'*/
+	],
 	tasks: {
 		browserSync: {
 			server: {
 				baseDir: "./docs",
-				middleware: [historyApiFallback()]
-			}
+				middleware: [
+					historyApiFallback(),
+					/*webpackDevMiddleware(bundler, {
+						publicPath: webpackConfig.output.publicPath,
+						stats: { colors: true }
+					}),
+					webpackHotMiddleware(bundler)*/
+				]
+			},
+			open: false
 		},
 		node: {
 			src: 'js/*',
@@ -30,7 +46,10 @@ module.exports = {
 			dest: 'assets/js',
 			output: 'app.js',
 			sources: [
-			{ input: 'main.js', output: 'main.js'},
+				{ 
+					input: 'main.js', 
+					output: 'main.js'
+				},
 			],
 			extensions: ['js']
 		},

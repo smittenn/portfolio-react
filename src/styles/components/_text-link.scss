@@ -59,6 +59,11 @@ $baseclass: text-link;
 		}
 	}
 
+	&.#{$baseclass}--hide-line {
+		.#{$baseclass}__line-container {
+			height: 0;
+		}
+	}
 
 	&--hovered {
 		.#{$baseclass}__line-container {

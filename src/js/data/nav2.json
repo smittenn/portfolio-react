@@ -12,7 +12,7 @@
 				{
 					"name": "Google Design",
 					"items": [
-						// { "name": "Best of 2019", "to": "/best-of-2019" },
+						{ "name": "Best of 2019", "to": "//design.google/library/google-design-2019" },
 						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
 						{ "name": "Google Design", "to": "//design.google" }
@@ -23,7 +23,7 @@
 					"items": [
 						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },
-						{ "name": "Zyrtec Allergy Cast", "to": "/jnj-mdc" },
+						// { "name": "Zyrtec Allergy Cast", "to": "/jnj-mdc" },
 					]
 				},
 				{
@@ -47,8 +47,8 @@
 				{
 					"name": "Perforce",
 					"items": [
-						{ "name": "Helix Sync", "to": "/helix-sync" },
-						{ "name": "Helix Cloud", "to": "/helix-cloud" },
+						{ "name": "Helix Sync", "to": "/perforce" },
+						{ "name": "Helix Cloud", "to": "//www.perforce.com/products/helix-core" },
 					]
 				},
 				/*{

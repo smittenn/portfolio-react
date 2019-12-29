@@ -82,8 +82,13 @@ class NavToggle extends Component {
 				<div className="nav-toggle__count">
 					{/*<div className="nav-toggle__count-items">*/}
 						{ this.props.sections.map((item, i) => (
-							 <h6 className="uppercase mb0">
-								 {splitLetter(pad(i + 1, 2).toString(), { transform: `translate3d(0, ${ -16 * (this.props.count - 1)}px, 0)` })}
+							 <h6 className="uppercase mb0" key={i}>
+									{
+										splitLetter(
+									 		pad(i + 1, 2).toString(), 
+									 		{ transform: `translate3d(0, ${ -16 * (this.props.count - 1)}px, 0)` }
+								 		)
+									}
 							 </h6>
 							))
 						}
