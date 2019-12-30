@@ -257,7 +257,7 @@ class Home extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<div className="spacer spacer__lg"/>
+							<div className="spacer spacer__md"/>
 							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
