@@ -89,7 +89,7 @@ section {
 		}
 	}
 
-	h2, h3, h4 {
+	h2, h3, h4, h5, h6 {
 		transition: none;
 		opacity: 0;
 
@@ -110,7 +110,7 @@ section {
 
 .active-section {
 	section {
-		h2, h3, h4 {
+		h2, h3, h4, h5, h6 {
 			opacity: 1;
 			transition: transform $duration-long $delay-medium $easing1, opacity $duration-long $delay-medium $easing1;
 
@@ -128,10 +128,15 @@ section {
 		}
 
 		h4 {
+			transition-delay: $delay-longer;
+		}
+
+		h5, h6 {
 			transition-delay: $delay-longest;
 		}
 
-		h2, h3 {
+
+		h2, h3, h4, h5, h6 {
 			.split--word {
 				@for $i from 1 through 60 {
 					&:nth-child(#{$i}) {

@@ -228,7 +228,7 @@ class Home extends Component {
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<h2>{splitWord("Process makes perfect")}</h2>
+							<h2>{splitWord("Form + Function")}</h2>
 							<blockquote className="mr">
 								{splitWord(`I enjoy designing in the browser. I specialize in working on HTML prototypes, visual design, motion graphics and front-end code.`)}
 							</blockquote>
@@ -262,7 +262,7 @@ class Home extends Component {
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
-								<Image src={projects[1].img} aspectRatioWidth={3} aspectRatioHeight={2}/>
+								<Image src={projects[1].img} aspectRatioWidth={projects[1].aspectRatioWidth} aspectRatioHeight={projects[1].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[2].name} href={projects[2].href} tags={projects[2].tags}>
 								<Image src={projects[2].img} aspectRatioWidth={projects[2].aspectRatioWidth} aspectRatioHeight={projects[2].aspectRatioHeight}/>

@@ -202,7 +202,7 @@ class Vai extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Video src="assets/img/vai/player.mp4"/>
+							<Video src="../assets/img/vai/player.mp4"/>
 							{/*<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
 						</div>
 					</div>
@@ -216,11 +216,9 @@ class Vai extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}
 				style={{ 
 					backgroundImage: `
-						linear-gradient(
-							to right, 
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95), 
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85), 
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95)
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95) 
 						),
 						url(../assets/img/vai/escalade.png)
 					`,
