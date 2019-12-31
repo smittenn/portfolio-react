@@ -3,14 +3,20 @@ $baseclass: side-scroller;
 $gradient: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 95%, transparent);
 
 .#{$baseclass} {
-	overflow-x: scroll;
-	flex-wrap: nowrap;
 	width: 100%;
-	justify-content: flex-start;
-	-webkit-mask-image: $gradient;
-	// background: linear-gradient(to left, $brand-white, rgba($brand-white, 0) 10%);
 
-	.#{$scrolling-section-classname}--black & {
-		// background: linear-gradient(to left, $brand-black, rgba($brand-black, 0) 10%);
+	&__items {
+		overflow-x: scroll;
+		flex-wrap: nowrap;
+		width: 100%;
+		justify-content: flex-start;
+		-webkit-mask-image: $gradient;
+	}
+
+	&__controls {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 24px;
 	}
 }

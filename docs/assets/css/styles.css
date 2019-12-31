@@ -50,31 +50,24 @@ table {
 /* Libraries */
 @font-face {
   font-family: 'Hurme';
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/Hurme/Hurme-Regular.eot");
-  src: url("../fonts/Hurme/Hurme-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Regular.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Regular.woff") format("woff"), url("../fonts/Hurme/Hurme-Regular.otf") format("truetype"), url("../fonts/Hurme/Hurme-Regular.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Hurme';
-  font-weight: 200;
-  font-style: normal;
-  src: url("../fonts/Hurme/Hurme-Thin.eot");
-  src: url("../fonts/Hurme/Hurme-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Thin.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Thin.woff") format("woff"), url("../fonts/Hurme/Hurme-Thin.otf") format("truetype"), url("../fonts/Hurme/Hurme-Thin.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Hurme';
-  font-weight: 600;
-  font-style: normal;
-  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot");
-  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff2") format("woff2"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff") format("woff"), url("../fonts/Hurme/Hurme-SemiBold-alt.otf") format("truetype"), url("../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Hurme';
   font-weight: 700;
   font-style: normal;
   src: url("../fonts/Hurme/Hurme-Bold.eot");
   src: url("../fonts/Hurme/Hurme-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Bold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Bold.woff") format("woff"), url("../fonts/Hurme/Hurme-Bold.otf") format("truetype"), url("../fonts/Hurme/Hurme-Bold.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Smitten';
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/Smitten/Smitten-Medium.eot");
+  src: url("../fonts/Smitten/Smitten-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Smitten/Smitten-Medium.woff2") format("woff2"), url("../fonts/Smitten/Smitten-Medium.woff") format("woff"), url("../fonts/Smitten/Smitten-Medium.otf") format("truetype"), url("../fonts/Smitten/Smitten-Medium.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Smitten';
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Smitten/Smitten-Bold.eot");
+  src: url("../fonts/Smitten/Smitten-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Smitten/Smitten-Bold.woff2") format("woff2"), url("../fonts/Smitten/Smitten-Bold.woff") format("woff"), url("../fonts/Smitten/Smitten-Bold.otf") format("truetype"), url("../fonts/Smitten/Smitten-Bold.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Moderat';
@@ -157,10 +150,11 @@ table {
     top: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; }
+    pointer-events: none;
+    color: rgba(19, 17, 18, 0.05);
+    border-top: solid 1px; }
   .grid__line {
-    color: #131112;
-    opacity: 0.06;
+    color: rgba(19, 17, 18, 0.05);
     border-right: solid 1px;
     height: 100%; }
     .grid__line:last-child {
@@ -310,19 +304,19 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 
 h1, h2, h3, h4, h5, h6 {
   position: relative;
-  font-family: "Hurme", sans-serif; }
+  font-family: "Smitten", sans-serif; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     white-space: pre; }
 
 h1, h2, h3, h4 {
-  font-weight: 600; }
+  font-weight: 500; }
 
 h5, h6 {
   font-weight: 700; }
 
 h1 {
   font-size: 120px;
-  line-height: 1;
+  line-height: 1.1;
   margin-left: -0.048em;
   margin-bottom: 48px;
   letter-spacing: -0.024em; }
@@ -379,7 +373,7 @@ blockquote {
   .drop-caps:first-letter {
     float: left;
     font-size: 72px;
-    font-family: "Hurme", sans-serif;
+    font-family: "Smitten", sans-serif;
     font-weight: 800;
     margin: 0 24px 0 0;
     line-height: 78px; }
@@ -492,11 +486,14 @@ section {
 .scrolling-section--black hr {
   background-color: #f8fbf7; }
 
-.scrolling-section--black .grid__line {
-  color: #f8fbf7; }
+.scrolling-section--black .grid--lines, .scrolling-section--black .grid__line {
+  color: rgba(248, 251, 247, 0.05); }
 
 .scrolling-section--black text {
   fill: #f8fbf7; }
+
+.scrolling-section--black .icon {
+  stroke: #f8fbf7; }
 
 .scrolling-section--grey section {
   background-color: #eaede9; }
@@ -3079,7 +3076,7 @@ section p span > span, section blockquote span > span {
   background: #232021; }
 
 [class*="react-sandbox-editor"].sandbox__tab {
-  font-family: "Hurme", sans-serif; }
+  font-family: "Smitten", sans-serif; }
   [class*="react-sandbox-editor"].sandbox__tab:hover {
     color: #ff3636; }
 
@@ -3221,13 +3218,22 @@ section p span > span, section blockquote span > span {
         height: 48px; } }
 
 .side-scroller {
-  overflow-x: scroll;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  width: 100%;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
+  width: 100%; }
+  .side-scroller__items {
+    overflow-x: scroll;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    width: 100%;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
+  .side-scroller__controls {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin-bottom: 24px; }
 
 .sidebar {
   height: 100vh;
@@ -3591,6 +3597,8 @@ section p span > span, section blockquote span > span {
     section .shift--left {
       -ms-transform: none;
       transform: none; }
+    section .mr {
+      margin-right: 0; }
   h1 {
     font-size: 60px;
     margin-left: 0;

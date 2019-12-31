@@ -89,8 +89,15 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/american-made/output.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24), 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)
+						),
+						url(../assets/img/american-made/output.gif)
+					`,
+					backgroundColor: 'transparent',
+					backgroundBlendMode: 'normal',
 					backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
 					backgroundPosition: 'center',
 				}}
@@ -150,14 +157,14 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
+					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)`,
 					backgroundPosition: `20% 70%`,
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead UI/UX Designer</blockquote>
+							<blockquote>Lead Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
@@ -273,7 +280,8 @@ class AmericanMade extends Component {
 				name={sections[5]} 
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}>
+				onSetActive={() => { this.setActiveSection(5); }}
+				>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

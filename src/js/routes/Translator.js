@@ -224,10 +224,7 @@ class Translator extends Component {
 				name={sections[3]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}
-				style={{ 
-					backgroundColor: `#5B7E9A`
-				}}>
+				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
@@ -281,9 +278,6 @@ class Translator extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}
-				style={{ 
-					backgroundColor: `#5B7E9A`
-				}}
 				>
 					<div className="grid">
 						<div className="grid__row">

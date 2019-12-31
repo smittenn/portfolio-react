@@ -154,12 +154,16 @@ section {
 			background-color: $brand-white;
 		}
 
-		.grid__line {
-			color: $brand-white;
+		.grid--lines, .grid__line {
+			color: rgba($brand-white, 0.05);
 		}
 
 		text {
 			fill: $brand-white;
+		}
+
+		.icon {
+			stroke: $brand-white;
 		}
 
 	}

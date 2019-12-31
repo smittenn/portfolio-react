@@ -51,6 +51,7 @@ class Vai extends Component {
 			sections: [
 				"intro",
 				"overview",
+				"player",
 				"overlay",
 				"products",
 				"people",
@@ -154,13 +155,19 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/vai/mr-robot.jpg)`,
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85`,
-				 	backgroundPosition: "center 30%" 
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .8),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .9) 
+						),
+						url(../assets/img/vai/mr-robot.jpg)
+					`,
+					backgroundColor: `transparent`,
+				 	backgroundPosition: this.props.isMobile ? "center" : "center 30%"
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
 						</div>
@@ -172,9 +179,9 @@ class Vai extends Component {
 							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCUX Lab</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="mb0">
 								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Kennix Lee"]}>Kennix Lee</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
@@ -194,8 +201,8 @@ class Vai extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Overlay</h2>
-								<blockquote>During video playback the player shows items related to the current scene. After identifying a product in the video (like that car the lead actor is in), V.ai allows users to easily access the purchasing space without distracting from the viewing experience.</blockquote>
+								<h2>Player</h2>
+								<blockquote>During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -209,23 +216,35 @@ class Vai extends Component {
 				</ScrollSection>
 
 				<ScrollSection 
-				black
 				name={sections[3]}
+				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}
-				style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95) 
-						),
-						url(../assets/img/vai/escalade.png)
-					`,
-					backgroundColor: `transparent`,
-				 	backgroundPosition: "center top",
-				 	backgroundBlendMode: "normal"
-				}}>
+				onSetActive={() => { this.setActiveSection(3); }}>
+					<div className="grid">
+						<div className="grid__row">
+							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h2>Overlay</h2>
+								<blockquote>Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off.</blockquote>
+							</div>
+						</div>
+					</div>
+					<div className="grid">
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							{<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>}
+						</div>
+					</div>
+				</ScrollSection>
+
+				<ScrollSection 
+				black
+				name={sections[4]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(4); }}
+				>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -237,18 +256,18 @@ class Vai extends Component {
 					</div>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/product.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>
 
 				<ScrollSection 
-				name={sections[4]}
+				name={sections[5]}
 				black
-				sections={sections} 
+				sections={sections}
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(4); }}>
+				onSetActive={() => { this.setActiveSection(5); }}>
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -259,21 +278,39 @@ class Vai extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
 							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
 							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
 							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 
 					</SideScroller>
 				</ScrollSection>
 
-
 				<ScrollSection 
+					black
+					sections={sections} 
+					activeSection={activeSection}>
+						<div className="grid">
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
+								<h4 className="light">Next Up</h4>
+									<h2 className="mb0">
+										<NavLink to="translator">
+											<TextLink>Translator</TextLink>
+										</NavLink>
+									</h2>
+							</div>
+						</div>
+					</ScrollSection>
+
+
+
+				{/*<ScrollSection 
 				black
 				sections={sections} 
 				activeSection={activeSection}
@@ -290,7 +327,7 @@ class Vai extends Component {
 							<h2 className="mb0">Translator</h2>
 						</div>
 					</NavLink>
-				</ScrollSection>
+				</ScrollSection>*/}
 				
 			</article>
 		);

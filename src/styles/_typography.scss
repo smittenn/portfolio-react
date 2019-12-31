@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4 {
-	font-weight: 600;
+	font-weight: 500;
 }
 
 h5, h6 {
@@ -63,7 +63,7 @@ h5, h6 {
 
 h1 {
 	font-size: 120px;
-	line-height: 1;
+	line-height: 1.1;
 	margin-left: 2 * $letter-spacing-sm;
 	margin-bottom: 48px;
 	letter-spacing: $letter-spacing-sm;
@@ -135,5 +135,4 @@ blockquote {
 		margin: 0 24px 0 0;
 		line-height: 78px;
 	}
-
 }

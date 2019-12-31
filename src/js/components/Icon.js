@@ -30,7 +30,7 @@ class Icon extends Component {
 
 		return (
 			<svg 
-			className={`icon-${icon}`} 
+			className={`icon icon-${icon}`} 
 			width={adjustedSize} 
 			height={adjustedSize} 
 			viewBox={`0 0 40 40`} 
