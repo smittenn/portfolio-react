@@ -124,6 +124,8 @@ class Vai extends Component {
 								</blockquote>
 							</div>
 						</div>
+					</div>
+					<div className="grid">
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
@@ -134,6 +136,8 @@ class Vai extends Component {
 								</div>
 							</div>
 						</div>
+					</div>
+					<div className="grid">
 						<div className="grid__row mb0">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
@@ -163,6 +167,7 @@ class Vai extends Component {
 						url(../assets/img/vai/mr-robot.jpg)
 					`,
 					backgroundColor: `transparent`,
+					backgroundBlendMode: `normal`,
 				 	backgroundPosition: this.props.isMobile ? "center" : "center 30%"
 				}}>
 					<div className="grid">
@@ -171,11 +176,11 @@ class Vai extends Component {
 							<h6 className="uppercase">Role</h6>
 							<blockquote>Lead Designer</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
 							<blockquote>October, 2017</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>NBCUX Lab</blockquote> 
 						</div>
@@ -278,13 +283,13 @@ class Vai extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 

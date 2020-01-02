@@ -41,8 +41,8 @@ class Sidebar extends Component {
 					<h6 className="sidebar__number uppercase">{pad(i + 1, 2)}.</h6>
 					<div className="sidebar__dash"></div>
 					<h6 className="sidebar__label uppercase">{section}<span>·</span></h6>
-					<div className="sidebar__border"/>
 				</Link>
+				<div className="sidebar__border"/>
 			</li>
 		)
 		

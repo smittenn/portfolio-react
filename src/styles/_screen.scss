@@ -37,6 +37,8 @@
 }
 
 @media screen and (max-width: $bp-medium) {
+	@include grid-at-bp(medium);
+
 	body {
 		cursor: auto !important;
 	}
@@ -46,11 +48,8 @@
 	.active-section .logo {
 		display: none;
 	}
-	.spacer {
-		display: none;
-	}
 	.grid {
-		padding: 0 24px;
+		padding: 0 48px;
 	}
 	.left-rail {
 		top: 36px;
@@ -58,7 +57,7 @@
 	}
 	.grid {
 		&--lines {
-			padding-right: 48px;
+			// padding-right: 48px;
 		}
 
 		&__line {
@@ -75,14 +74,24 @@
 		}
 	}
 
-	@include grid-at-bp(medium);
-
 	section {
 		padding: 60px 0;
 
 		p {
 			transform: none;
 			height: auto;
+		}
+
+		.spacer {
+			&__sm {
+				min-height: 12px;
+			}
+			&__md {
+				min-height: 24px;
+			}
+			&__lg {
+				min-height: 48px;
+			}
 		}
 
 		.shift {
@@ -116,6 +125,7 @@
 
 	h4 {
 		font-size: 32px;
+		margin-bottom: 9px;
 	}
 }
 
@@ -145,19 +155,19 @@
 
 
 @media screen and (max-width: $bp-xsmall) {
-	// h1 {
-	// 	font-size: 48px;
-	// }
+	h1 {
+		font-size: 42px;
+	}
 
-	// h2 {
-	// 	font-size: 34px;
-	// }
+	h2 {
+		font-size: 38px;
+	}
 
-	// h3 {
-	// 	font-size: 28px;
-	// }
+	h3 {
+		font-size: 34px;
+	}
 
-	// h4 {
-	// 	font-size: 21px;
-	// }
+	h4 {
+		font-size: 24px;
+	}
 }

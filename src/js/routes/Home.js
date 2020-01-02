@@ -305,7 +305,7 @@ class Home extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<h4>Social — Follow me</h4>
+							<h4>Social</h4>
 						</div>
 					</div>
 					<div className="grid">
@@ -314,22 +314,22 @@ class Home extends Component {
 							<div className="spacer spacer__md"/>
 							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//github.com/erchsm">Github</a>
+									<a target="_blank" href="//github.com/erchsm">Github</a>
 								</TextLink>
 							</h2>
 							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//codepen.io/erchsm">Codepen</a>
+									<a target="_blank" href="//codepen.io/erchsm">Codepen</a>
 								</TextLink>
 							</h2>
 							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//www.instagram.com/e.smitten">Instagram</a>
+									<a target="_blank" href="//www.instagram.com/e.smitten">Instagram</a>
 								</TextLink>
 							</h2>
 							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//www.flickr.com/photos/erchsm">Flickr</a>
+									<a target="_blank" href="//www.flickr.com/photos/erchsm">Flickr</a>
 								</TextLink>
 							</h2>
 						</div>

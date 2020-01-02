@@ -37,7 +37,7 @@ class ProcessDiagram extends Component {
 				color: palette('brand-yellow'),
 				title: `Sketch`,
 				iconName: `wireframe`,
-				body: `Consolidate the ideas into a drawing/wireframe to communicate the design and functionality and gather consensus.`,
+				body: `Consolidate the ideas into a sketch to communicate the design and functionality while gathering consensus.`,
 				arcPath: `M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082`
 			},
 			{

@@ -85,7 +85,7 @@ $baseclass: project-card;
 	}
 
 	@media screen and (max-width: $bp-medium) {
-		margin: 0;
+		// margin: 0;
 
 		.#{$baseclass}__bottom {
 			// padding: 24px 0;

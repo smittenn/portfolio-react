@@ -125,6 +125,8 @@ $baseclass: sidebar;
 				transition: height $easing4 $duration-short;
 
 				a {
+					// transition: opacity $duration-short $easing1;
+					// opacity: 0.6;
 					pointer-events: auto;
 
 					&.active {
@@ -134,10 +136,18 @@ $baseclass: sidebar;
 						}
 					}
 
+					// &:hover {
+					// 	opacity: 1;
+					// }
 				}
 
-				.#{$baseclass}__number {
+				.#{$baseclass}__number,
+				.#{$baseclass}__label,
+				.#{$baseclass}__border {
 					opacity: 1;
+					transition: opacity $duration-short $duration-short $easing3;
+				}
+				.#{$baseclass}__number {
 					transform: translate3d(0, 0, 0);
 				}
 
@@ -147,14 +157,6 @@ $baseclass: sidebar;
 
 				.#{$baseclass}__dash {
 					transform: scaleX(1);
-				}
-
-				.#{$baseclass}__label {
-					opacity: 1;
-				}
-
-				.#{$baseclass}__border {
-					opacity: 1;
 				}
 			}
 		}

@@ -361,7 +361,7 @@ h5 {
 h6 {
   font-size: 14px;
   line-height: 1.2;
-  margin-bottom: 12px; }
+  margin-bottom: 6px; }
 
 p {
   font-family: "Moderat", sans-serif;
@@ -389,7 +389,7 @@ blockquote {
     font-family: "Smitten", sans-serif;
     font-weight: 800;
     margin: 0 24px 0 0;
-    line-height: 1; }
+    line-height: 56px; }
 
 * {
   box-sizing: border-box; }
@@ -3084,10 +3084,8 @@ section p span > span, section blockquote span > span {
     transform: none;
     opacity: 1; }
   @media screen and (max-width: 800px) {
-    .project-card {
-      margin: 0; }
-      .project-card i {
-        right: 0; } }
+    .project-card i {
+      right: 0; } }
 
 [class*="react-sandbox-editor"].sandbox__header {
   background: #232021; }
@@ -3354,18 +3352,18 @@ section p span > span, section blockquote span > span {
         .sidebar--open .sidebar__inner .sidebar__item a.active .sidebar__label span {
           color: #ff3636;
           -webkit-text-stroke-width: 4px; }
-      .sidebar--open .sidebar__inner .sidebar__item .sidebar__number {
+      .sidebar--open .sidebar__inner .sidebar__item .sidebar__number,
+      .sidebar--open .sidebar__inner .sidebar__item .sidebar__label,
+      .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
         opacity: 1;
+        transition: opacity 0.3s 0.3s cubic-bezier(0.86, 0, 0.07, 1); }
+      .sidebar--open .sidebar__inner .sidebar__item .sidebar__number {
         transform: translate3d(0, 0, 0); }
       .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
         background: rgba(19, 17, 18, 0.06); }
       .sidebar--open .sidebar__inner .sidebar__item .sidebar__dash {
         -ms-transform: scaleX(1);
         transform: scaleX(1); }
-      .sidebar--open .sidebar__inner .sidebar__item .sidebar__label {
-        opacity: 1; }
-      .sidebar--open .sidebar__inner .sidebar__item .sidebar__border {
-        opacity: 1; }
   .scrolling-section--black .sidebar .sidebar__dash {
     background: #f8fbf7; }
   .scrolling-section--black .sidebar--open .sidebar__inner .sidebar__border {
@@ -3547,27 +3545,6 @@ section p span > span, section blockquote span > span {
     width: 100%; } }
 
 @media screen and (max-width: 800px) {
-  body {
-    cursor: auto !important; }
-  .cursor {
-    display: none; }
-  .active-section .logo {
-    display: none; }
-  .spacer {
-    display: none; }
-  .grid {
-    padding: 0 24px; }
-  .left-rail {
-    top: 36px;
-    width: 49px; }
-  .grid--lines {
-    padding-right: 48px; }
-  .grid__line:first-child {
-    border-left: solid 1px; }
-  .grid__line:last-child {
-    border-right: solid 1px; }
-  .grid__row {
-    margin-bottom: 24px; }
   .grid__item--hide-bp-medium {
     display: none; }
   .grid__item--col-1-medium {
@@ -3606,12 +3583,35 @@ section p span > span, section blockquote span > span {
   .grid__item--col-12-medium {
     min-width: 100%;
     width: 100%; }
+  body {
+    cursor: auto !important; }
+  .cursor {
+    display: none; }
+  .active-section .logo {
+    display: none; }
+  .grid {
+    padding: 0 48px; }
+  .left-rail {
+    top: 36px;
+    width: 49px; }
+  .grid__line:first-child {
+    border-left: solid 1px; }
+  .grid__line:last-child {
+    border-right: solid 1px; }
+  .grid__row {
+    margin-bottom: 24px; }
   section {
     padding: 60px 0; }
     section p {
       -ms-transform: none;
       transform: none;
       height: auto; }
+    section .spacer__sm {
+      min-height: 12px; }
+    section .spacer__md {
+      min-height: 24px; }
+    section .spacer__lg {
+      min-height: 48px; }
     section .shift--left {
       -ms-transform: none;
       transform: none; }
@@ -3630,7 +3630,8 @@ section p span > span, section blockquote span > span {
     font-size: 40px;
     margin-bottom: 12px; }
   h4 {
-    font-size: 32px; } }
+    font-size: 32px;
+    margin-bottom: 9px; } }
 
 @media screen and (max-width: 480px) {
   h1 {
@@ -3644,5 +3645,15 @@ section p span > span, section blockquote span > span {
   blockquote {
     font-size: 19px;
     margin-bottom: 21px; } }
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 42px; }
+  h2 {
+    font-size: 38px; }
+  h3 {
+    font-size: 34px; }
+  h4 {
+    font-size: 24px; } }
 
 /*# sourceMappingURL=styles.css.map */
