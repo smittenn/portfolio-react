@@ -120,13 +120,16 @@ class AmericanMade extends Component {
 								<blockquote className="drop-caps mr">
 									Our team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
 								</blockquote>
-								<blockquote className="">
+								<blockquote className="mr">
 									The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 								</blockquote> 
 							</div>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="">
-									Our final design is the product of many late nights and too many cups of coffee. It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
+								<blockquote className="mr">
+									Our final design is the product of many late nights and too many cups of coffee! It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
+								</blockquote>
+								<blockquote className="mr">
+									My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
 								</blockquote>
 							</div>
 						</div>
@@ -141,10 +144,15 @@ class AmericanMade extends Component {
 							</div>
 						</div>
 						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-3 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-								<blockquote className="">
-									My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.
+								</blockquote>
+							</div>
+							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+								<blockquote className="mr">
+									From a developer standpoint I was responsible for QA on all modern devices. I was also responsible for deploying the site which we did in 2 phases–as an MVP and final site.
 								</blockquote>
 							</div>
 						</div>

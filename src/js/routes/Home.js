@@ -170,11 +170,11 @@ class Home extends Component {
 							<blockquote className="mr">
 								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 							</blockquote>
-							<h5 className="uppercase">
+							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
 									<NavLink to="about-me">Learn More</NavLink>
 								</TextLink>
-							</h5>
+							</h6>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
@@ -226,15 +226,15 @@ class Home extends Component {
 						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<h2>{splitWord("Form + Function")}</h2>
+							<h2>{splitWord("Code x Design")}</h2>
 							<blockquote className="mr">
 								{splitWord(`I specialize in HTML prototypes, visual design, motion graphics and front-end code. I prefer to prototype in the browser. You can learn more about my ideal design process below.`)}
 							</blockquote>
-							<h5 className="uppercase">
+							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
 									<NavLink to="process">Learn More</NavLink>
 								</TextLink>
-							</h5>
+							</h6>
 						</div>
 					</div>
 				</ScrollSection>
@@ -248,7 +248,7 @@ class Home extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<h4>Select Projects</h4>
 						</div>
 					</div>
@@ -286,11 +286,11 @@ class Home extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<h5 className="uppercase">
+							<h6 className="uppercase">
 								<TextLink isBlack hideUnderline>
 									<NavLink to="process">See All Projects</NavLink>
 								</TextLink>
-							</h5>
+							</h6>
 						</div>
 					</div>
 				</ScrollSection>
@@ -304,37 +304,39 @@ class Home extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-5 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<h4>Social — Follow me</h4>
 						</div>
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="spacer spacer__md"/>
-							<h2 className="mb0">
+							<h2 className="">
 								<TextLink isBlack hideUnderline>
 									<a href="//github.com/erchsm">Github</a>
 								</TextLink>
 							</h2>
-							<h2 className="mb0">
+							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//codepen.io/erchsm/">Codepen</a>
+									<a href="//codepen.io/erchsm">Codepen</a>
 								</TextLink>
 							</h2>
-							<h2 className="mb0">
+							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//www.instagram.com/e.smitten/">Instagram</a>
+									<a href="//www.instagram.com/e.smitten">Instagram</a>
 								</TextLink>
 							</h2>
-							<h2 className="mb0">
+							<h2 className="">
 								<TextLink isBlack hideUnderline>
-									<a href="//www.flickr.com/photos/erchsm/">Flickr</a>
+									<a href="//www.flickr.com/photos/erchsm">Flickr</a>
 								</TextLink>
 							</h2>
-
-							<div className="spacer spacer__md"/>
 						</div>
+						{/*<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<div className="spacer spacer__md"/>
+						</div>*/}
+						<div className="spacer spacer__md"/>
 					</div>
 				</ScrollSection>
 

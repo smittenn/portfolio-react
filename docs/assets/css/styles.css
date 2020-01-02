@@ -50,10 +50,24 @@ table {
 /* Libraries */
 @font-face {
   font-family: 'Hurme';
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot");
+  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff2") format("woff2"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff") format("woff"), url("../fonts/Hurme/Hurme-SemiBold-alt.otf") format("truetype"), url("../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Hurme';
   font-weight: 700;
   font-style: normal;
   src: url("../fonts/Hurme/Hurme-Bold.eot");
   src: url("../fonts/Hurme/Hurme-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Bold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Bold.woff") format("woff"), url("../fonts/Hurme/Hurme-Bold.otf") format("truetype"), url("../fonts/Hurme/Hurme-Bold.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Smitten';
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Smitten/Smitten-Regular.eot");
+  src: url("../fonts/Smitten/Smitten-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Smitten/Smitten-Regular.woff2") format("woff2"), url("../fonts/Smitten/Smitten-Regular.woff") format("woff"), url("../fonts/Smitten/Smitten-Regular.otf") format("truetype"), url("../fonts/Smitten/Smitten-Regular.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Smitten';
@@ -275,6 +289,7 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
+  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -317,16 +332,14 @@ h5, h6 {
 h1 {
   font-size: 120px;
   line-height: 1.1;
-  margin-left: -0.048em;
   margin-bottom: 48px;
-  letter-spacing: -0.024em; }
+  letter-spacing: -0.036em; }
 
 h2 {
   font-size: 108px;
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 36px;
-  margin-left: -0.048em;
-  letter-spacing: -0.024em; }
+  letter-spacing: -0.036em; }
 
 h3 {
   font-size: 84px;
@@ -372,11 +385,11 @@ blockquote {
   display: inline-block; }
   .drop-caps:first-letter {
     float: left;
-    font-size: 72px;
+    font-size: 60px;
     font-family: "Smitten", sans-serif;
     font-weight: 800;
     margin: 0 24px 0 0;
-    line-height: 78px; }
+    line-height: 1; }
 
 * {
   box-sizing: border-box; }
@@ -423,6 +436,9 @@ hr {
 
 video, iframe {
   width: 100%; }
+
+iframe {
+  position: relative; }
 
 *::-webkit-scrollbar {
   width: 0px;
@@ -2425,7 +2441,7 @@ section p span > span, section blockquote span > span {
       right: 12px;
       bottom: 12px; }
     .nav-takeover .nav-takeover__line-container, .nav-takeover .nav-takeover__item-container {
-      padding-top: 96px; }
+      padding-top: 108px; }
     .nav-takeover .nav-takeover__spacer {
       width: 48px; }
     .nav-takeover .nav-takeover__line {
@@ -2433,8 +2449,8 @@ section p span > span, section blockquote span > span {
     .nav-takeover .nav-takeover__item-container {
       padding-left: 18px; }
     .nav-takeover .nav-takeover__breadcrumbs {
-      -ms-transform: translateY(-48px);
-      transform: translateY(-48px); }
+      -ms-transform: translateY(-60px);
+      transform: translateY(-60px); }
       .nav-takeover .nav-takeover__breadcrumbs .icon-caret {
         margin: 0 6px; }
     .nav-takeover .nav-takeover__panel {
@@ -3031,7 +3047,8 @@ section p span > span, section blockquote span > span {
     -ms-flex-align: center;
     align-items: center; }
   .project-card__tags {
-    opacity: 0; }
+    opacity: 0;
+    display: none; }
   .project-card, .project-card__tags, .project-card__asset {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
   .project-card__bottom {
@@ -3224,6 +3241,7 @@ section p span > span, section blockquote span > span {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     width: 100%;
+    margin: 0 auto;
     -ms-flex-pack: start;
     justify-content: flex-start;
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }

@@ -257,7 +257,7 @@ $baseclass: nav-takeover;
 		}
 
 		.#{$baseclass}__line-container, .#{$baseclass}__item-container {
-			padding-top: 96px;
+			padding-top: 108px;
 		}
 
 		.#{$baseclass}__spacer {
@@ -273,7 +273,7 @@ $baseclass: nav-takeover;
 		}
 
 		.#{$baseclass}__breadcrumbs {
-			transform: translateY(-48px);
+			transform: translateY(-60px);
 
 			.icon-caret {
 				margin: 0 6px;

@@ -265,7 +265,7 @@ class JnjMdc extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Taxonomy</h2>
-								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our partner’s favorite tool as helped our stakeholders learn the site structure.</blockquote>
+								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way.</blockquote>
 							</div>
 						</div>
 					</div>
