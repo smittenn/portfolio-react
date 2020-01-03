@@ -49,18 +49,18 @@ table {
 
 /* Libraries */
 @font-face {
-  font-family: 'Hurme';
-  font-weight: 600;
-  font-style: normal;
-  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot");
-  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff2") format("woff2"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff") format("woff"), url("../fonts/Hurme/Hurme-SemiBold-alt.otf") format("truetype"), url("../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons") format("svg"); }
+  font-family: 'Tiempos';
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/Tiempos/Tiempos-Regular-Italic.eot");
+  src: url("../fonts/Tiempos/Tiempos-Regular-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Tiempos/Tiempos-Regular-Italic.woff2") format("woff2"), url("../fonts/Tiempos/Tiempos-Regular-Italic.woff") format("woff"), url("../fonts/Tiempos/Tiempos-Regular-Italic.otf") format("truetype"), url("../fonts/Tiempos/Tiempos-Regular-Italic.svg#codropsicons") format("svg"); }
 
 @font-face {
-  font-family: 'Hurme';
-  font-weight: 700;
+  font-family: 'TT Norms';
+  font-weight: 600;
   font-style: normal;
-  src: url("../fonts/Hurme/Hurme-Bold.eot");
-  src: url("../fonts/Hurme/Hurme-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Bold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Bold.woff") format("woff"), url("../fonts/Hurme/Hurme-Bold.otf") format("truetype"), url("../fonts/Hurme/Hurme-Bold.svg#codropsicons") format("svg"); }
+  src: url("../fonts/TTNorms/ttnorms-medium-web.eot");
+  src: url("../fonts/TTNorms/ttnorms-medium-web.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms/ttnorms-medium-web.woff2") format("woff2"), url("../fonts/TTNorms/ttnorms-medium-web.woff") format("woff"), url("../fonts/TTNorms/ttnorms-medium-web.otf") format("truetype"), url("../fonts/TTNorms/ttnorms-medium-web.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Smitten';
@@ -289,7 +289,6 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
-  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -438,7 +437,9 @@ video, iframe {
   width: 100%; }
 
 iframe {
-  position: relative; }
+  position: relative;
+  min-width: 100%;
+  max-width: 100%; }
 
 *::-webkit-scrollbar {
   width: 0px;

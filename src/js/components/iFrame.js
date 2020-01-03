@@ -34,19 +34,13 @@ class IFrame extends Component {
 		let adjustedHeight = height ? height : 720;
 		this.props.isMobile ? (adjustedHeight *= 0.75) : null;
 
-		const style = {
-			width: '1px',
-			minWidth: '100%',
-			maxWidth: '100%',
-		}
-
 		return (
-			<IntersectionVisible 
-				onShow={this.setSource}
-				style={{ width: '100%' }}
-				>
-				<iframe src={this.state.src} width={this.props.isMobile ? (window.innerWidth - 48) : null} height={adjustedHeight} style={style}/>
-			</IntersectionVisible>
+			<div ref="iframe">
+				<IntersectionVisible 
+				onShow={this.setSource}>
+					<iframe src={this.state.src} width={this.refs.iframe ? this.refs.iframe.clientWidth : null} height={adjustedHeight}/>
+				</IntersectionVisible>
+			</div>
 		);	
 	}
 }

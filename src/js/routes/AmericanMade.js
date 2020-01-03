@@ -250,10 +250,10 @@ class AmericanMade extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</SideScroller>

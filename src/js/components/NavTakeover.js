@@ -155,7 +155,7 @@ class NavTakeover extends Component {
 
 	createBreadcrumbItem = (menu) => (
 		menu.hasOwnProperty('parent') ? (
-			<div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'baseline' }}>
+			<div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
 				<Icon icon='caret' size={16} color={palette("brand-black")}/>
 				<div onClick={() => { this.props.setPanel(menu.parent.name); this.props.setCursorUnhover(); }}>
 					<TextLink hideUnderline>{menu.parent.name}</TextLink>

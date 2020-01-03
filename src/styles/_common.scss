@@ -65,6 +65,8 @@ video, iframe {
 
 iframe {
 	position: relative;
+	min-width: 100%;
+	max-width: 100%;
 }
 
 .active-section {

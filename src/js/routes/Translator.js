@@ -235,13 +235,13 @@ class Translator extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/metadata-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/metadata-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-10-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/metadata-03.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</SideScroller>
@@ -289,10 +289,10 @@ class Translator extends Component {
 						</div>
 					</div>
 					<SideScroller>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/bulk-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/bulk-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</SideScroller>

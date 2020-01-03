@@ -10,6 +10,8 @@ class Cursor extends Component {
 		super(props);
 
 		this.state = {	
+			delayArrowX: 0,
+			delayArrowY: 0,
 			arrowX: 0,
 			arrowY: 0,
 			isVisible: false,
@@ -45,13 +47,14 @@ class Cursor extends Component {
 			arrowY: clientY,
 			isVisible: true,
 		})
+		setTimeout(() => {
+			this.setState({
+				delayArrowX: clientX,
+				delayArrowY: clientY,
+			})
+	  }, 60);
 	}
 
-	handleHover = () => {
-		this.setState({ 
-			isHovering: !this.state.isHovering 
-		})
-	}
 
 	render() {
 
@@ -65,9 +68,13 @@ class Cursor extends Component {
 		
 		return (
 			<div className={classnames}>
-				<div style={{ transform: 'translate(' + this.state.arrowX + 'px, ' + this.state.arrowY + 'px)' }}>
+				<div style={{ transform: 'translate3d(' + this.state.arrowX + 'px, ' + this.state.arrowY + 'px, 0)', position: 'absolute' }}>
 					<div className="cursor__wrapper">
 						<div className="cursor__inner"/>
+					</div>
+				</div>
+				<div style={{ transform: 'translate3d(' + this.state.delayArrowX + 'px, ' + this.state.delayArrowY + 'px, 0)' }}>
+					<div className="cursor__wrapper">
 						<div className="cursor__outer"/>
 					</div>
 				</div>
