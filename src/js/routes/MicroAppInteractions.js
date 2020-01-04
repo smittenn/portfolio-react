@@ -179,7 +179,7 @@ class MicroAppInteractions extends Component {
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="mb0">
 								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Josh Bloom"]}>Josh Bloom</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Jeff Klein"]}>Jeff Klein</a></TextLink>,&nbsp;

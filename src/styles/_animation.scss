@@ -21,12 +21,18 @@
 }
 
 // @keyframes fadeIn {
-// 	50% {
+// 	0% {
 // 		opacity: 0;
 // 	}
-// 	25%, 75% {
+// 	100% {
 // 		opacity: 1;
 // 	}
+// }
+
+// article {
+// 	opacity: 0;
+// 	animation: fadeIn $duration-medium $easing1 $duration-medium;
+// 	animation-fill-mode: forwards;
 // }
 
 // article {

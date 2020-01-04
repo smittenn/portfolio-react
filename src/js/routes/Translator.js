@@ -101,7 +101,7 @@ class Translator extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Translator </span></span>, `helped film crews at NBCU catalog footage.`]}
+					headerText={[ <span className="outline"><span>Translator </span></span>, `helped film crews catalog footage at NBCU.`]}
 					/>
 				</ScrollSection>
 
@@ -140,7 +140,7 @@ class Translator extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="grid__row">
+						<div className="grid__row m0">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 								<blockquote className="mb0 mr">
@@ -159,19 +159,17 @@ class Translator extends Component {
 
 				{<ScrollSection 
 				name={sections[2]}
-				black 
 				sections={sections} 
 				disableSectionNumber
 				activeSection={activeSection}
 				style={{ 
-					backgroundBlendMode: `normal`,
-					background: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
+					// backgroundImage: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead Designer</blockquote>
+							<blockquote>Lead UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
 							<h6 className="uppercase">Date</h6>

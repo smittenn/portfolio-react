@@ -51,7 +51,8 @@ a {
 }
 
 hr {
-	background: $brand-grey-dark;
+	opacity: 0.05;
+	background: $brand-black;
 	height: 1px;
 	width: 100%;
 	min-width: 60px;
@@ -59,12 +60,13 @@ hr {
 	display: inline-block;
 }
 
-video, iframe {
+video {
 	width: 100%;
 }
 
 iframe {
 	position: relative;
+	width: 0;
 	min-width: 100%;
 	max-width: 100%;
 }
@@ -94,9 +96,8 @@ section {
 	align-items: center;
 	justify-content: center;
 	background-color: $brand-white;
-	background-blend-mode: multiply;
 	background-size: cover;
-	background-position: 25% 25%;
+	background-position: center;
 	transition: background-color $easing2 $duration-short;
 	// @include zIndexClose();					
 

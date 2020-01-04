@@ -159,23 +159,23 @@ class JnjHome extends Component {
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
-					backgroundSize: '50%',
+					backgroundSize: this.props.isMobile ? 'cover' : '50%',
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>UX Designer</blockquote>
+							<blockquote>UX/Motion Designer</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
 							<blockquote>October 2019</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
 							<blockquote>J&J People XD</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
 							<blockquote className="mb0">
 								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 

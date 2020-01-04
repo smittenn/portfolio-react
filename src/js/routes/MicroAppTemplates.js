@@ -144,12 +144,12 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row m0">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr" >
+								<blockquote className="mb0 mr" >
 									On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designers would be put in charge of a single visual style family from end to end in the design process.
 								</blockquote>
 							</div>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family.
 								</blockquote>
 							</div>
@@ -163,8 +163,13 @@ class MicroAppTemplates extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/card-components/banner.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .8),
+							rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .95)
+						),
+						url(../assets/img/card-components/banner.jpg)
+					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
 				}}>
@@ -184,7 +189,7 @@ class MicroAppTemplates extends Component {
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="mb0">
 								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Mei Yeh"]}>Mei Yeh</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Theo Arguna"]}>Theo Arguna</a></TextLink>,&nbsp;
@@ -211,12 +216,12 @@ class MicroAppTemplates extends Component {
 					</div>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Video src="assets/img/app-templates/from-fb.mp4"/>
 						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
+						{/*<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={7} aspectRatioHeight={13}/>
-						</div>
+						</div>*/}
 					</div>
 				</ScrollSection>
 
@@ -228,7 +233,7 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}
 				style={{
-					backgroundColor: '#3E7C95'
+					// backgroundColor: '#3E7C95'
 				}}
 				>
 					<div className="grid">
@@ -315,7 +320,7 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}
 				style={{
-					backgroundColor: '#DE918E'
+					// backgroundColor: '#DE918E'
 				}}
 				>
 					<div className="grid">

@@ -146,12 +146,12 @@ class AmericanMade extends Component {
 						<div className="grid__row m0">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.
 								</blockquote>
 							</div>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									From a developer standpoint I was responsible for QA on all modern devices. I was also responsible for deploying the site which we did in 2 phases–as an MVP and final site.
 								</blockquote>
 							</div>
@@ -164,15 +164,19 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/american-made/s07-synopsis.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
+						),
+						url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundPosition: `20% 70%`,
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead Designer</blockquote>
+							<blockquote>Lead UI/UX Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
@@ -184,7 +188,7 @@ class AmericanMade extends Component {
 						</div>
 						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote className="mb0">
 								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Audrey Tse"]} target="_blank">Audrey Tse</a></TextLink>,&nbsp;
@@ -385,9 +389,13 @@ class AmericanMade extends Component {
 					sections={sections} 
 					activeSection={activeSection}
 					style={{ 
-						backgroundImage: `url(../assets/img/vai/banner.jpg)`, 
-						backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-					}}>
+						backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
+						),
+						url(../assets/img/vai/banner-mod.gif)
+					`}}>
 						<div className="grid">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">

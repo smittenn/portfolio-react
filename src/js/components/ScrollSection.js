@@ -38,9 +38,6 @@ export default class ScrollSection extends Component {
 
 		fullHeight ? Object.assign(style, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' }) : null
 
-		const logoStyle = { 
-			color: black ? palette('brand-white') : palette('brand-black'),
-		}
 		
 		return (
 			name ? (

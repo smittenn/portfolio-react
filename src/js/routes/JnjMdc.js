@@ -99,8 +99,13 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-mdc/ladies.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4),
+							rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .4)
+						),
+						url(../assets/img/jnj-mdc/ladies.jpg)
+					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
 				}}
@@ -152,12 +157,12 @@ class JnjMdc extends Component {
 						<div className="grid__row m0">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.
 								</blockquote>
 							</div>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.
 								</blockquote>
 							</div>
@@ -171,36 +176,41 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-mdc/forest.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12),
+							rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .12)
+						),
+						url(../assets/img/jnj-mdc/forest.jpg)
+					`, 
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
 					backgroundSize: 'cover',
 				}}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote>Sr. Interaction Designer</blockquote>
+							<blockquote class="mb0">Sr. Interaction Designer</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2018</blockquote>
+							<blockquote class="mb0">Fall, 2018</blockquote>
 						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote>J&J Consumer</blockquote> 
+							<blockquote class="mb0">J&J Consumer</blockquote> 
 						</div>
-						<div className="grid__item grid__item--col-4  grid__item--col-6-medium">
+						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
-							<blockquote>
+							<blockquote class="mb0">
 								<TextLink><a href={people["Matthew Abate"]}>Matthew Abate</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Stephanie Skuzenski"]}>Stephanie Skuzenski</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Laura Hines"]}>Laura Hines</a></TextLink>,&nbsp;
+								<TextLink><a href={people["Stephanie Skuzenski"]}>Stephanie Skuzenski</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Jinny Kim"]}>Jinny Kim</a></TextLink>,&nbsp;
 								<TextLink><a href={people["Mark Patience"]}>Mark Patience</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Kate Peoples"]}>Kate Peoples</a></TextLink>
+								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>
+								{/*<TextLink><a href={people["Kate Peoples"]}>Kate Peoples</a></TextLink>*/}
 							</blockquote> 
 						</div>
 					</div>

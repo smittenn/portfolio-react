@@ -85,8 +85,13 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/vai/banner-mod.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
+						),
+						url(../assets/img/vai/banner-mod.gif)
+					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}
@@ -166,8 +171,6 @@ class Vai extends Component {
 						),
 						url(../assets/img/vai/mr-robot.jpg)
 					`,
-					backgroundColor: `transparent`,
-					backgroundBlendMode: `normal`,
 				 	backgroundPosition: this.props.isMobile ? "center" : "center 30%"
 				}}>
 					<div className="grid">

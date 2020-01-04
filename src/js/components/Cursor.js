@@ -75,7 +75,9 @@ class Cursor extends Component {
 				</div>
 				<div style={{ transform: 'translate3d(' + this.state.delayArrowX + 'px, ' + this.state.delayArrowY + 'px, 0)' }}>
 					<div className="cursor__wrapper">
-						<div className="cursor__outer"/>
+						<svg className="cursor__outer" width="80px" height="80px" viewBox="0 0 80 80">
+							<circle cx="40" cy="40" r="20"></circle>
+						</svg>
 					</div>
 				</div>
 			</div>

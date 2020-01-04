@@ -152,7 +152,7 @@ class Home extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is a digital`, <span className="outline"><span>Interactive </span></span>, <span className="outline"><span>Designer </span></span>, `in New York City.`]} 
+					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive </span></span>, <span><span className="outline">Designer </span></span>, `in New York City.`]} 
 					/>
 				</ScrollSection>
 
@@ -283,7 +283,7 @@ class Home extends Component {
 							<div className="spacer spacer__md"/>
 						</div>
 					</div>
-					<div className="grid">
+					{/*<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<h6 className="uppercase">
@@ -292,7 +292,7 @@ class Home extends Component {
 								</TextLink>
 							</h6>
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 
