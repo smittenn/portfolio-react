@@ -7,17 +7,16 @@ import Cursor from '../components/Cursor'
 import Home from './Home'
 import Process from './Process'
 import Resume from './Resume'
-
-import AmericanMade from './AmericanMade'
-import Vai from './Vai'
-import Translator from './Translator'
-import JnjHome from './JnjHome'
-import JnjMdc from './JnjMdc'
-import MicroAppInteractions from './MicroAppInteractions'
-import MicroAppTemplates from './MicroAppTemplates'
-import Perforce from './Perforce'
-
 import AboutMe from './AboutMe'
+
+import AmericanMade from './projects/AmericanMade'
+import Vai from './projects/Vai'
+import Translator from './projects/Translator'
+import JnjHome from './projects/JnjHome'
+import JnjMdc from './projects/JnjMdc'
+import MicroAppInteractions from './projects/MicroAppInteractions'
+import MicroAppTemplates from './projects/MicroAppTemplates'
+import Perforce from './projects/Perforce'
 
 const routes = (
 	<main>

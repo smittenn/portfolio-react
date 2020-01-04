@@ -1,0 +1,84 @@
+{
+	"primary" : [
+		{
+			"name": "Home",
+			"to": "/",
+			"abbreviation": "H",
+		},
+		{
+			"name": "Projects",
+		},
+		{
+			"name": "Process",
+			"to": "/process",
+			"abbreviation": "P",
+		},
+		{
+			"name": "About Me",
+			"to": "about-me",
+			"abbreviation": "A",
+		},
+		{
+			"name": "Resume",
+			"to": "/resume",
+			"abbreviation": "R",
+		},
+	],
+	"secondary": [
+		{
+			"name": "Google Design",
+			"to": "/google-design",
+			"abbreviation": "P0",
+		},
+		{
+			"name": "American Made",
+			"to": "/american-made",
+			"abbreviation": "P1",
+		},
+		{
+			"name": "V.ai Player",
+			"to": "/vai",
+			"abbreviation": "P2",
+		},
+		{
+			"name": "Translator",
+			"to": "/translator",
+			"abbreviation": "P3",
+		},
+		{
+			"name": "Home Intranet",
+			"to": "/jnj-home",
+			"abbreviation": "P4",
+		},
+		{
+			"name": "J&J MDC",
+			"to": "/jnj-mdc",
+			"abbreviation": "P5",
+		},
+		{
+			"name": "Wrap Interactions",
+			"to": "/micro-app-interactions",
+			"abbreviation": "P6",
+		},
+		{
+			"name": "Wrap Templates",
+			"to": "/micro-app-templates",
+			"abbreviation": "P7",
+		},
+		{
+			"name": "Perforce",
+			"to": "/perforce",
+			"abbreviation": "P8",
+		},
+		{
+			"name": "Cisco Mate",
+			"to": "/cisco",
+			"abbreviation": "P9",
+		},
+		{
+			"name": "Protohack",
+			"to": "/protohack",
+			"abbreviation": "P10",
+		},
+	]
+}

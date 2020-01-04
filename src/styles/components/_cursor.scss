@@ -36,6 +36,7 @@ $baseclass: cursor;
 	}
 
 	&__inner {
+		transition: all $easing4 $duration-short;
 		position: absolute;
 		height: 6px;
 		width: 6px;
@@ -63,6 +64,7 @@ $baseclass: cursor;
 		}
 
 		.#{$baseclass}__inner {
+			opacity: 0;
 			// transform: scale(3);
 			// background: transparent;
 			// border: solid .1px $brand-white;

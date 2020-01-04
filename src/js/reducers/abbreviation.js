@@ -1,4 +1,4 @@
-import navData from "../data/nav";
+import navData from "../data/nav-legacy";
 
 const abbreviationReducer = (state = 'H', action) => {
 	switch (action.type) {

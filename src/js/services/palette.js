@@ -17,7 +17,7 @@ export default function(color) {
 		"brand-grey-medium": "#81717A",
 		"brand-grey-dark": "#595358",
 		"brand-grey-darkest": "#333031",
-		"brand-black": darken("#232021", 6),
+		"brand-black": "#131112",
 	}
 	return palette[color]
 }

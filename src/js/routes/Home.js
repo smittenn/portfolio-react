@@ -145,10 +145,14 @@ class Home extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/leaf.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-					backgroundBlendMode: `overlay`,
-					backgroundSize: this.props.isMobile ? 'cover' : 'cover',
+					backgroundImage: `
+						linear-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
+						),
+						url(../assets/img/leaf.gif)
+					`, 
+					backgroundSize: 'cover',
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 

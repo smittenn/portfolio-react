@@ -15,7 +15,6 @@ import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 import { setPanel } from "../actions/panel"
 
 import navData from '../data/nav'
-import navData2 from '../data/nav2'
 
 import splitLetter from '../services/splitLetter'
 import palette from '../services/palette'
@@ -35,7 +34,7 @@ class NavTakeover extends Component {
 	}
 
 	componentDidMount() {
-		this.formatData(navData2);
+		this.formatData(navData);
 
 		this.state.menus.forEach((menu, i) => {
 			if (toCamelCase(menu.name) == this.props.openNavPanel) {
@@ -44,18 +43,6 @@ class NavTakeover extends Component {
 				})
 			}
 		})
-
-		// console.log(this.state.menus[this.props.openNavPanel]);
-
-		// const data = isPrimaryPanelOpen ? navData.primary : navData.secondary;
-
-		// data.forEach((item, i) => {
-		// 	if (this.props.abbreviation == item.abbreviation) { 
-		// 		this.setState({
-		// 			indexHovered: i
-		// 		});
-		// 	}
-		// });
 	}
 
 	setMenuClosed = () => {

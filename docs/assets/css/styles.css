@@ -282,6 +282,7 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
+  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2169,6 +2170,7 @@ section p span > span, section blockquote span > span {
       stroke-width: 1;
       vector-effect: non-scaling-stroke; }
   .cursor__inner {
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
     position: absolute;
     height: 6px;
     width: 6px;
@@ -2183,6 +2185,8 @@ section p span > span, section blockquote span > span {
   .cursor--hovering .cursor__outer circle {
     -ms-transform: scale(1.5);
     transform: scale(1.5); }
+  .cursor--hovering .cursor__inner {
+    opacity: 0; }
 
 .nav-takeover {
   position: relative;
