@@ -73,9 +73,9 @@ class Home extends Component {
 				name: "V.ai Player",
 				href: "/vai",
 				tags: [ "UX", "Interactive" ],
-				img: "../assets/img/vai/banner.svg",
-				aspectRatioWidth: 2,
-				aspectRatioHeight: 1,
+				img: "../assets/img/vai/mobile.png",
+				aspectRatioWidth: 3,
+				aspectRatioHeight: 2,
 			},
 			{
 				name: "Translator",

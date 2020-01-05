@@ -1,4 +1,4 @@
-import navData from "../data/nav2"
+import navData from "../data/nav"
 import toCamelCase from '../services/toCamelCase'
 
 const panelReducer = (state = toCamelCase(navData.name), action) => {

@@ -87,13 +87,14 @@ class Vai extends Component {
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)
 						),
-						url(../assets/img/vai/banner-mod.gif)
+						url(../assets/img/vai/mobile.png)
 					`, 
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
+					backgroundSize: (this.props.isMobile ? '120%' : '60%'),
+					backgroundPosition: (this.props.isMobile ? '-230% -560%' : '60% -560%'),
+					backgroundRepeat: 'round'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -136,7 +137,7 @@ class Vai extends Component {
 							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 								<div className="grid__row">
 									<div className="grid__item grid__item--col-12">
-										<Image src="../assets/img/vai/chevrolet.jpg"  aspectRatioWidth={16} aspectRatioHeight={9}/>
+										<Image src="../assets/img/vai/escalade.png"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 									</div>
 								</div>
 							</div>
@@ -146,12 +147,12 @@ class Vai extends Component {
 						<div className="grid__row mb0">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.
 								</blockquote>
 							</div>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
+								<blockquote className="mb0 mr">
 									Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.
 								</blockquote>
 							</div>
@@ -167,7 +168,7 @@ class Vai extends Component {
 					backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .8),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .9) 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95) 
 						),
 						url(../assets/img/vai/mr-robot.jpg)
 					`,
@@ -335,6 +336,7 @@ class Vai extends Component {
 const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
 })
 
 const mapDispatchToProps = dispatch => ({

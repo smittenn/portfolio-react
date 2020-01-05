@@ -32,10 +32,15 @@ class NavToggle extends Component {
 	}
 
 	closeNav = () => {
+		this.props.hoverToggle();
 		this.props.closeTakeover();
 		// this.props.closeSecondaryPanel();
 
-		(this.props.isMobile ? setTimeout(() => { this.props.unhoverToggle(); }, 1200) : null)		
+		if (this.props.isMobile) {
+			setTimeout(() => {
+				this.props.unhoverToggle()
+			}, 1200);
+		}
 	}
 
 	setCloseSecondaryPanel = () => {
@@ -66,7 +71,6 @@ class NavToggle extends Component {
 			"nav-toggle--countIsIncreasing": countIsIncreasing,
 			"nav-toggle--countIsDecreasing": countIsDecreasing,
 		})
-
 
 		return (
 			<div className={classnames} 
