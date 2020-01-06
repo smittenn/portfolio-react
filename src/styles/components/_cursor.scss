@@ -65,7 +65,7 @@ $baseclass: cursor;
 
 		.#{$baseclass}__inner {
 			opacity: 0;
-			// transform: scale(3);
+			transform: scale(1.5);
 			// background: transparent;
 			// border: solid .1px $brand-white;
 		}

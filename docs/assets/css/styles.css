@@ -282,7 +282,6 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
-  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -372,7 +371,8 @@ blockquote {
   display: inline-flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-bottom: 36px; }
+  margin-bottom: 36px;
+  letter-spacing: -0.012em; }
 
 .drop-caps {
   display: inline-block; }
@@ -2186,7 +2186,9 @@ section p span > span, section blockquote span > span {
     -ms-transform: scale(1.5);
     transform: scale(1.5); }
   .cursor--hovering .cursor__inner {
-    opacity: 0; }
+    opacity: 0;
+    -ms-transform: scale(1.5);
+    transform: scale(1.5); }
 
 .nav-takeover {
   position: relative;

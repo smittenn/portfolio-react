@@ -15,11 +15,10 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 
-import NewUserSetup from "../../components/sandbox/NewUserSetup"
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 
 import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
@@ -328,7 +327,7 @@ class MicroAppInteractions extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-					<NextProject name="Wrap Templates" to="micro-app-templates"/>
+					<NextProjectBlock name="Wrap Templates" to="micro-app-templates"/>
 				</ScrollSection>
 
 

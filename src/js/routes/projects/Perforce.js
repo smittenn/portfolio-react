@@ -15,12 +15,12 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
-
 import Image from "../../components/Image"
 import Video from "../../components/Video"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"

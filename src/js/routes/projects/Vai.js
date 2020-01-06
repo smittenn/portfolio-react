@@ -18,8 +18,10 @@ import CodepenEmbed from "../../components/CodepenEmbed"
 import Video from "../../components/Video"
 import Image from "../../components/Image"
 import SideScroller from "../../components/SideScroller"
-import NextProject from "../../components/NextProject"
 import TextLink from "../../components/TextLink"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -30,9 +32,6 @@ import people from "../../data/people"
 
 
 class Vai extends Component {
-
-	static propTypes = {
-	}
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
@@ -98,7 +97,7 @@ class Vai extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify objects in video.`]}
+					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify people & products in video.`]}
 					// headerText={[`The`, <span className="outline"><span>Rationalized </span></span>, `player unified the UX across NBCU video players.`]}
 					/>
 				</ScrollSection>
@@ -174,30 +173,11 @@ class Vai extends Component {
 					`,
 				 	backgroundPosition: this.props.isMobile ? "center" : "center 30%"
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>October, 2017</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>NBCUX Lab</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Kennix Lee"]}>Kennix Lee</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Jing Zhao"]}>Jing Zhao</a></TextLink> 
-							</blockquote> 
-						</div>
-					</div>
+					<DetailsBlock 
+					role="Lead UI/UX Designer" 
+					date="October, 2017" 
+					client="NBCUX Lab" 
+					team={["Mina Azimov","Kennix Lee", "Oleksandr Lebedyev", "Jing Zhao"]}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -304,7 +284,7 @@ class Vai extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}>
-					<NextProject name="Translator" to="translator"/>
+					<NextProjectBlock name="Translator" to="translator"/>
 				</ScrollSection>
 
 

@@ -15,12 +15,12 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
-
 import Image from "../../components/Image"
 import IFrame from "../../components/IFrame"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -395,18 +395,8 @@ class AmericanMade extends Component {
 					),
 					url(../assets/img/vai/banner-mod.gif)
 				`}}>
-					<NextProject name="V.ai" to="vai"/>
+					<NextProjectBlock name="V.ai" to="vai"/>
 				</ScrollSection>
-
-				{/*<NextProject 
-				to="/vai"
-				name="V.ai"
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/vai/banner.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .6`,
-				}}/>*/}
 
 			</article>
 		);

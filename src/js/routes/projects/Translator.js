@@ -15,11 +15,12 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
-
 import Image from "../../components/Image"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -165,33 +166,9 @@ class Translator extends Component {
 				style={{ 
 					// backgroundImage: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead UI/UX Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>June, 2017</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>NBCU On-Air</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Mina Azimov"]}>Mina Azimov</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Kennix Lee"]}>Kennix Lee</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Oleksandr Lebedyev"]}>Oleksandr Lebedyev</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Jing Zhao"]}>Jing Zhao</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink> 
-							</blockquote> 
-						</div>
-					</div>
-
+					<DetailsBlock role="Lead UI/UX Designer" date="Spring, 2017" client="NBCU On-Air" team={["Mina Azimov", "Kennix Lee", "Oleksandr Lebedyev", "Jing Zhao", "Poplar Bai"]}/>
 				</ScrollSection>}
+
 
 				<ScrollSection 
 				name={sections[2]}
@@ -341,7 +318,7 @@ class Translator extends Component {
 					backgroundSize: '40%',
 					backgroundPosition: '-36% -180%',
 				}}>
-					<NextProject name="J&J Home" to="jnj-home"/>
+					<NextProjectBlock name="J&J Home" to="jnj-home"/>
 				</ScrollSection>
 
 			</article>

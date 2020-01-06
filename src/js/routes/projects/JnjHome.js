@@ -15,12 +15,12 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import IFrame from "../../components/IFrame"
 import TextLink from "../../components/TextLink"
-
 import Image from "../../components/Image"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -294,7 +294,7 @@ class JnjHome extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: '50% 80%',
 				}}>
-					<NextProject name="J&J MDC" to="jnj-mdc"/>
+					<NextProjectBlock name="J&J MDC" to="jnj-mdc"/>
 				</ScrollSection>
 
 

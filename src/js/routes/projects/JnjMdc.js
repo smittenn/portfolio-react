@@ -15,11 +15,12 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import TextLink from "../../components/TextLink"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -191,15 +192,15 @@ class JnjMdc extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Role</h6>
-							<blockquote class="mb0">Sr. Interaction Designer</blockquote>
+							<blockquote>Sr. Interaction Designer</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Date</h6>
-							<blockquote class="mb0">Fall, 2018</blockquote>
+							<blockquote>Fall, 2018</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
 							<h6 className="uppercase">Client</h6>
-							<blockquote class="mb0">J&J Consumer</blockquote> 
+							<blockquote>J&J Consumer</blockquote> 
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
 							<h6 className="uppercase">Team</h6>
@@ -350,20 +351,8 @@ class JnjMdc extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-					<NextProject name="Wrap Interactions" to="micro-app-interactions"/>
+					<NextProjectBlock name="Wrap Interactions" to="micro-app-interactions"/>
 				</ScrollSection>
-				{/*<NextProject 
-								to="/micro-app-interactions"
-								name="Micro App Interactions"
-								sections={sections} 
-								activeSection={activeSection}
-								black
-								style={{ 
-									backgroundImage: `url(../assets/img/card-components/share-animation-zoomed-out.gif)`, 
-									backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .8`,
-									backgroundSize: 'contain',
-									backgroundPosition: 'center',
-								}}/>*/}
 
 
 			</article>

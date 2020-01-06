@@ -16,13 +16,13 @@ import ScrollSection from "../../components/ScrollSection"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
-import NextProject from "../../components/NextProject"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
-
 import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import Video from "../../components/Video"
+
+import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -433,7 +433,7 @@ class MicroAppTemplates extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-					<NextProject name="Perforce" to="perforce"/>
+					<NextProjectBlock name="Perforce" to="perforce"/>
 				</ScrollSection>
 			</article>
 		);
