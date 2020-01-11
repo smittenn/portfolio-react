@@ -46763,17 +46763,17 @@ var About = function (_Component) {
 							null,
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 								_react2.default.createElement(_Image2.default, { src: "../assets/img/about/hello-world1.jpg", aspectRatioWidth: 4, aspectRatioHeight: 3 })
 							),
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 								_react2.default.createElement(_Video2.default, { src: "../assets/img/about/no-chill.mp4", loop: true })
 							),
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 								_react2.default.createElement(_Video2.default, { src: "../assets/img/about/cube.mp4", loop: true })
 							)
 						)
@@ -46816,27 +46816,27 @@ var About = function (_Component) {
 						{ style: { filter: 'grayscale(0)' } },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/ocean.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/me3.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/lands-end.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/mist.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-6 grid__item--col-11-medium" },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/standing.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						)
 					)
@@ -47113,7 +47113,7 @@ var Home = function (_Component) {
 							_this2.setActiveSection(0);
 						} },
 					_react2.default.createElement(_ParallaxHeader2.default, {
-						headerText: ["Eric C. Smith is a digital", _react2.default.createElement(
+						headerText: ["Eric C. Smith is an ", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -47841,7 +47841,7 @@ var Resume = function (_Component) {
 								_react2.default.createElement(
 									"h3",
 									{ className: "mb0" },
-									["Eric C. Smith is an", _react2.default.createElement(
+									["Eric C. Smith is an ", _react2.default.createElement(
 										"span",
 										{ key: 0 },
 										_react2.default.createElement(
@@ -48547,6 +48547,10 @@ var _NextProjectBlock = require("../../components/blocks/NextProjectBlock");
 
 var _NextProjectBlock2 = _interopRequireDefault(_NextProjectBlock);
 
+var _DetailsBlock = require("../../components/blocks/DetailsBlock");
+
+var _DetailsBlock2 = _interopRequireDefault(_DetailsBlock);
+
 var _splitWord = require("../../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
@@ -48761,105 +48765,7 @@ var AmericanMade = function (_Component) {
 							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .6),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .6)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/american-made/s07-synopsis.jpg)",
 							backgroundPosition: "20% 70%"
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Role"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Lead UI/UX Designer"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Date"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Summer, 2017"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Client"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Universal Pictures"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3  grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Team"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								{ className: "mb0" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Mina Azimov"], target: "_blank" },
-										"Mina Azimov"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Poplar Bai"], target: "_blank" },
-										"Poplar Bai"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Audrey Tse"], target: "_blank" },
-										"Audrey Tse"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Oleksandr Lebedyev"], target: "_blank" },
-										"Oleksandr Lebedyev"
-									)
-								)
-							)
-						)
-					)
+					_react2.default.createElement(_DetailsBlock2.default, { role: "Lead UI/UX Designer", date: "Summer, 2017", client: "Universal Pictures", team: ["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -49259,7 +49165,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],176:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/DetailsBlock":154,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],176:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49331,6 +49237,10 @@ var _Image2 = _interopRequireDefault(_Image);
 var _NextProjectBlock = require("../../components/blocks/NextProjectBlock");
 
 var _NextProjectBlock2 = _interopRequireDefault(_NextProjectBlock);
+
+var _DetailsBlock = require("../../components/blocks/DetailsBlock");
+
+var _DetailsBlock2 = _interopRequireDefault(_DetailsBlock);
 
 var _splitWord = require("../../services/splitWord");
 
@@ -49543,115 +49453,7 @@ var JnjHome = function (_Component) {
 							backgroundRepeat: 'repeatX',
 							backgroundSize: this.props.isMobile ? 'cover' : '50%'
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Role"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"UX/Motion Designer"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Date"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"October 2019"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Client"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"J&J People XD"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Team"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								{ className: "mb0" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Alex Gross"] },
-										"Alex Gross"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Chris Purcell"] },
-										"Chris Purcell"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Katrina Corcoran"] },
-										"Katrina Corcoran"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Howard Chambers"] },
-										"Howard Chambers"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Alisha Austin"] },
-										"Alisha Austin"
-									)
-								)
-							)
-						)
-					)
+					_react2.default.createElement(_DetailsBlock2.default, { role: "UX/Motion Designer", date: "Spring, 2018", client: "J&J People XD", team: ["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -49908,7 +49710,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjHome);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],177:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/DetailsBlock":154,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],177:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -49980,6 +49782,10 @@ var _TextLink2 = _interopRequireDefault(_TextLink);
 var _NextProjectBlock = require("../../components/blocks/NextProjectBlock");
 
 var _NextProjectBlock2 = _interopRequireDefault(_NextProjectBlock);
+
+var _DetailsBlock = require("../../components/blocks/DetailsBlock");
+
+var _DetailsBlock2 = _interopRequireDefault(_DetailsBlock);
 
 var _splitWord = require("../../services/splitWord");
 
@@ -50190,125 +49996,7 @@ var JnjMdc = function (_Component) {
 							backgroundRepeat: 'repeatX',
 							backgroundSize: 'cover'
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Role"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Sr. Interaction Designer"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Date"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Fall, 2018"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Client"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"J&J Consumer"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Team"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								{ "class": "mb0" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Matthew Abate"] },
-										"Matthew Abate"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Laura Hines"] },
-										"Laura Hines"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Stephanie Skuzenski"] },
-										"Stephanie Skuzenski"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Jinny Kim"] },
-										"Jinny Kim"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Mark Patience"] },
-										"Mark Patience"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Katrina Corcoran"] },
-										"Katrina Corcoran"
-									)
-								)
-							)
-						)
-					)
+					_react2.default.createElement(_DetailsBlock2.default, { role: "Sr. Interaction Designer", date: "Fall, 2018", client: "J&J Consumer", team: ["Matthew Abate", "Laura Hines", "Stephanie Skuzenski", "Jinny Kim", "Mark Patience", "Katrina Corcoran"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -50613,7 +50301,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjMdc);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],178:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/DetailsBlock":154,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],178:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50677,6 +50365,10 @@ var _TextLink2 = _interopRequireDefault(_TextLink);
 var _NextProjectBlock = require("../../components/blocks/NextProjectBlock");
 
 var _NextProjectBlock2 = _interopRequireDefault(_NextProjectBlock);
+
+var _DetailsBlock = require("../../components/blocks/DetailsBlock");
+
+var _DetailsBlock2 = _interopRequireDefault(_DetailsBlock);
 
 var _IFrame = require("../../components/IFrame");
 
@@ -50896,116 +50588,7 @@ var MicroAppInteractions = function (_Component) {
 							backgroundPosition: 'bottom',
 							backgroundBlendMode: 'normal'
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Role"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Creative Techonologist"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Date"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Fall, 2016"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Client"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Wrap Media"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Team"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								{ className: "mb0" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Pete Petras"] },
-										"Pete Petras"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Josh Bloom"] },
-										"Josh Bloom"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Jeff Klein"] },
-										"Jeff Klein"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Mei Yeh"] },
-										"Mei Yeh"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Theo Arguna"] },
-										"Theo Arguna"
-									)
-								),
-								",\xA0"
-							)
-						)
-					)
+					_react2.default.createElement(_DetailsBlock2.default, { role: "Creative Developer", date: "Fall, 2016", client: "Wrap Media", team: ["Pete Petras", "Josh Bloom", "Jeff Klein", "Mei Yeh", "Theo Arguna"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -51299,7 +50882,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppInteractions);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/Video":153,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],179:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/Video":153,"../../components/blocks/DetailsBlock":154,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],179:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51375,6 +50958,10 @@ var _Video2 = _interopRequireDefault(_Video);
 var _NextProjectBlock = require("../../components/blocks/NextProjectBlock");
 
 var _NextProjectBlock2 = _interopRequireDefault(_NextProjectBlock);
+
+var _DetailsBlock = require("../../components/blocks/DetailsBlock");
+
+var _DetailsBlock2 = _interopRequireDefault(_DetailsBlock);
 
 var _splitWord = require("../../services/splitWord");
 
@@ -51589,105 +51176,7 @@ var MicroAppTemplates = function (_Component) {
 							backgroundSize: 'cover',
 							backgroundPosition: 'bottom'
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Role"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"UX/Visual Designer"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Date"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Fall, 2015"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Client"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Wrap Media"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Team"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								{ className: "mb0" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Pete Petras"] },
-										"Pete Petras"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Mei Yeh"] },
-										"Mei Yeh"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Theo Arguna"] },
-										"Theo Arguna"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Cameron Myers"] },
-										"Cameron Myers"
-									)
-								)
-							)
-						)
-					)
+					_react2.default.createElement(_DetailsBlock2.default, { role: "UX/Visual Designer", date: "Fall, 2015", client: "Wrap Media", team: ["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -52152,7 +51641,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppTemplates);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/Video":153,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],180:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/IFrame":140,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/Video":153,"../../components/blocks/DetailsBlock":154,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],180:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -52224,6 +51713,10 @@ var _Video2 = _interopRequireDefault(_Video);
 var _NextProjectBlock = require("../../components/blocks/NextProjectBlock");
 
 var _NextProjectBlock2 = _interopRequireDefault(_NextProjectBlock);
+
+var _DetailsBlock = require("../../components/blocks/DetailsBlock");
+
+var _DetailsBlock2 = _interopRequireDefault(_DetailsBlock);
 
 var _splitWord = require("../../services/splitWord");
 
@@ -52428,105 +51921,7 @@ var Perforce = function (_Component) {
 							backgroundImage: "linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)",
 							backgroundBlendMode: 'normal'
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Role"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"UI/UX Designer"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Date"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Summer, 2015"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-2  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Client"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								null,
-								"Perforce Cloud"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-3  grid__item--col-6-medium" },
-							_react2.default.createElement(
-								"h6",
-								{ className: "uppercase" },
-								"Team"
-							),
-							_react2.default.createElement(
-								"blockquote",
-								{ className: "mb0" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Janet Taylor"] },
-										"Janet Taylor"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Rebecca Jablonski"] },
-										"Rebecca Jablonski"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["Sean Ardley"] },
-										"Sean Ardley"
-									)
-								),
-								",\xA0",
-								_react2.default.createElement(
-									_TextLink2.default,
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: _people2.default["David Taylor"] },
-										"David Taylor"
-									)
-								)
-							)
-						)
-					)
+					_react2.default.createElement(_DetailsBlock2.default, { role: "UI/UX Designer", date: "Summer, 2015", client: "Perforce UX", team: ["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -52726,7 +52121,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Perforce);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/Video":153,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],181:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/Image":142,"../../components/ParallaxHeader":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/Video":153,"../../components/blocks/DetailsBlock":154,"../../components/blocks/NextProjectBlock":155,"../../data/people":158,"../../services/hexToRgb":186,"../../services/palette":188,"../../services/splitLetter":189,"../../services/splitWord":190,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -358,14 +358,14 @@ h6 {
 p {
   font-family: "Moderat", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.61803398875;
   white-space: pre-line;
   margin-bottom: 24px; }
 
 blockquote {
   font-family: "Moderat", sans-serif;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.61803398875;
   white-space: pre-line;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -419,6 +419,9 @@ a {
 
 *.m0 {
   margin: 0; }
+
+*.p0 {
+  padding: 0; }
 
 hr {
   opacity: 0.05;
@@ -2134,7 +2137,9 @@ section p span > span, section blockquote span > span {
   .active-section section p .split--word > span, .active-section section p .split--letter > span, .active-section section blockquote .split--word > span, .active-section section blockquote .split--letter > span {
     opacity: 1;
     transform: translate3d(0, 0, 0) skewX(0deg);
-    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-property: transform, opacity; }
 
 /* Components */
 .cursor {
@@ -2183,10 +2188,6 @@ section p span > span, section blockquote span > span {
   .cursor--visible {
     opacity: 1; }
   .cursor--hovering .cursor__outer circle {
-    -ms-transform: scale(1.5);
-    transform: scale(1.5); }
-  .cursor--hovering .cursor__inner {
-    opacity: 0;
     -ms-transform: scale(1.5);
     transform: scale(1.5); }
 
@@ -3651,7 +3652,7 @@ section p span > span, section blockquote span > span {
     font-size: 26px; }
   blockquote {
     font-size: 19px;
-    margin-bottom: 21px; } }
+    margin-bottom: 26px; } }
 
 @media screen and (max-width: 320px) {
   h1 {

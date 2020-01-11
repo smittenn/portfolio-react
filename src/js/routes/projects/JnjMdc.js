@@ -21,6 +21,7 @@ import Image from "../../components/Image"
 import TextLink from "../../components/TextLink"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -188,33 +189,7 @@ class JnjMdc extends Component {
 					backgroundRepeat: 'repeatX',
 					backgroundSize: 'cover',
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>Sr. Interaction Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2018</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>J&J Consumer</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote class="mb0">
-								<TextLink><a href={people["Matthew Abate"]}>Matthew Abate</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Laura Hines"]}>Laura Hines</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Stephanie Skuzenski"]}>Stephanie Skuzenski</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Jinny Kim"]}>Jinny Kim</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Mark Patience"]}>Mark Patience</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>
-								{/*<TextLink><a href={people["Kate Peoples"]}>Kate Peoples</a></TextLink>*/}
-							</blockquote> 
-						</div>
-					</div>
+					<DetailsBlock role="Sr. Interaction Designer" date="Fall, 2018" client="J&J Consumer" team={["Matthew Abate", "Laura Hines", "Stephanie Skuzenski", "Jinny Kim", "Mark Patience", "Katrina Corcoran"]}/>
 				</ScrollSection>
 
 

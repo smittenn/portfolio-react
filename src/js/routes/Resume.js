@@ -70,7 +70,7 @@ class Resume extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
-								<h3 className="mb0">{[`Eric C. Smith is an` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
+								<h3 className="mb0">{[`Eric C. Smith is an ` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">

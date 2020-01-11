@@ -104,13 +104,13 @@ class About extends Component {
 					</div>
 					<div style={{ filter: 'grayscale(1)' }}>
 					<SideScroller>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/about/hello-world1.jpg" aspectRatioWidth={4} aspectRatioHeight={3}/>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Video src="../assets/img/about/no-chill.mp4" loop/>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Video src="../assets/img/about/cube.mp4" loop/>
 						</div>
 					</SideScroller>
@@ -132,19 +132,19 @@ class About extends Component {
 						</div>
 					</div>
 					<SideScroller style={{ filter: 'grayscale(0)' }}>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/ocean.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/me3.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/lands-end.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/mist.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
-						<div className="grid__item grid__item--col-6 grid__item--col-11-medium">
+						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/standing.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
 					</SideScroller>

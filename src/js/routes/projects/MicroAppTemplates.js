@@ -23,6 +23,7 @@ import Image from "../../components/Image"
 import Video from "../../components/Video"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -173,30 +174,7 @@ class MicroAppTemplates extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>UX/Visual Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2015</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>Wrap Media</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Mei Yeh"]}>Mei Yeh</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Theo Arguna"]}>Theo Arguna</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Cameron Myers"]}>Cameron Myers</a></TextLink>
-							</blockquote> 
-						</div>
-					</div>
+					<DetailsBlock role="UX/Visual Designer" date="Fall, 2015" client="Wrap Media" team={["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"]} />
 				</ScrollSection>
 
 				<ScrollSection 

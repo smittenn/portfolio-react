@@ -19,6 +19,7 @@ import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
@@ -167,31 +168,7 @@ class MicroAppInteractions extends Component {
 					backgroundPosition: 'bottom',
 					backgroundBlendMode: 'normal',
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>Creative Techonologist</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>Fall, 2016</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>Wrap Media</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Pete Petras"]}>Pete Petras</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Josh Bloom"]}>Josh Bloom</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Jeff Klein"]}>Jeff Klein</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Mei Yeh"]}>Mei Yeh</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Theo Arguna"]}>Theo Arguna</a></TextLink>,&nbsp;
-							</blockquote> 
-						</div>
-					</div>
+					<DetailsBlock role="Creative Developer" date="Fall, 2016" client="Wrap Media" team={["Pete Petras", "Josh Bloom", "Jeff Klein", "Mei Yeh", "Theo Arguna"]} />
 				</ScrollSection>
 
 				<ScrollSection 

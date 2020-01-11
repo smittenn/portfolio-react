@@ -21,6 +21,7 @@ import Image from "../../components/Image"
 import Video from "../../components/Video"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -160,7 +161,7 @@ class Perforce extends Component {
 				</ScrollSection>
 
 
-				{<ScrollSection 
+				<ScrollSection 
 				name={sections[2]}
 				black
 				disableSectionNumber
@@ -171,32 +172,8 @@ class Perforce extends Component {
 					backgroundImage: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
 					backgroundBlendMode: 'normal',
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>UI/UX Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>Summer, 2015</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-6-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>Perforce Cloud</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-6-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Janet Taylor"]}>Janet Taylor</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Rebecca Jablonski"]}>Rebecca Jablonski</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Sean Ardley"]}>Sean Ardley</a></TextLink>,&nbsp;
-								<TextLink><a href={people["David Taylor"]}>David Taylor</a></TextLink>
-							</blockquote> 
-						</div>
-					</div>
-
-				</ScrollSection>}
+					<DetailsBlock role="UI/UX Designer" date="Summer, 2015" client="Perforce UX" team={["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]} />
+				</ScrollSection>
 
 				<ScrollSection 
 				name={sections[2]}

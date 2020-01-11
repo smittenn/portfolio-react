@@ -191,7 +191,9 @@ section {
 				> span {
 					opacity: 1;
 					transform: translate3d(0,0,0) skewX(0deg);
-					transition: all $duration-medium $easing1;
+					transition-duration: $duration-medium;
+					transition-timing-function: $easing1;
+					transition-property: transform, opacity;
 				}	
 			} 
 		}

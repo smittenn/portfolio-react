@@ -21,6 +21,7 @@ import Image from "../../components/Image"
 import IFrame from "../../components/IFrame"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -172,30 +173,7 @@ class AmericanMade extends Component {
 						url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundPosition: `20% 70%`,
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>Lead UI/UX Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>Summer, 2017</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2  grid__item--col-12-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>Universal Pictures</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3  grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Mina Azimov"]} target="_blank">Mina Azimov</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Poplar Bai"]} target="_blank">Poplar Bai</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Audrey Tse"]} target="_blank">Audrey Tse</a></TextLink>,&nbsp;
-								<TextLink><a href={people["Oleksandr Lebedyev"]} target="_blank">Oleksandr Lebedyev</a></TextLink>
-							</blockquote> 
-						</div>
-					</div>
+					<DetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Pictures" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
 				</ScrollSection>
 
 				{/*<ScrollSection 

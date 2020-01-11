@@ -21,6 +21,7 @@ import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
+import DetailsBlock from "../../components/blocks/DetailsBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -161,31 +162,7 @@ class JnjHome extends Component {
 					backgroundRepeat: 'repeatX',
 					backgroundSize: this.props.isMobile ? 'cover' : '50%',
 				}}>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Role</h6>
-							<blockquote>UX/Motion Designer</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Date</h6>
-							<blockquote>October 2019</blockquote>
-						</div>
-						<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-							<h6 className="uppercase">Client</h6>
-							<blockquote>J&J People XD</blockquote> 
-						</div>
-						<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<h6 className="uppercase">Team</h6>
-							<blockquote className="mb0">
-								<TextLink><a href={people["Alex Gross"]}>Alex Gross</a></TextLink>,&nbsp; 
-								<TextLink><a href={people["Chris Purcell"]}>Chris Purcell</a></TextLink>,&nbsp; 
-								<TextLink><a href={people["Katrina Corcoran"]}>Katrina Corcoran</a></TextLink>,&nbsp; 
-								<TextLink><a href={people["Howard Chambers"]}>Howard Chambers</a></TextLink>,&nbsp; 
-								<TextLink><a href={people["Alisha Austin"]}>Alisha Austin</a></TextLink>
-							</blockquote> 
-						</div>
-					</div>
+					<DetailsBlock role="UX/Motion Designer" date="Spring, 2018" client="J&J People XD" team={["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"]} />
 				</ScrollSection>
 
 				<ScrollSection 
