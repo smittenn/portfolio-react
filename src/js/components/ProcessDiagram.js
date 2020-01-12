@@ -113,10 +113,10 @@ class ProcessDiagram extends Component {
 
 	generateTitle = () => (
 		<div className="title" key={this.data.indexOf(this.state.activeItem)}>
-			<h3>
+			<h4>
 				<Icon icon={this.state.activeItem.iconName} size={96} strokeWidth={2} color={palette('brand-white')}/>
 				{/*<i className={"iconcss icon-" + this.state.activeItem.iconName }/>*/}
-			</h3>
+			</h4>
 			<h3 /*className={ activeIndex ? null : "mb0"}*/>{ splitLetter(this.state.activeItem.title) }</h3>
 			<blockquote className="mb0">{ this.state.activeItem.body ? splitWord(this.state.activeItem.body) : null }</blockquote>
 		</div>

@@ -52,7 +52,7 @@ export default class ScrollSection extends Component {
 							<div className="grid">
 								<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
 								<div className="grid__item--col-10 grid__item--col-12-medium">
-									<p className="mb0">{splitLetter(pad((sections.indexOf(name) + 1), 2) + ".")}</p>
+									<p className="scrolling-section__number mb0">{splitLetter(pad((sections.indexOf(name) + 1), 2) + ".")}</p>
 								</div>
 							</div>
 						) : null }

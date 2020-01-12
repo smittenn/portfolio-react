@@ -104,7 +104,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `The`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `site told the story of the movie.`]}
+					headerText={[ `The`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `film site told the story of the movie`]}
 					/>
 				</ScrollSection>
 
@@ -119,7 +119,7 @@ class AmericanMade extends Component {
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 								<blockquote className="drop-caps mr">
-									Our team took a deep dive into the story of American Made when the NBCUX Lab partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+									The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
 								</blockquote>
 								<blockquote className="mr">
 									The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
@@ -367,13 +367,15 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `
-					radial-gradient(
-						rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
-						rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
-					),
-					url(../assets/img/vai/banner-mod.gif)
-				`}}>
-					<NextProjectBlock name="V.ai" to="vai"/>
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
+						),
+						url(../assets/img/vai/mobile.png)
+					`,
+					backgroundSize: '50%'
+				}}>
+					<NextProjectBlock name="V.ai Player" to="vai"/>
 				</ScrollSection>
 
 			</article>

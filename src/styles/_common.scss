@@ -115,11 +115,6 @@ section {
 		}
 	}
 
-	p {
-		height: 0;
-		transform: translate(-36px, -12px);
-	}
-
 	.spacer {
 		&__sm {
 			min-height: 60px;
@@ -146,6 +141,12 @@ section {
 .#{$scrolling-section-classname} {
 	> div {
 		position: relative;
+	}
+
+	&__number {
+		line-height: 1;
+		height: 0;
+		transform: translate(-36px, -12px);
 	}
 
 	&--black {

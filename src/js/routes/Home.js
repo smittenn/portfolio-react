@@ -73,9 +73,9 @@ class Home extends Component {
 				name: "V.ai Player",
 				href: "/vai",
 				tags: [ "UX", "Interactive" ],
-				img: "../assets/img/vai/mobile.png",
-				aspectRatioWidth: 3,
-				aspectRatioHeight: 2,
+				img: "../assets/img/vai/mobile-16x9.png",
+				aspectRatioWidth: 16,
+				aspectRatioHeight: 9,
 			},
 			{
 				name: "Translator",
@@ -156,7 +156,7 @@ class Home extends Component {
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`Eric C. Smith is an `, <span><span className="outline">Interactive </span></span>, <span><span className="outline">Designer </span></span>, `in New York City.`]} 
+					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive </span></span>, <span><span className="outline">Designer </span></span>, `in New York City`]} 
 					/>
 				</ScrollSection>
 

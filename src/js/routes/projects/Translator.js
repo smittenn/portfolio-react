@@ -95,14 +95,19 @@ class Translator extends Component {
 				<ScrollSection 
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/translator/banner.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .0`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .06),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)
+						),
+						url(../assets/img/translator/banner.gif)
+					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Translator </span></span>, `helped film crews catalog footage at NBCU.`]}
+					headerText={[ <span><span className="outline">Translator </span></span>, `helped film crews catalog footage at NBCU`]}
 					/>
 				</ScrollSection>
 
@@ -181,7 +186,7 @@ class Translator extends Component {
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Collections</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. Users can choose a list or masonry grid view to their liking.</blockquote>
+								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. {/*Users can choose a list or masonry grid view to their liking.*/}</blockquote>
 							</div>
 						</div>
 					</div>

@@ -4,6 +4,6 @@
     <title>uEA03-download</title>
     <desc>Created with Sketch.</desc>
     <g id="uEA03-download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M25.9212464,10 L29,10 C31.209139,10 33,11.790861 33,14 L33,31 C33,33.209139 31.209139,35 29,35 L11,35 C8.790861,35 7,33.209139 7,31 L7,14 C7,11.790861 8.790861,10 11,10 L13.9289244,10 M20,4 L20,27 M12.5,19.5 L20,26.666 M27.5,19.5 L20,26.666" id="Combined-Shape" stroke="#000000"></path>
+        <path d="M25.9212464,10 L33,10 L33,35 L7,35 L7,10 L13.9289244,10 M20,4 L20,27 M12.5,19.5 L20,26.666 M27.5,19.5 L20,26.666" id="outlines" stroke="#000000"></path>
     </g>
 </svg>

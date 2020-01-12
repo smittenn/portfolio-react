@@ -83,7 +83,7 @@ class About extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`In my free time make`, <span><span className="outline">3d art, </span></span>, `snap`, <span><span className="outline">photos </span></span>, `and create prints.`]} 
+					headerText={[`In my free time make`, <span><span className="outline">3d art, </span></span>, `snap`, <span><span className="outline">photos </span></span>, `and create prints`]} 
 					/>
 				</ScrollSection>
 

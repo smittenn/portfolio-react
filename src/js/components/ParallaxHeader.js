@@ -73,7 +73,7 @@ class ParallaxHeader extends Component {
 		let updatedText = [];
 
 		headerText.forEach((item, idx) => {
-			typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx })
+			typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx, className: 'split--word' })
 		})
 
 		// const opacity = Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.0025))), 1);

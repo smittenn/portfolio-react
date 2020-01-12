@@ -74,13 +74,15 @@
 		}
 	}
 
-	section {
-		padding: 60px 0;
-
-		p {
+	.#{$scrolling-section-classname} {
+		&__number {
 			transform: none;
 			height: auto;
 		}
+	}
+
+	section {
+		padding: 60px 0;
 
 		.spacer {
 			&__sm {

@@ -86,18 +86,17 @@ class Vai extends Component {
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)
 						),
 						url(../assets/img/vai/mobile.png)
 					`, 
-					backgroundSize: (this.props.isMobile ? '120%' : '60%'),
-					backgroundPosition: (this.props.isMobile ? '-230% -560%' : '60% -560%'),
-					backgroundRepeat: 'round'
+					backgroundSize: (this.props.isMobile ? '120%' : '60% 120%'),
+					backgroundPosition: (this.props.isMobile ? '-230% -560%' : '60% -280%'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`The`, <span className="outline"><span>V.ai </span></span>, `player uses AI to identify people & products in video.`]}
+					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to identify objects in video`]}
 					// headerText={[`The`, <span className="outline"><span>Rationalized </span></span>, `player unified the UX across NBCU video players.`]}
 					/>
 				</ScrollSection>

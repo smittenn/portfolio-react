@@ -94,7 +94,7 @@ class JnjHome extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span className="outline"><span>Home </span></span>, `is a place for employees to connect and create.`]}
+					headerText={[ <span><span className="outline">Home </span></span>, `is a place for employees to connect and create`]}
 					/>
 				</ScrollSection>
 
