@@ -49,6 +49,20 @@ table {
 
 /* Libraries */
 @font-face {
+  font-family: 'Hurme';
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot");
+  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff2") format("woff2"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff") format("woff"), url("../fonts/Hurme/Hurme-SemiBold-alt.otf") format("truetype"), url("../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Hurme';
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Hurme/Hurme-Bold.eot");
+  src: url("../fonts/Hurme/Hurme-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-Bold.woff2") format("woff2"), url("../fonts/Hurme/Hurme-Bold.woff") format("woff"), url("../fonts/Hurme/Hurme-Bold.otf") format("truetype"), url("../fonts/Hurme/Hurme-Bold.svg#codropsicons") format("svg"); }
+
+@font-face {
   font-family: 'Smitten';
   font-weight: 400;
   font-style: normal;
@@ -339,12 +353,12 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 
 h1, h2, h3, h4, h5, h6 {
   position: relative;
-  font-family: "Smitten", sans-serif; }
+  font-family: "Hurme", sans-serif; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     white-space: pre; }
 
 h1, h2, h3, h4 {
-  font-weight: 500; }
+  font-weight: 600; }
 
 h5, h6 {
   font-weight: 700; }
@@ -407,7 +421,7 @@ blockquote {
   .drop-caps:first-letter {
     float: left;
     font-size: 60px;
-    font-family: "Smitten", sans-serif;
+    font-family: "Hurme", sans-serif;
     font-weight: 800;
     margin: 0 24px 0 0;
     padding-top: 9px;
@@ -3129,7 +3143,7 @@ section p span > span, section blockquote span > span {
   background: #232021; }
 
 [class*="react-sandbox-editor"].sandbox__tab {
-  font-family: "Smitten", sans-serif; }
+  font-family: "Hurme", sans-serif; }
   [class*="react-sandbox-editor"].sandbox__tab:hover {
     color: #ff3636; }
 
