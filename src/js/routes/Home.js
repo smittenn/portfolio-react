@@ -328,6 +328,11 @@ class Home extends Component {
 							</h2>
 							<h2 className="">
 								<TextLink isBlack hideUnderline>
+									<a target="_blank" href="//dribbble.com/erchsm">Dribbble</a>
+								</TextLink>
+							</h2>
+							<h2 className="">
+								<TextLink isBlack hideUnderline>
 									<a target="_blank" href="//www.instagram.com/e.smitten">Instagram</a>
 								</TextLink>
 							</h2>
