@@ -35,8 +35,16 @@ $baseclass: cursor;
 		}
 	}
 
-	&__inner {
+	&__inner, &__text {
 		transition: all $easing4 $duration-short;
+	}
+
+	&__text {
+		color: $brand-white;
+		opacity: 0;
+	}
+
+	&__inner {
 		position: absolute;
 		height: 6px;
 		width: 6px;
@@ -63,8 +71,12 @@ $baseclass: cursor;
 			// opacity: 0;
 		}
 
+		.#{$baseclass}__text {
+			opacity: 1;
+		}
+
 		.#{$baseclass}__inner {
-			// opacity: 0;
+			opacity: 0;
 			// transform: scale(1.5);
 			// background: transparent;
 			// border: solid .1px $brand-white;

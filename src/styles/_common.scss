@@ -91,7 +91,7 @@ iframe {
 }
 
 section {
-	padding: 120px 0;
+	padding: 132px 0;
 	position: relative;
 	overflow: hidden;
 	height: auto;
@@ -144,14 +144,19 @@ section {
 	}
 
 	&__number {
-		line-height: 1;
-		height: 0;
-		transform: translate(-36px, -12px);
+		// line-height: 1;
+		// height: 0;
+		transform: translate(-24px, 0);
 	}
 
 	&--black {
 		section {
-			background-color: $brand-black;			
+			background-color: $brand-black;
+			// background-image: linear-gradient(
+			// 	45deg,
+			// 	$brand-black,
+			// 	darken($brand-black, 2%)
+			// )
 		}
 
 		h1, h2, h3, h4, h5, h6, p, blockquote, a {
@@ -166,8 +171,8 @@ section {
 			background-color: $brand-white;
 		}
 
-		.grid--lines, .grid__line {
-			color: rgba($brand-white, 0.05);
+		.grid__line {
+			background-color: rgba($brand-white, 0.05);
 		}
 
 		text {

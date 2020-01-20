@@ -1,9 +1,10 @@
 @media screen and (max-width: $bp-xlarge) {
 	h1 {
-		font-size: 108px;
+		font-size: px-to-rem(108px);
 	}
+
 	h2 {
-		font-size: 96px;
+		font-size: px-to-rem(96px);
 	}
 
 	section {
@@ -19,10 +20,11 @@
 
 @media screen and (max-width: $bp-large) {
 	h1 {
-		font-size: 96px;
+		font-size: px-to-rem(96px);
 	}
+
 	h2 {
-		font-size: 72px;
+		font-size: px-to-rem(72px);
 	}
 
 	section {
@@ -42,19 +44,24 @@
 	body {
 		cursor: auto !important;
 	}
+
 	.cursor {
 		display: none;
 	}
+
 	.active-section .logo {
 		display: none;
 	}
+
 	.grid {
 		padding: 0 48px;
 	}
+
 	.left-rail {
 		top: 36px;
 		width: 49px;
 	}
+
 	.grid {
 		&--lines {
 			// padding-right: 48px;
@@ -108,25 +115,25 @@
 	}
 
 	h1 {
-		font-size: 60px;
+		font-size: px-to-rem(60px);
 		margin-left: 0;
 		margin-bottom: 24px;
 		letter-spacing: $letter-spacing-xs;
 	}
 
 	h2 {
-		font-size: 48px;
+		font-size: px-to-rem(60px);
 		margin-left: 0;
 		margin-bottom: 18px;
 	}
 
 	h3 {
-		font-size: 40px;
+		font-size: px-to-rem(40px);
 		margin-bottom: 12px;
 	}
 
 	h4 {
-		font-size: 32px;
+		font-size: px-to-rem(32px);
 		margin-bottom: 9px;
 	}
 }
@@ -134,23 +141,27 @@
 
 @media screen and (max-width: $bp-small) {
 	h1 {
-		font-size: 48px;
+		font-size: px-to-rem(48px);
 	}
 
 	h2 {
-		font-size: 40px;
+		font-size: px-to-rem(40px);
 	}
 
 	h3 {
-		font-size: 36px;
+		font-size: px-to-rem(36px);
 	}
 
 	h4 {
-		font-size: 26px;
+		font-size: px-to-rem(26px);
+	}
+	
+	h5 {
+		font-size: px-to-rem(16px);
 	}
 	
 	blockquote {
-		font-size: 19px;
+		font-size: px-to-rem(19px);
 		margin-bottom: 26px;
 	}
 }
@@ -158,18 +169,18 @@
 
 @media screen and (max-width: $bp-xsmall) {
 	h1 {
-		font-size: 42px;
+		font-size: px-to-rem(42px);
 	}
 
 	h2 {
-		font-size: 38px;
+		font-size: px-to-rem(38px);
 	}
 
 	h3 {
-		font-size: 34px;
+		font-size: px-to-rem(34px);
 	}
 
 	h4 {
-		font-size: 24px;
+		font-size: px-to-rem(24px);
 	}
 }

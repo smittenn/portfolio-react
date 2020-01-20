@@ -22,6 +22,7 @@ import Video from "../../components/Video"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -117,47 +118,25 @@ class Perforce extends Component {
 				activeSection={activeSection}
 				disableSectionNumber
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. 
-								</blockquote>
-								<blockquote className="mr">
-									Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.
-								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<div className="grid__row">
-									<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
-										<Image src="../assets/img/perforce/sean.png" aspectRatioWidth={4} aspectRatioHeight={3} />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									My role on this project involved creating the visual designs and prototyping. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1="
+						The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. 
+						\n\n 
+						Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files."
+					col2="
+						Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. 
+						\n\n
+						Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.
+					" 
+					media={{
+						type: 'image', 
+						src: '../assets/img/perforce/sean.png', 
+						aspectRatioWidth: 4, 
+						aspectRatioHeight: 3 
+					}}
+					col3="My role on this project involved creating the visual designs and creating the prototype which we conducted user testing with. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project." 
+					col4="With the our new design, the unified system is more efficient. It eliminates the designer’s need to rely on creating versions manually of their files. "
+					/>
 				</ScrollSection>
 
 
@@ -172,7 +151,7 @@ class Perforce extends Component {
 					backgroundImage: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
 					backgroundBlendMode: 'normal',
 				}}>
-					<DetailsBlock role="UI/UX Designer" date="Summer, 2015" client="Perforce UX" team={["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]} />
+					<DetailsBlock role="User Experience Designer" date="Summer, 2015" client="Perforce UX" team={["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]} />
 				</ScrollSection>
 
 				<ScrollSection 

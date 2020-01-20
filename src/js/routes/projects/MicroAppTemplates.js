@@ -24,6 +24,7 @@ import Video from "../../components/Video"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -115,47 +116,22 @@ class MicroAppTemplates extends Component {
 				disableSectionNumber
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
-								</blockquote>
-								<blockquote className="mr">
-									“Well what is a Wrap?” might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new “page” of the traditional “app” is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
-								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<div className="grid__row">
-									<div className="grid__item grid__item--col-12">
-										<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr" >
-									On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designers would be put in charge of a single visual style family from end to end in the design process.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1='
+						Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
+						\n\n 
+						“Well what is a Wrap?” might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.'
+					col2="Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new “page” of the traditional “app” is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well." 
+					media={{
+						type: 'image', 
+						src: '../assets/img/card-components/perspective-cards.jpg', 
+						aspectRatioWidth: 8, 
+						aspectRatioHeight: 5 
+					}}
+					col3="On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process." 
+					col4="The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
+					/>
+
 				</ScrollSection>
 
 

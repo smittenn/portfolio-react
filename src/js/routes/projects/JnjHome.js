@@ -22,6 +22,7 @@ import Image from "../../components/Image"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -105,49 +106,27 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									The Home team dreamed of a better employee experience for J&J employees. While J&J's 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J. 
-								</blockquote>
-								<blockquote className="mr">
-									Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees.   
-								</blockquote>
-								<blockquote className="mr">
-									Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<div className="grid__row">
-									<div className="grid__item grid__item--col-12">
-										<Image src="../assets/img/jnj-home/connected.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J's people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1='
+						The Home team dreamed of a better employee experience for J&J employees. While J&J’s 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J.
+						\n\n 
+						Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
+					'
+					col2='
+						Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees.
+						\n\n
+						Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.
+					'
+					media={{
+						type: 'image', 
+						src: '../assets/img/jnj-home/connected.svg', 
+						aspectRatioWidth: 16, 
+						aspectRatioHeight: 9 
+					}}
+					col3='My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.'
+					col4='The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J’s people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.'
+					/>
+
 				</ScrollSection>
 
 

@@ -20,6 +20,7 @@ import TextLink from "../../components/TextLink"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
@@ -100,7 +101,7 @@ class MicroAppInteractions extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we created interactions within micro apps`]}
+					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `our team created interactions within micro apps`]}
 					/>
 				</ScrollSection>
 
@@ -113,43 +114,21 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
-								</blockquote>
-								<blockquote className="mr">
-									"Well what is a Wrap?" might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience. 
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.
-								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<Image src="../assets/img/card-components/perspective-cards.jpg" aspectRatioWidth={8} aspectRatioHeight={5} />
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1='
+						Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.
+						\n\n 
+						“Well what is a Wrap?” might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.'
+					col2='Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new "page" of the traditional "app" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.'
+					media={{
+						type: 'image', 
+						src: '../assets/img/card-components/perspective-cards.jpg', 
+						aspectRatioWidth: 8, 
+						aspectRatioHeight: 5 
+					}}
+					col3='On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.'
+					col4='The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.'
+					/>
 				</ScrollSection>
 
 

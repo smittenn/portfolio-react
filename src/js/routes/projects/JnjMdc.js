@@ -22,6 +22,7 @@ import TextLink from "../../components/TextLink"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -126,50 +127,27 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									We sought to consolidate J&J’s 250 websites across 6 medical device companies into a unified platform that reflected the new J&J brand. The final result, J&J MDC or “Medical Device Center” was a flexible design system which created a centralized experience for the companies.
-								</blockquote>
-								<blockquote className="mr">
-									J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
-								</blockquote>
-								<blockquote className="mr">
-									J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. 
-								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<div className="grid__row">
-									<div className="grid__item grid__item--col-12">
-										<Image src="../assets/img/jnj-mdc/running-man-16x9.png" aspectRatioWidth={16} aspectRatioHeight={9} />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1='
+						We sought to consolidate J&J’s 250 websites across 6 medical device companies into a unified platform that reflected the new J&J brand. The final result, J&J MDC or “Medical Device Center” was a flexible design system which created a centralized experience for the companies.
+						\n\n 
+						J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs.
+					'
+					col2='
+						In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
+						\n\n
+						J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives.
+					'
+					media={{
+						type: 'image', 
+						src: '../assets/img/jnj-mdc/running-man-16x9.png', 
+						aspectRatioWidth: 16, 
+						aspectRatioHeight: 9 
+					}}
+					col3='My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.'
+					col4='During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.'
+					/>
+
 				</ScrollSection>
 
 

@@ -36,18 +36,23 @@ export default class ScrollSection extends Component {
 			"scrolling-section--grey": this.props.grey
 		})
 
-		fullHeight ? Object.assign(style, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' }) : null
+		const updatedStyle = (() => {
+			if (style) { return style } else { return {} }
+		})()
 
+		if (fullHeight) {
+			Object.assign(updatedStyle, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' })
+		}
 		
 		return (
 			name ? (
 			<Element name={name} className={classnames}>
-				<IntersectionVisible 
+				<IntersectionVisible
 				onShow={(i) => i[0].target.classList.add("active-section")} 
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
 
-					<section style={style}>
-						<GridLines/>
+					<section style={updatedStyle}>
+						{<GridLines/>}
 						{ !disableSectionNumber ? (
 							<div className="grid">
 								<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
@@ -60,6 +65,7 @@ export default class ScrollSection extends Component {
 					</section>
 
 					<div className="clip-wrapper">
+						{/*<GridLines/>*/}
 						{ sections.length > 1 ? [
 							<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
 							,
@@ -83,16 +89,18 @@ export default class ScrollSection extends Component {
 			</Element>
 			) : (
 			<div className={classnames}>
-				<IntersectionVisible 
+				<IntersectionVisible
 				onShow={(i) => i[0].target.classList.add("active-section")} 
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
 					
-					<section style={style}>
-						<GridLines/>
+					<section style={updatedStyle}>
+						{<GridLines/>}
 						{ this.props.children }
 					</section>
 
 					<div className="clip-wrapper">
+						{/*<GridLines/>*/}
+
 						<Sidebar 
 						sections={sections} 
 						activeSection={activeSection}/>

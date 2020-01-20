@@ -2,6 +2,9 @@ import React, {Component} from "react"
 import classNames from "classnames"
 import IntersectionVisible from "react-intersection-visible"
 
+import palette from "../services/palette"
+import hexToRgb from "../services/hexToRgb"
+
 export default class Image extends Component {
 
 	constructor(props) {
@@ -26,6 +29,8 @@ export default class Image extends Component {
 
 
 	render() {
+
+		const brandBlack = hexToRgb(palette("brand-black"));
 
 		const { src, aspectRatioWidth, aspectRatioHeight, style } = this.props;
 
@@ -53,6 +58,14 @@ export default class Image extends Component {
 					left: 0,
 					// right: 0,
 				}}/>
+				{/*<div style={{
+					background: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)`,
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					width: '100%',
+					height: '100%',
+				}}/>*/}
 			</div>
 		);
 	}

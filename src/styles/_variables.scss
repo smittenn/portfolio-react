@@ -6,7 +6,7 @@ $bp-xsmall: 320px;
 
 $rem-base: 12px;
 
-$font-primary: 'Hurme', sans-serif;
+$font-primary: 'Smitten', sans-serif;
 $font-secondary: 'Moderat', sans-serif;
 $font-mono: 'Roboto Mono', monospace;
 // $font-tertiary: 'Hurme', sans-serif;
@@ -33,6 +33,7 @@ $brand-white: lighten(#F8FBF7, 0%);
 $brand-grey-lightest: mix($brand-white, $brand-black, 94%);
 $brand-grey-light: mix($brand-white, $brand-black, 88%);
 
+$letter-spacing-xxs: -0.048em;
 $letter-spacing-xs: -0.036em;
 $letter-spacing-sm: -0.024em;
 $letter-spacing-md: -0.012em;

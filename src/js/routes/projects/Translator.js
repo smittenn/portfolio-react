@@ -21,6 +21,7 @@ import Image from "../../components/Image"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -119,47 +120,13 @@ class Translator extends Component {
 				activeSection={activeSection}
 				disableSectionNumber
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									The process for media asset management varied greatly across NBCU’s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands.
-								</blockquote>
-								<blockquote className="mr">
-									The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention.
-								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<div className="grid__row">
-									<div className="grid__item grid__item--col-12">
-										<Image src="../assets/img/translator/usertesting.svg" aspectRatioWidth={16} aspectRatioHeight={9} />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1="The process for media asset management varied greatly across NBCU’s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands. \n\n The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored."
+					col2="The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention." 
+					media={{ type: 'image', src: '../assets/img/translator/usertesting.svg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					col3="My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later." 
+					col4="With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams."
+					/>
 				</ScrollSection>
 
 

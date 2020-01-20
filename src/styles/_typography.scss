@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4 {
-	font-weight: 600;
+	font-weight: 500;
 }
 
 h5, h6 {
@@ -62,43 +62,43 @@ h5, h6 {
 }
 
 h1 {
-	font-size: 10rem;
-	line-height: 1.1;
+	font-size: px-to-rem(120px);
+	line-height: 1;
 	// margin-left: 2 * $letter-spacing-xs;
 	margin-bottom: 48px;
 	letter-spacing: $letter-spacing-xs;
 }
 
 h2 {
-	font-size: 9rem;
-	line-height: 1.1;
+	font-size: px-to-rem(108px);
+	line-height: 1;
 	margin-bottom: 36px;
 	// margin-left: 2 * $letter-spacing-xs;
-	letter-spacing: $letter-spacing-xs;
+	letter-spacing: $letter-spacing-xxs;
 }
 
 h3 {
-	font-size: 7rem;
+	font-size: px-to-rem(84px);
 	line-height: 1.1;
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-sm;
 }
 
 h4 {
-	font-size: 3rem;
+	font-size: px-to-rem(36px);
 	line-height: 1.1;
 	margin-bottom: 18px;
 	letter-spacing: $letter-spacing-md;
 }
 
 h5 {
-	font-size: 1.333333333rem;
+	font-size: px-to-rem(18px);
 	line-height: 1.2;
 	margin-bottom: 9px;
 }
 
 h6 {
-	font-size: 1.166666667rem;
+	font-size: px-to-rem(14px);
 	line-height: 1.2;
 	margin-bottom: 6px;
 }
@@ -107,7 +107,7 @@ h6 {
 p {
 	font-family: $font-secondary;
 	// color: $brand-grey-darkest;
-	font-size: 16px;
+	font-size: px-to-rem(16px);
 	line-height: 1.61803398875;
 	white-space: pre-line;
 	margin-bottom: 24px;
@@ -115,7 +115,7 @@ p {
 
 blockquote {
 	font-family: $font-secondary;
-	font-size: 20px;
+	font-size: px-to-rem(21px);
 	line-height: 1.61803398875;
 	white-space: pre-line;
 	display: inline-flex;

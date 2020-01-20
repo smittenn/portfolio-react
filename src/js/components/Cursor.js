@@ -71,6 +71,7 @@ class Cursor extends Component {
 				<div style={{ transform: 'translate3d(' + this.state.arrowX + 'px, ' + this.state.arrowY + 'px, 0)', position: 'absolute' }}>
 					<div className="cursor__wrapper">
 						<div className="cursor__inner"/>
+						<h6 className="m0 uppercase cursor__text">Go</h6>
 					</div>
 				</div>
 				<div style={{ transform: 'translate3d(' + this.state.delayArrowX + 'px, ' + this.state.delayArrowY + 'px, 0)' }}>

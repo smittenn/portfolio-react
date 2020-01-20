@@ -25,7 +25,8 @@ $baseclass: nav-toggle;
 .#{$baseclass} {
 	position: fixed;
 	right: 0;
-	top: 36px;
+	top: 24px;
+	// transform: translateY(-50%);
 	width: 72px;
 	height: 120px;
 	pointer-events: auto;
@@ -49,14 +50,9 @@ $baseclass: nav-toggle;
 		transition-duration: $duration-short;
 		transition-property: transform, opacity;
 	}
-
-	.#{$baseclass}__abbreviation {
-		margin-bottom: 18px;
-	}
 	
 	.#{$baseclass}__count {
 		overflow: hidden;
-		margin-top: 24px;
 		transition-delay: $delay-medium;
 
 		span {
@@ -102,7 +98,8 @@ $baseclass: nav-toggle;
 		height: auto;
 		flex-direction: column;
 		justify-content: center;
-
+		padding-top: 18px;
+		padding-bottom: 24px;
 	}
 
 	&__line {
@@ -126,7 +123,9 @@ $baseclass: nav-toggle;
 
 	&--hovering {
 		.#{$baseclass}__hamburger {
-			height: 18px;
+			// padding: 0;
+			// height: 18px;
+			min-height: 18px;
 		}
 		.#{$baseclass}__line {					
 			opacity: 1;
@@ -152,7 +151,7 @@ $baseclass: nav-toggle;
 	
 
 	&--menuOpen {
-		.#{$baseclass}__hamburger {
+		.#{$baseclass}__hamburger {			
 			.#{$baseclass}__line {
 				background-color: rgba($brand-black, 1);
 				// transition-duration: $duration-long;
@@ -209,12 +208,14 @@ $baseclass: nav-toggle;
 		width: 49px;
 		height: 90px;
 
+		.#{$baseclass}__hamburger {
+			padding-top: 12px;
+			padding-bottom: 16px;
+		}
 		.#{$baseclass}__abbreviation {
-			margin-bottom: 12px;
 		}
 
 		.#{$baseclass}__count {
-			margin-top: 16px;
 		}
 		
 		.#{$baseclass}--menuOpen {

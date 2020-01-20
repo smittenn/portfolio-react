@@ -1,5 +1,3 @@
-// @import url('https://fonts.googleapis.com/css?family=Google+Sans+Display:400,500,700|Roboto+Mono&display=swap');
-
 // @font-face {
 // 	font-family: 'Circular Std';
 // 	font-weight: 800;
@@ -243,29 +241,29 @@
 // 	url('../fonts/Hurme/Hurme-Thin.svg#codropsicons') format('svg');
 // }
 
-@font-face {
-	font-family: 'Hurme';
-	font-weight: 600;
-	font-style: normal;
-	src: url('../fonts/Hurme/Hurme-SemiBold-alt.eot');
-	src: url('../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Hurme/Hurme-SemiBold-alt.woff2') format('woff2'), 
-	url('../fonts/Hurme/Hurme-SemiBold-alt.woff') format('woff'), 
-	url('../fonts/Hurme/Hurme-SemiBold-alt.otf') format('truetype'),
-	url('../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Hurme';
+// 	font-weight: 600;
+// 	font-style: normal;
+// 	src: url('../fonts/Hurme/Hurme-SemiBold-alt.eot');
+// 	src: url('../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Hurme/Hurme-SemiBold-alt.woff2') format('woff2'), 
+// 	url('../fonts/Hurme/Hurme-SemiBold-alt.woff') format('woff'), 
+// 	url('../fonts/Hurme/Hurme-SemiBold-alt.otf') format('truetype'),
+// 	url('../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Hurme';
-	font-weight: 700;
-	font-style: normal;
-	src: url('../fonts/Hurme/Hurme-Bold.eot');
-	src: url('../fonts/Hurme/Hurme-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Hurme/Hurme-Bold.woff2') format('woff2'), 
-	url('../fonts/Hurme/Hurme-Bold.woff') format('woff'), 
-	url('../fonts/Hurme/Hurme-Bold.otf') format('truetype'),
-	url('../fonts/Hurme/Hurme-Bold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Hurme';
+// 	font-weight: 700;
+// 	font-style: normal;
+// 	src: url('../fonts/Hurme/Hurme-Bold.eot');
+// 	src: url('../fonts/Hurme/Hurme-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Hurme/Hurme-Bold.woff2') format('woff2'), 
+// 	url('../fonts/Hurme/Hurme-Bold.woff') format('woff'), 
+// 	url('../fonts/Hurme/Hurme-Bold.otf') format('truetype'),
+// 	url('../fonts/Hurme/Hurme-Bold.svg#codropsicons') format('svg');
+// }
 
 // @font-face {
 // 	font-family: 'Oh My Sans';
@@ -279,17 +277,17 @@
 // 	url('../fonts/OhMySans/OhMySans-Text-Regular.svg#codropsicons') format('svg');
 // }
 
-// @font-face {
-// 	font-family: 'TT Norms';
-// 	font-weight: 600;
-// 	font-style: normal;
-// 	src: url('../fonts/TTNorms/ttnorms-medium-web.eot');
-// 	src: url('../fonts/TTNorms/ttnorms-medium-web.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/TTNorms/ttnorms-medium-web.woff2') format('woff2'), 
-// 	url('../fonts/TTNorms/ttnorms-medium-web.woff') format('woff'), 
-// 	url('../fonts/TTNorms/ttnorms-medium-web.otf') format('truetype'),
-// 	url('../fonts/TTNorms/ttnorms-medium-web.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'TT Commons';
+	font-weight: 600;
+	font-style: normal;
+	src: url('../fonts/TTCommons/TTCommons-Medium-web.eot');
+	src: url('../fonts/TTCommons/TTCommons-Medium-web.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/TTCommons/TTCommons-Medium-web.woff2') format('woff2'), 
+	url('../fonts/TTCommons/TTCommons-Medium-web.woff') format('woff'), 
+	url('../fonts/TTCommons/TTCommons-Medium-web.otf') format('truetype'),
+	url('../fonts/TTCommons/TTCommons-Medium-web.svg#codropsicons') format('svg');
+}
 
 @font-face {
 	font-family: 'Smitten';
@@ -387,38 +385,38 @@
 // 	url('../fonts/Apercu/Apercu-Black.svg#codropsicons') format('svg');
 // }
 
-@font-face {
-	font-family: 'Apercu';
-	font-weight: 300;
-	font-style: normal;
-	src: url('../fonts/Apercu/Apercu-Light.eot');
-	src: url('../fonts/Apercu/Apercu-Light.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Apercu/Apercu-Light.woff2') format('woff2'), 
-	url('../fonts/Apercu/Apercu-Light.woff') format('woff'), 
-	url('../fonts/Apercu/Apercu-Light.ttf') format('truetype'),
-	url('../fonts/Apercu/Apercu-Light.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Apercu';
+// 	font-weight: 300;
+// 	font-style: normal;
+// 	src: url('../fonts/Apercu/Apercu-Light.eot');
+// 	src: url('../fonts/Apercu/Apercu-Light.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Apercu/Apercu-Light.woff2') format('woff2'), 
+// 	url('../fonts/Apercu/Apercu-Light.woff') format('woff'), 
+// 	url('../fonts/Apercu/Apercu-Light.ttf') format('truetype'),
+// 	url('../fonts/Apercu/Apercu-Light.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Apercu';
-	font-weight: 400;
-	font-style: normal;
-	src: url('../fonts/Apercu/Apercu-Regular.eot');
-	src: url('../fonts/Apercu/Apercu-Regular.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Apercu/Apercu-Regular.woff2') format('woff2'), 
-	url('../fonts/Apercu/Apercu-Regular.woff') format('woff'), 
-	url('../fonts/Apercu/Apercu-Regular.ttf') format('truetype'),
-	url('../fonts/Apercu/Apercu-Regular.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Apercu';
+// 	font-weight: 400;
+// 	font-style: normal;
+// 	src: url('../fonts/Apercu/Apercu-Regular.eot');
+// 	src: url('../fonts/Apercu/Apercu-Regular.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Apercu/Apercu-Regular.woff2') format('woff2'), 
+// 	url('../fonts/Apercu/Apercu-Regular.woff') format('woff'), 
+// 	url('../fonts/Apercu/Apercu-Regular.ttf') format('truetype'),
+// 	url('../fonts/Apercu/Apercu-Regular.svg#codropsicons') format('svg');
+// }
 
-@font-face {
-	font-family: 'Apercu';
-	font-weight: 500;
-	font-style: normal;
-	src: url('../fonts/Apercu/Apercu-Bold.eot');
-	src: url('../fonts/Apercu/Apercu-Bold.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/Apercu/Apercu-Bold.woff2') format('woff2'), 
-	url('../fonts/Apercu/Apercu-Bold.woff') format('woff'), 
-	url('../fonts/Apercu/Apercu-Bold.ttf') format('truetype'),
-	url('../fonts/Apercu/Apercu-Bold.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'Apercu';
+// 	font-weight: 500;
+// 	font-style: normal;
+// 	src: url('../fonts/Apercu/Apercu-Bold.eot');
+// 	src: url('../fonts/Apercu/Apercu-Bold.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/Apercu/Apercu-Bold.woff2') format('woff2'), 
+// 	url('../fonts/Apercu/Apercu-Bold.woff') format('woff'), 
+// 	url('../fonts/Apercu/Apercu-Bold.ttf') format('truetype'),
+// 	url('../fonts/Apercu/Apercu-Bold.svg#codropsicons') format('svg');
+// }

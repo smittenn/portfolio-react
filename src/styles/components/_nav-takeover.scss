@@ -7,8 +7,10 @@ $baseclass: nav-takeover;
 	align-items: center;
 	@include zIndexCloser();
 
-	.grid--lines {
+	.style-line {
 		position: fixed;
+		width: 100%;
+		height: 100%;
 	}
 
 	&__main {
@@ -92,7 +94,7 @@ $baseclass: nav-takeover;
 		flex-wrap: wrap-reverse;
 		justify-content: flex-end;
 		align-items: flex-end;
-		transform: translateY(-72px);
+		transform: translateY(-84px);
 
 		.icon-caret {
 			margin: 0 12px;
@@ -119,7 +121,7 @@ $baseclass: nav-takeover;
 	&__controls {
 		position: fixed;
 		left: 12px;
-		top: 66px;
+		top: 52px;
 		display: flex;
 	}
 

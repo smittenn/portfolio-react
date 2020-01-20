@@ -22,6 +22,7 @@ import IFrame from "../../components/IFrame"
 
 import NextProjectBlock from "../../components/blocks/NextProjectBlock"
 import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -114,50 +115,27 @@ class AmericanMade extends Component {
 				disableSectionNumber
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="drop-caps mr">
-									The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
-								</blockquote>
-								<blockquote className="mr">
-									The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
-								</blockquote> 
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mr">
-									Our final design is the product of many late nights and too many cups of coffee! It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
-								</blockquote>
-								<blockquote className="mr">
-									My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
-								</blockquote>
-							</div>
-						</div>
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-								<div className="grid__row">
-									<div className="grid__item grid__item--col-12">
-										<Image src="../assets/img/american-made/half-still.jpg"  aspectRatioWidth={9} aspectRatioHeight={5}/> 
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="grid__row m0">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.
-								</blockquote>
-							</div>
-							<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-								<blockquote className="mb0 mr">
-									From a developer standpoint I was responsible for QA on all modern devices. I was also responsible for deploying the site which we did in 2 phases–as an MVP and final site.
-								</blockquote>
-							</div>
-						</div>
-					</div>
+					<ProjectIntroBlock 
+					col1='
+						The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+						\n\n 
+						The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
+					'
+					col2='
+						Our final design is the product of many late nights and too many cups of coffee! It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
+						\n\n
+						My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+					'
+					media={{
+						type: 'image', 
+						src: '../assets/img/american-made/half-still.jpg', 
+						aspectRatioWidth: 9, 
+						aspectRatioHeight: 5 
+					}}
+					col3='Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.'
+					col4='From a developer standpoint I was responsible for QAing the site on all modern devices. I was also responsible for deploying the site which we did in 2 phases–as an MVP and final site.'
+					/>
+
 				</ScrollSection>
 
 				<ScrollSection 
@@ -173,7 +151,7 @@ class AmericanMade extends Component {
 						url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundPosition: `20% 70%`,
 				}}>
-					<DetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Pictures" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
+					<DetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Studios" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
 				</ScrollSection>
 
 				{/*<ScrollSection 
