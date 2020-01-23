@@ -92,8 +92,8 @@ class MicroAppInteractions extends Component {
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
 						),
 						url(../assets/img/card-components/share-animation.jpg)
 					`, 
@@ -101,7 +101,7 @@ class MicroAppInteractions extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `our team created interactions within micro apps`]}
+					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we created interactions within micro apps.`]}
 					/>
 				</ScrollSection>
 

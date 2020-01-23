@@ -12,7 +12,6 @@ import ScrollArrow from "./ScrollArrow"
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
-import detectMobile from "../services/detectMobile"
 import palette from "../services/palette"
 
 
@@ -22,7 +21,6 @@ class ParallaxHeader extends Component {
 		super(props);
 
 		this.state = {
-			isAnimating: detectMobile(),
 			scrollAmount: 0,
 			isHidden: false,
 		}

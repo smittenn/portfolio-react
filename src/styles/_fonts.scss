@@ -277,17 +277,17 @@
 // 	url('../fonts/OhMySans/OhMySans-Text-Regular.svg#codropsicons') format('svg');
 // }
 
-@font-face {
-	font-family: 'TT Commons';
-	font-weight: 600;
-	font-style: normal;
-	src: url('../fonts/TTCommons/TTCommons-Medium-web.eot');
-	src: url('../fonts/TTCommons/TTCommons-Medium-web.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/TTCommons/TTCommons-Medium-web.woff2') format('woff2'), 
-	url('../fonts/TTCommons/TTCommons-Medium-web.woff') format('woff'), 
-	url('../fonts/TTCommons/TTCommons-Medium-web.otf') format('truetype'),
-	url('../fonts/TTCommons/TTCommons-Medium-web.svg#codropsicons') format('svg');
-}
+// @font-face {
+// 	font-family: 'TT Commons';
+// 	font-weight: 600;
+// 	font-style: normal;
+// 	src: url('../fonts/TTCommons/TTCommons-Medium-web.eot');
+// 	src: url('../fonts/TTCommons/TTCommons-Medium-web.eot?#iefix') format('embedded-opentype'),
+// 	url('../fonts/TTCommons/TTCommons-Medium-web.woff2') format('woff2'), 
+// 	url('../fonts/TTCommons/TTCommons-Medium-web.woff') format('woff'), 
+// 	url('../fonts/TTCommons/TTCommons-Medium-web.otf') format('truetype'),
+// 	url('../fonts/TTCommons/TTCommons-Medium-web.svg#codropsicons') format('svg');
+// }
 
 @font-face {
 	font-family: 'Smitten';
@@ -325,17 +325,29 @@
 	url('../fonts/Smitten/Smitten-Bold.svg#codropsicons') format('svg');
 }
 
-// @font-face {
-// 	font-family: 'Futura Maxi';
-// 	font-weight: 800;
-// 	font-style: normal;
-// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot');
-// 	src: url('../fonts/FuturaMaxi/FuturaMaxi-Bold.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff2') format('woff2'), 
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.woff') format('woff'), 
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.ttf') format('truetype'),
-// 	url('../fonts/FuturaMaxi/FuturaMaxi-Bold.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'Futura Maxi';
+	font-weight: 700;
+	font-style: normal;
+	src: url('../fonts/FuturaMaxi/FuturaMaxi-Demi.eot');
+	src: url('../fonts/FuturaMaxi/FuturaMaxi-Demi.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/FuturaMaxi/FuturaMaxi-Demi.woff2') format('woff2'), 
+	url('../fonts/FuturaMaxi/FuturaMaxi-Demi.woff') format('woff'), 
+	url('../fonts/FuturaMaxi/FuturaMaxi-Demi.otf') format('opentype'),
+	url('../fonts/FuturaMaxi/FuturaMaxi-Demi.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Futura Maxi';
+	font-weight: 500;
+	font-style: normal;
+	src: url('../fonts/FuturaMaxi/FuturaMaxi-Book.eot');
+	src: url('../fonts/FuturaMaxi/FuturaMaxi-Book.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/FuturaMaxi/FuturaMaxi-Book.woff2') format('woff2'), 
+	url('../fonts/FuturaMaxi/FuturaMaxi-Book.woff') format('woff'), 
+	url('../fonts/FuturaMaxi/FuturaMaxi-Book.otf') format('opentype'),
+	url('../fonts/FuturaMaxi/FuturaMaxi-Book.svg#codropsicons') format('svg');
+}
 
 @font-face {
 	font-family: 'Moderat';

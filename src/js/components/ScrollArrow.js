@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import splitLetter from '../services/splitLetter'
-import detectMobile from '../services/detectMobile'
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 

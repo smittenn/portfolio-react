@@ -93,11 +93,11 @@ class Vai extends Component {
 						url(../assets/img/vai/mobile.png)
 					`, 
 					backgroundSize: (this.props.isMobile ? '120%' : '60% 120%'),
-					backgroundPosition: (this.props.isMobile ? '-230% -560%' : '60% -280%'),
+					backgroundPosition: (this.props.isMobile ? '-230% -470%' : '60% -280%'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to identify objects in video`]}
+					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to identify objects in video.`]}
 					// headerText={[`The`, <span className="outline"><span>Rationalized </span></span>, `player unified the UX across NBCU video players.`]}
 					/>
 				</ScrollSection>

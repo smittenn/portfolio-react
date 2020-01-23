@@ -106,7 +106,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ `At`, <span><span className="outline">Perforce </span></span>, `our product helped designers version their assets` ]}
+					headerText={[ `At`, <span><span className="outline">Perforce </span></span>, `our product helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
 

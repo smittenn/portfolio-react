@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes'
 
-import { detectMobile, detectWindowHeight } from "./actions/mobile"
+import { detectMobile } from "./actions/mobile"
+// import { detectWindowHeight } from "./actions/windowHeight"
 
 
 // const App = ({ history }) => {
@@ -46,12 +47,12 @@ class App extends Component {
 
 const mapStateToProps = state => ({
 	isMobile: state.isMobile,
-	windowHeight: state.windowHeight,
+	// windowHeight: state.windowHeight,
 })
 
 const mapDispatchToProps = dispatch => ({
 	detectMobile: () => dispatch(detectMobile()),
-	detectWindowHeight: () => dispatch(detectWindowHeight()),
+	// detectWindowHeight: () => dispatch(detectWindowHeight()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

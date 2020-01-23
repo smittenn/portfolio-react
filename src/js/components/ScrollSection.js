@@ -41,7 +41,7 @@ export default class ScrollSection extends Component {
 		})()
 
 		if (fullHeight) {
-			Object.assign(updatedStyle, { height: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' })
+			Object.assign(updatedStyle, { minHeight: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' })
 		}
 		
 		return (

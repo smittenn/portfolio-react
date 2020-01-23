@@ -7,11 +7,6 @@ body, button, input, select, textarea {
 	letter-spacing: -0.006em;
 }
 
-html {
-	font-size: 12px;
-}
-
-
 h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	color: inherit;
 
@@ -44,6 +39,10 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	}
 }
 
+html {
+	font-size: $rem-base;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	position: relative;
 	font-family: $font-primary;
@@ -54,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4 {
-	font-weight: 500;
+	font-weight: 400;
 }
 
 h5, h6 {
@@ -62,23 +61,23 @@ h5, h6 {
 }
 
 h1 {
-	font-size: px-to-rem(120px);
-	line-height: 1;
+	font-size: px-to-rem(108px);
+	line-height: 1.1;
 	// margin-left: 2 * $letter-spacing-xs;
 	margin-bottom: 48px;
 	letter-spacing: $letter-spacing-xs;
 }
 
 h2 {
-	font-size: px-to-rem(108px);
-	line-height: 1;
+	font-size: px-to-rem(96px);
+	line-height: 1.1;
 	margin-bottom: 36px;
 	// margin-left: 2 * $letter-spacing-xs;
 	letter-spacing: $letter-spacing-xxs;
 }
 
 h3 {
-	font-size: px-to-rem(84px);
+	font-size: px-to-rem(72px);
 	line-height: 1.1;
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-sm;
@@ -92,7 +91,7 @@ h4 {
 }
 
 h5 {
-	font-size: px-to-rem(18px);
+	font-size: px-to-rem(16px);
 	line-height: 1.2;
 	margin-bottom: 9px;
 }

@@ -1,10 +1,10 @@
 @media screen and (max-width: $bp-xlarge) {
 	h1 {
-		font-size: px-to-rem(108px);
+		font-size: px-to-rem(96px);
 	}
 
 	h2 {
-		font-size: px-to-rem(96px);
+		font-size: px-to-rem(84px);
 	}
 
 	section {
@@ -20,11 +20,11 @@
 
 @media screen and (max-width: $bp-large) {
 	h1 {
-		font-size: px-to-rem(96px);
+		font-size: px-to-rem(84px);
 	}
 
 	h2 {
-		font-size: px-to-rem(72px);
+		font-size: px-to-rem(60px);
 	}
 
 	section {
@@ -115,7 +115,7 @@
 	}
 
 	h1 {
-		font-size: px-to-rem(60px);
+		font-size: px-to-rem(72px);
 		margin-left: 0;
 		margin-bottom: 24px;
 		letter-spacing: $letter-spacing-xs;

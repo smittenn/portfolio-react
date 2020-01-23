@@ -84,12 +84,13 @@ class About extends Component {
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
 						headerText={[
-							`In my free time I’m a`, 
-							<span><span className="outline">3d maker </span></span>, 
+							`In my free time I make`, 
+							<span><span className="outline">3d stuff </span></span>, 
 							/*<span><span className="outline">maker </span></span>, */
-							`and a`, 
+							`and snap`, 
 							<span><span className="outline">film </span></span>, 
-							<span><span className="outline">photographer </span></span>
+							<span><span className="outline">photos</span></span>,
+							`.`
 							/*<span><span className="outline">. </span></span>,*/
 						]}
 					/>
@@ -106,7 +107,7 @@ class About extends Component {
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>3d Art</h2>
-								<blockquote>I have been teaching myself Cinema 4D and creating animations with text and simple shapes to explore how lighting, soft-body dynamics and collisions can be used to show how objects can interact.</blockquote>
+								<blockquote>I have been learning and experimenting with Cinema 4D by creating simple animations with text and shapes. I’m most interested in scenes featuring odd lighting, soft bodies, collisions and or that simulate irregular physics.</blockquote>
 							</div>
 						</div>
 					</div>
@@ -135,7 +136,7 @@ class About extends Component {
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Photography</h2>
-								<blockquote>I have been shooting small and medium format film for the past 9 years. I love the imperfections, mistakes, learning and happy accidents that comes with the shooting film and its development process.</blockquote>
+								<blockquote>I have been shooting small and medium format film for the past 9 years. I relish the imperfections, mistakes, “happy accidents” and learnings that comes with the shooting film and its development process.</blockquote>
 							</div>
 						</div>
 					</div>

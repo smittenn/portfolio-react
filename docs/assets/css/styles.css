@@ -49,13 +49,6 @@ table {
 
 /* Libraries */
 @font-face {
-  font-family: 'TT Commons';
-  font-weight: 600;
-  font-style: normal;
-  src: url("../fonts/TTCommons/TTCommons-Medium-web.eot");
-  src: url("../fonts/TTCommons/TTCommons-Medium-web.eot?#iefix") format("embedded-opentype"), url("../fonts/TTCommons/TTCommons-Medium-web.woff2") format("woff2"), url("../fonts/TTCommons/TTCommons-Medium-web.woff") format("woff"), url("../fonts/TTCommons/TTCommons-Medium-web.otf") format("truetype"), url("../fonts/TTCommons/TTCommons-Medium-web.svg#codropsicons") format("svg"); }
-
-@font-face {
   font-family: 'Smitten';
   font-weight: 400;
   font-style: normal;
@@ -75,6 +68,20 @@ table {
   font-style: normal;
   src: url("../fonts/Smitten/Smitten-Bold.eot");
   src: url("../fonts/Smitten/Smitten-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Smitten/Smitten-Bold.woff2") format("woff2"), url("../fonts/Smitten/Smitten-Bold.woff") format("woff"), url("../fonts/Smitten/Smitten-Bold.otf") format("truetype"), url("../fonts/Smitten/Smitten-Bold.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Futura Maxi';
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/FuturaMaxi/FuturaMaxi-Demi.eot");
+  src: url("../fonts/FuturaMaxi/FuturaMaxi-Demi.eot?#iefix") format("embedded-opentype"), url("../fonts/FuturaMaxi/FuturaMaxi-Demi.woff2") format("woff2"), url("../fonts/FuturaMaxi/FuturaMaxi-Demi.woff") format("woff"), url("../fonts/FuturaMaxi/FuturaMaxi-Demi.otf") format("opentype"), url("../fonts/FuturaMaxi/FuturaMaxi-Demi.svg#codropsicons") format("svg"); }
+
+@font-face {
+  font-family: 'Futura Maxi';
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/FuturaMaxi/FuturaMaxi-Book.eot");
+  src: url("../fonts/FuturaMaxi/FuturaMaxi-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/FuturaMaxi/FuturaMaxi-Book.woff2") format("woff2"), url("../fonts/FuturaMaxi/FuturaMaxi-Book.woff") format("woff"), url("../fonts/FuturaMaxi/FuturaMaxi-Book.otf") format("opentype"), url("../fonts/FuturaMaxi/FuturaMaxi-Book.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Moderat';
@@ -290,9 +297,6 @@ body, button, input, select, textarea {
   font-family: "Moderat", sans-serif;
   letter-spacing: -0.006em; }
 
-html {
-  font-size: 12px; }
-
 h1, h2, h3, h4, h5, h6, h7, blockquote, p {
   color: inherit; }
   h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, h7.uppercase, blockquote.uppercase, p.uppercase {
@@ -310,32 +314,35 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
     color: transparent;
     -webkit-text-stroke: 1px; }
 
+html {
+  font-size: 12px; }
+
 h1, h2, h3, h4, h5, h6 {
   position: relative;
-  font-family: "Smitten", sans-serif; }
+  font-family: "Futura Maxi", sans-serif; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     white-space: pre; }
 
 h1, h2, h3, h4 {
-  font-weight: 500; }
+  font-weight: 400; }
 
 h5, h6 {
   font-weight: 700; }
 
 h1 {
-  font-size: 10rem;
-  line-height: 1;
+  font-size: 9rem;
+  line-height: 1.1;
   margin-bottom: 48px;
   letter-spacing: -0.036em; }
 
 h2 {
-  font-size: 9rem;
-  line-height: 1;
+  font-size: 8rem;
+  line-height: 1.1;
   margin-bottom: 36px;
   letter-spacing: -0.048em; }
 
 h3 {
-  font-size: 7rem;
+  font-size: 6rem;
   line-height: 1.1;
   margin-bottom: 24px;
   letter-spacing: -0.024em; }
@@ -347,7 +354,7 @@ h4 {
   letter-spacing: -0.012em; }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.33333rem;
   line-height: 1.2;
   margin-bottom: 9px; }
 
@@ -380,7 +387,7 @@ blockquote {
   .drop-caps:first-letter {
     float: left;
     font-size: 60px;
-    font-family: "Smitten", sans-serif;
+    font-family: "Futura Maxi", sans-serif;
     font-weight: 800;
     margin: 0 24px 0 0;
     padding-top: 9px;
@@ -390,8 +397,7 @@ blockquote {
   box-sizing: border-box; }
 
 html {
-  background: #232021;
-  font-size: 12px; }
+  background: #232021; }
 
 body {
   background: #f8fbf7;
@@ -2286,7 +2292,7 @@ section p span > span, section blockquote span > span {
       pointer-events: none;
       transition: none;
       margin: 0;
-      line-height: 1; }
+      line-height: 1.3; }
       .nav-takeover__panel h1.hovered, .nav-takeover__panel h2.hovered, .nav-takeover__panel h3.hovered, .nav-takeover__panel h4.hovered {
         color: transparent;
         -webkit-text-stroke: 1px #ff3636; }
@@ -3142,7 +3148,7 @@ section p span > span, section blockquote span > span {
   background: #232021; }
 
 [class*="react-sandbox-editor"].sandbox__tab {
-  font-family: "Smitten", sans-serif; }
+  font-family: "Futura Maxi", sans-serif; }
   [class*="react-sandbox-editor"].sandbox__tab:hover {
     color: #ff3636; }
 
@@ -3501,9 +3507,9 @@ section p span > span, section blockquote span > span {
 /* Responsive */
 @media screen and (max-width: 1280px) {
   h1 {
-    font-size: 9rem; }
-  h2 {
     font-size: 8rem; }
+  h2 {
+    font-size: 7rem; }
   section {
     padding: 108px 0; }
   .grid {
@@ -3549,9 +3555,9 @@ section p span > span, section blockquote span > span {
 
 @media screen and (max-width: 1024px) {
   h1 {
-    font-size: 8rem; }
+    font-size: 7rem; }
   h2 {
-    font-size: 6rem; }
+    font-size: 5rem; }
   section {
     padding: 96px 0; }
   .grid {
@@ -3669,7 +3675,7 @@ section p span > span, section blockquote span > span {
     section .mr {
       margin-right: 0; }
   h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     margin-left: 0;
     margin-bottom: 24px;
     letter-spacing: -0.036em; }

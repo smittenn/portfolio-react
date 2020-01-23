@@ -114,7 +114,7 @@ class JnjMdc extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span><span className="outline">MDC </span></span>, `unified the UX for 250+ medical device companies`]}
+					headerText={[ <span><span className="outline">MDC </span></span>, `unified the UX for 250+ medical device companies.`]}
 					/>
 				</ScrollSection>
 
