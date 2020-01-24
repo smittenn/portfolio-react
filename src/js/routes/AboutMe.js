@@ -88,9 +88,9 @@ class About extends Component {
 							<span><span className="outline">3d stuff </span></span>, 
 							/*<span><span className="outline">maker </span></span>, */
 							`and snap`, 
-							<span><span className="outline">film </span></span>, 
-							<span><span className="outline">photos</span></span>,
-							`.`
+							<span><span className="outline">photos </span></span>, 
+							/*<span><span className="outline">photos</span></span>,*/
+							`with friends.`
 							/*<span><span className="outline">. </span></span>,*/
 						]}
 					/>

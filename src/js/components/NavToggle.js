@@ -91,7 +91,7 @@ class NavToggle extends Component {
 									{
 										splitLetter(
 									 		pad(i + 1, 2).toString(), 
-									 		{ transform: `translate3d(0, ${ -16 * (this.props.count - 1)}px, 0)` }
+									 		{ transform: `translate3d(0, ${ -100 * (this.props.count - 1)}%, 0)` }
 								 		)
 									}
 							 </h6>

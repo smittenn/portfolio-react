@@ -205,8 +205,8 @@ class JnjMdc extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">HCP/Patient</h2>
-								<h4>Site Flipper</h4>
-								<blockquote>To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search in the tile to search for their symptoms or specialties respectively.</blockquote>
+								<h4 className="fade">Site Flipper</h4>
+								<blockquote>To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively.</blockquote>
 							</div>
 						</div>
 					</div>

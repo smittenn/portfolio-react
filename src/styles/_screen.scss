@@ -157,8 +157,12 @@
 	}
 	
 	h5 {
-		font-size: px-to-rem(16px);
+		font-size: px-to-rem(15px);
 	}
+	
+	// h6 {
+	// 	font-size: px-to-rem(12px);
+	// }
 	
 	blockquote {
 		font-size: px-to-rem(19px);
@@ -169,18 +173,18 @@
 
 @media screen and (max-width: $bp-xsmall) {
 	h1 {
-		font-size: px-to-rem(42px);
-	}
-
-	h2 {
 		font-size: px-to-rem(38px);
 	}
 
-	h3 {
+	h2 {
 		font-size: px-to-rem(34px);
 	}
 
+	h3 {
+		font-size: px-to-rem(28px);
+	}
+
 	h4 {
-		font-size: px-to-rem(24px);
+		font-size: px-to-rem(20px);
 	}
 }

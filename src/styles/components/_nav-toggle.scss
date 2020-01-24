@@ -41,7 +41,7 @@ $baseclass: nav-toggle;
 	}
 
 	h4, h5, h6 {
-		line-height: 1;
+		// line-height: 1;
 		letter-spacing: $letter-spacing-xl;
 	}
 
@@ -56,7 +56,7 @@ $baseclass: nav-toggle;
 		transition-delay: $delay-medium;
 
 		span {
-			transition: transform $easing2 $duration-medium;
+			transition: transform $easing2 $duration-long;
 			display: inline-block;
 			animation: none;
 
@@ -70,25 +70,10 @@ $baseclass: nav-toggle;
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
-		height: 16px;
+		height: 13px;
 
 		h4, h5, h6 {
-			margin: 1px 0;
-		}
-	}
-
-	&--countIsIncreasing {
-		.#{$baseclass}__count {
-			span {
-				animation: increasingNum $duration-medium $easing5;
-			}
-		}
-	}
-	&--countIsDecreasing {
-		.#{$baseclass}__count {
-			span {
-				animation: decreasingNum $duration-medium $easing5;
-			}
+			// margin: 0px 0;
 		}
 	}
 

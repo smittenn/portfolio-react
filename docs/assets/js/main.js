@@ -37074,7 +37074,7 @@ var NavToggle = function (_Component) {
 						return _react2.default.createElement(
 							'h6',
 							{ className: 'uppercase mb0', key: i },
-							(0, _splitLetter2.default)((0, _pad2.default)(i + 1, 2).toString(), { transform: 'translate3d(0, ' + -16 * (_this2.props.count - 1) + 'px, 0)' })
+							(0, _splitLetter2.default)((0, _pad2.default)(i + 1, 2).toString(), { transform: 'translate3d(0, ' + -100 * (_this2.props.count - 1) + '%, 0)' })
 						);
 					})
 				)
@@ -39621,17 +39621,11 @@ var About = function (_Component) {
 							_react2.default.createElement(
 								"span",
 								{ className: "outline" },
-								"film "
+								"photos "
 							)
-						), _react2.default.createElement(
-							"span",
-							null,
-							_react2.default.createElement(
-								"span",
-								{ className: "outline" },
-								"photos"
-							)
-						), "."
+						),
+						/*<span><span className="outline">photos</span></span>,*/
+						"with friends."
 						/*<span><span className="outline">. </span></span>,*/
 						]
 					})
@@ -42807,13 +42801,13 @@ var JnjMdc = function (_Component) {
 								),
 								_react2.default.createElement(
 									"h4",
-									null,
+									{ className: "fade" },
 									"Site Flipper"
 								),
 								_react2.default.createElement(
 									"blockquote",
 									null,
-									"To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. A Patient/HCP was also able to use our predictive search in the tile to search for their symptoms or specialties respectively."
+									"To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
 								)
 							)
 						)

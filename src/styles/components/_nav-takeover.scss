@@ -271,7 +271,7 @@ $baseclass: nav-takeover;
 		}
 
 		.#{$baseclass}__item-container {
-			padding-left: 18px;
+			padding-left: 12px;
 		}
 
 		.#{$baseclass}__breadcrumbs {
@@ -296,7 +296,7 @@ $baseclass: nav-takeover;
 				margin-bottom: 24px;
 			}
 
-			h1, h2, h5, h4 {
+			h1, h2, h3, h5, h4 {
 				line-height: 1;
 			}
 			
