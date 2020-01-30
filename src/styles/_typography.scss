@@ -3,7 +3,7 @@ body, button, input, select, textarea {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeSpeed;
-	font-family: $font-secondary;
+	font-family: $font-primary;
 	letter-spacing: -0.006em;
 }
 
@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, h7, blockquote, p {
 	color: inherit;
 
 	&.uppercase {
-		letter-spacing: $letter-spacing-md;
+		letter-spacing: $letter-spacing-xl;
 		text-transform: uppercase;
 	}
 
@@ -46,6 +46,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
 	position: relative;
 	font-family: $font-primary;
+    font-feature-settings: "dlig", "liga",  "ss02";
 
 	span {
 		white-space: pre;
@@ -53,11 +54,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4 {
+	font-family: $font-secondary;
 	font-weight: 400;
 }
 
-h5, h6 {
-	font-weight: 700;
+h5, h6, p {
+	font-family: $font-mono;
+	font-weight: 600;
 }
 
 h1 {
@@ -65,7 +68,7 @@ h1 {
 	line-height: 1.1;
 	// margin-left: 2 * $letter-spacing-xs;
 	margin-bottom: 48px;
-	letter-spacing: $letter-spacing-xs;
+	letter-spacing: $letter-spacing-sm;
 }
 
 h2 {
@@ -73,11 +76,11 @@ h2 {
 	line-height: 1.1;
 	margin-bottom: 36px;
 	// margin-left: 2 * $letter-spacing-xs;
-	letter-spacing: $letter-spacing-xxs;
+	letter-spacing: $letter-spacing-sm;
 }
 
 h3 {
-	font-size: px-to-rem(72px);
+	font-size: px-to-rem(84px);
 	line-height: 1.1;
 	margin-bottom: 24px;
 	letter-spacing: $letter-spacing-sm;
@@ -91,29 +94,26 @@ h4 {
 }
 
 h5 {
-	font-size: px-to-rem(16px);
+	font-size: px-to-rem(18px);
 	line-height: 1.2;
 	margin-bottom: 9px;
 }
 
 h6 {
-	font-size: px-to-rem(13px);
+	font-size: px-to-rem(14px);
 	line-height: 1.2;
 	margin-bottom: 6px;
 }
 
-
 p {
-	font-family: $font-secondary;
 	// color: $brand-grey-darkest;
-	font-size: px-to-rem(16px);
+	font-size: px-to-rem(14px);
 	line-height: 1.61803398875;
 	white-space: pre-line;
 	margin-bottom: 24px;
 }
 
 blockquote {
-	font-family: $font-secondary;
 	font-size: px-to-rem(21px);
 	line-height: 1.61803398875;
 	white-space: pre-line;
@@ -121,7 +121,7 @@ blockquote {
 	flex-wrap: wrap;
 	margin-bottom: 36px;
 	letter-spacing: $letter-spacing-md;
-
+	font-feature-settings: "dlig", "liga",  "ss02";
 	// margin-right: 32px;
 }
 

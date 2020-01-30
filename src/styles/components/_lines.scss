@@ -14,7 +14,11 @@ $baseclass: style-line;
 		}
 
 		.grid {
-			margin: 0 auto;
+			margin: 0 auto; 
+
+			> div {
+				height: 100%;
+			}
 		}
 
 		section {
@@ -29,7 +33,9 @@ $baseclass: style-line;
 
 	&__vertical {
 		width: 1px;
+		min-width: 1px;
 		height: 100%;
+		min-height: 100vh;
 	}
 
 	&__horizontal {

@@ -36423,6 +36423,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require("react");
@@ -36432,10 +36434,6 @@ var _react2 = _interopRequireDefault(_react);
 var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactIntersectionVisible = require("react-intersection-visible");
-
-var _reactIntersectionVisible2 = _interopRequireDefault(_reactIntersectionVisible);
 
 var _palette = require("../services/palette");
 
@@ -36452,6 +36450,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import IntersectionVisible from "react-intersection-visible"
 
 var Image = function (_Component) {
 	_inherits(Image, _Component);
@@ -36460,6 +36459,8 @@ var Image = function (_Component) {
 		_classCallCheck(this, Image);
 
 		var _this = _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).call(this, props));
+
+		_this.onScroll = function () {};
 
 		_this.setSource = function () {
 			// this.setState({
@@ -36474,12 +36475,41 @@ var Image = function (_Component) {
 		};
 
 		_this.state = {
-			src: ''
+			src: '',
+			isVisible: false,
+			intersectionRatio: 0
 		};
+
+		_this.ref = _react2.default.createRef();
 		return _this;
 	}
 
 	_createClass(Image, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			var observer = new IntersectionObserver(function (_ref) {
+				var _ref2 = _slicedToArray(_ref, 1),
+				    entry = _ref2[0];
+
+				return _this2.setState({
+					isVisible: entry.intersectionRatio > 0
+				});
+			});
+
+			if (this.ref.current) {
+				observer.observe(this.ref.current);
+			}
+
+			// document.addEventListener('scroll', this.onScroll);
+		}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {
+			// document.removeEventListener('scroll', this.onScroll);
+		}
+	}, {
 		key: "render",
 		value: function render() {
 
@@ -36490,7 +36520,17 @@ var Image = function (_Component) {
 			    aspectRatioWidth = _props.aspectRatioWidth,
 			    aspectRatioHeight = _props.aspectRatioHeight,
 			    style = _props.style;
+			var _state = this.state,
+			    isVisible = _state.isVisible,
+			    intersectionRatio = _state.intersectionRatio;
 
+
+			var classnames = (0, _classnames2.default)({
+				"image": true,
+				"image--visible": this.state.isVisible
+			});
+
+			// console.log(this.ref.current, src, isVisible, intersectionRatio);
 
 			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
 
@@ -36500,13 +36540,19 @@ var Image = function (_Component) {
 				height: 0,
 				paddingBottom: pb + '%',
 				overflow: 'hidden'
-			};
 
-			style ? Object.assign(_style, style) : null;
+				// let docScroll;
+				// const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
+				// getPageYScroll();
+				// console.log(docScroll)
+
+				// const transform = isVisible ? intersectionRatio * 4 : 0;	
+
+			};style ? Object.assign(_style, style) : null;
 
 			return _react2.default.createElement(
 				"div",
-				{ style: _style },
+				{ className: classnames, style: _style, ref: this.ref },
 				_react2.default.createElement("img", { src: src, style: {
 						display: 'block',
 						// width: '100%',
@@ -36515,6 +36561,7 @@ var Image = function (_Component) {
 						top: 0,
 						// bottom: 0,
 						left: 0
+						// transform: `translate3d(0, ${intersectionRatio * 100}px, 0)`,
 						// right: 0,
 					} })
 			);
@@ -36526,7 +36573,7 @@ var Image = function (_Component) {
 
 exports.default = Image;
 
-},{"../services/hexToRgb":182,"../services/palette":184,"classnames":7,"react":106,"react-intersection-visible":39}],138:[function(require,module,exports){
+},{"../services/hexToRgb":182,"../services/palette":184,"classnames":7,"react":106}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38027,7 +38074,7 @@ var ScrollSection = function (_Component) {
 								{ className: "grid__item--col-10 grid__item--col-12-medium" },
 								_react2.default.createElement(
 									"p",
-									{ className: "scrolling-section__number mb0" },
+									{ className: "scrolling-section__number mb0 uppercase" },
 									(0, _splitLetter2.default)((0, _pad2.default)(sections.indexOf(name) + 1, 2) + ".")
 								)
 							)
@@ -38849,7 +38896,7 @@ var ProjectIntroBlock = function (_Component) {
 					{ className: "grid" },
 					_react2.default.createElement(
 						"div",
-						{ className: "grid__row" },
+						{ className: "grid__row mb0" },
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
@@ -38858,51 +38905,7 @@ var ProjectIntroBlock = function (_Component) {
 								"blockquote",
 								{ className: "mr" },
 								(0, _addLineBreaks2.default)(col1)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"blockquote",
-								{ className: "mr" },
-								(0, _addLineBreaks2.default)(col2)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "grid" },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid__row" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__row" },
-								_react2.default.createElement(
-									"div",
-									{ className: "grid__item grid__item--col-12" },
-									_react2.default.createElement(_Image2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight })
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "grid" },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid__row mb0" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+							),
 							_react2.default.createElement(
 								"blockquote",
 								{ className: "mr" },
@@ -38912,6 +38915,11 @@ var ProjectIntroBlock = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"blockquote",
+								{ className: "mr" },
+								(0, _addLineBreaks2.default)(col2)
+							),
 							_react2.default.createElement(
 								"blockquote",
 								{ className: "mb0 mr" },

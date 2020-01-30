@@ -21,21 +21,27 @@ export default class ProjectIntroBlock extends Component {
 		return (
 			<div>
 				<div className="grid">
-					<div className="grid__row">
+					<div className="grid__row mb0">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<blockquote className="mr">
 								{addLineBreaks(col1)}
+							</blockquote>
+							<blockquote className="mr">
+								{addLineBreaks(col3)}
 							</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<blockquote className="mr">
 								{addLineBreaks(col2)}
 							</blockquote>
+							<blockquote className="mb0 mr">
+								{addLineBreaks(col4)}
+							</blockquote>
 						</div>
 					</div>
 				</div>
-				<div className="grid">
+				{/*<div className="grid">
 					<div className="grid__row">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
@@ -61,7 +67,7 @@ export default class ProjectIntroBlock extends Component {
 							</blockquote>
 						</div>
 					</div>
-				</div>
+				</div>*/}
 			</div>
 		);
 	}

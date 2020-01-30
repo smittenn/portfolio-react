@@ -49,7 +49,7 @@ $arrow-size: 40px;
 	left: 50%;
 	height: 90px;
 	width: 80px;
-	transform: translateX(-41px);
+	transform: translateX(-40px);
 	display: none;
 	align-items: center;
 	flex-direction: column-reverse;
@@ -73,7 +73,7 @@ $arrow-size: 40px;
 			overflow: hidden;
 
 			&:first-child {
-				margin-right: 5px;
+				margin-right: 6px;
 			}
 
 			> span {
