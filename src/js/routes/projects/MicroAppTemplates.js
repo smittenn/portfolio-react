@@ -1,4 +1,3 @@
-
 import React, {Component} from "react"
 import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
@@ -22,8 +21,8 @@ import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import Video from "../../components/Video"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
@@ -150,7 +149,7 @@ class MicroAppTemplates extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
 				}}>
-					<DetailsBlock role="UX/Visual Designer" date="Fall, 2015" client="Wrap Media" team={["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"]} />
+					<ProjectDetailsBlock role="UX/Visual Designer" date="Fall, 2015" client="Wrap Media" team={["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"]} />
 				</ScrollSection>
 
 				<ScrollSection 
@@ -387,7 +386,7 @@ class MicroAppTemplates extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-					<NextProjectBlock name="Perforce" to="perforce"/>
+					<ProjectUpNextBlock name="Perforce" to="perforce"/>
 				</ScrollSection>
 			</article>
 		);

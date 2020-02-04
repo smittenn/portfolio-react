@@ -18,8 +18,8 @@ import CodepenEmbed from "../../components/CodepenEmbed"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import IFrame from "../../components/IFrame"
@@ -147,7 +147,7 @@ class MicroAppInteractions extends Component {
 					backgroundPosition: 'bottom',
 					backgroundBlendMode: 'normal',
 				}}>
-					<DetailsBlock role="Creative Developer" date="Fall, 2016" client="Wrap Media" team={["Pete Petras", "Josh Bloom", "Jeff Klein", "Mei Yeh", "Theo Arguna"]} />
+					<ProjectDetailsBlock role="Creative Developer" date="Fall, 2016" client="Wrap Media" team={["Pete Petras", "Josh Bloom", "Jeff Klein", "Mei Yeh", "Theo Arguna"]} />
 				</ScrollSection>
 
 				<ScrollSection 
@@ -283,7 +283,7 @@ class MicroAppInteractions extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-					<NextProjectBlock name="Wrap Templates" to="micro-app-templates"/>
+					<ProjectUpNextBlock name="Wrap Templates" to="micro-app-templates"/>
 				</ScrollSection>
 
 

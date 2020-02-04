@@ -19,8 +19,8 @@ import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
@@ -138,7 +138,7 @@ class Translator extends Component {
 				style={{ 
 					// backgroundImage: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
 				}}>
-					<DetailsBlock role="Lead UI/UX Designer" date="Spring, 2017" client="NBCU On-Air" team={["Mina Azimov", "Kennix Lee", "Oleksandr Lebedyev", "Jing Zhao", "Poplar Bai"]}/>
+					<ProjectDetailsBlock role="Lead UI/UX Designer" date="Spring, 2017" client="NBCU On-Air" team={["Mina Azimov", "Kennix Lee", "Oleksandr Lebedyev", "Jing Zhao", "Poplar Bai"]}/>
 				</ScrollSection>}
 
 
@@ -290,7 +290,7 @@ class Translator extends Component {
 					backgroundSize: '40%',
 					backgroundPosition: '-36% -180%',
 				}}>
-					<NextProjectBlock name="J&J Home" to="jnj-home"/>
+					<ProjectUpNextBlock name="J&J Home" to="jnj-home"/>
 				</ScrollSection>
 
 			</article>

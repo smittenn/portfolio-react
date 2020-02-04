@@ -20,8 +20,8 @@ import IFrame from "../../components/IFrame"
 import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
@@ -141,7 +141,7 @@ class JnjHome extends Component {
 					backgroundRepeat: 'repeatX',
 					backgroundSize: this.props.isMobile ? 'cover' : '50%',
 				}}>
-					<DetailsBlock role="UX/Motion Designer" date="Spring, 2018" client="J&J People XD" team={["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"]} />
+					<ProjectDetailsBlock role="UX/Motion Designer" date="Spring, 2018" client="J&J People XD" team={["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"]} />
 				</ScrollSection>
 
 				<ScrollSection 
@@ -250,7 +250,7 @@ class JnjHome extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: '50% 80%',
 				}}>
-					<NextProjectBlock name="J&J MDC" to="jnj-mdc"/>
+					<ProjectUpNextBlock name="J&J MDC" to="jnj-mdc"/>
 				</ScrollSection>
 
 

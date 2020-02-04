@@ -20,9 +20,10 @@ import Image from "../../components/Image"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -130,9 +131,9 @@ class Vai extends Component {
 						),
 						url(../assets/img/vai/mr-robot.jpg)
 					`,
-				 	backgroundPosition: this.props.isMobile ? "center" : "center 30%"
+				 	backgroundPosition: this.props.isMobile ? "center 10%" : "center 30%"
 				}}>
-					<DetailsBlock 
+					<ProjectDetailsBlock 
 					role="Lead UI/UX Designer" 
 					date="October, 2017" 
 					client="NBCUX Lab" 
@@ -145,22 +146,11 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Player</h2>
-								<blockquote>During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Video src="assets/img/vai/player.mp4"/>
-							{/*<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Player"
+					description="During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
+					media={{ type: 'video', src: 'assets/img/vai/player.mp4' }}
+					/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -169,21 +159,12 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Overlay</h2>
-								<blockquote>Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{<Image src="../assets/img/vai/vai-overlay.png" aspectRatioWidth={16} aspectRatioHeight={9}/>}
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Overlay"
+					description="Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off."
+					media={{ type: 'image', src: '../assets/img/vai/vai-overlay.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					/>
+
 				</ScrollSection>
 
 				<ScrollSection 
@@ -193,21 +174,11 @@ class Vai extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}
 				>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-7 grid__item--col-12-medium">
-								<h2>Products</h2>
-								<blockquote>Brands could sponsor T.V. shows to promote their products in an innovative way without using commercials that interrupt viewers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/vai/product.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Products"
+					description="Brands could sponsor T.V. shows to promote their products in an innovative way without using commercials that interrupt viewers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video."
+					media={{ type: 'image', src: '../assets/img/vai/product.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -216,34 +187,29 @@ class Vai extends Component {
 				sections={sections}
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>People</h2>
-								<blockquote>Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question.</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
-					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+					<ProjectSectionBlock 
+					title="People"
+					description="Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question."
+					media={{ type: 'side-scroller' }}>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-					<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
+					</ProjectSectionBlock>
 
-					</SideScroller>
+
 				</ScrollSection>
 
 				<ScrollSection 
 				black
 				sections={sections} 
 				activeSection={activeSection}>
-					<NextProjectBlock name="Translator" to="translator"/>
+					<ProjectUpNextBlock name="Translator" to="translator"/>
 				</ScrollSection>
 
 

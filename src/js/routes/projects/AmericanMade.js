@@ -20,8 +20,8 @@ import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 import IFrame from "../../components/IFrame"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
@@ -151,7 +151,7 @@ class AmericanMade extends Component {
 						url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundPosition: `20% 70%`,
 				}}>
-					<DetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Studios" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
+					<ProjectDetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Studios" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
 				</ScrollSection>
 
 				{/*<ScrollSection 
@@ -353,7 +353,7 @@ class AmericanMade extends Component {
 					`,
 					backgroundSize: '50%'
 				}}>
-					<NextProjectBlock name="V.ai Player" to="vai"/>
+					<ProjectUpNextBlock name="V.ai Player" to="vai"/>
 				</ScrollSection>
 
 			</article>

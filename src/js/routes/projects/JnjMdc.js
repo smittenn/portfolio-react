@@ -20,8 +20,8 @@ import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import TextLink from "../../components/TextLink"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
@@ -167,7 +167,7 @@ class JnjMdc extends Component {
 					backgroundRepeat: 'repeatX',
 					backgroundSize: 'cover',
 				}}>
-					<DetailsBlock role="Sr. Interaction Designer" date="Fall, 2018" client="J&J Consumer" team={["Matthew Abate", "Laura Hines", "Stephanie Skuzenski", "Jinny Kim", "Mark Patience", "Katrina Corcoran"]}/>
+					<ProjectDetailsBlock role="Sr. Interaction Designer" date="Fall, 2018" client="J&J Consumer" team={["Matthew Abate", "Laura Hines", "Stephanie Skuzenski", "Jinny Kim", "Mark Patience", "Katrina Corcoran"]}/>
 				</ScrollSection>
 
 
@@ -304,7 +304,7 @@ class JnjMdc extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-					<NextProjectBlock name="Wrap Interactions" to="micro-app-interactions"/>
+					<ProjectUpNextBlock name="Wrap Interactions" to="micro-app-interactions"/>
 				</ScrollSection>
 
 

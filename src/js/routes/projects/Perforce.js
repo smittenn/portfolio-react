@@ -20,8 +20,8 @@ import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 import Video from "../../components/Video"
 
-import NextProjectBlock from "../../components/blocks/NextProjectBlock"
-import DetailsBlock from "../../components/blocks/DetailsBlock"
+import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
+import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 
 import splitWord from "../../services/splitWord"
@@ -151,7 +151,7 @@ class Perforce extends Component {
 					backgroundImage: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
 					backgroundBlendMode: 'normal',
 				}}>
-					<DetailsBlock role="User Experience Designer" date="Summer, 2015" client="Perforce UX" team={["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]} />
+					<ProjectDetailsBlock role="User Experience Designer" date="Summer, 2015" client="Perforce UX" team={["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]} />
 				</ScrollSection>
 
 				<ScrollSection 
