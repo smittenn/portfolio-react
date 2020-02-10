@@ -11,6 +11,8 @@ import IFrame from "../../components/IFrame"
 import CodepenEmbed from "../../components/CodepenEmbed"
 import SideScroller from "../../components/SideScroller"
 
+import addLineBreaks from "../../services/addLineBreaks"
+
 export default class ProjectSectionBlock extends Component {
 
 	constructor(props) {
@@ -26,7 +28,7 @@ export default class ProjectSectionBlock extends Component {
 				return <Image src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
 
 			else if (media.type == 'video')
-				return <Video src={media.src}/>
+				return <Video src={media.src} poster={media.poster}/>
 
 			else if (media.type == 'iframe')
 				return <IFrame src={media.src} height={media.height}/>
@@ -44,9 +46,9 @@ export default class ProjectSectionBlock extends Component {
 					<div className="grid__row">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h2>{title}</h2>
-							{ (subtitle) ? <h2>{subtitle}</h2> : null }
-							<blockquote>{description}</blockquote>
+							<h2 className={subtitle ? "mb0" : null}>{title}</h2>
+							{ subtitle ? <h4 className="fade">{subtitle}</h4> : null }
+							<blockquote>{addLineBreaks(description)}</blockquote>
 						</div>
 					</div>
 				</div>

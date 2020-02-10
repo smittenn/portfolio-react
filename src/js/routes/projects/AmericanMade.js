@@ -23,6 +23,7 @@ import IFrame from "../../components/IFrame"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -176,21 +177,10 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					<div className="grid">
-						<div className="grid__row">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Preloader</h2> 
-								<blockquote>Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<CodepenEmbed slug="RyGNYm" title="Preloader: American Made Film Site" height={720} handle="erchsm"/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Preloader"
+					description="Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”."
+					media={{ type: "codepen", slug: "RyGNYm", title: "Preloader: American Made Film Site", height: 720  }}/>
 				</ScrollSection>
 
 
@@ -200,23 +190,17 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
-					<div className="grid">
-						<div className="grid__row">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>{"Cinemagraphs"}</h2> 
-								<blockquote>{"To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."}</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+					<ProjectSectionBlock 
+					title="Cinemagraphs"
+					description="To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 
@@ -226,21 +210,10 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Runway Navigation</h2>
-								<blockquote>I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<CodepenEmbed slug="qoQajr" title="Navigation: American Made Film Site" height={625} handle="erchsm"/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Runway Navigation"
+					description="I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
+					media={{ type: "codepen", slug: "qoQajr", title: "Navigation: American Made Film Site", height: 625  }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -250,21 +223,10 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}
 				>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Video Gallery</h2>
-								<blockquote>To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<CodepenEmbed slug="MGedbG" title="Video Gallery: American Made Film Site" height={625} handle="erchsm"/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Video Gallery"
+					description="To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content."
+					media={{ type: "codepen", slug: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625  }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -273,22 +235,11 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(6); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Parallax Story</h2>
-								<blockquote>In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.</blockquote>
-								<blockquote>I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<CodepenEmbed slug="ZoBVbY" title="Story: American Made Film Site" height={625} handle="erchsm"/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Parallax Story"
+					description="In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way. \n\n I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion."
+					media={{ type: "codepen", slug: "ZoBVbY", title: "Story: American Made Film Site", height: 625  }}/>
+
 				</ScrollSection>
 
 				<ScrollSection 
@@ -296,23 +247,11 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(7); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Mobile</h2>
-								<blockquote>A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{/*<Image src="../assets/img/american-made/mobile.svg" aspectRatioWidth={16} aspectRatioHeight={9}/>*/}
-							{/*<object data="../assets/img/american-made/mobile.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>*/}
-							{<IFrame src="../assets/img/american-made/mobile.svg" height={512}/>}
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Mobile"
+					description="A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens."
+					media={{ type: "iframe", src: "../assets/img/american-made/mobile.svg", height: 512  }}/>
+
 				</ScrollSection>
 
 				<ScrollSection 
@@ -321,7 +260,13 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(8); }}>
-					<div className="grid">
+					<ProjectSectionBlock 
+					title="Interactive Map"
+					subtitle="Fly With Barry"
+					description="We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America."
+					media={{ type: "iframe", src: "../assets/img/american-made/map-code2.svg", height: 512  }}/>
+
+					{/*<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -336,7 +281,7 @@ class AmericanMade extends Component {
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							{<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>}
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 				<ScrollSection 

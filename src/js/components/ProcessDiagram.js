@@ -10,6 +10,7 @@ import pad from '../services/pad'
 import splitWord from '../services/splitWord'
 import splitLetter from '../services/splitLetter'
 import palette from '../services/palette'
+import darken from '../services/darken'
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
@@ -55,7 +56,7 @@ class ProcessDiagram extends Component {
 				arcPath: `M 50 99 A 49 49 0 0 1 15.351767721859176 84.64823227814082`
 			},
 			{
-				color: palette('brand-pink'),
+				color: darken(palette('brand-pink'), 10),
 				title: `Experience Mapping`,
 				iconName: `directions`,
 				body: `Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.`,

@@ -24,6 +24,7 @@ import Video from "../../components/Video"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -158,6 +159,11 @@ class MicroAppTemplates extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
+					{/*<ProjectSectionBlock 
+					title="Templates"
+					description="Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own."
+					media={{ type: 'video', src: 'assets/img/app-templates/from-fb.mp4' }}
+					/>*/}
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}

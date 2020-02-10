@@ -207,40 +207,46 @@ class Home extends Component {
 				name={sections[2]}
 				sections={sections}
 				fullHeight
+				black
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
-							<div className="grid__row m0">
-								<div className="grid__item grid__item--col-4">
-									{/*<div className="spacer spacer__sm"/>*/}
-									<Image src="../assets/img/roof.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>
-								<div className="grid__item grid__item--col-4 shift--left">
-									<div className="spacer spacer__lg"/>
-									<Image src="../assets/img/brooklyn-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-									{/*<div className="spacer spacer__md"/>*/}
-								</div>
-								<div className="grid__item grid__item--col-4 shift--left">
-									<div className="spacer spacer__md"/>
-									<Image src="../assets/img/window.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>
-							</div>
-						</div>
-
-						{/*<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>*/}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							{/*<div className="spacer spacer__sm"/>*/}
-							<h2>{splitWord("Code x Design")}</h2>
+							<h2>{splitWord("Code × Design")}</h2>
 							<blockquote className="">
-								{splitWord(`I specialize in HTML prototypes, visual design, motion graphics and front-end code. I prefer to prototype in the browser. You can learn more about my ideal design process below.`)}
+								{splitWord(`I specialize in HTML prototypes, design systems, motion graphics and front-end code. I prefer to prototype in the browser. I believe good process is key to creating successful designs.`)}
 							</blockquote>
 							<h5 className="mb0">
 								<TextLink isBlack hideUnderline>
 									<NavLink to="process">{splitWord('Learn More')}</NavLink>
 								</TextLink>
 							</h5>
+						</div>
+						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-4 grid__item--hide-bp-medium">
+							<div className="grid__row m0" style={{ flexDirection: 'column' }}>
+								<h4>1. Discover</h4>
+								<h4>2. Ideate</h4>
+								<h4>3. Sketch</h4>
+								<h4>4. Prototype</h4>
+								<h4>5. User Testing</h4>
+								<h4>6. Experience Mapping</h4>
+								<h4>7. Refinement</h4>
+								<h4>8. Iterate</h4>
+								{/*<div className="grid__item grid__item--col-4">
+									<Image src="../assets/img/roof.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>
+								<div className="grid__item grid__item--col-4 shift--left">
+									<div className="spacer spacer__lg"/>
+									<Image src="../assets/img/brooklyn-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>
+								<div className="grid__item grid__item--col-4 shift--left">
+									<div className="spacer spacer__md"/>
+									<Image src="../assets/img/window.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+								</div>*/}
+							</div>
 						</div>
 					</div>
 				</ScrollSection>

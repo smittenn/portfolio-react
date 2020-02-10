@@ -20,13 +20,13 @@ export default class Image extends Component {
 	}
 
 	componentDidMount() {
-		const observer = new IntersectionObserver(([entry]) => this.setState({
-			isVisible: entry.intersectionRatio > 0,
-		}));
+		// const observer = new IntersectionObserver(([entry]) => this.setState({
+		// 	isVisible: entry.intersectionRatio > 0,
+		// }));
 
-		if (this.ref.current) {
-			observer.observe(this.ref.current);
-		}
+		// if (this.ref.current) {
+		// 	observer.observe(this.ref.current);
+		// }
 
 		// document.addEventListener('scroll', this.onScroll);
 	}

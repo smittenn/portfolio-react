@@ -43,7 +43,7 @@ export default class CodepenEmbed extends Component {
 		
 	render() {
 
-		const { slug, height, title, handle } = this.props;
+		const { slug, height, title } = this.props;
 
 		const style = { 
 			width: "100%", 
@@ -59,9 +59,9 @@ export default class CodepenEmbed extends Component {
 		}
 
 		return (
-			<div className="codepen" data-height={height} data-theme-id={this.props.theme ? this.props.theme : "dark"} data-default-tab="result" data-user={handle} data-slug-hash={slug} style={style} data-pen-title={title}>
+			<div className="codepen" data-height={height} data-theme-id={this.props.theme ? this.props.theme : "dark"} data-default-tab="result" data-user="erchsm" data-slug-hash={slug} style={style} data-pen-title={title}>
 				<span>See the Pen <a href={`https://codepen.io/erchsm/pen/${slug}/`}>{title}</a>
-				 &nbsp; by Eric Smith (<a href="https://codepen.io/erchsm">@{handle}</a>)
+				 &nbsp; by Eric Smith (<a href="https://codepen.io/erchsm">@erchsm</a>)
 				on <a href="https://codepen.io">CodePen</a>.</span>
 			</div>
 		);

@@ -94,7 +94,7 @@ class Vai extends Component {
 						url(../assets/img/vai/mobile.png)
 					`, 
 					backgroundSize: (this.props.isMobile ? '120%' : '60% 120%'),
-					backgroundPosition: (this.props.isMobile ? '-230% -470%' : '60% -280%'),
+					backgroundPosition: (this.props.isMobile ? '-230% -345%' : '60% -280%'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -149,7 +149,7 @@ class Vai extends Component {
 					<ProjectSectionBlock 
 					title="Player"
 					description="During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
-					media={{ type: 'video', src: 'assets/img/vai/player.mp4' }}
+					media={{ type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }}
 					/>
 				</ScrollSection>
 

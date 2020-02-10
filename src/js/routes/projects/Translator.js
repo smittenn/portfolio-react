@@ -57,7 +57,6 @@ class Translator extends Component {
 				"metadata",
 				"shell",
 				"bulk",
-				"reflection",
 			],
 		}
 	}
@@ -101,14 +100,14 @@ class Translator extends Component {
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .06),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)
 						),
-						url(../assets/img/translator/banner.gif)
+						url(../assets/img/translator/mobile.png)
 					`, 
-					backgroundSize: 'cover',
-					backgroundPosition: this.props.isMobile ? '75%' : 'center',
+					backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
+					backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
-					headerText={[ <span><span className="outline">Translator </span></span>, `helped film crews across NBCU catalog media assets.`]}
+					headerText={[ <span><span className="outline">Translator </span></span>, `helped NBCU film crews manage their assets.`]}
 					/>
 				</ScrollSection>
 
@@ -257,7 +256,7 @@ class Translator extends Component {
 					backgroundPosition: 'center',
 				}}/>*/}
 
-				<ScrollSection 
+				{/*<ScrollSection 
 				name={sections[6]}
 				sections={sections} 
 				activeSection={activeSection}
@@ -277,19 +276,14 @@ class Translator extends Component {
 							</blockquote>
 						</div>
 					</div>
-				</ScrollSection>
+				</ScrollSection>*/}
 
 
 				<ScrollSection 
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
-					backgroundSize: '40%',
-					backgroundPosition: '-36% -180%',
-				}}>
+				>
 					<ProjectUpNextBlock name="J&J Home" to="jnj-home"/>
 				</ScrollSection>
 

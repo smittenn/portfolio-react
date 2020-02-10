@@ -70,9 +70,9 @@ class About extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `
-						linear-gradient(
-							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.72),
-							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.72)
+						radial-gradient(
+							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.80),
+							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.90)
 						),
 						url(../assets/img/about/room.jpg)
 					`, 

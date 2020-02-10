@@ -7,7 +7,7 @@ $bp-xsmall: 320px;
 $rem-base: 12px;
 
 $font-primary: 'Moderat', sans-serif;
-$font-mono: 'Moderat Mono', monospace;
+// $font-mono: 'Moderat Mono', monospace;
 $font-secondary: 'Futura Maxi', sans-serif;
 // $font-tertiary: 'Hurme', sans-serif;
 // $font-serif: 'GT Sectra Display', serif;
@@ -37,8 +37,9 @@ $letter-spacing-xxs: -0.048em;
 $letter-spacing-xs: -0.036em;
 $letter-spacing-sm: -0.024em;
 $letter-spacing-md: -0.012em;
-$letter-spacing-lg: 0.024em;
-$letter-spacing-xl: 0.06em;
+$letter-spacing-lg: 0.012em;
+$letter-spacing-xl: 0.024em;
+$letter-spacing-xxl: 0.060em;
 
 $easing1: cubic-bezier(0.215, 0.61, 0.355, 1);
 $easing2: cubic-bezier(.19,1,.22,1);

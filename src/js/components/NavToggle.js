@@ -16,13 +16,6 @@ class NavToggle extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			menuOpen: false,
-			secondaryPanelOpen: false,
-			countIsIncreasing: false,
-			countIsDecreasing: false,
-		}
 	}
 
 	openNav = () => {
@@ -61,15 +54,10 @@ class NavToggle extends Component {
 
 
 	render() {
-		const { secondaryPanelOpen, countIsIncreasing, countIsDecreasing } = this.state;
-
 		const classnames = classNames({
 			"nav-toggle": true,
 			"nav-toggle--hovering": this.props.isToggleHovered,
 			"nav-toggle--menuOpen": this.props.isTakeoverOpen,
-			"nav-toggle--secondaryPanelOpen": this.props.isSecondaryPanelOpen,
-			"nav-toggle--countIsIncreasing": countIsIncreasing,
-			"nav-toggle--countIsDecreasing": countIsDecreasing,
 		})
 
 		return (
