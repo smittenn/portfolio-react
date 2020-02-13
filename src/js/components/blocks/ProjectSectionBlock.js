@@ -31,7 +31,7 @@ export default class ProjectSectionBlock extends Component {
 				return <Video src={media.src} poster={media.poster}/>
 
 			else if (media.type == 'iframe')
-				return <IFrame src={media.src} height={media.height}/>
+				return <IFrame src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
 
 			else if (media.type == 'codepen')
 				return <CodepenEmbed slug={media.slug} title={media.title} height={media.height}/>

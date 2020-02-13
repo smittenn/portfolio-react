@@ -118,7 +118,7 @@ class JnjHome extends Component {
 						Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.
 					'
 					media={{
-						type: 'image', 
+						type: 'image',
 						src: '../assets/img/jnj-home/connected.svg', 
 						aspectRatioWidth: 16, 
 						aspectRatioHeight: 9 
@@ -188,7 +188,7 @@ class JnjHome extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
-							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html"/>
+							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html" aspectRatioWidth={this.props.isMobile ? 5 : 4} aspectRatioHeight={this.props.isMobile ? 8 : 3}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -211,7 +211,7 @@ class JnjHome extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
-							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html"/>
+							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -235,7 +235,7 @@ class JnjHome extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
-							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-links.html"/>
+							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-links.html" aspectRatioWidth={3} aspectRatioHeight={2}/>
 						</div>
 					</div>
 				</ScrollSection>

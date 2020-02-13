@@ -13,6 +13,8 @@ class IFrame extends Component {
 		this.state = {
 			src: '',
 		}
+
+		this.ref = React.createRef();
 	}
 
 	setSource = () => {
@@ -29,16 +31,25 @@ class IFrame extends Component {
 
 	render() {
 
-		const { src, height } = this.props;
+		const { src, aspectRatioWidth, aspectRatioHeight } = this.props;
 
-		let adjustedHeight = height ? height : 720;
-		this.props.isMobile ? (adjustedHeight *= 0.75) : null;
+		const height = (() => {
+			if (this.ref.current && (aspectRatioWidth && aspectRatioHeight))
+				return ((aspectRatioHeight * this.ref.current.clientWidth) / aspectRatioWidth)
+			else return 720
+		})()
+
+
+		// const height = (aspectRatioWidth || aspectRatioHeight) ?  : 720;
+		// this.props.isMobile ? (adjustedHeight *= 0.75) : null;
+
+		// console.log(height);
 
 		return (
-			<div ref="iframe">
+			<div ref={this.ref}>
 				<IntersectionVisible 
 				onShow={this.setSource}>
-					<iframe src={this.state.src} width={this.refs.iframe ? this.refs.iframe.clientWidth : null} height={adjustedHeight}/>
+					<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
 				</IntersectionVisible>
 			</div>
 		);	

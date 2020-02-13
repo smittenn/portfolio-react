@@ -250,7 +250,7 @@ class AmericanMade extends Component {
 					<ProjectSectionBlock 
 					title="Mobile"
 					description="A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens."
-					media={{ type: "iframe", src: "../assets/img/american-made/mobile.svg", height: 512  }}/>
+					media={{ type: "iframe", src: "../assets/img/american-made/mobile.svg", aspectRatioWidth: 2, aspectRatioHeight: 1 }}/>
 
 				</ScrollSection>
 
@@ -264,7 +264,7 @@ class AmericanMade extends Component {
 					title="Interactive Map"
 					subtitle="Fly With Barry"
 					description="We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America."
-					media={{ type: "iframe", src: "../assets/img/american-made/map-code2.svg", height: 512  }}/>
+					media={{ type: "iframe", src: "../assets/img/american-made/map-code2.svg",  aspectRatioWidth: 16, aspectRatioHeight: 9  }}/>
 
 					{/*<div className="grid">
 						<div className="grid__row">

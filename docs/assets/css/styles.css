@@ -261,7 +261,6 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
-  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -292,7 +291,6 @@ html {
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   font-family: "Futura Maxi", sans-serif;
-  -webkit-font-feature-settings: "dlig", "liga",  "ss02";
   font-feature-settings: "dlig", "liga",  "ss02"; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     white-space: pre; }
