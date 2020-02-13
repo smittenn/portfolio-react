@@ -74,6 +74,7 @@ class Vai extends Component {
 		const { activeSection, sections } = this.state;
 
 		const brandBlack = hexToRgb(palette("brand-black"));
+		const brandPrimary = '#B6462E';
 
 		// const sections = pageSections.map(i => i.name)
 
@@ -91,10 +92,11 @@ class Vai extends Component {
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)
 						),
-						url(../assets/img/vai/mobile.png)
+						url(../assets/img/vai/mobile.jpg)
 					`, 
-					backgroundSize: (this.props.isMobile ? '120%' : '60% 120%'),
+					backgroundSize: (this.props.isMobile ? '120%' : '50% 120%'),
 					backgroundPosition: (this.props.isMobile ? '-230% -345%' : '60% -280%'),
+					backgroundColor: brandPrimary,
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -111,7 +113,7 @@ class Vai extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1);}}>
 					<ProjectIntroBlock 
-					col1="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users are changing." 
+					col1="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing." 
 					col2="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience. \n\n The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees." 
 					col3="As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype." 
 					col4="Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video."
@@ -126,12 +128,12 @@ class Vai extends Component {
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .8),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95) 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .84),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .96) 
 						),
 						url(../assets/img/vai/mr-robot.jpg)
 					`,
-				 	backgroundPosition: this.props.isMobile ? "center 10%" : "center 30%"
+				 	backgroundPosition: this.props.isMobile ? "center 10%" : "center 55%"
 				}}>
 					<ProjectDetailsBlock 
 					role="Lead UI/UX Designer" 
@@ -212,26 +214,6 @@ class Vai extends Component {
 					<ProjectUpNextBlock name="Translator" to="translator"/>
 				</ScrollSection>
 
-
-
-				{/*<ScrollSection 
-				black
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/translator/banner.gif)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}>
-					<NavLink to="translator" className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h4 className="light">Next Up</h4>
-							<h2 className="mb0">Translator</h2>
-						</div>
-					</NavLink>
-				</ScrollSection>*/}
 				
 			</article>
 		);

@@ -73,7 +73,7 @@ class Home extends Component {
 				name: "V.ai Player",
 				href: "/vai",
 				tags: [ "UX", "Interactive" ],
-				img: "../assets/img/vai/mobile-16x9.png",
+				img: "../assets/img/vai/mobile-16x9.jpg",
 				aspectRatioWidth: 16,
 				aspectRatioHeight: 9,
 			},
@@ -81,7 +81,7 @@ class Home extends Component {
 				name: "Translator",
 				href: "/translator",
 				tags: [ "UX", "User Testing" ],
-				img: "../assets/img/translator/usertesting.svg",
+				img: "../assets/img/translator/mobile-16x9.jpg",
 				aspectRatioWidth: 16,
 				aspectRatioHeight: 9,
 			},
@@ -105,9 +105,9 @@ class Home extends Component {
 				name: "J&J Home",
 				href: "/jnj-home",
 				tags: [ "Visual Design", "Mobile" ],
-				img: "../assets/img/jnj-home/connected.svg",
-				aspectRatioWidth: 16,
-				aspectRatioHeight: 9,
+				img: "../assets/img/jnj-home/onboarding-mobile.png",
+				aspectRatioWidth: 1,
+				aspectRatioHeight: 1,
 
 			},
 			{
@@ -227,14 +227,14 @@ class Home extends Component {
 						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--hide-bp-medium">
 							<div className="grid__row m0" style={{ flexDirection: 'column' }}>
-								<h4>1. Discover</h4>
-								<h4>2. Ideate</h4>
-								<h4>3. Sketch</h4>
-								<h4>4. Prototype</h4>
-								<h4>5. User Testing</h4>
-								<h4>6. Experience Mapping</h4>
-								<h4>7. Refinement</h4>
-								<h4>8. Iterate</h4>
+								<h4>1 — Discover</h4>
+								<h4>2 — Ideate</h4>
+								<h4>3 — Sketch</h4>
+								<h4>4 — Prototype</h4>
+								<h4>5 — User Testing</h4>
+								<h4>6 — Experience Mapping</h4>
+								<h4>7 — Refinement</h4>
+								<h4>8 — Iterate</h4>
 								{/*<div className="grid__item grid__item--col-4">
 									<Image src="../assets/img/roof.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 								</div>
@@ -267,8 +267,8 @@ class Home extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<div className="spacer spacer__md"/>
-							<ProjectCard name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
+							<div className="spacer spacer__sm"/>
+							<ProjectCard isHovered name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>

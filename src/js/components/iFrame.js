@@ -2,8 +2,11 @@ import React, {Component} from "react"
 import classNames from "classnames"
 import { connect } from 'react-redux'
 
+import { setCursorHover, setCursorUnhover } from "../actions/cursor"
+
 import IntersectionVisible from "react-intersection-visible"
 
+import Icon from "../components/Icon"
 
 class IFrame extends Component {
 
@@ -46,12 +49,15 @@ class IFrame extends Component {
 		// console.log(height);
 
 		return (
-			<div ref={this.ref}>
-				<IntersectionVisible 
-				onShow={this.setSource}>
+			<IntersectionVisible 
+			onShow={this.setSource}>
+				<div ref={this.ref} className="iframe-wrapper">
+					<a href={this.state.src} target="_blank" onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+						<Icon icon='arrow' size={16}/>
+					</a>
 					<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
-				</IntersectionVisible>
-			</div>
+				</div>
+			</IntersectionVisible>
 		);	
 	}
 }
@@ -60,4 +66,10 @@ const mapStateToProps = state => ({
 	isMobile: state.isMobile,
 })
 
-export default connect(mapStateToProps)(IFrame)
+const mapDispatchToProps = dispatch => ({
+	setCursorHover: () => dispatch(setCursorHover()),
+	setCursorUnhover: () => dispatch(setCursorUnhover()),
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(IFrame)

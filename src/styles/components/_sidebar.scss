@@ -160,6 +160,16 @@ $baseclass: sidebar;
 				}
 			}
 		}
+
+		// .#{$baseclass}__item {
+		// 	@for $i from 1 through 24 {
+		// 		&:nth-child(#{$i}) {
+		// 			.#{$baseclass}__dash {
+		// 				transition-delay: (#{0.0 + ($i * 0.09)}s);
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 
 	.#{$scrolling-section-classname}--black & {
@@ -190,6 +200,10 @@ $baseclass: sidebar;
 		right: 0;
 		left: auto;
 		transform: translateX(176px);
+
+		.active-section & {
+			pointer-events: none;
+		}
 
 		.#{$baseclass}__inner {
 			margin-top: 84px;

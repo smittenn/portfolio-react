@@ -67,6 +67,10 @@ video {
 	width: 100%;
 }
 
+figcaption {
+	margin-top: 24px;
+}
+
 iframe {
 	position: relative;
 	width: 0;
@@ -102,7 +106,11 @@ section {
 	background-size: cover;
 	background-position: center;
 	transition: background-color $easing2 $duration-short;
-	// @include zIndexClose();					
+	// @include zIndexClose();		
+
+	.icon {
+		stroke: $brand-black;
+	}			
 
 	img {
 		width: 100%;
@@ -181,7 +189,6 @@ section {
 		.icon {
 			stroke: $brand-white;
 		}
-
 	}
 
 	&--grey {

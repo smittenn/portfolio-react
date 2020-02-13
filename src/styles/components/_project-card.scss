@@ -54,10 +54,10 @@ $baseclass: project-card;
 
 	&__asset {
 		position: absolute;
-		transform: translateX(-8.3333%);
+		transform: translateX(50%);
 		opacity: 0;
 		pointer-events: none;
-		width: 116.6666%;
+		width: 75%;
 		@include zIndexFar;
 
 		img, video {

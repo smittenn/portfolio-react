@@ -261,6 +261,7 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
+  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -291,6 +292,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   font-family: "Futura Maxi", sans-serif;
+  -webkit-font-feature-settings: "dlig", "liga",  "ss02";
   font-feature-settings: "dlig", "liga",  "ss02"; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     white-space: pre; }
@@ -414,6 +416,9 @@ video {
   position: relative;
   width: 100%; }
 
+figcaption {
+  margin-top: 24px; }
+
 iframe {
   position: relative;
   width: 0;
@@ -446,6 +451,8 @@ section {
   background-size: cover;
   background-position: center;
   transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 0.3s; }
+  section .icon {
+    stroke: #131112; }
   section img {
     width: 100%; }
   section h1 .outline, section h2 .outline, section h3 .outline, section h4 .outline, section h5 .outline, section h6 .outline, section p .outline, section blockquote .outline, section a .outline {
@@ -2180,6 +2187,31 @@ section p span > span, section blockquote span > span {
   .cursor--hovering .cursor__inner {
     opacity: 0; }
 
+.iframe-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  border: solid 1px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: -1px;
+  color: rgba(19, 17, 18, 0.12);
+  background: #f8fbf7;
+  position: relative; }
+  .iframe-wrapper a {
+    padding: 12px; }
+  .iframe-wrapper .icon {
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .scrolling-section--black .iframe-wrapper {
+    background: #131112;
+    color: rgba(248, 251, 247, 0.12); }
+  .scrolling-section--grey .iframe-wrapper {
+    background: #eaede9; }
+
 .style-line__container {
   position: absolute;
   left: 0;
@@ -3094,11 +3126,11 @@ section p span > span, section blockquote span > span {
     z-index: 1; }
   .project-card__asset {
     position: absolute;
-    -ms-transform: translateX(-8.3333%);
-    transform: translateX(-8.3333%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
     opacity: 0;
     pointer-events: none;
-    width: 116.6666%;
+    width: 75%;
     z-index: 0; }
     .project-card__asset img, .project-card__asset video {
       transition-delay: 0.06s; }
@@ -3185,7 +3217,8 @@ section p span > span, section blockquote span > span {
   .scroll-arrow h1, .scroll-arrow h2, .scroll-arrow h3, .scroll-arrow h4, .scroll-arrow h5, .scroll-arrow h6 {
     color: #131112;
     margin: 0;
-    margin-bottom: 6px; }
+    margin-bottom: 6px;
+    line-height: 1; }
     .scroll-arrow h1 span, .scroll-arrow h2 span, .scroll-arrow h3 span, .scroll-arrow h4 span, .scroll-arrow h5 span, .scroll-arrow h6 span {
       display: inline-block; }
     .scroll-arrow h1 > span, .scroll-arrow h2 > span, .scroll-arrow h3 > span, .scroll-arrow h4 > span, .scroll-arrow h5 > span, .scroll-arrow h6 > span {
@@ -3402,6 +3435,8 @@ section p span > span, section blockquote span > span {
       left: auto;
       -ms-transform: translateX(176px);
       transform: translateX(176px); }
+      .active-section .sidebar {
+        pointer-events: none; }
       .sidebar .sidebar__inner {
         margin-top: 84px;
         pointer-events: none; }

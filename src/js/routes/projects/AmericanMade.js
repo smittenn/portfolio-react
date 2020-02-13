@@ -250,7 +250,7 @@ class AmericanMade extends Component {
 					<ProjectSectionBlock 
 					title="Mobile"
 					description="A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens."
-					media={{ type: "iframe", src: "../assets/img/american-made/mobile.svg", aspectRatioWidth: 2, aspectRatioHeight: 1 }}/>
+					media={{ type: "iframe", src: "../assets/img/american-made/mobile.svg", aspectRatioWidth: this.props.isMobile ? 16 : 2, aspectRatioHeight: this.props.isMobile ? 9 : 1 }}/>
 
 				</ScrollSection>
 
@@ -289,15 +289,16 @@ class AmericanMade extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `
+					/*backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
 						),
-						url(../assets/img/vai/mobile.png)
+						url(../assets/img/vai/mobile.jpg)
 					`,
-					backgroundSize: '50%'
-				}}>
+					backgroundSize: '50%'*/
+				}}
+				>
 					<ProjectUpNextBlock name="V.ai Player" to="vai"/>
 				</ScrollSection>
 

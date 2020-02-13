@@ -23,6 +23,7 @@ import TextLink from "../../components/TextLink"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -177,6 +178,11 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
+					{/*<ProjectSectionBlock 
+					title="Navigation"
+					description="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html",  aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>*/}
+
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -200,6 +206,12 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
+					{/*<ProjectSectionBlock 
+					title="HCP/Patient"
+					subtitle="Site Flipper"
+					description="To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper",  aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>*/}
+
 					<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -296,8 +308,8 @@ class JnjMdc extends Component {
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .5),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .5)
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .72),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .96)
 						),
 						url(../assets/img/card-components/share-animation.jpg)
 					`, 

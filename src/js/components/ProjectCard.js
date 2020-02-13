@@ -18,7 +18,7 @@ class ProjectCard extends Component {
 		super(props);
 
 		this.state = {
-			isHovered: false,
+			isHovered: this.props.isHovered,
 			isVisible: false,
 		}
 	}
@@ -77,7 +77,7 @@ class ProjectCard extends Component {
 			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
 				<NavLink to={href} onClick={this.handleMouseLeave}>
 					<div className="project-card__asset">
-					{this.props.children}
+						{this.props.children}
 					</div>
 					<div className="project-card__bottom">
 						<TextLink hideUnderline><h2 className="mb0">{name}</h2></TextLink>

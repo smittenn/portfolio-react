@@ -74,23 +74,13 @@ class Translator extends Component {
 		const { setCounter, setNavWhite, setNavBlack } = this.props;
 		const { activeSection, sections } = this.state;
 
+		const brandPrimary = '#3B96B7';
+
 		const brandBlack = hexToRgb(palette("brand-black"));
 
 
 		return (
 			<article>
-				{/*<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
-					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>Translator </span></span>, `helped NBCU technicians browse and archive footage.`]}
-					bgImage={"../assets/img/translator/banner.png"}
-					onSetActive={() => { this.setActiveSection(0); }}
-					/>
-				</Element>*/}
 
 				<ScrollSection 
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
@@ -100,10 +90,11 @@ class Translator extends Component {
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .06),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)
 						),
-						url(../assets/img/translator/mobile.png)
+						url(../assets/img/translator/mobile-16x9.jpg)
 					`, 
 					backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
 					backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
+					backgroundColor: brandPrimary,
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxHeader 
@@ -121,7 +112,7 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<ProjectIntroBlock 
 					col1="The process for media asset management varied greatly across NBCU’s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands. \n\n The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or “MAM” to be stored."
-					col2="The brands were very reliant on the folder structure as search was not enabled on the brand storage systems. Searching large data stores would cause the servers to crash. Findability was a major issue, if someone misplaces a file or accidentally drags a file into another folder, its difficult to recall. Each brand had a different folder structure and each team within a brand may have a different naming convention." 
+					col2="On the previous CMS, the brands were very reliant on the folder structure, search was not available on the brand storage systems. Searching large data stores would cause the servers to crash. \n\n Findability was a major issue, if a technician misplaced a file or accidentally dragged a file into another folder, it would be difficult to recall the file later. Each brand had a different folder structure and each team within a brand may have a different naming convention." 
 					media={{ type: 'image', src: '../assets/img/translator/usertesting.svg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					col3="My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later." 
 					col4="With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams."
@@ -159,7 +150,7 @@ class Translator extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/mam-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/mam-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -182,13 +173,13 @@ class Translator extends Component {
 					</div>
 					<SideScroller>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/metadata-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/metadata-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking an uploaded media item opens the metadata drawer. Many metadata fields are detected on upload."/>
 						</div>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/metadata-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/metadata-02.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="The “Ready for Ingest” indicator signifies that the minimum required metadata is present."/>
 						</div>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/metadata-03.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/metadata-03.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="An asset is “Search Optmized” when all of its metadata fields are filled out."/>
 						</div>
 					</SideScroller>
 				</ScrollSection>
@@ -212,7 +203,7 @@ class Translator extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/shell-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/shell-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -230,31 +221,20 @@ class Translator extends Component {
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2>Bulk Actions</h2>
-								<blockquote>Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image or Audio) across all shared metadata fields.</blockquote>
+								<blockquote>Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields.</blockquote>
 							</div>
 						</div>
 					</div>
 					<SideScroller>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/bulk-01.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/bulk-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking the multi select button in the sticky secondary bar shows checkboxes and starts the bulk edit flow."/>
 						</div>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/bulk-02.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/bulk-02.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</SideScroller>
 				</ScrollSection>
 
-				{/*<NextProject 
-				to="/jnj-home"
-				name="J&J Home"
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, .24`,
-					backgroundSize: 'contain',
-					backgroundPosition: 'center',
-				}}/>*/}
 
 				{/*<ScrollSection 
 				name={sections[6]}

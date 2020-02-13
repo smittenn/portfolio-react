@@ -23,6 +23,7 @@ import Image from "../../components/Image"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -176,21 +177,10 @@ class JnjHome extends Component {
 				black
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Meganav</h2>
-								<blockquote>I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
-							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-nav.html" aspectRatioWidth={this.props.isMobile ? 5 : 4} aspectRatioHeight={this.props.isMobile ? 8 : 3}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Meganav"
+					description="I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html",  aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>
 				</ScrollSection>
 
 
@@ -199,21 +189,11 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Sitemap</h2>
-								<blockquote>I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the live map at any time.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
-							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-sitemap.html" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Sitemap"
+					description="I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html",  aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
+
 				</ScrollSection>
 
 
@@ -223,21 +203,10 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5) }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Links</h2>
-								<blockquote>I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed. The scrolling page with side navigation, sorting functionality and starring animation made for a delightful experience.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10  grid__item--col-12-medium">
-							<IFrame src="https://erchsm.github.io/jnj-process/prototypes/home-links.html" aspectRatioWidth={3} aspectRatioHeight={2}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Links"
+					description="I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed. The scrolling page with side navigation, sorting functionality and starring animation made for a delightful experience."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -245,8 +214,13 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-mdc/ladies.jpg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .84)
+						),
+						url(../assets/img/jnj-mdc/ladies.jpg)
+					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: '50% 80%',
 				}}>

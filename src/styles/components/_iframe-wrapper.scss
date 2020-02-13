@@ -1,0 +1,31 @@
+$baseclass: iframe-wrapper;
+
+.#{$baseclass} {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	border: solid 1px;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-right: -1px;
+	color: rgba($brand-black, .12);
+	background: $brand-white;
+	position: relative;
+
+	a {
+		padding: 12px;
+	}
+
+	.icon {
+		transform: rotate(-45deg);
+	}
+
+	.#{$scrolling-section-classname}--black & {
+		background: $brand-black;
+		color: rgba($brand-white, .12);
+	}
+
+	.#{$scrolling-section-classname}--grey & {
+		background: $brand-grey-lightest;
+	}
+}

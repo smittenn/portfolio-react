@@ -57,7 +57,7 @@ export default class Image extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
-		const { src, aspectRatioWidth, aspectRatioHeight, style } = this.props;
+		const { src, aspectRatioWidth, aspectRatioHeight, style, caption } = this.props;
 
 		const { isVisible, intersectionRatio } = this.state;
 
@@ -88,27 +88,22 @@ export default class Image extends Component {
 		style ? Object.assign(_style, style) : null
 
 		return (
-			<div className={classnames} style={_style} ref={this.ref}>
-				<img src={src} style={{
-					display: 'block',
-					// width: '100%',
-					height: '100%',
-					position: 'absolute',
-					top: 0,
-					// bottom: 0,
-					left: 0,
-					// transform: `translate3d(0, ${intersectionRatio * 100}px, 0)`,
-					// right: 0,
-				}}/>
-				{/*<div style={{
-					background: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)`,
-					position: 'absolute',
-					top: 0,
-					left: 0,
-					width: '100%',
-					height: '100%',
-				}}/>*/}
-			</div>
+			<figure>
+				<div className={classnames} style={_style} ref={this.ref}>
+					<img src={src} style={{
+						display: 'block',
+						// width: '100%',
+						height: '100%',
+						position: 'absolute',
+						top: 0,
+						// bottom: 0,
+						left: 0,
+						// transform: `translate3d(0, ${intersectionRatio * 100}px, 0)`,
+						// right: 0,
+					}}/>
+				</div>
+				{ caption ? (<figcaption><p className="mb0">{caption}</p></figcaption>) : null }
+			</figure>
 		);
 	}
 }

@@ -64,6 +64,7 @@ $arrow-size: 40px;
 		color: $brand-black;
 		margin: 0;
 		margin-bottom: 6px;
+		line-height: 1;
 
 		span {
 			display: inline-block;
@@ -130,7 +131,6 @@ $arrow-size: 40px;
 		
 		h1, h2, h3, h4, h5, h6 {			
 			span > span {
-				// opacity: 0;
 				transition: transform $duration-long $easing1;
 				transform: translateY(24px);
 			}
