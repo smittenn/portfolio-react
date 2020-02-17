@@ -36287,15 +36287,23 @@ var IFrame = function (_Component) {
 
 		_this.unsetSource = function () {
 			_this.setState({
-				src: ''
+				src: undefined
 			});
 		};
 
-		_this.state = {
-			src: ''
+		_this.refreshSource = function () {
+			_this.unsetSource();
+
+			setTimeout(function () {
+				_this.setSource();
+			}, 500);
 		};
 
 		_this.ref = _react2.default.createRef();
+
+		_this.state = {
+			src: _this.props.src
+		};
 		return _this;
 	}
 
@@ -36327,11 +36335,25 @@ var IFrame = function (_Component) {
 					"div",
 					{ ref: this.ref, className: "iframe-wrapper" },
 					_react2.default.createElement(
-						"a",
-						{ href: this.state.src, target: "_blank", onMouseEnter: this.props.setCursorHover, onMouseLeave: this.props.setCursorUnhover },
-						_react2.default.createElement(_Icon2.default, { icon: "arrow", size: 16 })
+						"div",
+						{ className: "iframe-wrapper__controls" },
+						_react2.default.createElement(
+							"div",
+							{ onClick: this.refreshSource, onMouseEnter: this.props.setCursorHover, onMouseLeave: this.props.setCursorUnhover },
+							_react2.default.createElement(_Icon2.default, { icon: "refresh", size: 16 })
+						),
+						_react2.default.createElement(
+							"figcaption",
+							{ className: "m0", style: { lineHeight: 1 } },
+							src.split('//').slice(-1)[0]
+						),
+						_react2.default.createElement(
+							"a",
+							{ href: src, target: "_blank", onMouseEnter: this.props.setCursorHover, onMouseLeave: this.props.setCursorUnhover },
+							_react2.default.createElement(_Icon2.default, { icon: "arrow", size: 16 })
+						)
 					),
-					_react2.default.createElement("iframe", { src: this.state.src, width: this.ref.current ? this.ref.current.clientWidth : null, height: height })
+					_react2.default.createElement("iframe", { src: src, width: this.ref.current ? this.ref.current.clientWidth : null, height: height })
 				)
 			);
 		}
@@ -36406,7 +36428,8 @@ var Icon = function (_Component) {
 				conversation: 'M18.3442356,29.1838533 C21.8258596,27.8961163 24.1687208,25.3299155 24.1687208,22.1417144 C24.1687208,17.5145847 19.0051724,13.9478744 12.8163188,13.9478744 C6.62746511,13.9478744 1.45708295,17.5145847 1.45708295,22.1417144 C1.45708295,24.6145358 2.99905955,26.7131737 5.37950461,28.1313247 M24.1709834,20.9509493 C24.4783677,20.9913299 24.7933963,21.0255687 25.1160691,21.0536658 M12.8129019,22.6653494 L12.8129019,18.4762696 M12.8010351,25.0419031 L12.8010351,25.0646934 M26.4804797,16.13344 L26.4804797,16.1562303 M5.45096734,28.1893186 C4.75830246,29.7430222 3.27640533,31.0058072 1.00527594,31.9776737 C0.704223681,32.1065006 13.3674098,31.7421294 18.3803978,29.1687661 M26.4804797,14.2348264 C26.4804797,13.1734337 28.2697599,12.6678989 28.1838717,10.9873642 C28.1396621,10.1223346 27.4671493,9.41645924 26.5830273,9.41645924 C25.6989054,9.41645924 24.9821829,10.1197773 24.9821829,10.9873642 M34.0219111,19.2111024 C35.2942028,20.9948901 36.6352584,22.1770084 38.0450778,22.7574575 C38.3512113,22.8834984 30.889461,23.5849299 25.1802283,21.0441755 M34.1352983,19.1307876 C36.3438501,17.7135921 37.7187963,15.6362316 37.7187963,13.19384 C37.7187963,8.56671028 32.555248,5 26.3663943,5 C20.1775406,5 15.0071585,8.56671028 15.0071585,13.19384 C15.0071585,13.4843656 15.0284429,13.7697263 15.0698708,14.0494252',
 				directions: 'M8.61463019,35.7565549 L29.0109199,28.2586718 C29.4331414,28.0301634 29.6442521,27.6343324 29.6442521,27.0711788 C29.6442521,26.5080252 29.4331414,26.1047619 29.0109199,25.861389 L22.2517109,23.0591723 L34.8133668,18.1072933 C35.4141011,17.50881 35.5395612,16.899361 35.1897471,16.2789461 C34.839933,15.6585312 34.2869378,15.40564 33.5307615,15.5202727 L17.3629751,21.2344736 C16.5256268,21.6043339 16.1069527,22.1287436 16.1069527,22.8077026 C16.1069527,23.4866616 16.5256268,23.9730055 17.3629751,24.2667341 L23.5576939,26.7411397 L7.35013627,32.92608 C6.51657511,33.4391045 6.23802226,34.0846817 6.51447773,34.8628117 C6.79093321,35.6409417 7.49098403,35.9388561 8.61463019,35.7565549 Z M33.8208511,13.1529469 C35.9661936,10.7223616 37.8534838,9.02748388 37.8534838,6.80032235 C37.8534838,4.57316082 36.0480126,2.76768968 33.8208511,2.76768968 C31.5936896,2.76768968 29.7882184,4.57316082 29.7882184,6.80032235 C29.7882184,9.02748388 31.7342847,10.7223616 33.8208511,13.1529469 Z M33.8066371,8.48628494 C34.7443893,8.48628494 35.5045877,7.72608656 35.5045877,6.78833434 C35.5045877,5.85058212 34.7443893,5.09038374 33.8066371,5.09038374 C32.8688849,5.09038374 32.1086865,5.85058212 32.1086865,6.78833434 C32.1086865,7.72608656 32.8688849,8.48628494 33.8066371,8.48628494 Z M7.21658844,29.5855372 C9.36193094,27.1549519 11.2492211,25.4600742 11.2492211,23.2329126 C11.2492211,21.0057511 9.44374997,19.20028 7.21658844,19.20028 C4.98942691,19.20028 3.18395577,21.0057511 3.18395577,23.2329126 C3.18395577,25.4600742 5.13002209,27.1549519 7.21658844,29.5855372 Z M7.21231778,24.8884145 C8.15007,24.8884145 8.91026838,24.1282161 8.91026838,23.1904639 C8.91026838,22.2527117 8.15007,21.4925133 7.21231778,21.4925133 C6.27456556,21.4925133 5.51436718,22.2527117 5.51436718,23.1904639 C5.51436718,24.1282161 6.27456556,24.8884145 7.21231778,24.8884145 Z',
 				filter: 'M20.1187279,11.5229522 C27.2984296,11.5229522 32.9303122,9.568 32.9303122,8.736 C32.9303122,7.904 27.2984296,6 20.1187279,6 C12.9390261,6 7,7.904 7,8.76147611 C7,9.61895221 12.9390261,11.5229522 20.1187279,11.5229522 Z M7.15164131,13.3562624 C9.41304243,14.3466441 12.6875334,15.5 19.8489606,15.6077488 M36.2679711,11.264 L36.2679711,9.76165114 C36.1744369,9.04721738 35.6348114,8.32433376 34.6490949,7.59300025 C33.17052,6.496 28.912195,4.39104732 20,4.39104732 C10.6122154,4.39104732 6.07552251,6.734004 4.81383702,7.69293534 C3.97271335,8.33222291 3.4925333,9.02179484 3.37329687,9.76165114 L3.37329687,11.264 C3.53149625,11.8382393 3.73076366,12.2502393 3.97109909,12.5 C7.30126602,15.9607671 10.7503468,19.4607671 14.3183416,23 C16.1688583,24.7071388 17.0941167,26.2071388 17.0941167,27.5 C17.0941167,30.0206213 17.0941167,32.5412426 17.0941167,35.0618638 L17.0941167,35.0618638 C17.0941167,35.3380062 17.3179743,35.5618638 17.5941167,35.5618638 C17.6749925,35.5618638 17.7546612,35.5422453 17.8262891,35.5046911 L22.3118189,33.1529469 C22.4764833,33.066614 22.5796465,32.8960437 22.5796465,32.7101197 C22.5796465,30.9734131 22.5796465,29.2367066 22.5796465,27.5 C22.5796465,25.8967937 24.3837855,23.9738091 25.4377547,22.9410491 C27.9474165,20.4818896 32.0136823,16.4173822 35.7513063,12.5 C35.9893444,12.2505137 36.161566,11.8385137 36.2679711,11.264 Z',
-				clipboard: 'M16.0103837,7.26417094 L13.262009,7.26417094 C13.1239378,7.26417094 13.012009,7.37609976 13.012009,7.51417094 L13.012009,11.6350078 C13.012009,11.773079 13.1239378,11.8850078 13.262009,11.8850078 L27.8617776,11.8850078 C27.9998488,11.8850078 28.1117776,11.773079 28.1117776,11.6350078 C28.1117776,11.6345116 28.1117761,11.6340155 28.1117732,11.6335194 L28.0872385,7.51268252 C28.0864199,7.37519468 27.9747332,7.26417094 27.8372429,7.26417094 L25.0904915,7.26417094 C24.5527466,7.04972624 24.2838741,6.66070878 24.2838741,6.09711856 C24.4089206,4.96185331 23.6537282,2 20.5617924,2 C17.4698565,2 16.701112,5.14174465 16.9008813,6.09711856 C16.9008813,6.66070878 16.6040488,7.04972624 16.0103837,7.26417094 Z M20.5963112,6.43838351 C21.2859999,6.43838351 21.8418988,5.91600427 21.8418988,5.22631562 C21.8418988,4.53662697 21.2859999,3.9821117 20.5963112,3.9821117 C19.9066226,3.9821117 19.3507236,4.53662697 19.3507236,5.22631562 C19.3507236,5.91600427 19.9066226,6.43838351 20.5963112,6.43838351 Z M20.4749617,31.5812271 C24.3669396,31.5812271 27.4712556,28.465422 27.4712556,24.6800536 C27.4712556,20.8946853 24.190717,17.7788802 20.4877678,17.7788802 C16.7848186,17.7788802 13.6633702,20.8475275 13.6633702,24.6328959 C13.6633702,28.4182643 16.5829837,31.5812271 20.4749617,31.5812271 Z M12.7594384,9.35631379 L10.4516995,9.40090811 C9.09006798,9.42722003 8,10.5385558 8,11.9004415 L8,34.9406741 C8,36.321386 9.11928813,37.4406741 10.5,37.4406741 L30.678646,37.4406741 C32.0593579,37.4406741 33.178646,36.321386 33.178646,34.9406741 L33.178646,11.8563138 C33.178646,10.4756019 32.0593579,9.35631379 30.678646,9.35631379 L28.2954522,9.35631379 M17.6987659,24.3663152 L19.6433317,26.3339709 L23.130907,23.0591723'
+				clipboard: 'M16.0103837,7.26417094 L13.262009,7.26417094 C13.1239378,7.26417094 13.012009,7.37609976 13.012009,7.51417094 L13.012009,11.6350078 C13.012009,11.773079 13.1239378,11.8850078 13.262009,11.8850078 L27.8617776,11.8850078 C27.9998488,11.8850078 28.1117776,11.773079 28.1117776,11.6350078 C28.1117776,11.6345116 28.1117761,11.6340155 28.1117732,11.6335194 L28.0872385,7.51268252 C28.0864199,7.37519468 27.9747332,7.26417094 27.8372429,7.26417094 L25.0904915,7.26417094 C24.5527466,7.04972624 24.2838741,6.66070878 24.2838741,6.09711856 C24.4089206,4.96185331 23.6537282,2 20.5617924,2 C17.4698565,2 16.701112,5.14174465 16.9008813,6.09711856 C16.9008813,6.66070878 16.6040488,7.04972624 16.0103837,7.26417094 Z M20.5963112,6.43838351 C21.2859999,6.43838351 21.8418988,5.91600427 21.8418988,5.22631562 C21.8418988,4.53662697 21.2859999,3.9821117 20.5963112,3.9821117 C19.9066226,3.9821117 19.3507236,4.53662697 19.3507236,5.22631562 C19.3507236,5.91600427 19.9066226,6.43838351 20.5963112,6.43838351 Z M20.4749617,31.5812271 C24.3669396,31.5812271 27.4712556,28.465422 27.4712556,24.6800536 C27.4712556,20.8946853 24.190717,17.7788802 20.4877678,17.7788802 C16.7848186,17.7788802 13.6633702,20.8475275 13.6633702,24.6328959 C13.6633702,28.4182643 16.5829837,31.5812271 20.4749617,31.5812271 Z M12.7594384,9.35631379 L10.4516995,9.40090811 C9.09006798,9.42722003 8,10.5385558 8,11.9004415 L8,34.9406741 C8,36.321386 9.11928813,37.4406741 10.5,37.4406741 L30.678646,37.4406741 C32.0593579,37.4406741 33.178646,36.321386 33.178646,34.9406741 L33.178646,11.8563138 C33.178646,10.4756019 32.0593579,9.35631379 30.678646,9.35631379 L28.2954522,9.35631379 M17.6987659,24.3663152 L19.6433317,26.3339709 L23.130907,23.0591723',
+				refresh: 'M33.7999777,14.7149098 C31.5658738,9.58582391 26.4516939,6 20.5,6 C12.4918711,6 6,12.4918711 6,20.5 C6,28.5081289 12.4918711,35 20.5,35 C25.8699494,35 30.5581078,32.0809054 33.0642236,27.7429676 M34.264,7 L34.264,14.9450562 L26,14.9450562'
 			};
 
 			var _props = this.props,
@@ -39215,7 +39238,7 @@ module.exports={
 					"items": [
 						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },
-						// { "name": "Zyrtec Allergy Cast", "to": "/jnj-mdc" },
+						{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },
 					]
 				},
 				{
@@ -42171,7 +42194,7 @@ var JnjHome = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			sections: ["overview", "about", "new-user", "meganav", "sitemap", "links"]
+			sections: ["overview", "about", "new-user", "meganav", "sitemap", "news", "links"]
 		};
 		return _this;
 	}
@@ -42192,6 +42215,8 @@ var JnjHome = function (_Component) {
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 
+			var brandPrimary = (0, _hexToRgb2.default)('#000099');
+
 			return _react2.default.createElement(
 				"article",
 				null,
@@ -42204,8 +42229,8 @@ var JnjHome = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						style: {
-							backgroundImage: "url(../assets/img/jnj-home/onboarding-mobile.png)",
-							backgroundColor: "rgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12",
+							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ", .24), \n\t\t\t\t\t\t\trgba(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ", .4)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/jnj-home/onboarding-mobile.png)\n\t\t\t\t\t",
+							backgroundColor: brandPrimary,
 							backgroundSize: this.props.isMobile ? 'contain' : '60%',
 							backgroundPosition: this.props.isMobile ? 'right' : '100% 810%'
 						},
@@ -42260,7 +42285,11 @@ var JnjHome = function (_Component) {
 							backgroundRepeat: 'repeatX',
 							backgroundSize: this.props.isMobile ? 'cover' : '50%'
 						} },
-					_react2.default.createElement(_ProjectDetailsBlock2.default, { role: "UX/Motion Designer", date: "Spring, 2018", client: "J&J People XD", team: ["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"] })
+					_react2.default.createElement(_ProjectDetailsBlock2.default, {
+						role: "UX/Motion Designer",
+						date: "Spring, 2018",
+						client: "J&J People XD",
+						team: ["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -42343,6 +42372,21 @@ var JnjHome = function (_Component) {
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(5);
+						} },
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "News",
+						description: "I designed an article page flexible for different types of content. Using the \u201CThumbs Up\u201D feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click.",
+						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						black: true,
+						name: sections[6],
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(6);
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Links",
@@ -42570,7 +42614,7 @@ var JnjMdc = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			sections: ["overview", "about", "navigation", "flipper", "taxonomy", "buttons", "cards"]
+			sections: ["overview", "about", "navigation", "flipper", "chooser", "taxonomy", "buttons"]
 		};
 		return _this;
 	}
@@ -42669,38 +42713,10 @@ var JnjMdc = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(2);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Navigation"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12  grid__item--col-12-medium" },
-							_react2.default.createElement(_IFrame2.default, { src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Navigation",
+						description: "I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items.",
+						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -42712,43 +42728,11 @@ var JnjMdc = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(3);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "mb0" },
-									"HCP/Patient"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "fade" },
-									"Site Flipper"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12  grid__item--col-12-medium" },
-							_react2.default.createElement(_IFrame2.default, { src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "HCP/Patient",
+						subtitle: "Site Flipper",
+						description: "To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively.",
+						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -42760,84 +42744,25 @@ var JnjMdc = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(4);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Taxonomy"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12  grid__item--col-12-medium" },
-							_react2.default.createElement(_IFrame2.default, { src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Company Chooser",
+						description: "The intial partners bought into our design system were able to participate in an experimental section on the homepage of the site.",
+						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						grey: true,
+						black: true,
 						name: sections[5],
 						sections: sections,
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(5);
-						},
-						style: {
-							backgroundColor: "#f3f3f3"
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Buttons"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12  grid__item--col-12-medium" },
-							_react2.default.createElement(_IFrame2.default, { src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Taxonomy",
+						description: "Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way.",
+						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -42849,50 +42774,18 @@ var JnjMdc = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(6);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Cards"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-12  grid__item--col-12-medium" },
-							_react2.default.createElement(_IFrame2.default, { src: "//erchsm.github.io/jnj-process/prototypes/mdc-cards.html" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Buttons",
+						description: "I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.",
+						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
 						black: true,
 						sections: sections,
-						activeSection: activeSection,
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .72),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .96)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/card-components/share-animation.jpg)\n\t\t\t\t\t",
-							backgroundSize: 'cover',
-							backgroundPosition: 'center'
-						} },
+						activeSection: activeSection
+					},
 					_react2.default.createElement(_ProjectUpNextBlock2.default, { name: "Wrap Interactions", to: "micro-app-interactions" })
 				)
 			);

@@ -13,11 +13,11 @@ class IFrame extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			src: '',
-		}
-
 		this.ref = React.createRef();
+
+		this.state = {
+			src: this.props.src,
+		}
 	}
 
 	setSource = () => {
@@ -28,9 +28,18 @@ class IFrame extends Component {
 	
 	unsetSource = () => {
 		this.setState({
-			src: ''
+			src: undefined
 		})
 	}
+
+	refreshSource = () => {
+		this.unsetSource();
+
+		setTimeout(() => {
+			this.setSource();
+		}, 500);
+	}
+
 
 	render() {
 
@@ -49,13 +58,19 @@ class IFrame extends Component {
 		// console.log(height);
 
 		return (
-			<IntersectionVisible 
+			<IntersectionVisible
 			onShow={this.setSource}>
 				<div ref={this.ref} className="iframe-wrapper">
-					<a href={this.state.src} target="_blank" onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-						<Icon icon='arrow' size={16}/>
-					</a>
-					<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
+					<div className="iframe-wrapper__controls">
+						<div onClick={this.refreshSource} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+							<Icon icon='refresh' size={16}/>
+						</div>
+						<figcaption className="m0" style={{ lineHeight: 1 }}>{ src.split('//').slice(-1)[0] }</figcaption>
+						<a href={src} target="_blank" onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+							<Icon icon='arrow' size={16}/>
+						</a>
+					</div>
+					<iframe src={src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
 				</div>
 			</IntersectionVisible>
 		);	

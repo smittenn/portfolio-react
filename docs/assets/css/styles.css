@@ -417,6 +417,7 @@ video {
   width: 100%; }
 
 figcaption {
+  font-size: 13px;
   margin-top: 24px; }
 
 iframe {
@@ -480,9 +481,9 @@ section {
 .scrolling-section--black section {
   background-color: #131112; }
 
-.scrolling-section--black h1, .scrolling-section--black h2, .scrolling-section--black h3, .scrolling-section--black h4, .scrolling-section--black h5, .scrolling-section--black h6, .scrolling-section--black p, .scrolling-section--black blockquote, .scrolling-section--black a {
+.scrolling-section--black h1, .scrolling-section--black h2, .scrolling-section--black h3, .scrolling-section--black h4, .scrolling-section--black h5, .scrolling-section--black h6, .scrolling-section--black p, .scrolling-section--black blockquote, .scrolling-section--black a, .scrolling-section--black figcaption {
   color: #f8fbf7; }
-  .scrolling-section--black h1 .outline, .scrolling-section--black h2 .outline, .scrolling-section--black h3 .outline, .scrolling-section--black h4 .outline, .scrolling-section--black h5 .outline, .scrolling-section--black h6 .outline, .scrolling-section--black p .outline, .scrolling-section--black blockquote .outline, .scrolling-section--black a .outline {
+  .scrolling-section--black h1 .outline, .scrolling-section--black h2 .outline, .scrolling-section--black h3 .outline, .scrolling-section--black h4 .outline, .scrolling-section--black h5 .outline, .scrolling-section--black h6 .outline, .scrolling-section--black p .outline, .scrolling-section--black blockquote .outline, .scrolling-section--black a .outline, .scrolling-section--black figcaption .outline {
     -webkit-text-stroke-color: #f8fbf7; }
 
 .scrolling-section--black hr {
@@ -2192,23 +2193,25 @@ section p span > span, section blockquote span > span {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-align: end;
-  align-items: flex-end;
   border: solid 1px;
   border-radius: 3px;
   overflow: hidden;
   margin-right: -1px;
-  color: rgba(19, 17, 18, 0.12);
+  border-color: rgba(19, 17, 18, 0.12);
   background: #f8fbf7;
   position: relative; }
-  .iframe-wrapper a {
-    padding: 12px; }
-  .iframe-wrapper .icon {
+  .iframe-wrapper .iframe-wrapper__controls {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 12px 18px; }
+  .iframe-wrapper .icon-arrow {
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
   .scrolling-section--black .iframe-wrapper {
     background: #131112;
-    color: rgba(248, 251, 247, 0.12); }
+    border-color: rgba(248, 251, 247, 0.12); }
   .scrolling-section--grey .iframe-wrapper {
     background: #eaede9; }
 

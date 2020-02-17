@@ -58,6 +58,7 @@ class JnjHome extends Component {
 				"new-user",
 				"meganav",
 				"sitemap",
+				"news",
 				"links",
 			],
 		}
@@ -78,6 +79,7 @@ class JnjHome extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
+		const brandPrimary = hexToRgb('#000099');
 
 		return (
 			<article>
@@ -89,8 +91,14 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `url(../assets/img/jnj-home/onboarding-mobile.png)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12`,
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .24), 
+							rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .4)
+						),
+						url(../assets/img/jnj-home/onboarding-mobile.png)
+					`, 
+					backgroundColor: brandPrimary,
 					backgroundSize: this.props.isMobile ? 'contain' : '60%',
 					backgroundPosition: this.props.isMobile ? 'right' : '100% 810%',
 				}}
@@ -142,7 +150,11 @@ class JnjHome extends Component {
 					backgroundRepeat: 'repeatX',
 					backgroundSize: this.props.isMobile ? 'cover' : '50%',
 				}}>
-					<ProjectDetailsBlock role="UX/Motion Designer" date="Spring, 2018" client="J&J People XD" team={["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"]} />
+					<ProjectDetailsBlock 
+					role="UX/Motion Designer" 
+					date="Spring, 2018" 
+					client="J&J People XD" 
+					team={["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"]} />
 				</ScrollSection>
 
 				<ScrollSection 
@@ -160,10 +172,6 @@ class JnjHome extends Component {
 						</div>
 					</div>
 					<div className="grid">
-						{/*<div className="grid__item grid__item--col-3">
-							<iframe src="https://erchsm.github.io/jnj-process/prototypes/home-profile-setup.html" height="720"/>
-						</div>*/}
-						{/*<div className="grid__item grid__item--col-1  grid__item--hide-bp-medium"/>*/}
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/jnj-home/onboarding-kiosk-mock.png" aspectRatioWidth={3} aspectRatioHeight={2}/>
@@ -180,7 +188,7 @@ class JnjHome extends Component {
 					<ProjectSectionBlock 
 					title="Meganav"
 					description="I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html",  aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>
 				</ScrollSection>
 
 
@@ -192,7 +200,7 @@ class JnjHome extends Component {
 					<ProjectSectionBlock 
 					title="Sitemap"
 					description="I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html",  aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 
 				</ScrollSection>
 
@@ -203,6 +211,18 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5) }}>
+					<ProjectSectionBlock 
+					title="News"
+					description="I designed an article page flexible for different types of content. Using the “Thumbs Up” feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
+				</ScrollSection>
+
+				<ScrollSection 
+				black
+				name={sections[6]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(6) }}>
 					<ProjectSectionBlock 
 					title="Links"
 					description="I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed. The scrolling page with side navigation, sorting functionality and starring animation made for a delightful experience."

@@ -3,26 +3,36 @@ $baseclass: iframe-wrapper;
 .#{$baseclass} {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
 	border: solid 1px;
 	border-radius: 3px;
 	overflow: hidden;
 	margin-right: -1px;
-	color: rgba($brand-black, .12);
+	border-color: rgba($brand-black, .12);
 	background: $brand-white;
 	position: relative;
 
-	a {
-		padding: 12px;
+	> * {
+
 	}
 
-	.icon {
+	.#{$baseclass}__controls {
+		display: flex;
+		justify-content: space-between;
+		padding: 12px 18px;
+		// border-bottom: solid 1px;
+
+		// > * {
+		// 	margin-right: 12px;
+		// }
+	}
+
+	.icon-arrow {
 		transform: rotate(-45deg);
 	}
 
 	.#{$scrolling-section-classname}--black & {
 		background: $brand-black;
-		color: rgba($brand-white, .12);
+		border-color: rgba($brand-white, .12);
 	}
 
 	.#{$scrolling-section-classname}--grey & {

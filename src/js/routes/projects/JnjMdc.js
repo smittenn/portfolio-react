@@ -57,9 +57,10 @@ class JnjMdc extends Component {
 				"about",
 				"navigation",
 				"flipper",
+				"chooser",
 				"taxonomy",
 				"buttons",
-				"cards",
+				// "cards",
 			],
 		}
 	}
@@ -82,19 +83,6 @@ class JnjMdc extends Component {
 
 		return (
 			<article>
-				{/*<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
-					<ParallaxHeader 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>MDC </span></span>, `unified the UX for J&J medical device companies.`]}
-					bgImage={"../assets/img/jnj-mdc/ladies.jpg"}
-					strength={300}
-					onSetActive={() => { this.setActiveSection(0); }}
-					/>
-				</Element>*/}
 
 				<ScrollSection 
 				name={sections[0]}
@@ -178,12 +166,12 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					{/*<ProjectSectionBlock 
+					{<ProjectSectionBlock 
 					title="Navigation"
 					description="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html",  aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>*/}
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
-					<div className="grid">
+					{/*<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -196,7 +184,7 @@ class JnjMdc extends Component {
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-nav.html"/>
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 
@@ -206,13 +194,13 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
-					{/*<ProjectSectionBlock 
+					{<ProjectSectionBlock 
 					title="HCP/Patient"
 					subtitle="Site Flipper"
 					description="To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper",  aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>*/}
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
-					<div className="grid">
+					{/*<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -226,7 +214,7 @@ class JnjMdc extends Component {
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper"/>
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 
@@ -236,7 +224,26 @@ class JnjMdc extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
-					<div className="grid">
+					{<ProjectSectionBlock 
+					title="Company Chooser"
+					description="The intial partners bought into our design system were able to participate in an experimental section on the homepage of the site."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+				</ScrollSection>
+
+
+				<ScrollSection 
+				black
+				name={sections[5]}
+				sections={sections} 
+				activeSection={activeSection}
+				onSetActive={() => { this.setActiveSection(5); }}>
+					{<ProjectSectionBlock 
+					title="Taxonomy"
+					description="Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+
+
+					{/*<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -249,20 +256,22 @@ class JnjMdc extends Component {
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html"/>
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 
 				<ScrollSection
-				grey
-				name={sections[5]}
+				black
+				name={sections[6]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}
-				style={{ 
-					backgroundColor: `#f3f3f3`,
-				}}>
-					<div className="grid">
+				onSetActive={() => { this.setActiveSection(6); }}>
+					{<ProjectSectionBlock 
+					title="Buttons"
+					description="I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+
+					{/*<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -275,47 +284,28 @@ class JnjMdc extends Component {
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
 							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html"/>
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 
-				<ScrollSection 
+				{/*<ScrollSection 
 				black
-				name={sections[6]}
+				name={sections[7]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(6); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Cards</h2>
-								<blockquote>Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-cards.html"/>
-						</div>
-					</div>
-				</ScrollSection>
+				onSetActive={() => { this.setActiveSection(7); }}>
+					{<ProjectSectionBlock 
+					title="Cards"
+					description="Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew."
+					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-cards.html.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+
+				</ScrollSection>*/}
 
 				<ScrollSection 
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .72),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .96)
-						),
-						url(../assets/img/card-components/share-animation.jpg)
-					`, 
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}>
+				>
 					<ProjectUpNextBlock name="Wrap Interactions" to="micro-app-interactions"/>
 				</ScrollSection>
 

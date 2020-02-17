@@ -68,6 +68,7 @@ video {
 }
 
 figcaption {
+	font-size: 13px;
 	margin-top: 24px;
 }
 
@@ -166,7 +167,7 @@ section {
 			// )
 		}
 
-		h1, h2, h3, h4, h5, h6, p, blockquote, a {
+		h1, h2, h3, h4, h5, h6, p, blockquote, a, figcaption {
 			color: $brand-white;
 
 			.outline {
