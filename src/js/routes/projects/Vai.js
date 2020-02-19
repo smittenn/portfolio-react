@@ -8,10 +8,11 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ParallaxHeader from "../../components/ParallaxHeader"
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
@@ -80,13 +81,8 @@ class Vai extends Component {
 
 		return (
 			<article>
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
+				<ParallaxBackground 
+				style={{
 					backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12),
@@ -94,12 +90,22 @@ class Vai extends Component {
 						),
 						url(../assets/img/vai/mobile.jpg)
 					`, 
-					backgroundSize: (this.props.isMobile ? '120%' : '50% 120%'),
-					backgroundPosition: (this.props.isMobile ? '-230% -345%' : '60% -280%'),
+					backgroundSize: (this.props.isMobile ? '90% 110%' : '40% 125%'),
+					backgroundPosition: (this.props.isMobile ? '440% 585%' : '60% -230%'),
 					backgroundColor: brandPrimary,
+				}}/>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to identify objects in video.`]}
 					// headerText={[`The`, <span className="outline"><span>Rationalized </span></span>, `player unified the UX across NBCU video players.`]}
 					/>

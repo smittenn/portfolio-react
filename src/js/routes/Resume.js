@@ -8,7 +8,7 @@ import { reset, setCounter } from "../actions/counter"
 import { home, process, resume, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 
 import ScrollSection from "../components/ScrollSection"
-import ParallaxHeader from "../components/ParallaxHeader"
+import HeroBlock from "../components/blocks/HeroBlock"
 import TextLink from "../components/TextLink"
 import Icon from "../components/Icon"
 

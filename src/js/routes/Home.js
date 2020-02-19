@@ -8,7 +8,7 @@ import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 
 import ScrollSection from "../components/ScrollSection"
-import ParallaxHeader from "../components/ParallaxHeader"
+import HeroBlock from "../components/blocks/HeroBlock"
 import ScrollArrow from "../components/ScrollArrow"
 import ProjectCard from "../components/ProjectCard"
 import TextLink from "../components/TextLink"
@@ -155,7 +155,7 @@ class Home extends Component {
 					backgroundSize: 'cover',
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]} 
 					/>
 				</ScrollSection>

@@ -8,7 +8,7 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ParallaxHeader from "../../components/ParallaxHeader"
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
@@ -100,7 +100,7 @@ class MicroAppInteractions extends Component {
 					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we created interactions within micro apps.`]}
 					/>
 				</ScrollSection>

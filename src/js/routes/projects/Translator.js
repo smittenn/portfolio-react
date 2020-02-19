@@ -8,10 +8,11 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ParallaxHeader from "../../components/ParallaxHeader"
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
@@ -82,8 +83,7 @@ class Translator extends Component {
 		return (
 			<article>
 
-				<ScrollSection 
-				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
+				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
@@ -95,9 +95,15 @@ class Translator extends Component {
 					backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
 					backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
 					backgroundColor: brandPrimary,
+				}}/>
+				
+				<ScrollSection 
+				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[ <span><span className="outline">Translator </span></span>, `helped NBCU film crews manage their assets.`]}
 					/>
 				</ScrollSection>

@@ -35542,7 +35542,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
-},{"./actions/mobile":124,"./routes":171,"connected-react-router":10,"prop-types":30,"react":106,"react-redux":54}],121:[function(require,module,exports){
+},{"./actions/mobile":124,"./routes":172,"connected-react-router":10,"prop-types":30,"react":106,"react-redux":54}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35842,7 +35842,7 @@ var render = function render() {
 
 render();
 
-},{"../App":120,"../reducers":159,"connected-react-router":10,"history":18,"react":106,"react-dom":34,"react-redux":54,"redux":107}],132:[function(require,module,exports){
+},{"../App":120,"../reducers":160,"connected-react-router":10,"history":18,"react":106,"react-dom":34,"react-redux":54,"redux":107}],132:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35975,7 +35975,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":183,"../services/palette":185,"classnames":7,"react":106,"react-intersection-visible":39}],133:[function(require,module,exports){
+},{"../services/hexToRgb":185,"../services/palette":187,"classnames":7,"react":106,"react-intersection-visible":39}],133:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36632,7 +36632,7 @@ var Image = function (_Component) {
 
 exports.default = Image;
 
-},{"../services/hexToRgb":183,"../services/palette":185,"classnames":7,"react":106}],138:[function(require,module,exports){
+},{"../services/hexToRgb":185,"../services/palette":187,"classnames":7,"react":106}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37030,7 +37030,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavTakeover);
 
-},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/panel":127,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../components/GridLines":134,"../components/Icon":136,"../components/TextLink":147,"../data/nav":154,"../services/palette":185,"../services/splitLetter":186,"../services/toCamelCase":188,"../services/toKebabCase":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],139:[function(require,module,exports){
+},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/panel":127,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../components/GridLines":134,"../components/Icon":136,"../components/TextLink":147,"../data/nav":155,"../services/palette":187,"../services/splitLetter":188,"../services/toCamelCase":190,"../services/toKebabCase":191,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37221,7 +37221,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../services/pad":184,"../services/splitLetter":186,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],140:[function(require,module,exports){
+},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../services/pad":186,"../services/splitLetter":188,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37240,41 +37240,11 @@ var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _reactScroll = require("react-scroll");
-
 var _reactRedux = require("react-redux");
 
-var _NavToggle = require("./NavToggle");
+var _debounce = require("../services/debounce");
 
-var _NavToggle2 = _interopRequireDefault(_NavToggle);
-
-var _Sidebar = require("./Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _GridLines = require("./GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _ScrollArrow = require("./ScrollArrow");
-
-var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
-
-var _splitWord = require("../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
-var _hexToRgb = require("../services/hexToRgb");
-
-var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
-
-var _palette = require("../services/palette");
-
-var _palette2 = _interopRequireDefault(_palette);
+var _debounce2 = _interopRequireDefault(_debounce);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37284,97 +37254,68 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ParallaxHeader = function (_Component) {
-	_inherits(ParallaxHeader, _Component);
+var ParallaxBackground = function (_Component) {
+	_inherits(ParallaxBackground, _Component);
 
-	function ParallaxHeader(props) {
-		_classCallCheck(this, ParallaxHeader);
+	function ParallaxBackground(props) {
+		_classCallCheck(this, ParallaxBackground);
 
-		var _this = _possibleConstructorReturn(this, (ParallaxHeader.__proto__ || Object.getPrototypeOf(ParallaxHeader)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (ParallaxBackground.__proto__ || Object.getPrototypeOf(ParallaxBackground)).call(this, props));
 
 		_this.handleScroll = function (event) {
-			document.body.scrollTop > window.innerHeight ? _this.setState({ isHidden: true }) : _this.setState({ isHidden: false });
-			// this.setState({
-			// 	scrollAmount: window.pageYOffset
-			// });
+			_this.parallax();
 		};
 
+		_this.parallax = (0, _debounce2.default)(function () {
+			_this.setState({
+				scrollAmount: window.pageYOffset,
+				isHidden: document.body.scrollTop > window.innerHeight
+			});
+		}, 10);
+
+
 		_this.state = {
-			scrollAmount: 0,
-			isHidden: false
+			scrollAmount: 0
 		};
 		return _this;
 	}
 
-	_createClass(ParallaxHeader, [{
+	_createClass(ParallaxBackground, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
-			document.addEventListener('scroll', this.handleScroll);
+			document.addEventListener('scroll', this.handleScroll, { passive: true });
 		}
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
-			document.removeEventListener('scroll', this.handleScroll);
+			document.removeEventListener('scroll', this.handleScroll, { passive: true });
 		}
 	}, {
 		key: "render",
 		value: function render() {
 			var _props = this.props,
 			    bgImage = _props.bgImage,
-			    bgColor = _props.bgColor,
-			    headerText = _props.headerText,
-			    light = _props.light;
-			var isAnimating = this.state.isAnimating;
+			    style = _props.style;
+			var isHidden = this.state.isHidden;
 
 
-			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+			var updatedStyle = {
+				display: isHidden ? 'none' : 'block',
+				position: 'fixed',
+				top: 0,
+				left: 0,
+				width: '100vw',
+				transform: isHidden ? null : "\n\t\t\t\ttranslate3d(\n\t\t\t\t\t0,\n\t\t\t\t\t" + this.state.scrollAmount * -0.15 + "px,\n\t\t\t\t\t0\n\t\t\t\t) \n\t\t\t",
+				minHeight: 'calc(100vh + 1px'
+			};
 
-			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
+			Object.assign(updatedStyle, style);
 
-			// let str = strength ? strength : 600;
-			// this.props.isMobile ? (str /= 2) : null
-
-			var classnames = (0, _classnames2.default)({
-				"parallax-header": true,
-				"parallax-header--hidden": this.state.isHidden,
-				"grid": true
-			});
-
-			// const style = {
-			// 	opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
-			// 	transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
-			// };
-
-			var style = {};
-
-			var updatedText = [];
-
-			headerText.forEach(function (item, idx) {
-				typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style, key: idx, className: 'split--word' });
-			});
-
-			// const opacity = Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.0025))), 1);
-			// const transform = `translateY(${-100 * window.pageYOffset}px)`;
-
-
-			return _react2.default.createElement(
-				"div",
-				{ className: classnames },
-				_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--col-hide-bp-medium" }),
-				_react2.default.createElement(
-					"div",
-					{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-					_react2.default.createElement(
-						"h1",
-						{ className: (0, _classnames2.default)({ "mb0": true, "light": light }) },
-						updatedText
-					)
-				)
-			);
+			return _react2.default.createElement("section", { style: updatedStyle });
 		}
 	}]);
 
-	return ParallaxHeader;
+	return ParallaxBackground;
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -37383,9 +37324,9 @@ var mapStateToProps = function mapStateToProps(state) {
 	};
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(ParallaxHeader);
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(ParallaxBackground);
 
-},{"../services/hexToRgb":183,"../services/palette":185,"../services/splitLetter":186,"../services/splitWord":187,"./GridLines":134,"./NavToggle":139,"./ScrollArrow":143,"./Sidebar":146,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],141:[function(require,module,exports){
+},{"../services/debounce":184,"classnames":7,"react":106,"react-parallax":43,"react-redux":54}],141:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37673,7 +37614,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProcessDiagram);
 
-},{"../actions/cursor":123,"../services/darken":182,"../services/pad":184,"../services/palette":185,"../services/splitLetter":186,"../services/splitWord":187,"./Icon":136,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54}],142:[function(require,module,exports){
+},{"../actions/cursor":123,"../services/darken":183,"../services/pad":186,"../services/palette":187,"../services/splitLetter":188,"../services/splitWord":189,"./Icon":136,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37856,7 +37797,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProjectCard);
 
-},{"../actions/cursor":123,"../components/TextLink":147,"../services/splitLetter":186,"classnames":7,"intersection-observer":20,"react":106,"react-hover":36,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],143:[function(require,module,exports){
+},{"../actions/cursor":123,"../components/TextLink":147,"../services/splitLetter":188,"classnames":7,"intersection-observer":20,"react":106,"react-hover":36,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37978,7 +37919,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ScrollArrow);
 
-},{"../actions/cursor":123,"../services/splitLetter":186,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],144:[function(require,module,exports){
+},{"../actions/cursor":123,"../services/splitLetter":188,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38175,7 +38116,7 @@ var ScrollSection = function (_Component) {
 
 exports.default = ScrollSection;
 
-},{"../services/pad":184,"../services/palette":185,"../services/splitLetter":186,"./GridLines":134,"./Icon":136,"./NavToggle":139,"./ScrollArrow":143,"./Sidebar":146,"./TextLink":147,"classnames":7,"intersection-observer":20,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71,"react-scroll":91}],145:[function(require,module,exports){
+},{"../services/pad":186,"../services/palette":187,"../services/splitLetter":188,"./GridLines":134,"./Icon":136,"./NavToggle":139,"./ScrollArrow":143,"./Sidebar":146,"./TextLink":147,"classnames":7,"intersection-observer":20,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71,"react-scroll":91}],145:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38280,7 +38221,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(SideScroller);
 
-},{"../components/Icon":136,"../services/palette":185,"classnames":7,"react":106,"react-redux":54}],146:[function(require,module,exports){
+},{"../components/Icon":136,"../services/palette":187,"classnames":7,"react":106,"react-redux":54}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38429,7 +38370,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-},{"../actions/cursor":123,"../actions/sidebar":130,"../services/createNewId":181,"../services/pad":184,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],147:[function(require,module,exports){
+},{"../actions/cursor":123,"../actions/sidebar":130,"../services/createNewId":182,"../services/pad":186,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38553,7 +38494,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(TextLink);
 
-},{"../actions/cursor":123,"../services/splitLetter":186,"classnames":7,"react":106,"react-hover":36,"react-redux":54,"react-router-dom":71}],148:[function(require,module,exports){
+},{"../actions/cursor":123,"../services/splitLetter":188,"classnames":7,"react":106,"react-hover":36,"react-redux":54,"react-router-dom":71}],148:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38645,6 +38586,169 @@ var Video = function (_Component) {
 exports.default = Video;
 
 },{"react":106,"react-intersection-visible":39}],149:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactParallax = require("react-parallax");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _reactRedux = require("react-redux");
+
+var _NavToggle = require("../NavToggle");
+
+var _NavToggle2 = _interopRequireDefault(_NavToggle);
+
+var _Sidebar = require("../Sidebar");
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+var _GridLines = require("../GridLines");
+
+var _GridLines2 = _interopRequireDefault(_GridLines);
+
+var _ScrollArrow = require("../ScrollArrow");
+
+var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
+
+var _splitWord = require("../../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _splitLetter = require("../../services/splitLetter");
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
+var _hexToRgb = require("../../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+var _palette = require("../../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HeroBlock = function (_Component) {
+	_inherits(HeroBlock, _Component);
+
+	function HeroBlock(props) {
+		_classCallCheck(this, HeroBlock);
+
+		var _this = _possibleConstructorReturn(this, (HeroBlock.__proto__ || Object.getPrototypeOf(HeroBlock)).call(this, props));
+
+		_this.handleScroll = function (event) {
+			// (document.body.scrollTop > (window.innerHeight)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
+			// this.setState({
+			// 	scrollAmount: window.pageYOffset
+			// });
+		};
+
+		_this.state = {
+			scrollAmount: 0,
+			isHidden: false
+		};
+		return _this;
+	}
+
+	_createClass(HeroBlock, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			// document.addEventListener('scroll', this.handleScroll);
+		}
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {
+			// document.removeEventListener('scroll', this.handleScroll);
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    bgImage = _props.bgImage,
+			    bgColor = _props.bgColor,
+			    headerText = _props.headerText,
+			    light = _props.light;
+			var isAnimating = this.state.isAnimating;
+
+
+			var imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+
+			var color = bgColor ? (0, _hexToRgb2.default)(bgColor) : (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
+
+			// let str = strength ? strength : 600;
+			// this.props.isMobile ? (str /= 2) : null
+
+			var classnames = (0, _classnames2.default)({
+				"parallax-header": true,
+				"grid": true
+			});
+
+			// const style = {
+			// 	opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
+			// 	transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
+			// };
+
+			var style = {};
+
+			var updatedText = [];
+
+			headerText.forEach(function (item, idx) {
+				typeof item == "string" ? updatedText[idx] = (0, _splitWord2.default)(item, style) : updatedText[idx] = _react2.default.cloneElement(item, { style: style, key: idx, className: 'split--word' });
+			});
+
+			// const opacity = Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.0025))), 1);
+			// const transform = `translateY(${-100 * window.pageYOffset}px)`;
+
+
+			return _react2.default.createElement(
+				"div",
+				{ className: classnames },
+				_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--col-hide-bp-medium" }),
+				_react2.default.createElement(
+					"div",
+					{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+					_react2.default.createElement(
+						"h1",
+						{ className: (0, _classnames2.default)({ "mb0": true, "light": light }) },
+						updatedText
+					)
+				)
+			);
+		}
+	}]);
+
+	return HeroBlock;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		isMobile: state.isMobile
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(HeroBlock);
+
+},{"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"../GridLines":134,"../NavToggle":139,"../ScrollArrow":143,"../Sidebar":146,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],150:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38788,7 +38892,7 @@ var ProjectDetailsBlock = function (_Component) {
 
 exports.default = ProjectDetailsBlock;
 
-},{"../../components/TextLink":147,"../../data/people":155,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],150:[function(require,module,exports){
+},{"../../components/TextLink":147,"../../data/people":156,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],151:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38898,7 +39002,7 @@ var ProjectIntroBlock = function (_Component) {
 
 exports.default = ProjectIntroBlock;
 
-},{"../../components/Image":137,"../../services/addLineBreaks":180,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],151:[function(require,module,exports){
+},{"../../components/Image":137,"../../services/addLineBreaks":181,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],152:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39038,7 +39142,7 @@ var ProjectSectionBlock = function (_Component) {
 
 exports.default = ProjectSectionBlock;
 
-},{"../../components/CodepenEmbed":132,"../../components/IFrame":135,"../../components/Image":137,"../../components/SideScroller":145,"../../components/Video":148,"../../services/addLineBreaks":180,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],152:[function(require,module,exports){
+},{"../../components/CodepenEmbed":132,"../../components/IFrame":135,"../../components/Image":137,"../../components/SideScroller":145,"../../components/Video":148,"../../services/addLineBreaks":181,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],153:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39127,7 +39231,7 @@ var ProjectUpNextBlock = function (_Component) {
 
 exports.default = ProjectUpNextBlock;
 
-},{"../../components/TextLink":147,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],153:[function(require,module,exports){
+},{"../../components/TextLink":147,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],154:[function(require,module,exports){
 module.exports={
 	"primary" : [
 		{
@@ -39212,7 +39316,7 @@ module.exports={
 		},
 	]
 }
-},{}],154:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 module.exports={
 	"name": "All Pages",
 	"items" : [
@@ -39291,7 +39395,7 @@ module.exports={
 		}
 	]
 }
-},{}],155:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 module.exports={
 	// Google
 	"Damien Correll": "",
@@ -39333,7 +39437,7 @@ module.exports={
 	"Rebecca Jablonski": "//www.linkedin.com/in/rebeccajablonsky",
 	"David Taylor": "//www.linkedin.com/in/lifehug",
 }
-},{}],156:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39387,7 +39491,7 @@ var abbreviationReducer = function abbreviationReducer() {
 
 exports.default = abbreviationReducer;
 
-},{"../data/nav-legacy":153}],157:[function(require,module,exports){
+},{"../data/nav-legacy":154}],158:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39413,7 +39517,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],158:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39435,7 +39539,7 @@ var cursorReducer = function cursorReducer() {
 
 exports.default = cursorReducer;
 
-},{}],159:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39506,7 +39610,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":156,"./counter":157,"./cursor":158,"./mobile":160,"./navTakeover":161,"./navToggle":162,"./panel":163,"./primaryPanel":164,"./secondaryPanel":165,"./sidebar":166,"connected-react-router":10,"redux":107}],160:[function(require,module,exports){
+},{"./abbreviation":157,"./counter":158,"./cursor":159,"./mobile":161,"./navTakeover":162,"./navToggle":163,"./panel":164,"./primaryPanel":165,"./secondaryPanel":166,"./sidebar":167,"connected-react-router":10,"redux":107}],161:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39526,7 +39630,7 @@ var mobileReducer = function mobileReducer() {
 
 exports.default = mobileReducer;
 
-},{}],161:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39548,7 +39652,7 @@ var navTakeoverReducer = function navTakeoverReducer() {
 
 exports.default = navTakeoverReducer;
 
-},{}],162:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39570,7 +39674,7 @@ var navToggleReducer = function navToggleReducer() {
 
 exports.default = navToggleReducer;
 
-},{}],163:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39601,7 +39705,7 @@ var panelReducer = function panelReducer() {
 
 exports.default = panelReducer;
 
-},{"../data/nav":154,"../services/toCamelCase":188}],164:[function(require,module,exports){
+},{"../data/nav":155,"../services/toCamelCase":190}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39623,7 +39727,7 @@ var primaryPanelReducer = function primaryPanelReducer() {
 
 exports.default = primaryPanelReducer;
 
-},{}],165:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39645,7 +39749,7 @@ var secondaryPanelReducer = function secondaryPanelReducer() {
 
 exports.default = secondaryPanelReducer;
 
-},{}],166:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39667,7 +39771,7 @@ var sidebarReducer = function sidebarReducer() {
 
 exports.default = sidebarReducer;
 
-},{}],167:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39714,9 +39818,9 @@ var _Video = require("../components/Video");
 
 var _Video2 = _interopRequireDefault(_Video);
 
-var _ParallaxHeader = require("../components/ParallaxHeader");
+var _HeroBlock = require("../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _hexToRgb = require("../services/hexToRgb");
 
@@ -39802,7 +39906,7 @@ var About = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["In my free time I make", _react2.default.createElement(
 							"span",
 							null,
@@ -40014,7 +40118,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(About);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":137,"../components/ParallaxHeader":140,"../components/ScrollSection":144,"../components/SideScroller":145,"../components/TextLink":147,"../components/Video":148,"../services/hexToRgb":183,"../services/palette":185,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],168:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":137,"../components/ScrollSection":144,"../components/SideScroller":145,"../components/TextLink":147,"../components/Video":148,"../components/blocks/HeroBlock":149,"../services/hexToRgb":185,"../services/palette":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],169:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40045,9 +40149,9 @@ var _ScrollSection = require("../components/ScrollSection");
 
 var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 
-var _ParallaxHeader = require("../components/ParallaxHeader");
+var _HeroBlock = require("../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../components/ScrollArrow");
 
@@ -40218,7 +40322,7 @@ var Home = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["Eric C. Smith is a digital", _react2.default.createElement(
 							"span",
 							null,
@@ -40638,7 +40742,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":137,"../components/ParallaxHeader":140,"../components/ProjectCard":142,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/Sidebar":146,"../components/TextLink":147,"../services/hexToRgb":183,"../services/palette":185,"../services/splitLetter":186,"../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],169:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":137,"../components/ProjectCard":142,"../components/ScrollArrow":143,"../components/ScrollSection":144,"../components/Sidebar":146,"../components/TextLink":147,"../components/blocks/HeroBlock":149,"../services/hexToRgb":185,"../services/palette":187,"../services/splitLetter":188,"../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],170:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40829,7 +40933,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Process);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/ProcessDiagram":141,"../components/ScrollSection":144,"../services/hexToRgb":183,"../services/palette":185,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],170:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/ProcessDiagram":141,"../components/ScrollSection":144,"../services/hexToRgb":185,"../services/palette":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],171:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40860,9 +40964,9 @@ var _ScrollSection = require("../components/ScrollSection");
 
 var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 
-var _ParallaxHeader = require("../components/ParallaxHeader");
+var _HeroBlock = require("../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _TextLink = require("../components/TextLink");
 
@@ -41518,7 +41622,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Resume);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Icon":136,"../components/ParallaxHeader":140,"../components/ScrollSection":144,"../components/TextLink":147,"../services/hexToRgb":183,"../services/palette":185,"../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],171:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Icon":136,"../components/ScrollSection":144,"../components/TextLink":147,"../components/blocks/HeroBlock":149,"../services/hexToRgb":185,"../services/palette":187,"../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41614,7 +41718,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/Cursor":133,"../components/NavTakeover":138,"./AboutMe":167,"./Home":168,"./Process":169,"./Resume":170,"./projects/AmericanMade":172,"./projects/JnjHome":173,"./projects/JnjMdc":174,"./projects/MicroAppInteractions":175,"./projects/MicroAppTemplates":176,"./projects/Perforce":177,"./projects/Translator":178,"./projects/Vai":179,"react":106,"react-router":83}],172:[function(require,module,exports){
+},{"../components/Cursor":133,"../components/NavTakeover":138,"./AboutMe":168,"./Home":169,"./Process":170,"./Resume":171,"./projects/AmericanMade":173,"./projects/JnjHome":174,"./projects/JnjMdc":175,"./projects/MicroAppInteractions":176,"./projects/MicroAppTemplates":177,"./projects/Perforce":178,"./projects/Translator":179,"./projects/Vai":180,"react":106,"react-router":83}],173:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41643,9 +41747,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -41794,7 +41898,7 @@ var AmericanMade = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["The", _react2.default.createElement(
 							"span",
 							null,
@@ -42053,7 +42157,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectSectionBlock":151,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],173:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectSectionBlock":152,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],174:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42082,9 +42186,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -42237,7 +42341,7 @@ var JnjHome = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: [_react2.default.createElement(
 							"span",
 							null,
@@ -42473,7 +42577,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjHome);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectSectionBlock":151,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],174:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectSectionBlock":152,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],175:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42502,9 +42606,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -42654,7 +42758,7 @@ var JnjMdc = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: [_react2.default.createElement(
 							"span",
 							null,
@@ -42855,7 +42959,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjMdc);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectSectionBlock":151,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],175:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectSectionBlock":152,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],176:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42884,9 +42988,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -43035,7 +43139,7 @@ var MicroAppInteractions = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["At", _react2.default.createElement(
 							"span",
 							null,
@@ -43387,7 +43491,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppInteractions);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],176:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],177:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43416,9 +43520,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -43574,7 +43678,7 @@ var MicroAppTemplates = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["At", _react2.default.createElement(
 							"span",
 							null,
@@ -44093,7 +44197,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppTemplates);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectSectionBlock":151,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],177:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/IFrame":135,"../../components/Image":137,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectSectionBlock":152,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],178:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44122,9 +44226,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -44268,7 +44372,7 @@ var Perforce = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["At", _react2.default.createElement(
 							"span",
 							null,
@@ -44516,7 +44620,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Perforce);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],178:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/Image":137,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],179:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44545,9 +44649,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -44556,6 +44660,10 @@ var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
 var _ScrollSection = require("../../components/ScrollSection");
 
 var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
+
+var _ParallaxBackground = require("../../components/ParallaxBackground");
+
+var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
 
 var _GridLines = require("../../components/GridLines");
 
@@ -44675,20 +44783,24 @@ var Translator = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
+				_react2.default.createElement(_ParallaxBackground2.default, {
+					style: {
+						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .06),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/translator/mobile-16x9.jpg)\n\t\t\t\t\t",
+						backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
+						backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
+						backgroundColor: brandPrimary
+					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
 						name: sections[0], black: true, fullHeight: true, sections: sections, activeSection: activeSection,
 						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .06),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/translator/mobile-16x9.jpg)\n\t\t\t\t\t",
-							backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
-							backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
-							backgroundColor: brandPrimary
+							backgroundColor: 'transparent'
 						},
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: [_react2.default.createElement(
 							"span",
 							null,
@@ -44996,7 +45108,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],179:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/Image":137,"../../components/ParallaxBackground":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],180:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45025,9 +45137,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ParallaxHeader = require("../../components/ParallaxHeader");
+var _HeroBlock = require("../../components/blocks/HeroBlock");
 
-var _ParallaxHeader2 = _interopRequireDefault(_ParallaxHeader);
+var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
 var _ScrollArrow = require("../../components/ScrollArrow");
 
@@ -45036,6 +45148,10 @@ var _ScrollArrow2 = _interopRequireDefault(_ScrollArrow);
 var _ScrollSection = require("../../components/ScrollSection");
 
 var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
+
+var _ParallaxBackground = require("../../components/ParallaxBackground");
+
+var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
 
 var _GridLines = require("../../components/GridLines");
 
@@ -45164,6 +45280,13 @@ var Vai = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
+				_react2.default.createElement(_ParallaxBackground2.default, {
+					style: {
+						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/vai/mobile.jpg)\n\t\t\t\t\t",
+						backgroundSize: this.props.isMobile ? '90% 110%' : '40% 125%',
+						backgroundPosition: this.props.isMobile ? '440% 585%' : '60% -230%',
+						backgroundColor: brandPrimary
+					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
@@ -45173,15 +45296,12 @@ var Vai = function (_Component) {
 						sections: sections,
 						activeSection: activeSection,
 						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/vai/mobile.jpg)\n\t\t\t\t\t",
-							backgroundSize: this.props.isMobile ? '120%' : '50% 120%',
-							backgroundPosition: this.props.isMobile ? '-230% -345%' : '60% -280%',
-							backgroundColor: brandPrimary
+							backgroundColor: 'transparent'
 						},
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxHeader2.default, {
+					_react2.default.createElement(_HeroBlock2.default, {
 						headerText: ["The", _react2.default.createElement(
 							"span",
 							null,
@@ -45390,7 +45510,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Vai);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/Image":137,"../../components/ParallaxHeader":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/ProjectDetailsBlock":149,"../../components/blocks/ProjectIntroBlock":150,"../../components/blocks/ProjectSectionBlock":151,"../../components/blocks/ProjectUpNextBlock":152,"../../data/people":155,"../../services/hexToRgb":183,"../../services/palette":185,"../../services/splitLetter":186,"../../services/splitWord":187,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],180:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":132,"../../components/GridLines":134,"../../components/Image":137,"../../components/ParallaxBackground":140,"../../components/ScrollArrow":143,"../../components/ScrollSection":144,"../../components/SideScroller":145,"../../components/Sidebar":146,"../../components/TextLink":147,"../../components/Video":148,"../../components/blocks/HeroBlock":149,"../../components/blocks/ProjectDetailsBlock":150,"../../components/blocks/ProjectIntroBlock":151,"../../components/blocks/ProjectSectionBlock":152,"../../components/blocks/ProjectUpNextBlock":153,"../../data/people":156,"../../services/hexToRgb":185,"../../services/palette":187,"../../services/splitLetter":188,"../../services/splitWord":189,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45414,7 +45534,7 @@ exports.default = function (str) {
 	});
 };
 
-},{"react":106}],181:[function(require,module,exports){
+},{"react":106}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45430,7 +45550,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],182:[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45451,7 +45571,33 @@ var darken = function darken(color, amount) {
 
 exports.default = darken;
 
-},{}],183:[function(require,module,exports){
+},{}],184:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+exports.default = function (func, timeout) {
+    var timer = void 0;
+    return function () {
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        var next = function next() {
+            return func.apply(undefined, _toConsumableArray(args));
+        };
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(next, timeout > 0 ? timeout : 300);
+    };
+};
+
+},{}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45467,7 +45613,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],184:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45478,7 +45624,7 @@ exports.default = function (num, digits, z) {
 	return num.length >= digits ? num + '' : new Array(digits - (num + '').length + 1).join(z || '0') + (num + '');
 };
 
-},{}],185:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45513,7 +45659,7 @@ var _darken2 = _interopRequireDefault(_darken);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./darken":182}],186:[function(require,module,exports){
+},{"./darken":183}],188:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45542,7 +45688,7 @@ exports.default = function (text, style) {
 	});
 };
 
-},{"react":106}],187:[function(require,module,exports){
+},{"react":106}],189:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45570,7 +45716,7 @@ exports.default = function (text, style) {
 	});
 };
 
-},{"react":106}],188:[function(require,module,exports){
+},{"react":106}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45584,7 +45730,7 @@ exports.default = function (str) {
   return str.charAt(0).toLowerCase() + str.substring(1);
 };
 
-},{}],189:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

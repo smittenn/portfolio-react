@@ -13,7 +13,7 @@ import TextLink from "../components/TextLink"
 
 import Image from "../components/Image"
 import Video from "../components/Video"
-import ParallaxHeader from "../components/ParallaxHeader"
+import HeroBlock from "../components/blocks/HeroBlock"
 
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
@@ -82,7 +82,7 @@ class About extends Component {
 					backgroundPosition: this.props.isMobile ? 'center' : 'center 80%'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 						headerText={[
 							`In my free time I make`, 
 							<span><span className="outline">3d stuff </span></span>, 

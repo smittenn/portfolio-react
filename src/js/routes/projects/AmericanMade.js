@@ -8,7 +8,7 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ParallaxHeader from "../../components/ParallaxHeader"
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
@@ -105,7 +105,7 @@ class AmericanMade extends Component {
 					backgroundPosition: 'center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[ `The`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `film site told the story of the movie.`]}
 					/>
 				</ScrollSection>

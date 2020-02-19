@@ -8,7 +8,7 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ParallaxHeader from "../../components/ParallaxHeader"
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
@@ -103,7 +103,7 @@ class JnjHome extends Component {
 					backgroundPosition: this.props.isMobile ? 'right' : '100% 810%',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[ <span><span className="outline">Home&nbsp;</span></span>, `is a place for employees to connect and create.`]}
 					/>
 				</ScrollSection>

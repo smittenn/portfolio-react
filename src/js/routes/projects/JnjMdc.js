@@ -8,7 +8,7 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ParallaxHeader from "../../components/ParallaxHeader"
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
@@ -102,7 +102,7 @@ class JnjMdc extends Component {
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxHeader 
+					<HeroBlock 
 					headerText={[ <span><span className="outline">MDC </span></span>, `unified the UX for 250+ medical device companies.`]}
 					/>
 				</ScrollSection>
