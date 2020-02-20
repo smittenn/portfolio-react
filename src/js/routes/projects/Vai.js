@@ -106,8 +106,8 @@ class Vai extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to identify objects in video.`]}
-					// headerText={[`The`, <span className="outline"><span>Rationalized </span></span>, `player unified the UX across NBCU video players.`]}
+					// headerText={[`The`, <span><span className="outline">Rationalized </span></span>,  <span><span className="outline">Player</span></span>, ` unified the UX across NBCU video players.`]}
+					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to detect objects & people in video.`]}
 					/>
 				</ScrollSection>
 

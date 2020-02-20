@@ -15,55 +15,19 @@ import hexToRgb from "../../services/hexToRgb"
 import palette from "../../services/palette"
 
 
-class HeroBlock extends Component {
+export default class HeroBlock extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			scrollAmount: 0,
-			isHidden: false,
-		}
 	}
-
-	componentDidMount() {
-		// document.addEventListener('scroll', this.handleScroll);
-	}
-
-	componentWillUnmount() {
-		// document.removeEventListener('scroll', this.handleScroll);
-	}
-
-
-	handleScroll = (event) => {
-		// (document.body.scrollTop > (window.innerHeight)) ? this.setState({ isHidden: true }) : this.setState({ isHidden: false });
-		// this.setState({
-		// 	scrollAmount: window.pageYOffset
-		// });
-	}
-
 
 	render() {
 
-		const { bgImage, bgColor, headerText, light } = this.props;
-		const { isAnimating } = this.state;
-
-		const imageUrl = bgImage ? bgImage : "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
-
-		const color = bgColor ? hexToRgb(bgColor) : hexToRgb(palette("brand-black"));
-
-		// let str = strength ? strength : 600;
-		// this.props.isMobile ? (str /= 2) : null
+		const { headerText} = this.props;
 
 		const classnames = classNames({
-			"parallax-header" : true,
 			"grid": true,
 		})
-
-		// const style = {
-		// 	opacity: Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.005))), 1),
-		// 	transform: `translateY(${Math.min(Math.max(-120, this.state.scrollAmount * -0.5), 0)}px) skewX(${Math.min(Math.max(-6, this.state.scrollAmount * -0.05), 0)}deg)`,
-		// };
 
 		const style = {}
 
@@ -73,23 +37,13 @@ class HeroBlock extends Component {
 			typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx, className: 'split--word' })
 		})
 
-		// const opacity = Math.min(Math.max(0, (1 - (this.state.scrollAmount * 0.0025))), 1);
-		// const transform = `translateY(${-100 * window.pageYOffset}px)`;
-
-
 		return (
 			<div className={classnames}>
 				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-					<h1 className={ classNames({ "mb0": true, "light": light })}>{updatedText}</h1>
+					<h1 className={ classNames({ "mb0": true })}>{updatedText}</h1>
 				</div>
 			</div>				
 		);
 	}
 }
-
-const mapStateToProps = state => ({
-	isMobile: state.isMobile,
-})
-
-export default connect(mapStateToProps)(HeroBlock)

@@ -38,4 +38,10 @@ $baseclass: iframe-wrapper;
 	.#{$scrolling-section-classname}--grey & {
 		background: $brand-grey-lightest;
 	}
+
+	@media screen and (max-width: $bp-medium) {
+		figcaption {
+			display: none;
+		}
+	}
 }

@@ -8,16 +8,17 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -83,12 +84,7 @@ class MicroAppInteractions extends Component {
 		return (
 			<article>
 
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
+				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
@@ -98,14 +94,23 @@ class MicroAppInteractions extends Component {
 						url(../assets/img/card-components/share-animation.jpg)
 					`, 
 					backgroundSize: (this.props.isMobile ? 'cover' : 'contain'),
+				}}/>
+
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 						
+					backgroundColor: 'transparent'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we created interactions within micro apps.`]}
+					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed delightful mobile experiences.`]}
 					/>
 				</ScrollSection>
-
-
 
 
 				<ScrollSection 
@@ -140,7 +145,10 @@ class MicroAppInteractions extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundImage: `
-						linear-gradient(to right, rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}), rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85), rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 0.95)),
+						radial-gradient(
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 1)
+						),
 						url(../assets/img/card-components/banner.jpg)`, 
 					backgroundColor: `transparent`,
 					backgroundSize: 'cover',

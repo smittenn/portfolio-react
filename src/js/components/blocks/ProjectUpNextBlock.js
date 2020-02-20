@@ -24,7 +24,7 @@ export default class ProjectUpNextBlock extends Component {
 					<h4 className="light fade">Next Up</h4>
 					<h2 className="mb0">
 						<NavLink to={to}>
-							<TextLink>{name}</TextLink>
+							<TextLink hideUnderline>{name}</TextLink>
 						</NavLink>
 					</h2>
 				</div>

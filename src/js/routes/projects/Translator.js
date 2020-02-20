@@ -8,7 +8,6 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
@@ -20,6 +19,7 @@ import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -148,8 +148,8 @@ class Translator extends Component {
 						<div className="grid__row">
 							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Collections</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into collections. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. {/*Users can choose a list or masonry grid view to their liking.*/}</blockquote>
+								<h2>Collection</h2>
+								<blockquote>I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. {/*Users can choose a list or masonry grid view to their liking.*/}</blockquote>
 							</div>
 						</div>
 					</div>

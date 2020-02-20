@@ -50,22 +50,6 @@
 // }
 
 .parallax-header {
-	h1 {
-		> span {
-			overflow: hidden;
-
-			@for $i from 1 through 60 {
-				&:nth-child(#{$i}) span {
-					animation-delay: (#{0.6 + ($i * 0.12)}s);
-				}
-			}
-		}
-
-		> span > span {
-			animation: ghostIn $duration-long $easing1;
-			animation-fill-mode: both;
-		}
-	}
 }
 
 
@@ -126,6 +110,23 @@ section {
 
 .active-section {
 	section {
+		h1 {
+			> span {
+				overflow: hidden;
+
+				@for $i from 1 through 60 {
+					&:nth-child(#{$i}) span {
+						animation-delay: (#{0.6 + ($i * 0.12)}s);
+					}
+				}
+			}
+
+			> span > span {
+				animation: ghostIn $duration-long $easing1;
+				animation-fill-mode: both;
+			}
+		}
+
 		h2, h3, h4, h5, h6 {
 			opacity: 1;
 			transition: transform $duration-long $delay-medium $easing1, opacity $duration-long $delay-medium $easing1;

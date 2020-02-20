@@ -8,10 +8,10 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
@@ -20,6 +20,7 @@ import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 import Video from "../../components/Video"
 
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -79,20 +80,8 @@ class Perforce extends Component {
 
 		return (
 			<article>
-				{/*<Element 
-				name={sections[0]} 
-				className={classNames({ "active-section" : activeSection == sections[0]})}>
-					<HeroBlock 
-					name={sections[0]}
-					sections={sections}
-					activeSection={activeSection}
-					headerText={[ <span className="outline"><span>Translator </span></span>, `helped NBCU technicians browse and archive footage.`]}
-					bgImage={"../assets/img/translator/banner.png"}
-					onSetActive={() => { this.setActiveSection(0); }}
-					/>
-				</Element>*/}
 
-				<ScrollSection 
+				<ParallaxBackground 
 				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
 				style={{ 
 					backgroundImage: `
@@ -103,13 +92,18 @@ class Perforce extends Component {
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',
 					backgroundPosition: this.props.isMobile ? '75%' : '200% center',
+				}}/>
+
+				<ScrollSection 
+				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ `At`, <span><span className="outline">Perforce </span></span>, `our product helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
-
 
 
 				<ScrollSection 

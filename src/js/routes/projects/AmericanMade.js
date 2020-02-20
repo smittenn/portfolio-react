@@ -8,10 +8,10 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
@@ -20,6 +20,7 @@ import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 import IFrame from "../../components/IFrame"
 
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -84,13 +85,7 @@ class AmericanMade extends Component {
 
 		return (
 			<article>
-
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
+				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
@@ -99,10 +94,19 @@ class AmericanMade extends Component {
 						),
 						url(../assets/img/american-made/output.gif)
 					`,
-					backgroundColor: 'transparent',
-					backgroundBlendMode: 'normal',
+					backgroundColor: '#A4AFA6',
 					backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
 					backgroundPosition: 'center',
+				}}/>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
@@ -264,7 +268,7 @@ class AmericanMade extends Component {
 					title="Interactive Map"
 					subtitle="Fly With Barry"
 					description="We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America."
-					media={{ type: "iframe", src: "../assets/img/american-made/map-code2.svg",  aspectRatioWidth: 16, aspectRatioHeight: 9  }}/>
+					media={{ type: "iframe", src: "../assets/img/american-made/map-code2.svg",  aspectRatioWidth: 2, aspectRatioHeight: 1  }}/>
 
 					{/*<div className="grid">
 						<div className="grid__row">

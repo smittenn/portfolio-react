@@ -25,42 +25,44 @@ class ParallaxBackground extends Component {
 
 
 	handleScroll = (event) => {
-		this.parallax();
+
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+
+    const animationViewportHeight = windowHeight * 1.25;
+
+    if (scrollPosition < animationViewportHeight) {
+      window.requestAnimationFrame(() => {
+        this.parallax(scrollPosition);
+      });
+    } else {
+			this.setState({
+				isHidden: true
+			});
+    }
 	}
 
-	parallax = debounce(() => {
+	parallax = (scrollPosition) => {
 		this.setState({
 			scrollAmount: window.pageYOffset,
-			isHidden: (document.body.scrollTop > (window.innerHeight))
+			isHidden: false
 		});
-	}, 10)
+	}
 
 
 	render() {
 
 		const { bgImage, style } = this.props;
-		const { isHidden } = this.state;
+		const { scrollAmount, isHidden } = this.state;
 
 		let updatedStyle = {
-			display: isHidden ? 'none' : 'block',
-			position: 'fixed',
-			top: 0,
-			left: 0,
-			width: '100vw',
-			transform: isHidden ? null : `
-				translate3d(
-					0,
-					${(this.state.scrollAmount * -0.15)}px,
-					0
-				) 
-			`,
-			minHeight: 'calc(100vh + 1px',
+			transform: `translate3d(0, ${(scrollAmount * -0.15)}px, 0)`
 		};
 
 		Object.assign(updatedStyle, style);
 
 		return (
-			<section style={updatedStyle}>
+			<section className="parallax-background" style={updatedStyle}>
 			</section>				
 		);
 	}

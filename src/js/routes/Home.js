@@ -7,6 +7,7 @@ import {NavLink} from 'react-router-dom'
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 
+import ParallaxBackground from "../components/ParallaxBackground"
 import ScrollSection from "../components/ScrollSection"
 import HeroBlock from "../components/blocks/HeroBlock"
 import ScrollArrow from "../components/ScrollArrow"
@@ -138,12 +139,7 @@ class Home extends Component {
 		
 		return (
 			<article>
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
+				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						linear-gradient(
@@ -152,14 +148,23 @@ class Home extends Component {
 						),
 						url(../assets/img/leaf.gif)
 					`, 
-					backgroundSize: 'cover',
+					backgroundSize: 'cover'
+				}}/>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent',
 				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]} 
 					/>
 				</ScrollSection>
-
 
 				<ScrollSection 
 				name={sections[1]} 

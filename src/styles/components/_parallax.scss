@@ -1,69 +1,10 @@
-$baseclass: parallax-header;
+$baseclass: parallax-background;
 
 .#{$baseclass} {
-	// height: calc(100vh + 1px);
-	// background-blend-mode: overlay;
-	// background-size: cover;
-	// background-position: center;
-	// display: flex;
-	// flex-direction: column;
-	// align-items: flex-start;
-	// justify-content: center;
-	// @include zIndexClose();
-
-
-	&--hidden {
-		h1 > span {
-			> span {
-				animation-name: ghostOut;
-				animation-timing-function: $easing5;
-				// animation-duration: $duration-long
-			}
-
-			@for $i from 1 through 60 {
-				&:nth-last-child(#{$i}) span {
-					animation-delay: (#{0.0 + ($i * 0.12)}s);
-				}
-			}
-		}
-	}	
-	
-	img {
-		// object-fit: scale-down;
-	}
-
-	.nav-toggle {
-		@include zIndexCloser();
-	}
-
-	.grid--lines {
-		opacity: .06;
-	}
-
-	.react-parallax {
-		overflow: hidden; 
-
-		// &-contents, &-content {
-		// 	position: relative;
-		// 	height: calc(100vh + 1px);
-		// 	opacity: 1;
-		// 	display: flex;
-		// 	flex-direction: column;
-		// 	align-items: flex-start;
-		// 	justify-content: center;
-		// 	text-align: left;
-
-		// &-content {
-		// 	position: absolute !important;
-		// 	top: 0;
-		// }
-	}
-
-	@media screen and (max-width: $bp-medium) {
-		.react-parallax {
-			&-content, &-contents {
-				height: calc(100vh - 1px);
-			}
-		}
-	}
+		position: fixed;
+		will-change: transform;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		min-height: 100vh;
 }

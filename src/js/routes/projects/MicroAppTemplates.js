@@ -8,10 +8,10 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
@@ -21,6 +21,7 @@ import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import Video from "../../components/Video"
 
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -35,9 +36,6 @@ import people from "../../data/people"
 
 
 class MicroAppTemplates extends Component {
-
-	static propTypes = {
-	}
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
@@ -61,7 +59,6 @@ class MicroAppTemplates extends Component {
 				"lead-gen",
 				"commerce",
 				"agency",
-				"reflection",
 			],
 		}
 	}
@@ -85,12 +82,7 @@ class MicroAppTemplates extends Component {
 		return (
 			<article>
 
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
+				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 					  linear-gradient(rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24), rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)),
@@ -100,14 +92,22 @@ class MicroAppTemplates extends Component {
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',
 					backgroundPosition: this.props.isMobile ? '-25% center' : '150% center',
+				}}/>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed 150+ mobile app templates.`]}
 					/>
 				</ScrollSection>
-
-
 
 
 				<ScrollSection 
@@ -200,7 +200,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Conference</h2>
-								{<h4 className="light">Modern Sans Family</h4>}
+								{<h4 className="fade">Modern Sans Family</h4>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
@@ -245,7 +245,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Lead Gen</h2>
-								{<h4 className="light">Bold Modern Family</h4>}
+								{<h4 className="fade">Bold Modern Family</h4>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>
 						</div>
@@ -287,7 +287,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Fashion</h2>
-								<h4 className="light">Modern Sans Family</h4>
+								<h4 className="fade">Modern Sans Family</h4>
 							</div>
 						</div>
 					</div>
@@ -333,7 +333,7 @@ class MicroAppTemplates extends Component {
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
 								<h2 className="mb0">Agency</h2>
-								<h4 className="light">Modern Sans Family</h4>
+								<h4 className="fade">Modern Sans Family</h4>
 							</div>
 						</div>
 					</div>
@@ -362,7 +362,7 @@ class MicroAppTemplates extends Component {
 					</SideScroller>
 				</ScrollSection>
 
-				<ScrollSection 
+				{/*<ScrollSection 
 				name={sections[7]}
 				sections={sections} 
 				activeSection={activeSection}
@@ -375,23 +375,12 @@ class MicroAppTemplates extends Component {
 							<blockquote>We attached analytics data to our templates and measured the effectiveness of each template. That way we were able to track the templates that our customers used and iterate on the ones that worked for them.</blockquote>
 						</div>
 					</div>
-				</ScrollSection>
+				</ScrollSection>*/}
 
 				<ScrollSection 
 				black
 				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .4)
-						),
-						url(../assets/img/perforce/banner.jpg)
-					`, 
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}>
+				activeSection={activeSection}>
 					<ProjectUpNextBlock name="Perforce" to="perforce"/>
 				</ScrollSection>
 			</article>

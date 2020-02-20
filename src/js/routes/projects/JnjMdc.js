@@ -8,10 +8,10 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
 import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
+import ParallaxBackground from "../../components/ParallaxBackground"
 import GridLines from "../../components/GridLines"
 import Sidebar from "../../components/Sidebar"
 import CodepenEmbed from "../../components/CodepenEmbed"
@@ -20,6 +20,7 @@ import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import TextLink from "../../components/TextLink"
 
+import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -84,12 +85,7 @@ class JnjMdc extends Component {
 		return (
 			<article>
 
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
+				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
@@ -100,14 +96,22 @@ class JnjMdc extends Component {
 					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
+				}}/>
+
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				style={{ 
+					backgroundColor: 'transparent'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ <span><span className="outline">MDC </span></span>, `unified the UX for 250+ medical device companies.`]}
 					/>
 				</ScrollSection>
-
-
 
 
 				<ScrollSection 
@@ -226,7 +230,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					{<ProjectSectionBlock 
 					title="Company Chooser"
-					description="The intial partners bought into our design system were able to participate in an experimental section on the homepage of the site."
+					description="I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 				</ScrollSection>
 

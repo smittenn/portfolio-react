@@ -37,7 +37,7 @@ class IFrame extends Component {
 
 		setTimeout(() => {
 			this.setSource();
-		}, 500);
+		}, 300);
 	}
 
 
@@ -70,7 +70,7 @@ class IFrame extends Component {
 							<Icon icon='arrow' size={16}/>
 						</a>
 					</div>
-					<iframe src={src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
+					<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
 				</div>
 			</IntersectionVisible>
 		);	

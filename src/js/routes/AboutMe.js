@@ -7,6 +7,7 @@ import {NavLink} from 'react-router-dom'
 import { reset, setCounter } from "../actions/counter"
 import { home, process, aboutMe, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 
+import ParallaxBackground from "../components/ParallaxBackground"
 import ScrollSection from "../components/ScrollSection"
 import SideScroller from "../components/SideScroller"
 import TextLink from "../components/TextLink"
@@ -17,6 +18,7 @@ import HeroBlock from "../components/blocks/HeroBlock"
 
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+import darken from "../services/darken"
 
 
 class About extends Component {
@@ -41,9 +43,6 @@ class About extends Component {
 		this.props.reset();
 	}
 
-	componentWillUnmount() {
-	}
-
 		
 	setActiveSection = (idx) => {
 		this.setState({
@@ -58,10 +57,26 @@ class About extends Component {
 
 		const brandPurple = hexToRgb(palette("brand-purple"));
 		const brandTeal = palette("brand-teal");
-		const brandPink = hexToRgb(palette("brand-pink"));
+		const brandPink = hexToRgb(darken(palette("brand-pink"), 6));
 		
 		return (
 			<article>
+
+				<ParallaxBackground 
+				style={{ 
+					backgroundImage: `
+						radial-gradient(
+							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.72),
+							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.96)
+						),
+						url(../assets/img/about/room.jpg)
+					`, 
+					backgroundColor: 'rgb(${brandPink.r}, ${brandPink.g}, ${brandPink.b})',
+					backgroundBlendMode: `normal`,
+					backgroundSize: 'cover',
+					backgroundPosition: this.props.isMobile ? 'center' : 'center 80%'
+				}}/>
+			
 				<ScrollSection 
 				name={sections[0]}
 				black 
@@ -69,29 +84,16 @@ class About extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.80),
-							rgba(${brandPink.r}, ${brandPink.g}, ${brandPink.b}, 0.90)
-						),
-						url(../assets/img/about/room.jpg)
-					`, 
 					backgroundColor: `transparent`,
-					backgroundBlendMode: `normal`,
-					backgroundSize: 'cover',
-					backgroundPosition: this.props.isMobile ? 'center' : 'center 80%'
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 						headerText={[
 							`In my free time I make`, 
 							<span><span className="outline">3d stuff </span></span>, 
-							/*<span><span className="outline">maker </span></span>, */
 							`and snap`, 
 							<span><span className="outline">photos </span></span>, 
-							/*<span><span className="outline">photos</span></span>,*/
 							`with friends.`
-							/*<span><span className="outline">. </span></span>,*/
 						]}
 					/>
 				</ScrollSection>
