@@ -154,11 +154,11 @@ class Vai extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					{<ProjectSectionBlock 
+					<ProjectSectionBlock 
 					title="Player"
 					description="During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
 					media={{ type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }}
-					/>}
+					/>
 					{/*<ProjectSectionBlock 
 					title="Player"
 					description="During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."

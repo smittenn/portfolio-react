@@ -22,6 +22,7 @@ import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
@@ -164,7 +165,13 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					<div className="grid">
+					<ProjectSectionBlock 
+					title="Realtime Poll"
+					description="For the Minted Challange Wrap, I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns."
+					media={{ type: 'video', src: 'assets/img/card-components/minted.mp4' }}
+					/>
+
+				{/*	<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
@@ -181,7 +188,7 @@ class MicroAppInteractions extends Component {
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<Image src="assets/img/card-components/minted-hand.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</div>
+					</div>*/}
 				</ScrollSection>
 
 

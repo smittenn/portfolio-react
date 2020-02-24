@@ -261,6 +261,7 @@ create color utility classes in the format
   --brand-teal: #0AB489; }
 
 body, button, input, select, textarea {
+  -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -291,6 +292,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   font-family: "Futura Maxi", sans-serif;
+  -webkit-font-feature-settings: "dlig", "liga",  "ss02";
   font-feature-settings: "dlig", "liga",  "ss02"; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     white-space: pre; }
@@ -2129,6 +2131,21 @@ section p span > span, section blockquote span > span {
   transform: translate3d(0, 0, 0) skewX(0deg); }
 
 /* Components */
+.codepen-wrapper {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-right: -1px;
+  background: #f8fbf7; }
+  .codepen-wrapper iframe {
+    width: 100%; }
+  .scrolling-section--black .codepen-wrapper {
+    background: #131112; }
+  .scrolling-section--grey .codepen-wrapper {
+    background: #eaede9; }
+
 .cursor {
   position: relative;
   pointer-events: none;
@@ -2706,6 +2723,8 @@ section p span > span, section blockquote span > span {
   left: 0;
   width: 100vw;
   min-height: 100vh; }
+  .parallax-background--hidden {
+    display: none; }
 
 .process {
   position: relative;

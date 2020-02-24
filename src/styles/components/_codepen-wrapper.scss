@@ -1,0 +1,26 @@
+$baseclass: codepen-wrapper;
+
+.#{$baseclass} {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	// border: solid 1px;
+	// border-radius: 3px;
+	// overflow: hidden;
+	margin-right: -1px;
+	// border-color: rgba($brand-black, .12);
+	background: $brand-white;
+
+	iframe {
+		width: 100%;
+	}
+
+	.#{$scrolling-section-classname}--black & {
+		background: $brand-black;
+		// border-color: rgba($brand-white, .12);
+	}
+
+	.#{$scrolling-section-classname}--grey & {
+		background: $brand-grey-lightest;
+	}
+}

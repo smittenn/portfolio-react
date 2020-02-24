@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
-import IntersectionVisible from "react-intersection-visible"
+// import IntersectionVisible from "react-intersection-visible"
 
 import Icon from "../components/Icon"
 
@@ -16,9 +16,22 @@ class IFrame extends Component {
 		this.ref = React.createRef();
 
 		this.state = {
-			src: this.props.src,
+			src: undefined,
 		}
 	}
+
+	componentDidMount() {
+		const observer = new IntersectionObserver(
+			([entry]) => this.setState({
+				src: entry.intersectionRatio > 0 ? this.props.src : undefined,
+			})
+		);
+
+		if (this.ref.current) {
+			observer.observe(this.ref.current);
+		}
+	}
+
 
 	setSource = () => {
 		this.setState({
@@ -43,7 +56,7 @@ class IFrame extends Component {
 
 	render() {
 
-		const { src, aspectRatioWidth, aspectRatioHeight } = this.props;
+		const { aspectRatioWidth, aspectRatioHeight } = this.props;
 
 		const height = (() => {
 			if (this.ref.current && (aspectRatioWidth && aspectRatioHeight))
@@ -58,21 +71,18 @@ class IFrame extends Component {
 		// console.log(height);
 
 		return (
-			<IntersectionVisible
-			onShow={this.setSource}>
-				<div ref={this.ref} className="iframe-wrapper">
-					<div className="iframe-wrapper__controls">
-						<div onClick={this.refreshSource} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-							<Icon icon='refresh' size={16}/>
-						</div>
-						<figcaption className="m0" style={{ lineHeight: 1 }}>{ src.split('//').slice(-1)[0] }</figcaption>
-						<a href={src} target="_blank" onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
-							<Icon icon='arrow' size={16}/>
-						</a>
+			<div ref={this.ref} className="iframe-wrapper">
+				<div className="iframe-wrapper__controls">
+					<div onClick={this.refreshSource} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+						<Icon icon='refresh' size={16}/>
 					</div>
-					<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
+					<figcaption className="m0" style={{ lineHeight: 1 }}>{ this.props.src.split('//').slice(-1)[0] }</figcaption>
+					<a href={this.props.src} target="_blank" onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+						<Icon icon='arrow' size={16}/>
+					</a>
 				</div>
-			</IntersectionVisible>
+				<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
+			</div>
 		);	
 	}
 }

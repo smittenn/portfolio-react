@@ -268,24 +268,8 @@ class AmericanMade extends Component {
 					title="Interactive Map"
 					subtitle="Fly With Barry"
 					description="We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America."
-					media={{ type: "iframe", src: "../assets/img/american-made/map-code2.svg",  aspectRatioWidth: 2, aspectRatioHeight: 1  }}/>
+					media={{ type: "iframe", src: "../assets/img/american-made/map-code.svg", aspectRatioWidth: 2, aspectRatioHeight: 1 }}/>
 
-					{/*<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Interactive Map</h2>
-								<h4>Fly With Barry</h4>
-								<blockquote>We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{<object data="../assets/img/american-made/map-code2.svg" style={{ minWidth: "100%" }} type="image/svg+xml"></object>}
-						</div>
-					</div>*/}
 				</ScrollSection>
 
 				<ScrollSection 

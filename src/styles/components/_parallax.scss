@@ -1,10 +1,14 @@
 $baseclass: parallax-background;
 
 .#{$baseclass} {
-		position: fixed;
-		will-change: transform;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		min-height: 100vh;
+	position: fixed;
+	will-change: transform;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	min-height: 100vh;
+
+	&--hidden {
+		display: none;
+	}
 }
