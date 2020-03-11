@@ -47,7 +47,7 @@ $baseclass: project-card;
 		justify-content: flex-start;
 		align-items: flex-start;
 		flex-direction: column;
-		min-width: 100%;
+		// min-width: 100%;
 		@include zIndexClose;
 		// transform: translateY(20%);
 	}

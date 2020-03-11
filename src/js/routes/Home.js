@@ -273,7 +273,8 @@ class Home extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<ProjectCard isHovered name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
+							<ProjectCard items={projects} />
+							{/*<ProjectCard isHovered name={projects[0].name} href={projects[0].href} tags={projects[0].tags}>
 								<Image src={projects[0].img} aspectRatioWidth={projects[0].aspectRatioWidth} aspectRatioHeight={projects[0].aspectRatioHeight}/>
 							</ProjectCard>
 							<ProjectCard name={projects[1].name} href={projects[1].href} tags={projects[1].tags}>
@@ -296,7 +297,7 @@ class Home extends Component {
 							</ProjectCard>
 							<ProjectCard name={projects[7].name} href={projects[7].href} tags={projects[7].tags}>
 								<Image src={projects[7].img} aspectRatioWidth={projects[7].aspectRatioWidth} aspectRatioHeight={projects[7].aspectRatioHeight}/>
-							</ProjectCard>
+							</ProjectCard>*/}
 							<div className="spacer spacer__md"/>
 						</div>
 					</div>

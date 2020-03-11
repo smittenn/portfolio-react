@@ -8,6 +8,7 @@ import IntersectionObserver  from "intersection-observer"
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
+import Image from '../components/Image'
 import TextLink from '../components/TextLink'
 
 import splitLetter from '../services/splitLetter'
@@ -18,8 +19,7 @@ class ProjectCard extends Component {
 		super(props);
 
 		this.state = {
-			isHovered: this.props.isHovered,
-			isVisible: false,
+			hoveredIndex: 0,
 		}
 	}
 
@@ -32,62 +32,45 @@ class ProjectCard extends Component {
 	componentDidUpdate(prevProps) {
 	}
 
-	handleMouseEnter = () => {
-		this.setState({
-			isHovered: true,
-		})
-		this.props.setCursorHover();
-	}
-
 	handleMouseLeave = () => {
 		this.setState({
-			isHovered: false,
-		})
-		this.props.setCursorUnhover();			
-	}
-
-	setVisible = () => {
-		this.setState({
-			isVisible: true
+			hoveredIndex: null,
 		})
 	}
 
-	setInvisible = () => {
+	setIndexHovered = (i) => {
 		this.setState({
-			isVisible: false
+			hoveredIndex: i,
 		})
 	}
 
 	render() {
 
-		const { name, tags, href } = this.props;
-		const { isHovered, isVisible } = this.state;
-
-		const classnames = classNames({
-			"project-card": true,
-			"project-card--hovered": isHovered,
-			"project-card--visible": isVisible,
-		})
-
-		// const tags = tags.map((item, index) => {
-
-		// })
+		const { name, tags, href, items } = this.props;
+		const { hoveredIndex } = this.state;
 
 		return (
-			<div className={classnames} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-				<NavLink to={href} onClick={this.handleMouseLeave}>
-					<div className="project-card__asset">
-						{this.props.children}
-					</div>
-					<div className="project-card__bottom">
-						<TextLink hideUnderline><h2 className="mb0">{name}</h2></TextLink>
-						{/*<i className="iconcss icon-arrow-right"></i>*/}
-					</div>
-					<div className="project-card__tags">
-						<blockquote className="mb0">{tags.join(", ")}</blockquote>
-					</div>
-				</NavLink>
-			</div>
+			items.map((item, i) => (
+				<li key={i} 
+				className={classNames({
+					"project-card": true,
+					"project-card--hovered": hoveredIndex == i,
+				})}>
+					<NavLink to={item.href} onClick={this.props.setCursorUnhover}>
+						<div className="project-card__asset">
+							<Image src={item.img} aspectRatioWidth={item.aspectRatioWidth} aspectRatioHeight={item.aspectRatioHeight}/>
+						</div>
+						<div className="project-card__bottom" 
+						onMouseEnter={() => { this.setIndexHovered(i); }}
+						onMouseLeave={this.handleMouseLeave}>
+							<TextLink hideUnderline><h2 className="mb0">{item.name}</h2></TextLink>
+						</div>
+						<div className="project-card__tags">
+							<blockquote className="mb0">{item.tags.join(", ")}</blockquote>
+						</div>
+					</NavLink>
+				</li>
+			))
 		);
 	}
 }
