@@ -133,7 +133,9 @@ class NavTakeover extends Component {
 		menus.map((menu, i) => (
 			(toCamelCase(menu.name) == this.props.openNavPanel) ? (
 				<h6 className="nav-takeover__breadcrumbs uppercase mb0" key={i}>
-					{ menu.name }
+					<div className="nav-takeover__breadcrumbs-item">
+						<TextLink hideUnderline disabled>{menu.name}</TextLink>
+					</div>
 					{ this.createBreadcrumbItem(menu) }
 				</h6>
 			) : null
@@ -142,7 +144,7 @@ class NavTakeover extends Component {
 
 	createBreadcrumbItem = (menu) => (
 		menu.hasOwnProperty('parent') ? (
-			<div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+			<div className="nav-takeover__breadcrumbs-item">
 				<Icon icon='caret' size={16} color={palette("brand-black")}/>
 				<div onClick={() => { this.props.setPanel(menu.parent.name); this.props.setCursorUnhover(); }}>
 					<TextLink hideUnderline>{menu.parent.name}</TextLink>

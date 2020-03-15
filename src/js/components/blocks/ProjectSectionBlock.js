@@ -12,6 +12,8 @@ import CodepenEmbed from "../../components/CodepenEmbed"
 import SideScroller from "../../components/SideScroller"
 
 import addLineBreaks from "../../services/addLineBreaks"
+import splitWord from "../../services/splitWord"
+import splitLetter from "../../services/splitLetter"
 
 export default class ProjectSectionBlock extends Component {
 
@@ -46,7 +48,9 @@ export default class ProjectSectionBlock extends Component {
 					<div className="grid__row">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h2 className={subtitle ? "mb0" : null}>{title}</h2>
+							<h2 className={subtitle ? "mb0" : null}>
+								{ (title.split(" ").length > 1) ? splitWord(title) : splitLetter(title)}
+							</h2>
 							{ subtitle ? <h4 className="fade">{subtitle}</h4> : null }
 							<blockquote>{addLineBreaks(description)}</blockquote>
 						</div>

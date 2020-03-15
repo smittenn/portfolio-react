@@ -34,7 +34,7 @@ class TextLink extends Component {
 
 	render() {
 
-		const { hideUnderline, hideLine, style } = this.props;
+		const { hideUnderline, hideLine, style, disabled } = this.props;
 		const { isHovered } = this.state;
 
 		const classnames = classNames({
@@ -42,6 +42,7 @@ class TextLink extends Component {
 			"text-link--hide-underline": hideUnderline,
 			"text-link--hide-line": hideLine,
 			"text-link--hovered": isHovered,
+			"text-link--disabled": disabled,
 		})
 
 		return (

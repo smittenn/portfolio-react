@@ -23,6 +23,7 @@ import HeroBlock from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
+import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
@@ -144,21 +145,11 @@ class Translator extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Collection</h2>
-								<blockquote>I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. {/*Users can choose a list or masonry grid view to their liking.*/}</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/mam-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Collection"
+					description="I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later."
+					media={{ type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					/>
 				</ScrollSection>
 
 
@@ -168,16 +159,10 @@ class Translator extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Metadata</h2>
-								<blockquote>Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+					<ProjectSectionBlock 
+					title="Metadata"
+					description="Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness."
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/metadata-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking an uploaded media item opens the metadata drawer. Many metadata fields are detected on upload."/>
 						</div>
@@ -187,7 +172,7 @@ class Translator extends Component {
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/metadata-03.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="An asset is “Search Optmized” when all of its metadata fields are filled out."/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 
@@ -197,21 +182,11 @@ class Translator extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Shell Record</h2>
-								<blockquote>Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/shell-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Shell Record"
+					description="Together with the product team, we devised the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. After the shoot they could simply associate the content with the shell they had already entered the metadata for."
+					media={{ type: 'image', src: '../assets/img/translator/shell-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					/>
 				</ScrollSection>
 
 
@@ -220,25 +195,18 @@ class Translator extends Component {
 				name={sections[5]}
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}
-				>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Bulk Actions</h2>
-								<blockquote>Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields.</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+				onSetActive={() => { this.setActiveSection(5); }}>
+					<ProjectSectionBlock 
+					title="Bulk Actions"
+					description="Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields."
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/bulk-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking the multi select button in the sticky secondary bar shows checkboxes and starts the bulk edit flow."/>
 						</div>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/bulk-02.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 

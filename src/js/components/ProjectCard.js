@@ -50,28 +50,30 @@ class ProjectCard extends Component {
 		const { hoveredIndex } = this.state;
 
 		return (
-			items.map((item, i) => (
-				<li key={i} 
-				className={classNames({
-					"project-card": true,
-					"project-card--hovered": hoveredIndex == i,
-				})}>
-					<NavLink to={item.href} onClick={this.props.setCursorUnhover}>
-						<div className="project-card__asset">
-							<Image src={item.img} aspectRatioWidth={item.aspectRatioWidth} aspectRatioHeight={item.aspectRatioHeight}/>
-						</div>
-						<div className="project-card__bottom" 
-						onMouseEnter={() => { this.setIndexHovered(i); }}
-						onMouseLeave={this.handleMouseLeave}>
-							<TextLink hideUnderline><h2 className="mb0">{item.name}</h2></TextLink>
-						</div>
-						<div className="project-card__tags">
-							<blockquote className="mb0">{item.tags.join(", ")}</blockquote>
-						</div>
-					</NavLink>
-				</li>
-			))
-		);
+			<ul className="m0">
+				{ items.map((item, i) => (
+					<li key={i} 
+					className={classNames({
+						"project-card": true,
+						"project-card--hovered": hoveredIndex == i,
+					})}>
+						<NavLink to={item.href} onClick={this.props.setCursorUnhover}>
+							<div className="project-card__asset">
+								<Image src={item.img} aspectRatioWidth={item.aspectRatioWidth} aspectRatioHeight={item.aspectRatioHeight}/>
+							</div>
+							<div className="project-card__bottom" 
+							onMouseEnter={() => { this.setIndexHovered(i); }}
+							onMouseLeave={this.handleMouseLeave}>
+								<TextLink hideUnderline><h2 className="mb0">{item.name}</h2></TextLink>
+							</div>
+							<div className="project-card__tags">
+								<blockquote className="mb0">{item.tags.join(", ")}</blockquote>
+							</div>
+						</NavLink>
+					</li>
+				)) }
+			</ul>
+		)
 	}
 }
 

@@ -94,12 +94,20 @@ $baseclass: nav-takeover;
 		flex-wrap: wrap-reverse;
 		justify-content: flex-end;
 		align-items: flex-end;
+		// line-height: 1;
 		transform: translateY(-84px);
 
 		.icon-caret {
 			margin: 0 12px;
-			margin-bottom: 2px;
+			transform: translateY(-1px);
+			// margin-bottom: 2px;
 		}
+	}
+
+	&__breadcrumbs-item {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
 	}
 
 	&__line-container {

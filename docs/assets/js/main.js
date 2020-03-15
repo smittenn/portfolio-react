@@ -44145,7 +44145,15 @@ var NavTakeover = function (_Component) {
 				return (0, _toCamelCase2.default)(menu.name) == _this.props.openNavPanel ? _react2.default.createElement(
 					'h6',
 					{ className: 'nav-takeover__breadcrumbs uppercase mb0', key: i },
-					menu.name,
+					_react2.default.createElement(
+						'div',
+						{ className: 'nav-takeover__breadcrumbs-item' },
+						_react2.default.createElement(
+							_TextLink2.default,
+							{ hideUnderline: true, disabled: true },
+							menu.name
+						)
+					),
 					_this.createBreadcrumbItem(menu)
 				) : null;
 			});
@@ -44154,7 +44162,7 @@ var NavTakeover = function (_Component) {
 		_this.createBreadcrumbItem = function (menu) {
 			return menu.hasOwnProperty('parent') ? _react2.default.createElement(
 				'div',
-				{ style: { display: 'flex', flexDirection: 'row-reverse' } },
+				{ className: 'nav-takeover__breadcrumbs-item' },
 				_react2.default.createElement(_Icon2.default, { icon: 'caret', size: 16, color: (0, _palette2.default)("brand-black") }),
 				_react2.default.createElement(
 					'div',
@@ -44631,8 +44639,10 @@ var ParallaxBackground = function (_Component) {
 				"parallax-background--hidden": isHidden
 			});
 
+			var multiplier = -0.15;
+
 			var updatedStyle = {
-				transform: "translate3d(0, " + scrollAmount * -0.15 + "px, 0)"
+				transform: "translate3d(0, " + scrollAmount * multiplier + "px, 0)"
 			};
 
 			Object.assign(updatedStyle, style);
@@ -45043,51 +45053,55 @@ var ProjectCard = function (_Component) {
 			var hoveredIndex = this.state.hoveredIndex;
 
 
-			return items.map(function (item, i) {
-				return _react2.default.createElement(
-					'li',
-					{ key: i,
-						className: (0, _classnames2.default)({
-							"project-card": true,
-							"project-card--hovered": hoveredIndex == i
-						}) },
-					_react2.default.createElement(
-						_reactRouterDom.NavLink,
-						{ to: item.href, onClick: _this2.props.setCursorUnhover },
+			return _react2.default.createElement(
+				'ul',
+				{ className: 'm0' },
+				items.map(function (item, i) {
+					return _react2.default.createElement(
+						'li',
+						{ key: i,
+							className: (0, _classnames2.default)({
+								"project-card": true,
+								"project-card--hovered": hoveredIndex == i
+							}) },
 						_react2.default.createElement(
-							'div',
-							{ className: 'project-card__asset' },
-							_react2.default.createElement(_Image2.default, { src: item.img, aspectRatioWidth: item.aspectRatioWidth, aspectRatioHeight: item.aspectRatioHeight })
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'project-card__bottom',
-								onMouseEnter: function onMouseEnter() {
-									_this2.setIndexHovered(i);
-								},
-								onMouseLeave: _this2.handleMouseLeave },
+							_reactRouterDom.NavLink,
+							{ to: item.href, onClick: _this2.props.setCursorUnhover },
 							_react2.default.createElement(
-								_TextLink2.default,
-								{ hideUnderline: true },
+								'div',
+								{ className: 'project-card__asset' },
+								_react2.default.createElement(_Image2.default, { src: item.img, aspectRatioWidth: item.aspectRatioWidth, aspectRatioHeight: item.aspectRatioHeight })
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'project-card__bottom',
+									onMouseEnter: function onMouseEnter() {
+										_this2.setIndexHovered(i);
+									},
+									onMouseLeave: _this2.handleMouseLeave },
 								_react2.default.createElement(
-									'h2',
+									_TextLink2.default,
+									{ hideUnderline: true },
+									_react2.default.createElement(
+										'h2',
+										{ className: 'mb0' },
+										item.name
+									)
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'project-card__tags' },
+								_react2.default.createElement(
+									'blockquote',
 									{ className: 'mb0' },
-									item.name
+									item.tags.join(", ")
 								)
 							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'project-card__tags' },
-							_react2.default.createElement(
-								'blockquote',
-								{ className: 'mb0' },
-								item.tags.join(", ")
-							)
 						)
-					)
-				);
-			});
+					);
+				})
+			);
 		}
 	}]);
 
@@ -45759,7 +45773,8 @@ var TextLink = function (_Component) {
 			var _props = this.props,
 			    hideUnderline = _props.hideUnderline,
 			    hideLine = _props.hideLine,
-			    style = _props.style;
+			    style = _props.style,
+			    disabled = _props.disabled;
 			var isHovered = this.state.isHovered;
 
 
@@ -45767,7 +45782,8 @@ var TextLink = function (_Component) {
 				"text-link": true,
 				"text-link--hide-underline": hideUnderline,
 				"text-link--hide-line": hideLine,
-				"text-link--hovered": isHovered
+				"text-link--hovered": isHovered,
+				"text-link--disabled": disabled
 			});
 
 			return _react2.default.createElement(
@@ -46316,6 +46332,14 @@ var _addLineBreaks = require("../../services/addLineBreaks");
 
 var _addLineBreaks2 = _interopRequireDefault(_addLineBreaks);
 
+var _splitWord = require("../../services/splitWord");
+
+var _splitWord2 = _interopRequireDefault(_splitWord);
+
+var _splitLetter = require("../../services/splitLetter");
+
+var _splitLetter2 = _interopRequireDefault(_splitLetter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46369,7 +46393,7 @@ var ProjectSectionBlock = function (_Component) {
 							_react2.default.createElement(
 								"h2",
 								{ className: subtitle ? "mb0" : null },
-								title
+								title.split(" ").length > 1 ? (0, _splitWord2.default)(title) : (0, _splitLetter2.default)(title)
 							),
 							subtitle ? _react2.default.createElement(
 								"h4",
@@ -46407,7 +46431,7 @@ var ProjectSectionBlock = function (_Component) {
 
 exports.default = ProjectSectionBlock;
 
-},{"../../components/CodepenEmbed":137,"../../components/IFrame":140,"../../components/Image":142,"../../components/SideScroller":150,"../../components/Video":153,"../../services/addLineBreaks":186,"classnames":8,"react":107,"react-intersection-visible":40,"react-redux":55,"react-router-dom":72}],158:[function(require,module,exports){
+},{"../../components/CodepenEmbed":137,"../../components/IFrame":140,"../../components/Image":142,"../../components/SideScroller":150,"../../components/Video":153,"../../services/addLineBreaks":186,"../../services/splitLetter":193,"../../services/splitWord":194,"classnames":8,"react":107,"react-intersection-visible":40,"react-redux":55,"react-router-dom":72}],158:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46607,7 +46631,7 @@ module.exports={
 					"items": [
 						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },
-						{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },
+						/*{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },*/
 					]
 				},
 				{
@@ -51915,6 +51939,10 @@ var _ProjectIntroBlock = require("../../components/blocks/ProjectIntroBlock");
 
 var _ProjectIntroBlock2 = _interopRequireDefault(_ProjectIntroBlock);
 
+var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock");
+
+var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
+
 var _splitWord = require("../../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
@@ -52066,39 +52094,11 @@ var Translator = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(2);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Collection"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later. "
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/mam-01.jpg", aspectRatioWidth: 16, aspectRatioHeight: 9 })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Collection",
+						description: "I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later.",
+						media: { type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -52111,31 +52111,11 @@ var Translator = function (_Component) {
 							_this2.setActiveSection(3);
 						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Metadata"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						null,
+						_ProjectSectionBlock2.default,
+						{
+							title: "Metadata",
+							description: "Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
@@ -52163,39 +52143,11 @@ var Translator = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(4);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Shell Record"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Together with the product team, I came up with the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. That way after the shoot they could simply associate the content with the shell they had already entered the metadata for."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/translator/shell-01.jpg", aspectRatioWidth: 16, aspectRatioHeight: 9 })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Shell Record",
+						description: "Together with the product team, we devised the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. After the shoot they could simply associate the content with the shell they had already entered the metadata for.",
+						media: { type: 'image', src: '../assets/img/translator/shell-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -52206,34 +52158,13 @@ var Translator = function (_Component) {
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(5);
-						}
-					},
+						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Bulk Actions"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						null,
+						_ProjectSectionBlock2.default,
+						{
+							title: "Bulk Actions",
+							description: "Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields.",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
@@ -52322,7 +52253,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
 
-},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/Image":142,"../../components/ParallaxBackground":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/HeroBlock":154,"../../components/blocks/ProjectDetailsBlock":155,"../../components/blocks/ProjectIntroBlock":156,"../../components/blocks/ProjectUpNextBlock":158,"../../data/people":161,"../../services/hexToRgb":190,"../../services/palette":192,"../../services/splitLetter":193,"../../services/splitWord":194,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],185:[function(require,module,exports){
+},{"../../actions/abbreviation":126,"../../actions/counter":127,"../../actions/panel":132,"../../components/CodepenEmbed":137,"../../components/GridLines":139,"../../components/Image":142,"../../components/ParallaxBackground":145,"../../components/ScrollArrow":148,"../../components/ScrollSection":149,"../../components/SideScroller":150,"../../components/Sidebar":151,"../../components/TextLink":152,"../../components/blocks/HeroBlock":154,"../../components/blocks/ProjectDetailsBlock":155,"../../components/blocks/ProjectIntroBlock":156,"../../components/blocks/ProjectSectionBlock":157,"../../components/blocks/ProjectUpNextBlock":158,"../../data/people":161,"../../services/hexToRgb":190,"../../services/palette":192,"../../services/splitLetter":193,"../../services/splitWord":194,"classnames":8,"react":107,"react-redux":55,"react-router-dom":72,"react-scroll":92}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -31,6 +31,8 @@ $baseclass: text-link;
 		display: block;
 		overflow: hidden;
 		background: rgba($brand-black, .10);
+		position: absolute;
+		bottom: 0;
 		// transition: all 0s $duration-long linear;
 	}
 
@@ -75,6 +77,10 @@ $baseclass: text-link;
 			transform: scaleX(1);
 			transform-origin: left;
 		}
+	}
+
+	&--disabled {
+		pointer-events: none;
 	}
 
 	.active-section & {

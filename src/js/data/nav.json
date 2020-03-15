@@ -23,7 +23,7 @@
 					"items": [
 						{ "name": "Home Intranet", "to": "/jnj-home" },
 						{ "name": "Medical Devices", "to": "/jnj-mdc" },
-						{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },
+						/*{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },*/
 					]
 				},
 				{

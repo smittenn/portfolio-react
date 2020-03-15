@@ -58,9 +58,10 @@ class ParallaxBackground extends Component {
 			"parallax-background--hidden": isHidden,
 		})
 
+		const multiplier = -0.15
 
 		let updatedStyle = {
-			transform: `translate3d(0, ${(scrollAmount * -0.15)}px, 0)`
+			transform: `translate3d(0, ${(scrollAmount * multiplier)}px, 0)`
 		};
 
 		Object.assign(updatedStyle, style);
