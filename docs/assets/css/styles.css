@@ -232,10 +232,10 @@ create color utility classes in the format
   background-color: #7366FB; }
 
 .inherit--brand-pink {
-  color: #FED1CF; }
+  color: #fdb4b1; }
 
 .inherit-bg--brand-pink {
-  background-color: #FED1CF; }
+  background-color: #fdb4b1; }
 
 .inherit--brand-blue {
   color: #00CAE0; }
@@ -256,7 +256,7 @@ create color utility classes in the format
   --brand-yellow: #F3B600;
   --brand-green: #7EAF53;
   --brand-purple: #7366FB;
-  --brand-pink: #FED1CF;
+  --brand-pink: #fdb4b1;
   --brand-blue: #00CAE0;
   --brand-teal: #0AB489; }
 
@@ -2765,7 +2765,7 @@ section p span > span, section blockquote span > span {
       stroke-dasharray: 700; }
   .process .circle__arc {
     stroke: rgba(248, 251, 247, 0.24);
-    stroke-width: 1;
+    stroke-width: 2;
     fill: transparent;
     vector-effect: non-scaling-stroke; }
   .process .step__number {
@@ -2794,7 +2794,7 @@ section p span > span, section blockquote span > span {
     fill: #131112;
     stroke: #f8fbf7;
     vector-effect: non-scaling-stroke;
-    stroke-width: 1; }
+    stroke-width: 2; }
   .process .step__icon {
     position: relative;
     width: 60px;
@@ -2932,6 +2932,8 @@ section p span > span, section blockquote span > span {
   .step--active .step__info > .step__text {
     -ms-transform: none;
     transform: none; }
+  .step--active .step__spot-circle {
+    stroke: #f8fbf7; }
   .step--active .step__spot-fill {
     -ms-transform: scale(1);
     transform: scale(1); }

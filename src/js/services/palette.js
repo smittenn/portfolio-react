@@ -7,7 +7,7 @@ export default function(color) {
 		"brand-green": "#7EAF53",
 		"brand-yellow": "#F3B600",
 		"brand-orange": "#f9763e",
-		"brand-pink": "#FED1CF",
+		"brand-pink": "#fdb4b1",
 		"brand-blue": "#00CAE0",
 		"brand-teal": "#0AB489",
 

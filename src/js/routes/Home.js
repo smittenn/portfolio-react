@@ -17,6 +17,7 @@ import TextLink from "../components/TextLink"
 import Sidebar from "../components/Sidebar"
 
 import Image from "../components/Image"
+import ProcessDiagram from "../components/ProcessDiagram"
 
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
@@ -136,7 +137,10 @@ class Home extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 		const brandRed = hexToRgb(palette("brand-red"));
-		
+
+		// const circles = document.getElementsByClassName('step__spot-circle');
+		// const circleColor = `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`;
+				
 		return (
 			<article>
 				<ParallaxBackground 
@@ -229,29 +233,12 @@ class Home extends Component {
 								</TextLink>
 							</h5>
 						</div>
-						{<div className="grid__item grid__item--col-2 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--hide-bp-medium">
-							<div className="grid__row m0" style={{ flexDirection: 'column' }}>
-								<h4>1 — Discover</h4>
-								<h4>2 — Ideate</h4>
-								<h4>3 — Sketch</h4>
-								<h4>4 — Prototype</h4>
-								<h4>5 — User Testing</h4>
-								<h4>6 — Experience Mapping</h4>
-								<h4>7 — Refinement</h4>
-								<h4>8 — Iterate</h4>
-								{/*<div className="grid__item grid__item--col-4">
-									<Image src="../assets/img/roof.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>
-								<div className="grid__item grid__item--col-4 shift--left">
-									<div className="spacer spacer__lg"/>
-									<Image src="../assets/img/brooklyn-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>
-								<div className="grid__item grid__item--col-4 shift--left">
-									<div className="spacer spacer__md"/>
-									<Image src="../assets/img/window.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>*/}
-							</div>
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
+							<style dangerouslySetInnerHTML={{__html: `
+								.step__spot-circle { fill: rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}) !important }
+							`}} />
+							<ProcessDiagram/>
 						</div>
 					</div>
 				</ScrollSection>

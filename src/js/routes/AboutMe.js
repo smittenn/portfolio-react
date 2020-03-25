@@ -57,7 +57,7 @@ class About extends Component {
 
 		const brandPurple = hexToRgb(palette("brand-purple"));
 		const brandTeal = palette("brand-teal");
-		const brandPink = hexToRgb(darken(palette("brand-pink"), 6));
+		const brandPink = hexToRgb(palette("brand-pink"));
 		
 		return (
 			<article>

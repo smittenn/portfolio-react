@@ -5,9 +5,9 @@ const subtractLight = function(color, amount){
   return c;
 }
 
-const darken = (color, amount) =>{
+const darken = (color, amount) => {
   color = (color.indexOf("#")>=0) ? color.substring(1,color.length) : color;
-  amount = parseInt((255*amount)/100);
+  amount = parseInt((255 * amount) / 100);
   return color = `#${subtractLight(color.substring(0,2), amount)}${subtractLight(color.substring(2,4), amount)}${subtractLight(color.substring(4,6), amount)}`;
 }
 

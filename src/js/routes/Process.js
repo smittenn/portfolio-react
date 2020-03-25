@@ -50,7 +50,7 @@ class Process extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 		const brandRed = hexToRgb(palette("brand-red"));
-		
+
 		return (
 			<article>
 				<ScrollSection 
@@ -60,10 +60,6 @@ class Process extends Component {
 				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 1`,
-					backgroundBlendMode: `overlay`,
-				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-3 grid__item--col-1-large grid__item--hide-bp-medium"/>

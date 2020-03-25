@@ -40,7 +40,7 @@ $step-classname: "step";
 	}
 	.circle__arc {
 		stroke: rgba($brand-white, 0.24);
-		stroke-width: 1;
+		stroke-width: 2;
 		fill: transparent;
 		vector-effect: non-scaling-stroke;
 	}
@@ -72,7 +72,7 @@ $step-classname: "step";
 		fill: $brand-black;
 		stroke: $brand-white;
 		vector-effect: non-scaling-stroke;
-		stroke-width: 1;
+		stroke-width: 2;
 	}
 	.step__icon {
 		position: relative;
@@ -231,6 +231,9 @@ $step-classname: "step";
 	&--active {
 		.step__info > .step__text {
 			transform: none;
+		}
+		.step__spot-circle {
+			stroke: rgba($brand-white, 1);
 		}
 		.step__spot-fill {
 			transform: scale(1);

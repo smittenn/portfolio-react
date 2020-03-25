@@ -1,0 +1,69 @@
+{
+	"data": [
+			{
+				"color": "brand-red",
+				"title": "Discover",
+				"iconName": "binoculars",
+				"body": "Interview users to understand their current process and workflow.",
+				"stepArcPath": "M 50 1 A 49 49 0 0 1 84.64823227814082 15.351767721859176",
+				"circleArcPath": "M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"
+			},
+			{
+				"color": "brand-orange",
+				"title": "Ideate",
+				"iconName": "lightbulb",
+				"body": "Meet with stakeholders and developers to collaboratively generate design ideas.",
+				"stepArcPath": "M 84.64823227814082 15.351767721859176 A 49 49 0 0 1 99 50",
+				"circleArcPath": "M 68.7514881858894 4.729902906946947 A 49 49 0 0 1 95.27009709305305 31.2485118141106"
+			},
+			{
+				"color": "brand-yellow",
+				"title": "Sketch",
+				"iconName": "wireframe",
+				"body": "Consolidate the ideas into a sketch to communicate the design and functionality while gathering consensus.",
+				"stepArcPath": "M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082",
+				"circleArcPath": "M 95.27009709305305 31.2485118141106 A 49 49 0 0 1 95.27009709305305 68.7514881858894"
+			},
+			{
+				"color": "brand-purple",
+				"title": "Prototype",
+				"iconName": "prototype",
+				"body": "Create a responsive and clickable coded prototype built with HTML, CSS, and JavaScript.",
+				"stepArcPath": "M 84.64823227814082 84.64823227814082 A 49 49 0 0 1 50 99",
+				"circleArcPath": "M 95.27009709305305 68.7514881858894 A 49 49 0 0 1 68.7514881858894 95.27009709305305"
+			},
+			{
+				"color": "brand-green",
+				"title": "User Testing",
+				"iconName": "conversation",
+				"body": "Test the prototype using Usability Testing methods to gather thorough feedback.",
+				"stepArcPath": "M 50 99 A 49 49 0 0 1 15.351767721859176 84.64823227814082",
+				"circleArcPath": "M 68.7514881858894 95.27009709305305 A 49 49 0 0 1 31.248511814110604 95.27009709305305"
+			},
+			{
+				"color": "brand-pink",
+				"title": "Mapping",
+				"iconName": "directions",
+				"body": "Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.",
+				"stepArcPath": "M 15.351767721859176 84.64823227814082 A 49 49 0 0 1 1 50.00000000000001",
+				"circleArcPath": "M 31.248511814110604 95.27009709305305 A 49 49 0 0 1 4.729902906946947 68.7514881858894"
+
+			},
+			{
+				"color": "brand-blue",
+				"title": "Refine",
+				"iconName": "filter",
+				"body": "Refine and iterate on the design to further improve the userʼs experience.",
+				"stepArcPath": "M 1 50.00000000000001 A 49 49 0 0 1 15.351767721859161 15.351767721859176",
+				"circleArcPath": "M 4.729902906946947 68.7514881858894 A 49 49 0 0 1 4.72990290694694 31.24851181411063"
+			},
+			{
+				"color": "brand-teal",
+				"title": "Iterate",
+				"iconName": "clipboard",
+				"body": "Deliver changes to the prototype and backlog improvements for the future.",
+				"stepArcPath": "M 15.351767721859161 15.351767721859176 A 49 49 0 0 1 49.99999999999999 1",
+				"circleArcPath": "M 4.72990290694694 31.24851181411063 A 49 49 0 0 1 31.248511814110614 4.729902906946947"
+			}
+		] 
+}
