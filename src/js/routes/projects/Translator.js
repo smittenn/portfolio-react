@@ -8,7 +8,6 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
@@ -55,7 +54,7 @@ class Translator extends Component {
 			sections: [
 				"overview",
 				"about",
-				"collections",
+				"collection",
 				"metadata",
 				"shell",
 				"bulk",

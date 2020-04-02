@@ -27,7 +27,7 @@ export default class ProjectIntroBlock extends Component {
 							<blockquote className="mr">
 								{addLineBreaks(col1)}
 							</blockquote>
-							<blockquote className="mr">
+							<blockquote className="mr mb0">
 								{addLineBreaks(col3)}
 							</blockquote>
 						</div>

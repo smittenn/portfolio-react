@@ -12,17 +12,17 @@ class SideScroller extends Component {
 	}
 
 	scrollTo = () => {
-    this._scrollButton.blur();
+		this._scrollButton.blur();
 
-    if (window.scrollTo) {
-      window.requestAnimationFrame(() => {
-        window.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-        });
-      });
-    }
-  }
+		if (window.scrollTo) {
+			window.requestAnimationFrame(() => {
+				window.scrollTo({
+					left: 0,
+					behavior: 'smooth'
+				});
+			});
+		}
+	}
 
 
 	render() {

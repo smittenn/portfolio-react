@@ -24,26 +24,24 @@ class GridLines extends Component {
 	render() {
 
 		return (
-			<div className="style-line">
-				<div className="style-line__container">
+			<div className="grid-line">
+				<div className="grid-line__container">
 					<div className="grid">
 						<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item--col-5 grid__item--col-6-medium">
-							<div className="style-line__vertical"/>
+						<div className="grid-line__item grid__item--col-5 grid__item--hide-bp-medium">
+							<div className="grid-line__vertical"/>
 						</div>
-						<div className="grid__item--col-5 grid__item--hide-bp-medium">
-							<div className="style-line__vertical"/>
+						<div className="grid-line__item grid__item--col-5 grid__item--hide-bp-medium">
+							<div className="grid-line__vertical"/>
 						</div>
-						<div className="grid__item--col-1 grid__item--col-6-medium">
-							<div className="style-line__vertical" style={ this.props.isMobile ? { float: 'right' } : null }/>
+						<div className="grid-line__item grid__item--col-1 grid__item--col-12-medium">
+							<div className="grid-line__vertical"/>
+							<div className="grid-line__vertical" style={ this.props.isMobile ? null : { display: 'none' } }/>
 						</div>
 					</div>
 				</div>
-				<div className="style-line__container">
-					<div className="style-line__horizontal"/>
-					{/*<section>
-						<div className="style-line__horizontal"/>
-					</section>*/}
+				<div className="grid-line__container">
+					<div className="grid-line__horizontal"/>
 				</div>
 			</div>
 		);

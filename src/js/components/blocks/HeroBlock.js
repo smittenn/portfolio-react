@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import NavToggle from "../NavToggle"
 import Sidebar from "../Sidebar"
 import GridLines from "../GridLines"
-import ScrollArrow from "../ScrollArrow"
 
 import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"

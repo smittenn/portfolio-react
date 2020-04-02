@@ -8,12 +8,32 @@ $baseclass: sidebar;
 	display: none;
 	align-items: center;
 	justify-content: flex-end;
-	left: 0;
 	top: 0px;
 	background-blend-mode: multiply;
 	transition: transform $duration-short $easing4;
-	transform: translateX(-48px);
 	@include zIndexCloser();
+
+	&--left {
+		left: 0;
+		transform: translateX(-48px);
+
+		.#{$baseclass}__dash {
+			transform-origin: left;
+		}
+	}
+
+	&--right {
+		right: 0;
+		transform: translateX(137px);
+
+		.#{$baseclass}__dash {
+			transform-origin: right;
+		}
+
+		.#{$baseclass}__label {
+			width: 96px;
+		}
+	}
 
 	.active-section & {
 		display: flex;
@@ -83,13 +103,10 @@ $baseclass: sidebar;
 
 	&__dash {
 		margin: 0;
-		// margin: 0 0 0 16px;
 		width: 48px;
 		height: 1px;
 		background: darken($brand-black, 0%);
 		display: inline-block;
-		// transform-origin: right;
-		transform-origin: left;
 		transform: scaleX(0.5);
 		transition: all $easing4 $duration-short;
 	}
@@ -125,8 +142,6 @@ $baseclass: sidebar;
 				transition: height $easing4 $duration-short;
 
 				a {
-					// transition: opacity $duration-short $easing1;
-					// opacity: 0.6;
 					pointer-events: auto;
 
 					&.active {
@@ -135,10 +150,6 @@ $baseclass: sidebar;
 							-webkit-text-stroke-width: 4px;
 						}
 					}
-
-					// &:hover {
-					// 	opacity: 1;
-					// }
 				}
 
 				.#{$baseclass}__number,
@@ -151,9 +162,6 @@ $baseclass: sidebar;
 					transform: translate3d(0, 0, 0);
 				}
 
-				.#{$baseclass}__border {
-					background: rgba($brand-black, .06);
-				}
 
 				.#{$baseclass}__dash {
 					transform: scaleX(1);

@@ -41,7 +41,7 @@ $baseclass: project-card;
 	// }
 
 	&__bottom {
-		opacity: 0.6;
+		opacity: 0.24;
 		display: block;
 		display: flex;
 		justify-content: flex-start;
@@ -76,7 +76,7 @@ $baseclass: project-card;
 
 	&--hovered {
 		.#{$baseclass}__asset {
-			opacity: 0.72;
+			opacity: 1;
 		}
 		.#{$baseclass}__bottom {
 			transform: none;

@@ -10,7 +10,6 @@ import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perfo
 import ParallaxBackground from "../components/ParallaxBackground"
 import ScrollSection from "../components/ScrollSection"
 import HeroBlock from "../components/blocks/HeroBlock"
-import ScrollArrow from "../components/ScrollArrow"
 import ProjectCard from "../components/ProjectCard"
 import TextLink from "../components/TextLink"
 
@@ -19,10 +18,13 @@ import Sidebar from "../components/Sidebar"
 import Image from "../components/Image"
 import ProcessDiagram from "../components/ProcessDiagram"
 
+import processData from "../data/process"
+
 import splitWord from "../services/splitWord"
 import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
+import pad from "../services/pad"
 
 
 class Home extends Component {
@@ -140,20 +142,31 @@ class Home extends Component {
 
 		// const circles = document.getElementsByClassName('step__spot-circle');
 		// const circleColor = `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`;
+
+		const processPreview = processData.data.slice(0, 3).map((item, i) => (
+			<div className="grid__row mb0">
+				<div className="grid__item grid__item--col-12">
+					<p className="mb0">{pad(i + 1, 2) + '. '}</p>
+					<h4 className="mb0">{item.title}</h4>
+					<blockquote>{item.body}</blockquote>
+				</div>
+			</div>
+		))
 				
 		return (
 			<article>
-				<ParallaxBackground 
-				style={{ 
+				{
+					/*
 					backgroundImage: `
 						linear-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
 						),
 						url(../assets/img/leaf.gif)
-					`, 
-					backgroundSize: 'cover'
-				}}/>
+					`*/
+				}
+
+				{/*style={{ backgroundImage: 'linear-gradient(180deg, #5e9bca, #decfd6 60%)' }}*/}
 
 				<ScrollSection 
 				name={sections[0]}
@@ -161,10 +174,21 @@ class Home extends Component {
 				fullHeight
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ 
-					backgroundColor: 'transparent',
-				}}  
 				onSetActive={() => { this.setActiveSection(0); }}>
+					<ParallaxBackground>
+						<div className="grid">
+							{/*<div className="grid__item grid__item--col-4 grid__item--col-5-medium">
+								<div className="spacer spacer__md"/>
+								<div className="spacer spacer__lg"/>
+								<Image src="../assets/img/mist.jpg" aspectRatioWidth={3} aspectRatioHeight={2}/>
+							</div>*/}
+							<div className="grid__item grid__item--col-7 grid__item--col-2-medium"/>
+							<div className="grid__item grid__item--col-5 grid__item--col-10-medium">
+								<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+							</div>
+						</div>
+					</ParallaxBackground>
+
 					<HeroBlock 
 					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]} 
 					/>
@@ -179,7 +203,6 @@ class Home extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							{/*<div className="spacer spacer__sm"/>*/}
 							<h2>{splitWord("Hello There")}</h2>
 							<blockquote className="">
 								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
@@ -193,18 +216,16 @@ class Home extends Component {
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
 							<div className="grid__row mb0">
-								<div className="grid__item grid__item--col-4">
-									{/*<div className="spacer spacer__sm"/>*/}
-									<Image src="../assets/img/lands-end-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-								</div>
-								<div className="grid__item grid__item--col-4 shift--left">
+								{/*<div className="grid__item grid__item--col-6">
+									<Image src="../assets/img/lands-end.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								</div>*/}
+								{<div className="grid__item grid__item--col-6">
+									{/*<div className="spacer spacer__lg"/>*/}
+									<Image src="../assets/img/mist.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								</div>}
+								<div className="grid__item grid__item--col-6 shift--left">
 									<div className="spacer spacer__lg"/>
-									<Image src="../assets/img/me-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
-									{/*<div className="spacer spacer__sm"/>*/}
-								</div>
-								<div className="grid__item grid__item--col-4 shift--left">
-									<div className="spacer spacer__md"/>
-									<Image src="../assets/img/mist-3x4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
+									<Image src="../assets/img/me.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 								</div>
 							</div>
 						</div>
@@ -216,7 +237,6 @@ class Home extends Component {
 				name={sections[2]}
 				sections={sections}
 				fullHeight
-				black
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
@@ -235,10 +255,9 @@ class Home extends Component {
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
-							<style dangerouslySetInnerHTML={{__html: `
-								.step__spot-circle { fill: rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}) !important }
-							`}} />
-							<ProcessDiagram/>
+							{/*<ProcessDiagram/>*/}
+							{ processPreview }
+							<h4>...</h4>
 						</div>
 					</div>
 				</ScrollSection>

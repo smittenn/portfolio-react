@@ -62,8 +62,8 @@ export default class Image extends Component {
 		const { isVisible, intersectionRatio } = this.state;
 
 		const classnames = classNames({
-			"image": true,
-			"image--visible": this.state.isVisible
+			"image-wrapper": true,
+			"image-wrapper--visible": this.state.isVisible
 		})
 
 		// console.log(this.ref.current, src, isVisible, intersectionRatio);
@@ -71,11 +71,7 @@ export default class Image extends Component {
 		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
 		
 		const _style =  {
-			position: 'relative',
-			display: 'block',
-			height: 0,
 			paddingBottom: pb + '%',
-			overflow: 'hidden',
 		}
 
 		// let docScroll;
@@ -90,17 +86,7 @@ export default class Image extends Component {
 		return (
 			<figure>
 				<div className={classnames} style={_style} ref={this.ref}>
-					<img src={src} style={{
-						display: 'block',
-						// width: '100%',
-						height: '100%',
-						position: 'absolute',
-						top: 0,
-						// bottom: 0,
-						left: 0,
-						// transform: `translate3d(0, ${intersectionRatio * 100}px, 0)`,
-						// right: 0,
-					}}/>
+					<img src={src}/>
 				</div>
 				{ caption ? (<figcaption><p className="mb0">{caption}</p></figcaption>) : null }
 			</figure>

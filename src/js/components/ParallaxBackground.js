@@ -67,7 +67,11 @@ class ParallaxBackground extends Component {
 		Object.assign(updatedStyle, style);
 
 		return (
-			<section className={classnames} style={updatedStyle}/>
+			<div className="">
+				<section className={classnames} style={updatedStyle}>
+					{ this.props.children }
+				</section>
+			</div>
 		);
 	}
 }

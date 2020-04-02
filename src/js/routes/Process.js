@@ -52,7 +52,7 @@ class Process extends Component {
 		const brandRed = hexToRgb(palette("brand-red"));
 
 		return (
-			<article>
+			<article id="process">
 				<ScrollSection 
 				name={sections[0]}
 				black 

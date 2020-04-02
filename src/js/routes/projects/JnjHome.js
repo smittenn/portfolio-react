@@ -9,7 +9,6 @@ import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perfo
 import { setPanel } from "../../actions/panel"
 
 import HeroBlock from "../../components/blocks/HeroBlock"
-import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
@@ -94,7 +93,7 @@ class JnjHome extends Component {
 						),
 						url(../assets/img/jnj-home/onboarding-mobile.png)
 					`, 
-					backgroundColor: brandPrimary,
+					backgroundColor: `rgb(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b})`,
 					backgroundSize: this.props.isMobile ? 'contain' : '60%',
 					backgroundPosition: this.props.isMobile ? 'right' : '100% 810%',
 				}}/>
@@ -116,11 +115,15 @@ class JnjHome extends Component {
 
 
 				<ScrollSection 
+				black
 				name={sections[1]} 
 				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(1); }}>
+				onSetActive={() => { this.setActiveSection(1); }}
+				style={{
+					backgroundColor: '#00008c'
+				}}>
 					<ProjectIntroBlock 
 					col1='
 						The Home team dreamed of a better employee experience for J&J employees. While J&J’s 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J.
@@ -144,18 +147,18 @@ class JnjHome extends Component {
 
 				</ScrollSection>
 
-
-				<ScrollSection 
-				black 
-				sections={sections} 
-				activeSection={activeSection}
+				{/*
 				style={{ 
 					backgroundImage: `url(../assets/img/jnj-home/city.svg)`, 
 					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12`,
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
 					backgroundSize: this.props.isMobile ? 'cover' : '50%',
-				}}>
+				}}*/}				
+
+				<ScrollSection 
+				sections={sections} 
+				activeSection={activeSection}>
 					<ProjectDetailsBlock 
 					role="UX/Motion Designer" 
 					date="Spring, 2018" 

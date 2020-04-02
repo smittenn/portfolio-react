@@ -42,7 +42,7 @@
 			},
 			{
 				"color": "brand-pink",
-				"title": "Mapping",
+				"title": "Journey Mapping",
 				"iconName": "directions",
 				"body": "Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.",
 				"stepArcPath": "M 15.351767721859176 84.64823227814082 A 49 49 0 0 1 1 50.00000000000001",

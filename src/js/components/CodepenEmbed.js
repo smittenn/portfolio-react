@@ -49,7 +49,7 @@ export default class CodepenEmbed extends Component {
 				title={title} 
 				src={isVisible ? `https://codepen.io/erchsm/embed/${this.props.slug}?height=${height}&theme-id=dark&default-tab=result` : null} 
 				frameBorder="no" 
-				allowtransparency="true" 
+				allowTransparency={true} 
 				allowFullScreen={true}>
 					See the Pen <a href={`https://codepen.io/erchsm/pen/${slug}`}>{title}</a> by eric smith
 					(<a href='https://codepen.io/erchsm'>@erchsm</a>) on <a href='https://codepen.io'>CodePen</a>.

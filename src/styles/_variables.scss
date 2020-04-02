@@ -25,15 +25,18 @@ $brand-pink: darken(#FED1CF,6%);
 $brand-blue: #00CAE0;
 $brand-teal: #0AB489;;
 
-$brand-black: darken(#232021, 6%);
-$brand-grey-darkest: darken(#232021, 3%);
 $brand-grey-dark: #232021;
+$brand-white: lighten(#F8FBF7, 3%);
 
-$brand-grey: mix(#232021, #F8FBF7, 82%);
+$brand-grey-darkest: darken(#232021, 3%);
+$brand-black: darken(#232021, 6%);
 
-$brand-white: lighten(#F8FBF7, 0%);
-$brand-grey-lightest: mix($brand-white, $brand-black, 94%);
+$brand-grey: mix($brand-grey-dark, $brand-white, 82%);
+
 $brand-grey-light: mix($brand-white, $brand-black, 88%);
+$brand-grey-lightest: mix($brand-white, $brand-black, 94%);
+// $brand-grey-lightest: #B6B7AC;
+
 
 $letter-spacing-xxs: -0.048em;
 $letter-spacing-xs: -0.036em;

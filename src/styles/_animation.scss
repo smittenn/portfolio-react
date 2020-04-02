@@ -52,6 +52,22 @@
 .parallax-header {
 }
 
+.scale-up {
+	transition: $easing2 $duration-medium transform;
+
+	&--sm {
+		&:hover {
+			transform: scale(3);
+		}		
+	}
+	
+	&--lg {
+		&:hover {
+			transform: scale(6);
+		}		
+	}
+}
+
 
 
 section {

@@ -8,9 +8,10 @@ import IntersectionObserver  from "intersection-observer"
 
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
-import ScrollArrow from "./ScrollArrow"
+import HeroScrollButton from "./HeroScrollButton"
 import GridLines from "./GridLines"
 import TextLink from "./TextLink"
+import ArrowGroup from "./ArrowGroup"
 import Icon from "./Icon"
 
 import palette from "../services/palette"
@@ -41,7 +42,11 @@ export default class ScrollSection extends Component {
 		})()
 
 		if (fullHeight) {
-			Object.assign(updatedStyle, { minHeight: 'calc(100vh + 1px', display: 'flex', justifyContent: 'center' })
+			Object.assign(updatedStyle, { 
+				minHeight: 'calc(100vh + 1px', 
+				display: 'flex', 
+				justifyContent: 'center' 
+			})
 		}
 		
 		return (
@@ -67,20 +72,36 @@ export default class ScrollSection extends Component {
 					<div className="clip-wrapper">
 						{/*<GridLines/>*/}
 						{ sections.length > 1 ? [
-							<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutCubic"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
+							<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
 							,
 							((name == sections[0]) ? (
-								<ScrollArrow to={sections[1]} onSetActive={onSetActive} key={1}/>
+								<HeroScrollButton to={sections[1]} onSetActive={onSetActive} key={1}/>
 							) : null)
 							,
 							((name == sections[1]) ? (
-								<ScrollArrow to={name} onSetActive={onSetActive} key={2}/>
+								<HeroScrollButton to={name} onSetActive={onSetActive} key={2}/>
 							) : null)
 							,
+							<div className="left-rail" key={3}>
+								<NavLink to="/" /*style={{ transform: 'rotate(-90deg)'}}*/>
+									<TextLink hideLine>
+										<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
+										{/*<h6 className="uppercase mb0 light" style={{ letterSpacing: '0.12em'}}>H<span>☺</span>me</h6>*/}
+									</TextLink>
+								</NavLink>
+								<ArrowGroup isVertical>
+									<Link to={sections[sections.indexOf(name) - 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+
+									</Link>
+									<Link to={sections[sections.indexOf(name) + 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+
+									</Link>
+								</ArrowGroup>
+							</div>,
 							<Sidebar 
 							sections={sections} 
 							activeSection={activeSection}
-							key={3}/>
+							key={4}/>
 						] : null }
 
 						<NavToggle sections={sections}/>
@@ -100,6 +121,24 @@ export default class ScrollSection extends Component {
 
 					<div className="clip-wrapper">
 						{/*<GridLines/>*/}
+
+						<div className="left-rail" key={3}>
+							<NavLink to="/">
+								<TextLink hideLine>
+									<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
+									{/*<h6 className="uppercase mb0 light" style={{ letterSpacing: '0.12em'}}>H<span>☺</span>me</h6>*/}
+								</TextLink>
+							</NavLink>
+							<ArrowGroup isVertical>
+								<Link to={sections[sections.indexOf(name) - 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+
+								</Link>
+								<Link to={sections[sections.indexOf(name) + 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+
+								</Link>
+							</ArrowGroup>
+						</div>
+
 
 						<Sidebar 
 						sections={sections} 

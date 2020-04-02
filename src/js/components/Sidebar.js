@@ -31,6 +31,7 @@ class Sidebar extends Component {
 
 		const classnames = classNames({
 			"sidebar": true,
+			"sidebar--right": true,
 			"sidebar--open": this.props.isSidebarOpen,
 		})
 

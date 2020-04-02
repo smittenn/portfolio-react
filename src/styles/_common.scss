@@ -109,10 +109,6 @@ section {
 	transition: background-color $easing2 $duration-short;
 	// @include zIndexClose();		
 
-	.icon {
-		stroke: $brand-black;
-	}			
-
 	img {
 		width: 100%;
 	}
@@ -137,11 +133,7 @@ section {
 
 	.shift {
 		&--left {
-			transform: translateX(-25%);
-			
-			&:nth-child(3) {
-				transform: translateX(-50%);
-			}
+			transform: translateX(-33.33333%);
 		}
 	}
 }
@@ -150,6 +142,10 @@ section {
 	> div {
 		position: relative;
 	}
+
+	.icon {
+		stroke: $brand-black;
+	}			
 
 	&__number {
 		// line-height: 1;
@@ -210,16 +206,6 @@ h1, h2, h3, h4, p, blockquote, {
 	}
 }
 
-.clip-wrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	pointer-events: none;
-	clip: rect(0,auto,auto,0);
-}
-
 .left-rail {
 	position: fixed;
 	pointer-events: auto;
@@ -231,8 +217,7 @@ h1, h2, h3, h4, p, blockquote, {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	display: none;
-	@include zIndexCloser();
+	display: flex;
 
 	hr {
 		margin: 6px 18px;
@@ -242,7 +227,6 @@ h1, h2, h3, h4, p, blockquote, {
 	}
 
 	.active-section & {
-		display: flex;
 	}
 
 	// hr {

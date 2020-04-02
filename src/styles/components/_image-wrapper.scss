@@ -1,0 +1,18 @@
+$baseclass: image-wrapper;
+
+.#{$baseclass} {
+	position: relative;
+	display: block;
+	height: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+
+	img {
+		display: block;
+		height: 100%;
+		width: auto;
+		position: absolute;
+		top: 0;
+	}
+}

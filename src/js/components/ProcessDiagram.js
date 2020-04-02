@@ -49,11 +49,14 @@ class ProcessDiagram extends Component {
 	}
 
 	setColor = () => {
-		const section = document.getElementsByTagName('section')[0];
-		const circles = document.getElementsByClassName('step__spot-circle');
+		const processSection = document.getElementById('process');
+		if (processSection) { 
+			const section = processSection.getElementsByTagName('section')[0];
+			const circles = processSection.getElementsByClassName('step__spot-circle');
 
-		section ? section.style.backgroundColor = palette(this.state.activeItem.color) : null;
-		circles ? Array.from(circles).forEach((item) => item.style.fill = palette(this.state.activeItem.color)) : null;
+			if (section) { section.style.backgroundColor = palette(this.state.activeItem.color) }
+			if (circles) { Array.from(circles).forEach((item) => item.style.fill = palette(this.state.activeItem.color)) }
+		}
 	}
 
 	generateTitle = () => (

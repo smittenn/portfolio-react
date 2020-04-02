@@ -9,7 +9,6 @@ import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perfo
 import { setPanel } from "../../actions/panel"
 
 import HeroBlock from "../../components/blocks/HeroBlock"
-import ScrollArrow from "../../components/ScrollArrow"
 import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
@@ -30,6 +29,7 @@ import splitWord from "../../services/splitWord"
 import splitLetter from "../../services/splitLetter"
 import hexToRgb from "../../services/hexToRgb"
 import palette from "../../services/palette"
+import darken from "../../services/darken"
 
 import people from "../../data/people"
 
@@ -113,11 +113,13 @@ class Vai extends Component {
 
 
 				<ScrollSection 
+				black
 				name={sections[1]} 
 				disableSectionNumber
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(1);}}>
+				onSetActive={() => { this.setActiveSection(1);}}
+				style={{ backgroundColor: darken(brandPrimary, 6)}}>
 					<ProjectIntroBlock 
 					col1="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing." 
 					col2="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience. \n\n The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees." 
@@ -139,7 +141,7 @@ class Vai extends Component {
 						),
 						url(../assets/img/vai/mr-robot.jpg)
 					`,
-				 	backgroundPosition: this.props.isMobile ? "center 10%" : "center 55%"
+				 	backgroundPosition: this.props.isMobile ? "center 10%" : "center 45%"
 				}}>
 					<ProjectDetailsBlock 
 					role="Lead UI/UX Designer" 
