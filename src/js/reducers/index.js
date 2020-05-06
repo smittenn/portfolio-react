@@ -10,6 +10,7 @@ import primaryPanelReducer from './primaryPanel'
 import secondaryPanelReducer from './secondaryPanel'
 import sidebarReducer from './sidebar'
 import mobileReducer from './mobile'
+import windowHeightReducer from './windowHeight'
 
 const rootReducer = (history) => combineReducers({
 	count: counterReducer,
@@ -22,6 +23,7 @@ const rootReducer = (history) => combineReducers({
 	isSecondaryPanelOpen: secondaryPanelReducer,
 	isSidebarOpen: sidebarReducer,
 	isMobile: mobileReducer,
+	windowHeight: windowHeightReducer,
 	router: connectRouter(history)
 })
 

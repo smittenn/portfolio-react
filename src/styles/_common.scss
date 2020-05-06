@@ -25,8 +25,11 @@ body {
 }
 
 ul {
-	list-style: disc;
 	margin-left: 30px;
+
+	&.ls {
+		list-style: disc;
+	}
 }
 
 a {
@@ -205,45 +208,3 @@ h1, h2, h3, h4, p, blockquote, {
 		display: inline-block;
 	}
 }
-
-.left-rail {
-	position: fixed;
-	pointer-events: auto;
-	top: 63px;
-	width: 72px;
-	height:  calc(100% - 126px); 
-	left: 0px;
-	border: none;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	display: flex;
-
-	hr {
-		margin: 6px 18px;
-		width: 100%;
-		transform: scaleX(0.5);
-		transform-origin: left;
-	}
-
-	.active-section & {
-	}
-
-	// hr {
-	// 	transform: rotate(-90deg);
-	// }
-
-	&__bottom {
-		transform: rotate(-90deg) translateX(40%);
-		// transform-origin: 25% -135%;
-
-		h1, h2, h3, h4, h5, h6 {
-			white-space: nowrap;
-		}
-	}
-
-	i {
-		margin: 0 12px;
-	}
-}
-

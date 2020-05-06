@@ -48,7 +48,7 @@ class Sidebar extends Component {
 		)
 		
 		return (
-			<div className={classnames} ref="sidebar">
+			<div className={classnames} ref="sidebar" style={{ minHeight: this.props.windowHeight }} >
 				<ul className="m0 sidebar__inner" onClick={this.props.isSidebarOpen ? null : this.props.openSidebar} onMouseEnter={this.props.isMobile ? null : this.props.openSidebar} onMouseLeave={this.props.isMobile ? null : this.props.closeSidebar}>
 					{sidebarItems}
 				</ul>
@@ -62,6 +62,7 @@ const mapStateToProps = state => ({
 	abbreviation: state.abbreviation,
 	isSidebarOpen: state.isSidebarOpen,
 	isMobile: state.isMobile,
+	windowHeight: state.windowHeight,
 })
 
 const mapDispatchToProps = dispatch => ({

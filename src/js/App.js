@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import routes from './routes'
 
 import { detectMobile } from "./actions/mobile"
-// import { detectWindowHeight } from "./actions/windowHeight"
+import { detectWindowHeight } from "./actions/windowHeight"
 
 
 // const App = ({ history }) => {
@@ -26,12 +26,12 @@ import { detectMobile } from "./actions/mobile"
 class App extends Component {
 	componentDidMount() {
 		window.addEventListener('resize', this.props.detectMobile);
-		// document.addEventListener('scroll', this.props.detectWindowHeight);
+		document.addEventListener('scroll', this.props.detectWindowHeight);
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.props.detectMobile);
-		// document.removeEventListener('scroll', this.props.detectWindowHeight);
+		document.removeEventListener('scroll', this.props.detectWindowHeight);
 	}
 
 	render() {
@@ -47,12 +47,12 @@ class App extends Component {
 
 const mapStateToProps = state => ({
 	isMobile: state.isMobile,
-	// windowHeight: state.windowHeight,
+	windowHeight: state.windowHeight,
 })
 
 const mapDispatchToProps = dispatch => ({
 	detectMobile: () => dispatch(detectMobile()),
-	// detectWindowHeight: () => dispatch(detectWindowHeight()),
+	detectWindowHeight: () => dispatch(detectWindowHeight()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

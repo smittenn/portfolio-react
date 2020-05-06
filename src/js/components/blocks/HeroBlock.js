@@ -38,7 +38,7 @@ export default class HeroBlock extends Component {
 
 		return (
 			<div className={classnames}>
-				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
+				{<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>}
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 					<h1 className={ classNames({ "mb0": true })}>{updatedText}</h1>
 				</div>

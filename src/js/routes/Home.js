@@ -152,21 +152,28 @@ class Home extends Component {
 				</div>
 			</div>
 		))
-				
+
 		return (
 			<article>
-				{
-					/*
-					backgroundImage: `
-						linear-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
-						),
-						url(../assets/img/leaf.gif)
-					`*/
-				}
+				<ParallaxBackground 
+				style={{ backgroundImage: `
+					linear-gradient(
+						rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
+						rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
+					),
+					url(../assets/img/leaf.gif)
+				`}}
+				/>
+							{/*<div className="grid">
+								<div className="grid__item grid__item--col-6 grid__item--col-2-medium"/>
+								<div className="grid__item grid__item--col-5 grid__item--col-10-medium">
+									<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								</div>
+							</div>*/}
 
-				{/*style={{ backgroundImage: 'linear-gradient(180deg, #5e9bca, #decfd6 60%)' }}*/}
+					{/*</ParallaxBackground>*/}
+
+				{/* { backgroundImage: 'linear-gradient(180deg, #5e9bca, #decfd6 60%)' } */}
 
 				<ScrollSection 
 				name={sections[0]}
@@ -174,15 +181,11 @@ class Home extends Component {
 				fullHeight
 				sections={sections} 
 				activeSection={activeSection}
+				disableSectionNumber
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxBackground>
 						<div className="grid">
-							{/*<div className="grid__item grid__item--col-4 grid__item--col-5-medium">
-								<div className="spacer spacer__md"/>
-								<div className="spacer spacer__lg"/>
-								<Image src="../assets/img/mist.jpg" aspectRatioWidth={3} aspectRatioHeight={2}/>
-							</div>*/}
-							<div className="grid__item grid__item--col-7 grid__item--col-2-medium"/>
+							<div className="grid__item grid__item--col-6 grid__item--col-2-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-10-medium">
 								<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 							</div>
@@ -192,11 +195,12 @@ class Home extends Component {
 					<HeroBlock 
 					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]} 
 					/>
+
 				</ScrollSection>
 
 				<ScrollSection 
 				name={sections[1]} 
-				fullHeight
+				fullHeight={this.props.isMobile ? true : false}
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
@@ -255,9 +259,9 @@ class Home extends Component {
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
-							{/*<ProcessDiagram/>*/}
-							{ processPreview }
-							<h4>...</h4>
+							{<ProcessDiagram/>}
+							{/* processPreview*/}
+							{/*<h4>...</h4>*/}
 						</div>
 					</div>
 				</ScrollSection>
@@ -395,6 +399,7 @@ const mapStateToProps = state => ({
 	count: state.count,
 	abbreviation: state.abbreviation,
 	isMobile: state.isMobile,
+	windowHeight: state.windowHeight,
 })
 
 const mapDispatchToProps = dispatch => ({

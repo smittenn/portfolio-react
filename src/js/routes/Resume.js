@@ -68,7 +68,7 @@ class Resume extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-9 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
 								<h3 className="mb0">{[`Eric C. Smith is a digital` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
 							</div>
@@ -90,7 +90,7 @@ class Resume extends Component {
 									<blockquote className="mb0">August 2019 - Present. New York, NY.</blockquote>
 									<h4 className="mb0">Google Design <span className="outline">•</span> UX/Front-End Developer</h4>
 									<blockquote>HTML, CSS, Javascript, Python, Django</blockquote>
-									<blockquote className="mb0"><ul>
+									<blockquote className="mb0"><ul className="ls">
 										<li>Lead developer on design.google, Google Design's editorial platform and hub for all things design at Google.</li>
 										<li>Rapidly prototyped and deployed new front-end features for our article page.</li>
 										<li>Dramatically improved usability of CMS experience.</li>
@@ -103,7 +103,7 @@ class Resume extends Component {
 									<h4 className="mb0">J&J Design Studio <span className="outline">•</span> Sr. Interaction Designer</h4>
 									<blockquote>Sketch, Invision, Webflow, HTML, CSS, React, Javascript</blockquote>
 									<blockquote className="mb0">
-										<ul>
+										<ul className="ls">
 											<li>Created a flexible design system allowing for J&J to consolidate 250 medical device websites.</li>
 											<li>Built a front-end code prototype of the design system and act as a digital styleguide and single source of truth for our developers.</li>
 										</ul>
@@ -115,7 +115,7 @@ class Resume extends Component {
 									<blockquote className="mb0">May 2017 – June 2018. New York, NY.</blockquote>
 									<h4 className="mb0">NBCUX Lab <span className="outline">•</span> UI/UX Designer & Developer</h4>
 									<blockquote>Adobe CC, HTML, CSS, Javascript, React</blockquote>
-									<blockquote className="mb0"><ul>
+									<blockquote className="mb0"><ul className="ls">
 										<li>Designed and developed the site for Universal Pictures’ film,
 										American Made. Maintained sites for 2 other films: Jurassic World & The Lorax.</li>
 										<li>Small agile team that acted as a UX Design and Development
@@ -131,7 +131,7 @@ class Resume extends Component {
 									<blockquote className="mb0">September 2015 – November 2016.  San Francisco, CA.</blockquote>
 									<h4 className="mb0">Wrap Media <span className="outline">•</span> UI/UX Designer & Developer</h4>
 									<blockquote>Sketch, Principle, Adobe CC, HTML, CSS, Javascript</blockquote>
-									<blockquote className="mb0"><ul>
+									<blockquote className="mb0"><ul className="ls">
 										<li>Created mobile web experiences for external clients with a focus on interaction design.</li>
 										<li>Designed and prototyped features that were integrated into their app creation and distribution web SAAS product.</li>
 										<li>Contributed front-end code to a codebase, implemented interactions in the product.</li>
@@ -144,7 +144,7 @@ class Resume extends Component {
 									<blockquote className="mb0">May 2015 – August 2015.  Alameda, CA.</blockquote>
 									<h4 className="mb0">Perforce <span className="outline">•</span> UX Designer & Researcher</h4>
 									<blockquote>Sketch, Adobe CC, Invision App, Proto.io</blockquote>
-									<blockquote className="mb0"><ul>
+									<blockquote className="mb0"><ul className="ls">
 										<li>Applied Lean UX principles across the the organization’s product suite from a centralized design team</li>
 										<li>Practiced 1-week design sprints with regular design critique sessions with the design team and stakeholders</li>
 										<li>Developed and applied new brand guidlines in across products. Applied the style guide in a new product</li>
@@ -157,7 +157,7 @@ class Resume extends Component {
 									<blockquote className="mb0">May 2014 – May 2015. San Jose, CA.</blockquote>
 									<h4 className="mb0">Cisco <span className="outline">•</span> User Interface Engineer</h4>
 									<blockquote>HTML, CSS, Javascript, Backbone.js, Node.js, D3.js</blockquote>
-									<blockquote className="mb0"><ul>
+									<blockquote className="mb0"><ul className="ls">
 									  <li>Engineer on a small team focused on creating a Backbone.js web application that allowed our users to visualize traffic on their Wide Area Network</li>
 									  <li>Created a network traffic visualization web interface while working closely with designers.</li>
 									  <li>Developed data visualizations utilizing the library, D3.js</li>

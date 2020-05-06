@@ -79,6 +79,8 @@ class Vai extends Component {
 
 		// const sections = pageSections.map(i => i.name)
 
+		const heroBackgroundImage = this.props.isMobile ? 'mobile-5x8' : 'mobile-3x2';
+
 		return (
 			<article>
 				<ParallaxBackground 
@@ -88,10 +90,10 @@ class Vai extends Component {
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)
 						),
-						url(../assets/img/vai/mobile.jpg)
+						url(../assets/img/vai/${heroBackgroundImage}.jpg)
 					`, 
-					backgroundSize: (this.props.isMobile ? '90% 110%' : '40% 125%'),
-					backgroundPosition: (this.props.isMobile ? '440% 585%' : '60% -230%'),
+					/*backgroundSize: (this.props.isMobile ? '90% 110%' : '40% 125%'),*/
+					/*backgroundPosition: (this.props.isMobile ? '440% 585%' : '60% -230%'),*/
 					backgroundColor: brandPrimary,
 				}}/>
 

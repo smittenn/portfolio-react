@@ -18,7 +18,7 @@ import palette from "../services/palette"
 import pad from "../services/pad"
 import splitLetter from "../services/splitLetter"
 
-export default class ScrollSection extends Component {
+class ScrollSection extends Component {
 
 	constructor(props) {
 		super(props);
@@ -43,7 +43,7 @@ export default class ScrollSection extends Component {
 
 		if (fullHeight) {
 			Object.assign(updatedStyle, { 
-				minHeight: 'calc(100vh + 1px', 
+				minHeight: this.props.windowHeight, 
 				display: 'flex', 
 				justifyContent: 'center' 
 			})
@@ -82,7 +82,7 @@ export default class ScrollSection extends Component {
 								<HeroScrollButton to={name} onSetActive={onSetActive} key={2}/>
 							) : null)
 							,
-							<div className="left-rail" key={3}>
+							<div className="left-rail" style={{ minHeight: this.props.windowHeight }} key={3}>
 								<NavLink to="/" /*style={{ transform: 'rotate(-90deg)'}}*/>
 									<TextLink hideLine>
 										<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
@@ -120,9 +120,9 @@ export default class ScrollSection extends Component {
 					</section>
 
 					<div className="clip-wrapper">
-						{/*<GridLines/>*/}
+						{/*<GridLines/>*/}	
 
-						<div className="left-rail" key={3}>
+						<div className="left-rail" style={{ minHeight: this.props.windowHeight }} key={3}>
 							<NavLink to="/">
 								<TextLink hideLine>
 									<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
@@ -152,3 +152,12 @@ export default class ScrollSection extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	count: state.count,
+	abbreviation: state.abbreviation,
+	isMobile: state.isMobile,
+	windowHeight: state.windowHeight,
+})
+
+export default connect(mapStateToProps)(ScrollSection)

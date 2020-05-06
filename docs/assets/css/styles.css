@@ -49,11 +49,11 @@ table {
 
 /* Libraries */
 @font-face {
-  font-family: 'Hurme';
-  font-weight: 600;
+  font-family: 'Manrope';
+  font-weight: normal;
   font-style: normal;
-  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot");
-  src: url("../fonts/Hurme/Hurme-SemiBold-alt.eot?#iefix") format("embedded-opentype"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff2") format("woff2"), url("../fonts/Hurme/Hurme-SemiBold-alt.woff") format("woff"), url("../fonts/Hurme/Hurme-SemiBold-alt.otf") format("truetype"), url("../fonts/Hurme/Hurme-SemiBold-alt.svg#codropsicons") format("svg"); }
+  src: url("../fonts/Manrope/Manrope-Regular.eot");
+  src: url("../fonts/Manrope/Manrope-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Manrope/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope/Manrope-Regular.woff") format("woff"), url("../fonts/Manrope/Manrope-Regular.ttf") format("truetype"), url("../fonts/Manrope/Manrope-Regular.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Futura Maxi';
@@ -385,8 +385,9 @@ body {
   color: #232021; }
 
 ul {
-  list-style: disc;
   margin-left: 30px; }
+  ul.ls {
+    list-style: disc; }
 
 a {
   cursor: none;
@@ -504,37 +505,6 @@ section {
 
 h1 span, h2 span, h3 span, h4 span, p span, blockquote span {
   display: inline-block; }
-
-.left-rail {
-  position: fixed;
-  pointer-events: auto;
-  top: 63px;
-  width: 72px;
-  height: calc(100% - 126px);
-  left: 0px;
-  border: none;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -ms-flexbox;
-  display: flex; }
-  .left-rail hr {
-    margin: 6px 18px;
-    width: 100%;
-    -ms-transform: scaleX(0.5);
-    transform: scaleX(0.5);
-    -ms-transform-origin: left;
-    transform-origin: left; }
-  .left-rail__bottom {
-    -ms-transform: rotate(-90deg) translateX(40%);
-    transform: rotate(-90deg) translateX(40%); }
-    .left-rail__bottom h1, .left-rail__bottom h2, .left-rail__bottom h3, .left-rail__bottom h4, .left-rail__bottom h5, .left-rail__bottom h6 {
-      white-space: nowrap; }
-  .left-rail i {
-    margin: 0 12px; }
 
 @keyframes ghostIn {
   0% {
@@ -2168,6 +2138,45 @@ section p span > span, section blockquote span > span {
   pointer-events: none;
   clip: rect(0, auto, auto, 0); }
 
+.left-rail {
+  position: fixed;
+  top: 0px;
+  width: 72px;
+  left: 0px;
+  border: none;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none; }
+  .left-rail > * {
+    margin: 60px 0; }
+  .left-rail > *:first-child {
+    margin-bottom: 0; }
+  .left-rail > *:last-child {
+    margin-top: 0; }
+  .left-rail a {
+    pointer-events: auto; }
+  .left-rail hr {
+    margin: 6px 18px;
+    width: 100%;
+    -ms-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -ms-transform-origin: left;
+    transform-origin: left; }
+  .active-section .left-rail {
+    display: -ms-flexbox;
+    display: flex; }
+  .left-rail__bottom {
+    -ms-transform: rotate(-90deg) translateX(40%);
+    transform: rotate(-90deg) translateX(40%); }
+    .left-rail__bottom h1, .left-rail__bottom h2, .left-rail__bottom h3, .left-rail__bottom h4, .left-rail__bottom h5, .left-rail__bottom h6 {
+      white-space: nowrap; }
+  .left-rail i {
+    margin: 0 12px; }
+
 .codepen-wrapper {
   position: relative;
   display: -ms-flexbox;
@@ -3120,7 +3129,7 @@ section p span > span, section blockquote span > span {
 .scroll-arrow {
   pointer-events: auto;
   position: fixed;
-  top: calc(100vh - 90px);
+  bottom: 0;
   left: 50%;
   height: 90px;
   width: 80px;
@@ -3245,7 +3254,6 @@ section p span > span, section blockquote span > span {
     margin-bottom: 24px; }
 
 .sidebar {
-  height: 100vh;
   width: auto;
   position: fixed;
   pointer-events: none;
@@ -3600,9 +3608,7 @@ section p span > span, section blockquote span > span {
   .grid {
     padding: 0 48px; }
   .left-rail {
-    top: 36px;
-    width: 49px;
-    height: calc(100vh - 48px); }
+    width: 48px; }
   .grid__line:first-child {
     border-left: solid 1px; }
   .grid__line:last-child {
