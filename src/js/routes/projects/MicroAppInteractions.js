@@ -131,19 +131,12 @@ class MicroAppInteractions extends Component {
 						aspectRatioWidth: 8, 
 						aspectRatioHeight: 5 
 					}}
-					col3='On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.'
+					col3='On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS, Javascript and the home-grown Wrap Developer API.'
 					col4='The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and "x-cross" pattern — The end user is able to scroll either up/down or swipe left or right.'
 					/>
 				</ScrollSection>
 
-
-				<ScrollSection 
-				name={sections[2]}
-				black 
-				disableSectionNumber
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
+				{/*style={{ 
 					backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .85),
@@ -154,7 +147,12 @@ class MicroAppInteractions extends Component {
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
 					backgroundBlendMode: 'normal',
-				}}>
+				}}*/}
+
+				<ScrollSection 
+				sections={sections} 
+				activeSection={activeSection}
+				>
 					<ProjectDetailsBlock role="Creative Developer" date="Fall, 2016" client="Wrap Media" team={["Pete Petras", "Josh Bloom", "Jeff Klein", "Mei Yeh", "Theo Arguna"]} />
 				</ScrollSection>
 
@@ -166,7 +164,7 @@ class MicroAppInteractions extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock 
 					title="Realtime Poll"
-					description="For the Minted Challange Wrap, I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns."
+					description1="For the Minted Challange Wrap, I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns."
 					media={{ type: 'video', src: 'assets/img/card-components/minted.mp4' }}
 					/>
 
@@ -196,12 +194,20 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
-					<div className="grid">
+					<ProjectSectionBlock 
+					title="Cart & Share"
+					description1="Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour."
+					description2="We helped Tegan & Sara create a brand based on their highly curated content and enthusiastic followers. Our approach was an immersive one, to value interaction and interface but not more than the content itself."
+					media={{ type: "codepen", slug: "NRBOky", title: "Cart & Share Components", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 }}
+					/>
+				</ScrollSection>
+
+				{/*<div className="grid">
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Cart & Share</h2>
-								<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working with the coolest visual designer around, Theo Arguna, I designed and developed the interactions shown below.</blockquote>
+								<h2></h2>
+								<blockquote></blockquote>
 							</div>
 						</div>
 						<div className="grid__row">
@@ -226,11 +232,10 @@ class MicroAppInteractions extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{/*<IFrame src="//codepen.io/erchsm/embed/NRBOky/?default-tab=result"/>*/}
 							{<CodepenEmbed slug="NRBOky" title="Cart & Share Components" height={720} handle="erchsm"/>}
 						</div>
 					</div>
-				</ScrollSection>
+				*/}
 
 
 				<ScrollSection 
@@ -239,22 +244,12 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Places Nearby</h2>
-								<blockquote>Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. We later created a generic component in our product so that anyone with a wrap account could add this to a card. I worked on the motion and interaction here while working directly with the API.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
-							{<CodepenEmbed slug="ENNdJd" title="Nearby Services Component" height={720} handle="erchsm"/>}
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Places Nearby"
+					description1="Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. I designed the prototype seen here."
+					description2="Later we created a generic component in our product so that any account holder could add this to a card for their business."
+					media={{ type: "codepen", slug: "ENNdJd", title: "Nearby Services Component", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 }}
+					/>
 				</ScrollSection>
 
 
@@ -263,30 +258,15 @@ class MicroAppInteractions extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="">Starry Night</h2>
-								<blockquote>Partnering with Salesforce Trailblazers we created a lead generation form to collect leads at their international conference in San Francisco. I worked on the interactive splash screen featuring a starry night sky. This aspirational backdrop helped connect with the trailblazers boosting the conversion rate on the form.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							{/*<IFrame src="//codepen.io/erchsm/embed/ENNdJd/?default-tab=result"/>*/}
-							{<CodepenEmbed slug="BLbpoZ" title="Starry Night" height={720} handle="erchsm"/>}
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Starry Night"
+					description1="Partnering with Salesforce Trailblazers we created a lead generation form to collect leads at their international conference in San Francisco."
+					description2="I designed the interactive splash screen featuring a starry night sky. This aspirational backdrop helped boost the conversion rate on the form."
+					media={{ type: "codepen", slug: "BLbpoZ", title: "Starry Night", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 }}
+					/>
 				</ScrollSection>
 
-
-				<ScrollSection 
-				black
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
+				{/*style={{ 
 					backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .5),
@@ -296,7 +276,11 @@ class MicroAppInteractions extends Component {
 					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
-				}}>
+				}}*/}
+
+				<ScrollSection 
+				sections={sections} 
+				activeSection={activeSection}>
 					<ProjectUpNextBlock name="Wrap Templates" to="micro-app-templates"/>
 				</ScrollSection>
 

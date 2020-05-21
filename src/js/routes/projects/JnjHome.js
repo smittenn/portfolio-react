@@ -56,7 +56,7 @@ class JnjHome extends Component {
 				"overview",
 				"about",
 				"new-user",
-				"meganav",
+				"navigation",
 				"sitemap",
 				"news",
 				"links",
@@ -163,7 +163,7 @@ class JnjHome extends Component {
 					role="UX/Motion Designer" 
 					date="Spring, 2018" 
 					client="J&J People XD" 
-					team={["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"]} />
+					team={["Alex Gross", "Chris Purcell", "Alisha Austin", "Katrina Corcoran", "Howard Chambers"]} />
 				</ScrollSection>
 
 				<ScrollSection 
@@ -171,21 +171,11 @@ class JnjHome extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Onboarding</h2>
-								<blockquote>The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. After providing basic information in this short experience the new employee can visit Home to learn about services nearby, and tools necessary for their job and give them the profile links for people they will be working with frequently.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/jnj-home/onboarding-kiosk-mock.png" aspectRatioWidth={3} aspectRatioHeight={2}/>
-						</div>
-					</div>
+					<ProjectSectionBlock 
+					title="Onboarding"
+					description1="The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. A new employee provides some basic information in this short onboarding experience."
+					description2="Afterwards the employee can visit Home to learn about services nearby, tools necessary for their job and share profiles of their team members."
+					media={{ type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -195,8 +185,9 @@ class JnjHome extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<ProjectSectionBlock 
-					title="Meganav"
-					description="I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links."
+					title="Navigation"
+					description1="I designed a robust navigation to help employees navigate the vast wealth of information at J&J. We provided a way for an employyee to access their most used links from anywhere on Home."
+					description2="From the takeover, a secondary panel allowed them to see links organized by categories or a list of their previously favorited links."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>
 				</ScrollSection>
 
@@ -208,7 +199,7 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<ProjectSectionBlock 
 					title="Sitemap"
-					description="I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time."
+					description1="I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 
 				</ScrollSection>
@@ -222,7 +213,8 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(5) }}>
 					<ProjectSectionBlock 
 					title="News"
-					description="I designed an article page flexible for different types of content. Using the “Thumbs Up” feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click."
+					description1="I designed an article page flexible for different types of content. The sticky article sharing buttons provided an opportunity to use to motion to inspire the reader."
+					description2="Using the “Thumbs Up” feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 				</ScrollSection>
 
@@ -234,7 +226,8 @@ class JnjHome extends Component {
 				onSetActive={() => { this.setActiveSection(6) }}>
 					<ProjectSectionBlock 
 					title="Links"
-					description="I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed. The scrolling page with side navigation, sorting functionality and starring animation made for a delightful experience."
+					description1="I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed."
+					description2="The sticky side navigation, sorting functionality and delightful favoriting animation made for a great experience overall."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 				</ScrollSection>
 

@@ -57,7 +57,7 @@ class JnjMdc extends Component {
 				"about",
 				"navigation",
 				"flipper",
-				"chooser",
+				"companies",
 				"taxonomy",
 				"buttons",
 				// "cards",
@@ -142,12 +142,7 @@ class JnjMdc extends Component {
 
 				</ScrollSection>
 
-
-				<ScrollSection 
-				black 
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
+				{/*style={{ 
 					backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12),
@@ -158,7 +153,11 @@ class JnjMdc extends Component {
 					backgroundPosition: '50% 80%',
 					backgroundRepeat: 'repeatX',
 					backgroundSize: 'cover',
-				}}>
+				}}*/}
+
+				<ScrollSection 
+				sections={sections} 
+				activeSection={activeSection}>
 					<ProjectDetailsBlock role="Sr. Interaction Designer" date="Fall, 2018" client="J&J Consumer" team={["Matthew Abate", "Laura Hines", "Stephanie Skuzenski", "Jinny Kim", "Mark Patience", "Katrina Corcoran"]}/>
 				</ScrollSection>
 
@@ -171,7 +170,8 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					{<ProjectSectionBlock 
 					title="Navigation"
-					description="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items."
+					description1="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio."
+					description2="The navigation design needed to be flexible enough to work with as few as 1 item and as many as 100 items. The sliding underline shows your current active menu."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 					{/*<div className="grid">
@@ -200,7 +200,8 @@ class JnjMdc extends Component {
 					{<ProjectSectionBlock 
 					title="HCP/Patient"
 					subtitle="Site Flipper"
-					description="To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
+					description1={`To toggle between the healthcare professional and patient experiences of the site I designed a ‟Flipper” interaction for toggling between them.`}
+					description2="When hovering, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 					{/*<div className="grid">
@@ -228,8 +229,8 @@ class JnjMdc extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
 					{<ProjectSectionBlock 
-					title="Company Chooser"
-					description="I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page."
+					title="Companies"
+					description1="I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 				</ScrollSection>
 
@@ -242,7 +243,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					{<ProjectSectionBlock 
 					title="Taxonomy"
-					description="Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way."
+					description1="Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 
@@ -271,7 +272,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					{<ProjectSectionBlock 
 					title="Buttons"
-					description="I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference."
+					description1="I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 					{/*<div className="grid">
@@ -299,7 +300,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(7); }}>
 					{<ProjectSectionBlock 
 					title="Cards"
-					description="Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew."
+					description1="Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-cards.html.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 				</ScrollSection>*/}

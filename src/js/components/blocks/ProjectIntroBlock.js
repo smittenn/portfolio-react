@@ -8,7 +8,7 @@ import Image from "../../components/Image"
 
 import addLineBreaks from "../../services/addLineBreaks"
 
-export default class ProjectIntroBlock extends Component {
+class ProjectIntroBlock extends Component {
 
 	constructor(props) {
 		super(props);
@@ -27,7 +27,7 @@ export default class ProjectIntroBlock extends Component {
 							<blockquote className="mr">
 								{addLineBreaks(col1)}
 							</blockquote>
-							<blockquote className="mr mb0">
+							<blockquote className={ this.props.isMobile ? "mr" : "mr mb0"}>
 								{addLineBreaks(col3)}
 							</blockquote>
 						</div>
@@ -72,3 +72,9 @@ export default class ProjectIntroBlock extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	isMobile: state.isMobile,
+})
+
+export default connect(mapStateToProps)(ProjectIntroBlock)

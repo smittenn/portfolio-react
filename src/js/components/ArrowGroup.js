@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import classNames from "classnames"
 import { connect } from "react-redux"
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
@@ -21,21 +21,24 @@ class ArrowGroup extends Component {
 			"arrow-group--vertical": isVertical,
 		})
 
-		const children = this.props.children.map(item => (
-			React.cloneElement(item, { 
-				onMouseOver: this.props.setCursorHover,
-				onClick: this.props.setCursorUnhover,
-				onMouseLeave: this.props.setCursorUnhover,
-			})
+		const children = this.props.children.map((item, i) => (
+			item ? (
+				React.cloneElement(item, {
+					key: i,
+					onMouseOver: this.props.setCursorHover,
+					onClick: this.props.setCursorUnhover,
+					onMouseLeave: this.props.setCursorUnhover,
+				})
+			) : null
 		))
-		
+
 		return (
 			<div className={classnames}>
 				<div className="arrow-group__first">
-					<Icon icon='arrow' size={48}/>
+					<Icon icon='arrow' size={42}/>
 				</div>
 				<div className="arrow-group__second">
-					<Icon icon='arrow' size={48}/>
+					<Icon icon='arrow' size={42}/>
 				</div>
 				<div className="arrow-group__links">
 					{ children }

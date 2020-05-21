@@ -120,7 +120,7 @@ class NavTakeover extends Component {
 				<h3 className={classNames({ 'active': this.props.abbreviation == item.abbreviation, 'hovered': idx == this.state.indexHovered, 'mb0': true })}>{item.name}</h3>
 			</a>
 		) : (
-			<NavLink to={item.to} 
+		<NavLink to={item.to} 
 			onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
 			onMouseLeave={ this.props.setCursorUnhover } 
 			onClick={this.setMenuClosed}>

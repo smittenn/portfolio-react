@@ -14,7 +14,9 @@ import TextLink from "../components/TextLink"
 
 import Image from "../components/Image"
 import Video from "../components/Video"
+
 import HeroBlock from "../components/blocks/HeroBlock"
+import ProjectSectionBlock from "../components/blocks/ProjectSectionBlock"
 
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
@@ -104,17 +106,10 @@ class About extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>3d Art</h2>
-								<blockquote>I have been learning and experimenting with Cinema 4D by creating simple animations with text and shapes. I’m most interested in scenes featuring odd lighting, soft bodies, collisions and or that simulate irregular physics.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div style={{ filter: 'grayscale(1)' }}>
-					<SideScroller>
+					<ProjectSectionBlock 
+					title="3d Art"
+					description1="I have been learning and experimenting with Cinema 4D by creating simple animations with text and shapes. I’m most interested in scenes featuring odd lighting, soft bodies, collisions and or that simulate irregular physics."
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/about/hello-world1.jpg" aspectRatioWidth={4} aspectRatioHeight={3}/>
 						</div>
@@ -124,8 +119,7 @@ class About extends Component {
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Video src="../assets/img/about/cube.mp4" loop/>
 						</div>
-					</SideScroller>
-					</div>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -133,24 +127,18 @@ class About extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					<div className="grid">
-						<div className="grid__row">
-							<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Photography</h2>
-								<blockquote>I have been shooting small and medium format film for the past 9 years. I relish the imperfections, mistakes, “happy accidents” and learnings that comes with the shooting film and its development process.</blockquote>
-							</div>
-						</div>
-					</div>
-					<SideScroller style={{ filter: 'grayscale(0)' }}>
+					<ProjectSectionBlock 
+					title="Photos"
+					description1="I have been shooting small and medium format film for the past 9 years. I relish the learnings, imperfections, mistakes, and happy accidents that comes with the shooting film and its development process."
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<Image src="../assets/img/ocean.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
+							<Image src="../assets/img/lands-end.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/me3.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
-							<Image src="../assets/img/lands-end.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
+							<Image src="../assets/img/ocean.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/mist.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
@@ -158,7 +146,7 @@ class About extends Component {
 						<div className="grid__item grid__item--col-6 grid__item--col-12-medium">
 							<Image src="../assets/img/standing.jpg" aspectRatioWidth={5} aspectRatioHeight={4}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 			</article>
 		);

@@ -4,8 +4,9 @@ import { Route, Switch } from 'react-router'
 import NavTakeover from '../components/NavTakeover'
 import Cursor from '../components/Cursor'
 
-import Home from './Home'
+import Homepage from './Homepage'
 import Process from './Process'
+import Work from './Work'
 import Resume from './Resume'
 import AboutMe from './AboutMe'
 
@@ -21,8 +22,9 @@ import Perforce from './projects/Perforce'
 const routes = (
 	<main>
 		<Switch>
-			<Route exact path="/" component={Home}/>
+			<Route exact path="/" component={Homepage}/>
 			<Route exact path="/process" component={Process}/>
+			<Route exact path="/work" component={Work}/>
 			<Route path="/about-me" component={AboutMe}/>
 			<Route path="/resume" component={Resume}/>
 

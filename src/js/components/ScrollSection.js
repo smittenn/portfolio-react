@@ -1,4 +1,5 @@
-import React, {Component} from "react"
+import React from "react"
+import { Component, Fragment } from "react"
 import { connect } from "react-redux"
 import {NavLink} from "react-router-dom"
 import classNames from "classnames"
@@ -24,12 +25,22 @@ class ScrollSection extends Component {
 		super(props);
 
 		this.state = {
+			easing: "easeOutQuint",
+			duration: 1200
 		}
+	}
+
+	scrollTo = (element) => {
+		scroller.scrollTo(element, {
+			duration: this.state.duration,
+			smooth: this.state.easing,
+		});
 	}
 
 	render() {
 
 		const { name, onSetActive, black, style, sections, activeSection, fullHeight, disableSectionNumber } = this.props;
+		const { easing, duration } = this.state;
 
 		const classnames = classNames({
 			"scrolling-section": true,
@@ -37,23 +48,50 @@ class ScrollSection extends Component {
 			"scrolling-section--grey": this.props.grey
 		})
 
-		const updatedStyle = (() => {
-			if (style) { return style } else { return {} }
-		})()
+		const updatedStyle = {};
+		(style) ? Object.assign(updatedStyle, style) : null
 
 		if (fullHeight) {
-			Object.assign(updatedStyle, { 
-				minHeight: this.props.windowHeight, 
-				display: 'flex', 
-				justifyContent: 'center' 
+			Object.assign(updatedStyle, {
+				minHeight: this.props.windowHeight,
+				display: 'flex',
+				justifyContent: 'center'
 			})
 		}
-		
+
+		const indexOfName = sections.indexOf(name);
+		const clipWrapperLeft = (
+			<div className="clip-wrapper__left" style={{ minHeight: this.props.windowHeight }}>
+				<NavLink to="/">
+					<TextLink hideLine>
+						<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
+					</TextLink>
+				</NavLink>
+				{ sections.length > 1 ? (
+					<ArrowGroup isVertical>
+						{ (indexOfName - 1 > -1) ? (
+							<a>
+								<div onClick={() => this.scrollTo(sections[indexOfName - 1]) }/>
+							</a>
+							/*<Link to={sections[indexOfName - 1]} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
+						) : null}
+						{ (indexOfName + 1 < sections.length) ? (
+							<a>
+								<div onClick={() => this.scrollTo(sections[indexOfName + 1]) }/>
+							</a>
+							/*<Link to={sections[indexOfName + 1]} onClick={this.scrollTo(sections[indexOfName + 1])} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
+						) : null}
+					</ArrowGroup>
+				) : null}
+				{ this.props.abbreviation == 'R' ? <TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink> : null }
+			</div>
+		)
+
 		return (
 			name ? (
 			<Element name={name} className={classnames}>
 				<IntersectionVisible
-				onShow={(i) => i[0].target.classList.add("active-section")} 
+				onShow={(i) => i[0].target.classList.add("active-section")}
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
 
 					<section style={updatedStyle}>
@@ -70,39 +108,23 @@ class ScrollSection extends Component {
 					</section>
 
 					<div className="clip-wrapper">
-						{/*<GridLines/>*/}
-						{ sections.length > 1 ? [
-							<Link style={{display: 'none'}} to={name} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0} onSetActive={onSetActive} key={0}/>,
-							,
-							((name == sections[0]) ? (
-								<HeroScrollButton to={sections[1]} onSetActive={onSetActive} key={1}/>
-							) : null)
-							,
-							((name == sections[1]) ? (
-								<HeroScrollButton to={name} onSetActive={onSetActive} key={2}/>
-							) : null)
-							,
-							<div className="left-rail" style={{ minHeight: this.props.windowHeight }} key={3}>
-								<NavLink to="/" /*style={{ transform: 'rotate(-90deg)'}}*/>
-									<TextLink hideLine>
-										<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
-										{/*<h6 className="uppercase mb0 light" style={{ letterSpacing: '0.12em'}}>H<span>☺</span>me</h6>*/}
-									</TextLink>
-								</NavLink>
-								<ArrowGroup isVertical>
-									<Link to={sections[sections.indexOf(name) - 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+						{ sections.length > 1 ? (
+							<Fragment>
+								<Link style={{display: 'none'}} to={name} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0} onSetActive={onSetActive} />
 
-									</Link>
-									<Link to={sections[sections.indexOf(name) + 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+								{ (name == sections[0]) ? (
+									<HeroScrollButton to={sections[1]} onSetActive={onSetActive} />
+								) : null }
 
-									</Link>
-								</ArrowGroup>
-							</div>,
-							<Sidebar 
-							sections={sections} 
-							activeSection={activeSection}
-							key={4}/>
-						] : null }
+								{ (name == sections[1]) ? (
+									<HeroScrollButton to={name} onSetActive={onSetActive} />
+								) : null }
+
+								<Sidebar sections={sections} activeSection={activeSection}/>
+							</Fragment>
+						) : null }
+
+						{ clipWrapperLeft }
 
 						<NavToggle sections={sections}/>
 					</div>
@@ -111,38 +133,19 @@ class ScrollSection extends Component {
 			) : (
 			<div className={classnames}>
 				<IntersectionVisible
-				onShow={(i) => i[0].target.classList.add("active-section")} 
+				onShow={(i) => i[0].target.classList.add("active-section")}
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
-					
+
 					<section style={updatedStyle}>
-						{<GridLines/>}
+						<GridLines/>
 						{ this.props.children }
 					</section>
 
 					<div className="clip-wrapper">
-						{/*<GridLines/>*/}	
 
-						<div className="left-rail" style={{ minHeight: this.props.windowHeight }} key={3}>
-							<NavLink to="/">
-								<TextLink hideLine>
-									<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
-									{/*<h6 className="uppercase mb0 light" style={{ letterSpacing: '0.12em'}}>H<span>☺</span>me</h6>*/}
-								</TextLink>
-							</NavLink>
-							<ArrowGroup isVertical>
-								<Link to={sections[sections.indexOf(name) - 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
+						{ clipWrapperLeft }
 
-								</Link>
-								<Link to={sections[sections.indexOf(name) + 1]} spy={true} smooth={"easeOutQuint"} duration={1200} hashSpy={false} offset={0}>
-
-								</Link>
-							</ArrowGroup>
-						</div>
-
-
-						<Sidebar 
-						sections={sections} 
-						activeSection={activeSection}/>
+						<Sidebar sections={sections} activeSection={activeSection}/>
 
 						<NavToggle sections={sections}/>
 					</div>

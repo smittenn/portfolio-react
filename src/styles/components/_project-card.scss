@@ -76,7 +76,7 @@ $baseclass: project-card;
 
 	&--hovered {
 		.#{$baseclass}__asset {
-			opacity: 1;
+			opacity: 0.9;
 		}
 		.#{$baseclass}__bottom {
 			transform: none;

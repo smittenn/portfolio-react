@@ -20,6 +20,10 @@ $baseclass: arrow-group;
 		> * {
 			flex: 1;
 		}
+
+		div {
+			height: 100%;
+		}
 	}
 
 	&--vertical {

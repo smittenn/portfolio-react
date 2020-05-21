@@ -66,8 +66,6 @@ export default class Image extends Component {
 			"image-wrapper--visible": this.state.isVisible
 		})
 
-		// console.log(this.ref.current, src, isVisible, intersectionRatio);
-
 		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
 		
 		const _style =  {

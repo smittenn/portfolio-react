@@ -27,7 +27,7 @@ class ParallaxBackground extends Component {
 		const windowHeight = window.innerHeight;
 		const scrollPosition = window.scrollY;
 
-		const animationViewportHeight = windowHeight * 1.25;
+		const animationViewportHeight = windowHeight * 1;
 
 		if (scrollPosition < animationViewportHeight) {
 		  window.requestAnimationFrame(() => {
@@ -56,6 +56,7 @@ class ParallaxBackground extends Component {
 		const classnames = classNames({
 			"parallax-background": true,
 			"parallax-background--hidden": isHidden,
+			"p0": this.props.isMobile ? false : true
 		})
 
 		const multiplier = -0.15

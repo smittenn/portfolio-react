@@ -54,7 +54,7 @@ class MicroAppTemplates extends Component {
 				"overview",
 				"about",
 				"templates",
-				"conference",
+				"event",
 				"lead-gen",
 				"commerce",
 				"agency",
@@ -128,17 +128,12 @@ class MicroAppTemplates extends Component {
 						aspectRatioHeight: 5 
 					}}
 					col3="On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process." 
-					col4="The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
+					col4="The team designed Wraps using cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
 					/>
 
 				</ScrollSection>
 
-
-				<ScrollSection 
-				black 
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
+				{/*style={{ 
 					backgroundImage: `
 						radial-gradient(
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .8),
@@ -148,7 +143,12 @@ class MicroAppTemplates extends Component {
 					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: 'bottom',
-				}}>
+				}}*/}
+
+				<ScrollSection 
+				sections={sections} 
+				activeSection={activeSection}
+				>
 					<ProjectDetailsBlock role="UX/Visual Designer" date="Fall, 2015" client="Wrap Media" team={["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"]} />
 				</ScrollSection>
 
@@ -158,29 +158,12 @@ class MicroAppTemplates extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
-					{/*<ProjectSectionBlock 
+					<ProjectSectionBlock 
 					title="Templates"
-					description="Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own."
+					description1="Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use."
+					description2="Templates gave our users a starting point in our platform and provided them some inspiration to create their own."
 					media={{ type: 'video', src: 'assets/img/app-templates/from-fb.mp4' }}
-					/>*/}
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Templates</h2>
-								<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Video src="assets/img/app-templates/from-fb.mp4"/>
-						</div>
-						{/*<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-							<Image src="assets/img/app-templates/fashion-out.jpg" aspectRatioWidth={7} aspectRatioHeight={13}/>
-						</div>*/}
-					</div>
+					/>
 				</ScrollSection>
 
 
@@ -198,7 +181,7 @@ class MicroAppTemplates extends Component {
 						<div className="grid__row">
 							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Conference</h2>
+								<h2 className="mb0">Event</h2>
 								{<h4 className="fade">Modern Sans Family</h4>}
 								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
 							</div>

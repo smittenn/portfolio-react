@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { connect } from "react-redux"
 import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
@@ -44,6 +44,24 @@ class ProjectCard extends Component {
 		})
 	}
 
+	createItem = (item, i) => (
+		<Fragment>
+			{ (item.media) ? (
+				<div className="project-card__asset">
+					<Image src={item.media.src} aspectRatioWidth={item.media.aspectRatioWidth} aspectRatioHeight={item.media.aspectRatioHeight}/>
+				</div>
+			) : null }
+			<div className="project-card__bottom" onMouseEnter={() => { this.setIndexHovered(i); }} onMouseLeave={this.handleMouseLeave}>
+				<TextLink hideUnderline><h2 className="mb0">{item.name}</h2></TextLink>
+			</div>
+			{/*
+			<div className="project-card__tags">
+			<blockquote className="mb0">{item.tags.join(", ")}</blockquote>
+			</div>
+			*/}
+		</Fragment>
+	)
+
 	render() {
 
 		const { name, tags, href, items } = this.props;
@@ -57,19 +75,15 @@ class ProjectCard extends Component {
 						"project-card": true,
 						"project-card--hovered": hoveredIndex == i,
 					})}>
-						<NavLink to={item.href} onClick={this.props.setCursorUnhover}>
-							<div className="project-card__asset">
-								<Image src={item.img} aspectRatioWidth={item.aspectRatioWidth} aspectRatioHeight={item.aspectRatioHeight}/>
-							</div>
-							<div className="project-card__bottom" 
-							onMouseEnter={() => { this.setIndexHovered(i); }}
-							onMouseLeave={this.handleMouseLeave}>
-								<TextLink hideUnderline><h2 className="mb0">{item.name}</h2></TextLink>
-							</div>
-							<div className="project-card__tags">
-								<blockquote className="mb0">{item.tags.join(", ")}</blockquote>
-							</div>
+					{ (/^\/\//).test(item.to) ? (
+						<a href={item.to} onClick={this.props.setCursorUnhover} target="_blank">
+							{ this.createItem(item, i) }
+						</a>
+					) : (
+						<NavLink to={item.to} onClick={this.props.setCursorUnhover}>
+							{ this.createItem(item, i) }
 						</NavLink>
+					)}
 					</li>
 				)) }
 			</ul>

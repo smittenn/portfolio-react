@@ -35497,14 +35497,22 @@ var App = function (_Component) {
 	_createClass(App, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			window.addEventListener('resize', this.props.detectMobile);
-			document.addEventListener('scroll', this.props.detectWindowHeight);
+			var _this2 = this;
+
+			window.addEventListener('resize', function () {
+				_this2.props.detectMobile();_this2.props.detectWindowHeight();
+			});
+			// document.addEventListener('scroll', this.props.detectWindowHeight);
 		}
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			window.removeEventListener('resize', this.props.detectMobile);
-			document.removeEventListener('scroll', this.props.detectWindowHeight);
+			var _this3 = this;
+
+			window.removeEventListener('resize', function () {
+				_this3.props.detectMobile();_this3.props.detectWindowHeight();
+			});
+			// document.removeEventListener('scroll', this.props.detectWindowHeight);
 		}
 	}, {
 		key: 'render',
@@ -35543,7 +35551,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
-},{"./actions/mobile":124,"./actions/windowHeight":131,"./routes":176,"connected-react-router":10,"prop-types":30,"react":106,"react-redux":54}],121:[function(require,module,exports){
+},{"./actions/mobile":124,"./actions/windowHeight":131,"./routes":177,"connected-react-router":10,"prop-types":30,"react":106,"react-redux":54}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35914,12 +35922,13 @@ var ArrowGroup = function (_Component) {
 				"arrow-group--vertical": isVertical
 			});
 
-			var children = this.props.children.map(function (item) {
-				return _react2.default.cloneElement(item, {
+			var children = this.props.children.map(function (item, i) {
+				return item ? _react2.default.cloneElement(item, {
+					key: i,
 					onMouseOver: _this2.props.setCursorHover,
 					onClick: _this2.props.setCursorUnhover,
 					onMouseLeave: _this2.props.setCursorUnhover
-				});
+				}) : null;
 			});
 
 			return _react2.default.createElement(
@@ -35928,12 +35937,12 @@ var ArrowGroup = function (_Component) {
 				_react2.default.createElement(
 					"div",
 					{ className: "arrow-group__first" },
-					_react2.default.createElement(_Icon2.default, { icon: "arrow", size: 48 })
+					_react2.default.createElement(_Icon2.default, { icon: "arrow", size: 42 })
 				),
 				_react2.default.createElement(
 					"div",
 					{ className: "arrow-group__second" },
-					_react2.default.createElement(_Icon2.default, { icon: "arrow", size: 48 })
+					_react2.default.createElement(_Icon2.default, { icon: "arrow", size: 42 })
 				),
 				_react2.default.createElement(
 					"div",
@@ -35966,7 +35975,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ArrowGroup);
 
-},{"../actions/cursor":123,"../components/Icon":139,"../services/palette":191,"classnames":7,"react":106,"react-redux":54}],134:[function(require,module,exports){
+},{"../actions/cursor":123,"../components/Icon":139,"../services/palette":193,"classnames":7,"react":106,"react-redux":54}],134:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36095,7 +36104,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":189,"../services/palette":191,"classnames":7,"react":106}],135:[function(require,module,exports){
+},{"../services/hexToRgb":190,"../services/palette":193,"classnames":7,"react":106}],135:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36477,7 +36486,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HeroScrollButton);
 
-},{"../actions/cursor":123,"../services/splitLetter":192,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],138:[function(require,module,exports){
+},{"../actions/cursor":123,"../services/splitLetter":194,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],138:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36831,8 +36840,6 @@ var Image = function (_Component) {
 				"image-wrapper--visible": this.state.isVisible
 			});
 
-			// console.log(this.ref.current, src, isVisible, intersectionRatio);
-
 			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
 
 			var _style = {
@@ -36873,7 +36880,7 @@ var Image = function (_Component) {
 
 exports.default = Image;
 
-},{"../services/hexToRgb":189,"../services/palette":191,"classnames":7,"react":106}],141:[function(require,module,exports){
+},{"../services/hexToRgb":190,"../services/palette":193,"classnames":7,"react":106}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37279,7 +37286,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavTakeover);
 
-},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/panel":127,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../components/GridLines":136,"../components/Icon":139,"../components/TextLink":149,"../data/nav":157,"../services/palette":191,"../services/splitLetter":192,"../services/toCamelCase":194,"../services/toKebabCase":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],142:[function(require,module,exports){
+},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/panel":127,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../components/GridLines":136,"../components/Icon":139,"../components/TextLink":149,"../data/nav":157,"../services/palette":193,"../services/splitLetter":194,"../services/toCamelCase":196,"../services/toKebabCase":197,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37469,7 +37476,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../services/pad":190,"../services/splitLetter":192,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],143:[function(require,module,exports){
+},{"../actions/cursor":123,"../actions/navTakeover":125,"../actions/navToggle":126,"../actions/primaryPanel":128,"../actions/secondaryPanel":129,"../services/pad":192,"../services/splitLetter":194,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71}],143:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37514,7 +37521,7 @@ var ParallaxBackground = function (_Component) {
 			var windowHeight = window.innerHeight;
 			var scrollPosition = window.scrollY;
 
-			var animationViewportHeight = windowHeight * 1.25;
+			var animationViewportHeight = windowHeight * 1;
 
 			if (scrollPosition < animationViewportHeight) {
 				window.requestAnimationFrame(function () {
@@ -37563,7 +37570,8 @@ var ParallaxBackground = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"parallax-background": true,
-				"parallax-background--hidden": isHidden
+				"parallax-background--hidden": isHidden,
+				"p0": this.props.isMobile ? false : true
 			});
 
 			var multiplier = -0.15;
@@ -37597,7 +37605,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(ParallaxBackground);
 
-},{"../services/debounce":188,"classnames":7,"react":106,"react-parallax":43,"react-redux":54}],144:[function(require,module,exports){
+},{"../services/debounce":189,"classnames":7,"react":106,"react-parallax":43,"react-redux":54}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37860,7 +37868,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProcessDiagram);
 
-},{"../actions/cursor":123,"../data/process":159,"../services/darken":187,"../services/pad":190,"../services/palette":191,"../services/splitLetter":192,"../services/splitWord":193,"./Icon":139,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54}],145:[function(require,module,exports){
+},{"../actions/cursor":123,"../data/process":159,"../services/darken":188,"../services/pad":192,"../services/palette":193,"../services/splitLetter":194,"../services/splitWord":195,"./Icon":139,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37935,6 +37943,33 @@ var ProjectCard = function (_Component) {
 			});
 		};
 
+		_this.createItem = function (item, i) {
+			return _react2.default.createElement(
+				_react.Fragment,
+				null,
+				item.media ? _react2.default.createElement(
+					'div',
+					{ className: 'project-card__asset' },
+					_react2.default.createElement(_Image2.default, { src: item.media.src, aspectRatioWidth: item.media.aspectRatioWidth, aspectRatioHeight: item.media.aspectRatioHeight })
+				) : null,
+				_react2.default.createElement(
+					'div',
+					{ className: 'project-card__bottom', onMouseEnter: function onMouseEnter() {
+							_this.setIndexHovered(i);
+						}, onMouseLeave: _this.handleMouseLeave },
+					_react2.default.createElement(
+						_TextLink2.default,
+						{ hideUnderline: true },
+						_react2.default.createElement(
+							'h2',
+							{ className: 'mb0' },
+							item.name
+						)
+					)
+				)
+			);
+		};
+
 		_this.state = {
 			hoveredIndex: 0
 		};
@@ -37974,40 +38009,14 @@ var ProjectCard = function (_Component) {
 								"project-card": true,
 								"project-card--hovered": hoveredIndex == i
 							}) },
-						_react2.default.createElement(
+						/^\/\//.test(item.to) ? _react2.default.createElement(
+							'a',
+							{ href: item.to, onClick: _this2.props.setCursorUnhover, target: '_blank' },
+							_this2.createItem(item, i)
+						) : _react2.default.createElement(
 							_reactRouterDom.NavLink,
-							{ to: item.href, onClick: _this2.props.setCursorUnhover },
-							_react2.default.createElement(
-								'div',
-								{ className: 'project-card__asset' },
-								_react2.default.createElement(_Image2.default, { src: item.img, aspectRatioWidth: item.aspectRatioWidth, aspectRatioHeight: item.aspectRatioHeight })
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'project-card__bottom',
-									onMouseEnter: function onMouseEnter() {
-										_this2.setIndexHovered(i);
-									},
-									onMouseLeave: _this2.handleMouseLeave },
-								_react2.default.createElement(
-									_TextLink2.default,
-									{ hideUnderline: true },
-									_react2.default.createElement(
-										'h2',
-										{ className: 'mb0' },
-										item.name
-									)
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'project-card__tags' },
-								_react2.default.createElement(
-									'blockquote',
-									{ className: 'mb0' },
-									item.tags.join(", ")
-								)
-							)
+							{ to: item.to, onClick: _this2.props.setCursorUnhover },
+							_this2.createItem(item, i)
 						)
 					);
 				})
@@ -38037,7 +38046,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProjectCard);
 
-},{"../actions/cursor":123,"../components/Image":140,"../components/TextLink":149,"../services/splitLetter":192,"classnames":7,"intersection-observer":20,"react":106,"react-hover":36,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],146:[function(require,module,exports){
+},{"../actions/cursor":123,"../components/Image":140,"../components/TextLink":149,"../services/splitLetter":194,"classnames":7,"intersection-observer":20,"react":106,"react-hover":36,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],146:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38124,13 +38133,25 @@ var ScrollSection = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (ScrollSection.__proto__ || Object.getPrototypeOf(ScrollSection)).call(this, props));
 
-		_this.state = {};
+		_this.scrollTo = function (element) {
+			_reactScroll.scroller.scrollTo(element, {
+				duration: _this.state.duration,
+				smooth: _this.state.easing
+			});
+		};
+
+		_this.state = {
+			easing: "easeOutQuint",
+			duration: 1200
+		};
 		return _this;
 	}
 
 	_createClass(ScrollSection, [{
 		key: "render",
 		value: function render() {
+			var _this2 = this;
+
 			var _props = this.props,
 			    name = _props.name,
 			    onSetActive = _props.onSetActive,
@@ -38140,6 +38161,9 @@ var ScrollSection = function (_Component) {
 			    activeSection = _props.activeSection,
 			    fullHeight = _props.fullHeight,
 			    disableSectionNumber = _props.disableSectionNumber;
+			var _state = this.state,
+			    easing = _state.easing,
+			    duration = _state.duration;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -38148,13 +38172,8 @@ var ScrollSection = function (_Component) {
 				"scrolling-section--grey": this.props.grey
 			});
 
-			var updatedStyle = function () {
-				if (style) {
-					return style;
-				} else {
-					return {};
-				}
-			}();
+			var updatedStyle = {};
+			style ? Object.assign(updatedStyle, style) : null;
 
 			if (fullHeight) {
 				Object.assign(updatedStyle, {
@@ -38163,6 +38182,60 @@ var ScrollSection = function (_Component) {
 					justifyContent: 'center'
 				});
 			}
+
+			var indexOfName = sections.indexOf(name);
+			var clipWrapperLeft = _react2.default.createElement(
+				"div",
+				{ className: "clip-wrapper__left", style: { minHeight: this.props.windowHeight } },
+				_react2.default.createElement(
+					_reactRouterDom.NavLink,
+					{ to: "/" },
+					_react2.default.createElement(
+						_TextLink2.default,
+						{ hideLine: true },
+						_react2.default.createElement(
+							"h4",
+							{ className: "uppercase mb0 light scale-up scale-up--sm" },
+							"\u2022"
+						)
+					)
+				),
+				sections.length > 1 ? _react2.default.createElement(
+					_ArrowGroup2.default,
+					{ isVertical: true },
+					indexOfName - 1 > -1 ? _react2.default.createElement(
+						"a",
+						null,
+						_react2.default.createElement("div", { onClick: function onClick() {
+								return _this2.scrollTo(sections[indexOfName - 1]);
+							} })
+					)
+					/*<Link to={sections[indexOfName - 1]} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
+					: null,
+					indexOfName + 1 < sections.length ? _react2.default.createElement(
+						"a",
+						null,
+						_react2.default.createElement("div", { onClick: function onClick() {
+								return _this2.scrollTo(sections[indexOfName + 1]);
+							} })
+					)
+					/*<Link to={sections[indexOfName + 1]} onClick={this.scrollTo(sections[indexOfName + 1])} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
+					: null
+				) : null,
+				this.props.abbreviation == 'R' ? _react2.default.createElement(
+					_TextLink2.default,
+					{ hideUnderline: true },
+					_react2.default.createElement(
+						"a",
+						{ href: "assets/img/resume/ericsmith-resume.png", target: "_blank" },
+						_react2.default.createElement(
+							"h3",
+							{ className: "mb0" },
+							_react2.default.createElement(_Icon2.default, { icon: "download", size: 48, color: (0, _palette2.default)('brand-black') })
+						)
+					)
+				) : null
+			);
 
 			return name ? _react2.default.createElement(
 				_reactScroll.Element,
@@ -38199,32 +38272,15 @@ var ScrollSection = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "clip-wrapper" },
-						sections.length > 1 ? [_react2.default.createElement(_reactScroll.Link, { style: { display: 'none' }, to: name, spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: false, offset: 0, onSetActive: onSetActive, key: 0 }),, name == sections[0] ? _react2.default.createElement(_HeroScrollButton2.default, { to: sections[1], onSetActive: onSetActive, key: 1 }) : null, name == sections[1] ? _react2.default.createElement(_HeroScrollButton2.default, { to: name, onSetActive: onSetActive, key: 2 }) : null, _react2.default.createElement(
-							"div",
-							{ className: "left-rail", style: { minHeight: this.props.windowHeight }, key: 3 },
-							_react2.default.createElement(
-								_reactRouterDom.NavLink,
-								{ to: "/" /*style={{ transform: 'rotate(-90deg)'}}*/ },
-								_react2.default.createElement(
-									_TextLink2.default,
-									{ hideLine: true },
-									_react2.default.createElement(
-										"h4",
-										{ className: "uppercase mb0 light scale-up scale-up--sm" },
-										"\u2022"
-									)
-								)
-							),
-							_react2.default.createElement(
-								_ArrowGroup2.default,
-								{ isVertical: true },
-								_react2.default.createElement(_reactScroll.Link, { to: sections[sections.indexOf(name) - 1], spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: false, offset: 0 }),
-								_react2.default.createElement(_reactScroll.Link, { to: sections[sections.indexOf(name) + 1], spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: false, offset: 0 })
-							)
-						), _react2.default.createElement(_Sidebar2.default, {
-							sections: sections,
-							activeSection: activeSection,
-							key: 4 })] : null,
+						sections.length > 1 ? _react2.default.createElement(
+							_react.Fragment,
+							null,
+							_react2.default.createElement(_reactScroll.Link, { style: { display: 'none' }, to: name, spy: true, smooth: easing, duration: duration, hashSpy: false, offset: 0, onSetActive: onSetActive }),
+							name == sections[0] ? _react2.default.createElement(_HeroScrollButton2.default, { to: sections[1], onSetActive: onSetActive }) : null,
+							name == sections[1] ? _react2.default.createElement(_HeroScrollButton2.default, { to: name, onSetActive: onSetActive }) : null,
+							_react2.default.createElement(_Sidebar2.default, { sections: sections, activeSection: activeSection })
+						) : null,
+						clipWrapperLeft,
 						_react2.default.createElement(_NavToggle2.default, { sections: sections })
 					)
 				)
@@ -38249,32 +38305,8 @@ var ScrollSection = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "clip-wrapper" },
-						_react2.default.createElement(
-							"div",
-							{ className: "left-rail", style: { minHeight: this.props.windowHeight }, key: 3 },
-							_react2.default.createElement(
-								_reactRouterDom.NavLink,
-								{ to: "/" },
-								_react2.default.createElement(
-									_TextLink2.default,
-									{ hideLine: true },
-									_react2.default.createElement(
-										"h4",
-										{ className: "uppercase mb0 light scale-up scale-up--sm" },
-										"\u2022"
-									)
-								)
-							),
-							_react2.default.createElement(
-								_ArrowGroup2.default,
-								{ isVertical: true },
-								_react2.default.createElement(_reactScroll.Link, { to: sections[sections.indexOf(name) - 1], spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: false, offset: 0 }),
-								_react2.default.createElement(_reactScroll.Link, { to: sections[sections.indexOf(name) + 1], spy: true, smooth: "easeOutQuint", duration: 1200, hashSpy: false, offset: 0 })
-							)
-						),
-						_react2.default.createElement(_Sidebar2.default, {
-							sections: sections,
-							activeSection: activeSection }),
+						clipWrapperLeft,
+						_react2.default.createElement(_Sidebar2.default, { sections: sections, activeSection: activeSection }),
 						_react2.default.createElement(_NavToggle2.default, { sections: sections })
 					)
 				)
@@ -38296,7 +38328,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(ScrollSection);
 
-},{"../services/pad":190,"../services/palette":191,"../services/splitLetter":192,"./ArrowGroup":133,"./GridLines":136,"./HeroScrollButton":137,"./Icon":139,"./NavToggle":142,"./Sidebar":148,"./TextLink":149,"classnames":7,"intersection-observer":20,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71,"react-scroll":91}],147:[function(require,module,exports){
+},{"../services/pad":192,"../services/palette":193,"../services/splitLetter":194,"./ArrowGroup":133,"./GridLines":136,"./HeroScrollButton":137,"./Icon":139,"./NavToggle":142,"./Sidebar":148,"./TextLink":149,"classnames":7,"intersection-observer":20,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71,"react-scroll":91}],147:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38401,7 +38433,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(SideScroller);
 
-},{"../components/Icon":139,"../services/palette":191,"classnames":7,"react":106,"react-redux":54}],148:[function(require,module,exports){
+},{"../components/Icon":139,"../services/palette":193,"classnames":7,"react":106,"react-redux":54}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38513,7 +38545,7 @@ var Sidebar = function (_Component) {
 				{ className: classnames, ref: 'sidebar', style: { minHeight: this.props.windowHeight } },
 				_react2.default.createElement(
 					'ul',
-					{ className: 'm0 sidebar__inner', onClick: this.props.isSidebarOpen ? null : this.props.openSidebar, onMouseEnter: this.props.isMobile ? null : this.props.openSidebar, onMouseLeave: this.props.isMobile ? null : this.props.closeSidebar },
+					{ className: 'sidebar__inner', onClick: this.props.isSidebarOpen ? null : this.props.openSidebar, onMouseEnter: this.props.isMobile ? null : this.props.openSidebar, onMouseLeave: this.props.isMobile ? null : this.props.closeSidebar },
 					sidebarItems
 				)
 			);
@@ -38552,7 +38584,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-},{"../actions/cursor":123,"../actions/sidebar":130,"../services/createNewId":186,"../services/pad":190,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],149:[function(require,module,exports){
+},{"../actions/cursor":123,"../actions/sidebar":130,"../services/createNewId":187,"../services/pad":192,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38678,7 +38710,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(TextLink);
 
-},{"../actions/cursor":123,"../services/splitLetter":192,"classnames":7,"react":106,"react-hover":36,"react-redux":54,"react-router-dom":71}],150:[function(require,module,exports){
+},{"../actions/cursor":123,"../services/splitLetter":194,"classnames":7,"react":106,"react-hover":36,"react-redux":54,"react-router-dom":71}],150:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38877,7 +38909,7 @@ var HeroBlock = function (_Component) {
 
 exports.default = HeroBlock;
 
-},{"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"../GridLines":136,"../NavToggle":142,"../Sidebar":148,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],152:[function(require,module,exports){
+},{"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"../GridLines":136,"../NavToggle":142,"../Sidebar":148,"classnames":7,"react":106,"react-parallax":43,"react-redux":54,"react-scroll":91}],152:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39102,7 +39134,7 @@ var ProjectIntroBlock = function (_Component) {
 							),
 							_react2.default.createElement(
 								"blockquote",
-								{ className: "mr mb0" },
+								{ className: this.props.isMobile ? "mr" : "mr mb0" },
 								(0, _addLineBreaks2.default)(col3)
 							)
 						),
@@ -39129,9 +39161,15 @@ var ProjectIntroBlock = function (_Component) {
 	return ProjectIntroBlock;
 }(_react.Component);
 
-exports.default = ProjectIntroBlock;
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		isMobile: state.isMobile
+	};
+};
 
-},{"../../components/Image":140,"../../services/addLineBreaks":185,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],154:[function(require,module,exports){
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(ProjectIntroBlock);
+
+},{"../../components/Image":140,"../../services/addLineBreaks":186,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],154:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39213,12 +39251,13 @@ var ProjectSectionBlock = function (_Component) {
 			var _props = this.props,
 			    title = _props.title,
 			    subtitle = _props.subtitle,
-			    description = _props.description,
+			    description1 = _props.description1,
+			    description2 = _props.description2,
 			    media = _props.media;
 
 
 			var renderedMedia = function () {
-				if (media.type == 'image') return _react2.default.createElement(_Image2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'video') return _react2.default.createElement(_Video2.default, { src: media.src, poster: media.poster });else if (media.type == 'iframe') return _react2.default.createElement(_IFrame2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'codepen') return _react2.default.createElement(_CodepenEmbed2.default, { slug: media.slug, title: media.title, height: media.height });else if (media.type == 'side-scroller') return _react2.default.createElement(
+				if (media.type == 'image') return _react2.default.createElement(_Image2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight, caption: media.caption });else if (media.type == 'video') return _react2.default.createElement(_Video2.default, { src: media.src, poster: media.poster });else if (media.type == 'iframe') return _react2.default.createElement(_IFrame2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'codepen') return _react2.default.createElement(_CodepenEmbed2.default, { slug: media.slug, title: media.title, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'side-scroller') return _react2.default.createElement(
 					_SideScroller2.default,
 					null,
 					_this2.props.children
@@ -39233,7 +39272,7 @@ var ProjectSectionBlock = function (_Component) {
 					{ className: "grid" },
 					_react2.default.createElement(
 						"div",
-						{ className: "grid__row" },
+						{ className: "grid__row mb0" },
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
@@ -39247,13 +39286,31 @@ var ProjectSectionBlock = function (_Component) {
 								"h4",
 								{ className: "fade" },
 								subtitle
-							) : null,
+							) : null
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid__row" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
 							_react2.default.createElement(
 								"blockquote",
-								null,
-								(0, _addLineBreaks2.default)(description)
+								{ className: "mr" },
+								(0, _addLineBreaks2.default)(description1)
 							)
-						)
+						),
+						description2 ? _react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"blockquote",
+								{ className: "mr" },
+								(0, _addLineBreaks2.default)(description2)
+							)
+						) : null
 					)
 				),
 				media.type == 'side-scroller' ? _react2.default.createElement(
@@ -39279,7 +39336,7 @@ var ProjectSectionBlock = function (_Component) {
 
 exports.default = ProjectSectionBlock;
 
-},{"../../components/CodepenEmbed":134,"../../components/IFrame":138,"../../components/Image":140,"../../components/SideScroller":147,"../../components/Video":150,"../../services/addLineBreaks":185,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],155:[function(require,module,exports){
+},{"../../components/CodepenEmbed":134,"../../components/IFrame":138,"../../components/Image":140,"../../components/SideScroller":147,"../../components/Video":150,"../../services/addLineBreaks":186,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],155:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39468,7 +39525,15 @@ module.exports={
 				{
 					"name": "Google Design",
 					"items": [
-						{ "name": "Best of 2019", "to": "//design.google/library/google-design-2019" },
+						{
+							"name": "Best of 2019",
+							"to": "//design.google/library/google-design-2019",
+							"media": {
+								"src": "../assets/img/google-design/best-of-2019-3x2.jpg",
+								"aspectRatioWidth": 3,
+								"aspectRatioHeight": 2,
+							}
+						},
 						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
 						{ "name": "Google Design", "to": "//design.google" }
@@ -39477,18 +39542,57 @@ module.exports={
 				{
 					"name": "J&J Design Studio",
 					"items": [
-						{ "name": "Home Intranet", "to": "/jnj-home" },
-						{ "name": "Medical Devices", "to": "/jnj-mdc" },
+						{
+							"name": "Home Intranet",
+							"to": "/jnj-home",
+							"media": {
+								"src": "../assets/img/jnj-home/onboarding-mobile-16x9.png",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
+						{
+							"name": "Medical Devices",
+							"to": "/jnj-mdc",
+							"media": {
+								"src": "../assets/img/jnj-mdc/ladies.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
 						/*{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },*/
 					]
 				},
 				{
 					"name": "NBCUX Lab",
 					"items": [
-						{ "name": "American Made", "to": "/american-made" },
-						/*{ "name": "Rationalized Player", "to": "/rationalized-player" },*/
-						{ "name": "V.ai Player", "to": "/vai" },
-						{ "name": "Translator", "to": "/translator" },
+						{
+							"name": "American Made",
+							"to": "/american-made",
+							"media": {
+								"src": "../assets/img/american-made/columbia.gif",
+								"aspectRatioWidth" : 2,
+								"aspectRatioHeight" : 1,
+							},
+						},
+						{
+							"name": "V.ai Player",
+							"to": "/vai",
+							"media": {
+								"src": "../assets/img/vai/mobile-16x9.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
+						{
+							"name": "Translator",
+							"to": "/translator",
+							"media": {
+								"src": "../assets/img/translator/mobile-16x9.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
 						{ "name": "NBCUX Portfolio", "to": "//portfolio.nbcuxlab.com" },
 						{ "name": "Release Notes", "to": "//release-notes.nbcuxlab.com/" },
 					]
@@ -39496,14 +39600,38 @@ module.exports={
 				{
 					"name": "Wrap Media",
 					"items": [
-						{ "name": "Wrap Interactions", "to": "/micro-app-interactions" },
-						{ "name": "Wrap Templates", "to": "/micro-app-templates" },
+						{
+							"name": "Wrap Interactions",
+							"to": "/micro-app-interactions",
+							"media": {
+								"src": "../assets/img/card-components/share-animation-zoomed-out.gif",
+								"aspectRatioWidth": 4,
+								"aspectRatioHeight": 3,
+							}
+						},
+						{
+							"name": "Wrap Templates",
+							"to": "/micro-app-templates",
+							"media": {
+								"src": "../assets/img/card-components/perspective-cards.jpg",
+								"aspectRatioWidth": 8,
+								"aspectRatioHeight": 5,
+							}
+						},
 					]
 				},
 				{
 					"name": "Perforce",
 					"items": [
-						{ "name": "Helix Sync", "to": "/perforce" },
+						{
+							"name": "Helix Sync",
+							"to": "/perforce",
+							"media": {
+								"src": "../assets/img/perforce/banner.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
 						{ "name": "Helix Cloud", "to": "//www.perforce.com/products/helix-core" },
 					]
 				},
@@ -39917,7 +40045,7 @@ var panelReducer = function panelReducer() {
 
 exports.default = panelReducer;
 
-},{"../data/nav":157,"../services/toCamelCase":194}],168:[function(require,module,exports){
+},{"../data/nav":157,"../services/toCamelCase":196}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40058,6 +40186,10 @@ var _HeroBlock = require("../components/blocks/HeroBlock");
 
 var _HeroBlock2 = _interopRequireDefault(_HeroBlock);
 
+var _ProjectSectionBlock = require("../components/blocks/ProjectSectionBlock");
+
+var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
+
 var _hexToRgb = require("../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -40178,49 +40310,25 @@ var About = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
+						_ProjectSectionBlock2.default,
+						{
+							title: "3d Art",
+							description1: "I have been learning and experimenting with Cinema 4D by creating simple animations with text and shapes. I\u2019m most interested in scenes featuring odd lighting, soft bodies, collisions and or that simulate irregular physics.",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"3d Art"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"I have been learning and experimenting with Cinema 4D by creating simple animations with text and shapes. I\u2019m most interested in scenes featuring odd lighting, soft bodies, collisions and or that simulate irregular physics."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ style: { filter: 'grayscale(1)' } },
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/about/hello-world1.jpg", aspectRatioWidth: 4, aspectRatioHeight: 3 })
+						),
 						_react2.default.createElement(
-							_SideScroller2.default,
-							null,
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(_Image2.default, { src: "../assets/img/about/hello-world1.jpg", aspectRatioWidth: 4, aspectRatioHeight: 3 })
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(_Video2.default, { src: "../assets/img/about/no-chill.mp4", loop: true })
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-								_react2.default.createElement(_Video2.default, { src: "../assets/img/about/cube.mp4", loop: true })
-							)
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement(_Video2.default, { src: "../assets/img/about/no-chill.mp4", loop: true })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
+							_react2.default.createElement(_Video2.default, { src: "../assets/img/about/cube.mp4", loop: true })
 						)
 					)
 				),
@@ -40234,35 +40342,15 @@ var About = function (_Component) {
 							_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Photography"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"I have been shooting small and medium format film for the past 9 years. I relish the imperfections, mistakes, \u201Chappy accidents\u201D and learnings that comes with the shooting film and its development process."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						{ style: { filter: 'grayscale(0)' } },
+						_ProjectSectionBlock2.default,
+						{
+							title: "Photos",
+							description1: "I have been shooting small and medium format film for the past 9 years. I relish the learnings, imperfections, mistakes, and happy accidents that comes with the shooting film and its development process.",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/ocean.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/lands-end.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
@@ -40272,7 +40360,7 @@ var About = function (_Component) {
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/lands-end.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/ocean.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
 						),
 						_react2.default.createElement(
 							"div",
@@ -40353,7 +40441,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(About);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":140,"../components/ParallaxBackground":143,"../components/ScrollSection":146,"../components/SideScroller":147,"../components/TextLink":149,"../components/Video":150,"../components/blocks/HeroBlock":151,"../services/darken":187,"../services/hexToRgb":189,"../services/palette":191,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],173:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":140,"../components/ParallaxBackground":143,"../components/ScrollSection":146,"../components/SideScroller":147,"../components/TextLink":149,"../components/Video":150,"../components/blocks/HeroBlock":151,"../components/blocks/ProjectSectionBlock":154,"../services/darken":188,"../services/hexToRgb":190,"../services/palette":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],173:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40416,6 +40504,10 @@ var _process = require("../data/process");
 
 var _process2 = _interopRequireDefault(_process);
 
+var _nav = require("../data/nav");
+
+var _nav2 = _interopRequireDefault(_nav);
+
 var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
@@ -40444,13 +40536,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Home = function (_Component) {
-	_inherits(Home, _Component);
+var Homepage = function (_Component) {
+	_inherits(Homepage, _Component);
 
-	function Home(props) {
-		_classCallCheck(this, Home);
+	function Homepage(props) {
+		_classCallCheck(this, Homepage);
 
-		var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).call(this, props));
 
 		_this.setActiveSection = function (idx) {
 			_this.setState({
@@ -40459,97 +40551,54 @@ var Home = function (_Component) {
 			_this.props.setCounter(idx + 1);
 		};
 
+		_this.formatData = function (data) {
+			data.items.forEach(function (child) {
+				if (child.media != null) {
+					_this.setState(function (prevState) {
+						return {
+							projects: prevState.projects.concat(child)
+						};
+					});
+				}
+				if (child.items != null) {
+					_this.formatData(child);
+				}
+			});
+		};
+
 		_this.state = {
+			projects: [],
 			activeSection: "hello",
 			sections: ["hello", "about", "process", "projects", "social"]
 		};
 		return _this;
 	}
 
-	_createClass(Home, [{
+	_createClass(Homepage, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			window.scrollTo(0, 0);
 
 			this.props.home();
 			this.props.reset();
+
+			this.formatData(_nav2.default);
 		}
-	}, {
-		key: "componentWillUnmount",
-		value: function componentWillUnmount() {}
 	}, {
 		key: "render",
 		value: function render() {
 			var _this2 = this;
 
-			var projects = [{
-				name: "American Made",
-				href: "/american-made",
-				tags: ["UI", "Interactive"],
-				img: "../assets/img/american-made/columbia.gif",
-				aspectRatioWidth: 2,
-				aspectRatioHeight: 1
-			}, {
-				name: "V.ai Player",
-				href: "/vai",
-				tags: ["UX", "Interactive"],
-				img: "../assets/img/vai/mobile-16x9.jpg",
-				aspectRatioWidth: 16,
-				aspectRatioHeight: 9
-			}, {
-				name: "Translator",
-				href: "/translator",
-				tags: ["UX", "User Testing"],
-				img: "../assets/img/translator/mobile-16x9.jpg",
-				aspectRatioWidth: 16,
-				aspectRatioHeight: 9
-			}, {
-				name: "Wrap Interactions",
-				href: "/micro-app-interactions",
-				tags: ["Interactive", "Mobile"],
-				img: "../assets/img/card-components/share-animation-zoomed-out.gif",
-				aspectRatioWidth: 4,
-				aspectRatioHeight: 3
-			}, {
-				name: "Wrap Templates",
-				href: "/micro-app-templates",
-				tags: ["Visual Design", "Mobile"],
-				img: "../assets/img/card-components/perspective-cards.jpg",
-				aspectRatioWidth: 8,
-				aspectRatioHeight: 5
-			}, {
-				name: "J&J Home",
-				href: "/jnj-home",
-				tags: ["Visual Design", "Mobile"],
-				img: "../assets/img/jnj-home/onboarding-mobile.png",
-				aspectRatioWidth: 1,
-				aspectRatioHeight: 1
-
-			}, {
-				name: "J&J MDC",
-				href: "/jnj-mdc",
-				tags: ["Design System", "UX"],
-				img: "../assets/img/jnj-mdc/ladies.jpg",
-				aspectRatioWidth: 16,
-				aspectRatioHeight: 9
-
-			}, {
-				name: "Perforce",
-				href: "/perforce",
-				tags: ["Product Design", "UX", "UI"],
-				img: "../assets/img/perforce/banner.jpg",
-				aspectRatioWidth: 16,
-				aspectRatioHeight: 9
-
-			}];
-
 			var _state = this.state,
 			    activeSection = _state.activeSection,
-			    sections = _state.sections;
+			    sections = _state.sections,
+			    projects = _state.projects;
 
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 			var brandRed = (0, _hexToRgb2.default)((0, _palette2.default)("brand-red"));
+
+			var heroBackgroundImage = this.props.isMobile ? 'banner-5x8' : 'banner-3x2';
 
 			// const circles = document.getElementsByClassName('step__spot-circle');
 			// const circleColor = `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`;
@@ -40583,9 +40632,6 @@ var Home = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
-				_react2.default.createElement(_ParallaxBackground2.default, {
-					style: { backgroundImage: "\n\t\t\t\t\tlinear-gradient(\n\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .6),\n\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .6)\n\t\t\t\t\t),\n\t\t\t\t\turl(../assets/img/leaf.gif)\n\t\t\t\t" }
-				}),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
@@ -40594,7 +40640,6 @@ var Home = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
-						disableSectionNumber: true,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
@@ -40607,7 +40652,7 @@ var Home = function (_Component) {
 							_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--col-2-medium" }),
 							_react2.default.createElement(
 								"div",
-								{ className: "grid__item grid__item--col-5 grid__item--col-10-medium" },
+								{ className: "grid__item grid__item--col-6 grid__item--col-10-medium" },
 								_react2.default.createElement(_Image2.default, { src: "../assets/img/banner.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
 							)
 						)
@@ -40687,7 +40732,7 @@ var Home = function (_Component) {
 								),
 								_react2.default.createElement(
 									"div",
-									{ className: "grid__item grid__item--col-6 shift--left" },
+									{ className: "grid__item grid__item--col-6 shift-left--sm" },
 									_react2.default.createElement("div", { className: "spacer spacer__lg" }),
 									_react2.default.createElement(_Image2.default, { src: "../assets/img/me.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
 								)
@@ -40778,6 +40823,28 @@ var Home = function (_Component) {
 							_react2.default.createElement("div", { className: "spacer spacer__sm" }),
 							_react2.default.createElement(_ProjectCard2.default, { items: projects }),
 							_react2.default.createElement("div", { className: "spacer spacer__md" })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"h5",
+								{ className: "" },
+								_react2.default.createElement(
+									_TextLink2.default,
+									{ isBlack: true, hideUnderline: true },
+									_react2.default.createElement(
+										_reactRouterDom.NavLink,
+										{ to: "work" },
+										"See All Projects"
+									)
+								)
+							)
 						)
 					)
 				),
@@ -40886,7 +40953,7 @@ var Home = function (_Component) {
 		}
 	}]);
 
-	return Home;
+	return Homepage;
 }(_react.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -40942,9 +41009,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	};
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Homepage);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":140,"../components/ParallaxBackground":143,"../components/ProcessDiagram":144,"../components/ProjectCard":145,"../components/ScrollSection":146,"../components/Sidebar":148,"../components/TextLink":149,"../components/blocks/HeroBlock":151,"../data/process":159,"../services/hexToRgb":189,"../services/pad":190,"../services/palette":191,"../services/splitLetter":192,"../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],174:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Image":140,"../components/ParallaxBackground":143,"../components/ProcessDiagram":144,"../components/ProjectCard":145,"../components/ScrollSection":146,"../components/Sidebar":148,"../components/TextLink":149,"../components/blocks/HeroBlock":151,"../data/nav":157,"../data/process":159,"../services/hexToRgb":190,"../services/pad":192,"../services/palette":193,"../services/splitLetter":194,"../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],174:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41131,7 +41198,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Process);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/ProcessDiagram":144,"../components/ScrollSection":146,"../services/hexToRgb":189,"../services/palette":191,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],175:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/ProcessDiagram":144,"../components/ScrollSection":146,"../services/hexToRgb":190,"../services/palette":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],175:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41255,35 +41322,18 @@ var Resume = function (_Component) {
 						} },
 					_react2.default.createElement(
 						"div",
-						{ className: "left-rail" },
-						_react2.default.createElement(
-							_TextLink2.default,
-							{ hideUnderline: true },
-							_react2.default.createElement(
-								"a",
-								{ href: "assets/img/resume/ericsmith-resume.png", target: "_blank" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "mb0" },
-									_react2.default.createElement(_Icon2.default, { icon: "download", size: 48, color: (0, _palette2.default)('brand-black') })
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
 						{ className: "grid" },
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium" }),
 						_react2.default.createElement(
 							"div",
-							{ className: "grid__item grid__item--col-9 grid__item--col-6-desktop grid__item--col-12-medium" },
+							{ className: "grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium" },
 							_react2.default.createElement(
 								"div",
 								{ className: "grid__row" },
 								_react2.default.createElement(
 									"h3",
 									{ className: "mb0" },
-									["Eric C. Smith is a digital", _react2.default.createElement(
+									["Eric C. Smith is a digital ", _react2.default.createElement(
 										"span",
 										{ key: 0 },
 										_react2.default.createElement(
@@ -41314,7 +41364,7 @@ var Resume = function (_Component) {
 										_react2.default.createElement("hr", null),
 										_react2.default.createElement(
 											_TextLink2.default,
-											{ hideUnderline: true },
+											null,
 											_react2.default.createElement(
 												"a",
 												{ href: "mailto:hi@ericsmithux.com" },
@@ -41328,7 +41378,7 @@ var Resume = function (_Component) {
 										),
 										_react2.default.createElement(
 											_TextLink2.default,
-											{ hideUnderline: true },
+											null,
 											_react2.default.createElement(
 												"a",
 												{ href: "call:5087334510" },
@@ -41365,12 +41415,12 @@ var Resume = function (_Component) {
 											{ className: "outline" },
 											"\u2022"
 										),
-										" UX/Front-End Developer"
+										" UX Engineer"
 									),
 									_react2.default.createElement(
 										"blockquote",
 										null,
-										"HTML, CSS, Javascript, Python, Django"
+										"HTML, CSS, Javascript, Python, Django, Wagtail"
 									),
 									_react2.default.createElement(
 										"blockquote",
@@ -41391,7 +41441,7 @@ var Resume = function (_Component) {
 											_react2.default.createElement(
 												"li",
 												null,
-												"Dramatically improved usability of CMS experience."
+												"Improved usability of our CMS for content editors."
 											)
 										)
 									)
@@ -41820,7 +41870,220 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Resume);
 
-},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Icon":139,"../components/ScrollSection":146,"../components/TextLink":149,"../components/blocks/HeroBlock":151,"../services/hexToRgb":189,"../services/palette":191,"../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],176:[function(require,module,exports){
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/Icon":139,"../components/ScrollSection":146,"../components/TextLink":149,"../components/blocks/HeroBlock":151,"../services/hexToRgb":190,"../services/palette":193,"../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],176:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactScroll = require("react-scroll");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _counter = require("../actions/counter");
+
+var _abbreviation = require("../actions/abbreviation");
+
+var _nav = require("../data/nav");
+
+var _nav2 = _interopRequireDefault(_nav);
+
+var _ProjectCard = require("../components/ProjectCard");
+
+var _ProjectCard2 = _interopRequireDefault(_ProjectCard);
+
+var _ScrollSection = require("../components/ScrollSection");
+
+var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
+
+var _hexToRgb = require("../services/hexToRgb");
+
+var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Work = function (_Component) {
+	_inherits(Work, _Component);
+
+	function Work(props) {
+		_classCallCheck(this, Work);
+
+		var _this = _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).call(this, props));
+
+		_this.formatData = function (data) {
+			data.items.forEach(function (child) {
+				if (child.to) {
+					_this.setState(function (prevState) {
+						return {
+							projects: prevState.projects.concat(child)
+						};
+					});
+				}
+				if (child.items != null) {
+					_this.formatData(child);
+				}
+			});
+		};
+
+		_this.state = {
+			projects: [],
+			sections: ["work"]
+		};
+		return _this;
+	}
+
+	_createClass(Work, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.process();
+			this.props.reset();
+
+			this.formatData(_nav2.default.items[1]);
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var _state = this.state,
+			    activeSection = _state.activeSection,
+			    sections = _state.sections,
+			    projects = _state.projects;
+
+
+			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
+			var brandRed = (0, _hexToRgb2.default)((0, _palette2.default)("brand-red"));
+
+			return _react2.default.createElement(
+				"article",
+				{ id: "process" },
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[0],
+						black: true,
+						sections: sections,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(3);
+						} },
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+							_react2.default.createElement(
+								"h4",
+								null,
+								"All Projects"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "grid" },
+						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+							_react2.default.createElement("div", { className: "spacer spacer__sm" }),
+							_react2.default.createElement(_ProjectCard2.default, { items: projects }),
+							_react2.default.createElement("div", { className: "spacer spacer__md" })
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Work;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		count: state.count,
+		abbreviation: state.abbreviation,
+		isMobile: state.isMobile
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		home: function home() {
+			return dispatch((0, _abbreviation.home)());
+		},
+		process: function process() {
+			return dispatch((0, _abbreviation.process)());
+		},
+		americanMade: function americanMade() {
+			return dispatch((0, _abbreviation.americanMade)());
+		},
+		vai: function vai() {
+			return dispatch((0, _abbreviation.vai)());
+		},
+		translator: function translator() {
+			return dispatch((0, _abbreviation.translator)());
+		},
+		jjMdc: function jjMdc() {
+			return dispatch((0, _abbreviation.jjMdc)());
+		},
+		jjHome: function jjHome() {
+			return dispatch((0, _abbreviation.jjHome)());
+		},
+		wrap1: function wrap1() {
+			return dispatch((0, _abbreviation.wrap1)());
+		},
+		wrap2: function wrap2() {
+			return dispatch((0, _abbreviation.wrap2)());
+		},
+		perforce: function perforce() {
+			return dispatch((0, _abbreviation.perforce)());
+		},
+		cisco: function cisco() {
+			return dispatch((0, _abbreviation.cisco)());
+		},
+		protohack: function protohack() {
+			return dispatch((0, _abbreviation.protohack)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Work);
+
+},{"../actions/abbreviation":121,"../actions/counter":122,"../components/ProjectCard":145,"../components/ScrollSection":146,"../data/nav":157,"../services/hexToRgb":190,"../services/palette":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41841,13 +42104,17 @@ var _Cursor = require('../components/Cursor');
 
 var _Cursor2 = _interopRequireDefault(_Cursor);
 
-var _Home = require('./Home');
+var _Homepage = require('./Homepage');
 
-var _Home2 = _interopRequireDefault(_Home);
+var _Homepage2 = _interopRequireDefault(_Homepage);
 
 var _Process = require('./Process');
 
 var _Process2 = _interopRequireDefault(_Process);
+
+var _Work = require('./Work');
+
+var _Work2 = _interopRequireDefault(_Work);
 
 var _Resume = require('./Resume');
 
@@ -41897,8 +42164,9 @@ var routes = _react2.default.createElement(
 	_react2.default.createElement(
 		_reactRouter.Switch,
 		null,
-		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _Home2.default }),
+		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _Homepage2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/process', component: _Process2.default }),
+		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/work', component: _Work2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/about-me', component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/resume', component: _Resume2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/american-made', component: _AmericanMade2.default }),
@@ -41916,7 +42184,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../components/Cursor":135,"../components/NavTakeover":141,"./AboutMe":172,"./Home":173,"./Process":174,"./Resume":175,"./projects/AmericanMade":177,"./projects/JnjHome":178,"./projects/JnjMdc":179,"./projects/MicroAppInteractions":180,"./projects/MicroAppTemplates":181,"./projects/Perforce":182,"./projects/Translator":183,"./projects/Vai":184,"react":106,"react-router":83}],177:[function(require,module,exports){
+},{"../components/Cursor":135,"../components/NavTakeover":141,"./AboutMe":172,"./Homepage":173,"./Process":174,"./Resume":175,"./Work":176,"./projects/AmericanMade":178,"./projects/JnjHome":179,"./projects/JnjMdc":180,"./projects/MicroAppInteractions":181,"./projects/MicroAppTemplates":182,"./projects/Perforce":183,"./projects/Translator":184,"./projects/Vai":185,"react":106,"react-router":83}],178:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42100,7 +42368,7 @@ var AmericanMade = function (_Component) {
 							_this2.setActiveSection(0);
 						} },
 					_react2.default.createElement(_HeroBlock2.default, {
-						headerText: ["The", _react2.default.createElement(
+						headerText: ["The site for", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -42116,7 +42384,7 @@ var AmericanMade = function (_Component) {
 								{ className: "outline" },
 								"Made "
 							)
-						), "film site told the story of the movie."]
+						), "told the story of Barry Seal."]
 					})
 				),
 				_react2.default.createElement(
@@ -42165,7 +42433,7 @@ var AmericanMade = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Preloader",
-						description: "Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \u201CSky is Never The Limit\u201D.",
+						description1: "Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: \u201CSky is Never The Limit\u201D.",
 						media: { type: "codepen", slug: "RyGNYm", title: "Preloader: American Made Film Site", height: 720 } })
 				),
 				_react2.default.createElement(
@@ -42182,7 +42450,7 @@ var AmericanMade = function (_Component) {
 						_ProjectSectionBlock2.default,
 						{
 							title: "Cinemagraphs",
-							description: "To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.",
+							description1: "To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way.",
 							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
@@ -42208,7 +42476,7 @@ var AmericanMade = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Runway Navigation",
-						description: "I designed a unique themed navigation for the site. The nav mimic\u2019d the bird\u2019s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.",
+						description1: "I designed a unique themed navigation for the site. The nav mimic\u2019d the bird\u2019s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.",
 						media: { type: "codepen", slug: "qoQajr", title: "Navigation: American Made Film Site", height: 625 } })
 				),
 				_react2.default.createElement(
@@ -42224,7 +42492,7 @@ var AmericanMade = function (_Component) {
 					},
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Video Gallery",
-						description: "To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content.",
+						description1: "To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content.",
 						media: { type: "codepen", slug: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625 } })
 				),
 				_react2.default.createElement(
@@ -42239,7 +42507,7 @@ var AmericanMade = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Parallax Story",
-						description: "In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way. \\n\\n I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.",
+						description1: "In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way. \\n\\n I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion.",
 						media: { type: "codepen", slug: "ZoBVbY", title: "Story: American Made Film Site", height: 625 } })
 				),
 				_react2.default.createElement(
@@ -42253,7 +42521,7 @@ var AmericanMade = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Mobile",
-						description: "A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.",
+						description1: "A high percentage of the film site's traffic was going to be from mobile devices. Thus, I adopted a mobile-first design approach that focuses on simple essential functionality before moving onto more complex features for bigger screens.",
 						media: { type: "iframe", src: "../assets/img/american-made/mobile.svg", aspectRatioWidth: this.props.isMobile ? 16 : 2, aspectRatioHeight: this.props.isMobile ? 9 : 1 } })
 				),
 				_react2.default.createElement(
@@ -42269,7 +42537,7 @@ var AmericanMade = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Interactive Map",
 						subtitle: "Fly With Barry",
-						description: "We developed an extra feature to accompany the site called \u201CFly With Barry\u201D. The interactive map followed the timeline of Barry Seal\u2019s escapades through Central and South America.",
+						description1: "We developed an extra feature to accompany the site called \u201CFly With Barry\u201D. The interactive map followed the timeline of Barry Seal\u2019s escapades through Central and South America.",
 						media: { type: "iframe", src: "../assets/img/american-made/map-code.svg", aspectRatioWidth: 2, aspectRatioHeight: 1 } })
 				),
 				_react2.default.createElement(
@@ -42358,7 +42626,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],178:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],179:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42499,7 +42767,7 @@ var JnjHome = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			sections: ["overview", "about", "new-user", "meganav", "sitemap", "news", "links"]
+			sections: ["overview", "about", "new-user", "navigation", "sitemap", "news", "links"]
 		};
 		return _this;
 	}
@@ -42594,7 +42862,7 @@ var JnjHome = function (_Component) {
 						role: "UX/Motion Designer",
 						date: "Spring, 2018",
 						client: "J&J People XD",
-						team: ["Alex Gross", "Chris Purcell", "Katrina Corcoran", "Howard Chambers", "Alisha Austin"] })
+						team: ["Alex Gross", "Chris Purcell", "Alisha Austin", "Katrina Corcoran", "Howard Chambers"] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -42605,39 +42873,11 @@ var JnjHome = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(2);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Onboarding"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. After providing basic information in this short experience the new employee can visit Home to learn about services nearby, and tools necessary for their job and give them the profile links for people they will be working with frequently."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_Image2.default, { src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Onboarding",
+						description1: "The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. A new employee provides some basic information in this short onboarding experience.",
+						description2: "Afterwards the employee can visit Home to learn about services nearby, tools necessary for their job and share profiles of their team members.",
+						media: { type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -42650,8 +42890,9 @@ var JnjHome = function (_Component) {
 							_this2.setActiveSection(3);
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
-						title: "Meganav",
-						description: "I designed a robust navigation to help employees navigate the vast wealth of information at J&J. Providing access to an employyee's most used links from anywhere on Home was important. Utilizing a secondary panel a user could access their favorited links.",
+						title: "Navigation",
+						description1: "I designed a robust navigation to help employees navigate the vast wealth of information at J&J. We provided a way for an employyee to access their most used links from anywhere on Home.",
+						description2: "From the takeover, a secondary panel allowed them to see links organized by categories or a list of their previously favorited links.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight: this.props.isMobile ? 8 : 3 } })
 				),
 				_react2.default.createElement(
@@ -42665,7 +42906,7 @@ var JnjHome = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Sitemap",
-						description: "I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time.",
+						description1: "I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -42680,7 +42921,8 @@ var JnjHome = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "News",
-						description: "I designed an article page flexible for different types of content. Using the \u201CThumbs Up\u201D feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click.",
+						description1: "I designed an article page flexible for different types of content. The sticky article sharing buttons provided an opportunity to use to motion to inspire the reader.",
+						description2: "Using the \u201CThumbs Up\u201D feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -42695,7 +42937,8 @@ var JnjHome = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Links",
-						description: "I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed. The scrolling page with side navigation, sorting functionality and starring animation made for a delightful experience.",
+						description1: "I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed.",
+						description2: "The sticky side navigation, sorting functionality and delightful favoriting animation made for a great experience overall.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -42778,7 +43021,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjHome);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],179:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],180:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42919,7 +43162,7 @@ var JnjMdc = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			sections: ["overview", "about", "navigation", "flipper", "chooser", "taxonomy", "buttons"]
+			sections: ["overview", "about", "navigation", "flipper", "companies", "taxonomy", "buttons"]
 		};
 		return _this;
 	}
@@ -43001,15 +43244,8 @@ var JnjMdc = function (_Component) {
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						black: true,
 						sections: sections,
-						activeSection: activeSection,
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/jnj-mdc/forest.jpg)\n\t\t\t\t\t",
-							backgroundPosition: '50% 80%',
-							backgroundRepeat: 'repeatX',
-							backgroundSize: 'cover'
-						} },
+						activeSection: activeSection },
 					_react2.default.createElement(_ProjectDetailsBlock2.default, { role: "Sr. Interaction Designer", date: "Fall, 2018", client: "J&J Consumer", team: ["Matthew Abate", "Laura Hines", "Stephanie Skuzenski", "Jinny Kim", "Mark Patience", "Katrina Corcoran"] })
 				),
 				_react2.default.createElement(
@@ -43024,7 +43260,8 @@ var JnjMdc = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Navigation",
-						description: "I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items.",
+						description1: "I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio.",
+						description2: "The navigation design needed to be flexible enough to work with as few as 1 item and as many as 100 items. The sliding underline shows your current active menu.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -43040,7 +43277,8 @@ var JnjMdc = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "HCP/Patient",
 						subtitle: "Site Flipper",
-						description: "To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively.",
+						description1: "To toggle between the healthcare professional and patient experiences of the site I designed a \u201FFlipper\u201D interaction for toggling between them.",
+						description2: "When hovering, an HCP or patient could use our predictive search to search for a specialty or symptom respectively.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -43054,8 +43292,8 @@ var JnjMdc = function (_Component) {
 							_this2.setActiveSection(4);
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
-						title: "Company Chooser",
-						description: "I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page.",
+						title: "Companies",
+						description1: "I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -43070,7 +43308,7 @@ var JnjMdc = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Taxonomy",
-						description: "Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way.",
+						description1: "Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -43085,7 +43323,7 @@ var JnjMdc = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Buttons",
-						description: "I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.",
+						description1: "I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.",
 						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
@@ -43164,7 +43402,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjMdc);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],180:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43391,25 +43629,16 @@ var MicroAppInteractions = function (_Component) {
 							aspectRatioWidth: 8,
 							aspectRatioHeight: 5
 						},
-						col3: "On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS and Javascript to do so utilizing the Wrap Developer API.",
+						col3: "On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS, Javascript and the home-grown Wrap Developer API.",
 						col4: "The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and \"x-cross\" pattern \u2014 The end user is able to scroll either up/down or swipe left or right."
 					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						name: sections[2],
-						black: true,
-						disableSectionNumber: true,
 						sections: sections,
-						activeSection: activeSection,
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .85),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", 1)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/card-components/banner.jpg)",
-							backgroundColor: "transparent",
-							backgroundSize: 'cover',
-							backgroundPosition: 'bottom',
-							backgroundBlendMode: 'normal'
-						} },
+						activeSection: activeSection
+					},
 					_react2.default.createElement(_ProjectDetailsBlock2.default, { role: "Creative Developer", date: "Fall, 2016", client: "Wrap Media", team: ["Pete Petras", "Josh Bloom", "Jeff Klein", "Mei Yeh", "Theo Arguna"] })
 				),
 				_react2.default.createElement(
@@ -43424,7 +43653,7 @@ var MicroAppInteractions = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Realtime Poll",
-						description: "For the Minted Challange Wrap, I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns.",
+						description1: "For the Minted Challange Wrap, I designed this poll that allowed them to sample their users in real time. The Minted Challenge experience had higher engagement than any of their prior campaigns.",
 						media: { type: 'video', src: 'assets/img/card-components/minted.mp4' }
 					})
 				),
@@ -43437,72 +43666,12 @@ var MicroAppInteractions = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(3);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Cart & Share"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Myself with Wrap\u2019s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara\u2019s \u201CLove You 2 Death\u201D tour. Working with the coolest visual designer around, Theo Arguna, I designed and developed the interactions shown below."
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
-								_react2.default.createElement(_Video2.default, { src: "assets/img/card-components/share-animation.mp4" })
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-5 grid__item--col-12-medium" },
-								_react2.default.createElement(_Image2.default, { src: "assets/img/card-components/cart-animation.gif", aspectRatioWidth: 4, aspectRatioHeight: 3 })
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Our approach was an immersive one, to value interaction and interface but not more than the content itself. We helped Tegan & Sara create a brand based on two basic elements; their highly curated content and the enthusiastic followers that make up their team. We avoided gimmicks by highlighting the content."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_CodepenEmbed2.default, { slug: "NRBOky", title: "Cart & Share Components", height: 720, handle: "erchsm" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Cart & Share",
+						description1: "Myself with Wrap\u2019s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara\u2019s \u201CLove You 2 Death\u201D tour.",
+						description2: "We helped Tegan & Sara create a brand based on their highly curated content and enthusiastic followers. Our approach was an immersive one, to value interaction and interface but not more than the content itself.",
+						media: { type: "codepen", slug: "NRBOky", title: "Cart & Share Components", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 }
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -43514,39 +43683,12 @@ var MicroAppInteractions = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(4);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Places Nearby"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. We later created a generic component in our product so that anyone with a wrap account could add this to a card. I worked on the motion and interaction here while working directly with the API."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_CodepenEmbed2.default, { slug: "ENNdJd", title: "Nearby Services Component", height: 720, handle: "erchsm" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Places Nearby",
+						description1: "Partnering with Equinox we built an integration with the Google Places API's for helping users find a gym close to their location. I designed the prototype seen here.",
+						description2: "Later we created a generic component in our product so that any account holder could add this to a card for their business.",
+						media: { type: "codepen", slug: "ENNdJd", title: "Nearby Services Component", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 }
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -43557,51 +43699,18 @@ var MicroAppInteractions = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(5);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "" },
-									"Starry Night"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Partnering with Salesforce Trailblazers we created a lead generation form to collect leads at their international conference in San Francisco. I worked on the interactive splash screen featuring a starry night sky. This aspirational backdrop helped connect with the trailblazers boosting the conversion rate on the form."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_CodepenEmbed2.default, { slug: "BLbpoZ", title: "Starry Night", height: 720, handle: "erchsm" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Starry Night",
+						description1: "Partnering with Salesforce Trailblazers we created a lead generation form to collect leads at their international conference in San Francisco.",
+						description2: "I designed the interactive splash screen featuring a starry night sky. This aspirational backdrop helped boost the conversion rate on the form.",
+						media: { type: "codepen", slug: "BLbpoZ", title: "Starry Night", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 }
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						black: true,
 						sections: sections,
-						activeSection: activeSection,
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .5),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .5)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/card-components/banner-alt.jpg)\n\t\t\t\t\t",
-							backgroundSize: 'cover',
-							backgroundPosition: 'center'
-						} },
+						activeSection: activeSection },
 					_react2.default.createElement(_ProjectUpNextBlock2.default, { name: "Wrap Templates", to: "micro-app-templates" })
 				)
 			);
@@ -43671,7 +43780,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppInteractions);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],181:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],182:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43816,7 +43925,7 @@ var MicroAppTemplates = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			sections: ["overview", "about", "templates", "conference", "lead-gen", "commerce", "agency"]
+			sections: ["overview", "about", "templates", "event", "lead-gen", "commerce", "agency"]
 		};
 		return _this;
 	}
@@ -43902,20 +44011,15 @@ var MicroAppTemplates = function (_Component) {
 							aspectRatioHeight: 5
 						},
 						col3: "On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process.",
-						col4: "The way that myself and the design team designed wraps was by designing cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
+						col4: "The team designed Wraps using cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
 					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
-						black: true,
 						sections: sections,
-						activeSection: activeSection,
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .8),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .95)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/card-components/banner.jpg)\n\t\t\t\t\t",
-							backgroundSize: 'cover',
-							backgroundPosition: 'bottom'
-						} },
+						activeSection: activeSection
+					},
 					_react2.default.createElement(_ProjectDetailsBlock2.default, { role: "UX/Visual Designer", date: "Fall, 2015", client: "Wrap Media", team: ["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"] })
 				),
 				_react2.default.createElement(
@@ -43928,39 +44032,12 @@ var MicroAppTemplates = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(2);
 						} },
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									null,
-									"Templates"
-								),
-								_react2.default.createElement(
-									"blockquote",
-									null,
-									"Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. Templates gave our users a starting point in our platform and provided them some inspiration to create their own."
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
-							_react2.default.createElement(_Video2.default, { src: "assets/img/app-templates/from-fb.mp4" })
-						)
-					)
+					_react2.default.createElement(_ProjectSectionBlock2.default, {
+						title: "Templates",
+						description1: "Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use.",
+						description2: "Templates gave our users a starting point in our platform and provided them some inspiration to create their own.",
+						media: { type: 'video', src: 'assets/img/app-templates/from-fb.mp4' }
+					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -43989,7 +44066,7 @@ var MicroAppTemplates = function (_Component) {
 								_react2.default.createElement(
 									"h2",
 									{ className: "mb0" },
-									"Conference"
+									"Event"
 								),
 								_react2.default.createElement(
 									"h4",
@@ -44339,7 +44416,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppTemplates);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],182:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/IFrame":138,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],183:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44767,7 +44844,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Perforce);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],183:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],184:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44927,14 +45004,14 @@ var Translator = function (_Component) {
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 
+			var heroBackgroundImage = this.props.isMobile ? 'mobile-5x8' : 'mobile-3x2';
+
 			return _react2.default.createElement(
 				"article",
 				null,
 				_react2.default.createElement(_ParallaxBackground2.default, {
 					style: {
-						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .06),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/translator/mobile-16x9.jpg)\n\t\t\t\t\t",
-						backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
-						backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
+						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .06),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/translator/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t",
 						backgroundColor: brandPrimary
 					} }),
 				_react2.default.createElement(
@@ -45001,8 +45078,9 @@ var Translator = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Collection",
-						description: "I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later.",
-						media: { type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }
+						description1: "We designed a system where technicians can upload content while organizing them into collections that are synced in the cloud.",
+						description2: " A production assistant fresh off a shoot can upload their images, videos and audio altogether into a collection for easy access later.",
+						media: { type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9, caption: "The view for a sample collection with video and image content." }
 					})
 				),
 				_react2.default.createElement(
@@ -45019,7 +45097,8 @@ var Translator = function (_Component) {
 						_ProjectSectionBlock2.default,
 						{
 							title: "Metadata",
-							description: "Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness.",
+							description1: "Editing metadata for content was an important part in of the storage process. By allowing technicians to edit fields quickly and easily we would promote rich metadata platform wide.",
+							description2: "We designed a flyout panel for editing metadata and 3 stages of metatdata completeness. Completing all metadata for a piece of media was incentivized by making it easier to search for.",
 							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
@@ -45050,7 +45129,8 @@ var Translator = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Shell Record",
-						description: "Together with the product team, we devised the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. After the shoot they could simply associate the content with the shell they had already entered the metadata for.",
+						description1: "Technicians working on the same programs would know the number of media items generated for each shoot. We devised the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. ",
+						description2: "While planning their series they could set up their shell records in Translator. After the shoot they could simply associate the uploades with the shell they had already entered the metadata for.",
 						media: { type: 'image', src: '../assets/img/translator/shell-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }
 					})
 				),
@@ -45068,7 +45148,8 @@ var Translator = function (_Component) {
 						_ProjectSectionBlock2.default,
 						{
 							title: "Bulk Actions",
-							description: "Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields.",
+							description1: "Bulk editing metadata was a required workflow for technicians that managed large projects. Common fields across media in a collections could be edited simultaneously.",
+							description2: "I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields.",
 							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
@@ -45158,7 +45239,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],184:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/hexToRgb":190,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45263,6 +45344,10 @@ var _darken = require("../../services/darken");
 
 var _darken2 = _interopRequireDefault(_darken);
 
+var _lighten = require("../../services/lighten");
+
+var _lighten2 = _interopRequireDefault(_lighten);
+
 var _people = require("../../data/people");
 
 var _people2 = _interopRequireDefault(_people);
@@ -45335,9 +45420,7 @@ var Vai = function (_Component) {
 				_react2.default.createElement(_ParallaxBackground2.default, {
 					style: {
 						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/vai/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t",
-						/*backgroundSize: (this.props.isMobile ? '90% 110%' : '40% 125%'),*/
-						/*backgroundPosition: (this.props.isMobile ? '440% 585%' : '60% -230%'),*/
-						backgroundColor: brandPrimary
+						backgroundColor: (0, _lighten2.default)(brandPrimary, 12)
 					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -45389,8 +45472,8 @@ var Vai = function (_Component) {
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
 						col1: "Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \\n\\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing.",
 						col2: "The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience. \\n\\n The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.",
-						col3: "As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with the AI javascript API we used to power this prototype.",
-						col4: "Clarifi\u2019s image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results will be given for every second of the video.",
+						col3: "As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype.",
+						col4: "Clarifi\u2019s image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time.",
 						media: { type: 'image', src: '../assets/img/vai/escalade.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }
 					})
 				),
@@ -45399,11 +45482,7 @@ var Vai = function (_Component) {
 					{
 						black: true,
 						sections: sections,
-						activeSection: activeSection,
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .84),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .96) \n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/vai/mr-robot.jpg)\n\t\t\t\t\t",
-							backgroundPosition: this.props.isMobile ? "center 10%" : "center 45%"
-						} },
+						activeSection: activeSection },
 					_react2.default.createElement(_ProjectDetailsBlock2.default, {
 						role: "Lead UI/UX Designer",
 						date: "October, 2017",
@@ -45422,7 +45501,8 @@ var Vai = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Player",
-						description: "During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.",
+						description1: "During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper.",
+						description2: "V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.",
 						media: { type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }
 					})
 				),
@@ -45438,7 +45518,7 @@ var Vai = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Overlay",
-						description: "Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off.",
+						description1: "Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off.",
 						media: { type: 'image', src: '../assets/img/vai/vai-overlay.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }
 					})
 				),
@@ -45455,7 +45535,8 @@ var Vai = function (_Component) {
 					},
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Products",
-						description: "Brands could sponsor T.V. shows to promote their products in an innovative way without using commercials that interrupt viewers. Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.",
+						description1: "Brands could sponsor T.V. shows to promote their products in an innovative way without using commercials that interrupt viewers.",
+						description2: "Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video.",
 						media: { type: 'image', src: '../assets/img/vai/product.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }
 					})
 				),
@@ -45473,7 +45554,7 @@ var Vai = function (_Component) {
 						_ProjectSectionBlock2.default,
 						{
 							title: "People",
-							description: "Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we\u2019ve eliminated the need to whip out another device to answer that irking question.",
+							description1: "Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we\u2019ve eliminated the need to whip out another device to answer that irking question.",
 							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
@@ -45564,7 +45645,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Vai);
 
-},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/darken":187,"../../services/hexToRgb":189,"../../services/palette":191,"../../services/splitLetter":192,"../../services/splitWord":193,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],185:[function(require,module,exports){
+},{"../../actions/abbreviation":121,"../../actions/counter":122,"../../actions/panel":127,"../../components/CodepenEmbed":134,"../../components/GridLines":136,"../../components/Image":140,"../../components/ParallaxBackground":143,"../../components/ScrollSection":146,"../../components/SideScroller":147,"../../components/Sidebar":148,"../../components/TextLink":149,"../../components/Video":150,"../../components/blocks/HeroBlock":151,"../../components/blocks/ProjectDetailsBlock":152,"../../components/blocks/ProjectIntroBlock":153,"../../components/blocks/ProjectSectionBlock":154,"../../components/blocks/ProjectUpNextBlock":155,"../../data/people":158,"../../services/darken":188,"../../services/hexToRgb":190,"../../services/lighten":191,"../../services/palette":193,"../../services/splitLetter":194,"../../services/splitWord":195,"classnames":7,"react":106,"react-redux":54,"react-router-dom":71,"react-scroll":91}],186:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45588,7 +45669,7 @@ exports.default = function (str) {
 	});
 };
 
-},{"react":106}],186:[function(require,module,exports){
+},{"react":106}],187:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45604,7 +45685,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],187:[function(require,module,exports){
+},{}],188:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45625,7 +45706,7 @@ var darken = function darken(color, amount) {
 
 exports.default = darken;
 
-},{}],188:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45651,7 +45732,7 @@ exports.default = function (func, timeout) {
     };
 };
 
-},{}],189:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45667,7 +45748,28 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],190:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var addLight = function addLight(color, amount) {
+  var cc = parseInt(color, 16) + amount;
+  var c = cc > 255 ? 255 : cc;
+  c = c.toString(16).length > 1 ? c.toString(16) : "0" + c.toString(16);
+  return c;
+};
+
+var lighten = function lighten(color, amount) {
+  color = color.indexOf("#") >= 0 ? color.substring(1, color.length) : color;
+  amount = parseInt(255 * amount / 100);
+  return color = "#" + addLight(color.substring(0, 2), amount) + addLight(color.substring(2, 4), amount) + addLight(color.substring(4, 6), amount);
+};
+
+exports.default = lighten;
+
+},{}],192:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45678,7 +45780,7 @@ exports.default = function (num, digits, z) {
 	return num.length >= digits ? num + '' : new Array(digits - (num + '').length + 1).join(z || '0') + (num + '');
 };
 
-},{}],191:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45713,7 +45815,7 @@ var _darken2 = _interopRequireDefault(_darken);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./darken":187}],192:[function(require,module,exports){
+},{"./darken":188}],194:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45742,7 +45844,7 @@ exports.default = function (text, style) {
 	});
 };
 
-},{"react":106}],193:[function(require,module,exports){
+},{"react":106}],195:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45770,7 +45872,7 @@ exports.default = function (text, style) {
 	});
 };
 
-},{"react":106}],194:[function(require,module,exports){
+},{"react":106}],196:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45784,7 +45886,7 @@ exports.default = function (str) {
   return str.charAt(0).toLowerCase() + str.substring(1);
 };
 
-},{}],195:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

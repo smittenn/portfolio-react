@@ -57,7 +57,7 @@
 		padding: 0 48px;
 	}
 
-	.left-rail {
+	.clip-wrapper__left {
 		width: 48px;
 	}
 
@@ -184,10 +184,10 @@
 	}
 
 	h3 {
-		font-size: px-to-rem(28px);
+		font-size: px-to-rem(30px);
 	}
 
 	h4 {
-		font-size: px-to-rem(20px);
+		font-size: px-to-rem(24px);
 	}
 }

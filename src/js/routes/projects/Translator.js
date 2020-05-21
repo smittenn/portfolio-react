@@ -79,6 +79,7 @@ class Translator extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
+		const heroBackgroundImage = this.props.isMobile ? 'mobile-5x8' : 'mobile-3x2';
 
 		return (
 			<article>
@@ -90,10 +91,8 @@ class Translator extends Component {
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .06),
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)
 						),
-						url(../assets/img/translator/mobile-16x9.jpg)
+						url(../assets/img/translator/${heroBackgroundImage}.jpg)
 					`, 
-					backgroundSize: this.props.isMobile ? '140% 85%' : '70% 120%',
-					backgroundPosition: this.props.isMobile ? '-160% 320%' : '150% 340%',
 					backgroundColor: brandPrimary,
 				}}/>
 				
@@ -146,8 +145,9 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock 
 					title="Collection"
-					description="I designed a system where technicians could upload content and organize them into a collection. A production assistant fresh off a shoot could upload their images, videos and audio altogether into a collection for easy access later."
-					media={{ type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					description1="We designed a system where technicians can upload content while organizing them into collections that are synced in the cloud."
+					description2=" A production assistant fresh off a shoot can upload their images, videos and audio altogether into a collection for easy access later."
+					media={{ type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9, caption: "The view for a sample collection with video and image content." }}
 					/>
 				</ScrollSection>
 
@@ -160,7 +160,8 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<ProjectSectionBlock 
 					title="Metadata"
-					description="Editing metadata for content was an important part in of the storage process. Allowing the technicians to edit metadata quickly and easily would lead to rich content. We designed a metadata editing panel and proposed 3 levels of metatdata completeness."
+					description1="Editing metadata for content was an important part in of the storage process. By allowing technicians to edit fields quickly and easily we would promote rich metadata platform wide."
+					description2="We designed a flyout panel for editing metadata and 3 stages of metatdata completeness. Completing all metadata for a piece of media was incentivized by making it easier to search for."
 					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/metadata-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking an uploaded media item opens the metadata drawer. Many metadata fields are detected on upload."/>
@@ -183,7 +184,8 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<ProjectSectionBlock 
 					title="Shell Record"
-					description="Together with the product team, we devised the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. After the shoot they could simply associate the content with the shell they had already entered the metadata for."
+					description1="Technicians working on the same programs would know the number of media items generated for each shoot. We devised the idea of a shell record which would enable a technician to edit metatdata for content prior to a shoot. "
+					description2="While planning their series they could set up their shell records in Translator. After the shoot they could simply associate the uploades with the shell they had already entered the metadata for."
 					media={{ type: 'image', src: '../assets/img/translator/shell-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					/>
 				</ScrollSection>
@@ -197,7 +199,8 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<ProjectSectionBlock 
 					title="Bulk Actions"
-					description="Bulk editing metadata was required for technicians who were managing large projects. I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields."
+					description1="Bulk editing metadata was a required workflow for technicians that managed large projects. Common fields across media in a collections could be edited simultaneously."
+					description2="I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields."
 					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/translator/bulk-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking the multi select button in the sticky secondary bar shows checkboxes and starts the bulk edit flow."/>
@@ -222,7 +225,7 @@ class Translator extends Component {
 								With the new Translator MAM, we imagine the unified system would be more efficient. It would reduce the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand SANs, as well as significantly reduce the communication between teams. It will also save a lot of waiting time when notifications are not sent in time.
 							</blockquote>
 							<blockquote>
-								Instead of archiving files to a storage system separate from their current brand SAN and then having to request restores, Prod MAM will allow users to store all assets on the cloud, regardless of whether they want to keep short-term or long-term. Before assets can be fully ingested, users will need to register the content by providing metadata.
+								Instead of archiving files to a storage system separate from their current brand SAN and then having to request restores, Prod MXF, regardless of whether they want to keep short-term or long-term. Before assets can be fully ingested, users will need to register the content by providing metadata.
 							</blockquote>
 							<blockquote>
 								Users can retrieve the content themselves without reaching out to the MAMs to have content restored and archived. There will be higher accountability and users will be able to own the assets more. With the establishment of content registration and an enforced naming convention, users will be able to search keywords against these assets.

@@ -25,13 +25,13 @@ import { detectWindowHeight } from "./actions/windowHeight"
 
 class App extends Component {
 	componentDidMount() {
-		window.addEventListener('resize', this.props.detectMobile);
-		document.addEventListener('scroll', this.props.detectWindowHeight);
+		window.addEventListener('resize', () => { this.props.detectMobile(); this.props.detectWindowHeight(); });
+		// document.addEventListener('scroll', this.props.detectWindowHeight);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('resize', this.props.detectMobile);
-		document.removeEventListener('scroll', this.props.detectWindowHeight);
+		window.removeEventListener('resize', () => { this.props.detectMobile(); this.props.detectWindowHeight(); });
+		// document.removeEventListener('scroll', this.props.detectWindowHeight);
 	}
 
 	render() {

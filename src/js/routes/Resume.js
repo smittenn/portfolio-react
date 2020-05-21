@@ -63,22 +63,19 @@ class Resume extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					<div className="left-rail">
-						<TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink>
-					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-9 grid__item--col-6-desktop grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
-								<h3 className="mb0">{[`Eric C. Smith is a digital` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
+								<h3 className="mb0">{[`Eric C. Smith is a digital ` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0" style={{ minHeight: '48px', alignItems: 'center', width: '100%' }}>
 										<hr/>
-										<TextLink hideUnderline><a href="mailto:hi@ericsmithux.com">hi@ericsmithux.com</a></TextLink>
+										<TextLink><a href="mailto:hi@ericsmithux.com">hi@ericsmithux.com</a></TextLink>
 										<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5> 
-										<TextLink hideUnderline><a href="call:5087334510">+15087334510</a></TextLink>
+										<TextLink><a href="call:5087334510">+15087334510</a></TextLink>
 										<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5>
 										 Brooklyn, NY
 										<hr/>
@@ -88,12 +85,12 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">August 2019 - Present. New York, NY.</blockquote>
-									<h4 className="mb0">Google Design <span className="outline">•</span> UX/Front-End Developer</h4>
-									<blockquote>HTML, CSS, Javascript, Python, Django</blockquote>
+									<h4 className="mb0">Google Design <span className="outline">•</span> UX Engineer</h4>
+									<blockquote>HTML, CSS, Javascript, Python, Django, Wagtail</blockquote>
 									<blockquote className="mb0"><ul className="ls">
 										<li>Lead developer on design.google, Google Design's editorial platform and hub for all things design at Google.</li>
 										<li>Rapidly prototyped and deployed new front-end features for our article page.</li>
-										<li>Dramatically improved usability of CMS experience.</li>
+										<li>Improved usability of our CMS for content editors.</li>
 									</ul></blockquote>
 								</div>
 							</div>

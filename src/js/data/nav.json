@@ -12,7 +12,15 @@
 				{
 					"name": "Google Design",
 					"items": [
-						{ "name": "Best of 2019", "to": "//design.google/library/google-design-2019" },
+						{
+							"name": "Best of 2019",
+							"to": "//design.google/library/google-design-2019",
+							"media": {
+								"src": "../assets/img/google-design/best-of-2019-3x2.jpg",
+								"aspectRatioWidth": 3,
+								"aspectRatioHeight": 2,
+							}
+						},
 						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
 						{ "name": "Google Design", "to": "//design.google" }
@@ -21,18 +29,57 @@
 				{
 					"name": "J&J Design Studio",
 					"items": [
-						{ "name": "Home Intranet", "to": "/jnj-home" },
-						{ "name": "Medical Devices", "to": "/jnj-mdc" },
+						{
+							"name": "Home Intranet",
+							"to": "/jnj-home",
+							"media": {
+								"src": "../assets/img/jnj-home/onboarding-mobile-16x9.png",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
+						{
+							"name": "Medical Devices",
+							"to": "/jnj-mdc",
+							"media": {
+								"src": "../assets/img/jnj-mdc/ladies.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
 						/*{ "name": "Allergy Cast App", "to": "//snack.expo.io/@esmitten/allergy-cast" },*/
 					]
 				},
 				{
 					"name": "NBCUX Lab",
 					"items": [
-						{ "name": "American Made", "to": "/american-made" },
-						/*{ "name": "Rationalized Player", "to": "/rationalized-player" },*/
-						{ "name": "V.ai Player", "to": "/vai" },
-						{ "name": "Translator", "to": "/translator" },
+						{
+							"name": "American Made",
+							"to": "/american-made",
+							"media": {
+								"src": "../assets/img/american-made/columbia.gif",
+								"aspectRatioWidth" : 2,
+								"aspectRatioHeight" : 1,
+							},
+						},
+						{
+							"name": "V.ai Player",
+							"to": "/vai",
+							"media": {
+								"src": "../assets/img/vai/mobile-16x9.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
+						{
+							"name": "Translator",
+							"to": "/translator",
+							"media": {
+								"src": "../assets/img/translator/mobile-16x9.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
 						{ "name": "NBCUX Portfolio", "to": "//portfolio.nbcuxlab.com" },
 						{ "name": "Release Notes", "to": "//release-notes.nbcuxlab.com/" },
 					]
@@ -40,14 +87,38 @@
 				{
 					"name": "Wrap Media",
 					"items": [
-						{ "name": "Wrap Interactions", "to": "/micro-app-interactions" },
-						{ "name": "Wrap Templates", "to": "/micro-app-templates" },
+						{
+							"name": "Wrap Interactions",
+							"to": "/micro-app-interactions",
+							"media": {
+								"src": "../assets/img/card-components/share-animation-zoomed-out.gif",
+								"aspectRatioWidth": 4,
+								"aspectRatioHeight": 3,
+							}
+						},
+						{
+							"name": "Wrap Templates",
+							"to": "/micro-app-templates",
+							"media": {
+								"src": "../assets/img/card-components/perspective-cards.jpg",
+								"aspectRatioWidth": 8,
+								"aspectRatioHeight": 5,
+							}
+						},
 					]
 				},
 				{
 					"name": "Perforce",
 					"items": [
-						{ "name": "Helix Sync", "to": "/perforce" },
+						{
+							"name": "Helix Sync",
+							"to": "/perforce",
+							"media": {
+								"src": "../assets/img/perforce/banner.jpg",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
 						{ "name": "Helix Cloud", "to": "//www.perforce.com/products/helix-core" },
 					]
 				},
