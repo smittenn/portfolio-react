@@ -12,6 +12,7 @@ import Image from '../components/Image'
 import TextLink from '../components/TextLink'
 
 import splitLetter from '../services/splitLetter'
+import splitWord from '../services/splitWord'
 
 class ProjectCard extends Component {
 
@@ -52,7 +53,11 @@ class ProjectCard extends Component {
 				</div>
 			) : null }
 			<div className="project-card__bottom" onMouseEnter={() => { this.setIndexHovered(i); }} onMouseLeave={this.handleMouseLeave}>
-				<TextLink hideUnderline><h2 className="mb0">{item.name}</h2></TextLink>
+				<TextLink hideUnderline>
+					<h2 className="mb0">
+						{ splitWord(item.name, {}, classNames({ "outline": this.state.hoveredIndex != i })) }
+					</h2>
+				</TextLink>
 			</div>
 			{/*
 			<div className="project-card__tags">

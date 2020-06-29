@@ -56,7 +56,7 @@ $baseclass: nav-takeover;
 			pointer-events: none;
 			transition: none;
 			margin: 0;
-			line-height: 1.1;
+			line-height: 1.3;
 
 			&.hovered {
 				color: transparent;
@@ -68,6 +68,8 @@ $baseclass: nav-takeover;
 			white-space: pre;
 			height: 100%;
 			border: none;
+			display: flex;
+			align-items: center;
 		}
 
 		hr {
@@ -311,10 +313,13 @@ $baseclass: nav-takeover;
 			}
 
 			h1, h2, h3, h5, h4 {
-				margin-top: 9px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 			}
 			
 			a {
+				width: 100%;
 				display: flex;
 				align-items: center;
 				white-space: normal;

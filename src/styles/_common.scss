@@ -56,11 +56,6 @@ video {
 	width: 100%;
 }
 
-figcaption {
-	font-size: 13px;
-	margin-top: 24px;
-}
-
 iframe {
 	position: relative;
 	width: 0;
@@ -100,12 +95,6 @@ section {
 
 	img {
 		width: 100%;
-	}
-
-	h1, h2, h3, h4, h5, h6, p, blockquote, a {
-		.outline {
-			-webkit-text-stroke-color: $brand-red;
-		}
 	}
 
 	.spacer {
@@ -157,6 +146,12 @@ section {
 		transform: translate(-24px, 0);
 	}
 
+	// h1, h2, h3, h4, h5, h6, p, blockquote, a {
+		.outline {
+			-webkit-text-stroke-color: $brand-black;
+		}
+	// }
+
 	&--black {
 		section {
 			background-color: $brand-black;
@@ -169,10 +164,10 @@ section {
 
 		h1, h2, h3, h4, h5, h6, p, blockquote, a, figcaption {
 			color: $brand-white;
+		}
 
-			.outline {
-				-webkit-text-stroke-color: $brand-white;
-			}
+		.outline {
+			-webkit-text-stroke-color: $brand-white;
 		}
 
 		hr {

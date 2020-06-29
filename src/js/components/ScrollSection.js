@@ -19,22 +19,30 @@ import palette from "../services/palette"
 import pad from "../services/pad"
 import splitLetter from "../services/splitLetter"
 
+const EASING = "easeOutQuint"
+const DURATION = 1200
+
 class ScrollSection extends Component {
 
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			easing: "easeOutQuint",
-			duration: 1200
+			homeButtonIsHovering: false,
 		}
 	}
 
 	scrollTo = (element) => {
 		scroller.scrollTo(element, {
-			duration: this.state.duration,
-			smooth: this.state.easing,
+			duration: DURATION,
+			smooth: EASING,
 		});
+	}
+
+	toggleHomeButtonHovering = () => {
+		this.setState({ 
+			homeButtonIsHovering: !this.state.homeButtonIsHovering
+		})
 	}
 
 	render() {
@@ -64,7 +72,12 @@ class ScrollSection extends Component {
 			<div className="clip-wrapper__left" style={{ minHeight: this.props.windowHeight }}>
 				<NavLink to="/">
 					<TextLink hideLine>
-						<h4 className="uppercase mb0 light scale-up scale-up--sm">•</h4>
+						<h4 style={{ fontFamily: 'sans-serif' }} className="uppercase mb0" onMouseEnter={ this.toggleHomeButtonHovering } onMouseLeave={ this.toggleHomeButtonHovering }>
+							<span 
+							className={classNames({ "outline": this.state.homeButtonIsHovering })}>
+								•
+							</span>
+						</h4>
 					</TextLink>
 				</NavLink>
 				{ sections.length > 1 ? (
@@ -100,7 +113,7 @@ class ScrollSection extends Component {
 							<div className="grid">
 								<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
 								<div className="grid__item--col-10 grid__item--col-12-medium">
-									<p className="scrolling-section__number mb0">{splitLetter(pad((sections.indexOf(name) + 1), 2) + ".")}</p>
+									<h6 className="scrolling-section__number uppercase mb0">{splitLetter(pad((sections.indexOf(name) + 1), 2) + ".")}</h6>
 								</div>
 							</div>
 						) : null }

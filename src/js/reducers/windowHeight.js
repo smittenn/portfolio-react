@@ -1,7 +1,7 @@
-const windowHeight = (state = window.innerHeight, action) => {
+const windowHeight = (state = window.innerHeight + 1, action) => {
 	switch (action.type) {
 		case 'DETECT_WINDOW_HEIGHT':
-			return Math.min(state, window.innerHeight)
+			return window.innerHeight + 1
 		default:
 			return state
 	}

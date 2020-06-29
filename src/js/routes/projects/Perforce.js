@@ -100,7 +100,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `At`, <span><span className="outline">Perforce </span></span>, `our product helped designers version their assets.` ]}
+					headerText={[ <span><span className="outline">Helix </span></span>, <span><span className="outline">Sync </span></span>, ` helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
 

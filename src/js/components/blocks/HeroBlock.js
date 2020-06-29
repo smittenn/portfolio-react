@@ -22,7 +22,7 @@ export default class HeroBlock extends Component {
 
 	render() {
 
-		const { headerText} = this.props;
+		const { headerText } = this.props;
 
 		const classnames = classNames({
 			"grid": true,

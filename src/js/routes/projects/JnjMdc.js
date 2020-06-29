@@ -170,7 +170,7 @@ class JnjMdc extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					{<ProjectSectionBlock 
 					title="Navigation"
-					description1="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio."
+					description1="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of specialties, products, procedures and services available in the J&J portfolio of companies."
 					description2="The navigation design needed to be flexible enough to work with as few as 1 item and as many as 100 items. The sliding underline shows your current active menu."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 

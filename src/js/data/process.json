@@ -2,9 +2,9 @@
 	"data": [
 			{
 				"color": "brand-red",
-				"title": "Discover",
+				"title": "Explore",
 				"iconName": "binoculars",
-				"body": "Interview users to understand their current process and workflow.",
+				"body": "Research the problem and interview target users to learn their pain points.",
 				"stepArcPath": "M 50 1 A 49 49 0 0 1 84.64823227814082 15.351767721859176",
 				"circleArcPath": "M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"
 			},
@@ -25,15 +25,15 @@
 				"circleArcPath": "M 95.27009709305305 31.2485118141106 A 49 49 0 0 1 95.27009709305305 68.7514881858894"
 			},
 			{
-				"color": "brand-purple",
+				"color": "brand-green",
 				"title": "Prototype",
 				"iconName": "prototype",
-				"body": "Create a responsive and clickable coded prototype built with HTML, CSS, and JavaScript.",
+				"body": "Create a responsive and clickable coded prototype built with HTML, CSS, and Javascript.",
 				"stepArcPath": "M 84.64823227814082 84.64823227814082 A 49 49 0 0 1 50 99",
 				"circleArcPath": "M 95.27009709305305 68.7514881858894 A 49 49 0 0 1 68.7514881858894 95.27009709305305"
 			},
 			{
-				"color": "brand-green",
+				"color": "brand-teal",
 				"title": "User Testing",
 				"iconName": "conversation",
 				"body": "Test the prototype using Usability Testing methods to gather thorough feedback.",
@@ -41,7 +41,7 @@
 				"circleArcPath": "M 68.7514881858894 95.27009709305305 A 49 49 0 0 1 31.248511814110604 95.27009709305305"
 			},
 			{
-				"color": "brand-pink",
+				"color": "brand-blue",
 				"title": "Journey Mapping",
 				"iconName": "directions",
 				"body": "Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.",
@@ -50,7 +50,7 @@
 
 			},
 			{
-				"color": "brand-blue",
+				"color": "brand-pink",
 				"title": "Refine",
 				"iconName": "filter",
 				"body": "Refine and iterate on the design to further improve the userʼs experience.",
@@ -58,7 +58,7 @@
 				"circleArcPath": "M 4.729902906946947 68.7514881858894 A 49 49 0 0 1 4.72990290694694 31.24851181411063"
 			},
 			{
-				"color": "brand-teal",
+				"color": "brand-purple",
 				"title": "Iterate",
 				"iconName": "clipboard",
 				"body": "Deliver changes to the prototype and backlog improvements for the future.",

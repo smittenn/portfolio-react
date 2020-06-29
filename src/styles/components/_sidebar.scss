@@ -20,6 +20,10 @@ $baseclass: sidebar;
 		.#{$baseclass}__dash {
 			transform-origin: left;
 		}
+
+		.#{$baseclass}__border {
+			-webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, transparent);
+		}
 	}
 
 	&--right {
@@ -32,6 +36,10 @@ $baseclass: sidebar;
 
 		.#{$baseclass}__label {
 			width: 96px;
+		}
+
+		.#{$baseclass}__border {
+			-webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, transparent);
 		}
 	}
 
@@ -121,7 +129,6 @@ $baseclass: sidebar;
 		height: 1px;
 		background: rgba($brand-black, .06);
 		opacity: 0;
-		-webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, transparent);
 	}
 
 	&__border--top {
@@ -252,13 +259,13 @@ $baseclass: sidebar;
 
 			.#{$baseclass}__number {
 			    // margin: 0 16px 0 24px;
+			  }
 			}
-		}
-		.#{$scrolling-section-classname}--black & {
-			&--open {
-				.#{$baseclass}__inner {
-					background: $brand-black;
-				}
+			.#{$scrolling-section-classname}--black & {
+				&--open {
+					.#{$baseclass}__inner {
+						background: $brand-black;
+					}
 				// background-image: linear-gradient(-90deg, rgba($brand-black, .8), transparent);
 			}
 		}

@@ -67,7 +67,7 @@ class Resume extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
-								<h3 className="mb0">{[`Eric C. Smith is a digital ` , <span key={0}><span className="outline">Interactive&nbsp;</span></span>, <span key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h3>
+								<h2 className="mb0">{[`Eric C. Smith is an ` , <span className="inherit--brand-red" key={0}><span className="outline">Interactive&nbsp;</span></span>, <span className="inherit--brand-red" key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h2>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
@@ -84,8 +84,8 @@ class Resume extends Component {
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
-									<blockquote className="mb0">August 2019 - Present. New York, NY.</blockquote>
-									<h4 className="mb0">Google Design <span className="outline">•</span> UX Engineer</h4>
+									<blockquote className="mb0">August 2019 – Present. New York, NY.</blockquote>
+									<h4 className="mb0">Google Design <span className="inherit--brand-red"><span className="outline">•</span></span> UX Engineer</h4>
 									<blockquote>HTML, CSS, Javascript, Python, Django, Wagtail</blockquote>
 									<blockquote className="mb0"><ul className="ls">
 										<li>Lead developer on design.google, Google Design's editorial platform and hub for all things design at Google.</li>
@@ -97,7 +97,7 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">July 2018 – August 2019. New York, NY.</blockquote>
-									<h4 className="mb0">J&J Design Studio <span className="outline">•</span> Sr. Interaction Designer</h4>
+									<h4 className="mb0">J&J Design Studio <span className="inherit--brand-red"><span className="outline">•</span></span> Sr. Interaction Designer</h4>
 									<blockquote>Sketch, Invision, Webflow, HTML, CSS, React, Javascript</blockquote>
 									<blockquote className="mb0">
 										<ul className="ls">
@@ -110,7 +110,7 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">May 2017 – June 2018. New York, NY.</blockquote>
-									<h4 className="mb0">NBCUX Lab <span className="outline">•</span> UI/UX Designer & Developer</h4>
+									<h4 className="mb0">NBCUX Lab <span className="inherit--brand-red"><span className="outline">•</span></span> UI/UX Designer & Developer</h4>
 									<blockquote>Adobe CC, HTML, CSS, Javascript, React</blockquote>
 									<blockquote className="mb0"><ul className="ls">
 										<li>Designed and developed the site for Universal Pictures’ film,
@@ -126,7 +126,7 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">September 2015 – November 2016.  San Francisco, CA.</blockquote>
-									<h4 className="mb0">Wrap Media <span className="outline">•</span> UI/UX Designer & Developer</h4>
+									<h4 className="mb0">Wrap Media <span className="inherit--brand-red"><span className="outline">•</span></span> UI/UX Designer & Developer</h4>
 									<blockquote>Sketch, Principle, Adobe CC, HTML, CSS, Javascript</blockquote>
 									<blockquote className="mb0"><ul className="ls">
 										<li>Created mobile web experiences for external clients with a focus on interaction design.</li>
@@ -139,7 +139,7 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">May 2015 – August 2015.  Alameda, CA.</blockquote>
-									<h4 className="mb0">Perforce <span className="outline">•</span> UX Designer & Researcher</h4>
+									<h4 className="mb0">Perforce <span className="inherit--brand-red"><span className="outline">•</span></span> UX Designer & Researcher</h4>
 									<blockquote>Sketch, Adobe CC, Invision App, Proto.io</blockquote>
 									<blockquote className="mb0"><ul className="ls">
 										<li>Applied Lean UX principles across the the organization’s product suite from a centralized design team</li>
@@ -152,7 +152,7 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">May 2014 – May 2015. San Jose, CA.</blockquote>
-									<h4 className="mb0">Cisco <span className="outline">•</span> User Interface Engineer</h4>
+									<h4 className="mb0">Cisco <span className="inherit--brand-red"><span className="outline">•</span></span> User Interface Engineer</h4>
 									<blockquote>HTML, CSS, Javascript, Backbone.js, Node.js, D3.js</blockquote>
 									<blockquote className="mb0"><ul className="ls">
 									  <li>Engineer on a small team focused on creating a Backbone.js web application that allowed our users to visualize traffic on their Wide Area Network</li>
@@ -166,14 +166,14 @@ class Resume extends Component {
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">March 2015 – May 2015. San Francisco, CA.</blockquote>
-									<h4 className="mb0">General Assembly <span className="outline">•</span> UX Immersive Program</h4>
+									<h4 className="mb0">General Assembly <span className="inherit--brand-red"><span className="outline">•</span></span> UX Immersive Program</h4>
 									<blockquote className="mb0">UX Design Immersive Program</blockquote>
 								</div>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
 									<blockquote className="mb0">September 2010 — May 2014. Amherst, MA</blockquote>
-									<h4 className="mb0">Computer Science <span className="outline">•</span> Bachelor of Science</h4>
+									<h4 className="mb0">Computer Science <span className="inherit--brand-red"><span className="outline">•</span></span> Bachelor of Science</h4>
 									<blockquote className="mb0">University of Massachusetts Amherst</blockquote>
 								</div>
 							</div>

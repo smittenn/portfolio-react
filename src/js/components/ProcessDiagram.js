@@ -84,9 +84,9 @@ class ProcessDiagram extends Component {
 					</svg>
 				</div>
 				<div className="step__info">
-					<p className="step__text mb0">
+					<h6 className="step__text mb0">
 						{ pad(i + 1, 2) + '. ' }
-					</p>
+					</h6>
 					<h5 className="step__text">
 						{ item.title }
 					</h5>

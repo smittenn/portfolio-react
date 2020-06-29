@@ -16,7 +16,13 @@ $step-classname: "step";
 		transform: translate(-50%, -55%);
 		text-align: center;
 		opacity: 1;
+		width: 66.6667%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
+		blockquote {
+		}
 		> * {
 			justify-content: center;
 		}
@@ -166,6 +172,13 @@ $step-classname: "step";
 			}
 		}
 
+		&:nth-child(-n + 2) {
+			.step__info {
+				bottom: 0;
+				left: 0;
+			}
+		}
+
 		&:nth-child(1) {
 			top: 1%;
 			left: 50%;
@@ -182,9 +195,14 @@ $step-classname: "step";
 			left: 85.35533906%;
 
 			.step__info {
-				bottom: 0;
-				left: 0;
 				transform: translate(25%, -25%);
+			}
+		}
+
+		&:nth-child(n + 3) {
+			.step__info {
+				top: 0;
+				left: 0;
 			}
 		}
 
@@ -193,8 +211,6 @@ $step-classname: "step";
 			left: 99%;
 
 			.step__info {
-				top: 0;
-				left: 0;
 				transform: translate(25%, 0);
 			}
 		}
@@ -204,8 +220,6 @@ $step-classname: "step";
 			left: 85.35533906%;
 
 			.step__info {
-				top: 0;
-				left: 0;
 				transform: translate(25%, 25%);
 			}
 		}
@@ -215,8 +229,6 @@ $step-classname: "step";
 			left: 50%;
 
 			.step__info {
-				top: 0;
-				left: 0;
 				transform: translate(25%, 50%);
 			}
 		}
@@ -226,10 +238,7 @@ $step-classname: "step";
 			left: 14.64466094%;
 
 			.step__info {
-				top: 0;
-				right: 0;
 				transform: translate(-25%, 25%);
-				text-align: right;
 			}
 		}
 
@@ -238,10 +247,7 @@ $step-classname: "step";
 			left: 1%;
 
 			.step__info {
-				top: 0;
-				right: 0;
 				transform: translate(-25%, -25%);
-				text-align: right;
 			}
 		}
 
@@ -250,16 +256,19 @@ $step-classname: "step";
 			left: 14.64466094%;
 
 			.step__info {
-				top: 0;
-				right: 0px;
 				transform: translate(-25%, -50%);
-				text-align: right;
 			}
 		}
 
 		&:nth-child(n + 6) {
 			.step__text {
 				transform: translateX(100%);
+			}
+			.step__info {
+				top: 0;
+				right: 0;
+				left: auto;
+				text-align: right;
 			}
 		}
 
@@ -284,8 +293,8 @@ $step-classname: "step";
 
 
 	@media screen and (max-width: $bp-medium) {
-		width: 105%;
-		transform: translateX(-2.5%);
+		width: 125%;
+		transform: translateX(-10%);
 
 		.title {
 			width: 90%;

@@ -5,14 +5,14 @@
 	}
 	100% {
 		opacity: 1;
-		transform: none;
+		transform: translate3d(0,-8%,0);
 	}
 }
 
 @keyframes ghostOut {
 	0% {
 		// opacity: 1;
-		transform: none;
+		transform: translate3d(0,-18px,0);
 	}
 	100% {
 		// opacity: 0;
@@ -151,7 +151,7 @@ section {
 				> span {
 					transition: transform $duration-long $easing1, opacity $duration-long $easing1;
 					opacity: 1;
-					transform: none;
+					transform: translate3d(0,-8%,0);
 				}
 			} 
 		}

@@ -40,7 +40,7 @@ class Homepage extends Component {
 				"hello",
 				"about",
 				"process",
-				"projects",
+				"works",
 				"social",
 			],
 		}
@@ -158,14 +158,18 @@ class Homepage extends Component {
 					{<ParallaxBackground>
 						<div className="grid">
 							<div className="grid__item grid__item--col-6 grid__item--col-2-medium"/>
-							<div className="grid__item grid__item--col-6 grid__item--col-10-medium">
+							{/*<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium shift-left--sm">
+															<div className="spacer spacer__lg"/>
+															<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+														</div>*/}
+							<div className="grid__item grid__item--col-5 grid__item--col-10-medium">
 								<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 							</div>
 						</div>
 					</ParallaxBackground>}
 
 					<HeroBlock
-					headerText={[`Eric C. Smith is a digital`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}
+					headerText={[`Eric C. Smith is an`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}
 					/>
 
 				</ScrollSection>
@@ -178,18 +182,23 @@ class Homepage extends Component {
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							<h2>{splitWord("Hello There")}</h2>
-							<blockquote className="">
-								{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
-							</blockquote>
-							<h5 className="mb0">
-								<TextLink isBlack hideUnderline>
-									<NavLink to="about-me">{splitWord('Learn More')}</NavLink>
-								</TextLink>
-							</h5>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<div className="grid__row mb0">
+								<div className="grid__item grid__item--col-12 grid__item--col-10-medium">
+									<h2>{splitWord("Hello There")}</h2>
+								</div>
+								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+									<blockquote className="">
+										{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+									</blockquote>
+									<h5 className="mb0">
+										<TextLink isBlack hideUnderline>
+											<NavLink to="about-me">{splitWord('Learn More')}</NavLink>
+										</TextLink>
+									</h5>
+								</div>
+							</div>
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
 							<div className="grid__row mb0">
 								{/*<div className="grid__item grid__item--col-6">
@@ -216,23 +225,25 @@ class Homepage extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
-							{/*<div className="spacer spacer__sm"/>*/}
-							<h2>{splitWord("Code × Design")}</h2>
-							<blockquote className="">
-								{splitWord(`I specialize in HTML prototypes, design systems, motion graphics and front-end code. I prefer to prototype in the browser. I believe good process is key to creating successful designs.`)}
-							</blockquote>
-							<h5 className="mb0">
-								<TextLink isBlack hideUnderline>
-									<NavLink to="process">{splitWord('Learn More')}</NavLink>
-								</TextLink>
-							</h5>
+						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+							<div className="grid__row mb0">
+								<div className="grid__item grid__item--col-12 grid__item--col-10-medium">
+									<h2>{splitWord("Code × Design")}</h2>
+								</div>
+								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+									<blockquote className="">
+										{splitWord(`I specialize in HTML prototypes, design systems, motion graphics and front-end code. I prefer to prototype in the browser. I believe good process is key to creating successful designs.`)}
+									</blockquote>
+									<h5 className="mb0">
+										<TextLink isBlack hideUnderline>
+											<NavLink to="process">{splitWord('Learn More')}</NavLink>
+										</TextLink>
+									</h5>
+								</div>
+							</div>
 						</div>
-						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
-							{<ProcessDiagram/>}
-							{/* processPreview*/}
-							{/*<h4>...</h4>*/}
+							<ProcessDiagram/>
 						</div>
 					</div>
 				</ScrollSection>
@@ -247,7 +258,7 @@ class Homepage extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<h4>Select Projects</h4>
+							<h4>Select Works</h4>
 						</div>
 					</div>
 					<div className="grid">
@@ -263,7 +274,7 @@ class Homepage extends Component {
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<h5 className="">
 								<TextLink isBlack hideUnderline>
-									<NavLink to="work">See All Projects</NavLink>
+									<NavLink to="work">See All Works</NavLink>
 								</TextLink>
 							</h5>
 						</div>

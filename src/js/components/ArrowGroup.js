@@ -35,10 +35,10 @@ class ArrowGroup extends Component {
 		return (
 			<div className={classnames}>
 				<div className="arrow-group__first">
-					<Icon icon='arrow' size={42}/>
+					<Icon icon='arrow' size={40}/>
 				</div>
 				<div className="arrow-group__second">
-					<Icon icon='arrow' size={42}/>
+					<Icon icon='arrow' size={40}/>
 				</div>
 				<div className="arrow-group__links">
 					{ children }

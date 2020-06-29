@@ -3,7 +3,7 @@ const mobileReducer = (state = (window.innerWidth <= 800), action) => {
 		case 'DETECT_MOBILE':
 			return (window.innerWidth <= 800)
 		default:
-			return (window.innerWidth <= 800)
+			return state
 	}
 }
 

@@ -11,8 +11,7 @@
 @import 'z-index.scss';
 @import 'fonts.scss';
 @import 'icons.scss';
-@import 'grid.scss';
-@import 'color.scss';
+@import 'grid.scss';	
 @import 'typography.scss';
 @import 'common.scss';
 @import 'animation.scss';
@@ -25,3 +24,4 @@
 
 /* Override Classes */
 @import 'overrides.scss';
+@import 'color.scss';

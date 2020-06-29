@@ -19,6 +19,8 @@ import MicroAppInteractions from './projects/MicroAppInteractions'
 import MicroAppTemplates from './projects/MicroAppTemplates'
 import Perforce from './projects/Perforce'
 
+import { detectWindowHeight } from "../actions/windowHeight"
+
 const routes = (
 	<main>
 		<Switch>
@@ -44,5 +46,6 @@ const routes = (
 		<Cursor/>
 	</main>
 )
+
 
 export default routes

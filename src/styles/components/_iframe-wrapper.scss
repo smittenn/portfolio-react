@@ -26,6 +26,14 @@ $baseclass: iframe-wrapper;
 		// }
 	}
 
+	.#{$baseclass}__main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border-top: solid 1px rgba($brand-black, .12);
+	}
+
 	.icon-arrow {
 		transform: rotate(-45deg);
 	}
@@ -33,6 +41,10 @@ $baseclass: iframe-wrapper;
 	.#{$scrolling-section-classname}--black & {
 		background: $brand-black;
 		border-color: rgba($brand-white, .12);
+
+		.#{$baseclass}__main {
+			border-color: rgba($brand-white, .12);
+		}
 	}
 
 	.#{$scrolling-section-classname}--grey & {

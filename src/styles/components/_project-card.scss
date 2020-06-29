@@ -20,6 +20,7 @@ $baseclass: project-card;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		color: transparent;
 		// @include zIndexClose;
 	}
 
@@ -41,7 +42,7 @@ $baseclass: project-card;
 	// }
 
 	&__bottom {
-		opacity: 0.24;
+		opacity: 0.6;
 		display: block;
 		display: flex;
 		justify-content: flex-start;
@@ -75,12 +76,16 @@ $baseclass: project-card;
 	}
 
 	&--hovered {
+
 		.#{$baseclass}__asset {
 			opacity: 0.9;
 		}
 		.#{$baseclass}__bottom {
-			transform: none;
 			opacity: 1;
+
+			h2, h3, h4, h5, h6 {
+				color: $brand-white;
+			}
 		}
 	}
 

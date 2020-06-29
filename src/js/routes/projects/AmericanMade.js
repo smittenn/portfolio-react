@@ -109,7 +109,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `The site for`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `told the story of Barry Seal.`]}
+					headerText={[ `The`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `site told the story of Barry Seal.`]}
 					/>
 				</ScrollSection>
 
@@ -182,7 +182,8 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock 
 					title="Preloader"
-					description1="Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film. After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”."
+					description1="Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film."
+					description2="After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”."
 					media={{ type: "codepen", slug: "RyGNYm", title: "Preloader: American Made Film Site", height: 720  }}/>
 				</ScrollSection>
 
@@ -195,7 +196,8 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(3); }}>
 					<ProjectSectionBlock 
 					title="Cinemagraphs"
-					description1="To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast. Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."
+					description1="To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast."
+					description2="Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."
 					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
@@ -215,7 +217,8 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<ProjectSectionBlock 
 					title="Runway Navigation"
-					description1="I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off. The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
+					description1="I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off."
+					description2="The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
 					media={{ type: "codepen", slug: "qoQajr", title: "Navigation: American Made Film Site", height: 625  }}/>
 				</ScrollSection>
 
@@ -228,7 +231,8 @@ class AmericanMade extends Component {
 				>
 					<ProjectSectionBlock 
 					title="Video Gallery"
-					description1="To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content. This way for later film sites that we develop we could simply re-style the player and plug in new content."
+					description1="To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content."
+					description2="This way for later film sites that we develop we could simply re-style the player and plug in new content."
 					media={{ type: "codepen", slug: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625  }}/>
 				</ScrollSection>
 
@@ -240,7 +244,8 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<ProjectSectionBlock 
 					title="Parallax Story"
-					description1="In my quest to unify content and interface, I wanted to create an interactive way to tell the plot of American Made in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way. \n\n I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion."
+					description1="In my quest to unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way."
+					description2="I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion."
 					media={{ type: "codepen", slug: "ZoBVbY", title: "Story: American Made Film Site", height: 625  }}/>
 
 				</ScrollSection>

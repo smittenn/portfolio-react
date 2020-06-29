@@ -7,6 +7,7 @@ import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 // import IntersectionVisible from "react-intersection-visible"
 
 import Icon from "../components/Icon"
+import TextLink from "../components/TextLink"
 
 class IFrame extends Component {
 
@@ -21,17 +22,20 @@ class IFrame extends Component {
 	}
 
 	componentDidMount() {
-		const observer = new IntersectionObserver(
+		this.observer = new IntersectionObserver(
 			([entry]) => this.setState({
 				src: entry.intersectionRatio > 0 ? this.props.src : undefined,
 			})
 		);
 
 		if (this.ref.current) {
-			observer.observe(this.ref.current);
+			this.observer.observe(this.ref.current);
 		}
 	}
 
+	componentWillUnmount() {
+		this.observer.unobserve(this.ref.current);
+	}
 
 	setSource = () => {
 		this.setState({
@@ -70,6 +74,11 @@ class IFrame extends Component {
 
 		// console.log(height);
 
+		const style = {
+			width: this.ref.current ? this.ref.current.clientWidth : 0,
+			height: height
+		}
+
 		return (
 			<div ref={this.ref} className="iframe-wrapper">
 				<div className="iframe-wrapper__controls">
@@ -81,7 +90,16 @@ class IFrame extends Component {
 						<Icon icon='arrow' size={16}/>
 					</a>
 				</div>
-				<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
+				{ this.state.src == undefined ? (
+					<div className="iframe-wrapper__main" style={style}>
+						<h5><Icon icon='refresh' size={24}/></h5>
+						<TextLink onClick={this.refreshSource} onMouseEnter={this.props.setCursorHover} onMouseLeave={this.props.setCursorUnhover}>
+							<h5 className="mb0">Load Frame</h5>
+						</TextLink>
+					</div>
+				) : (
+					<iframe src={this.state.src} width={this.ref.current ? this.ref.current.clientWidth : null} height={height}/>
+				)}
 			</div>
 		);	
 	}

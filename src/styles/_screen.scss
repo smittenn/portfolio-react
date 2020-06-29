@@ -140,15 +140,15 @@
 
 @media screen and (max-width: $bp-small) {
 	h1 {
-		font-size: px-to-rem(48px);
+		font-size: px-to-rem(56px);
 	}
 
 	h2 {
-		font-size: px-to-rem(40px);
+		font-size: px-to-rem(48px);
 	}
 
 	h3 {
-		font-size: px-to-rem(36px);
+		font-size: px-to-rem(40px);
 	}
 
 	h4 {
@@ -156,12 +156,12 @@
 	}
 	
 	h5 {
-		font-size: px-to-rem(15px);
+		font-size: px-to-rem(16px);
 	}
 
-	h6 {
-		font-size: px-to-rem(13px);
-	}
+	// h6 {
+	// 	font-size: px-to-rem(12px);
+	// }
 		
 	blockquote {
 		font-size: px-to-rem(19px);
@@ -176,18 +176,18 @@
 
 @media screen and (max-width: $bp-xsmall) {
 	h1 {
-		font-size: px-to-rem(38px);
+		font-size: px-to-rem(48px);
 	}
 
 	h2 {
-		font-size: px-to-rem(34px);
+		font-size: px-to-rem(44px);
 	}
 
 	h3 {
-		font-size: px-to-rem(30px);
+		font-size: px-to-rem(40px);
 	}
 
 	h4 {
-		font-size: px-to-rem(24px);
+		font-size: px-to-rem(28px);
 	}
 }

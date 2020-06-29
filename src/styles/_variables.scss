@@ -4,19 +4,21 @@ $bp-medium: 800px;
 $bp-small: 480px;
 $bp-xsmall: 320px;
 
-$rem-base: 12px;
+$rem-base: 8px;
 
-$font-primary: 'Moderat', sans-serif;
+// $font-primary: 'Suisse Intl', sans-serif;
+$font-primary: 'Akzidenz Grotesk', sans-serif;
 // $font-mono: 'Moderat Mono', monospace;
-$font-secondary: 'Futura Maxi', sans-serif;
-// $font-tertiary: 'Hurme', sans-serif;
+// $font-secondary: 'Futura Maxi', sans-serif;
+$font-secondary: 'Akzidenz Grotesk Extended', sans-serif;
+// $font-tertiary: 'Akzidenz Grotesk Extended', sans-serif;
 // $font-serif: 'GT Sectra Display', serif;
 
 $brand-red: #ff3636;
 // $brand-red: #ff483c;
 // $brand-red: #ff4716;
 // $brand-red: #e04e47;
-$brand-orange: #f9763e;
+$brand-orange: #ff6d2f;
 $brand-yellow: #F3B600;
 // $brand-yellow: #F4E285;
 $brand-green: #7EAF53;
@@ -26,7 +28,7 @@ $brand-blue: #00CAE0;
 $brand-teal: #0AB489;;
 
 $brand-grey-dark: #232021;
-$brand-white: lighten(#F8FBF7, 3%);
+$brand-white: lighten(#F8FBF7, 2%);
 
 $brand-grey-darkest: darken(#232021, 3%);
 $brand-black: darken(#232021, 6%);
