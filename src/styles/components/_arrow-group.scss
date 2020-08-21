@@ -42,3 +42,22 @@ $baseclass: arrow-group;
 		}
 	}
 }
+
+.#{$scrolling-section-classname} {
+	&:first-child {
+		.#{$baseclass}__links {
+			justify-content: flex-end;
+		}
+		.#{$baseclass}__first {
+			@include disabled();
+		}
+	}
+	&:last-child {
+		.#{$baseclass}__links {
+			justify-content: flex-start;
+		}
+		.#{$baseclass}__second {
+			@include disabled();
+		}
+	}
+}

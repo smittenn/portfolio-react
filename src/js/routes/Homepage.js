@@ -15,6 +15,7 @@ import TextLink from "../components/TextLink"
 
 import Sidebar from "../components/Sidebar"
 
+import Carousel from "../components/Carousel"
 import Image from "../components/Image"
 import ProcessDiagram from "../components/ProcessDiagram"
 
@@ -155,18 +156,30 @@ class Homepage extends Component {
 				sections={sections}
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(0); }}>
-					{<ParallaxBackground>
-						<div className="grid">
-							<div className="grid__item grid__item--col-6 grid__item--col-2-medium"/>
-							{/*<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium shift-left--sm">
-															<div className="spacer spacer__lg"/>
-															<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-														</div>*/}
-							<div className="grid__item grid__item--col-5 grid__item--col-10-medium">
-								<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+					<ParallaxBackground>
+						<div className="grid p0" style={{ alignItems: 'center' }}>
+							{<div className="grid__item grid__item--col-6 grid__item--col-4-medium"/>}
+							{/*<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
+								{<div className="spacer spacer__lg"/>}
+								<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+							</div>*/}
+							{/*<div className="grid__item grid__item--col-4 grid__item--col-10-medium shift-right--md">
+								<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={4} aspectRatioHeight={5}/>
+								<div className="spacer spacer__lg"/>
+							</div>*/}
+							{/*<div className="grid__item grid__item--col-4 grid__item--col-10-medium shift-right--md">
+								<Image src="../assets/img/nyc.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+							</div>*/}
+							<div className="grid__item grid__item--col-6 grid__item--col-8-medium">
+								{/*<div className="spacer spacer__lg"/>*/}
+								<Carousel aspectRatioWidth={1} aspectRatioHeight={1}>
+									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+									<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+									<Image src="../assets/img/ferris-wheel.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								</Carousel>
 							</div>
 						</div>
-					</ParallaxBackground>}
+					</ParallaxBackground>
 
 					<HeroBlock
 					headerText={[`Eric C. Smith is an`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}

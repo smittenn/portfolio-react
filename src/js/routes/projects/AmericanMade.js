@@ -79,7 +79,7 @@ class AmericanMade extends Component {
 		const { setCounter } = this.props;
 		const { activeSection, sections } = this.state;
 
-		const brandBlack = hexToRgb(palette("brand-black"));
+		const brandBlack = hexToRgb('#0f1010');
 
 
 		return (
@@ -87,10 +87,6 @@ class AmericanMade extends Component {
 				<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24), 
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)
-						),
 						url(../assets/img/american-made/output.gif)
 					`,
 					backgroundColor: '#A4AFA6',
@@ -106,6 +102,13 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				style={{ 
 					backgroundColor: 'transparent',
+					backgroundImage: `
+						linear-gradient(
+							180deg,
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 0.4), 
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 0.4)
+						)
+					`
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
@@ -115,10 +118,14 @@ class AmericanMade extends Component {
 
 				<ScrollSection 
 				name={sections[1]} 
-				sections={sections} 
+				black
+				sections={sections}
 				disableSectionNumber
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(1); }}>
+				onSetActive={() => { this.setActiveSection(1); }}
+				style={{ 
+					backgroundColor: `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`,
+				}}>
 					<ProjectIntroBlock 
 					col1='
 						The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
@@ -149,13 +156,14 @@ class AmericanMade extends Component {
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .6)
+							ellipse at 50% 50%,
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .9),
+							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .9)
 						),
 						url(../assets/img/american-made/s07-synopsis.jpg)`, 
 					backgroundPosition: `20% 70%`,
 				}}>
-					<ProjectDetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Studios" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
+					<ProjectDetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Pictures" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
 				</ScrollSection>
 
 				{/*<ScrollSection 

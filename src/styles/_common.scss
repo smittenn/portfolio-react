@@ -73,9 +73,7 @@ iframe {
 }
 
 .disabled {
-	transition: opacity $duration-short $easing2;
-	opacity: 0.24;
-	pointer-events: none;
+	@include disabled();
 }
 
 section {
@@ -119,6 +117,9 @@ section {
 		&-left--sm {
 			transform: translateX(-33.3333%);
 		}
+		&-left--xs {
+			transform: translateX(-25%);
+		}
 		&-right--lg {
 			transform: translateX(100%);
 		}
@@ -127,6 +128,9 @@ section {
 		}
 		&-right--sm {
 			transform: translateX(33.3333%);
+		}
+		&-right--xs {
+			transform: translateX(25%);
 		}
 	}
 }

@@ -103,7 +103,7 @@ class Translator extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ <span><span className="outline">Translator </span></span>, `helped NBCU film crews manage their assets.`]}
+					headerText={[ <span><span className="outline">Translator </span></span>, `helped television + film crews manage their assets.`]}
 					/>
 				</ScrollSection>
 
@@ -145,7 +145,7 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock 
 					title="Collection"
-					description1="We designed a system where technicians can upload content while organizing them into collections that are synced in the cloud."
+					description1="The system for allowed technicians to organize content into collections that are synced in the cloud all while being able to upload quickly after a shoot."
 					description2=" A production assistant fresh off a shoot can upload their images, videos and audio altogether into a collection for easy access later."
 					media={{ type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9, caption: "The view for a sample collection with video and image content." }}
 					/>

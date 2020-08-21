@@ -81,6 +81,8 @@ class JnjHome extends Component {
 
 		const brandPrimary = hexToRgb('#000099');
 
+		const heroBackgroundImage = this.props.isMobile ? 'onboarding-mobile-5x8' : 'onboarding-mobile-3x2';
+
 		return (
 			<article>
 
@@ -91,11 +93,9 @@ class JnjHome extends Component {
 							rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .24), 
 							rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .4)
 						),
-						url(../assets/img/jnj-home/onboarding-mobile.png)
+						url(../assets/img/jnj-home/${heroBackgroundImage}.jpg)
 					`, 
 					backgroundColor: `rgb(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b})`,
-					backgroundSize: this.props.isMobile ? 'contain' : '60%',
-					backgroundPosition: this.props.isMobile ? 'right' : '100% 810%',
 				}}/>
 
 				<ScrollSection 
@@ -109,7 +109,7 @@ class JnjHome extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ <span><span className="outline">Home</span></span>, ` is a place for employees to connect and create.`]}
+					headerText={[ <span><span className="outline">Home </span></span>, `is a place for employees to connect and create.`]}
 					/>
 				</ScrollSection>
 

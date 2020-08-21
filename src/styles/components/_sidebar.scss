@@ -154,6 +154,7 @@ $baseclass: sidebar;
 
 					&.active {
 						.#{$baseclass}__label span {
+							font-family: sans-serif;
 							color: $brand-red;
 							-webkit-text-stroke-width: 4px;
 						}

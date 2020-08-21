@@ -1,3 +1,4 @@
+$bp-xxlarge: 1336px;
 $bp-xlarge: 1280px;
 $bp-large: 1024px;
 $bp-medium: 800px;
@@ -47,6 +48,13 @@ $letter-spacing-md: -0.012em;
 $letter-spacing-lg: 0.012em;
 $letter-spacing-xl: 0.024em;
 $letter-spacing-xxl: 0.060em;
+
+// rem spacing
+// $letter-spacing-xxs: -0.8rem;
+// $letter-spacing-xs: -0.4rem;
+// $letter-spacing-sm: -0.3rem;
+// $letter-spacing-md: -0.1rem;
+// $letter-spacing-lg: 0.1rem;
 
 $easing1: cubic-bezier(0.215, 0.61, 0.355, 1);
 $easing2: cubic-bezier(.19,1,.22,1);

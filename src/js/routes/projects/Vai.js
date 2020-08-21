@@ -107,7 +107,7 @@ class Vai extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock
-					// headerText={[`The`, <span><span className="outline">Rationalized </span></span>,  <span><span className="outline">Player</span></span>, ` unified the UX across NBCU video players.`]}
+					// headerText={[`The`, <span><span className="outline">Rationalized </span></span>, <span><span className="outline">Player </span></span>, `united web player UX across brands.`]}
 					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to detect objects & people in video.`]}
 					/>
 				</ScrollSection>
@@ -124,7 +124,7 @@ class Vai extends Component {
 					<ProjectIntroBlock
 					col1="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing."
 					col2="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience. \n\n The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees."
-					col3="As the Lead Designer on this project I designed right in the browser using our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype."
+					col3="As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype."
 					col4="Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time."
 					media={{ type: 'image', src: '../assets/img/vai/escalade.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					/>

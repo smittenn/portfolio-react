@@ -1,10 +1,38 @@
-@media screen and (max-width: $bp-xlarge) {
+@media screen and (max-width: $bp-xxlarge) {
 	h1 {
-		font-size: px-to-rem(96px);
+		font-size: px-to-rem(128px);
 	}
 
 	h2 {
-		font-size: px-to-rem(84px);
+		font-size: px-to-rem(112px);
+	}
+
+	h3 {
+		font-size: px-to-rem(96px);
+	}
+
+	section {
+		padding: 104px 0;
+	}
+
+	.grid {
+		padding: 0 72px;
+	}
+
+	@include grid-at-bp(xxlarge);
+}
+
+@media screen and (max-width: $bp-xlarge) {
+	h1 {
+		font-size: px-to-rem(120px);
+	}
+
+	h2 {
+		font-size: px-to-rem(104px);
+	}
+
+	h3 {
+		font-size: px-to-rem(88px);
 	}
 
 	section {
@@ -20,11 +48,15 @@
 
 @media screen and (max-width: $bp-large) {
 	h1 {
-		font-size: px-to-rem(84px);
+		font-size: px-to-rem(112px);
 	}
 
 	h2 {
-		font-size: px-to-rem(60px);
+		font-size: px-to-rem(96px);
+	}
+
+	blockquote {
+		font-size: px-to-rem(21px);
 	}
 
 	section {
@@ -39,8 +71,6 @@
 }
 
 @media screen and (max-width: $bp-medium) {
-	@include grid-at-bp(medium);
-
 	body {
 		cursor: auto !important;
 	}
@@ -135,6 +165,7 @@
 		font-size: px-to-rem(32px);
 		margin-bottom: 9px;
 	}
+	@include grid-at-bp(medium);
 }
 
 

@@ -205,17 +205,17 @@
 // 	url('../fonts/GTSectraDisplay/GTSectraDisplay-Regular.svg#codropsicons') format('svg');
 // }
 
-// @font-face {
-// 	font-family: 'Suisse Intl';
-// 	font-weight: normal;
-// 	font-style: normal;
-// 	src: url('../fonts/SuisseIntl/SuisseIntl-Regular.eot');
-// 	src: url('../fonts/SuisseIntl/SuisseIntl-Regular.eot?#iefix') format('embedded-opentype'),
-// 	url('../fonts/SuisseIntl/SuisseIntl-Regular.woff2') format('woff2'), 
-// 	url('../fonts/SuisseIntl/SuisseIntl-Regular.woff') format('woff'), 
-// 	url('../fonts/SuisseIntl/SuisseIntl-Regular.ttf') format('truetype'),
-// 	url('../fonts/SuisseIntl/SuisseIntl-Regular.svg#codropsicons') format('svg');
-// }
+@font-face {
+	font-family: 'Suisse Intl';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/SuisseIntl/SuisseIntl-Regular.eot');
+	src: url('../fonts/SuisseIntl/SuisseIntl-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/SuisseIntl/SuisseIntl-Regular.woff2') format('woff2'), 
+	url('../fonts/SuisseIntl/SuisseIntl-Regular.woff') format('woff'), 
+	url('../fonts/SuisseIntl/SuisseIntl-Regular.ttf') format('truetype'),
+	url('../fonts/SuisseIntl/SuisseIntl-Regular.svg#codropsicons') format('svg');
+}
 
 // @font-face {
 // 	font-family: 'Suisse Intl';

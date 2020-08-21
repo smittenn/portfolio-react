@@ -1,0 +1,18 @@
+$baseclass: carousel;
+
+.#{$baseclass} {
+	position: relative;
+	overflow: hidden;
+
+	&__items {
+		display: flex;
+		flex-wrap: nowrap;
+		// flex-direction: column;
+		transition: transform $easing5 $duration-long;
+	}
+
+	&__item {
+		position: absolute;
+		width: 100%;
+	}
+}

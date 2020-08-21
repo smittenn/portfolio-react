@@ -1,3 +1,9 @@
 @mixin boxShadow() {
 	box-shadow: 0 0 40px 60px rgba($brand-black, .02);
 }
+
+@mixin disabled() {
+	transition: opacity $duration-short $easing2;
+	opacity: 0.24;
+	pointer-events: none;
+}

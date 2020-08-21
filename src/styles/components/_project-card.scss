@@ -89,6 +89,12 @@ $baseclass: project-card;
 		}
 	}
 
+	&:nth-child(even) {
+		.#{$baseclass}__asset {
+			transform: translateX(37.5%);
+		}
+	}
+
 	@media screen and (max-width: $bp-medium) {
 		// margin: 0;
 
