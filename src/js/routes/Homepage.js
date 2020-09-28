@@ -172,7 +172,7 @@ class Homepage extends Component {
 							</div>*/}
 							<div className="grid__item grid__item--col-6 grid__item--col-8-medium">
 								{/*<div className="spacer spacer__lg"/>*/}
-								<Carousel aspectRatioWidth={1} aspectRatioHeight={1}>
+								<Carousel>
 									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 									<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 									<Image src="../assets/img/ferris-wheel.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>

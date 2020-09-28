@@ -36026,7 +36026,7 @@ var Carousel = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this, props));
 
 		_this.state = {
-			index: 1,
+			index: 0,
 			childWidth: []
 		};
 		return _this;
@@ -36040,9 +36040,26 @@ var Carousel = function (_Component) {
 			this.interval = setInterval(function () {
 				_this2.setState(function (prevState) {
 					return {
-						index: prevState.index >= _this2.props.children.length ? 1 : prevState.index + 1
+						index: prevState.index >= _this2.props.children.length - 1 ? 0 : prevState.index + 1
 					};
 				});
+				// Stacking Effect
+				if (_this2.props.stacking) {
+					var items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'));
+					var beforeWidths = items.slice(0, _this2.state.index).map(function (item) {
+						return 100;
+					});
+					var totalWidth = beforeWidths.reduce(function (acc, width) {
+						return acc + width;
+					}, 0);
+
+					var before = items.slice(0, _this2.state.index);
+					var after = items.slice(_this2.state.index);
+
+					after.forEach(function (el) {
+						el.style.transform = 'translate3d(-' + totalWidth + '%, 0, 0)';
+					});
+				}
 			}, 6000);
 		}
 	}, {
@@ -36064,60 +36081,22 @@ var Carousel = function (_Component) {
 				"carousel": true
 			});
 
-			var beforeWidths = this.props.children.slice(0, index).map(function (item) {
-				return 100;
-			});
-			var totalWidth = beforeWidths.reduce(function (acc, width) {
-				return acc + width;
-			});
-
-			// const after = this.props.children.slice(index);
-			// console.log(beforeWidths, totalWidth)
-
-			// const before = this.props.children.slice(0, index).map((item, i) => (
-			// 	<div
-			// 	className="carousel__item"
-			// 	key={i + this.props.children.length}>
-			// 		{ item }
-			// 	</div>
-			// ))
-
-			// const after = this.props.children.slice(index).map((item, i) => (
-			// 	<div
-			// 	className="carousel__item"
-			// 	key={i}
-			// 	style={{ transform: `translate3d(-${totalWidth}%,0,0)`}}>
-			// 		{ item }
-			// 	</div>
-			// ))
-
 			var items = this.props.children.map(function (item, i) {
 				return _react2.default.createElement(
 					"div",
 					{
 						className: "carousel__item",
-						key: i,
-						style: { transform: "translate3d(" + i * 100 + "%,0,0)" } },
+						key: i },
 					item
 				);
 			});
 
-			// after.forEach(el => { el.style.transform = 'translate3d(-' + (totalWidth) + '%, 0, 0)' });
-
-			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
-
-			var _style = {
-				paddingBottom: pb + '%'
-			};
-
-			style ? Object.assign(_style, style) : null;
-
 			return _react2.default.createElement(
 				"div",
-				{ className: classnames, style: _style },
+				{ className: classnames },
 				_react2.default.createElement(
 					"div",
-					{ className: "carousel__items", style: { transform: "translate3d(-" + (index - 1) * 100 + "%,0,0)" } },
+					{ className: "carousel__items", style: { transform: "translate3d(-" + index * 100 + "%,0,0)" } },
 					items
 				)
 			);
@@ -39421,6 +39400,10 @@ var _SideScroller = require("../../components/SideScroller");
 
 var _SideScroller2 = _interopRequireDefault(_SideScroller);
 
+var _Carousel = require("../../components/Carousel");
+
+var _Carousel2 = _interopRequireDefault(_Carousel);
+
 var _addLineBreaks = require("../../services/addLineBreaks");
 
 var _addLineBreaks2 = _interopRequireDefault(_addLineBreaks);
@@ -39466,6 +39449,10 @@ var ProjectSectionBlock = function (_Component) {
 			var renderedMedia = function () {
 				if (media.type == 'image') return _react2.default.createElement(_Image2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight, caption: media.caption });else if (media.type == 'video') return _react2.default.createElement(_Video2.default, { src: media.src, poster: media.poster });else if (media.type == 'iframe') return _react2.default.createElement(_IFrame2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'codepen') return _react2.default.createElement(_CodepenEmbed2.default, { slug: media.slug, title: media.title, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'side-scroller') return _react2.default.createElement(
 					_SideScroller2.default,
+					null,
+					_this2.props.children
+				);else if (media.type == 'carousel') return _react2.default.createElement(
+					_Carousel2.default,
 					null,
 					_this2.props.children
 				);
@@ -39543,7 +39530,7 @@ var ProjectSectionBlock = function (_Component) {
 
 exports.default = ProjectSectionBlock;
 
-},{"../../components/CodepenEmbed":135,"../../components/IFrame":139,"../../components/Image":141,"../../components/SideScroller":148,"../../components/Video":151,"../../services/addLineBreaks":187,"../../services/splitLetter":195,"../../services/splitWord":196,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],156:[function(require,module,exports){
+},{"../../components/Carousel":134,"../../components/CodepenEmbed":135,"../../components/IFrame":139,"../../components/Image":141,"../../components/SideScroller":148,"../../components/Video":151,"../../services/addLineBreaks":187,"../../services/splitLetter":195,"../../services/splitWord":196,"classnames":7,"react":106,"react-intersection-visible":39,"react-redux":54,"react-router-dom":71}],156:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40866,7 +40853,7 @@ var Homepage = function (_Component) {
 								{ className: "grid__item grid__item--col-6 grid__item--col-8-medium" },
 								_react2.default.createElement(
 									_Carousel2.default,
-									{ aspectRatioWidth: 1, aspectRatioHeight: 1 },
+									null,
 									_react2.default.createElement(_Image2.default, { src: "../assets/img/banner-1x1.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
 									_react2.default.createElement(_Image2.default, { src: "../assets/img/graffiti.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
 									_react2.default.createElement(_Image2.default, { src: "../assets/img/ferris-wheel.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })

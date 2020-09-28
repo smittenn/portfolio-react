@@ -11,7 +11,7 @@ class Carousel extends Component {
 		super(props);
 
 		this.state = {
-			index: 1,
+			index: 0,
 			childWidth: []
 		}
 	}
@@ -19,8 +19,19 @@ class Carousel extends Component {
 	componentDidMount() {
 		this.interval = setInterval(() => {
 			this.setState(prevState => ({
-				index: prevState.index >= this.props.children.length ? 1 : prevState.index + 1,
+				index: prevState.index >= (this.props.children.length - 1) ? 0 : prevState.index + 1,
 			}))
+			// Stacking Effect
+			if (this.props.stacking) {
+				const items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'))
+				const beforeWidths = items.slice(0, this.state.index).map(item => 100);
+				const totalWidth = beforeWidths.reduce((acc, width) => acc + width, 0)
+
+				const before = items.slice(0, this.state.index);
+				const after = items.slice(this.state.index);
+
+				after.forEach(el => { el.style.transform = 'translate3d(-' + (totalWidth) + '%, 0, 0)' });				
+			}
 		}, 6000);
 	}
 
@@ -37,51 +48,17 @@ class Carousel extends Component {
 			"carousel": true,
 		})
 
-		const beforeWidths = this.props.children.slice(0, index).map(item => 100);
-		const totalWidth = beforeWidths.reduce((acc, width) => acc + width)
-
-		// const after = this.props.children.slice(index);
-		// console.log(beforeWidths, totalWidth)
-
-		// const before = this.props.children.slice(0, index).map((item, i) => (
-		// 	<div
-		// 	className="carousel__item"
-		// 	key={i + this.props.children.length}>
-		// 		{ item }
-		// 	</div>
-		// ))
-
-		// const after = this.props.children.slice(index).map((item, i) => (
-		// 	<div
-		// 	className="carousel__item"
-		// 	key={i}
-		// 	style={{ transform: `translate3d(-${totalWidth}%,0,0)`}}>
-		// 		{ item }
-		// 	</div>
-		// ))
-
 		const items = this.props.children.map((item, i) => (
 			<div
 			className="carousel__item"
-			key={i}
-			style={{ transform: `translate3d(${i * 100}%,0,0)`}}>
+			key={i}>
 				{ item }
 			</div>
 		))
 
-		// after.forEach(el => { el.style.transform = 'translate3d(-' + (totalWidth) + '%, 0, 0)' });
-
-		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
-		
-		const _style =  {
-			paddingBottom: pb + '%',
-		}	
-
-		style ? Object.assign(_style, style) : null
-
 		return (
-			<div className={classnames} style={_style}>
-				<div className="carousel__items" style={{ transform: `translate3d(-${(index - 1) * 100}%,0,0)`}}>
+			<div className={classnames}>
+				<div className="carousel__items" style={{ transform: `translate3d(-${index * 100}%,0,0)`}}>
 					{ items }
 				</div>
 			</div>

@@ -2115,15 +2115,15 @@ section p span > span, section blockquote span > span {
 .carousel {
   position: relative;
   overflow: hidden; }
+  .carousel__items, .carousel__item {
+    transition: transform cubic-bezier(0.7, 0, 0.3, 1) 0.9s; }
   .carousel__items {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    transition: transform cubic-bezier(0.7, 0, 0.3, 1) 0.9s; }
+    flex-wrap: nowrap; }
   .carousel__item {
-    position: absolute;
-    width: 100%; }
+    min-width: 100%; }
 
 .clip-wrapper {
   position: absolute;

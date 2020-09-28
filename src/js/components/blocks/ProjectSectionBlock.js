@@ -10,6 +10,7 @@ import Video from "../../components/Video"
 import IFrame from "../../components/IFrame"
 import CodepenEmbed from "../../components/CodepenEmbed"
 import SideScroller from "../../components/SideScroller"
+import Carousel from "../../components/Carousel"
 
 import addLineBreaks from "../../services/addLineBreaks"
 import splitWord from "../../services/splitWord"
@@ -40,6 +41,9 @@ export default class ProjectSectionBlock extends Component {
 
 			else if (media.type == 'side-scroller')
 				return <SideScroller>{this.props.children}</SideScroller>
+
+			else if (media.type == 'carousel')
+				return <Carousel>{this.props.children}</Carousel>
 		})()
 		
 		return (
