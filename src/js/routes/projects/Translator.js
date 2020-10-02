@@ -120,7 +120,7 @@ class Translator extends Component {
 					col2="On the previous CMS, the brands were very reliant on the folder structure, search was not available on the brand storage systems. Searching large data stores would cause the servers to crash. \n\n Findability was a major issue, if a technician misplaced a file or accidentally dragged a file into another folder, it would be difficult to recall the file later. Each brand had a different folder structure and each team within a brand may have a different naming convention." 
 					media={{ type: 'image', src: '../assets/img/translator/usertesting.svg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					col3="My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later." 
-					col4="With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen (i.e., the MAMs) who manage the brand strorage, as well as significantly streamlines the communication between teams."
+					col4="With the our new design, the unified system is more efficient. It eliminates the brands’ reliance on the folder structure and the middlemen who manage the brand strorage, as well as significantly streamlines the communication between teams."
 					/>
 				</ScrollSection>
 
@@ -198,7 +198,7 @@ class Translator extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(5); }}>
 					<ProjectSectionBlock 
-					title="Bulk Actions"
+					title="Bulk Edit"
 					description1="Bulk editing metadata was a required workflow for technicians that managed large projects. Common fields across media in a collections could be edited simultaneously."
 					description2="I designed a bulk editor that enabled content creators to edit content of the same type (Video, Image, Audio or Document) across all shared metadata fields."
 					media={{ type: 'side-scroller' }}>

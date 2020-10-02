@@ -59,7 +59,7 @@ class ParallaxBackground extends Component {
 			"p0": this.props.isMobile ? false : true
 		})
 
-		const multiplier = -0.15
+		const multiplier = 0.15
 
 		let updatedStyle = {
 			transform: `translate3d(0, ${(scrollAmount * multiplier)}px, 0)`

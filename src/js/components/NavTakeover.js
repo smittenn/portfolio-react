@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 
-import Icon from "../components/Icon"
-import GridLines from "../components/GridLines"
-import TextLink from "../components/TextLink"
+import DelayLink from "./DelayLink"
+import Icon from "./Icon"
+import GridLines from "./GridLines"
+import TextLink from "./TextLink"
 
 import { openTakeover, closeTakeover } from "../actions/navTakeover"
 import { openPrimaryPanel, closePrimaryPanel } from "../actions/primaryPanel"

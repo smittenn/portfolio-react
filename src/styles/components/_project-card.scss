@@ -3,6 +3,9 @@ $baseclass: project-card;
 .#{$baseclass} {
 	margin-bottom: 12px;
 	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
 	// opacity: 0.6;
 	// overflow: hidden;
 	// background: $brand-black;
@@ -55,10 +58,10 @@ $baseclass: project-card;
 
 	&__asset {
 		position: absolute;
-		transform: translateX(50%);
+		// transform: translateX(50%);
 		opacity: 0;
 		pointer-events: none;
-		width: 75%;
+		width: 100%;
 		@include zIndexFar;
 
 		img, video {
@@ -89,11 +92,11 @@ $baseclass: project-card;
 		}
 	}
 
-	&:nth-child(even) {
-		.#{$baseclass}__asset {
-			transform: translateX(37.5%);
-		}
-	}
+	// &:nth-child(even) {
+	// 	.#{$baseclass}__asset {
+	// 		transform: translateX(37.5%);
+	// 	}
+	// }
 
 	@media screen and (max-width: $bp-medium) {
 		// margin: 0;

@@ -239,10 +239,9 @@ html {
   font-size: 8px; }
 
 h1, h2, h3, h4, h5, h6 {
-  position: relative;
-  -webkit-font-feature-settings: "ss01";
-  font-feature-settings: "ss01"; }
+  position: relative; }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    display: inline-block;
     white-space: pre; }
 
 h1, h2, h3, h4 {
@@ -2807,8 +2806,30 @@ section p span > span, section blockquote span > span {
     width: 100%;
     z-index: 0; }
 
-.parallax-background {
+.page-transition__wipe {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f0f0f0;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+  transition-delay: 0.09s;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  transform: scale3d(0, 1, 1); }
+  .page-transition__wipe:last-child {
+    transition-delay: 0s;
+    background: #fefefe; }
+
+.page-transition--animating .page-transition__wipe {
+  -ms-transform-origin: left;
+  transform-origin: left;
+  -ms-transform: none;
+  transform: none; }
+
+.parallax-background {
+  position: absolute;
   will-change: transform;
   top: 0;
   left: 0;
@@ -2818,7 +2839,7 @@ section p span > span, section blockquote span > span {
   justify-content: center;
   transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); }
   .scrolling-section--black .parallax-background {
-    background: transparent; }
+    background-color: transparent; }
   .parallax-background--hidden {
     position: relative;
     display: none; }
@@ -3066,7 +3087,12 @@ section p span > span, section blockquote span > span {
 
 .project-card {
   margin-bottom: 12px;
-  position: relative; }
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%; }
   .project-card a {
     border: none;
     color: #131112;
@@ -3095,11 +3121,9 @@ section p span > span, section blockquote span > span {
     z-index: 1; }
   .project-card__asset {
     position: absolute;
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
     opacity: 0;
     pointer-events: none;
-    width: 75%;
+    width: 100%;
     z-index: 0; }
     .project-card__asset img, .project-card__asset video {
       transition-delay: 0.06s; }
@@ -3112,9 +3136,6 @@ section p span > span, section blockquote span > span {
     opacity: 1; }
     .project-card--hovered .project-card__bottom h2, .project-card--hovered .project-card__bottom h3, .project-card--hovered .project-card__bottom h4, .project-card--hovered .project-card__bottom h5, .project-card--hovered .project-card__bottom h6 {
       color: #fefefe; }
-  .project-card:nth-child(even) .project-card__asset {
-    -ms-transform: translateX(37.5%);
-    transform: translateX(37.5%); }
   @media screen and (max-width: 800px) {
     .project-card i {
       right: 0; } }
@@ -3360,7 +3381,8 @@ section p span > span, section blockquote span > span {
     white-space: nowrap; }
     .sidebar__label span {
       margin-left: 9px;
-      color: transparent; }
+      color: transparent;
+      font-family: "Akzidenz Grotesk", sans-serif; }
   .sidebar__dash {
     margin: 0;
     width: 48px;
@@ -3393,7 +3415,6 @@ section p span > span, section blockquote span > span {
       .sidebar--open .sidebar__inner .sidebar__item a {
         pointer-events: auto; }
         .sidebar--open .sidebar__inner .sidebar__item a.active .sidebar__label span {
-          font-family: sans-serif;
           color: #ff3636;
           -webkit-text-stroke-width: 4px; }
       .sidebar--open .sidebar__inner .sidebar__item .sidebar__number,

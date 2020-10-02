@@ -1,12 +1,13 @@
 import React from "react"
 import { Component, Fragment } from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import IntersectionVisible  from "react-intersection-visible"
 import IntersectionObserver  from "intersection-observer"
 
+import DelayLink from "./DelayLink"
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
 import HeroScrollButton from "./HeroScrollButton"
@@ -70,16 +71,16 @@ class ScrollSection extends Component {
 		const indexOfName = sections.indexOf(name);
 		const clipWrapperLeft = (
 			<div className="clip-wrapper__left" style={{ minHeight: this.props.windowHeight }}>
-				<NavLink to="/">
+				<DelayLink to="/">
 					<TextLink hideLine>
-						<h4 style={{ fontFamily: 'sans-serif' }} className="uppercase mb0" onMouseEnter={ this.toggleHomeButtonHovering } onMouseLeave={ this.toggleHomeButtonHovering }>
+						<h4 className="uppercase mb0" onMouseEnter={ this.toggleHomeButtonHovering } onMouseLeave={ this.toggleHomeButtonHovering }>
 							<span 
 							className={classNames({ "outline": this.state.homeButtonIsHovering })}>
 								•
 							</span>
 						</h4>
 					</TextLink>
-				</NavLink>
+				</DelayLink>
 				{ sections.length > 1 ? (
 					<ArrowGroup isVertical>
 						{ (indexOfName - 1 > -1) ? (

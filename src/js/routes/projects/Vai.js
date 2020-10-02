@@ -54,7 +54,7 @@ class Vai extends Component {
 			sections: [
 				"intro",
 				"overview",
-				"player",
+				"vai-mode",
 				"overlay",
 				"products",
 				"people",
@@ -108,7 +108,7 @@ class Vai extends Component {
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock
 					// headerText={[`The`, <span><span className="outline">Rationalized </span></span>, <span><span className="outline">Player </span></span>, `united web player UX across brands.`]}
-					headerText={[`The`, <span><span className="outline">V.ai </span></span>, <span><span className="outline">Player </span></span>, `uses AI to detect objects & people in video.`]}
+					headerText={[`The`, <span><span className="outline">Rationalized </span></span>, <span><span className="outline">Player </span></span>, `uses AI to detect objects & people in video.`]}
 					/>
 				</ScrollSection>
 
@@ -123,8 +123,8 @@ class Vai extends Component {
 				style={{ backgroundColor: darken(brandPrimary, 6)}}>
 					<ProjectIntroBlock
 					col1="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing."
-					col2="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, The V.ai player, aims to bring AI and product integration into an immersive video-viewing experience. \n\n The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees."
-					col3="As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created all the icon, animations and typography system for this player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype."
+					col2="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, V.ai Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \n\n The Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and are well poised to create a player unifying the experience."
+					col3="As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created the icon library, animations and typography system for the player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype."
 					col4="Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time."
 					media={{ type: 'image', src: '../assets/img/vai/escalade.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					/>
@@ -159,9 +159,9 @@ class Vai extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock
-					title="Player"
+					title="V.ai Mode"
 					description1="During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper."
-					description2="V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
+					description2="V.ai Mode helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
 					media={{ type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }}
 					/>
 					{/*<ProjectSectionBlock
@@ -194,7 +194,7 @@ class Vai extends Component {
 				>
 					<ProjectSectionBlock
 					title="Products"
-					description1="Brands could sponsor T.V. shows to promote their products in an innovative way without using commercials that interrupt viewers."
+					description1="Brands could sponsor products in a during playback to promote their products in an innovative way. Pesky commercials that interrupt viewers are a thing of the past."
 					description2="Fans can now shop for the same heart-shaped glasses made famous by Carly Shaikin in Mr. Robot without even needing to tab away from the video."
 					media={{ type: 'image', src: '../assets/img/vai/product.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					/>
@@ -209,15 +209,15 @@ class Vai extends Component {
 					<ProjectSectionBlock
 					title="People"
 					description1="Have you ever pulled out your phone in the middle of a movie to find out who plays the charismatic protagonist? Now, by merging character and actor information into the video player, we’ve eliminated the need to whip out another device to answer that irking question."
-					media={{ type: 'side-scroller' }}>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+					media={{ type: 'carousel' }}>
+						<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
+							<Image src="../assets/img/vai/people.png" aspectRatioWidth={16} aspectRatioHeight={9} caption={"The People tab shows Actors and their corresponding characters in the video."}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
+							<Image src="../assets/img/vai/character.png" aspectRatioWidth={16} aspectRatioHeight={9} caption={"Clicking into a character reveals a short bio about the character."}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9}/>
+						<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
+							<Image src="../assets/img/vai/actor.png" aspectRatioWidth={16} aspectRatioHeight={9} caption={"A user can flip the tile to learn about the actor."}/>
 						</div>
 					</ProjectSectionBlock>
 

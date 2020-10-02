@@ -21,23 +21,27 @@ import Perforce from './projects/Perforce'
 
 import { detectWindowHeight } from "../actions/windowHeight"
 
+import navData from "../data/nav"
+
 const routes = (
 	<main>
 		<Switch>
-			<Route exact path="/" component={Homepage}/>
-			<Route exact path="/process" component={Process}/>
-			<Route exact path="/work" component={Work}/>
-			<Route path="/about-me" component={AboutMe}/>
-			<Route path="/resume" component={Resume}/>
+			<Route exact path={navData.items[0].to} component={Homepage}/>
 
+			<Route exact path={navData.items[1].to} component={Work}/>
 			<Route exact path="/american-made" component={AmericanMade}/>
-			<Route exact path="/vai" component={Vai}/>
+			<Route exact path="/rationalized-player" component={Vai}/>
 			<Route path="/translator" component={Translator}/>
 			<Route path="/jnj-home" component={JnjHome}/>
 			<Route path="/jnj-mdc" component={JnjMdc}/>
 			<Route path="/micro-app-interactions" component={MicroAppInteractions}/>
 			<Route path="/micro-app-templates" component={MicroAppTemplates}/>
 			<Route path="/perforce" component={Perforce}/>
+
+			<Route exact path={navData.items[2].to} component={Process}/>
+			<Route path={navData.items[3].to} component={AboutMe}/>
+			<Route path={navData.items[4].to} component={Resume}/>
+
 			{/*
 			<Route path="/cisco" component={Cisco}/>
 			<Route path="/protohack" component={Protohack}/>*/}

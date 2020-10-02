@@ -100,7 +100,7 @@ class Perforce extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ <span><span className="outline">Helix </span></span>, <span><span className="outline">Sync </span></span>, ` helped designers version their assets.` ]}
+					headerText={[ <span><span className="outline">Helix </span></span>, <span><span className="outline">Sync</span></span>, ` helped designers version their assets.` ]}
 					/>
 				</ScrollSection>
 
@@ -135,15 +135,9 @@ class Perforce extends Component {
 
 				<ScrollSection 
 				name={sections[2]}
-				black
 				disableSectionNumber
 				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundColor: `transparent`,
-					backgroundImage: `linear-gradient(45deg, #2f4c86, #F1A9A6, #EBBE92)`,
-					backgroundBlendMode: 'normal',
-				}}>
+				activeSection={activeSection}>
 					<ProjectDetailsBlock role="User Experience Designer" date="Summer, 2015" client="Perforce UX" team={["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]} />
 				</ScrollSection>
 

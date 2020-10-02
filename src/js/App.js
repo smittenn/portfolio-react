@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component, Fragment } from "react"
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
@@ -6,7 +6,9 @@ import routes from './routes'
 import { browserHistory } from 'react-router';
 
 import { detectMobile } from "./actions/mobile"
-import { detectWindowHeight } from "./actions/windowHeight"
+import { detectWindowHeight, setWindowHeight } from "./actions/windowHeight"
+
+import PageTransition from "./components/PageTransition"
 
 
 // const App = ({ history }) => {
@@ -27,17 +29,16 @@ import { detectWindowHeight } from "./actions/windowHeight"
 class App extends Component {
 
 	componentDidMount() {
-		window.addEventListener('resize', () => { this.props.detectMobile(); });
+		window.addEventListener('resize', () => { this.props.detectMobile(); this.props.detectWindowHeight(); });
 		// document.addEventListener('scroll', this.props.detectWindowHeight);
 
 		this.props.history.listen((location, action) => {
-			this.props.detectWindowHeight();
+			this.props.setWindowHeight(window.innerHeight);
 		});
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('resize', () => { this.props.detectMobile(); });
-		// document.removeEventListener('scroll', this.props.detectWindowHeight);
 		this.props.history.unlisten();
 	}
 
@@ -45,9 +46,12 @@ class App extends Component {
 		const { history } = this.props;
 
 		return (
-			<ConnectedRouter history={history}>
-	 			{ routes }
-			</ConnectedRouter>
+			<Fragment>
+				<ConnectedRouter history={history}>
+					{ routes }
+				</ConnectedRouter>
+				<PageTransition history={history}/>
+			</Fragment>
 		)
 	}
 }
@@ -60,6 +64,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	detectMobile: () => dispatch(detectMobile()),
 	detectWindowHeight: () => dispatch(detectWindowHeight()),
+	setWindowHeight: () => dispatch(setWindowHeight()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import { connect } from "react-redux"
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 import ReactHover from 'react-hover'
 import IntersectionVisible  from "react-intersection-visible"
@@ -8,7 +8,9 @@ import IntersectionObserver  from "intersection-observer"
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 
+import DelayLink from '../components/DelayLink'
 import Image from '../components/Image'
+import Video from '../components/Video'
 import TextLink from '../components/TextLink'
 
 import splitLetter from '../services/splitLetter'
@@ -45,26 +47,43 @@ class ProjectCard extends Component {
 		})
 	}
 
-	createItem = (item, i) => (
-		<Fragment>
-			{ (item.media) ? (
-				<div className="project-card__asset">
-					<Image src={item.media.src} aspectRatioWidth={item.media.aspectRatioWidth} aspectRatioHeight={item.media.aspectRatioHeight}/>
+	createLink = (item, i) => (
+		(/^\/\//).test(item.to) ? (
+			<a href={item.to} onClick={this.props.setCursorUnhover} target="_blank">
+				{ this.createText(item, i) }
+			</a>
+		) : (
+			<DelayLink to={item.to} onClick={this.props.setCursorUnhover}>
+				{ this.createText(item, i) }
+			</DelayLink>
+		)
+	)
+
+	createText = (item, i) => (
+		<div className="project-card__bottom" onMouseEnter={() => { this.setIndexHovered(i); }} onMouseLeave={this.handleMouseLeave}>
+			<TextLink hideUnderline>
+				<h2 className="mb0">
+					{ splitWord(item.name, {}, classNames({ "outline": this.state.hoveredIndex != i })) }
+				</h2>
+			</TextLink>
+		</div>
+	)
+
+	createMedia = (item) => (
+		(item.media) ? (
+			<div className="project-card__asset">
+				<div className="grid p0">
+					<div className="grid__item--col-6 grid__item--col-4-medium"/>
+					<div className="grid__item--col-6 grid__item--col-8-medium">
+						{ (item.media.type == 'video') ? (
+							<Video src={item.media.src} loop/>
+						) : (
+							<Image src={item.media.src} aspectRatioWidth={item.media.aspectRatioWidth} aspectRatioHeight={item.media.aspectRatioHeight}/>
+						)}
+					</div>
 				</div>
-			) : null }
-			<div className="project-card__bottom" onMouseEnter={() => { this.setIndexHovered(i); }} onMouseLeave={this.handleMouseLeave}>
-				<TextLink hideUnderline>
-					<h2 className="mb0">
-						{ splitWord(item.name, {}, classNames({ "outline": this.state.hoveredIndex != i })) }
-					</h2>
-				</TextLink>
 			</div>
-			{/*
-			<div className="project-card__tags">
-			<blockquote className="mb0">{item.tags.join(", ")}</blockquote>
-			</div>
-			*/}
-		</Fragment>
+		) : null
 	)
 
 	render() {
@@ -73,25 +92,24 @@ class ProjectCard extends Component {
 		const { hoveredIndex } = this.state;
 
 		return (
-			<ul className="m0">
+			<Fragment>
 				{ items.map((item, i) => (
-					<li key={i} 
-					className={classNames({
-						"project-card": true,
-						"project-card--hovered": hoveredIndex == i,
+					<div key={i} className={classNames({
+					"grid": true,
+					"p0": true,
+					"project-card": true,
+					"project-card--hovered": hoveredIndex == i,
 					})}>
-					{ (/^\/\//).test(item.to) ? (
-						<a href={item.to} onClick={this.props.setCursorUnhover} target="_blank">
-							{ this.createItem(item, i) }
-						</a>
-					) : (
-						<NavLink to={item.to} onClick={this.props.setCursorUnhover}>
-							{ this.createItem(item, i) }
-						</NavLink>
-					)}
-					</li>
+						<div className="grid">
+							<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
+							<div className="grid__item--col-10 grid__item--col-12-medium">
+								{ this.createLink(item, i) }
+							</div>
+						</div>
+						{ this.createMedia(item) }
+					</div>
 				)) }
-			</ul>
+			</Fragment>
 		)
 	}
 }

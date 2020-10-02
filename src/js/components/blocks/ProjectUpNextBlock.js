@@ -1,9 +1,9 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import IntersectionVisible from "react-intersection-visible"
 
+import DelayLink from "../../components/DelayLink"
 import TextLink from "../../components/TextLink"
 
 export default class ProjectUpNextBlock extends Component {
@@ -23,9 +23,9 @@ export default class ProjectUpNextBlock extends Component {
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 					<h4 className="light fade">Next Up</h4>
 					<h2 className="mb0">
-						<NavLink to={to}>
+						<DelayLink to={to}>
 							<TextLink hideUnderline>{name}</TextLink>
-						</NavLink>
+						</DelayLink>
 					</h2>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 $baseclass: parallax-background;
 
 .#{$baseclass} {
-	position: fixed;
+	position: absolute;
 	will-change: transform;
 	top: 0;
 	left: 0;
@@ -11,7 +11,7 @@ $baseclass: parallax-background;
 	transition: opacity $duration-short $easing1;
 
 	.#{$scrolling-section-classname}--black & {
-		background: transparent;
+		background-color: transparent;
 	}
 
 	&--hidden {

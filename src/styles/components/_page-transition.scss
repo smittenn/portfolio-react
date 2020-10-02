@@ -1,0 +1,28 @@
+$baseclass: page-transition;
+
+.#{$baseclass} {
+	&__wipe {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: rgba($brand-grey-lightest, 1);
+		transition: transform $easing1 $duration-short;
+		transition-delay: $delay-medium;			
+		transform-origin: right;
+		transform: scale3d(0, 1, 1);
+
+		&:last-child {
+			transition-delay: 0s;
+			background: rgba($brand-white, 1);
+		}
+	}
+
+	&--animating {
+		.#{$baseclass}__wipe {
+			transform-origin: left;
+			transform: none;			
+		}
+	}
+}

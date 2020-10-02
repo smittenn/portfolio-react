@@ -69,17 +69,11 @@ class Work extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<h4>All Projects</h4>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+							<h4>All Works</h4>
 							<div className="spacer spacer__sm"/>
-							<ProjectCard items={projects} />
-							<div className="spacer spacer__md"/>
 						</div>
 					</div>
+					<ProjectCard items={projects}/>
 				</ScrollSection>
 			</article>
 		);

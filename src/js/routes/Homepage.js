@@ -2,11 +2,12 @@ import React, {Component} from "react"
 import { connect } from "react-redux"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 
+import DelayLink from "../components/DelayLink"
 import ParallaxBackground from "../components/ParallaxBackground"
 import ScrollSection from "../components/ScrollSection"
 import HeroBlock from "../components/blocks/HeroBlock"
@@ -206,7 +207,7 @@ class Homepage extends Component {
 									</blockquote>
 									<h5 className="mb0">
 										<TextLink isBlack hideUnderline>
-											<NavLink to="about-me">{splitWord('Learn More')}</NavLink>
+											<DelayLink to="about-me">{splitWord('Learn More')}</DelayLink>
 										</TextLink>
 									</h5>
 								</div>
@@ -249,7 +250,7 @@ class Homepage extends Component {
 									</blockquote>
 									<h5 className="mb0">
 										<TextLink isBlack hideUnderline>
-											<NavLink to="process">{splitWord('Learn More')}</NavLink>
+											<DelayLink to="process">{splitWord('Learn More')}</DelayLink>
 										</TextLink>
 									</h5>
 								</div>
@@ -278,7 +279,12 @@ class Homepage extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<div className="spacer spacer__sm"/>
-							<ProjectCard items={projects} />
+						</div>
+					</div>
+					<ProjectCard items={projects}/>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<div className="spacer spacer__md"/>
 						</div>
 					</div>
@@ -287,7 +293,7 @@ class Homepage extends Component {
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 							<h5 className="">
 								<TextLink isBlack hideUnderline>
-									<NavLink to="work">See All Works</NavLink>
+									<DelayLink to="work">See All Works</DelayLink>
 								</TextLink>
 							</h5>
 						</div>

@@ -8,6 +8,8 @@
 		},
 		{
 			"name": "Works",
+			"to": "/work",
+			"abbreviation": "W",
 			"items": [
 				{
 					"name": "Google Design",
@@ -17,12 +19,20 @@
 							"to": "//design.google/library/google-design-2019",
 							"media": {
 								"src": "../assets/img/google-design/best-of-2019-3x2.jpg",
+								"type": "image",
 								"aspectRatioWidth": 3,
 								"aspectRatioHeight": 2,
 							}
 						},
 						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
-						{ "name": "Span 2019", "to": "//design.google/library/span2019" },
+						{ 
+							"name": "Span 2019",
+							"to": "//design.google/library/span2019",
+							"media": {
+								"type": "video",
+								"src": "../assets/img/google-design/span-2019.mp4",
+							}
+						},
 						{ "name": "Google Design", "to": "//design.google" }
 					]
 				},
@@ -32,8 +42,10 @@
 						{
 							"name": "Home Intranet",
 							"to": "/jnj-home",
+							"abbreviation": "J1",
 							"media": {
 								"src": "../assets/img/jnj-home/onboarding-mobile-16x9.png",
+								"type": "image",
 								"aspectRatioWidth": 16,
 								"aspectRatioHeight": 9,
 							}
@@ -41,8 +53,10 @@
 						{
 							"name": "Medical Devices",
 							"to": "/jnj-mdc",
+							"abbreviation": "J2",
 							"media": {
 								"src": "../assets/img/jnj-mdc/ladies.jpg",
+								"type": "image",
 								"aspectRatioWidth": 16,
 								"aspectRatioHeight": 9,
 							}
@@ -56,17 +70,21 @@
 						{
 							"name": "American Made",
 							"to": "/american-made",
+							"abbreviation": "N1",
 							"media": {
 								"src": "../assets/img/american-made/columbia.gif",
-								"aspectRatioWidth" : 2,
-								"aspectRatioHeight" : 1,
+								"type": "image",
+								"aspectRatioWidth" : 16,
+								"aspectRatioHeight" : 9,
 							},
 						},
 						{
-							"name": "V.ai Player",
-							"to": "/vai",
+							"name": "Rationalized Player",
+							"to": "/rationalized-player",
+							"abbreviation": "N2",
 							"media": {
 								"src": "../assets/img/vai/mobile-16x9.jpg",
+								"type": "image",
 								"aspectRatioWidth": 16,
 								"aspectRatioHeight": 9,
 							}
@@ -74,8 +92,10 @@
 						{
 							"name": "Translator",
 							"to": "/translator",
+							"abbreviation": "N3",
 							"media": {
 								"src": "../assets/img/translator/mobile-16x9.jpg",
+								"type": "image",
 								"aspectRatioWidth": 16,
 								"aspectRatioHeight": 9,
 							}
@@ -90,8 +110,10 @@
 						{
 							"name": "Wrap Interactions",
 							"to": "/micro-app-interactions",
+							"abbreviation": "W1",
 							"media": {
 								"src": "../assets/img/card-components/share-animation-zoomed-out.gif",
+								"type": "image",
 								"aspectRatioWidth": 4,
 								"aspectRatioHeight": 3,
 							}
@@ -99,8 +121,10 @@
 						{
 							"name": "Wrap Templates",
 							"to": "/micro-app-templates",
+							"abbreviation": "W2",
 							"media": {
 								"src": "../assets/img/card-components/perspective-cards.jpg",
+								"type": "image",
 								"aspectRatioWidth": 8,
 								"aspectRatioHeight": 5,
 							}
@@ -113,10 +137,12 @@
 						{
 							"name": "Helix Sync",
 							"to": "/perforce",
+							"abbreviation": "P1",
 							"media": {
 								"src": "../assets/img/perforce/banner.jpg",
-								"aspectRatioWidth": 16,
-								"aspectRatioHeight": 9,
+								"type": "image",
+								"aspectRatioWidth": 5,
+								"aspectRatioHeight": 4,
 							}
 						},
 						{ "name": "Helix Cloud", "to": "//www.perforce.com/products/helix-core" },
@@ -137,7 +163,7 @@
 		},
 		{
 			"name": "About Me",
-			"to": "about-me",
+			"to": "/about-me",
 			"abbreviation": "A",
 		},
 		{

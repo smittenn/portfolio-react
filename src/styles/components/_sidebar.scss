@@ -107,6 +107,7 @@ $baseclass: sidebar;
 		span {
 			margin-left: 9px;
 			color: transparent;
+			font-family: $font-primary;
 		}
 	}
 
@@ -154,7 +155,6 @@ $baseclass: sidebar;
 
 					&.active {
 						.#{$baseclass}__label span {
-							font-family: sans-serif;
 							color: $brand-red;
 							-webkit-text-stroke-width: 4px;
 						}

@@ -1,36 +1,36 @@
-import navData from "../data/nav-legacy";
+// import navData from "../data/nav-legacy";
+import navData from "../data/nav";
 
 const abbreviationReducer = (state = 'H', action) => {
 	switch (action.type) {
 		case 'HOME':
-			return navData.primary[0].abbreviation
-		case 'PROCESS':
-			return navData.primary[2].abbreviation
-		case 'ABOUTME':
-			return navData.primary[3].abbreviation
-		case 'RESUME':
-			return navData.primary[4].abbreviation
-		// PROJECTS 
-		case 'AMERICANMADE':
-			return navData.secondary[1].abbreviation
-		case 'VAI':
-			return navData.secondary[2].abbreviation
-		case 'TRANSLATOR':
-			return navData.secondary[3].abbreviation
+			return navData.items[0].abbreviation
+		case 'WORK':
+			return navData.items[1].abbreviation
+		// Start Projects 
 		case 'JJHOME':
-			return navData.secondary[4].abbreviation
+			return navData.items[1].items[1].items[0].abbreviation
 		case 'JJMDC':
-			return navData.secondary[5].abbreviation
+			return navData.items[1].items[1].items[1].abbreviation
+		case 'AMERICANMADE':
+			return navData.items[1].items[2].items[0].abbreviation
+		case 'VAI':
+			return navData.items[1].items[2].items[1].abbreviation
+		case 'TRANSLATOR':
+			return navData.items[1].items[2].items[2].abbreviation
 		case 'WRAP1':
-			return navData.secondary[6].abbreviation
+			return navData.items[1].items[3].items[0].abbreviation
 		case 'WRAP2':
-			return navData.secondary[7].abbreviation
+			return navData.items[1].items[3].items[1].abbreviation
 		case 'PERFORCE':
-			return navData.secondary[8].abbreviation
-		case 'CISCO':
-			return 'P9'
-		case 'PROTOHACK':
-			return 'P10'
+			return navData.items[1].items[4].items[0].abbreviation
+		// End Projects 
+		case 'PROCESS':
+			return navData.items[2].abbreviation
+		case 'ABOUTME':
+			return navData.items[3].abbreviation
+		case 'RESUME':
+			return navData.items[4].abbreviation
 		default:
 			return state
 	}
