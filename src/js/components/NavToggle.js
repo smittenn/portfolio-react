@@ -63,7 +63,7 @@ class NavToggle extends Component {
 		return (
 			<div className={classnames} 
 			onClick={this.props.isTakeoverOpen ? this.closeNav : this.openNav}>
-				<h6 className="uppercase mb0 nav-toggle__abbreviation">{this.props.abbreviation}</h6>
+				<p className="uppercase mb0 nav-toggle__abbreviation">{this.props.abbreviation}</p>
 				<div className="nav-toggle__hamburger"
 				onMouseEnter={this.props.isTakeoverOpen ? this.props.setCursorHover : (() => { this.props.hoverToggle(); this.props.setCursorHover();}) } 
 				onMouseLeave={this.props.isTakeoverOpen ? this.props.setCursorUnhover : (() => { this.props.unhoverToggle(); this.props.setCursorUnhover(); })}>
@@ -74,14 +74,14 @@ class NavToggle extends Component {
 				<div className="nav-toggle__count">
 					{/*<div className="nav-toggle__count-items">*/}
 						{ this.props.sections.map((item, i) => (
-							 <h6 className="uppercase mb0" key={i}>
+							 <p className="uppercase mb0" key={i}>
 									{
 										splitLetter(
 									 		pad(i + 1, 2).toString(), 
 									 		{ transform: `translate3d(0, ${ -100 * (this.props.count - 1)}%, 0)` }
 								 		)
 									}
-							 </h6>
+							 </p>
 							))
 						}
 					{/*</div>*/}

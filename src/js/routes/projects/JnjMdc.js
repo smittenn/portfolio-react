@@ -5,7 +5,7 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
-import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
+import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
 import ScrollSection from "../../components/ScrollSection"
@@ -19,7 +19,7 @@ import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
 import TextLink from "../../components/TextLink"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -198,8 +198,7 @@ class JnjMdc extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(3); }}>
 					{<ProjectSectionBlock 
-					title="HCP/Patient"
-					subtitle="Site Flipper"
+					title="Toggle"
 					description1={`To toggle between the healthcare professional and patient experiences of the site I designed a ‟Flipper” interaction for toggling between them.`}
 					description2="When hovering, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
 					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}

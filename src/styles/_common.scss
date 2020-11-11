@@ -88,7 +88,7 @@ section {
 	background-color: $brand-white;
 	background-size: cover;
 	background-position: center;
-	transition: background-color $easing2 $duration-short;
+	transition: background-color $easing2 $duration-long;
 	// @include zIndexClose();		
 
 	img {

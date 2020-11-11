@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, { Component, Fragment } from "react"
 import { Parallax } from "react-parallax"
 import classNames from "classnames"
 import { connect } from 'react-redux'
@@ -68,11 +68,11 @@ class ParallaxBackground extends Component {
 		Object.assign(updatedStyle, style);
 
 		return (
-			<div className="">
+			<Fragment>
 				<section className={classnames} style={updatedStyle}>
 					{ this.props.children }
 				</section>
-			</div>
+			</Fragment>
 		);
 	}
 }

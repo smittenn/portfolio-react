@@ -22,8 +22,10 @@ const abbreviationReducer = (state = 'H', action) => {
 			return navData.items[1].items[3].items[0].abbreviation
 		case 'WRAP2':
 			return navData.items[1].items[3].items[1].abbreviation
-		case 'PERFORCE':
+		case 'PERFORCE1':
 			return navData.items[1].items[4].items[0].abbreviation
+		case 'PERFORCE2':
+			return navData.items[1].items[4].items[1].abbreviation
 		// End Projects 
 		case 'PROCESS':
 			return navData.items[2].abbreviation

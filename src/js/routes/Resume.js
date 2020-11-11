@@ -6,9 +6,10 @@ import {NavLink} from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, process, resume, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { setPanel } from "../actions/panel"
 
 import ScrollSection from "../components/ScrollSection"
-import HeroBlock from "../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../components/blocks/HeroBlock"
 import TextLink from "../components/TextLink"
 import Icon from "../components/Icon"
 
@@ -34,6 +35,7 @@ class Resume extends Component {
 
 		this.props.resume();
 		this.props.reset();
+		this.props.setPanel("All Pages");
 	}
 
 	componentWillUnmount() {
@@ -222,6 +224,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Resume)

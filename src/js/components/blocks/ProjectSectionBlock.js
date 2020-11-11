@@ -22,29 +22,58 @@ export default class ProjectSectionBlock extends Component {
 		super(props);
 	}
 
+	renderMedia = (media) => {
+		if (Array.isArray(media))
+			return media.map((item, i) => ( 
+				<Fragment key={i}>
+					{ i == 0 ? null : <div className="spacer__sm"/> }
+					{this.renderMediaType(item)}
+				</Fragment>
+			))
+		else
+			return this.renderMediaType(media)
+	}
+
+	renderMediaType = (media) => {
+		if (media.type == 'image') 
+			return <Image src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight} caption={media.caption}/>
+
+		else if (media.type == 'video')
+			return <Video src={media.src} poster={media.poster}/>
+
+		else if (media.type == 'iframe')
+			return <IFrame src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
+
+		else if (media.type == 'codepen')
+			return <CodepenEmbed slug={media.slug} title={media.title} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
+
+		else if (media.type == 'side-scroller')
+			return <SideScroller>
+				{ this.props.children ? this.props.children : this.renderChildren(media)}
+			</SideScroller>
+
+		else if (media.type == 'carousel')
+			return <Carousel>
+				{ this.props.children ? this.props.children : this.renderChildren(media)}
+			</Carousel>
+	}
+
+	renderChildren = (media) => (
+		this.props.children ? this.props.children : (
+			media.items.map((item, i) => (
+				<div className={`grid__item grid__item--col-${item.gridItemWidth} grid__item--col-12-medium`} key={i}>
+					{this.renderMediaType(item)}
+				</div>
+			)
+		))
+	)
+
+
 	render() {
 
 		const { title, subtitle, description1, description2, media } = this.props;
 
-		const renderedMedia = (() => {
-			if (media.type == 'image') 
-				return <Image src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight} caption={media.caption}/>
-
-			else if (media.type == 'video')
-				return <Video src={media.src} poster={media.poster}/>
-
-			else if (media.type == 'iframe')
-				return <IFrame src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
-
-			else if (media.type == 'codepen')
-				return <CodepenEmbed slug={media.slug} title={media.title} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
-
-			else if (media.type == 'side-scroller')
-				return <SideScroller>{this.props.children}</SideScroller>
-
-			else if (media.type == 'carousel')
-				return <Carousel>{this.props.children}</Carousel>
-		})()
+		const renderedMedia = this.renderMedia(media);
 		
 		return (
 			<Fragment>
@@ -69,7 +98,9 @@ export default class ProjectSectionBlock extends Component {
 					</div>
 				</div>
 				{ media.type == 'side-scroller' ? (
-					<Fragment>{renderedMedia}</Fragment>
+					<Fragment>
+						{renderedMedia}
+					</Fragment>
 				) : (
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>

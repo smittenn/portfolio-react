@@ -46,9 +46,31 @@ class ScrollSection extends Component {
 		})
 	}
 
+	createSectionNumber = () => (
+		!this.props.disableSectionNumber ? (
+			<div className="grid">
+				{ this.props.right ? (
+					<Fragment>
+						<div className="grid__item--col-7 grid__item--hide-bp-medium"/>
+						<div className="grid__item--col-5 grid__item--col-12-medium">
+							<h6 className="scrolling-section__number uppercase mb0">{splitLetter(pad((this.props.sections.indexOf(this.props.name) + 1), 2) + ".")}</h6>
+						</div>
+					</Fragment>
+				) : (
+					<Fragment>
+						<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
+						<div className="grid__item--col-10 grid__item--col-12-medium">
+							<h6 className="scrolling-section__number uppercase mb0">{splitLetter(pad((this.props.sections.indexOf(this.props.name) + 1), 2) + ".")}</h6>
+						</div>
+					</Fragment>
+				)}
+			</div>
+		) : null
+	)
+
 	render() {
 
-		const { name, onSetActive, black, style, sections, activeSection, fullHeight, disableSectionNumber } = this.props;
+		const { name, onSetActive, black, style, sections, activeSection, fullHeight, disableSectionNumber, right } = this.props;
 		const { easing, duration } = this.state;
 
 		const classnames = classNames({
@@ -73,7 +95,7 @@ class ScrollSection extends Component {
 			<div className="clip-wrapper__left" style={{ minHeight: this.props.windowHeight }}>
 				<DelayLink to="/">
 					<TextLink hideLine>
-						<h4 className="uppercase mb0" onMouseEnter={ this.toggleHomeButtonHovering } onMouseLeave={ this.toggleHomeButtonHovering }>
+						<h4 className="mb0" onMouseEnter={ this.toggleHomeButtonHovering } onMouseLeave={ this.toggleHomeButtonHovering }>
 							<span 
 							className={classNames({ "outline": this.state.homeButtonIsHovering })}>
 								•
@@ -110,14 +132,7 @@ class ScrollSection extends Component {
 
 					<section style={updatedStyle}>
 						{<GridLines/>}
-						{ !disableSectionNumber ? (
-							<div className="grid">
-								<div className="grid__item--col-1 grid__item--hide-bp-medium"/>
-								<div className="grid__item--col-10 grid__item--col-12-medium">
-									<h6 className="scrolling-section__number uppercase mb0">{splitLetter(pad((sections.indexOf(name) + 1), 2) + ".")}</h6>
-								</div>
-							</div>
-						) : null }
+						{ this.createSectionNumber() }
 						{ this.props.children }
 					</section>
 

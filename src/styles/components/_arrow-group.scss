@@ -5,6 +5,19 @@ $baseclass: arrow-group;
 	display: flex;
 	justify-content: flex-start;
 
+	.#{$baseclass}__first,
+	.#{$baseclass}__second {
+		transition: opacity $duration-medium $easing2;
+	}
+
+	@for $i from 1 through 2 {
+		> div {
+			&:nth-child(#{$i}) {
+				transition-delay: (#{0.6 + ($i * 0.18)}s);							
+			}
+		}
+	}
+
 	.#{$baseclass}__first {
 		transform: scaleX(-1);
 	}
@@ -19,7 +32,6 @@ $baseclass: arrow-group;
 
 		> * {
 			flex: 1;
-			max-height: 50%;
 		}
 
 		div {
@@ -32,6 +44,10 @@ $baseclass: arrow-group;
 
 		.#{$baseclass}__links {
 			flex-direction: column;
+
+			> * {
+				max-height: 50%;
+			}
 		}
 
 		.#{$baseclass}__first {

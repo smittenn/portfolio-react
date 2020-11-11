@@ -5,7 +5,7 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
-import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
+import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
 import ScrollSection from "../../components/ScrollSection"
@@ -18,7 +18,7 @@ import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -145,7 +145,7 @@ class Translator extends Component {
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock 
 					title="Collection"
-					description1="The system for allowed technicians to organize content into collections that are synced in the cloud all while being able to upload quickly after a shoot."
+					description1="The system allowed for technicians to organize content into collections that are synced in the cloud while giving them a way to upload and archive assets quickly after a shoot."
 					description2=" A production assistant fresh off a shoot can upload their images, videos and audio altogether into a collection for easy access later."
 					media={{ type: 'image', src: '../assets/img/translator/mam-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9, caption: "The view for a sample collection with video and image content." }}
 					/>
@@ -206,7 +206,7 @@ class Translator extends Component {
 							<Image src="../assets/img/translator/bulk-01.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Clicking the multi select button in the sticky secondary bar shows checkboxes and starts the bulk edit flow."/>
 						</div>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<Image src="../assets/img/translator/bulk-02.jpg" aspectRatioWidth={16} aspectRatioHeight={9}/>
+							<Image src="../assets/img/translator/bulk-02.jpg" aspectRatioWidth={16} aspectRatioHeight={9} caption="Like fields can be bulk edited across media types" />
 						</div>
 					</ProjectSectionBlock>
 				</ScrollSection>

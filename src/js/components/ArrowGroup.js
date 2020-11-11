@@ -12,6 +12,13 @@ class ArrowGroup extends Component {
 		super(props);
 	}
 
+	timeoutCursor = () => {
+		this.props.setCursorUnhover()
+		setTimeout(() => {
+			this.props.setCursorHover()
+		}, 600);
+	}
+
 	render() {
 
 		const { isVertical } = this.props;
@@ -26,7 +33,7 @@ class ArrowGroup extends Component {
 				React.cloneElement(item, {
 					key: i,
 					onMouseOver: this.props.setCursorHover,
-					onClick: this.props.setCursorUnhover,
+					onClick: this.timeoutCursor,
 					onMouseLeave: this.props.setCursorUnhover,
 				})
 			) : null

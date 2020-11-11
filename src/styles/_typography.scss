@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6, blockquote, p {
 	color: inherit;
 
 	&.uppercase {
+		font-family: $font-secondary;
 		letter-spacing: $letter-spacing-lg;
 		text-transform: uppercase;
 	}
@@ -22,7 +23,7 @@ h1, h2, h3, h4, h5, h6, blockquote, p {
 	}
 
 	&.mr {
-		margin-right: 8.33%;
+		margin-right: 8.3333%;
 	}
 
 	&.light {
@@ -100,7 +101,7 @@ h5 {
 h6 {
 	font-size: px-to-rem(14px);
 	line-height: 1.3;
-	margin-bottom: 6px;
+	margin-bottom: 8px;
 }
 
 p {

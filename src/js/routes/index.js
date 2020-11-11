@@ -11,13 +11,14 @@ import Resume from './Resume'
 import AboutMe from './AboutMe'
 
 import AmericanMade from './projects/AmericanMade'
-import Vai from './projects/Vai'
+import RationalizedPlayer from './projects/RationalizedPlayer'
 import Translator from './projects/Translator'
 import JnjHome from './projects/JnjHome'
 import JnjMdc from './projects/JnjMdc'
 import MicroAppInteractions from './projects/MicroAppInteractions'
 import MicroAppTemplates from './projects/MicroAppTemplates'
-import Perforce from './projects/Perforce'
+import HelixSync from './projects/HelixSync'
+import HelixCloud from './projects/HelixCloud'
 
 import { detectWindowHeight } from "../actions/windowHeight"
 
@@ -30,13 +31,14 @@ const routes = (
 
 			<Route exact path={navData.items[1].to} component={Work}/>
 			<Route exact path="/american-made" component={AmericanMade}/>
-			<Route exact path="/rationalized-player" component={Vai}/>
+			<Route exact path="/rationalized-player" component={RationalizedPlayer}/>
 			<Route path="/translator" component={Translator}/>
 			<Route path="/jnj-home" component={JnjHome}/>
 			<Route path="/jnj-mdc" component={JnjMdc}/>
 			<Route path="/micro-app-interactions" component={MicroAppInteractions}/>
 			<Route path="/micro-app-templates" component={MicroAppTemplates}/>
-			<Route path="/perforce" component={Perforce}/>
+			<Route path="/helix-sync" component={HelixSync}/>
+			<Route path="/helix-cloud" component={HelixCloud}/>
 
 			<Route exact path={navData.items[2].to} component={Process}/>
 			<Route path={navData.items[3].to} component={AboutMe}/>

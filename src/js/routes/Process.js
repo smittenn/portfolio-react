@@ -6,6 +6,7 @@ import {NavLink} from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, process, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { setPanel } from "../actions/panel"
 
 import ProcessDiagram from "../components/ProcessDiagram"
 import ScrollSection from "../components/ScrollSection"
@@ -31,6 +32,7 @@ class Process extends Component {
 
 		this.props.process();
 		this.props.reset();
+		this.props.setPanel("All Pages");
 	}
 
 	componentWillUnmount() {
@@ -95,6 +97,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Process)

@@ -5,7 +5,7 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
-import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
+import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
 import ScrollSection from "../../components/ScrollSection"
@@ -19,7 +19,7 @@ import TextLink from "../../components/TextLink"
 import Image from "../../components/Image"
 import IFrame from "../../components/IFrame"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -56,11 +56,11 @@ class AmericanMade extends Component {
 				"overview",
 				"about",
 				"preloader",
-				"cinemagraphs",
+				"cinemagraph",
 				"navigation",
-				"video-gallery",
+				"gallery",
 				"parallax",
-				"mobile-first",
+				"mobile",
 				"map",
 			],
 		}
@@ -112,7 +112,7 @@ class AmericanMade extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `The`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `site told the story of Barry Seal.`]}
+					headerText={[ `We took a deep dive into the story of the`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `film.`]}
 					/>
 				</ScrollSection>
 
@@ -166,22 +166,6 @@ class AmericanMade extends Component {
 					<ProjectDetailsBlock role="Lead UI/UX Designer" date="Summer, 2017" client="Universal Pictures" team={["Mina Azimov", "Poplar Bai", "Audrey Tse", "Oleksandr Lebedyev"]} />
 				</ScrollSection>
 
-				{/*<ScrollSection 
-				name={sections[4]} 
-				onSetActive={() => { this.setActiveSection(4); }} 
-				black 
-				style={{ backgroundImage: `url(../assets/img/american-made/cloud-bg.png)`, backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 0.95`, backgroundPosition: "center 30%" }}>
-					<div className="grid">
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h1 className="">{"Atomic Design"}</h1> 
-							<blockquote>{"I applied atomic design principles by creating a design system. I established foundations for color, typography, grids and textures first. Molecules, Organisms and Pages came naturally building upon the foundations."}</blockquote>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-						</div>
-					</div>
-				</ScrollSection>*/}
 
 				<ScrollSection 
 				name={sections[2]}
@@ -192,7 +176,7 @@ class AmericanMade extends Component {
 					title="Preloader"
 					description1="Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film."
 					description2="After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”."
-					media={{ type: "codepen", slug: "RyGNYm", title: "Preloader: American Made Film Site", height: 720  }}/>
+					media={{ type: "iframe", src: "//erchsm.github.io/american-made/preloader",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 
@@ -206,11 +190,11 @@ class AmericanMade extends Component {
 					title="Cinemagraphs"
 					description1="To add more subtle motion, I created Cinemagraphs. Cinemagraphs are a medium that enable deep visual storytelling all while keeping your site light & fast."
 					description2="Cinemagraphs helped to reinforce the cinematic quality of the site and tell the story of American Made in richer way."
-					media={{ type: 'side-scroller' }}>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+					media={{ type: 'carousel' }}>
+						<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/columbia.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
-						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
 							<Image src="../assets/img/american-made/hangar.gif"  aspectRatioWidth={16} aspectRatioHeight={9}/>
 						</div>
 					</ProjectSectionBlock>
@@ -224,10 +208,10 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<ProjectSectionBlock 
-					title="Runway Navigation"
+					title="Navigation"
 					description1="I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off."
 					description2="The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
-					media={{ type: "codepen", slug: "qoQajr", title: "Navigation: American Made Film Site", height: 625  }}/>
+					media={{ type: "iframe", src: "//erchsm.github.io/american-made/navigation",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -238,10 +222,10 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(5); }}
 				>
 					<ProjectSectionBlock 
-					title="Video Gallery"
-					description1="To provide a way for users to browse extensive video content from Universal Pictures I designed a video gallery that utilized the Youtube API for content."
+					title="Gallery"
+					description1="To provide a way for users to browse a varible amount of video content available at any given time during the production cycle, I designed a video gallery that utilized the Youtube API."
 					description2="This way for later film sites that we develop we could simply re-style the player and plug in new content."
-					media={{ type: "codepen", slug: "MGedbG", title: "Video Gallery: American Made Film Site", height: 625  }}/>
+					media={{ type: "iframe", src: "//erchsm.github.io/american-made/video-gallery",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -251,10 +235,10 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<ProjectSectionBlock 
-					title="Parallax Story"
+					title="Parallax"
 					description1="In my quest to unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way."
-					description2="I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph really helped to add a pop of motion."
-					media={{ type: "codepen", slug: "ZoBVbY", title: "Story: American Made Film Site", height: 625  }}/>
+					description2="I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph, transparent video and parallax really helped enhance the visual storytelling."
+					media={{ type: "iframe", src: "//erchsm.github.io/american-made/parallax-story",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 
 				</ScrollSection>
 
@@ -277,7 +261,7 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(8); }}>
 					<ProjectSectionBlock 
-					title="Interactive Map"
+					title="Map"
 					subtitle="Fly With Barry"
 					description1="We developed an extra feature to accompany the site called “Fly With Barry”. The interactive map followed the timeline of Barry Seal’s escapades through Central and South America."
 					media={{ type: "iframe", src: "../assets/img/american-made/map-code.svg", aspectRatioWidth: 2, aspectRatioHeight: 1 }}/>
@@ -299,7 +283,7 @@ class AmericanMade extends Component {
 					backgroundSize: '50%'*/
 				}}
 				>
-					<ProjectUpNextBlock name="V.ai Player" to="vai"/>
+					<ProjectUpNextBlock name="Rationalized Player" to="rationalized-player"/>
 				</ScrollSection>
 
 			</article>

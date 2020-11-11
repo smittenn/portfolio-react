@@ -2,7 +2,39 @@ $baseclass: carousel;
 
 .#{$baseclass} {
 	position: relative;
-	overflow: hidden;
+
+	.arrow-group {
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translate(0,-100%);
+		padding-bottom: 16px;
+
+		// .icon {
+		// 	width: 36px;
+		// 	height: 36px;			
+		// }
+
+		.arrow-group__first,
+		.arrow-group__second {
+			opacity: 0;
+		}
+	}
+
+	&--nav-bottom {
+		.arrow-group {
+			left: 0;
+			bottom: 0;
+			right: auto;
+			top: auto;
+			transform: translate(0, 100%);
+			padding-top: 16px;
+		}
+	}
+
+	&__item-wrapper {
+		overflow: hidden;
+	}
 
 	&__items, &__item {
 		transition: transform $easing5 $duration-long;
@@ -15,5 +47,12 @@ $baseclass: carousel;
 
 	&__item {
 		min-width: 100%;
+	}
+
+	.active-section & {
+		.arrow-group__first,
+		.arrow-group__second {
+			opacity: 1;
+		}
 	}
 }

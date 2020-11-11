@@ -44,8 +44,12 @@ export const wrap2 = () => ({
 	type: 'WRAP2',
 })
 
-export const perforce = () => ({
-	type: 'PERFORCE',
+export const perforce1 = () => ({
+	type: 'PERFORCE1',
+})
+
+export const perforce2 = () => ({
+	type: 'PERFORCE2',
 })
 
 export const cisco = () => ({

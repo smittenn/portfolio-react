@@ -18,15 +18,19 @@ export default class CodepenEmbed extends Component {
 		}
 	}
 
+	componentWillUnmount() {
+		this.observer.unobserve(document.querySelectorAll(".codepen-wrapper")[0]);
+	}
+	
 	componentDidMount() {
-		const observer = new IntersectionObserver(
+		this.observer = new IntersectionObserver(
 			([entry]) => this.setState({
 				isVisible: entry.intersectionRatio > 0
 			})
 		);
 
 		if (this.ref.current) {
-			observer.observe(this.ref.current);
+			this.observer.observe(this.ref.current);
 		}
 	}
 		

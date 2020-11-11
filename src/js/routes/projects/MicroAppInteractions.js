@@ -5,7 +5,7 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
-import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
+import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
 import ScrollSection from "../../components/ScrollSection"
@@ -17,7 +17,7 @@ import CodepenEmbed from "../../components/CodepenEmbed"
 import SideScroller from "../../components/SideScroller"
 import TextLink from "../../components/TextLink"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"

@@ -6,11 +6,12 @@ import { NavLink } from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { setPanel } from "../actions/panel"
 
 import DelayLink from "../components/DelayLink"
 import ParallaxBackground from "../components/ParallaxBackground"
 import ScrollSection from "../components/ScrollSection"
-import HeroBlock from "../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../components/blocks/HeroBlock"
 import ProjectCard from "../components/ProjectCard"
 import TextLink from "../components/TextLink"
 
@@ -53,6 +54,7 @@ class Homepage extends Component {
 
 		this.props.home();
 		this.props.reset();
+		this.props.setPanel("All Pages");
 
 		this.formatData(navData);
 	}
@@ -158,8 +160,8 @@ class Homepage extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<ParallaxBackground>
-						<div className="grid p0" style={{ alignItems: 'center' }}>
-							{<div className="grid__item grid__item--col-6 grid__item--col-4-medium"/>}
+						<div className="grid" style={{ alignItems: 'center' }}>
+							{<div className="grid__item grid__item--col-6 grid__item--col-3-medium"/>}
 							{/*<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
 								{<div className="spacer spacer__lg"/>}
 								<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
@@ -171,9 +173,9 @@ class Homepage extends Component {
 							{/*<div className="grid__item grid__item--col-4 grid__item--col-10-medium shift-right--md">
 								<Image src="../assets/img/nyc.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 							</div>*/}
-							<div className="grid__item grid__item--col-6 grid__item--col-8-medium">
+							<div className="grid__item grid__item--col-5 grid__item--col-9-medium">
 								{/*<div className="spacer spacer__lg"/>*/}
-								<Carousel>
+								<Carousel disableNavigation>
 									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 									<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 									<Image src="../assets/img/ferris-wheel.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
@@ -190,18 +192,27 @@ class Homepage extends Component {
 
 				<ScrollSection
 				name={sections[1]}
+				right
 				fullHeight={this.props.isMobile ? true : false}
 				sections={sections}
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
+						<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
+							<Carousel bottomNav>
+								<Image src="../assets/img/bike.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								<Image src="../assets/img/fence.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								<Image src="../assets/img/me4.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+							</Carousel>
+						</div>
+						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
+						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<div className="grid__row mb0">
 								<div className="grid__item grid__item--col-12 grid__item--col-10-medium">
 									<h2>{splitWord("Hello There")}</h2>
 								</div>
-								<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
+								<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
 									<blockquote className="">
 										{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
 									</blockquote>
@@ -210,20 +221,6 @@ class Homepage extends Component {
 											<DelayLink to="about-me">{splitWord('Learn More')}</DelayLink>
 										</TextLink>
 									</h5>
-								</div>
-							</div>
-						</div>
-						<div className="grid__item grid__item--col-6 grid__item--hide-bp-medium">
-							<div className="grid__row mb0">
-								{/*<div className="grid__item grid__item--col-6">
-									<Image src="../assets/img/lands-end.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-								</div>*/}
-								{<div className="grid__item grid__item--col-6">
-									<Image src="../assets/img/mist.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-								</div>}
-								<div className="grid__item grid__item--col-6 shift-left--sm">
-									<div className="spacer spacer__lg"/>
-									<Image src="../assets/img/me.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 								</div>
 							</div>
 						</div>
@@ -310,43 +307,38 @@ class Homepage extends Component {
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-							<h4>Social</h4>
+							<h4>Follow</h4>
+							<div className="spacer spacer__md"/>
 						</div>
 					</div>
+					<ProjectCard items={[
+						{
+							name: "Github",
+							to: "//github.com/erchsm"
+						},
+						{
+							name: "Codepen",
+							to: "//codepen.io/erchsm"
+						},
+						{
+							name: "Dribbble",
+							to: "//dribbble.com/erchsm"
+						},
+						{
+							name: "Instagram",
+							to: "//www.instagram.com/e.smitten"
+						},
+						{
+							name: "Flickr",
+							to: "//www.flickr.com/photos/erchsm"
+						}
+					]}/>
+
 					<div className="grid">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<div className="spacer spacer__md"/>
-							<h2 className="">
-								<TextLink isBlack hideUnderline>
-									<a target="_blank" href="//github.com/erchsm">Github</a>
-								</TextLink>
-							</h2>
-							<h2 className="">
-								<TextLink isBlack hideUnderline>
-									<a target="_blank" href="//codepen.io/erchsm">Codepen</a>
-								</TextLink>
-							</h2>
-							<h2 className="">
-								<TextLink isBlack hideUnderline>
-									<a target="_blank" href="//dribbble.com/erchsm">Dribbble</a>
-								</TextLink>
-							</h2>
-							<h2 className="">
-								<TextLink isBlack hideUnderline>
-									<a target="_blank" href="//www.instagram.com/e.smitten">Instagram</a>
-								</TextLink>
-							</h2>
-							<h2 className="">
-								<TextLink isBlack hideUnderline>
-									<a target="_blank" href="//www.flickr.com/photos/erchsm">Flickr</a>
-								</TextLink>
-							</h2>
 						</div>
-						{/*<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-							<div className="spacer spacer__md"/>
-						</div>*/}
-						<div className="spacer spacer__md"/>
 					</div>
 				</ScrollSection>
 
@@ -393,6 +385,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Homepage)

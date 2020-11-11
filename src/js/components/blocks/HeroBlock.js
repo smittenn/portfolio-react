@@ -13,8 +13,17 @@ import splitLetter from "../../services/splitLetter"
 import hexToRgb from "../../services/hexToRgb"
 import palette from "../../services/palette"
 
+export class HeroBlockItem extends Component {
+	render() {
+		const { word } = this.props;
 
-export default class HeroBlock extends Component {
+		return (
+			<span><span className="outline">{this.props.children} </span></span>
+		)
+	}
+}
+
+export class HeroBlock extends Component {
 
 	constructor(props) {
 		super(props);
@@ -38,11 +47,11 @@ export default class HeroBlock extends Component {
 
 		return (
 			<div className={classnames}>
-				{<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>}
+				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-					<h1 className={ classNames({ "mb0": true })}>{updatedText}</h1>
+					<h1 className="heading1 mb0">{updatedText}</h1>
 				</div>
-			</div>				
+			</div>
 		);
 	}
 }

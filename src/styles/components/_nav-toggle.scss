@@ -40,10 +40,9 @@ $baseclass: nav-toggle;
 		display: flex;
 	}
 
-	// h4, h5, h6 {
-		// line-height: 1;
-		// letter-spacing: $letter-spacing-xxl;
-	// }
+	h4, h5, h6, p {
+		line-height: 14px;
+	}
 
 	.#{$baseclass}__abbreviation, .#{$baseclass}__count {
 		transition-timing-function: $easing2;

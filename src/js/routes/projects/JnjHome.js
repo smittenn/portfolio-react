@@ -5,10 +5,10 @@ import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
-import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../../actions/abbreviation"
+import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import HeroBlock from "../../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
@@ -86,18 +86,6 @@ class JnjHome extends Component {
 		return (
 			<article>
 
-				<ParallaxBackground 
-				style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .24), 
-							rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .4)
-						),
-						url(../assets/img/jnj-home/${heroBackgroundImage}.jpg)
-					`, 
-					backgroundColor: `rgb(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b})`,
-				}}/>
-
 				<ScrollSection 
 				name={sections[0]}
 				black 
@@ -108,6 +96,17 @@ class JnjHome extends Component {
 					backgroundColor: 'transparent',
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
+					<ParallaxBackground 
+					style={{ 
+						backgroundImage: `
+							radial-gradient(
+								rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .24), 
+								rgba(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b}, .4)
+							),
+							url(../assets/img/jnj-home/${heroBackgroundImage}.jpg)
+						`, 
+						backgroundColor: `rgb(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b})`,
+					}}/>
 					<HeroBlock 
 					headerText={[ <span><span className="outline">Home </span></span>, `is a place for employees to connect and create.`]}
 					/>
@@ -163,7 +162,7 @@ class JnjHome extends Component {
 					role="UX/Motion Designer" 
 					date="Spring, 2018" 
 					client="J&J People XD" 
-					team={["Alex Gross", "Chris Purcell", "Alisha Austin", "Katrina Corcoran", "Howard Chambers"]} />
+					team={["Alex Gross", "Alisha Austin", "Howard Chambers", "Katrina Corcoran", "Chris Purcell"]} />
 				</ScrollSection>
 
 				<ScrollSection 
@@ -175,7 +174,10 @@ class JnjHome extends Component {
 					title="Onboarding"
 					description1="The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. A new employee provides some basic information in this short onboarding experience."
 					description2="Afterwards the employee can visit Home to learn about services nearby, tools necessary for their job and share profiles of their team members."
-					media={{ type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
+					media={[
+						{ type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 },
+						{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-profile-setup.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }
+					]}/>
 				</ScrollSection>
 
 				<ScrollSection 

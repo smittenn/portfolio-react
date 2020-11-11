@@ -6,6 +6,7 @@ import {NavLink} from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, process, aboutMe, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { setPanel } from "../actions/panel"
 
 import ParallaxBackground from "../components/ParallaxBackground"
 import ScrollSection from "../components/ScrollSection"
@@ -15,7 +16,7 @@ import TextLink from "../components/TextLink"
 import Image from "../components/Image"
 import Video from "../components/Video"
 
-import HeroBlock from "../components/blocks/HeroBlock"
+import { HeroBlock, HeroBlockItem } from "../components/blocks/HeroBlock"
 import ProjectSectionBlock from "../components/blocks/ProjectSectionBlock"
 
 import hexToRgb from "../services/hexToRgb"
@@ -43,6 +44,7 @@ class About extends Component {
 
 		this.props.aboutMe();
 		this.props.reset();
+		this.props.setPanel("All Pages");
 	}
 
 		
@@ -175,6 +177,7 @@ const mapDispatchToProps = dispatch => ({
 	perforce: () => dispatch(perforce()),
 	cisco: () => dispatch(cisco()),
 	protohack: () => dispatch(protohack()),
+	setPanel: (str) => dispatch(setPanel(str)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(About)

@@ -39,7 +39,7 @@ class App extends Component {
 
 	componentWillUnmount() {
 		window.removeEventListener('resize', () => { this.props.detectMobile(); });
-		this.props.history.unlisten();
+		// this.props.history.unlisten();
 	}
 
 	render() {

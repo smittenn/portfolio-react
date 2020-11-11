@@ -58,7 +58,7 @@ class SideScroller extends Component {
 				</div>*/}
 				<div className="grid side-scroller__items">
 					{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-					{ items }
+						{ items }
 					{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 				</div>
 			</div>

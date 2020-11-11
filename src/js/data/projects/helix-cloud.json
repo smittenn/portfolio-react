@@ -1,0 +1,100 @@
+{
+	"navPanel" : "Perforce",
+	"sections" : [
+		{
+			"name": "Overview",
+			"type": "hero-block",
+			"block": {
+				"heroText": [
+					{ "word": "Helix" },
+					{ "word": "Cloud" },
+					{ "sentence": "helped designers manage assets in the cloud." },
+				],
+				"parallaxBackground": {
+					"media": {
+						"src": "../assets/img/perforce/mobile-3x2.jpg"
+					},
+					"gradient": {
+						"over": "linear-gradient(#2b8bb5, #178ab9)"
+					}
+				}
+			}
+		},
+		{
+			"name": "About",
+			"type": "project-intro-block",
+			"block": {
+				"col1": "The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. \n\n Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
+				"col2": "Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. \n\n Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.",
+				"col3": "My role on this project involved creating the mockups and visual designs–contributing iteratively to the product. I collaborated with a senior designer to deliever designs in sprints. ",
+				"col4": "With the our new design, the web based tool helped our users manage file versions in the cloud. It eliminated the designer’s need to rely on creating versions manually of their files."
+			}
+		},
+		{
+			"name": "Details",
+			"type": "project-details-block",
+			"block": {
+				"role": "User Experience Designer",
+				"date": "Summer, 2015",
+				"client": "Perforce UX",
+				"team": ["Janet Taylor", "Rebecca Jablonski", "Sean Ardley", "David Taylor"]
+			}
+		},
+		{
+			"name": "Activity",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": {
+				"title": "Activity ",
+				"description1": "The web dashboard allowed for teams to see their recent activity, collaborate on files with each other in the cloud and browse their team’s entire folder structure.",
+				"description2": "We hypothesized that seeing their team's activity in this dashboard would inspire productivity and collaboration.",
+				"media": { 
+					"type": "image",
+					"src": "assets/img/perforce/helix-cloud-activity.jpg",
+					"aspectRatioWidth": 16,
+					"aspectRatioHeight": 9,
+					"caption": "The activity dashboard gave a simple visual face to the complex versioning activity happening under the hood."
+				}
+			}
+		},
+		{
+			"name": "Files",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Files",
+				"description1": "The design team with Perforce saw an opportunity to create a Dropbox-like versioning tool for techincal-minded designers.",
+				"description2": "We designed two different application flows: Manual & Auto mode but which worked best for our target user group?",
+				"media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "image", 
+							"src": "assets/img/perforce/helix-cloud-files.jpg", 
+							"aspectRatioWidth": 16, 
+							"aspectRatioHeight": 9,
+							"caption": "A view of an asset with minimal version history."
+						},
+						{
+							"gridItemWidth": 10,
+							"type": "image", 
+							"src": "assets/img/perforce/helix-cloud-files-2.jpg", 
+							"aspectRatioWidth": 16, 
+							"aspectRatioHeight": 9,
+							"caption": "A view of an asset with a rich version history."
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "up-next-block",
+			"isBlack": true,
+			"block": {
+				"title": "American Made",
+				"to": "american-made"
+			}
+		},
+	]
+}

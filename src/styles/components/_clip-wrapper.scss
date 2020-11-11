@@ -37,6 +37,16 @@ $baseclass: clip-wrapper;
 			@include zIndexCloser();
 		}
 
+		.arrow-group {
+			&__first,
+			&__second {
+				.icon {
+					width: 32px;
+					height: 32px;
+				}
+			}
+		}
+
 		hr {
 			margin: 6px 18px;
 			width: 100%;

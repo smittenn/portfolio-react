@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import classNames from "classnames"
 import { connect } from "react-redux"
 
+import ArrowGroup from "../components/ArrowGroup"
 import Icon from "../components/Icon"
 import palette from "../services/palette"
 
@@ -14,6 +15,18 @@ class Carousel extends Component {
 			index: 0,
 			childWidth: []
 		}
+	}
+
+	incrementIndex = () => {
+		this.setState(prevState => ({
+			index: prevState.index >= (this.props.children.length - 1) ? 0 : prevState.index + 1,
+		}))		
+	}
+
+	decrementIndex = () => {
+		this.setState(prevState => ({
+			index: prevState.index == 0 ? (this.props.children.length - 1) : prevState.index - 1,
+		}))		
 	}
 
 	componentDidMount() {
@@ -33,6 +46,9 @@ class Carousel extends Component {
 				after.forEach(el => { el.style.transform = 'translate3d(-' + (totalWidth) + '%, 0, 0)' });				
 			}
 		}, 6000);
+		if (!this.props.disableNavigation) {
+			clearInterval(this.interval);
+		}
 	}
 
 	componentWillUnmount() {
@@ -41,11 +57,12 @@ class Carousel extends Component {
 
 	render() {
 
-		const { style, aspectRatioWidth, aspectRatioHeight } = this.props;
+		const { style, bottomNav } = this.props;
 		const { index } = this.state
 
 		const classnames = classNames({
 			"carousel": true,
+			"carousel--nav-bottom": bottomNav,
 		})
 
 		const items = this.props.children.map((item, i) => (
@@ -58,9 +75,17 @@ class Carousel extends Component {
 
 		return (
 			<div className={classnames}>
-				<div className="carousel__items" style={{ transform: `translate3d(-${index * 100}%,0,0)`}}>
-					{ items }
+				<div className="carousel__item-wrapper">
+					<div className="carousel__items" style={{ transform: `translate3d(-${index * 100}%,0,0)`}}>
+						{ items }
+					</div>
 				</div>
+				{ !this.props.disableNavigation ?
+					<ArrowGroup>
+						<a><div onClick={this.decrementIndex}/></a>
+						<a><div onClick={this.incrementIndex}/></a>
+					</ArrowGroup> : null
+				}
 			</div>
 		);
 	}
