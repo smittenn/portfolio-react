@@ -53,8 +53,8 @@ class RationalizedPlayer extends Component {
 			activeSection: "intro",
 			sections: [
 				"intro",
-				"overview",
-				"vai-mode",
+				"about",
+				"ai mode",
 				"overlay",
 				"products",
 				"people",
@@ -84,7 +84,14 @@ class RationalizedPlayer extends Component {
 
 		return (
 			<article>
-				<ParallaxBackground
+
+				<ScrollSection
+				name={sections[0]}
+				black
+				fullHeight
+				sections={sections}
+				activeSection={activeSection}
+				background={<ParallaxBackground
 				style={{
 					backgroundImage: `
 						radial-gradient(
@@ -94,17 +101,7 @@ class RationalizedPlayer extends Component {
 						url(../assets/img/vai/${heroBackgroundImage}.jpg)
 					`,
 					backgroundColor: lighten(brandPrimary, 12),
-				}}/>
-
-				<ScrollSection
-				name={sections[0]}
-				black
-				fullHeight
-				sections={sections}
-				activeSection={activeSection}
-				style={{
-					backgroundColor: 'transparent',
-				}}
+				}}/>}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock
 					// headerText={[`The`, <span><span className="outline">Rationalized </span></span>, <span><span className="outline">Player </span></span>, `united web player UX across brands.`]}
@@ -159,7 +156,7 @@ class RationalizedPlayer extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock
-					title="V.ai Mode"
+					title="Ai Mode"
 					description1="During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper."
 					description2="V.ai Mode helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
 					media={{ type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }}

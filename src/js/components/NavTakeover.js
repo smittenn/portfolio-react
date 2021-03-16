@@ -189,7 +189,7 @@ class NavTakeover extends Component {
 		})
 
 		const lineAnimation = {
-			transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
+			transform: 'translate3d(1px, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
 			opacity: (isTakeoverOpen ? 1 : 0)
 		}
 

@@ -51,11 +51,11 @@ class JnjHome extends Component {
 		super(props);
 
 		this.state = {
-			activeSection: "overview",
+			activeSection: "intro",
 			sections: [
-				"overview",
+				"intro",
 				"about",
-				"new-user",
+				"onboard",
 				"navigation",
 				"sitemap",
 				"news",
@@ -171,12 +171,12 @@ class JnjHome extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(2); }}>
 					<ProjectSectionBlock 
-					title="Onboarding"
+					title="Onboard"
 					description1="The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. A new employee provides some basic information in this short onboarding experience."
 					description2="Afterwards the employee can visit Home to learn about services nearby, tools necessary for their job and share profiles of their team members."
 					media={[
 						{ type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 },
-						{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-profile-setup.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }
+						{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-profile-setup.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }
 					]}/>
 				</ScrollSection>
 
@@ -190,7 +190,7 @@ class JnjHome extends Component {
 					title="Navigation"
 					description1="I designed a robust navigation to help employees navigate the vast wealth of information at J&J. We provided a way for an employyee to access their most used links from anywhere on Home."
 					description2="From the takeover, a secondary panel allowed them to see links organized by categories or a list of their previously favorited links."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight:this.props.isMobile ? 8 : 3 }}/>
 				</ScrollSection>
 
 
@@ -202,7 +202,7 @@ class JnjHome extends Component {
 					<ProjectSectionBlock 
 					title="Sitemap"
 					description1="I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 
 				</ScrollSection>
 
@@ -217,7 +217,7 @@ class JnjHome extends Component {
 					title="News"
 					description1="I designed an article page flexible for different types of content. The sticky article sharing buttons provided an opportunity to use to motion to inspire the reader."
 					description2="Using the “Thumbs Up” feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -230,7 +230,7 @@ class JnjHome extends Component {
 					title="Links"
 					description1="I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed."
 					description2="The sticky side navigation, sorting functionality and delightful favoriting animation made for a great experience overall."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 

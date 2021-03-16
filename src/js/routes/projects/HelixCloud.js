@@ -8,38 +8,12 @@ import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
 import { setPanel } from "../../actions/panel"
 
-import ScrollSection from "../../components/ScrollSection"
-
-import ParallaxBackground from "../../components/ParallaxBackground"
-import GridLines from "../../components/GridLines"
-import Sidebar from "../../components/Sidebar"
-import CodepenEmbed from "../../components/CodepenEmbed"
-import SideScroller from "../../components/SideScroller"
-import TextLink from "../../components/TextLink"
-import Image from "../../components/Image"
-import Video from "../../components/Video"
-
 import ProjectPage from "../../components/ProjectPage"
 
-import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
-import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
-import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
-import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
-import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
-
-import splitWord from "../../services/splitWord"
-import splitLetter from "../../services/splitLetter"
-import hexToRgb from "../../services/hexToRgb"
-import palette from "../../services/palette"
-
-import people from "../../data/people"
 import project from "../../data/projects/helix-cloud"
 
 
 class HelixCloud extends Component {
-
-	static propTypes = {
-	}
 
 	componentDidMount() {
 		window.scrollTo(0, 0);

@@ -1,4 +1,4 @@
-export default function(word, multiplier) {
+export default function(word, multiplier=1) {
   return word.split('').reduce((width, c) => {
     if (c == 'W' || c == 'M') width += 15;
     else if (c == 'w' || c == 'm') width += 12;

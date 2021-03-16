@@ -51,9 +51,9 @@ class JnjMdc extends Component {
 		super(props);
 
 		this.state = {
-			activeSection: "overview",
+			activeSection: "intro",
 			sections: [
-				"overview",
+				"intro",
 				"about",
 				"navigation",
 				"flipper",
@@ -84,7 +84,13 @@ class JnjMdc extends Component {
 		return (
 			<article>
 
-				<ParallaxBackground 
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				background={<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
@@ -95,17 +101,7 @@ class JnjMdc extends Component {
 					`, 
 					backgroundSize: 'cover',
 					backgroundPosition: this.props.isMobile ? '75%' : 'center',
-				}}/>
-
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundColor: 'transparent'
-				}}
+				}}/>}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ <span><span className="outline">MDC </span></span>, `unified the UX for 250+ medical device companies.`]}
@@ -172,7 +168,7 @@ class JnjMdc extends Component {
 					title="Navigation"
 					description1="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of specialties, products, procedures and services available in the J&J portfolio of companies."
 					description2="The navigation design needed to be flexible enough to work with as few as 1 item and as many as 100 items. The sliding underline shows your current active menu."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 					{/*<div className="grid">
 						<div className="grid__row">
@@ -185,7 +181,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-nav.html"/>
+							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-nav.html"/>
 						</div>
 					</div>*/}
 				</ScrollSection>
@@ -201,7 +197,7 @@ class JnjMdc extends Component {
 					title="Toggle"
 					description1={`To toggle between the healthcare professional and patient experiences of the site I designed a ‟Flipper” interaction for toggling between them.`}
 					description2="When hovering, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 					{/*<div className="grid">
 						<div className="grid__row">
@@ -215,7 +211,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper"/>
+							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-flipper.html#flipper"/>
 						</div>
 					</div>*/}
 				</ScrollSection>
@@ -230,7 +226,7 @@ class JnjMdc extends Component {
 					{<ProjectSectionBlock 
 					title="Companies"
 					description1="I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 				</ScrollSection>
 
 
@@ -243,7 +239,7 @@ class JnjMdc extends Component {
 					{<ProjectSectionBlock 
 					title="Taxonomy"
 					description1="Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 
 					{/*<div className="grid">
@@ -257,7 +253,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html"/>
+							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html"/>
 						</div>
 					</div>*/}
 				</ScrollSection>
@@ -272,7 +268,7 @@ class JnjMdc extends Component {
 					{<ProjectSectionBlock 
 					title="Buttons"
 					description1="I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 					{/*<div className="grid">
 						<div className="grid__row">
@@ -285,7 +281,7 @@ class JnjMdc extends Component {
 					</div>
 					<div className="grid">
 						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html"/>
+							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-buttons.html"/>
 						</div>
 					</div>*/}
 				</ScrollSection>
@@ -300,7 +296,7 @@ class JnjMdc extends Component {
 					{<ProjectSectionBlock 
 					title="Cards"
 					description1="Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew."
-					media={{ type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-cards.html.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
+					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-cards.html.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
 
 				</ScrollSection>*/}
 

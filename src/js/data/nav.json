@@ -15,6 +15,21 @@
 					"name": "Google Design",
 					"items": [
 						{
+							"name": "Best of 2020",
+							"to": "//design.google/library/google-design-2020",
+						},
+						{
+							"name": "Is it Good Design?",
+							"to": "//design.google/library/good-design",
+							"media": {
+								// "src": "../assets/img/google-design/best-of-2019-3x2.jpg",
+								"src": "../assets/img/google-design/GoodDesign_logo.gif",
+								"type": "image",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
+						{
 							"name": "Best of 2019",
 							"to": "//design.google/library/google-design-2019",
 							"media": {
@@ -25,7 +40,7 @@
 								"aspectRatioHeight": 9,
 							}
 						},
-						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
+						// { "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ 
 							"name": "Span 2019",
 							"to": "//design.google/library/span2019",

@@ -22,19 +22,19 @@ export default class ProjectDetailsBlock extends Component {
 			<div className="grid">
 				<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 				<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-					<h5 className="">Role</h5>
+					<h6 className="uppercase">Role</h6>
 					<blockquote className="mr">{role}</blockquote>
 				</div>
 				<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-					<h5 className="">Date</h5>
+					<h6 className="uppercase">Date</h6>
 					<blockquote className="mr">{date}</blockquote>
 				</div>
 				<div className="grid__item grid__item--col-2 grid__item--col-12-medium">
-					<h5 className="">Client</h5>
+					<h6 className="uppercase">Client</h6>
 					<blockquote className="mr">{client}</blockquote> 
 				</div>
 				<div className="grid__item grid__item--col-3 grid__item--col-12-medium">
-					<h5 className="">Team</h5>
+					<h6 className="uppercase">Team</h6>
 					<blockquote className="mb0">
 						{
 							team.map((person, i) => (

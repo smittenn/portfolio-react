@@ -3,21 +3,25 @@ $baseclass: carousel;
 .#{$baseclass} {
 	position: relative;
 
-	.arrow-group {
+	.#{$arrow-group-baseclass} {
 		position: absolute;
 		right: 0;
 		top: 0;
 		transform: translate(0,-100%);
 		padding-bottom: 16px;
 
-		// .icon {
-		// 	width: 36px;
-		// 	height: 36px;			
-		// }
-
-		.arrow-group__first,
-		.arrow-group__second {
+		.#{$arrow-group-baseclass}__first,
+		.#{$arrow-group-baseclass}__second {
 			opacity: 0;
+			transition: opacity $duration-medium $easing2;
+		}
+
+		@for $i from 1 through 2 {
+			.#{$arrow-group-baseclass}__first, .#{$arrow-group-baseclass}__second {
+				&:nth-child(#{$i}) {
+					transition-delay: (#{0.6 + ($i * 0.18)}s);							
+				}
+			}
 		}
 	}
 

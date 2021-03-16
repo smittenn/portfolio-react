@@ -206,15 +206,27 @@
 // }
 
 @font-face {
-	font-family: 'Suisse Intl';
+	font-family: 'Lausanne';
 	font-weight: normal;
 	font-style: normal;
-	src: url('../fonts/SuisseIntl/SuisseIntl-Regular.eot');
-	src: url('../fonts/SuisseIntl/SuisseIntl-Regular.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/SuisseIntl/SuisseIntl-Regular.woff2') format('woff2'), 
-	url('../fonts/SuisseIntl/SuisseIntl-Regular.woff') format('woff'), 
-	url('../fonts/SuisseIntl/SuisseIntl-Regular.ttf') format('truetype'),
-	url('../fonts/SuisseIntl/SuisseIntl-Regular.svg#codropsicons') format('svg');
+	src: url('../fonts/Lausanne/Lausanne-Light.eot');
+	src: url('../fonts/Lausanne/Lausanne-Light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Lausanne/Lausanne-Light.woff2') format('woff2'), 
+	url('../fonts/Lausanne/Lausanne-Light.woff') format('woff'), 
+	url('../fonts/Lausanne/Lausanne-Light.ttf') format('truetype'),
+	url('../fonts/Lausanne/Lausanne-Light.svg#codropsicons') format('svg');
+}
+
+@font-face {
+	font-family: 'Lausanne Extended';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/Lausanne/Lausanne-Light-Extended.eot');
+	src: url('../fonts/Lausanne/Lausanne-Light-Extended.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Lausanne/Lausanne-Light-Extended.woff2') format('woff2'), 
+	url('../fonts/Lausanne/Lausanne-Light-Extended.woff') format('woff'), 
+	url('../fonts/Lausanne/Lausanne-Light-Extended.ttf') format('truetype'),
+	url('../fonts/Lausanne/Lausanne-Light-Extended.svg#codropsicons') format('svg');
 }
 
 // @font-face {

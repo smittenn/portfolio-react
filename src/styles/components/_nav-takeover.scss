@@ -56,7 +56,6 @@ $baseclass: nav-takeover;
 			pointer-events: none;
 			transition: none;
 			margin: 0;
-			line-height: 1.3;
 
 			&.hovered {
 				color: transparent;
@@ -69,7 +68,7 @@ $baseclass: nav-takeover;
 			height: 100%;
 			border: none;
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 		}
 
 		hr {
@@ -126,7 +125,7 @@ $baseclass: nav-takeover;
 	&__line {
 		background: lighten($brand-red, 0%);
 		opacity: 0;
-		height: 72px;
+		height: 80px;
 		width: 100%;
 		transform: translate3d(0,-300%,0);
 		transition: all $easing2 $duration-long;

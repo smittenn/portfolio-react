@@ -1,7 +1,5 @@
-import React, {Component} from "react"
-import { Parallax } from "react-parallax"
+import React, { Component, Fragment } from "react"
 import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import { connect } from 'react-redux'
 
 import NavToggle from "../NavToggle"
@@ -42,14 +40,18 @@ export class HeroBlock extends Component {
 		let updatedText = [];
 
 		headerText.forEach((item, idx) => {
-			typeof(item) == "string" ? updatedText[idx] = splitWord(item, style) : updatedText[idx] = React.cloneElement(item, { style: style, key: idx, className: 'split--word' })
+			typeof(item) == "string" ? (
+				updatedText[idx] = splitWord(item, style) 
+			) : (
+				updatedText[idx] = React.cloneElement(item, { style: style, key: idx, className: 'split--word' })
+			)
 		})
 
 		return (
 			<div className={classnames}>
 				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-					<h1 className="heading1 mb0">{updatedText}</h1>
+					<h1 className="heading1 mb0">{ updatedText }</h1>
 				</div>
 			</div>
 		);

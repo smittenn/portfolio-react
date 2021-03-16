@@ -7,26 +7,31 @@ $bp-xsmall: 320px;
 
 $rem-base: 8px;
 
-// $font-primary: 'Suisse Intl', sans-serif;
-$font-primary: 'Akzidenz Grotesk', sans-serif;
-// $font-mono: 'Moderat Mono', monospace;
-// $font-secondary: 'Futura Maxi', sans-serif;
-$font-secondary: 'Akzidenz Grotesk Extended', sans-serif;
-// $font-tertiary: 'Akzidenz Grotesk Extended', sans-serif;
-// $font-serif: 'GT Sectra Display', serif;
-
-$brand-red: #ff3636;
+// $brand-red: #ff3636;
+$brand-red: #f63f43;
 // $brand-red: #ff483c;
 // $brand-red: #ff4716;
 // $brand-red: #e04e47;
-$brand-orange: #ff6d2f;
-$brand-yellow: #F3B600;
+
+// $brand-orange: #ff6d2f;
+$brand-orange: #f67e0d;
+
+// $brand-yellow: #F3B600;
+$brand-yellow: #efbb29;
 // $brand-yellow: #F4E285;
-$brand-green: #7EAF53;
+
+// $brand-green: #7EAF53;
+$brand-green: #12ab2e;
+
 $brand-purple: #7366FB;
-$brand-pink: darken(#FED1CF,6%);
-$brand-blue: #00CAE0;
-$brand-teal: #0AB489;;
+
+// $brand-pink: darken(#FED1CF,6%);
+$brand-pink: #ef9b97;
+
+// $brand-blue: #00CAE0;
+$brand-blue: #0b67de;
+
+$brand-teal: #00D9B6;;
 
 $brand-grey-dark: #232021;
 $brand-white: lighten(#F8FBF7, 2%);
@@ -41,20 +46,22 @@ $brand-grey-lightest: mix($brand-white, $brand-black, 94%);
 // $brand-grey-lightest: #B6B7AC;
 
 
-$letter-spacing-xxs: -0.048em;
-$letter-spacing-xs: -0.036em;
-$letter-spacing-sm: -0.024em;
-$letter-spacing-md: -0.012em;
-$letter-spacing-lg: 0.012em;
-$letter-spacing-xl: 0.024em;
-$letter-spacing-xxl: 0.060em;
+// $letter-spacing-xxs: -0.048em;
+// $letter-spacing-xs: -0.036em;
+// $letter-spacing-sm: -0.024em;
+// $letter-spacing-md: -0.012em;
+// $letter-spacing-lg: 0.012em;
+// $letter-spacing-xl: 0.024em;
+// $letter-spacing-xxl: 0.060em;
 
 // rem spacing
-// $letter-spacing-xxs: -0.8rem;
-// $letter-spacing-xs: -0.4rem;
-// $letter-spacing-sm: -0.3rem;
-// $letter-spacing-md: -0.1rem;
-// $letter-spacing-lg: 0.1rem;
+$letter-spacing-xxs: px-to-rem(-1.6px);
+$letter-spacing-xs: px-to-rem(-1.2px);
+$letter-spacing-sm: px-to-rem(-0.8px);
+$letter-spacing-md: px-to-rem(0px);
+$letter-spacing-lg: px-to-rem(0.2px);
+$letter-spacing-xl: px-to-rem(0.4px);
+$letter-spacing-xxl: px-to-rem(1.6px);
 
 $easing1: cubic-bezier(0.215, 0.61, 0.355, 1);
 $easing2: cubic-bezier(.19,1,.22,1);

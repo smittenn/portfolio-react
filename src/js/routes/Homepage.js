@@ -29,6 +29,7 @@ import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 import pad from "../services/pad"
+import waveText from "../services/waveText"
 
 
 class Homepage extends Component {
@@ -89,7 +90,7 @@ class Homepage extends Component {
 		const brandBlack = hexToRgb(palette("brand-black"));
 		const brandRed = hexToRgb(palette("brand-red"));
 
-		const heroBackgroundImage = this.props.isMobile ? 'banner-5x8' : 'banner-3x2';
+		const heroBackgroundImage = this.props.isMobile ? 'banner-5x8.jpg' : 'banner-3x2.jpg';
 
 		// const circles = document.getElementsByClassName('step__spot-circle');
 		// const circleColor = `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`;
@@ -158,34 +159,27 @@ class Homepage extends Component {
 				fullHeight
 				sections={sections}
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxBackground>
+				background={<ParallaxBackground>
 						<div className="grid" style={{ alignItems: 'center' }}>
-							{<div className="grid__item grid__item--col-6 grid__item--col-3-medium"/>}
-							{/*<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
-								{<div className="spacer spacer__lg"/>}
-								<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-							</div>*/}
-							{/*<div className="grid__item grid__item--col-4 grid__item--col-10-medium shift-right--md">
-								<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={4} aspectRatioHeight={5}/>
-								<div className="spacer spacer__lg"/>
-							</div>*/}
-							{/*<div className="grid__item grid__item--col-4 grid__item--col-10-medium shift-right--md">
-								<Image src="../assets/img/nyc.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-							</div>*/}
+							<div className="grid__item grid__item--col-6 grid__item--col-3-medium"/>
 							<div className="grid__item grid__item--col-5 grid__item--col-9-medium">
-								{/*<div className="spacer spacer__lg"/>*/}
-								<Carousel disableNavigation>
-									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-									<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+								<Carousel disableNavigation={this.props.isMobile ? true : false} stacking>
 									<Image src="../assets/img/ferris-wheel.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+									<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 								</Carousel>
 							</div>
 						</div>
-					</ParallaxBackground>
+					</ParallaxBackground>}
+				onSetActive={() => { this.setActiveSection(0); }}>
 
 					<HeroBlock
-					headerText={[`Eric C. Smith is an`, <span><span className="outline">Interactive&nbsp;</span></span>, <span><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}
+					headerText={[
+						`Eric C. Smith is an`, 
+						<span><span className="outline">Interactive </span></span>, 
+						<span><span className="outline">Designer </span></span>, 
+						`in New York City.`
+					]}
 					/>
 
 				</ScrollSection>
@@ -200,10 +194,10 @@ class Homepage extends Component {
 					<div className="grid">
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
 						<div className="grid__item grid__item--col-5 grid__item--hide-bp-medium">
-							<Carousel bottomNav>
+							<Carousel bottomNav stacking>
+								<Image src="../assets/img/me7.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 								<Image src="../assets/img/bike.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 								<Image src="../assets/img/fence.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-								<Image src="../assets/img/me4.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 							</Carousel>
 						</div>
 						{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
@@ -214,7 +208,7 @@ class Homepage extends Component {
 								</div>
 								<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
 									<blockquote className="">
-										{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me outdoors taking photos with friends.`)}
+										{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me messing around in 3D or riding my bike.`)}
 									</blockquote>
 									<h5 className="mb0">
 										<TextLink isBlack hideUnderline>
@@ -314,7 +308,7 @@ class Homepage extends Component {
 					<ProjectCard items={[
 						{
 							name: "Github",
-							to: "//github.com/erchsm"
+							to: "//github.com/smittenn"
 						},
 						{
 							name: "Codepen",
@@ -326,7 +320,11 @@ class Homepage extends Component {
 						},
 						{
 							name: "Instagram",
-							to: "//www.instagram.com/e.smitten"
+							to: "//www.instagram.com/smitttennn"
+						},
+						{
+							name: "Spotify",
+							to: "//open.spotify.com/user/erchsm"
 						},
 						{
 							name: "Flickr",

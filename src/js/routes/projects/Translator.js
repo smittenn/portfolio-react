@@ -52,7 +52,7 @@ class Translator extends Component {
 		this.state = {
 			activeSection: "overview",
 			sections: [
-				"overview",
+				"intro",
 				"about",
 				"collection",
 				"metadata",
@@ -83,8 +83,10 @@ class Translator extends Component {
 
 		return (
 			<article>
-
-				<ParallaxBackground 
+				
+				<ScrollSection 
+				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
+				background={<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 						radial-gradient(
@@ -94,19 +96,12 @@ class Translator extends Component {
 						url(../assets/img/translator/${heroBackgroundImage}.jpg)
 					`, 
 					backgroundColor: brandPrimary,
-				}}/>
-				
-				<ScrollSection 
-				name={sections[0]} black fullHeight sections={sections} activeSection={activeSection}
-				style={{ 
-					backgroundColor: 'transparent',
-				}}
+				}}/>}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ <span><span className="outline">Translator </span></span>, `helped television + film crews manage their assets.`]}
 					/>
 				</ScrollSection>
-
 
 
 				<ScrollSection 

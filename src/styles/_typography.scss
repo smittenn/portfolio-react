@@ -1,3 +1,9 @@
+$font-primary: 'Lausanne', sans-serif;
+$font-secondary: 'Lausanne Extended', sans-serif;
+
+// $font-primary: 'Akzidenz Grotesk', sans-serif;
+// $font-secondary: 'Akzidenz Grotesk Extended', sans-serif;
+
 $goldenRatio: 1.61803398875;
 
 body, button, input, select, textarea {
@@ -64,17 +70,17 @@ h5, h6 {
 }
 
 h1 {
-	font-size: px-to-rem(136px);
+	font-size: px-to-rem(128px);
 	line-height: 1;
 	margin-bottom: 48px;
-	letter-spacing: $letter-spacing-sm;
+	letter-spacing: $letter-spacing-xxs;
 }
 
 h2 {
-	font-size: px-to-rem(120px);
+	font-size: px-to-rem(112px);
 	line-height: 1;
 	margin-bottom: 36px;
-	letter-spacing: $letter-spacing-sm;
+	letter-spacing: $letter-spacing-xs;
 }
 
 h3 {
@@ -85,28 +91,28 @@ h3 {
 }
 
 h4 {
-	font-size: px-to-rem(48px);
+	font-size: px-to-rem(40px);
 	line-height: 1;
 	margin-bottom: 16px;
 	letter-spacing: $letter-spacing-md;
 }
 
 h5 {
-	font-size: px-to-rem(18px);
+	font-size: px-to-rem(19px);
 	line-height: 1.3;
 	margin-bottom: 8px;
 	letter-spacing: $letter-spacing-md;
 }
 
 h6 {
-	font-size: px-to-rem(14px);
+	font-size: px-to-rem(15px);
 	line-height: 1.3;
 	margin-bottom: 8px;
 }
 
 p {
 	// color: $brand-grey-darkest;
-	font-size: px-to-rem(16px);
+	font-size: px-to-rem(17px);
 	line-height: $goldenRatio;
 	white-space: pre-line;
 	margin-bottom: 24px;
@@ -114,7 +120,7 @@ p {
 }
 
 blockquote {
-	font-size: px-to-rem(22px);
+	font-size: px-to-rem(21px);
 	line-height: $goldenRatio;
 	white-space: pre-line;
 	display: inline-flex;

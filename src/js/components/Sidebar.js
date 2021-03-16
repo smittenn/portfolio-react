@@ -19,7 +19,7 @@ class Sidebar extends Component {
 	constructor(props) {
 		super(props);
 
-    const lengths = props.sections.map(section => textWidth(section.toUpperCase(), 1));
+    const lengths = props.sections.map(section => textWidth(section.toUpperCase()));
     const max = Math.floor(lengths.reduce((a, b) => Math.max(a, b)))
 
     // this.labelRefs = props.sections.map(section => {

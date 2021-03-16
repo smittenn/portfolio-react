@@ -38612,9 +38612,11 @@ var Carousel = function (_Component) {
 		_this.incrementIndex = function () {
 			_this.setState(function (prevState) {
 				return {
+					// clones: prevState.clones.concat(this.props.children[this.state.index]),
 					index: prevState.index >= _this.props.children.length - 1 ? 0 : prevState.index + 1
 				};
 			});
+			_this.stackingAnimation();
 		};
 
 		_this.decrementIndex = function () {
@@ -38623,11 +38625,26 @@ var Carousel = function (_Component) {
 					index: prevState.index == 0 ? _this.props.children.length - 1 : prevState.index - 1
 				};
 			});
+			_this.stackingAnimation();
+		};
+
+		_this.stackingAnimation = function () {
+			// if (this.props.stacking) {
+			// 	const items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'))
+			// 	const beforeWidths = items.slice(0, this.state.index).map(item => 100);
+			// 	const totalWidth = beforeWidths.reduce((acc, width) => acc + width, 0)
+
+			// 	const before = items.slice(0, this.state.index);
+			// 	const after = items.slice(this.state.index);
+
+			// 	after.forEach(el => { el.style.transform = `translate3d(-${totalWidth}) + %, 0, 0)` });				
+			// }
 		};
 
 		_this.state = {
 			index: 0,
-			childWidth: []
+			childWidth: [],
+			clones: []
 		};
 		return _this;
 	}
@@ -38643,23 +38660,7 @@ var Carousel = function (_Component) {
 						index: prevState.index >= _this2.props.children.length - 1 ? 0 : prevState.index + 1
 					};
 				});
-				// Stacking Effect
-				if (_this2.props.stacking) {
-					var items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'));
-					var beforeWidths = items.slice(0, _this2.state.index).map(function (item) {
-						return 100;
-					});
-					var totalWidth = beforeWidths.reduce(function (acc, width) {
-						return acc + width;
-					}, 0);
-
-					var before = items.slice(0, _this2.state.index);
-					var after = items.slice(_this2.state.index);
-
-					after.forEach(function (el) {
-						el.style.transform = 'translate3d(-' + totalWidth + '%, 0, 0)';
-					});
-				}
+				_this2.stackingAnimation();
 			}, 6000);
 			if (!this.props.disableNavigation) {
 				clearInterval(this.interval);
@@ -38673,10 +38674,14 @@ var Carousel = function (_Component) {
 	}, {
 		key: "render",
 		value: function render() {
+			var _this3 = this;
+
 			var _props = this.props,
 			    style = _props.style,
 			    bottomNav = _props.bottomNav;
-			var index = this.state.index;
+			var _state = this.state,
+			    index = _state.index,
+			    clones = _state.clones;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -38684,12 +38689,15 @@ var Carousel = function (_Component) {
 				"carousel--nav-bottom": bottomNav
 			});
 
+			var length = this.props.children.length;
 			var items = this.props.children.map(function (item, i) {
 				return _react2.default.createElement(
 					"div",
-					{
-						className: "carousel__item",
-						key: i },
+					{ className: "carousel__item",
+						key: i,
+						style: _this3.props.stacking ? {
+							transform: "translate3d(\n\t\t\t\t" + (-2 + i * 2 - i * 100) + "%,\n\t\t\t\t" + (-2 + i * 2 + (i >= length - index ? Math.min(index, i) * 103 : 0)) + "%,\n\t\t\t\t0) rotate(" + (i >= length - index ? 90 : 0) + "deg)"
+						} : null },
 					item
 				);
 			});
@@ -38702,7 +38710,7 @@ var Carousel = function (_Component) {
 					{ className: "carousel__item-wrapper" },
 					_react2.default.createElement(
 						"div",
-						{ className: "carousel__items", style: { transform: "translate3d(-" + index * 100 + "%,0,0)" } },
+						{ className: "carousel__items", style: this.props.stacking ? { margin: '2%' } : { transform: "translate3d(-" + index * 100 + "%,0,0)" } },
 						items
 					)
 				),
@@ -39601,7 +39609,7 @@ var Icon = function (_Component) {
 				download: 'M25.9212464,10 L33,10 L33,35 L7,35 L7,10 L13.9289244,10 M20,4 L20,27 M12.5,19.5 L20,26.666 M27.5,19.5 L20,26.666',
 				binoculars: 'M30.756,30.528 C28.264,30.528 26.22,28.512 26.22,26.02 C26.22,23.528 28.264,21.484 30.756,21.484 C33.248,21.484 35.264,23.528 35.264,26.02 C35.264,28.512 33.248,30.528 30.756,30.528 Z M9.784,30.528 C7.292,30.528 5.248,28.512 5.248,26.02 C5.248,23.528 7.292,21.484 9.784,21.484 C12.276,21.484 14.292,23.528 14.292,26.02 C14.292,28.512 12.276,30.528 9.784,30.528 Z M20.284,24.704 C19.08,24.704 18.1,23.724 18.1,22.52 C18.1,21.316 19.08,20.336 20.284,20.336 C21.488,20.336 22.468,21.316 22.468,22.52 C22.468,23.724 21.488,24.704 20.284,24.704 Z M38.428,24.9 C38.232,23.5 37.644,22.184 36.804,21.12 L33.612,13.028 C33.108,11.264 31.456,9.92 29.86,9.92 L29.776,9.92 C29.776,7.764 28.04,6 25.856,6 C24.764,6 23.812,6.42 23.084,7.148 L17.428,7.148 C16.728,6.42 15.748,6 14.684,6 C12.5,6 10.736,7.764 10.736,9.92 L10.68,9.92 C9.084,9.92 7.404,11.264 6.9,13.028 L3.736,21.12 C2.868,22.184 2.28,23.5 2.084,24.9 C2.028,25.264 2,25.628 2,26.02 C2,26.384 2.028,26.748 2.084,27.112 C2.616,30.864 5.864,33.776 9.784,33.776 C14.068,33.776 17.54,30.304 17.54,26.02 C17.54,25.936 17.54,25.852 17.54,25.768 C18.296,26.412 19.248,26.804 20.284,26.804 C21.32,26.804 22.244,26.412 22.972,25.796 C22.972,25.88 22.972,25.936 22.972,26.02 C22.972,30.304 26.472,33.776 30.756,33.776 C34.648,33.776 37.896,30.864 38.428,27.112 C38.484,26.748 38.512,26.384 38.512,26.02 C38.512,25.628 38.484,25.264 38.428,24.9 Z M22.9541202,25.7385663 C22.2290411,26.3411741 21.2979864,26.704 20.284,26.704 C19.18782,26.704 18.1885614,26.2799688 17.4416811,25.5873633 M16.1698342,21.7565761 C16.1960155,21.6152198 16.2293296,21.4763308 16.2693878,21.340298 C16.7800821,19.6060401 18.3868936,18.336 20.284,18.336 C22.1511145,18.336 23.7370403,19.5662007 24.2735724,21.2583971 C24.3194206,21.4030004 24.357606,21.5509772 24.3876491,21.7018484 M9.67671207,33.8223832 C5.43336842,33.8223832 1.95287307,30.3895659 1.95287307,26.1462222 C1.95287307,21.9028786 5.43336842,18.4223832 9.67671207,18.4223832 C13.9200557,18.4223832 17.3528731,21.9028786 17.3528731,26.1462222 C17.3528731,30.3895659 13.9200557,33.8223832 9.67671207,33.8223832 Z M30.6767121,33.8223832 C26.4333684,33.8223832 22.9528731,30.3895659 22.9528731,26.1462222 C22.9528731,21.9028786 26.4333684,18.4223832 30.6767121,18.4223832 C34.9200557,18.4223832 38.3528731,21.9028786 38.3528731,26.1462222 C38.3528731,30.3895659 34.9200557,33.8223832 30.6767121,33.8223832 Z',
 				lightbulb: 'M24.9750708,26.36 C24.9750708,22.832 28.2278733,19 28.2278733,15.908 C28.2278733,10.4320075 24.3482838,7 19.6538634,7 C14.9594431,7 11.2278733,10.432 11.2278733,15.908 C11.2278733,19.109818 14.3326561,23.063 14.3326561,26.36 C18.7027417,26.3759431 22.8925652,26.36 24.9750708,26.36 Z M24.9750708,26.36 L23.7826264,33.1724184 C23.6988716,33.6509085 23.2833677,34 22.7976026,34 L16.8136782,34 C16.3439934,34 15.9376051,33.6731268 15.8369234,33.21436 L14.3326561,26.36 L24.9750708,26.36 Z M14.9090227,28.8314621 L21.4854678,28.8314621 M15.4260984,31.163 L20.5313836,31.163 M30.3224522,15.908 L33.4277374,15.908 M22.4066999,34.1009427 L22.1920525,35.0198841 C22.086362,35.4723628 21.682923,35.7924256 21.2182647,35.7924256 L18.2062948,35.7924256 C17.7281249,35.7924256 17.3168652,35.4539099 17.2249454,34.9846582 L17.0518379,34.1009427 L22.4066999,34.1009427 Z M6.07560929,15.908 L9.18089449,15.908 M8.21245727,9.23128172 L10.4040648,10.5883104 M31.2913544,9.02799975 L28.951912,10.432 M26.3575982,4.504 L24.9874307,6.59300025 M12.9909889,4.504 L14.3023469,6.59300025',
-				wireframe: 'M23.4396156,9.87204488 L8.1399482,9.87204488 M31.8005705,9.87204488 L30.7279062,9.87204488 M21.4810417,14.6093181 L10.8202036,14.6093181 M4.8095616,17.2680205 L4.8095616,17.1616524 M4.8095616,19.7253674 L4.8095616,19.6189994 M4.8095616,22.1892114 L4.8095616,22.0828434 M35.1745373,17.2486224 L35.1745373,17.1422543 M35.1745373,19.7059693 L35.1745373,19.5996012 M35.1745373,22.1698133 L35.1745373,22.0634452 M28.494947,3.44647591 L25.6835974,3.44647591 M28.494947,19.273193 L25.6835974,19.273193 M23.1362803,17.5429663 L10.7275419,17.5429663 M21.2726977,20.4725303 L10.7833378,20.4725303 M27.1144805,23.4184652 L10.8278696,23.4184652 M25.455093,3.37677462 C25.3445489,1.61255855 25.9132394,0.730450518 27.1611646,0.730450518 C28.4090898,0.730450518 28.9783003,1.61255855 28.868796,3.37677462 L28.838205,19.3761716 L27.1198625,23.3937163 L25.4861698,19.3761716 L25.455093,3.37677462 Z M8.12476378,31.9877938 C7.57294716,30.3068289 6.46488359,29.4663464 4.80057306,29.4663464 C3.13626254,29.4663464 2.04190671,30.3068289 1.51750559,31.9877938 L1.51750559,32.7253391 C1.51750559,35.2025692 3.52569743,37.2107611 6.00292759,37.2107611 L33.9930936,37.2107611 C36.4703238,37.2107611 38.4785156,35.2025692 38.4785156,32.7253391 C38.1479348,30.5526773 37.0755868,29.4663464 35.2614717,29.4663464 C33.4473565,29.4663464 32.3136259,30.3068289 31.8602799,31.9877938 M31.8602799,31.9877938 L31.8602799,9.54190495 C32.2577765,7.68277004 33.3608157,6.75320258 35.1693977,6.75320258 C36.9779798,6.75320258 38.081019,7.68277004 38.4785156,9.54190495 C38.4785156,26.6490145 38.4785156,34.3768258 38.4785156,32.7253391 M1.51750559,31.9877938 L1.51750559,9.54190495 C1.90074678,7.69683351 2.9951026,6.77429779 4.80057306,6.77429779 C6.60604352,6.77429779 7.7141071,7.69683351 8.12476378,9.54190495 L8.12476378,31.9877938 M29.9783767,27.8964321 L10.0283654,27.8964321 L10.0283654,33.1193993 L29.9783767,33.1193993 L29.9783767,27.8964321 Z M12.3223464,29.946683 L12.3223464,27.8911691 M14.5152552,29.459086 L14.5152552,27.8911691 M18.9130119,29.459086 L18.9130119,27.8911691 M23.27592,29.459086 L23.27592,27.8911691 M27.6672252,29.459086 L27.6672252,27.8911691 M16.7078963,29.946683 L16.7078963,27.8911691 M21.0800658,29.946683 L21.0800658,27.8911691 M25.46707,29.946683 L25.46707,27.8911691',
+				wireframe: 'M5.4212829,4.82853689 L27.2296495,4.82853689 C27.7819343,4.82853689 28.2296495,5.27625214 28.2296495,5.82853689 L28.2296495,34.8285369 C28.2296495,35.3808216 27.7819343,35.8285369 27.2296495,35.8285369 L5.4212829,35.8285369 C4.86899815,35.8285369 4.4212829,35.3808216 4.4212829,34.8285369 L4.4212829,5.82853689 C4.4212829,5.27625214 4.86899815,4.82853689 5.4212829,4.82853689 Z M7.61201421,12.6281662 L16.4203808,12.6281662 L16.4203808,21.3553659 L7.61201421,21.3553659 L7.61201421,12.6281662 Z M7.54349168,2.8320118 L7.54349168,6.68464011 M27.9054411,9.24890165 L4.9489328,9.24890165 M11.9592695,2.8320118 L11.9592695,6.68464011 M16.3750473,2.8320118 L16.3750473,6.68464011 M20.7908251,2.8320118 L20.7908251,6.68464011 M25.2066029,2.8320118 L25.2066029,6.68464011 M33.7665105,36.1492216 L36.5330209,31.8452083 L33.7795833,30.0995326 L31,31.8452083 L33.7665105,36.1492216 Z M31,16.0245237 L33.7665105,16.0245237 L33.7795833,30.0995326 L31,31.8452083 L31,16.0245237 Z M31,16.0245237 L36.5330209,16.0245237 C36.4094171,14.1070592 35.4916045,13.1483269 33.7795833,13.1483269 C32.0675621,13.1483269 31.1410344,14.1070592 31,16.0245237 Z M36.5330209,16.0245237 L36.5330209,31.8452083 L33.7795833,30.0995326 L33.7665105,16.0245237 L36.5330209,16.0245237 Z M20.9505316,23 L26,32 L16,32 L20.9505316,23 Z M18.5434917,12.8320118 L25.2993528,12.8320118 M18.5434917,14.8320118 L25.2993528,14.8320118 M18.5434917,16.8320118 L22.299353,16.8320118 M7.54349168,24.8320118 L14.2993528,24.8320118 M7.54349168,26.8320118 L14.2993528,26.8320118 M7.54349168,28.8320118 L11.299353,28.8320118',
 				prototype: 'M17,6 L35,6 C35.6666667,6.16 36,6.49333333 36,7 C36,7.50666667 35.6666667,7.84 35,8 L17,8 C16.4506667,7.84 16.176,7.50666667 16.176,7 C16.176,6.49333333 16.4506667,6.16 17,6 Z M6,13 L16,13 L16,22 L6,22 L6,13 Z M3,4 L38,4 L38,36 L3,36 L3,4 Z M24,23 L34,23 L34,32 L24,32 L24,23 Z M6.5,7.59300025 C6.77614237,7.59300025 7,7.36914263 7,7.09300025 C7,6.81685788 6.77614237,6.59300025 6.5,6.59300025 C6.22385763,6.59300025 6,6.81685788 6,7.09300025 C6,7.36914263 6.22385763,7.59300025 6.5,7.59300025 Z M9.5,7.59300025 C9.77614237,7.59300025 10,7.36914263 10,7.09300025 C10,6.81685788 9.77614237,6.59300025 9.5,6.59300025 C9.22385763,6.59300025 9,6.81685788 9,7.09300025 C9,7.36914263 9.22385763,7.59300025 9.5,7.59300025 Z M12.5,7.59300025 C12.7761424,7.59300025 13,7.36914263 13,7.09300025 C13,6.81685788 12.7761424,6.59300025 12.5,6.59300025 C12.2238576,6.59300025 12,6.81685788 12,7.09300025 C12,7.36914263 12.2238576,7.59300025 12.5,7.59300025 Z M3,10 L38,10 M19,14.5 L34,14.5 M19,18.5 L34,18.5 M5.96700303,26.4 L20.967003,26.4 M5.67914479,30.056 L20.6791448,30.056',
 				conversation: 'M18.3442356,29.1838533 C21.8258596,27.8961163 24.1687208,25.3299155 24.1687208,22.1417144 C24.1687208,17.5145847 19.0051724,13.9478744 12.8163188,13.9478744 C6.62746511,13.9478744 1.45708295,17.5145847 1.45708295,22.1417144 C1.45708295,24.6145358 2.99905955,26.7131737 5.37950461,28.1313247 M24.1709834,20.9509493 C24.4783677,20.9913299 24.7933963,21.0255687 25.1160691,21.0536658 M12.8129019,22.6653494 L12.8129019,18.4762696 M12.8010351,25.0419031 L12.8010351,25.0646934 M26.4804797,16.13344 L26.4804797,16.1562303 M5.45096734,28.1893186 C4.75830246,29.7430222 3.27640533,31.0058072 1.00527594,31.9776737 C0.704223681,32.1065006 13.3674098,31.7421294 18.3803978,29.1687661 M26.4804797,14.2348264 C26.4804797,13.1734337 28.2697599,12.6678989 28.1838717,10.9873642 C28.1396621,10.1223346 27.4671493,9.41645924 26.5830273,9.41645924 C25.6989054,9.41645924 24.9821829,10.1197773 24.9821829,10.9873642 M34.0219111,19.2111024 C35.2942028,20.9948901 36.6352584,22.1770084 38.0450778,22.7574575 C38.3512113,22.8834984 30.889461,23.5849299 25.1802283,21.0441755 M34.1352983,19.1307876 C36.3438501,17.7135921 37.7187963,15.6362316 37.7187963,13.19384 C37.7187963,8.56671028 32.555248,5 26.3663943,5 C20.1775406,5 15.0071585,8.56671028 15.0071585,13.19384 C15.0071585,13.4843656 15.0284429,13.7697263 15.0698708,14.0494252',
 				directions: 'M8.61463019,35.7565549 L29.0109199,28.2586718 C29.4331414,28.0301634 29.6442521,27.6343324 29.6442521,27.0711788 C29.6442521,26.5080252 29.4331414,26.1047619 29.0109199,25.861389 L22.2517109,23.0591723 L34.8133668,18.1072933 C35.4141011,17.50881 35.5395612,16.899361 35.1897471,16.2789461 C34.839933,15.6585312 34.2869378,15.40564 33.5307615,15.5202727 L17.3629751,21.2344736 C16.5256268,21.6043339 16.1069527,22.1287436 16.1069527,22.8077026 C16.1069527,23.4866616 16.5256268,23.9730055 17.3629751,24.2667341 L23.5576939,26.7411397 L7.35013627,32.92608 C6.51657511,33.4391045 6.23802226,34.0846817 6.51447773,34.8628117 C6.79093321,35.6409417 7.49098403,35.9388561 8.61463019,35.7565549 Z M33.8208511,13.1529469 C35.9661936,10.7223616 37.8534838,9.02748388 37.8534838,6.80032235 C37.8534838,4.57316082 36.0480126,2.76768968 33.8208511,2.76768968 C31.5936896,2.76768968 29.7882184,4.57316082 29.7882184,6.80032235 C29.7882184,9.02748388 31.7342847,10.7223616 33.8208511,13.1529469 Z M33.8066371,8.48628494 C34.7443893,8.48628494 35.5045877,7.72608656 35.5045877,6.78833434 C35.5045877,5.85058212 34.7443893,5.09038374 33.8066371,5.09038374 C32.8688849,5.09038374 32.1086865,5.85058212 32.1086865,6.78833434 C32.1086865,7.72608656 32.8688849,8.48628494 33.8066371,8.48628494 Z M7.21658844,29.5855372 C9.36193094,27.1549519 11.2492211,25.4600742 11.2492211,23.2329126 C11.2492211,21.0057511 9.44374997,19.20028 7.21658844,19.20028 C4.98942691,19.20028 3.18395577,21.0057511 3.18395577,23.2329126 C3.18395577,25.4600742 5.13002209,27.1549519 7.21658844,29.5855372 Z M7.21231778,24.8884145 C8.15007,24.8884145 8.91026838,24.1282161 8.91026838,23.1904639 C8.91026838,22.2527117 8.15007,21.4925133 7.21231778,21.4925133 C6.27456556,21.4925133 5.51436718,22.2527117 5.51436718,23.1904639 C5.51436718,24.1282161 6.27456556,24.8884145 7.21231778,24.8884145 Z',
@@ -40105,7 +40113,7 @@ var NavTakeover = function (_Component) {
 			});
 
 			var lineAnimation = {
-				transform: 'translate3d(0, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
+				transform: 'translate3d(1px, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
 				opacity: isTakeoverOpen ? 1 : 0
 
 				// console.log(this.state.activeMenu);
@@ -40314,7 +40322,7 @@ var NavToggle = function (_Component) {
 				{ className: classnames,
 					onClick: this.props.isTakeoverOpen ? this.closeNav : this.openNav },
 				_react2.default.createElement(
-					'p',
+					'h5',
 					{ className: 'uppercase mb0 nav-toggle__abbreviation' },
 					this.props.abbreviation
 				),
@@ -40336,7 +40344,7 @@ var NavToggle = function (_Component) {
 					{ className: 'nav-toggle__count' },
 					this.props.sections.map(function (item, i) {
 						return _react2.default.createElement(
-							'p',
+							'h5',
 							{ className: 'uppercase mb0', key: i },
 							(0, _splitLetter2.default)((0, _pad2.default)(i + 1, 2).toString(), { transform: 'translate3d(0, ' + -100 * (_this2.props.count - 1) + '%, 0)' })
 						);
@@ -41487,6 +41495,10 @@ var _Sidebar = require("./Sidebar");
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
+var _ParallaxBackground = require("./ParallaxBackground");
+
+var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
+
 var _HeroScrollButton = require("./HeroScrollButton");
 
 var _HeroScrollButton2 = _interopRequireDefault(_HeroScrollButton);
@@ -41692,7 +41704,7 @@ var ScrollSection = function (_Component) {
 				{ name: name, className: classnames },
 				_react2.default.createElement(
 					_reactIntersectionVisible2.default,
-					{
+					{ options: { threshold: 0 },
 						onShow: function onShow(i) {
 							return i[0].target.classList.add("active-section");
 						},
@@ -41702,6 +41714,7 @@ var ScrollSection = function (_Component) {
 					_react2.default.createElement(
 						"section",
 						{ style: updatedStyle },
+						this.props.background,
 						_react2.default.createElement(_GridLines2.default, null),
 						this.createSectionNumber(),
 						this.props.children
@@ -41726,7 +41739,7 @@ var ScrollSection = function (_Component) {
 				{ className: classnames },
 				_react2.default.createElement(
 					_reactIntersectionVisible2.default,
-					{
+					{ options: { threshold: .25 },
 						onShow: function onShow(i) {
 							return i[0].target.classList.add("active-section");
 						},
@@ -41736,6 +41749,7 @@ var ScrollSection = function (_Component) {
 					_react2.default.createElement(
 						"section",
 						{ style: updatedStyle },
+						this.props.background,
 						_react2.default.createElement(_GridLines2.default, null),
 						this.props.children
 					),
@@ -41765,7 +41779,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(ScrollSection);
 
-},{"../services/pad":213,"../services/palette":214,"../services/splitLetter":215,"./ArrowGroup":149,"./DelayLink":153,"./GridLines":154,"./HeroScrollButton":155,"./Icon":157,"./NavToggle":160,"./Sidebar":168,"./TextLink":169,"classnames":9,"intersection-observer":33,"react":121,"react-intersection-visible":52,"react-redux":67,"react-router-dom":84,"react-scroll":104}],167:[function(require,module,exports){
+},{"../services/pad":213,"../services/palette":214,"../services/splitLetter":215,"./ArrowGroup":149,"./DelayLink":153,"./GridLines":154,"./HeroScrollButton":155,"./Icon":157,"./NavToggle":160,"./ParallaxBackground":162,"./Sidebar":168,"./TextLink":169,"classnames":9,"intersection-observer":33,"react":121,"react-intersection-visible":52,"react-redux":67,"react-router-dom":84,"react-scroll":104}],167:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41942,7 +41956,7 @@ var Sidebar = function (_Component) {
 		_initialiseProps.call(_this);
 
 		var lengths = props.sections.map(function (section) {
-			return (0, _textWidth2.default)(section.toUpperCase(), 1);
+			return (0, _textWidth2.default)(section.toUpperCase());
 		});
 		var max = Math.floor(lengths.reduce(function (a, b) {
 			return Math.max(a, b);
@@ -42349,13 +42363,9 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactParallax = require("react-parallax");
-
 var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
 
 var _reactRedux = require("react-redux");
 
@@ -42473,7 +42483,7 @@ var HeroBlock = exports.HeroBlock = function (_Component2) {
 	return HeroBlock;
 }(_react.Component);
 
-},{"../../services/hexToRgb":211,"../../services/palette":214,"../../services/splitLetter":215,"../../services/splitWord":216,"../GridLines":154,"../NavToggle":160,"../Sidebar":168,"classnames":9,"react":121,"react-parallax":56,"react-redux":67,"react-scroll":104}],172:[function(require,module,exports){
+},{"../../services/hexToRgb":211,"../../services/palette":214,"../../services/splitLetter":215,"../../services/splitWord":216,"../GridLines":154,"../NavToggle":160,"../Sidebar":168,"classnames":9,"react":121,"react-redux":67}],172:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42541,8 +42551,8 @@ var ProjectDetailsBlock = function (_Component) {
 					"div",
 					{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
 					_react2.default.createElement(
-						"h5",
-						{ className: "" },
+						"h6",
+						{ className: "uppercase" },
 						"Role"
 					),
 					_react2.default.createElement(
@@ -42555,8 +42565,8 @@ var ProjectDetailsBlock = function (_Component) {
 					"div",
 					{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
 					_react2.default.createElement(
-						"h5",
-						{ className: "" },
+						"h6",
+						{ className: "uppercase" },
 						"Date"
 					),
 					_react2.default.createElement(
@@ -42569,8 +42579,8 @@ var ProjectDetailsBlock = function (_Component) {
 					"div",
 					{ className: "grid__item grid__item--col-2 grid__item--col-12-medium" },
 					_react2.default.createElement(
-						"h5",
-						{ className: "" },
+						"h6",
+						{ className: "uppercase" },
 						"Client"
 					),
 					_react2.default.createElement(
@@ -42583,8 +42593,8 @@ var ProjectDetailsBlock = function (_Component) {
 					"div",
 					{ className: "grid__item grid__item--col-3 grid__item--col-12-medium" },
 					_react2.default.createElement(
-						"h5",
-						{ className: "" },
+						"h6",
+						{ className: "uppercase" },
 						"Team"
 					),
 					_react2.default.createElement(
@@ -43040,6 +43050,21 @@ module.exports={
 					"name": "Google Design",
 					"items": [
 						{
+							"name": "Best of 2020",
+							"to": "//design.google/library/google-design-2020",
+						},
+						{
+							"name": "Is it Good Design?",
+							"to": "//design.google/library/good-design",
+							"media": {
+								// "src": "../assets/img/google-design/best-of-2019-3x2.jpg",
+								"src": "../assets/img/google-design/GoodDesign_logo.gif",
+								"type": "image",
+								"aspectRatioWidth": 16,
+								"aspectRatioHeight": 9,
+							}
+						},
+						{
 							"name": "Best of 2019",
 							"to": "//design.google/library/google-design-2019",
 							"media": {
@@ -43050,7 +43075,7 @@ module.exports={
 								"aspectRatioHeight": 9,
 							}
 						},
-						{ "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
+						// { "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ 
 							"name": "Span 2019",
 							"to": "//design.google/library/span2019",
@@ -43265,7 +43290,7 @@ module.exports={
 				"circleArcPath": "M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"
 			},
 			{
-				"color": "brand-orange",
+				"color": "brand-blue",
 				"title": "Ideate",
 				"iconName": "lightbulb",
 				"body": "Meet with stakeholders and developers to collaboratively generate design ideas.",
@@ -43273,15 +43298,15 @@ module.exports={
 				"circleArcPath": "M 68.7514881858894 4.729902906946947 A 49 49 0 0 1 95.27009709305305 31.2485118141106"
 			},
 			{
-				"color": "brand-yellow",
+				"color": "brand-green",
 				"title": "Sketch",
 				"iconName": "wireframe",
-				"body": "Consolidate the ideas into a sketch to communicate the design and functionality while gathering consensus.",
+				"body": "Consolidate ideas and converge on a design while gathering consensus.",
 				"stepArcPath": "M 99 50 A 49 49 0 0 1 84.64823227814082 84.64823227814082",
 				"circleArcPath": "M 95.27009709305305 31.2485118141106 A 49 49 0 0 1 95.27009709305305 68.7514881858894"
 			},
 			{
-				"color": "brand-green",
+				"color": "brand-yellow",
 				"title": "Prototype",
 				"iconName": "prototype",
 				"body": "Create a responsive and clickable coded prototype built with HTML, CSS, and Javascript.",
@@ -43289,7 +43314,7 @@ module.exports={
 				"circleArcPath": "M 95.27009709305305 68.7514881858894 A 49 49 0 0 1 68.7514881858894 95.27009709305305"
 			},
 			{
-				"color": "brand-teal",
+				"color": "brand-orange",
 				"title": "User Testing",
 				"iconName": "conversation",
 				"body": "Test the prototype using Usability Testing methods to gather thorough feedback.",
@@ -43297,7 +43322,7 @@ module.exports={
 				"circleArcPath": "M 68.7514881858894 95.27009709305305 A 49 49 0 0 1 31.248511814110604 95.27009709305305"
 			},
 			{
-				"color": "brand-blue",
+				"color": "brand-pink",
 				"title": "Journey Mapping",
 				"iconName": "directions",
 				"body": "Synthesize the feedback and map the users’ experience with the prototype to improve it in future iterations.",
@@ -43306,15 +43331,15 @@ module.exports={
 
 			},
 			{
-				"color": "brand-pink",
-				"title": "Refine",
+				"color": "brand-purple",
+				"title": "Feedback",
 				"iconName": "filter",
-				"body": "Refine and iterate on the design to further improve the userʼs experience.",
+				"body": "Refine the design based on feedback to further improve the userʼs experience.",
 				"stepArcPath": "M 1 50.00000000000001 A 49 49 0 0 1 15.351767721859161 15.351767721859176",
 				"circleArcPath": "M 4.729902906946947 68.7514881858894 A 49 49 0 0 1 4.72990290694694 31.24851181411063"
 			},
 			{
-				"color": "brand-purple",
+				"color": "brand-teal",
 				"title": "Iterate",
 				"iconName": "clipboard",
 				"body": "Deliver changes to the prototype and backlog improvements for the future.",
@@ -43883,7 +43908,7 @@ var About = function (_Component) {
 
 		_this.state = {
 			activeSection: "about",
-			sections: ["about", "3d-art", "photos"]
+			sections: ["about", "3d-art", "photos", "music"]
 		};
 		return _this;
 	}
@@ -44028,6 +44053,104 @@ var About = function (_Component) {
 							"div",
 							{ className: "grid__item grid__item--col-6 grid__item--col-12-medium" },
 							_react2.default.createElement(_Image2.default, { src: "../assets/img/standing.jpg", aspectRatioWidth: 5, aspectRatioHeight: 4 })
+						)
+					)
+				),
+				_react2.default.createElement(
+					_ScrollSection2.default,
+					{
+						name: sections[3],
+						sections: sections,
+						black: true,
+						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(3);
+						} },
+					_react2.default.createElement(
+						_ProjectSectionBlock2.default,
+						{
+							title: "Playlists",
+							description1: "I'm almost constanly listening to music. I've embarked on a journey to curate my playlists by color and genre. Listen to some of them here!",
+							media: { type: 'side-scroller' } },
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/about/cd-blue.jpg",
+								aspectRatioWidth: 1,
+								aspectRatioHeight: 1,
+								caption: _react2.default.createElement(
+									"a",
+									{ href: "//open.spotify.com/playlist/4TbFYDsnBbGEeTcODaR9ri", target: "_blank" },
+									_react2.default.createElement(
+										_TextLink2.default,
+										null,
+										"Indie, Moody, Chill"
+									)
+								) })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/about/cd-pink.jpg",
+								aspectRatioWidth: 1,
+								aspectRatioHeight: 1,
+								caption: _react2.default.createElement(
+									"a",
+									{ href: "//open.spotify.com/playlist/6mdutDh8F6RkQeOlzLLMOJ", target: "_blank" },
+									_react2.default.createElement(
+										_TextLink2.default,
+										null,
+										"Pop, Queer, High Energy"
+									)
+								) })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/about/cd-yellow.jpg",
+								aspectRatioWidth: 1,
+								aspectRatioHeight: 1,
+								caption: _react2.default.createElement(
+									"a",
+									{ href: "//open.spotify.com/playlist/7sO490yiEB0g9y4CpJQAfc", target: "_blank" },
+									_react2.default.createElement(
+										_TextLink2.default,
+										null,
+										"Trap, EDM, High Energy"
+									)
+								) })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/about/cd-green.jpg",
+								aspectRatioWidth: 1,
+								aspectRatioHeight: 1,
+								caption: _react2.default.createElement(
+									"a",
+									{ href: "//open.spotify.com/playlist/08aAmgV3I7tpIJ6U5IMnkX", target: "_blank" },
+									_react2.default.createElement(
+										_TextLink2.default,
+										null,
+										"Moody, Expermental"
+									)
+								) })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "grid__item grid__item--col-4 grid__item--col-12-medium" },
+							_react2.default.createElement(_Image2.default, { src: "../assets/img/about/cd-red.jpg",
+								aspectRatioWidth: 1,
+								aspectRatioHeight: 1,
+								caption: _react2.default.createElement(
+									"a",
+									{ href: "//open.spotify.com/playlist/1FFRxmgGz90HGw27sjXxVR", target: "_blank" },
+									_react2.default.createElement(
+										_TextLink2.default,
+										null,
+										"Metal, Post Hardcore, High Energy"
+									)
+								) })
 						)
 					)
 				)
@@ -44196,6 +44319,10 @@ var _pad = require("../services/pad");
 
 var _pad2 = _interopRequireDefault(_pad);
 
+var _waveText = require("../services/waveText");
+
+var _waveText2 = _interopRequireDefault(_waveText);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44267,7 +44394,7 @@ var Homepage = function (_Component) {
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 			var brandRed = (0, _hexToRgb2.default)((0, _palette2.default)("brand-red"));
 
-			var heroBackgroundImage = this.props.isMobile ? 'banner-5x8' : 'banner-3x2';
+			var heroBackgroundImage = this.props.isMobile ? 'banner-5x8.jpg' : 'banner-3x2.jpg';
 
 			// const circles = document.getElementsByClassName('step__spot-circle');
 			// const circleColor = `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`;
@@ -44309,29 +44436,29 @@ var Homepage = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
+						background: _react2.default.createElement(
+							_ParallaxBackground2.default,
+							null,
+							_react2.default.createElement(
+								"div",
+								{ className: "grid", style: { alignItems: 'center' } },
+								_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--col-3-medium" }),
+								_react2.default.createElement(
+									"div",
+									{ className: "grid__item grid__item--col-5 grid__item--col-9-medium" },
+									_react2.default.createElement(
+										_Carousel2.default,
+										{ disableNavigation: this.props.isMobile ? true : false, stacking: true },
+										_react2.default.createElement(_Image2.default, { src: "../assets/img/ferris-wheel.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
+										_react2.default.createElement(_Image2.default, { src: "../assets/img/graffiti.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
+										_react2.default.createElement(_Image2.default, { src: "../assets/img/banner-1x1.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
+									)
+								)
+							)
+						),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(
-						_ParallaxBackground2.default,
-						null,
-						_react2.default.createElement(
-							"div",
-							{ className: "grid", style: { alignItems: 'center' } },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-6 grid__item--col-3-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-5 grid__item--col-9-medium" },
-								_react2.default.createElement(
-									_Carousel2.default,
-									{ disableNavigation: true },
-									_react2.default.createElement(_Image2.default, { src: "../assets/img/banner-1x1.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
-									_react2.default.createElement(_Image2.default, { src: "../assets/img/graffiti.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
-									_react2.default.createElement(_Image2.default, { src: "../assets/img/ferris-wheel.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
-								)
-							)
-						)
-					),
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
 						headerText: ["Eric C. Smith is an", _react2.default.createElement(
 							"span",
@@ -44339,7 +44466,7 @@ var Homepage = function (_Component) {
 							_react2.default.createElement(
 								"span",
 								{ className: "outline" },
-								"Interactive\xA0"
+								"Interactive "
 							)
 						), _react2.default.createElement(
 							"span",
@@ -44347,7 +44474,7 @@ var Homepage = function (_Component) {
 							_react2.default.createElement(
 								"span",
 								{ className: "outline" },
-								"Designer\xA0"
+								"Designer "
 							)
 						), "in New York City."]
 					})
@@ -44372,10 +44499,10 @@ var Homepage = function (_Component) {
 							{ className: "grid__item grid__item--col-5 grid__item--hide-bp-medium" },
 							_react2.default.createElement(
 								_Carousel2.default,
-								{ bottomNav: true },
+								{ bottomNav: true, stacking: true },
+								_react2.default.createElement(_Image2.default, { src: "../assets/img/me7.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
 								_react2.default.createElement(_Image2.default, { src: "../assets/img/bike.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
-								_react2.default.createElement(_Image2.default, { src: "../assets/img/fence.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
-								_react2.default.createElement(_Image2.default, { src: "../assets/img/me4.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
+								_react2.default.createElement(_Image2.default, { src: "../assets/img/fence.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
 							)
 						),
 						_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
@@ -44400,7 +44527,7 @@ var Homepage = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										{ className: "" },
-										(0, _splitWord2.default)("I\u2019m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I\u2019m not designing, you can find me outdoors taking photos with friends.")
+										(0, _splitWord2.default)("I\u2019m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I\u2019m not designing, you can find me messing around in 3D or riding my bike.")
 									),
 									_react2.default.createElement(
 										"h5",
@@ -44575,7 +44702,7 @@ var Homepage = function (_Component) {
 					),
 					_react2.default.createElement(_ProjectCard2.default, { items: [{
 							name: "Github",
-							to: "//github.com/erchsm"
+							to: "//github.com/smittenn"
 						}, {
 							name: "Codepen",
 							to: "//codepen.io/erchsm"
@@ -44584,7 +44711,10 @@ var Homepage = function (_Component) {
 							to: "//dribbble.com/erchsm"
 						}, {
 							name: "Instagram",
-							to: "//www.instagram.com/e.smitten"
+							to: "//www.instagram.com/smitttennn"
+						}, {
+							name: "Spotify",
+							to: "//open.spotify.com/user/erchsm"
 						}, {
 							name: "Flickr",
 							to: "//www.flickr.com/photos/erchsm"
@@ -44665,7 +44795,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Homepage);
 
-},{"../actions/abbreviation":137,"../actions/counter":138,"../actions/panel":143,"../components/Carousel":150,"../components/DelayLink":153,"../components/Image":158,"../components/ParallaxBackground":162,"../components/ProcessDiagram":163,"../components/ProjectCard":164,"../components/ScrollSection":166,"../components/Sidebar":168,"../components/TextLink":169,"../components/blocks/HeroBlock":171,"../data/nav":176,"../data/process":178,"../services/hexToRgb":211,"../services/pad":213,"../services/palette":214,"../services/splitLetter":215,"../services/splitWord":216,"classnames":9,"react":121,"react-redux":67,"react-router-dom":84,"react-scroll":104}],194:[function(require,module,exports){
+},{"../actions/abbreviation":137,"../actions/counter":138,"../actions/panel":143,"../components/Carousel":150,"../components/DelayLink":153,"../components/Image":158,"../components/ParallaxBackground":162,"../components/ProcessDiagram":163,"../components/ProjectCard":164,"../components/ScrollSection":166,"../components/Sidebar":168,"../components/TextLink":169,"../components/blocks/HeroBlock":171,"../data/nav":176,"../data/process":178,"../services/hexToRgb":211,"../services/pad":213,"../services/palette":214,"../services/splitLetter":215,"../services/splitWord":216,"../services/waveText":220,"classnames":9,"react":121,"react-redux":67,"react-router-dom":84,"react-scroll":104}],194:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46042,18 +46172,11 @@ var AmericanMade = function (_Component) {
 			    sections = _state.sections;
 
 
-			var brandBlack = (0, _hexToRgb2.default)('#0f1010');
+			var brandBlack = (0, _hexToRgb2.default)('#0d0f0f');
 
 			return _react2.default.createElement(
 				"article",
 				null,
-				_react2.default.createElement(_ParallaxBackground2.default, {
-					style: {
-						backgroundImage: "\n\t\t\t\t\t\turl(../assets/img/american-made/output.gif)\n\t\t\t\t\t",
-						backgroundColor: '#A4AFA6',
-						backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
-						backgroundPosition: 'center'
-					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
@@ -46062,15 +46185,18 @@ var AmericanMade = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: {
-							backgroundColor: 'transparent',
-							backgroundImage: "\n\t\t\t\t\t\tlinear-gradient(\n\t\t\t\t\t\t\t180deg,\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", 0.4), \n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", 0.4)\n\t\t\t\t\t\t)\n\t\t\t\t\t"
-						},
+						background: _react2.default.createElement(_ParallaxBackground2.default, {
+							style: {
+								backgroundImage: "\n\t\t\t\t\t\tlinear-gradient(\n\t\t\t\t\t\t\t180deg,\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", 0.4), \n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", 0.4)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/american-made/output.gif)\n\t\t\t\t\t",
+								backgroundColor: '#A4AFA6',
+								backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
+								backgroundPosition: 'center'
+							} }),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
-						headerText: ["We took a deep dive into the story of the", _react2.default.createElement(
+						headerText: [_react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -46086,7 +46212,7 @@ var AmericanMade = function (_Component) {
 								{ className: "outline" },
 								"Made "
 							)
-						), "film."]
+						), "took a deep dive into the story of the film."]
 					})
 				),
 				_react2.default.createElement(
@@ -46099,9 +46225,6 @@ var AmericanMade = function (_Component) {
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(1);
-						},
-						style: {
-							backgroundColor: "rgb(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ")"
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
 						col1: " The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures. \\n\\n  The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees. ",
@@ -46141,7 +46264,7 @@ var AmericanMade = function (_Component) {
 						title: "Preloader",
 						description1: "Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film.",
 						description2: "After the page loads the users are greeted with the catchphrase for the film: \u201CSky is Never The Limit\u201D.",
-						media: { type: "iframe", src: "//erchsm.github.io/american-made/preloader", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/american-made/preloader", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -46186,7 +46309,7 @@ var AmericanMade = function (_Component) {
 						title: "Navigation",
 						description1: "I designed a unique themed navigation for the site. The nav mimic\u2019d the bird\u2019s-eye view of a plane on an airport runway tarmack waiting to take off.",
 						description2: "The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.",
-						media: { type: "iframe", src: "//erchsm.github.io/american-made/navigation", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/american-made/navigation", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -46203,7 +46326,7 @@ var AmericanMade = function (_Component) {
 						title: "Gallery",
 						description1: "To provide a way for users to browse a varible amount of video content available at any given time during the production cycle, I designed a video gallery that utilized the Youtube API.",
 						description2: "This way for later film sites that we develop we could simply re-style the player and plug in new content.",
-						media: { type: "iframe", src: "//erchsm.github.io/american-made/video-gallery", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/american-made/video-gallery", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -46219,7 +46342,7 @@ var AmericanMade = function (_Component) {
 						title: "Parallax",
 						description1: "In my quest to unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.",
 						description2: "I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph, transparent video and parallax really helped enhance the visual storytelling.",
-						media: { type: "iframe", src: "//erchsm.github.io/american-made/parallax-story", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/american-made/parallax-story", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -46396,83 +46519,9 @@ var _abbreviation = require("../../actions/abbreviation");
 
 var _panel = require("../../actions/panel");
 
-var _ScrollSection = require("../../components/ScrollSection");
-
-var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
-
-var _ParallaxBackground = require("../../components/ParallaxBackground");
-
-var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
-
-var _GridLines = require("../../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _SideScroller = require("../../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
-
-var _Image = require("../../components/Image");
-
-var _Image2 = _interopRequireDefault(_Image);
-
-var _Video = require("../../components/Video");
-
-var _Video2 = _interopRequireDefault(_Video);
-
 var _ProjectPage = require("../../components/ProjectPage");
 
 var _ProjectPage2 = _interopRequireDefault(_ProjectPage);
-
-var _HeroBlock = require("../../components/blocks/HeroBlock");
-
-var _ProjectUpNextBlock = require("../../components/blocks/ProjectUpNextBlock");
-
-var _ProjectUpNextBlock2 = _interopRequireDefault(_ProjectUpNextBlock);
-
-var _ProjectDetailsBlock = require("../../components/blocks/ProjectDetailsBlock");
-
-var _ProjectDetailsBlock2 = _interopRequireDefault(_ProjectDetailsBlock);
-
-var _ProjectIntroBlock = require("../../components/blocks/ProjectIntroBlock");
-
-var _ProjectIntroBlock2 = _interopRequireDefault(_ProjectIntroBlock);
-
-var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock");
-
-var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
-
-var _splitWord = require("../../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
-var _hexToRgb = require("../../services/hexToRgb");
-
-var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
-
-var _palette = require("../../services/palette");
-
-var _palette2 = _interopRequireDefault(_palette);
-
-var _people = require("../../data/people");
-
-var _people2 = _interopRequireDefault(_people);
 
 var _helixCloud = require("../../data/projects/helix-cloud");
 
@@ -46514,9 +46563,6 @@ var HelixCloud = function (_Component) {
 
 	return HelixCloud;
 }(_react.Component);
-
-HelixCloud.propTypes = {};
-
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
@@ -46598,7 +46644,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HelixCloud);
 
-},{"../../actions/abbreviation":137,"../../actions/counter":138,"../../actions/panel":143,"../../components/CodepenEmbed":151,"../../components/GridLines":154,"../../components/Image":158,"../../components/ParallaxBackground":162,"../../components/ProjectPage":165,"../../components/ScrollSection":166,"../../components/SideScroller":167,"../../components/Sidebar":168,"../../components/TextLink":169,"../../components/Video":170,"../../components/blocks/HeroBlock":171,"../../components/blocks/ProjectDetailsBlock":172,"../../components/blocks/ProjectIntroBlock":173,"../../components/blocks/ProjectSectionBlock":174,"../../components/blocks/ProjectUpNextBlock":175,"../../data/people":177,"../../data/projects/helix-cloud":179,"../../services/hexToRgb":211,"../../services/palette":214,"../../services/splitLetter":215,"../../services/splitWord":216,"classnames":9,"react":121,"react-redux":67,"react-router-dom":84,"react-scroll":104}],200:[function(require,module,exports){
+},{"../../actions/abbreviation":137,"../../actions/counter":138,"../../actions/panel":143,"../../components/ProjectPage":165,"../../data/projects/helix-cloud":179,"classnames":9,"react":121,"react-redux":67,"react-router-dom":84,"react-scroll":104}],200:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47121,8 +47167,8 @@ var JnjHome = function (_Component) {
 		};
 
 		_this.state = {
-			activeSection: "overview",
-			sections: ["overview", "about", "new-user", "navigation", "sitemap", "news", "links"]
+			activeSection: "intro",
+			sections: ["intro", "about", "onboard", "navigation", "sitemap", "news", "links"]
 		};
 		return _this;
 	}
@@ -47229,10 +47275,10 @@ var JnjHome = function (_Component) {
 							_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
-						title: "Onboarding",
+						title: "Onboard",
 						description1: "The J&J Home Onboarding iPad kiosk is filled out by employees on their first day. A new employee provides some basic information in this short onboarding experience.",
 						description2: "Afterwards the employee can visit Home to learn about services nearby, tools necessary for their job and share profiles of their team members.",
-						media: [{ type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 }, { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-profile-setup.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight: this.props.isMobile ? 8 : 3 }] })
+						media: [{ type: "image", src: "../assets/img/jnj-home/onboarding-kiosk-mock.png", aspectRatioWidth: 3, aspectRatioHeight: 2 }, { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-profile-setup.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight: this.props.isMobile ? 8 : 3 }] })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47248,7 +47294,7 @@ var JnjHome = function (_Component) {
 						title: "Navigation",
 						description1: "I designed a robust navigation to help employees navigate the vast wealth of information at J&J. We provided a way for an employyee to access their most used links from anywhere on Home.",
 						description2: "From the takeover, a secondary panel allowed them to see links organized by categories or a list of their previously favorited links.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight: this.props.isMobile ? 8 : 3 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 4, aspectRatioHeight: this.props.isMobile ? 8 : 3 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47262,7 +47308,7 @@ var JnjHome = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Sitemap",
 						description1: "I created an interactive sitemap to help our stakeholders understand the site structure. It became a widely accesed tool allowing for anyone to access the living sitemap at any time.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-sitemap.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47278,7 +47324,7 @@ var JnjHome = function (_Component) {
 						title: "News",
 						description1: "I designed an article page flexible for different types of content. The sticky article sharing buttons provided an opportunity to use to motion to inspire the reader.",
 						description2: "Using the \u201CThumbs Up\u201D feature a user can click to like the article multiple times as opposed to a single time. I finessed the animation here so there would be delight with every click.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-article.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47294,7 +47340,7 @@ var JnjHome = function (_Component) {
 						title: "Links",
 						description1: "I designed a directory for the 10,000+ links available to employees at J&J. Working with content strategy, we theorized 12 categories into which links could be bucketed.",
 						description2: "The sticky side navigation, sorting functionality and delightful favoriting animation made for a great experience overall.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/home-links.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47544,8 +47590,8 @@ var JnjMdc = function (_Component) {
 		};
 
 		_this.state = {
-			activeSection: "overview",
-			sections: ["overview", "about", "navigation", "flipper", "companies", "taxonomy", "buttons"]
+			activeSection: "intro",
+			sections: ["intro", "about", "navigation", "flipper", "companies", "taxonomy", "buttons"]
 		};
 		return _this;
 	}
@@ -47569,12 +47615,6 @@ var JnjMdc = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
-				_react2.default.createElement(_ParallaxBackground2.default, {
-					style: {
-						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .4),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .4)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/jnj-mdc/ladies.jpg)\n\t\t\t\t\t",
-						backgroundSize: 'cover',
-						backgroundPosition: this.props.isMobile ? '75%' : 'center'
-					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
@@ -47583,9 +47623,12 @@ var JnjMdc = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: {
-							backgroundColor: 'transparent'
-						},
+						background: _react2.default.createElement(_ParallaxBackground2.default, {
+							style: {
+								backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .4),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .4)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/jnj-mdc/ladies.jpg)\n\t\t\t\t\t",
+								backgroundSize: 'cover',
+								backgroundPosition: this.props.isMobile ? '75%' : 'center'
+							} }),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
@@ -47645,7 +47688,7 @@ var JnjMdc = function (_Component) {
 						title: "Navigation",
 						description1: "I designed a navigation for hospital buyers and HCPs to learn about the vast amount of specialties, products, procedures and services available in the J&J portfolio of companies.",
 						description2: "The navigation design needed to be flexible enough to work with as few as 1 item and as many as 100 items. The sliding underline shows your current active menu.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47661,7 +47704,7 @@ var JnjMdc = function (_Component) {
 						title: "Toggle",
 						description1: "To toggle between the healthcare professional and patient experiences of the site I designed a \u201FFlipper\u201D interaction for toggling between them.",
 						description2: "When hovering, an HCP or patient could use our predictive search to search for a specialty or symptom respectively.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47676,7 +47719,7 @@ var JnjMdc = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Companies",
 						description1: "I designed this experimental section on the homepage of the site so that HCP and Patient users could learn about a company before diving into their full page.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-companies-picker.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47691,7 +47734,7 @@ var JnjMdc = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Taxonomy",
 						description1: "Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -47706,7 +47749,7 @@ var JnjMdc = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Buttons",
 						description1: "I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.",
-						media: { type: "iframe", src: "//erchsm.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
+						media: { type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight: this.props.isMobile ? 8 : 2 } })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -48362,8 +48405,8 @@ var MicroAppTemplates = function (_Component) {
 		};
 
 		_this.state = {
-			activeSection: "overview",
-			sections: ["overview", "about", "templates", "event", "lead-gen", "commerce", "agency"]
+			activeSection: "intro",
+			sections: ["intro", "about", "templates", "event", "lead-gen", "commerce", "agency"]
 		};
 		return _this;
 	}
@@ -48387,14 +48430,6 @@ var MicroAppTemplates = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
-				_react2.default.createElement(_ParallaxBackground2.default, {
-					style: {
-						backgroundImage: "\n\t\t\t\t\t  linear-gradient(rgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24), rgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)),\n\t\t\t\t\t  url(../assets/img/card-components/banner-alt.jpg),\n\t\t\t\t\t  linear-gradient(#f3f4f8, #f3f4f8)",
-						backgroundSize: this.props.isMobile ? 'cover' : 'contain',
-						backgroundBlendMode: 'normal',
-						backgroundRepeat: 'no-repeat',
-						backgroundPosition: this.props.isMobile ? '-25% center' : '150% center'
-					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
@@ -48403,9 +48438,14 @@ var MicroAppTemplates = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: {
-							backgroundColor: 'transparent'
-						},
+						background: _react2.default.createElement(_ParallaxBackground2.default, {
+							style: {
+								backgroundImage: "\n\t\t\t\t\t  linear-gradient(rgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24), rgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)),\n\t\t\t\t\t  url(../assets/img/card-components/banner-alt.jpg),\n\t\t\t\t\t  linear-gradient(#f3f4f8, #f3f4f8)",
+								backgroundSize: this.props.isMobile ? 'cover' : 'contain',
+								backgroundBlendMode: 'normal',
+								backgroundRepeat: 'no-repeat',
+								backgroundPosition: this.props.isMobile ? '-25% center' : '150% center'
+							} }),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
@@ -49031,7 +49071,7 @@ var RationalizedPlayer = function (_Component) {
 
 		_this.state = {
 			activeSection: "intro",
-			sections: ["intro", "overview", "vai-mode", "overlay", "products", "people"]
+			sections: ["intro", "about", "ai mode", "overlay", "products", "people"]
 		};
 		return _this;
 	}
@@ -49060,11 +49100,6 @@ var RationalizedPlayer = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
-				_react2.default.createElement(_ParallaxBackground2.default, {
-					style: {
-						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/vai/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t",
-						backgroundColor: (0, _lighten2.default)(brandPrimary, 12)
-					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
@@ -49073,9 +49108,11 @@ var RationalizedPlayer = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: {
-							backgroundColor: 'transparent'
-						},
+						background: _react2.default.createElement(_ParallaxBackground2.default, {
+							style: {
+								backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .24)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/vai/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t",
+								backgroundColor: (0, _lighten2.default)(brandPrimary, 12)
+							} }),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
@@ -49143,7 +49180,7 @@ var RationalizedPlayer = function (_Component) {
 							_this2.setActiveSection(2);
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
-						title: "V.ai Mode",
+						title: "Ai Mode",
 						description1: "During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper.",
 						description2: "V.ai Mode helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.",
 						media: { type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }
@@ -49453,7 +49490,7 @@ var Translator = function (_Component) {
 
 		_this.state = {
 			activeSection: "overview",
-			sections: ["overview", "about", "collection", "metadata", "shell", "bulk"]
+			sections: ["intro", "about", "collection", "metadata", "shell", "bulk"]
 		};
 		return _this;
 	}
@@ -49481,18 +49518,15 @@ var Translator = function (_Component) {
 			return _react2.default.createElement(
 				"article",
 				null,
-				_react2.default.createElement(_ParallaxBackground2.default, {
-					style: {
-						backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .06),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/translator/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t",
-						backgroundColor: brandPrimary
-					} }),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
 						name: sections[0], black: true, fullHeight: true, sections: sections, activeSection: activeSection,
-						style: {
-							backgroundColor: 'transparent'
-						},
+						background: _react2.default.createElement(_ParallaxBackground2.default, {
+							style: {
+								backgroundImage: "\n\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .06),\n\t\t\t\t\t\t\trgba(" + brandBlack.r + ", " + brandBlack.g + ", " + brandBlack.b + ", .12)\n\t\t\t\t\t\t),\n\t\t\t\t\t\turl(../assets/img/translator/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t",
+								backgroundColor: brandPrimary
+							} }),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
@@ -49885,14 +49919,14 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (color) {
 	var palette = {
-		"brand-red": "#ff483c",
+		"brand-red": "#f63f43",
 		"brand-purple": "#7366FB",
-		"brand-green": "#7EAF53",
+		"brand-green": "#14c735",
 		"brand-yellow": "#F3B600",
-		"brand-orange": "#ff6d2f",
-		"brand-pink": "#fdb4b1",
-		"brand-blue": "#00CAE0",
-		"brand-teal": "#0AB489",
+		"brand-orange": "#f67e0d",
+		"brand-pink": "#ef9b97",
+		"brand-blue": "#0b67de",
+		"brand-teal": "#00D9B6",
 
 		"brand-white": "#F8FBF7",
 		"brand-grey-lightest": "#F4F4F0",
@@ -49982,7 +50016,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (word, multiplier) {
+exports.default = function (word) {
+  var multiplier = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
   return word.split('').reduce(function (width, c) {
     if (c == 'W' || c == 'M') width += 15;else if (c == 'w' || c == 'm') width += 12;else if (c == 'I' || c == 'i' || c == 'l' || c == 't' || c == 'f') width += 4;else if (c == 'r') width += 8;else if (c == c.toUpperCase()) width += 12;else width += 10;
     return width;
@@ -50016,6 +50052,48 @@ exports.default = function (str) {
     }).join('-');
 };
 
-},{}]},{},[148])
+},{}],220:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+Math.easeInOutSine = function (t, b, c, d) {
+	return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
+};
+
+exports.default = function (text, style) {
+	return text.split(" ").map(function (word, i) {
+		return _react2.default.createElement(
+			"span",
+			{ key: i, className: "split--letter" },
+			word.split("").map(function (letter, j) {
+				var offset = 96;
+				var angle = Math.atan(j * 2);
+				console.log(Math.atan(j * 2));
+
+				if (style) {
+					style = Object.assign(style, { transform: "translateY(" + offset + "px) skewX(" + angle + "rad)" });
+				} else {
+					style = { transform: "translateY(" + offset + "px) skewX(" + angle + "rad)" };
+				}
+				return _react2.default.createElement(
+					"span",
+					{ key: j, style: style },
+					letter
+				);
+			})
+		);
+	});
+};
+
+},{"react":121}]},{},[148])
 
 //# sourceMappingURL=main.js.map

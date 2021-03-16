@@ -10,6 +10,7 @@ import IntersectionObserver  from "intersection-observer"
 import DelayLink from "./DelayLink"
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
+import ParallaxBackground from "./ParallaxBackground"
 import HeroScrollButton from "./HeroScrollButton"
 import GridLines from "./GridLines"
 import TextLink from "./TextLink"
@@ -126,11 +127,12 @@ class ScrollSection extends Component {
 		return (
 			name ? (
 			<Element name={name} className={classnames}>
-				<IntersectionVisible
+				<IntersectionVisible options={{threshold: 0}}
 				onShow={(i) => i[0].target.classList.add("active-section")}
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
 
 					<section style={updatedStyle}>
+						{ this.props.background }
 						{<GridLines/>}
 						{ this.createSectionNumber() }
 						{ this.props.children }
@@ -161,11 +163,12 @@ class ScrollSection extends Component {
 			</Element>
 			) : (
 			<div className={classnames}>
-				<IntersectionVisible
+				<IntersectionVisible options={{threshold: .25}}
 				onShow={(i) => i[0].target.classList.add("active-section")}
 				onHide={(i) => i[0].target.classList.remove("active-section")}>
 
 					<section style={updatedStyle}>
+						{ this.props.background }
 						<GridLines/>
 						{ this.props.children }
 					</section>

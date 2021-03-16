@@ -49,9 +49,9 @@ class MicroAppTemplates extends Component {
 		super(props);
 
 		this.state = {
-			activeSection: "overview",
+			activeSection: "intro",
 			sections: [
-				"overview",
+				"intro",
 				"about",
 				"templates",
 				"event",
@@ -81,7 +81,13 @@ class MicroAppTemplates extends Component {
 		return (
 			<article>
 
-				<ParallaxBackground 
+				<ScrollSection 
+				name={sections[0]}
+				black 
+				fullHeight
+				sections={sections} 
+				activeSection={activeSection}
+				background={<ParallaxBackground 
 				style={{ 
 					backgroundImage: `
 					  linear-gradient(rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24), rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .24)),
@@ -91,17 +97,7 @@ class MicroAppTemplates extends Component {
 					backgroundBlendMode: 'normal',
 					backgroundRepeat: 'no-repeat',
 					backgroundPosition: this.props.isMobile ? '-25% center' : '150% center',
-				}}/>
-
-				<ScrollSection 
-				name={sections[0]}
-				black 
-				fullHeight
-				sections={sections} 
-				activeSection={activeSection}
-				style={{ 
-					backgroundColor: 'transparent'
-				}}
+				}}/>}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed 150+ mobile app templates.`]}

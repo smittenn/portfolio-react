@@ -79,40 +79,33 @@ class AmericanMade extends Component {
 		const { setCounter } = this.props;
 		const { activeSection, sections } = this.state;
 
-		const brandBlack = hexToRgb('#0f1010');
-
+		const brandBlack = hexToRgb('#0d0f0f');
 
 		return (
 			<article>
-				<ParallaxBackground 
-				style={{ 
-					backgroundImage: `
-						url(../assets/img/american-made/output.gif)
-					`,
-					backgroundColor: '#A4AFA6',
-					backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
-					backgroundPosition: 'center',
-				}}/>
-
 				<ScrollSection 
 				name={sections[0]}
 				black 
 				fullHeight
 				sections={sections} 
 				activeSection={activeSection}
+				background={<ParallaxBackground 
 				style={{ 
-					backgroundColor: 'transparent',
 					backgroundImage: `
 						linear-gradient(
 							180deg,
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 0.4), 
 							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, 0.4)
-						)
-					`
-				}}
+						),
+						url(../assets/img/american-made/output.gif)
+					`,
+					backgroundColor: '#A4AFA6',
+					backgroundSize: this.props.isMobile ? 'auto 102%' : '100% 102%',
+					backgroundPosition: 'center',
+				}}/>}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `We took a deep dive into the story of the`, <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `film.`]}
+					headerText={[ <span><span className="outline">American </span></span>, <span><span className="outline">Made </span></span>, `took a deep dive into the story of the film.`]}
 					/>
 				</ScrollSection>
 
@@ -122,10 +115,7 @@ class AmericanMade extends Component {
 				sections={sections}
 				disableSectionNumber
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(1); }}
-				style={{ 
-					backgroundColor: `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`,
-				}}>
+				onSetActive={() => { this.setActiveSection(1); }}>
 					<ProjectIntroBlock 
 					col1='
 						The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
@@ -176,7 +166,7 @@ class AmericanMade extends Component {
 					title="Preloader"
 					description1="Preloaders can serve to delight and excite the site visitors while they are waiting for the site to load. The protagonist's plane soaring across the page sets the tone of the film."
 					description2="After the page loads the users are greeted with the catchphrase for the film: “Sky is Never The Limit”."
-					media={{ type: "iframe", src: "//erchsm.github.io/american-made/preloader",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/american-made/preloader",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 
@@ -211,7 +201,7 @@ class AmericanMade extends Component {
 					title="Navigation"
 					description1="I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off."
 					description2="The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
-					media={{ type: "iframe", src: "//erchsm.github.io/american-made/navigation",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/american-made/navigation",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -225,7 +215,7 @@ class AmericanMade extends Component {
 					title="Gallery"
 					description1="To provide a way for users to browse a varible amount of video content available at any given time during the production cycle, I designed a video gallery that utilized the Youtube API."
 					description2="This way for later film sites that we develop we could simply re-style the player and plug in new content."
-					media={{ type: "iframe", src: "//erchsm.github.io/american-made/video-gallery",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/american-made/video-gallery",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -238,7 +228,7 @@ class AmericanMade extends Component {
 					title="Parallax"
 					description1="In my quest to unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way."
 					description2="I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph, transparent video and parallax really helped enhance the visual storytelling."
-					media={{ type: "iframe", src: "//erchsm.github.io/american-made/parallax-story",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
+					media={{ type: "iframe", src: "//smittenn.github.io/american-made/parallax-story",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 
 				</ScrollSection>
 

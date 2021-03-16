@@ -13,20 +13,24 @@ class Carousel extends Component {
 
 		this.state = {
 			index: 0,
-			childWidth: []
+			childWidth: [],
+			clones: []
 		}
 	}
 
 	incrementIndex = () => {
 		this.setState(prevState => ({
+			// clones: prevState.clones.concat(this.props.children[this.state.index]),
 			index: prevState.index >= (this.props.children.length - 1) ? 0 : prevState.index + 1,
-		}))		
+		}))
+		this.stackingAnimation();
 	}
 
 	decrementIndex = () => {
 		this.setState(prevState => ({
 			index: prevState.index == 0 ? (this.props.children.length - 1) : prevState.index - 1,
-		}))		
+		}))
+		this.stackingAnimation();	
 	}
 
 	componentDidMount() {
@@ -34,21 +38,24 @@ class Carousel extends Component {
 			this.setState(prevState => ({
 				index: prevState.index >= (this.props.children.length - 1) ? 0 : prevState.index + 1,
 			}))
-			// Stacking Effect
-			if (this.props.stacking) {
-				const items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'))
-				const beforeWidths = items.slice(0, this.state.index).map(item => 100);
-				const totalWidth = beforeWidths.reduce((acc, width) => acc + width, 0)
-
-				const before = items.slice(0, this.state.index);
-				const after = items.slice(this.state.index);
-
-				after.forEach(el => { el.style.transform = 'translate3d(-' + (totalWidth) + '%, 0, 0)' });				
-			}
+			this.stackingAnimation();
 		}, 6000);
 		if (!this.props.disableNavigation) {
 			clearInterval(this.interval);
 		}
+	}
+
+	stackingAnimation = () => {
+		// if (this.props.stacking) {
+		// 	const items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'))
+		// 	const beforeWidths = items.slice(0, this.state.index).map(item => 100);
+		// 	const totalWidth = beforeWidths.reduce((acc, width) => acc + width, 0)
+
+		// 	const before = items.slice(0, this.state.index);
+		// 	const after = items.slice(this.state.index);
+
+		// 	after.forEach(el => { el.style.transform = `translate3d(-${totalWidth}) + %, 0, 0)` });				
+		// }
 	}
 
 	componentWillUnmount() {
@@ -56,19 +63,24 @@ class Carousel extends Component {
 	}
 
 	render() {
-
 		const { style, bottomNav } = this.props;
-		const { index } = this.state
+		const { index, clones } = this.state
 
 		const classnames = classNames({
 			"carousel": true,
 			"carousel--nav-bottom": bottomNav,
 		})
 
+		const length = this.props.children.length
 		const items = this.props.children.map((item, i) => (
-			<div
-			className="carousel__item"
-			key={i}>
+			<div className="carousel__item" 
+			key={i}
+			style={this.props.stacking ? {
+				transform: `translate3d(
+				${-2 + (i * 2) - (i * 100)}%,
+				${-2 + (i * 2) + (i >= length - index ? (Math.min(index, i) * 103) : 0)}%,
+				0) rotate(${i >= length - index ? 90 : 0}deg)`
+			} : null }>
 				{ item }
 			</div>
 		))
@@ -76,7 +88,7 @@ class Carousel extends Component {
 		return (
 			<div className={classnames}>
 				<div className="carousel__item-wrapper">
-					<div className="carousel__items" style={{ transform: `translate3d(-${index * 100}%,0,0)`}}>
+					<div className="carousel__items" style={this.props.stacking ? { margin: '2%' } : { transform: `translate3d(-${index * 100}%,0,0)`}}>
 						{ items }
 					</div>
 				</div>
