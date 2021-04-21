@@ -95,11 +95,19 @@ section {
 		}
 	}
 	
-	.carousel__item {
-		@for $i from 1 through 60 {
-			&:nth-child(#{$i}) {
-				img, video {
-					transition-delay: (#{0.9 + ($i * 0.3)}s);
+	.carousel--stacking {
+		.carousel__item {
+			@for $i from 1 through 60 {
+				&:nth-child(#{$i}) {
+					img, video {
+						opacity: 1;
+						transform: translate3d(0,103%,0);
+						transition-delay: (#{0.3 + ($i * 0.24)}s);
+						
+						.active-section & {
+							transform: none;
+						}	
+					}
 				}
 			}
 		}

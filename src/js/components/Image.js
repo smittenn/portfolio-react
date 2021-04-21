@@ -84,7 +84,7 @@ export default class Image extends Component {
 		return (
 			<figure>
 				<div className={classnames} style={_style} ref={this.ref}>
-					<img src={src}/>
+					<img src={src} loading="lazy"/>
 				</div>
 				{ caption ? (<figcaption><p className="mb0">{caption}</p></figcaption>) : null }
 			</figure>

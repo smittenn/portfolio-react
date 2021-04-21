@@ -167,31 +167,31 @@ class About extends Component {
 							<Image src="../assets/img/about/cd-blue.jpg"
 							aspectRatioWidth={1}
 							aspectRatioHeight={1} 
-							caption={<a href={"//open.spotify.com/playlist/4TbFYDsnBbGEeTcODaR9ri"} target="_blank"><TextLink>Indie, Moody, Chill</TextLink></a>}/>
+							caption={<a href={"//open.spotify.com/playlist/4TbFYDsnBbGEeTcODaR9ri"} target="_blank"><TextLink>#1 Blue</TextLink></a>}/>
 						</div>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<Image src="../assets/img/about/cd-pink.jpg"
 							aspectRatioWidth={1}
 							aspectRatioHeight={1} 
-							caption={<a href={"//open.spotify.com/playlist/6mdutDh8F6RkQeOlzLLMOJ"} target="_blank"><TextLink>Pop, Queer, High Energy</TextLink></a>}/>
+							caption={<a href={"//open.spotify.com/playlist/6mdutDh8F6RkQeOlzLLMOJ"} target="_blank"><TextLink>#2 Pink</TextLink></a>}/>
 						</div>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<Image src="../assets/img/about/cd-yellow.jpg"
 							aspectRatioWidth={1}
 							aspectRatioHeight={1} 
-							caption={<a href={"//open.spotify.com/playlist/7sO490yiEB0g9y4CpJQAfc"} target="_blank"><TextLink>Trap, EDM, High Energy</TextLink></a>}/>
+							caption={<a href={"//open.spotify.com/playlist/7sO490yiEB0g9y4CpJQAfc"} target="_blank"><TextLink>#3 Yellow</TextLink></a>}/>
 						</div>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<Image src="../assets/img/about/cd-green.jpg"
 							aspectRatioWidth={1}
 							aspectRatioHeight={1} 
-							caption={<a href={"//open.spotify.com/playlist/08aAmgV3I7tpIJ6U5IMnkX"} target="_blank"><TextLink>Moody, Expermental</TextLink></a>}/>
+							caption={<a href={"//open.spotify.com/playlist/08aAmgV3I7tpIJ6U5IMnkX"} target="_blank"><TextLink>#4 Green</TextLink></a>}/>
 						</div>
 						<div className="grid__item grid__item--col-4 grid__item--col-12-medium">
 							<Image src="../assets/img/about/cd-red.jpg"
 							aspectRatioWidth={1}
 							aspectRatioHeight={1} 
-							caption={<a href={"//open.spotify.com/playlist/1FFRxmgGz90HGw27sjXxVR"} target="_blank"><TextLink>Metal, Post Hardcore, High Energy</TextLink></a>}/>
+							caption={<a href={"//open.spotify.com/playlist/1FFRxmgGz90HGw27sjXxVR"} target="_blank"><TextLink>#5 Red</TextLink></a>}/>
 						</div>
 					</ProjectSectionBlock>
 				</ScrollSection>

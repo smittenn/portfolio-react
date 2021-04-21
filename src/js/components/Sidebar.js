@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 import classNames from 'classnames'
 import { connect } from 'react-redux'
-import sizeMe from 'react-sizeme';
 
 import { openSidebar, closeSidebar } from '../actions/sidebar'
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
@@ -19,7 +18,7 @@ class Sidebar extends Component {
 	constructor(props) {
 		super(props);
 
-    const lengths = props.sections.map(section => textWidth(section.toUpperCase()));
+		const lengths = props.sections.map(section => textWidth(section.toUpperCase()));
     const max = Math.floor(lengths.reduce((a, b) => Math.max(a, b)))
 
     // this.labelRefs = props.sections.map(section => {

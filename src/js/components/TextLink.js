@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from "react-redux"
 import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
-import ReactHover from 'react-hover'
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
 

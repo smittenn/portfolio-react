@@ -29,7 +29,6 @@ import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 import pad from "../services/pad"
-import waveText from "../services/waveText"
 
 
 class Homepage extends Component {
@@ -108,51 +107,6 @@ class Homepage extends Component {
 		return (
 			<article>
 
-				{/*
-						<div className="grid">
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium shift-left--lg">
-								<div className="spacer spacer__lg"/>
-								<Image src="../assets/img/standing.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<div className="spacer spacer__sm"/>
-								<div className="spacer spacer__lg"/>
-								<div className="spacer spacer__lg"/>
-								<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-								<Image src="../assets/img/mist.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-							</div>
-							<div className="grid__item grid__item--col-3 grid__item--col-10-medium shift-right--lg">
-								<div className="spacer spacer__md"/>
-								<Image src="../assets/img/ocean.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-							</div>
-						</div>
-				*/}
-
-				{/*<ParallaxBackground
-					style={{ 
-						backgroundImage: `
-							radial-gradient(
-								rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .0),
-								rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .0)
-							),
-							url(../assets/img/${heroBackgroundImage}.jpg)`,
-						backgroundPosition: 'top center',
-						backgroundSize: 'cover'
-					}}
-				/>*/}
-
-				{/*<div className="grid">
-					<div className="grid__item grid__item--col-6 grid__item--col-2-medium"/>
-					<div className="grid__item grid__item--col-5 grid__item--col-10-medium">
-						<Image src="../assets/img/banner.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-					</div>
-				</div>*/}
-
-
-				{/* { backgroundImage: 'linear-gradient(180deg, #5e9bca, #decfd6 60%)' } */}
-
 				<ScrollSection
 				name={sections[0]}
 				black
@@ -208,7 +162,7 @@ class Homepage extends Component {
 								</div>
 								<div className="grid__item grid__item--col-12 grid__item--col-12-medium">
 									<blockquote className="">
-										{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me messing around in 3D or riding my bike.`)}
+										{splitWord(`I’m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I’m not designing, you can find me out taking photos or riding my bike.`)}
 									</blockquote>
 									<h5 className="mb0">
 										<TextLink isBlack hideUnderline>

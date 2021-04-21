@@ -63,19 +63,20 @@ class Carousel extends Component {
 	}
 
 	render() {
-		const { style, bottomNav } = this.props;
+		const { style, bottomNav, stacking } = this.props;
 		const { index, clones } = this.state
 
 		const classnames = classNames({
 			"carousel": true,
 			"carousel--nav-bottom": bottomNav,
+			"carousel--stacking": stacking,
 		})
 
 		const length = this.props.children.length
 		const items = this.props.children.map((item, i) => (
 			<div className="carousel__item" 
 			key={i}
-			style={this.props.stacking ? {
+			style={stacking ? {
 				transform: `translate3d(
 				${-2 + (i * 2) - (i * 100)}%,
 				${-2 + (i * 2) + (i >= length - index ? (Math.min(index, i) * 103) : 0)}%,
