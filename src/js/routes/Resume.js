@@ -90,9 +90,10 @@ class Resume extends Component {
 									<h4 className="mb0">Google Design <span className="inherit--brand-red"><span className="outline">•</span></span> UX Engineer</h4>
 									<blockquote>HTML, CSS, Javascript, Python, Django, Wagtail</blockquote>
 									<blockquote className="mb0"><ul className="ls">
-										<li>Lead developer on design.google, Google Design's editorial platform and hub for all things design at Google.</li>
+										<li>Lead developer on <TextLink><a href="//design.google">design.google</a></TextLink>, Google's design editorial platform.</li>
 										<li>Rapidly prototyped and deployed new front-end features for our article page.</li>
 										<li>Improved usability of our CMS for content editors.</li>
+										<li>Created front-end features that supported the launch of many campaigns and articles.</li>
 									</ul></blockquote>
 								</div>
 							</div>

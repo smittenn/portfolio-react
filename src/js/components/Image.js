@@ -13,6 +13,7 @@ export default class Image extends Component {
 		this.state = {
 			src: '',
 			isVisible: false,
+			loaded: false,
 			intersectionRatio: 0,
 		}
 
@@ -20,13 +21,20 @@ export default class Image extends Component {
 	}
 
 	componentDidMount() {
+		if ('loading' in HTMLImageElement.prototype) {
+			if (this.ref.current.complete) {
+				this.setState({ loaded: true });
+			}
+			
+			this.ref.current.onload = () => {
+				this.setState({ loaded: true });
+			}
+		}
 		// const observer = new IntersectionObserver(([entry]) => this.setState({
 		// 	isVisible: entry.intersectionRatio > 0,
 		// }));
 
-		// if (this.ref.current) {
-		// 	observer.observe(this.ref.current);
-		// }
+		// observer.observe(this.ref.current);
 
 		// document.addEventListener('scroll', this.onScroll);
 	}
@@ -57,13 +65,14 @@ export default class Image extends Component {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
-		const { src, aspectRatioWidth, aspectRatioHeight, style, caption } = this.props;
+		const { src, aspectRatioWidth, aspectRatioHeight, style, caption, alt } = this.props;
 
 		const { isVisible, intersectionRatio } = this.state;
 
 		const classnames = classNames({
 			"image-wrapper": true,
-			"image-wrapper--visible": this.state.isVisible
+			"image-wrapper--visible": this.state.isVisible,
+			"image-wrapper--loaded": this.state.loaded
 		})
 
 		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
@@ -83,8 +92,8 @@ export default class Image extends Component {
 
 		return (
 			<figure>
-				<div className={classnames} style={_style} ref={this.ref}>
-					<img src={src} loading="lazy"/>
+				<div className={classnames} style={_style}>
+					<img src={src} loading="lazy" alt={alt} ref={this.ref}/>
 				</div>
 				{ caption ? (<figcaption><p className="mb0">{caption}</p></figcaption>) : null }
 			</figure>

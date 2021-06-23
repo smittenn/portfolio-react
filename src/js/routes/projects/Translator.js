@@ -178,8 +178,8 @@ class Translator extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<ProjectSectionBlock 
-					title="Shell Record"
-					description1="Technicians working on the same programs would know the number of media items generated for each shoot. A shell record which would enable a technician to edit metatdata for content prior to a shoot. "
+					title="Shell"
+					description1="A shell record which would enable a technician to edit metatdata for content prior to a shoot. Technicians working on the same programs would know the number of media items generated for each shoot."
 					description2="While planning their series they could set up their shell records in Translator. After the shoot they could simply associate the uploades with the shell they had already entered the metadata for."
 					media={{ type: 'image', src: '../assets/img/translator/shell-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					/>

@@ -1,6 +1,6 @@
-$baseclass: image-wrapper;
+$image-baseclass: image-wrapper;
 
-.#{$baseclass} {
+.#{$image-baseclass} {
 	position: relative;
 	display: block;
 	height: 0;
@@ -14,5 +14,28 @@ $baseclass: image-wrapper;
 		width: auto;
 		position: absolute;
 		top: 0;
+		transition: $easing2 $duration-long;
+		opacity: 0;
+	}
+
+	.#{$scrolling-section-classname} & {
+		background-color: mix($brand-white, $brand-black, 95%);
+		border: solid 1px mix($brand-white, $brand-black, 90%);
+	}
+
+	.#{$scrolling-section-classname}--black & {
+		background-color: mix($brand-white, $brand-black, 5%);
+		border: solid 1px mix($brand-white, $brand-black, 10%);
+	}
+
+	&--loaded {
+		.#{$scrolling-section-classname} & {
+			border-color: transparent !important;
+			background-color: transparent;
+		}
+
+		img {
+			opacity: 1;
+		}
 	}
 }

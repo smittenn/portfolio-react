@@ -48,9 +48,6 @@
 // 	animation: fadeIn 0.9s $easing1;
 // }
 
-.parallax-header {
-}
-
 .scale-up {
 	transition: $easing2 $duration-medium transform;
 
@@ -70,7 +67,7 @@
 
 
 section {
-	img {
+	.image-wrapper {
 		opacity: 0;
 		transition: none;
 		transform: translate3d(0,50%,0) skewY(6deg);
@@ -85,7 +82,7 @@ section {
 	.grid__item {
 		@for $i from 1 through 60 {
 			&:nth-child(#{$i}) {
-				img, video {
+				.image-wrapper {
 					transition-delay: (#{0.9 + ($i * 0.3)}s);
 				}
 				blockquote {
@@ -94,26 +91,18 @@ section {
 			}
 		}
 	}
-	
+
 	.carousel--stacking {
 		.carousel__item {
 			@for $i from 1 through 60 {
 				&:nth-child(#{$i}) {
-					img, video {
-						opacity: 1;
-						transform: translate3d(0,103%,0);
+					.image-wrapper {
 						transition-delay: (#{0.3 + ($i * 0.24)}s);
-						
-						.active-section & {
-							transform: none;
-						}	
 					}
 				}
 			}
 		}
 	}
-
-
 
 	.split--word, .split--letter {
 		overflow: hidden;
@@ -239,12 +228,12 @@ section {
 			} 
 		}
 
-		img, video {
+		.image-wrapper {
 			transition-duration: $duration-long;
 			transition-timing-function: $easing5;
 			transition-property: transform, opacity;
-			opacity: 1;
 			transform: translate3d(0,0,0) skewX(0deg);
+			opacity: 1;
 		}
 	}
 }

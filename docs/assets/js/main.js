@@ -36746,6 +36746,7 @@ var Image = function (_Component) {
 		_this.state = {
 			src: '',
 			isVisible: false,
+			loaded: false,
 			intersectionRatio: 0
 		};
 
@@ -36756,13 +36757,22 @@ var Image = function (_Component) {
 	_createClass(Image, [{
 		key: "componentDidMount",
 		value: function componentDidMount() {
+			var _this2 = this;
+
+			if ('loading' in HTMLImageElement.prototype) {
+				if (this.ref.current.complete) {
+					this.setState({ loaded: true });
+				}
+
+				this.ref.current.onload = function () {
+					_this2.setState({ loaded: true });
+				};
+			}
 			// const observer = new IntersectionObserver(([entry]) => this.setState({
 			// 	isVisible: entry.intersectionRatio > 0,
 			// }));
 
-			// if (this.ref.current) {
-			// 	observer.observe(this.ref.current);
-			// }
+			// observer.observe(this.ref.current);
 
 			// document.addEventListener('scroll', this.onScroll);
 		}
@@ -36782,7 +36792,8 @@ var Image = function (_Component) {
 			    aspectRatioWidth = _props.aspectRatioWidth,
 			    aspectRatioHeight = _props.aspectRatioHeight,
 			    style = _props.style,
-			    caption = _props.caption;
+			    caption = _props.caption,
+			    alt = _props.alt;
 			var _state = this.state,
 			    isVisible = _state.isVisible,
 			    intersectionRatio = _state.intersectionRatio;
@@ -36790,7 +36801,8 @@ var Image = function (_Component) {
 
 			var classnames = (0, _classnames2.default)({
 				"image-wrapper": true,
-				"image-wrapper--visible": this.state.isVisible
+				"image-wrapper--visible": this.state.isVisible,
+				"image-wrapper--loaded": this.state.loaded
 			});
 
 			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
@@ -36812,8 +36824,8 @@ var Image = function (_Component) {
 				null,
 				_react2.default.createElement(
 					"div",
-					{ className: classnames, style: _style, ref: this.ref },
-					_react2.default.createElement("img", { src: src, loading: "lazy" })
+					{ className: classnames, style: _style },
+					_react2.default.createElement("img", { src: src, loading: "lazy", alt: alt, ref: this.ref })
 				),
 				caption ? _react2.default.createElement(
 					"figcaption",
@@ -41466,7 +41478,7 @@ var Homepage = function (_Component) {
 										{ disableNavigation: this.props.isMobile ? true : false, stacking: true },
 										_react2.default.createElement(_Image2.default, { src: "../assets/img/ferris-wheel.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
 										_react2.default.createElement(_Image2.default, { src: "../assets/img/graffiti.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 }),
-										_react2.default.createElement(_Image2.default, { src: "../assets/img/banner-1x1.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1 })
+										_react2.default.createElement(_Image2.default, { src: "../assets/img/banner-1x1.jpg", aspectRatioWidth: 1, aspectRatioHeight: 1, alt: "Some palm trees in the early morning" })
 									)
 								)
 							)
@@ -42241,7 +42253,17 @@ var Resume = function (_Component) {
 											_react2.default.createElement(
 												"li",
 												null,
-												"Lead developer on design.google, Google Design's editorial platform and hub for all things design at Google."
+												"Lead developer on ",
+												_react2.default.createElement(
+													_TextLink2.default,
+													null,
+													_react2.default.createElement(
+														"a",
+														{ href: "//design.google" },
+														"design.google"
+													)
+												),
+												", Google's design editorial platform."
 											),
 											_react2.default.createElement(
 												"li",
@@ -42252,6 +42274,11 @@ var Resume = function (_Component) {
 												"li",
 												null,
 												"Improved usability of our CMS for content editors."
+											),
+											_react2.default.createElement(
+												"li",
+												null,
+												"Created front-end features that supported the launch of many campaigns and articles."
 											)
 										)
 									)
@@ -46649,8 +46676,8 @@ var Translator = function (_Component) {
 							_this2.setActiveSection(4);
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
-						title: "Shell Record",
-						description1: "Technicians working on the same programs would know the number of media items generated for each shoot. A shell record which would enable a technician to edit metatdata for content prior to a shoot. ",
+						title: "Shell",
+						description1: "A shell record which would enable a technician to edit metatdata for content prior to a shoot. Technicians working on the same programs would know the number of media items generated for each shoot.",
 						description2: "While planning their series they could set up their shell records in Translator. After the shoot they could simply associate the uploades with the shell they had already entered the metadata for.",
 						media: { type: 'image', src: '../assets/img/translator/shell-01.jpg', aspectRatioWidth: 16, aspectRatioHeight: 9 }
 					})
@@ -47035,7 +47062,7 @@ exports.default = function (word) {
   var multiplier = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
   return word.split('').reduce(function (width, c) {
-    if (c == 'W' || c == 'M') width += 15;else if (c == 'w' || c == 'm') width += 12;else if (c == 'I' || c == 'i' || c == 'l' || c == 't' || c == 'f') width += 4;else if (c == 'r') width += 8;else if (c == c.toUpperCase()) width += 12;else width += 10;
+    if (c == 'W' || c == 'M' || c == 'G' || c == 'N') width += 15;else if (c == 'w' || c == 'm') width += 12;else if (c == 'I' || c == 'i' || c == 'l' || c == 't' || c == 'f') width += 4;else if (c == 'r') width += 8;else if (c == c.toUpperCase()) width += 12;else width += 10;
     return width;
   }, 0) * multiplier;
 };

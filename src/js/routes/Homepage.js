@@ -120,7 +120,7 @@ class Homepage extends Component {
 								<Carousel disableNavigation={this.props.isMobile ? true : false} stacking>
 									<Image src="../assets/img/ferris-wheel.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
 									<Image src="../assets/img/graffiti.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
-									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1}/>
+									<Image src="../assets/img/banner-1x1.jpg" aspectRatioWidth={1} aspectRatioHeight={1} alt="Some palm trees in the early morning"/>
 								</Carousel>
 							</div>
 						</div>
