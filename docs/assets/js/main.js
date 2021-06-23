@@ -36694,6 +36694,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require("react");
@@ -36729,18 +36731,14 @@ var Image = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).call(this, props));
 
-		_this.onScroll = function () {};
+		_this.loadImage = function () {
+			if (_this.ref.current.complete) {
+				_this.setState({ loaded: true });
+			}
 
-		_this.setSource = function () {
-			// this.setState({
-			// 	src: this.props.src
-			// })
-		};
-
-		_this.unsetSource = function () {
-			// this.setState({
-			// 	src: ''
-			// })
+			_this.ref.current.onload = function () {
+				_this.setState({ loaded: true });
+			};
 		};
 
 		_this.state = {
@@ -36759,27 +36757,32 @@ var Image = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
+			this.setState({
+				src: this.props.src
+			});
+
+			// detect native browser lazy loading
 			if ('loading' in HTMLImageElement.prototype) {
-				if (this.ref.current.complete) {
-					this.setState({ loaded: true });
-				}
+				this.loadImage();
+			} else {
+				this.setState({
+					src: ''
+				});
 
-				this.ref.current.onload = function () {
-					_this2.setState({ loaded: true });
-				};
+				var observer = new IntersectionObserver(function (_ref) {
+					var _ref2 = _slicedToArray(_ref, 1),
+					    entry = _ref2[0];
+
+					if (entry.isIntersecting && _this2.state.src == '') {
+						_this2.setState({
+							src: _this2.props.src
+						});
+						_this2.loadImage();
+					}
+				});
+
+				observer.observe(this.ref.current);
 			}
-			// const observer = new IntersectionObserver(([entry]) => this.setState({
-			// 	isVisible: entry.intersectionRatio > 0,
-			// }));
-
-			// observer.observe(this.ref.current);
-
-			// document.addEventListener('scroll', this.onScroll);
-		}
-	}, {
-		key: "componentWillUnmount",
-		value: function componentWillUnmount() {
-			// document.removeEventListener('scroll', this.onScroll);
 		}
 	}, {
 		key: "render",
@@ -36788,36 +36791,28 @@ var Image = function (_Component) {
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 
 			var _props = this.props,
-			    src = _props.src,
 			    aspectRatioWidth = _props.aspectRatioWidth,
 			    aspectRatioHeight = _props.aspectRatioHeight,
 			    style = _props.style,
 			    caption = _props.caption,
 			    alt = _props.alt;
 			var _state = this.state,
-			    isVisible = _state.isVisible,
-			    intersectionRatio = _state.intersectionRatio;
+			    src = _state.src,
+			    loaded = _state.loaded;
 
 
 			var classnames = (0, _classnames2.default)({
 				"image-wrapper": true,
-				"image-wrapper--visible": this.state.isVisible,
-				"image-wrapper--loaded": this.state.loaded
+				"image-wrapper--loaded": loaded
 			});
 
 			var pb = aspectRatioHeight / (aspectRatioWidth / 100);
 
 			var _style = {
 				paddingBottom: pb + '%'
+			};
 
-				// let docScroll;
-				// const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
-				// getPageYScroll();
-				// console.log(docScroll)
-
-				// const transform = isVisible ? intersectionRatio * 4 : 0;	
-
-			};style ? Object.assign(_style, style) : null;
+			style ? Object.assign(_style, style) : null;
 
 			return _react2.default.createElement(
 				"figure",

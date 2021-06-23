@@ -7,6 +7,7 @@ $image-baseclass: image-wrapper;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	border: solid 2px;
 
 	img {
 		display: block;
@@ -19,13 +20,13 @@ $image-baseclass: image-wrapper;
 	}
 
 	.#{$scrolling-section-classname} & {
-		background-color: mix($brand-white, $brand-black, 95%);
-		border: solid 1px mix($brand-white, $brand-black, 90%);
+		background-color: mix($brand-white, $brand-black, 98%);
+		border-color: mix($brand-white, $brand-black, 94%);
 	}
 
 	.#{$scrolling-section-classname}--black & {
-		background-color: mix($brand-white, $brand-black, 5%);
-		border: solid 1px mix($brand-white, $brand-black, 10%);
+		background-color: mix($brand-white, $brand-black, 2%);
+		border-color: mix($brand-white, $brand-black, 8%);
 	}
 
 	&--loaded {

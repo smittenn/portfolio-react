@@ -21,58 +21,52 @@ export default class Image extends Component {
 	}
 
 	componentDidMount() {
+		this.setState({
+			src: this.props.src
+		});
+
+		// detect native browser lazy loading
 		if ('loading' in HTMLImageElement.prototype) {
-			if (this.ref.current.complete) {
-				this.setState({ loaded: true });
-			}
-			
-			this.ref.current.onload = () => {
-				this.setState({ loaded: true });
-			}
-		}
-		// const observer = new IntersectionObserver(([entry]) => this.setState({
-		// 	isVisible: entry.intersectionRatio > 0,
-		// }));
+			this.loadImage();
+		} else {
+			this.setState({
+				src: ''
+			});
 
-		// observer.observe(this.ref.current);
-
-		// document.addEventListener('scroll', this.onScroll);
-	}
-
-	componentWillUnmount() {
-		// document.removeEventListener('scroll', this.onScroll);
-	}
-
-	onScroll = () => {
-
-	}
-
-
-	setSource = () => {
-		// this.setState({
-		// 	src: this.props.src
-		// })
-	}
+			const observer = new IntersectionObserver(([entry]) => {
+				if (entry.isIntersecting && this.state.src == '') {
+					this.setState({
+						src: this.props.src,
+					})
+					this.loadImage();
+				}
+			});
 	
-	unsetSource = () => {
-		// this.setState({
-		// 	src: ''
-		// })
+			observer.observe(this.ref.current);
+		}
 	}
 
+	loadImage = () => {
+		if (this.ref.current.complete) {
+			this.setState({ loaded: true });
+		}
+
+		this.ref.current.onload = () => {
+			this.setState({ loaded: true });
+		}
+	}
 
 	render() {
 
 		const brandBlack = hexToRgb(palette("brand-black"));
 
-		const { src, aspectRatioWidth, aspectRatioHeight, style, caption, alt } = this.props;
+		const { aspectRatioWidth, aspectRatioHeight, style, caption, alt } = this.props;
 
-		const { isVisible, intersectionRatio } = this.state;
+		const { src, loaded } = this.state;
 
 		const classnames = classNames({
 			"image-wrapper": true,
-			"image-wrapper--visible": this.state.isVisible,
-			"image-wrapper--loaded": this.state.loaded
+			"image-wrapper--loaded": loaded
 		})
 
 		const pb = aspectRatioHeight / (aspectRatioWidth / 100);
@@ -80,13 +74,6 @@ export default class Image extends Component {
 		const _style =  {
 			paddingBottom: pb + '%',
 		}
-
-		// let docScroll;
-		// const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
-		// getPageYScroll();
-		// console.log(docScroll)
-
-		// const transform = isVisible ? intersectionRatio * 4 : 0;	
 
 		style ? Object.assign(_style, style) : null
 

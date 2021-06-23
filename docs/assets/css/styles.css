@@ -2529,7 +2529,8 @@ section p span > span, section blockquote span > span {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  border: solid 2px; }
   .image-wrapper img {
     display: block;
     height: 100%;
@@ -2539,11 +2540,11 @@ section p span > span, section blockquote span > span {
     transition: cubic-bezier(0.19, 1, 0.22, 1) 0.9s;
     opacity: 0; }
   .scrolling-section .image-wrapper {
-    background-color: #f2f3f2;
-    border: solid 1px #e6e7e6; }
+    background-color: #f9faf9;
+    border-color: #f0f0f0; }
   .scrolling-section--black .image-wrapper {
-    background-color: #1f1d1e;
-    border: solid 1px #2b292a; }
+    background-color: #181617;
+    border-color: #262425; }
   .scrolling-section .image-wrapper--loaded {
     border-color: transparent !important;
     background-color: transparent; }
