@@ -4,13 +4,13 @@ import { connect } from "react-redux"
 import { NavLink } from "react-router-dom"
 import classNames from "classnames"
 import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import IntersectionVisible  from "react-intersection-visible"
-import IntersectionObserver  from "intersection-observer"
+import IntersectionVisible from "react-intersection-visible"
+
+import { openArrowNav, closeArrowNav } from '../actions/arrowNav'
 
 import DelayLink from "./DelayLink"
 import NavToggle from "./NavToggle"
 import Sidebar from "./Sidebar"
-import ParallaxBackground from "./ParallaxBackground"
 import HeroScrollButton from "./HeroScrollButton"
 import GridLines from "./GridLines"
 import TextLink from "./TextLink"
@@ -105,6 +105,12 @@ class ScrollSection extends Component {
 					</TextLink>
 				</DelayLink>
 				{ sections.length > 1 ? (
+					<div onMouseEnter={ this.props.openArrowNav }  
+					onMouseLeave={ this.props.closeArrowNav } 
+					className={classNames({
+						"arrow-nav": true,
+						"arrow-nav--hovering": this.props.isArrowNavOpen
+					})}>
 					<ArrowGroup isVertical>
 						{ (indexOfName - 1 > -1) ? (
 							<a>
@@ -119,6 +125,7 @@ class ScrollSection extends Component {
 							/*<Link to={sections[indexOfName + 1]} onClick={this.scrollTo(sections[indexOfName + 1])} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
 						) : null}
 					</ArrowGroup>
+					</div>
 				) : null}
 				{ this.props.abbreviation == 'R' ? <TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink> : null }
 			</div>
@@ -193,6 +200,12 @@ const mapStateToProps = state => ({
 	abbreviation: state.abbreviation,
 	isMobile: state.isMobile,
 	windowHeight: state.windowHeight,
+	isArrowNavOpen: state.isArrowNavOpen,
 })
 
-export default connect(mapStateToProps)(ScrollSection)
+const mapDispatchToProps = dispatch => ({
+	openArrowNav: () => dispatch(openArrowNav()),
+	closeArrowNav: () => dispatch(closeArrowNav()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ScrollSection)

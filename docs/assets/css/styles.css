@@ -2333,18 +2333,18 @@ section p span > span, section blockquote span > span {
         transform: scaleX(-1) rotate(0deg) translate3d(0, 4px, 0); }
       .clip-wrapper__left .arrow-group__second {
         transform: rotate(180deg) translate3d(0, 4px, 0); }
-      .clip-wrapper__left .arrow-group:hover {
-        transform: translate3d(-12px, 0, 0);
-        transition-delay: 0s; }
-        .clip-wrapper__left .arrow-group:hover .arrow-group__first {
-          -ms-transform: scaleX(-1) rotate(-90deg);
-          transform: scaleX(-1) rotate(-90deg); }
-        .clip-wrapper__left .arrow-group:hover .arrow-group__second {
-          -ms-transform: rotate(90deg);
-          transform: rotate(90deg); }
       @media screen and (max-width: 800px) {
         .clip-wrapper__left .arrow-group {
           display: none; } }
+    .clip-wrapper__left .arrow-nav--hovering .arrow-group {
+      transform: translate3d(-12px, 0, 0);
+      transition-delay: 0s; }
+    .clip-wrapper__left .arrow-nav--hovering .arrow-group__first {
+      -ms-transform: scaleX(-1) rotate(-90deg);
+      transform: scaleX(-1) rotate(-90deg); }
+    .clip-wrapper__left .arrow-nav--hovering .arrow-group__second {
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg); }
     .clip-wrapper__left hr {
       margin: 6px 18px;
       width: 100%;

@@ -40,7 +40,11 @@ $baseclass: clip-wrapper;
 		.#{$arrow-group-baseclass} {
 			transform: translate3d(-33px,0,0);
 
-			&, &__first, &__first:first-child, &__second , &__second:nth-child(2) {
+			&,
+			&__first,
+			&__first:first-child,
+			&__second,
+			&__second:nth-child(2) {
 				transition: transform $easing1 $duration-short;
 				pointer-events: auto;
 			}
@@ -49,7 +53,7 @@ $baseclass: clip-wrapper;
 				transition-delay: $duration-short;
 			}
 
-			&__first, &__second {		
+			&__first, &__second {
 				@for $i from 1 through 2 {
 					&:nth-child(#{$i}) {
 						transition-delay: (#{0.0 + ($i * 0.18)}s);							
@@ -70,19 +74,22 @@ $baseclass: clip-wrapper;
 				transform: rotate(180deg) translate3d(0,4px,0);
 			}
 
-			&:hover {
-				transform: translate3d(-12px,0,0);
-				transition-delay: 0s;
-
-				.#{$arrow-group-baseclass}__first {
-					transform: scaleX(-1) rotate(-90deg);
-				}
-				.#{$arrow-group-baseclass}__second {
-					transform: rotate(90deg);
-				}
-			}
 			@media screen and (max-width: $bp-medium) {
 				display: none;
+			}
+		}
+
+		.arrow-nav--hovering {
+			.#{$arrow-group-baseclass} {
+				transform: translate3d(-12px,0,0);
+				transition-delay: 0s;
+			}
+
+			.#{$arrow-group-baseclass}__first {
+				transform: scaleX(-1) rotate(-90deg);
+			}
+			.#{$arrow-group-baseclass}__second {
+				transform: rotate(90deg);
 			}
 		}
 
