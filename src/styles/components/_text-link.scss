@@ -1,25 +1,5 @@
 $baseclass: text-link;
 
-@keyframes drawOutInRight {
-	0%, 20% {
-		transform-origin: right;
-		transform: scaleX(1);
-	}
-	40% {
-		transform-origin: right;
-		transform: scaleX(0);
-	}
-	60% {
-		transform: scaleX(0);
-		transform-origin: left;
-	}
-	80%, 100% {
-		transform: scaleX(1);
-		transform-origin: left;
-	}
-}
-
-
 .#{$baseclass} {
 	position: relative;
 	display: inline-flex;
@@ -33,7 +13,7 @@ $baseclass: text-link;
 		background: rgba($brand-black, .10);
 		position: absolute;
 		bottom: 0;
-		// transition: all 0s $duration-long linear;
+		left: 0;
 	}
 
 	&__line {
@@ -68,12 +48,7 @@ $baseclass: text-link;
 	}
 
 	&--hovered {
-		.#{$baseclass}__line-container {
-			// background: transparent;
-			// transition: none;
-		}
 		.#{$baseclass}__line {
-			// animation: drawOutInRight $easing2 $duration-longest;
 			transform: scaleX(1);
 			transform-origin: left;
 		}
@@ -81,11 +56,5 @@ $baseclass: text-link;
 
 	&--disabled {
 		pointer-events: none;
-	}
-
-	.active-section & {
-		// .#{$baseclass}__line-container {
-		// 	animation: drawOutInRight $easing5 $duration-longest;
-		// }
 	}
 }

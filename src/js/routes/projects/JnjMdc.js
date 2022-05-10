@@ -116,40 +116,18 @@ class JnjMdc extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<ProjectIntroBlock 
-					col1='
+					col1Top='
 						We sought to consolidate J&J’s 250 websites across 6 medical device companies into a unified platform that reflected the new J&J brand. The final result, J&J MDC or “Medical Device Center” was a flexible design system which created a centralized experience for the companies.
-						\n\n 
-						J&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs.
+						\n\nJ&J MDC was ultimately successful – leading to expanded patient access, improved outcomes and reduced health system costs.
 					'
-					col2='
+					col1Bottom='My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.'
+					col2Top='
 						In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution. 
-						\n\n
-						J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives.
+						\n\nJ&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives.
 					'
-					media={{
-						type: 'image', 
-						src: '../assets/img/jnj-mdc/running-man-16x9.png', 
-						aspectRatioWidth: 16, 
-						aspectRatioHeight: 9 
-					}}
-					col3='My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.'
-					col4='During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.'
+					col2Bottom='During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J’s own website builder.'
 					/>
-
 				</ScrollSection>
-
-				{/*style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12)
-						),
-						url(../assets/img/jnj-mdc/forest.jpg)
-					`, 
-					backgroundPosition: '50% 80%',
-					backgroundRepeat: 'repeatX',
-					backgroundSize: 'cover',
-				}}*/}
 
 				<ScrollSection 
 				sections={sections} 
@@ -169,21 +147,6 @@ class JnjMdc extends Component {
 					description1="I designed a navigation for hospital buyers and HCPs to learn about the vast amount of specialties, products, procedures and services available in the J&J portfolio of companies."
 					description2="The navigation design needed to be flexible enough to work with as few as 1 item and as many as 100 items. The sliding underline shows your current active menu."
 					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-nav.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
-
-					{/*<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Navigation</h2>
-								<blockquote>I designed a navigation for hospital buyers and HCPs to learn about the vast amount of products, procedures, services and companies available in the J&J portfolio. This nav needed to be able to work with as little as 1 item and as many as 100 items.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-nav.html"/>
-						</div>
-					</div>*/}
 				</ScrollSection>
 
 
@@ -198,22 +161,6 @@ class JnjMdc extends Component {
 					description1={`To toggle between the healthcare professional and patient experiences of the site I designed a ‟Flipper” interaction for toggling between them.`}
 					description2="When hovering, an HCP or patient could use our predictive search to search for a specialty or symptom respectively."
 					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-flipper.html#flipper", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
-
-					{/*<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">HCP/Patient</h2>
-								<h4 className="fade">Site Flipper</h4>
-								<blockquote>To toggle between the healthcare professional and patient experiences of the site I designed this interaction for toggling between them. On hover, an HCP or patient could use our predictive search to search for a specialty or symptom respectively.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-flipper.html#flipper"/>
-						</div>
-					</div>*/}
 				</ScrollSection>
 
 
@@ -240,22 +187,6 @@ class JnjMdc extends Component {
 					title="Taxonomy"
 					description1="Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way."
 					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
-
-
-					{/*<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Taxonomy</h2>
-								<blockquote>Consolidating 250 sites is complicated! With our content strategist I created a interactive visual of our site taxonomy. This quickly became our favorite tool for viewing the site in a visually digestable way.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-taxonomy-diagram.html"/>
-						</div>
-					</div>*/}
 				</ScrollSection>
 
 
@@ -269,43 +200,14 @@ class JnjMdc extends Component {
 					title="Buttons"
 					description1="I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference."
 					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-buttons.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
-
-					{/*<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2>Buttons</h2>
-								<blockquote>I created this page to document our button styles along with hover states. This page became a useful resource for our developers to reference.</blockquote>
-							</div>
-						</div>
-					</div>
-					<div className="grid">
-						<div className="grid__item grid__item--col-12  grid__item--col-12-medium">
-							<IFrame src="//smittenn.github.io/jnj-process/prototypes/mdc-buttons.html"/>
-						</div>
-					</div>*/}
 				</ScrollSection>
-
-
-				{/*<ScrollSection 
-				black
-				name={sections[7]}
-				sections={sections} 
-				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(7); }}>
-					{<ProjectSectionBlock 
-					title="Cards"
-					description1="Many of our page modules used utilized informations in card grids. I created this page to document all our card styles along with hover states. This allowed us to keep our card styles concise as our design system grew."
-					media={{ type: "iframe", src: "//smittenn.github.io/jnj-process/prototypes/mdc-cards.html.html", aspectRatioWidth: this.props.isMobile ? 5 : 3, aspectRatioHeight:this.props.isMobile ? 8 : 2 }}/>}
-
-				</ScrollSection>*/}
 
 				<ScrollSection 
 				black
 				sections={sections} 
 				activeSection={activeSection}
 				>
-					<ProjectUpNextBlock name="Wrap Interactions" to="micro-app-interactions"/>
+					<ProjectUpNextBlock name="American Made" to="american-made"/>
 				</ScrollSection>
 
 

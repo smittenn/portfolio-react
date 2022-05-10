@@ -15,16 +15,10 @@ $baseclass: project-card;
 		color: $brand-black;
 		display: flex;
 		align-items: center;
-
-				// > div {
-		// 	flex: 1;
-		// }
-
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		color: transparent;
-		// @include zIndexClose;
 	}
 
 	&__tags {
@@ -38,34 +32,32 @@ $baseclass: project-card;
 		transition: all $easing4 $duration-medium;
 	}
 
-	// &__asset,
-	// &__asset img,
-	// &__asset div {
-	// 	@include zIndexFarthest;
-	// }
-
 	&__bottom {
+		position: relative;
 		opacity: 0.6;
 		display: block;
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-start;
 		flex-direction: column;
-		// min-width: 100%;
 		@include zIndexClose;
-		// transform: translateY(20%);
+	}
+
+	&__arrow {
+		position: absolute;
+		right: 0;
+		top: 0;
+		transform: translateX(100%) rotate(-45deg);
 	}
 
 	&__asset {
 		position: absolute;
-		// transform: translateX(50%);
 		opacity: 0;
 		pointer-events: none;
 		width: 100%;
 		@include zIndexFar;
 
 		img, video {
-			// transform: none;
 			transition-delay: $delay-short;
 		}
 	}

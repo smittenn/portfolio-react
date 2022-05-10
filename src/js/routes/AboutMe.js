@@ -94,9 +94,9 @@ class About extends Component {
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 						headerText={[
-							`In my free time I make`, 
+							`In my free time I make `, 
 							<span><span className="outline">3d stuff </span></span>, 
-							`and snap`, 
+							`and snap `, 
 							<span><span className="outline">photos </span></span>, 
 							`with friends.`
 						]}

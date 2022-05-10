@@ -4,7 +4,7 @@
 		{
 			"name": "Home",
 			"to": "/",
-			"abbreviation": "H",
+			"abbreviation": "H"
 		},
 		{
 			"name": "Works",
@@ -14,33 +14,38 @@
 				{
 					"name": "Google Design",
 					"items": [
-						{
-							"name": "Best of 2020",
-							"to": "//design.google/library/google-design-2020",
+						{ 
+							"name": "Google Design", 
+							"to": "/google-design",
+							"abbreviation": "G",
+							"media": {
+								"src": "../assets/img/google-design/best-of-2020.gif",
+								"type": "image",
+								"aspectRatioWidth": 10,
+								"aspectRatioHeight": 7
+							}
 						},
 						{
 							"name": "Is it Good Design?",
 							"to": "//design.google/library/good-design",
 							"media": {
-								// "src": "../assets/img/google-design/best-of-2019-3x2.jpg",
 								"src": "../assets/img/google-design/GoodDesign_logo.gif",
 								"type": "image",
 								"aspectRatioWidth": 16,
-								"aspectRatioHeight": 9,
+								"aspectRatioHeight": 9
 							}
 						},
+						{ "name": "MDA 2020", "to": "//design.google/library/material-design-awards-2020" },
 						{
 							"name": "Best of 2019",
 							"to": "//design.google/library/google-design-2019",
 							"media": {
-								// "src": "../assets/img/google-design/best-of-2019-3x2.jpg",
 								"src": "../assets/img/google-design/BestOf2019-logo.gif",
 								"type": "image",
 								"aspectRatioWidth": 16,
-								"aspectRatioHeight": 9,
+								"aspectRatioHeight": 9
 							}
 						},
-						// { "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ 
 							"name": "Span 2019",
 							"to": "//design.google/library/span2019",
@@ -48,8 +53,7 @@
 								"type": "video",
 								"src": "../assets/img/google-design/span-2019.mp4",
 							}
-						},
-						{ "name": "Google Design", "to": "//design.google" }
+						}
 					]
 				},
 				{
@@ -92,7 +96,7 @@
 								"type": "image",
 								"aspectRatioWidth" : 16,
 								"aspectRatioHeight" : 9,
-							},
+							}
 						},
 						{
 							"name": "Rationalized Player",

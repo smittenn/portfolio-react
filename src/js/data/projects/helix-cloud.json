@@ -15,7 +15,8 @@
 						"src": "../assets/img/perforce/mobile-3x2.jpg"
 					},
 					"gradient": {
-						"over": "linear-gradient(#2b8bb5, #178ab9)"
+						"under": "linear-gradient(#2b8bb5, #178ab9)",
+						"over": "linear-gradient(rgba(0,0,0,.04), rgba(0,0,0,.08))"
 					}
 				}
 			}
@@ -24,10 +25,10 @@
 			"name": "About",
 			"type": "project-intro-block",
 			"block": {
-				"col1": "The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. \n\n Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
-				"col2": "Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. \n\n Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.",
-				"col3": "My role on this project involved creating the mockups and visual designs–contributing iteratively to the product. I collaborated with a senior designer to deliever designs in sprints. ",
-				"col4": "With the our new design, the web based tool helped our users manage file versions in the cloud. It eliminated the designer’s need to rely on creating versions manually of their files."
+				"col1Top": "The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. \n\n Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
+				"col1Bottom": "My role on this project involved creating the mockups and visual designs–contributing iteratively to the product. I collaborated with a senior designer to deliever designs in sprints. ",
+				"col2Top": "Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. \n\n Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.",
+				"col2Bottom": "With the our new design, the web based tool helped our users manage file versions in the cloud. It eliminated the designer’s need to rely on creating versions manually of their files."
 			}
 		},
 		{

@@ -63,18 +63,11 @@ table {
   src: url("../fonts/Lausanne/Lausanne-Light-Extended.eot?#iefix") format("embedded-opentype"), url("../fonts/Lausanne/Lausanne-Light-Extended.woff2") format("woff2"), url("../fonts/Lausanne/Lausanne-Light-Extended.woff") format("woff"), url("../fonts/Lausanne/Lausanne-Light-Extended.ttf") format("truetype"), url("../fonts/Lausanne/Lausanne-Light-Extended.svg#codropsicons") format("svg"); }
 
 @font-face {
-  font-family: 'Akzidenz Grotesk';
-  font-weight: normal;
+  font-family: 'Reckless Neue';
+  font-weight: 400;
   font-style: normal;
-  src: url("../fonts/AkzidenzGrotesk/AkzidenzGrotesk-Regular.eot");
-  src: url("../fonts/AkzidenzGrotesk/AkzidenzGrotesk-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/AkzidenzGrotesk/AkzidenzGrotesk-Regular.woff2") format("woff2"), url("../fonts/AkzidenzGrotesk/AkzidenzGrotesk-Regular.woff") format("woff"), url("../fonts/AkzidenzGrotesk/AkzidenzGrotesk-Regular.ttf") format("truetype"), url("../fonts/AkzidenzGrotesk/AkzidenzGrotesk-Regular.svg#codropsicons") format("svg"); }
-
-@font-face {
-  font-family: 'Akzidenz Grotesk Extended';
-  font-weight: normal;
-  font-style: normal;
-  src: url("../fonts/AkzidenzGrotesk/AkzidenzGroteskExtended-Regular.eot");
-  src: url("../fonts/AkzidenzGrotesk/AkzidenzGroteskExtended-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/AkzidenzGrotesk/AkzidenzGroteskExtended-Regular.woff2") format("woff2"), url("../fonts/AkzidenzGrotesk/AkzidenzGroteskExtended-Regular.woff") format("woff"), url("../fonts/AkzidenzGrotesk/AkzidenzGroteskExtended-Regular.ttf") format("truetype"), url("../fonts/AkzidenzGrotesk/AkzidenzGroteskExtended-Regular.svg#codropsicons") format("svg"); }
+  src: url("../fonts/RecklessNeue/RecklessNeue-Light.eot");
+  src: url("../fonts/RecklessNeue/RecklessNeue-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/RecklessNeue/RecklessNeue-Light.woff2") format("woff2"), url("../fonts/RecklessNeue/RecklessNeue-Light.woff") format("woff"), url("../fonts/RecklessNeue/RecklessNeue-Light.ttf") format("truetype"), url("../fonts/RecklessNeue/RecklessNeue-Light.svg#codropsicons") format("svg"); }
 
 @font-face {
   font-family: 'Futura Maxi';
@@ -164,7 +157,7 @@ table {
   flex-wrap: wrap;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 0 112px;
+  padding: 0 72px;
   max-width: 1440px; }
   .grid__row {
     display: -ms-flexbox;
@@ -225,46 +218,46 @@ body, button, input, select, textarea {
   font-family: "Lausanne", sans-serif;
   letter-spacing: -0.006em; }
 
-h1, h2, h3, h4, h5, h6, blockquote, p {
-  color: inherit; }
-  h1.uppercase, h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, blockquote.uppercase, p.uppercase {
-    font-family: "Lausanne Extended", sans-serif;
-    letter-spacing: 0.025rem;
-    text-transform: uppercase; }
-  h1.initial-caps, h2.initial-caps, h3.initial-caps, h4.initial-caps, h5.initial-caps, h6.initial-caps, blockquote.initial-caps, p.initial-caps {
-    text-transform: capitalize; }
-  h1.mr, h2.mr, h3.mr, h4.mr, h5.mr, h6.mr, blockquote.mr, p.mr {
-    margin-right: 8.3333%; }
-  h1.light, h2.light, h3.light, h4.light, h5.light, h6.light, blockquote.light, p.light {
-    font-weight: 400; }
-  .active-section section h1.fade, .active-section section h2.fade, .active-section section h3.fade, .active-section section h4.fade, .active-section section h5.fade, .active-section section h6.fade, .active-section section blockquote.fade, .active-section section p.fade {
-    opacity: 0.48; }
-  h1 .outline, h2 .outline, h3 .outline, h4 .outline, h5 .outline, h6 .outline, blockquote .outline, p .outline {
-    color: transparent;
-    -webkit-text-stroke: 1px; }
-
 html {
   font-size: 8px; }
 
-h1, h2, h3, h4, h5, h6 {
+.h1, .h2, h3, h4, h5, h6, blockquote, p {
+  color: inherit; }
+  .h1.uppercase, .h2.uppercase, h3.uppercase, h4.uppercase, h5.uppercase, h6.uppercase, blockquote.uppercase, p.uppercase {
+    font-family: "Lausanne Extended", sans-serif;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase; }
+  .h1.initial-caps, .h2.initial-caps, h3.initial-caps, h4.initial-caps, h5.initial-caps, h6.initial-caps, blockquote.initial-caps, p.initial-caps {
+    text-transform: capitalize; }
+  .h1.mr, .h2.mr, h3.mr, h4.mr, h5.mr, h6.mr, blockquote.mr, p.mr {
+    margin-right: 8.3333%; }
+  .h1.light, .h2.light, h3.light, h4.light, h5.light, h6.light, blockquote.light, p.light {
+    font-weight: 400; }
+  .active-section section .h1.fade, .active-section section .h2.fade, .active-section section h3.fade, .active-section section h4.fade, .active-section section h5.fade, .active-section section h6.fade, .active-section section blockquote.fade, .active-section section p.fade {
+    opacity: 0.48; }
+  .h1 .outline, .h2 .outline, h3 .outline, h4 .outline, h5 .outline, h6 .outline, blockquote .outline, p .outline {
+    color: transparent;
+    -webkit-text-stroke: 1px; }
+
+.h1, .h2, h3, h4, h5, h6 {
   position: relative; }
-  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  .h1 span, .h2 span, h3 span, h4 span, h5 span, h6 span {
     display: inline-block;
     white-space: pre; }
 
-h1, h2, h3, h4 {
+.h1, .h2, h3, h4 {
   font-weight: 400; }
 
 h5, h6 {
   font-family: "Lausanne Extended", sans-serif; }
 
-h1 {
+.h1 {
   font-size: 16rem;
   line-height: 1;
   margin-bottom: 48px;
   letter-spacing: -0.2rem; }
 
-h2 {
+.h2 {
   font-size: 14rem;
   line-height: 1;
   margin-bottom: 36px;
@@ -293,21 +286,18 @@ h6 {
   line-height: 1.3;
   margin-bottom: 8px; }
 
+p, blockquote {
+  white-space: pre-wrap; }
+
 p {
   font-size: 2.125rem;
   line-height: 1.61803;
-  white-space: pre-line;
   margin-bottom: 24px;
   letter-spacing: 0.025rem; }
 
 blockquote {
-  font-size: 2.625rem;
+  font-size: 2.75rem;
   line-height: 1.61803;
-  white-space: pre-line;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   margin-bottom: 36px;
   letter-spacing: 0.025rem; }
 
@@ -478,18 +468,16 @@ h1 span, h2 span, h3 span, h4 span, p span, blockquote span {
 
 @keyframes ghostIn {
   0% {
-    transform: translate3d(0, 120px, 0) skewY(0deg); }
+    transform: translate3d(0, 128px, 0) skewY(0deg); }
   100% {
     opacity: 1;
-    transform: translate3d(0, -9%, 0);
     transform: none; } }
 
 @keyframes ghostOut {
   0% {
-    transform: translate3d(0, -9%, 0);
     transform: none; }
   100% {
-    transform: translate3d(0, 120px, 0) skewY(0deg); } }
+    transform: translate3d(0, 128px, 0) skewY(0deg); } }
 
 .scale-up {
   transition: cubic-bezier(0.19, 1, 0.22, 1) 0.6s transform; }
@@ -1181,7 +1169,7 @@ section h2, section h3, section h4, section h5, section h6 {
   section h2 .split--word > span, section h2 .split--letter > span, section h3 .split--word > span, section h3 .split--letter > span, section h4 .split--word > span, section h4 .split--letter > span, section h5 .split--word > span, section h5 .split--letter > span, section h6 .split--word > span, section h6 .split--letter > span {
     transform: translate3d(0, 90px, 0) skewX(9deg); }
 
-section p span > span, section blockquote span > span {
+section p .split--word > span, section p .split--letter > span, section blockquote .split--word > span, section blockquote .split--letter > span {
   opacity: 0;
   transform: translate3d(0, 100%, 0) skewX(6deg); }
 
@@ -2896,7 +2884,7 @@ section p span > span, section blockquote span > span {
   position: fixed;
   right: 0;
   top: 24px;
-  width: 72px;
+  width: 80px;
   height: 120px;
   pointer-events: auto;
   display: none;
@@ -3313,6 +3301,7 @@ section p span > span, section blockquote span > span {
   .project-card, .project-card__tags, .project-card__asset {
     transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
   .project-card__bottom {
+    position: relative;
     opacity: 0.6;
     display: block;
     display: -ms-flexbox;
@@ -3324,6 +3313,12 @@ section p span > span, section blockquote span > span {
     -ms-flex-direction: column;
     flex-direction: column;
     z-index: 1; }
+  .project-card__arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    -ms-transform: translateX(100%) rotate(-45deg);
+    transform: translateX(100%) rotate(-45deg); }
   .project-card__asset {
     position: absolute;
     opacity: 0;
@@ -4092,7 +4087,8 @@ section p span > span, section blockquote span > span {
       -ms-transform: translateX(176px);
       transform: translateX(176px); }
       .active-section .sidebar {
-        pointer-events: none; }
+        pointer-events: none;
+        display: none; }
       .sidebar .sidebar__inner {
         margin-top: 84px;
         pointer-events: none; }
@@ -4115,20 +4111,6 @@ section p span > span, section blockquote span > span {
       .scrolling-section--black .sidebar--open .sidebar__inner {
         background: #131112; } }
 
-@keyframes drawOutInRight {
-  0%, 20% {
-    transform-origin: right;
-    transform: scaleX(1); }
-  40% {
-    transform-origin: right;
-    transform: scaleX(0); }
-  60% {
-    transform: scaleX(0);
-    transform-origin: left; }
-  80%, 100% {
-    transform: scaleX(1);
-    transform-origin: left; } }
-
 .text-link {
   position: relative;
   display: -ms-inline-flexbox;
@@ -4142,7 +4124,8 @@ section p span > span, section blockquote span > span {
     overflow: hidden;
     background: rgba(19, 17, 18, 0.1);
     position: absolute;
-    bottom: 0; }
+    bottom: 0;
+    left: 0; }
   .text-link__line {
     background: #131112;
     height: 100%;
@@ -4169,11 +4152,42 @@ section p span > span, section blockquote span > span {
   .text-link--disabled {
     pointer-events: none; }
 
+.video-wrapper {
+  position: relative; }
+  .video-wrapper__controls {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    transition: opacity cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+    opacity: 0;
+    pointer-events: none; }
+  .video-wrapper__controls-item {
+    color: #fefefe;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background: rgba(19, 17, 18, 0.8);
+    opacity: 0.9;
+    border-radius: 16px;
+    padding: 0 16px;
+    margin-right: 4px; }
+  .video-wrapper .icon {
+    stroke: #fefefe;
+    margin-right: 4px; }
+  .video-wrapper--hovering .video-wrapper__controls {
+    opacity: 1; }
+
 /* Responsive */
 @media screen and (max-width: 1336px) {
-  h1 {
+  .h1 {
     font-size: 16rem; }
-  h2 {
+  .h2 {
     font-size: 14rem; }
   h3 {
     font-size: 12rem; }
@@ -4221,9 +4235,9 @@ section p span > span, section blockquote span > span {
     width: 100%; } }
 
 @media screen and (max-width: 1280px) {
-  h1 {
+  .h1 {
     font-size: 15rem; }
-  h2 {
+  .h2 {
     font-size: 13rem; }
   h3 {
     font-size: 11rem; }
@@ -4271,9 +4285,9 @@ section p span > span, section blockquote span > span {
     width: 100%; } }
 
 @media screen and (max-width: 1024px) {
-  h1 {
+  .h1 {
     font-size: 14rem; }
-  h2 {
+  .h2 {
     font-size: 12rem; }
   blockquote {
     font-size: 2.625rem; }
@@ -4354,12 +4368,12 @@ section p span > span, section blockquote span > span {
       transform: none; }
     section .mr {
       margin-right: 0; }
-  h1 {
+  .h1 {
     font-size: 9rem;
     margin-left: 0;
     margin-bottom: 24px;
     letter-spacing: -0.15rem; }
-  h2 {
+  .h2 {
     font-size: 7.5rem;
     margin-left: 0;
     margin-bottom: 18px; }
@@ -4409,9 +4423,9 @@ section p span > span, section blockquote span > span {
     width: 100%; } }
 
 @media screen and (max-width: 480px) {
-  h1 {
+  .h1 {
     font-size: 7rem; }
-  h2 {
+  .h2 {
     font-size: 6rem; }
   h3 {
     font-size: 5rem; }
@@ -4426,9 +4440,9 @@ section p span > span, section blockquote span > span {
     font-size: 1.875rem; } }
 
 @media screen and (max-width: 320px) {
-  h1 {
+  .h1 {
     font-size: 6rem; }
-  h2 {
+  .h2 {
     font-size: 5.5rem; }
   h3 {
     font-size: 5rem; }
@@ -4444,6 +4458,9 @@ section p span > span, section blockquote span > span {
 
 *.p0 {
   padding: 0; }
+
+*.lh1 {
+  line-height: 1; }
 
 /*
 create color utility classes in the format
@@ -4518,13 +4535,13 @@ create color utility classes in the format
 
 /* Create CSS Variables */
 :root {
-  --brand-red: $val;
-  --brand-orange: $val;
-  --brand-yellow: $val;
-  --brand-green: $val;
-  --brand-purple: $val;
-  --brand-pink: $val;
-  --brand-blue: $val;
-  --brand-teal: $val; }
+  --brand-red: #f63f43;
+  --brand-orange: #f67e0d;
+  --brand-yellow: #efbb29;
+  --brand-green: #12ab2e;
+  --brand-purple: #7366FB;
+  --brand-pink: #ef9b97;
+  --brand-blue: #0b67de;
+  --brand-teal: #00D9B6; }
 
 /*# sourceMappingURL=styles.css.map */

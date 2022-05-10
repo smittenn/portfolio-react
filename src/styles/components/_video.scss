@@ -1,0 +1,39 @@
+$baseclass: "video-wrapper";
+
+.#{$baseclass} {
+  position: relative;
+  
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    transition: opacity $easing2 $duration-short;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__controls-item {
+    color: $brand-white;
+    display: flex;
+    align-items: center;
+    background: rgba($brand-black, 0.8);
+    opacity: 0.9;
+    border-radius: 16px;
+    padding: 0 16px;
+    margin-right: 4px;
+  }
+
+  .icon {
+    stroke: $brand-white;
+    margin-right: 4px;
+  }
+
+  &--hovering {
+    .#{$baseclass}__controls {
+      opacity: 1;
+    }
+  }
+}

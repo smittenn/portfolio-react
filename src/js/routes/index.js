@@ -19,8 +19,7 @@ import MicroAppInteractions from './projects/MicroAppInteractions'
 import MicroAppTemplates from './projects/MicroAppTemplates'
 import HelixSync from './projects/HelixSync'
 import HelixCloud from './projects/HelixCloud'
-
-import { detectWindowHeight } from "../actions/windowHeight"
+import GoogleDesign from './projects/GoogleDesign'
 
 import navData from "../data/nav"
 
@@ -39,6 +38,7 @@ const routes = (
 			<Route path="/micro-app-templates" component={MicroAppTemplates}/>
 			<Route path="/helix-sync" component={HelixSync}/>
 			<Route path="/helix-cloud" component={HelixCloud}/>
+			<Route path="/google-design" component={GoogleDesign}/>
 
 			<Route exact path={navData.items[2].to} component={Process}/>
 			<Route path={navData.items[3].to} component={AboutMe}/>

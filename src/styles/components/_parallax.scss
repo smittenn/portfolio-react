@@ -15,10 +15,10 @@ $baseclass: parallax-background;
 	}
 
 	&--hidden {
-		// opacity: 0;
 		position: relative;
 		display: none;
 	}
+
 	@media screen and (max-width: $bp-medium) {
 		justify-content: flex-start;
 	}

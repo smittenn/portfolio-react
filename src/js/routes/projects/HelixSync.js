@@ -113,23 +113,11 @@ class HelixSync extends Component {
 				disableSectionNumber
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<ProjectIntroBlock 
-					col1="
-						The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. 
-						\n\n 
-						Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files."
-					col2="
-						Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. 
-						\n\n
-						Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.
-					" 
-					media={{
-						type: 'image', 
-						src: '../assets/img/perforce/sean.png', 
-						aspectRatioWidth: 4, 
-						aspectRatioHeight: 3 
-					}}
-					col3="My role on this project involved creating the visual designs and creating the prototype which we conducted user testing with. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project." 
-					col4="With the our new design, the unified system is more efficient. It eliminates the designer’s need to rely on creating versions manually of their files. "
+					col1Top="The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files."
+					col1Bottom="My role on this project involved creating the visual designs and creating the prototype which we conducted user testing with. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project." 
+					col2Top="Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. 
+					\n\nSince the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community."
+					col2Bottom="With the our new design, the unified system is more efficient. It eliminates the designer’s need to rely on creating versions manually of their files. "
 					/>
 				</ScrollSection>
 

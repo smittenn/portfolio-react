@@ -117,26 +117,17 @@ class AmericanMade extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<ProjectIntroBlock 
-					col1='
+					col1Top='
 						The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures.
-						\n\n 
-						The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
+						\n\nThe NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees.
 					'
-					col2='
+					col1Bottom='Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.'
+					col2Top='
 						Our final design is the product of many late nights and too many cups of coffee! It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets.
-						\n\n
-						My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
+						\n\nMy goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures.
 					'
-					media={{
-						type: 'image', 
-						src: '../assets/img/american-made/half-still.jpg', 
-						aspectRatioWidth: 9, 
-						aspectRatioHeight: 5 
-					}}
-					col3='Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.'
-					col4='From a developer standpoint I was responsible for QAing the site on all modern devices. I was also responsible for deploying the site which we did in 2 phases–as an MVP and final site.'
+					col2Bottom='From a developer standpoint I was responsible for QAing the site on all modern devices. I was also responsible for deploying the site which we did in 2 phases–as an MVP and final site.'
 					/>
-
 				</ScrollSection>
 
 				<ScrollSection 
@@ -226,8 +217,8 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(6); }}>
 					<ProjectSectionBlock 
 					title="Parallax"
-					description1="In my quest to unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way."
-					description2="I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph, transparent video and parallax really helped enhance the visual storytelling."
+					description1="To further unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way."
+					description2="I utilized video with alpha channel here, a new interesting technology for web browsers. The cinemagraph, transparent video and parallax really helped enhance the visual storytelling."
 					media={{ type: "iframe", src: "//smittenn.github.io/american-made/parallax-story",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 
 				</ScrollSection>

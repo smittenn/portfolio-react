@@ -29,11 +29,7 @@ export class HeroBlock extends Component {
 
 	render() {
 
-		const { headerText } = this.props;
-
-		const classnames = classNames({
-			"grid": true,
-		})
+		const { headerText, split } = this.props;
 
 		const style = {}
 
@@ -48,10 +44,10 @@ export class HeroBlock extends Component {
 		})
 
 		return (
-			<div className={classnames}>
-				<div className="grid__item grid__item--col-1 grid__item--col-hide-bp-medium"/>
-				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
-					<h1 className="heading1 mb0">{ updatedText }</h1>
+			<div className="grid">
+				<div className={`grid__item ${ split ? "grid__item--col-1" : "grid__item--col-1"} grid__item--col-hide-bp-medium`}/>
+				<div className={`grid__item ${ split ? "grid__item--col-6" : "grid__item--col-10" } grid__item--col-12-medium`}>
+					<h1 className="h1 mb0">{ updatedText }</h1>
 				</div>
 			</div>
 		);

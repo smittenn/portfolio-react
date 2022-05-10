@@ -27,7 +27,7 @@ $baseclass: nav-toggle;
 	right: 0;
 	top: 24px;
 	// transform: translateY(-50%);
-	width: 72px;
+	width: 10 * $rem-base;
 	height: 120px;
 	pointer-events: auto;
 	display: none;

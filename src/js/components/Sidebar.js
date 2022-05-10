@@ -100,7 +100,7 @@ class Sidebar extends Component {
 
 		const sidebarItems = sections.map((section, i) => 
 			<li key={i} className="sidebar__item">
-				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutQuint"} duration={1200} className={classNames({ "active": sections[i] == activeSection })} onClick={this.props.isMobile ? this.props.closeSidebar : this.props.setCursorUnhover} onMouseEnter={ this.props.setCursorHover }  onMouseLeave={ this.props.setCursorUnhover } >
+				<Link to={ this.props.isSidebarOpen ? section : "" } smooth={"easeOutQuint"} duration={1200} className={classNames({ "active": sections[i] == activeSection })} onClick={this.props.isMobile ? this.props.closeSidebar : this.props.setCursorUnhover} onMouseEnter={ this.props.setCursorHover } onMouseLeave={ this.props.setCursorUnhover } >
 					{ i == 0 ? <div className="sidebar__border sidebar__border--top"/> : null }
 					<h6 className="sidebar__number mb0 uppercase">{pad(i + 1, 2)}.</h6>
 					<div className="sidebar__dash"></div>

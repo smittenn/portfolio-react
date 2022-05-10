@@ -92,11 +92,7 @@ class JnjHome extends Component {
 				fullHeight
 				sections={sections} 
 				activeSection={activeSection}
-				style={{ 
-					backgroundColor: 'transparent',
-				}}
-				onSetActive={() => { this.setActiveSection(0); }}>
-					<ParallaxBackground 
+				background={<ParallaxBackground 
 					style={{ 
 						backgroundImage: `
 							radial-gradient(
@@ -106,7 +102,8 @@ class JnjHome extends Component {
 							url(../assets/img/jnj-home/${heroBackgroundImage}.jpg)
 						`, 
 						backgroundColor: `rgb(${brandPrimary.r}, ${brandPrimary.g}, ${brandPrimary.b})`,
-					}}/>
+					}}/>}
+				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
 					headerText={[ <span><span className="outline">Home </span></span>, `is a place for employees to connect and create.`]}
 					/>
@@ -124,36 +121,13 @@ class JnjHome extends Component {
 					backgroundColor: '#00008c'
 				}}>
 					<ProjectIntroBlock 
-					col1='
-						The Home team dreamed of a better employee experience for J&J employees. While J&J’s 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J.
-						\n\n 
-						Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.
-					'
-					col2='
-						Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees.
-						\n\n
-						Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.
-					'
-					media={{
-						type: 'image',
-						src: '../assets/img/jnj-home/connected.svg', 
-						aspectRatioWidth: 16, 
-						aspectRatioHeight: 9 
-					}}
-					col3='My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.'
-					col4='The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J’s people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.'
+					col1Top='The Home team dreamed of a better employee experience for J&J employees. While J&J’s 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J.\n\nPart of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.'
+					col1Bottom='My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.'
+					col2Top='Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees.\n\nOur goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.'
+					col2Bottom='The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J’s people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish.'
 					/>
 
-				</ScrollSection>
-
-				{/*
-				style={{ 
-					backgroundImage: `url(../assets/img/jnj-home/city.svg)`, 
-					backgroundColor: `rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .12`,
-					backgroundPosition: '50% 80%',
-					backgroundRepeat: 'repeatX',
-					backgroundSize: this.props.isMobile ? 'cover' : '50%',
-				}}*/}				
+				</ScrollSection>			
 
 				<ScrollSection 
 				sections={sections} 

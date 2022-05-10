@@ -1,9 +1,5 @@
 import React from "react"
 import { Component, Fragment } from "react"
-import { connect } from "react-redux"
-import { NavLink } from "react-router-dom"
-import classNames from "classnames"
-import IntersectionVisible from "react-intersection-visible"
 
 import Image from "../../components/Image"
 import Video from "../../components/Video"
@@ -39,7 +35,7 @@ export default class ProjectSectionBlock extends Component {
 			return <Image src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight} caption={media.caption}/>
 
 		else if (media.type == 'video')
-			return <Video src={media.src} poster={media.poster}/>
+			return <Video src={media.src} poster={media.poster} caption={media.caption} disableAutoplay={media.disableAutoplay} hideControls={media.hideControls}/>
 
 		else if (media.type == 'iframe')
 			return <IFrame src={media.src} aspectRatioWidth={media.aspectRatioWidth} aspectRatioHeight={media.aspectRatioHeight}/>
@@ -81,7 +77,7 @@ export default class ProjectSectionBlock extends Component {
 					<div className="grid__row mb0">
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h2 className={subtitle ? "mb0" : null}>
+							<h2 className={subtitle ? "h2 mb0" : "h2"}>
 								{ (title.split(" ").length > 1) ? splitWord(title) : splitLetter(title)}
 							</h2>
 							{ subtitle ? <h4 className="fade">{subtitle}</h4> : null }

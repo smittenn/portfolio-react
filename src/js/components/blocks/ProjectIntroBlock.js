@@ -16,7 +16,7 @@ class ProjectIntroBlock extends Component {
 
 	render() {
 
-		const { media, col1, col2, col3, col4 } = this.props;
+		const { col1Top, col1Bottom, col2Top, col2Bottom } = this.props;
 
 		return (
 			<div>
@@ -25,18 +25,18 @@ class ProjectIntroBlock extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<blockquote className="mr">
-								{addLineBreaks(col1)}
+								{addLineBreaks(col1Top)}
 							</blockquote>
 							<blockquote className={ this.props.isMobile ? "mr" : "mr mb0"}>
-								{addLineBreaks(col3)}
+								{addLineBreaks(col1Bottom)}
 							</blockquote>
 						</div>
 						<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
 							<blockquote className="mr">
-								{addLineBreaks(col2)}
+								{addLineBreaks(col2Top)}
 							</blockquote>
 							<blockquote className="mb0 mr">
-								{addLineBreaks(col4)}
+								{addLineBreaks(col2Bottom)}
 							</blockquote>
 						</div>
 					</div>

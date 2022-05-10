@@ -16,6 +16,10 @@ export const resume = () => ({
 
 // Projects
 
+export const googleDesign = () => ({
+	type: 'GOOGLEDESIGN',
+})
+
 export const americanMade = () => ({
 	type: 'AMERICANMADE',
 })

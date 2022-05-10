@@ -7,7 +7,10 @@ export default (text, style, className) => {
 
 	return text.split(" ").map((item, i) =>
 		<span key={i} style={style} className={classNames(cn)}>
-			<span>{item}&nbsp;</span>
+			<span>
+				{ item }
+				{ i !== text.split(" ").length - 1 ? ' ' : null }
+			</span>
 		</span>
 	)
 }

@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react'
 
-export default (str) => {
-	return str.split("\\n").map((text, i) => (
+export default (str) => (
+	str ? str.split("\\n").map((text, i) => (
 		<Fragment key={i}>
 			{text}
-			<br />
+			<br/>
 		</Fragment>
-	))
-}
+	)) : null
+)

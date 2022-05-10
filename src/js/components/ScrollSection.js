@@ -1,9 +1,8 @@
 import React from "react"
 import { Component, Fragment } from "react"
 import { connect } from "react-redux"
-import { NavLink } from "react-router-dom"
 import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
+import { Link, Element, scroller} from "react-scroll"
 import IntersectionVisible from "react-intersection-visible"
 
 import { openArrowNav, closeArrowNav } from '../actions/arrowNav'
@@ -15,9 +14,7 @@ import HeroScrollButton from "./HeroScrollButton"
 import GridLines from "./GridLines"
 import TextLink from "./TextLink"
 import ArrowGroup from "./ArrowGroup"
-import Icon from "./Icon"
 
-import palette from "../services/palette"
 import pad from "../services/pad"
 import splitLetter from "../services/splitLetter"
 
@@ -116,18 +113,16 @@ class ScrollSection extends Component {
 							<a>
 								<div onClick={() => this.scrollTo(sections[indexOfName - 1]) }/>
 							</a>
-							/*<Link to={sections[indexOfName - 1]} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
 						) : null}
 						{ (indexOfName + 1 < sections.length) ? (
 							<a>
 								<div onClick={() => this.scrollTo(sections[indexOfName + 1]) }/>
 							</a>
-							/*<Link to={sections[indexOfName + 1]} onClick={this.scrollTo(sections[indexOfName + 1])} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
 						) : null}
 					</ArrowGroup>
 					</div>
 				) : null}
-				{ this.props.abbreviation == 'R' ? <TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink> : null }
+				{/* { this.props.abbreviation == 'R' ? <TextLink hideUnderline><a href="assets/img/resume/ericsmith-resume.png" target="_blank"><h3 className="mb0"><Icon icon='download' size={48} color={palette('brand-black')}/></h3></a></TextLink> : null } */}
 			</div>
 		)
 

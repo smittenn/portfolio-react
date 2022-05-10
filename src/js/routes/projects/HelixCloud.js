@@ -1,8 +1,5 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
-import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"

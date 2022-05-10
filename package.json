@@ -67,6 +67,7 @@
     "react-scroll-trigger": "^0.5.2",
     "react-search-multi-select": "^1.0.8",
     "react-select": "^2.1.1",
+    "react-to-pdf": "0.0.14",
     "redux": "^4.0.1",
     "require-dir": "^0.3.1",
     "string": "^3.3.3",

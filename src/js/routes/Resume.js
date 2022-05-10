@@ -1,21 +1,14 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
-import {NavLink} from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
 import { home, process, resume, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 import { setPanel } from "../actions/panel"
 
 import ScrollSection from "../components/ScrollSection"
-import { HeroBlock, HeroBlockItem } from "../components/blocks/HeroBlock"
 import TextLink from "../components/TextLink"
-import Icon from "../components/Icon"
 
-import hexToRgb from "../services/hexToRgb"
-import palette from "../services/palette"
-import splitWord from "../services/splitWord"
+import { about } from "../data/about"
 
 class Resume extends Component {
 
@@ -37,10 +30,6 @@ class Resume extends Component {
 		this.props.reset();
 		this.props.setPanel("All Pages");
 	}
-
-	componentWillUnmount() {
-	}
-
 		
 	setActiveSection = (idx) => {
 		this.setState({
@@ -50,12 +39,10 @@ class Resume extends Component {
 	}
 
 	render() {
-
 		const { activeSection, sections } = this.state;
 
-		const brandBlack = hexToRgb(palette("brand-black"));
-		const brandRed = hexToRgb(palette("brand-red"));
-
+		const formattedRole = about.role.split(" ").map((word, i) => <span key={i} className="inherit--brand-red"><span className="outline">{word} </span></span>)
+		const formattedTagline = [`${about.name} is an `, ...formattedRole, `in ${about.location}.`]
 		
 		return (
 			<article>
@@ -69,24 +56,26 @@ class Resume extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
-								<h2 className="mb0">{[`Eric C. Smith is an ` , <span className="inherit--brand-red" key={0}><span className="outline">Interactive&nbsp;</span></span>, <span className="inherit--brand-red" key={1}><span className="outline">Designer&nbsp;</span></span>, `in New York City.`]}</h2>
+								<h2 className="h2 mb0">{formattedTagline}</h2>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
-									<blockquote className="mb0" style={{ minHeight: '48px', alignItems: 'center', width: '100%' }}>
+									<blockquote className="mb0">
 										<hr/>
-										<TextLink><a href="mailto:hi@ericsmithux.com">hi@ericsmithux.com</a></TextLink>
-										<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5> 
-										<TextLink><a href="call:5087334510">+15087334510</a></TextLink>
-										<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5>
-										 Brooklyn, NY
+										<div className="grid__row mb0">
+											<TextLink><a href="mailto:hi@ericsmithux.com">hi@ericsmithux.com</a></TextLink>
+											<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5> 
+											<TextLink><a href="call:5087334510">+15087334510</a></TextLink>
+											<h5 className="mb0 inherit--brand-red">&nbsp;&nbsp;•&nbsp;&nbsp;</h5>
+											Brooklyn, NY
+										</div>
 										<hr/>
 									 </blockquote>
 								</div>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
-									<blockquote className="mb0">August 2019 – Present. New York, NY.</blockquote>
+									<blockquote className="mb0">August 2019 – March 2022. New York, NY.</blockquote>
 									<h4 className="mb0">Google Design <span className="inherit--brand-red"><span className="outline">•</span></span> UX Engineer</h4>
 									<blockquote>HTML, CSS, Javascript, Python, Django, Wagtail</blockquote>
 									<blockquote className="mb0"><ul className="ls">
@@ -175,7 +164,7 @@ class Resume extends Component {
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
-									<blockquote className="mb0">September 2010 — May 2014. Amherst, MA</blockquote>
+									<blockquote className="mb0">September 2010 — May 2014. Amherst, MA.</blockquote>
 									<h4 className="mb0">Computer Science <span className="inherit--brand-red"><span className="outline">•</span></span> Bachelor of Science</h4>
 									<blockquote className="mb0">University of Massachusetts Amherst</blockquote>
 								</div>

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 
-import DelayLink from "./DelayLink"
 import Icon from "./Icon"
 import GridLines from "./GridLines"
 import TextLink from "./TextLink"
@@ -17,9 +16,7 @@ import { setPanel } from "../actions/panel"
 
 import navData from '../data/nav'
 
-import splitLetter from '../services/splitLetter'
 import palette from '../services/palette'
-import toKebabCase from '../services/toKebabCase'
 import toCamelCase from '../services/toCamelCase'
 
 class NavTakeover extends Component {
@@ -49,7 +46,6 @@ class NavTakeover extends Component {
 	setMenuClosed = () => {
 		this.props.closeTakeover();
 		this.props.setCursorUnhover();
-		// this.props.closeSecondaryPanel();
 
 		setTimeout(() => { this.props.unhoverToggle(); }, 1200)
 	}
@@ -74,11 +70,7 @@ class NavTakeover extends Component {
 		this.setState(prevState => ({
 			menus: prevState.menus.concat(data)
 		}));
-		/*if (toCamelCase(data.name) == this.props.openNavPanel) {
-			this.setState({
-				activeMenu: data
-			})
-		}*/
+
 		data.items.forEach(child => {
 			child.parent = data;
 			if (child.items != null) {
@@ -113,7 +105,6 @@ class NavTakeover extends Component {
 	)
 
 	handleExternalLinks = (item, idx) => (
-
 		(/^\/\//).test(item.to) ? (
 			<a href={item.to} target="_blank"
 			onMouseOver={(e) => { this.setIndexHovered(e); this.props.setCursorHover() }} 
@@ -193,10 +184,6 @@ class NavTakeover extends Component {
 			opacity: (isTakeoverOpen ? 1 : 0)
 		}
 
-
-		// console.log(this.state.activeMenu);
-
-
 		return (
 			<nav className={classnames}>
 				<div className="nav-takeover__main">
@@ -216,14 +203,6 @@ class NavTakeover extends Component {
 							</div>
 						</div>
 						{ this.createArrowNavigation(this.state.menus) }
-						{/*<div className="nav-takeover__controls">
-							<div style={{ transform: 'scaleX(-1)' }} onClick={() => { this.setCloseSecondaryPanel(); this.props.setCursorUnhover(); }} onMouseOver={this.props.isSecondaryPanelOpen ? this.props.setCursorHover : null} onMouseLeave={this.props.setCursorUnhover}>
-								<Icon icon='arrow' size={60} color={brandBlack} disabled={this.props.isPrimaryPanelOpen}/>
-							</div>
-							<div onClick={() => { this.setOpenSecondaryPanel(); this.props.setCursorUnhover();}} onMouseOver={this.props.isPrimaryPanelOpen ? this.props.setCursorHover : null} onMouseLeave={this.props.setCursorUnhover}>
-								<Icon icon='arrow' size={60} color={brandBlack} disabled={this.props.isSecondaryPanelOpen}/>
-							</div>
-						</div>*/}
 					</div>
 				</div>
 			</nav>

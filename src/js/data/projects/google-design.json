@@ -1,0 +1,183 @@
+{
+	"navPanel" : "Google Design",
+	"sections" : [
+		{
+			"name": "Overview",
+			"type": "hero-block",
+			"block": {
+				"heroText": [
+					{ "word": "Google" },
+					{ "word": "Design" },
+					{ "sentence": "tells interactive stories about design at Google." }
+				],
+				"parallaxBackground": {
+					"media": {
+						"src": "../assets/img/google-design/best-of-2020.gif"
+					},
+					"gradient": {
+						"over": "linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08))",
+						"under": "linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08))"
+					}
+				}
+			}
+		},
+		{
+			"name": "About",
+			"type": "project-intro-block",
+			"block": {
+				"col1Top": "Google Design is a cooperative effort led by a group of designers, writers, and developers at Google. Working across teams they create content and produce events that showcase Google’s design work and champion innovators in the design field.",
+				"col1Bottom": "When I joined the team I was tasked with creating the website for SPAN, the yearly conference put on by the team. After a successful launch and event we scaled out article template on design.google building numerous front-end features.",
+				"col2Top": "Since 2019 the team has launch over 100+ using the template along with accompanying social media campaigns. The increase in evergreen content led to huge growth in our following across 2 years.",
+				"col2Bottom": "Over 2 years, I drastically improving usability of our CMS. Having a better UX for our writers and designers made authoring content easier and enjoyable. Better usability allowed for publishing at an increased cadence and ulitmately enabled deeper storytelling."
+			}
+		},
+		{
+			"name": "Details",
+			"type": "project-details-block",
+			"block": {
+				"role": "Lead UX Engineer",
+				"date": "Fall, 2019 —\nSpring, 2022",
+				"client": "Google",
+				"team": ["Damien Correll", "Pat Iadanza", "Bryn Smith", "Carly Ayres", "Sharon Correa Harris", "Erin Kim", "Lauren Fox", "Clayton Meador"]
+			}
+		},
+		{
+			"name": "Carousel",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": {
+				"title": "Carousel",
+				"description1": "The Carousel component allowed a series of images or videos to be browsed. The subtle stacking animation I developed set it apart from the average carousel.",
+				// "description2": "This component scaled for many campaigns including the \"Best of Google Design\" roundup series.",
+				"media": { 
+					"type": "side-scroller",
+					"items": [
+						{ 
+							"gridItemWidth": 10,
+							"type": "video",
+							"src": "assets/img/google-design/why-google-needs-art-directors.mp4",
+							"caption": "The Carousel appears in \"[Why Google Needs Art Directors](//design.google/library/why-google-needs-art-directors/)\" published in February 2020."
+						},
+						{
+							"gridItemWidth": 10,
+							"disableAutoplay": true,
+							"type": "video",
+							"src": "assets/img/google-design/best-of-google-design-2019.mp4",
+							"caption": "The Carousel and Lightbox appear in \"[Best of Google Design 2019](//design.google/library/google-design-2019/)\" published in December 2019."		
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Feature",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Feature Hero",
+				"description1": "The hero for cover stories is a more immersive article experience and a full page takeover. Many theming and layout options were built-in to allow for varying content layouts.",
+        "media": { 
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video",
+							"src": "assets/img/google-design/best-of-google-design-2020.mp4",
+							"caption": "The Feature Hero and Carousel appear in \"[Best of Google Design 2020](//design.google/library/google-design-2020/)\" published in December 2020."		
+						},
+						{
+							"gridItemWidth": 10,
+							"disableAutoplay": true,
+							"type": "video",
+							"src": "assets/img/google-design/floating-action-button.mp4",
+							"caption": "The Feature Hero appears in \"[Absolutely FAB](//design.google/library/floating-action-button/)\" published in October 2020."		
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Split",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Split Hero",
+				"description1": "The split hero was designed with portrait orientation art in mind to make our article template work more naturally with those assets.",
+				"description2": "This feature paired well with the Scroll Show feature that can appear in the body of an article.",
+        "media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/towards-resilient-systems.mp4", 
+							"caption": "The Split Hero and Scroll Show appear in \"[Towards Resilient Systems](//design.google/library/towards-resilient-systems/)\" published in August 2020."
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "ScrollShow",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Scrollshow",
+				"description1": "The Scrollshow component exists as split pane experience within the body of an article. Many theming and asset options were built-in to allow for varying content.",
+        "media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/into-the-dark.mp4", 
+							"caption": "The Scrollshow appears in \"[Into the Dark](//design.google/library/material-design-dark-theme/)\" published in June 2019."
+						},
+						{
+							"disableAutoplay": true,
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/managing-ambiguity.mp4", 
+							"caption": "The Split Hero and Scrollshow appear in \"[Managing Ambiguity](//design.google/library/managing-ambiguity/)\" published in November 2019."
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Accordion",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Accordion",
+				"description1": "The accordion feature allowed for expandable and collapsable regions allowing for dense information to be displayed in an intelligible way.",
+        "media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/material-design-awards-2020.mp4", 
+							"caption": "The Accordion and Scrollshow appear in \"[Material Design Awards 2020](//design.google/library/material-design-awards-2020/)\" published in June 2019."
+						},
+						{
+							"disableAutoplay": true,
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/span2019.mp4", 
+							"caption": "The Accordion, Carousel and Feature Hero appear in \"[SPAN 2019](//design.google/library/span2019/)\" published in October 2019."
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "up-next-block",
+			"isBlack": true,
+			"block": {
+				"title": "J&J Home",
+				"to": "jnj-home"
+			}
+		}
+	]
+}

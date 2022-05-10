@@ -35,6 +35,6 @@ create color utility classes in the format
 /* Create CSS Variables */
 :root {
   @each $key, $val in $colors {
-    --#{$key}: $val;
+    --#{$key}: #{$val};
   }
 }

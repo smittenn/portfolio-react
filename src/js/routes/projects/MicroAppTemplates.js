@@ -1,8 +1,5 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
-import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
@@ -11,14 +8,7 @@ import { setPanel } from "../../actions/panel"
 import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
-import GridLines from "../../components/GridLines"
-import Sidebar from "../../components/Sidebar"
-import CodepenEmbed from "../../components/CodepenEmbed"
-import SideScroller from "../../components/SideScroller"
-import TextLink from "../../components/TextLink"
-import IFrame from "../../components/IFrame"
 import Image from "../../components/Image"
-import Video from "../../components/Video"
 
 import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
@@ -26,13 +16,8 @@ import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
-import splitWord from "../../services/splitWord"
-import splitLetter from "../../services/splitLetter"
 import hexToRgb from "../../services/hexToRgb"
 import palette from "../../services/palette"
-
-import people from "../../data/people"
-
 
 class MicroAppTemplates extends Component {
 
@@ -112,39 +97,18 @@ class MicroAppTemplates extends Component {
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(1); }}>
 					<ProjectIntroBlock 
-					col1='
+					col1Top='
 						Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content.
-						\n\n 
-						“Well what is a Wrap?” might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.'
-					col2="Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new “page” of the traditional “app” is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well." 
-					media={{
-						type: 'image', 
-						src: '../assets/img/card-components/perspective-cards.jpg', 
-						aspectRatioWidth: 8, 
-						aspectRatioHeight: 5 
-					}}
-					col3="On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process." 
-					col4="The team designed Wraps using cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
+						\n\n“Well what is a Wrap?” might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.'
+					col1Bottom="On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process." 
+					col2Top="Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards — a new “page” of the traditional “app” is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well." 
+					col2Bottom="The team designed Wraps using cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
 					/>
-
 				</ScrollSection>
-
-				{/*style={{ 
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .8),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .95)
-						),
-						url(../assets/img/card-components/banner.jpg)
-					`, 
-					backgroundSize: 'cover',
-					backgroundPosition: 'bottom',
-				}}*/}
 
 				<ScrollSection 
 				sections={sections} 
-				activeSection={activeSection}
-				>
+				activeSection={activeSection}>
 					<ProjectDetailsBlock role="UX/Visual Designer" date="Fall, 2015" client="Wrap Media" team={["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"]} />
 				</ScrollSection>
 
@@ -168,47 +132,36 @@ class MicroAppTemplates extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(3); }}
-				style={{
-					// backgroundColor: '#3E7C95'
-				}}
-				>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Event</h2>
-								{<h4 className="fade">Modern Sans Family</h4>}
-								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+				onSetActive={() => { this.setActiveSection(3); }}>
+					<ProjectSectionBlock 
+					title="Event"
+					subtitle="Modern Sans Family"
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/1.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/2.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/5.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/6.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/7.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/7.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/conference/8.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/conference/8.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 
@@ -218,36 +171,29 @@ class MicroAppTemplates extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(4); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Lead Gen</h2>
-								{<h4 className="fade">Bold Modern Family</h4>}
-								{/*<blockquote>Myself with Wrap’s Studio Design Team and Warner Bros. Records partnered to create a mobile-first merchandise catalog for Tegan & Sara’s “Love You 2 Death” tour. Working closely with the coolest visual designer around, Theo Arguna, I designed and developed the "Commerce" and "Share" interactions shown below.</blockquote>*/}
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+					<ProjectSectionBlock 
+					title="Lead Gen"
+					subtitle="Bold Modern Family"
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/lead-generation/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/lead-generation/1.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/lead-generation/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/lead-generation/2.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/lead-generation/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/lead-generation/3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/lead-generation/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/lead-generation/4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/lead-generation/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/lead-generation/5.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/lead-generation/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/lead-generation/6.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -255,49 +201,39 @@ class MicroAppTemplates extends Component {
 				black
 				sections={sections} 
 				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(5); }}
-				style={{
-					// backgroundColor: '#DE918E'
-				}}
-				>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Fashion</h2>
-								<h4 className="fade">Modern Sans Family</h4>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+				onSetActive={() => { this.setActiveSection(5); }}>
+					<ProjectSectionBlock 
+					title="Fashion"
+					subtitle="Modern Sans Family"
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/1.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/2.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/5.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/6.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/7.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/7.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/8.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/8.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/commerce/9.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/commerce/9.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
 
 				<ScrollSection 
@@ -306,54 +242,33 @@ class MicroAppTemplates extends Component {
 				sections={sections} 
 				activeSection={activeSection}
 				onSetActive={() => { this.setActiveSection(6); }}>
-					<div className="grid">
-						<div className="grid__row">
-							{<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>}
-							<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-								<h2 className="mb0">Agency</h2>
-								<h4 className="fade">Modern Sans Family</h4>
-							</div>
-						</div>
-					</div>
-					<SideScroller>
+					<ProjectSectionBlock 
+					title="Agency"
+					subtitle="Modern Sans Family"
+					media={{ type: 'side-scroller' }}>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/1.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/1.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						{/*<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/2.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/2.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>*/}
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/3.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/3.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/4.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/4.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/5.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/5.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/6.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/6.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
 						<div className="grid__item grid__item--col-3 grid__item--col-10-medium">
-							<Image src="../assets/img/app-templates/agency/7.jpg"  aspectRatioWidth={3} aspectRatioHeight={4}/>
+							<Image src="../assets/img/app-templates/agency/7.jpg" aspectRatioWidth={3} aspectRatioHeight={4}/>
 						</div>
-					</SideScroller>
+					</ProjectSectionBlock>
 				</ScrollSection>
-
-				{/*<ScrollSection 
-				name={sections[7]}
-				sections={sections} 
-				activeSection={activeSection}
-				onSetActive={() => { this.setActiveSection(7); }}>
-					<div className="grid">
-						<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
-						<div className="grid__item grid__item--col-8 grid__item--col-12-medium">
-							<h2 className="">Reflection</h2>
-							<blockquote>Over the course of 6 months, myself and the rest of the design team at Wrap Media created 150+ template micro apps for our customers to use. We attached analytics data to our templates and measured the effectiveness of each template. ended up being very effective for our customers. gave our users a starting point in our platform and provided them some inspiration to create their own.</blockquote>
-							<blockquote>We attached analytics data to our templates and measured the effectiveness of each template. That way we were able to track the templates that our customers used and iterate on the ones that worked for them.</blockquote>
-						</div>
-					</div>
-				</ScrollSection>*/}
 
 				<ScrollSection 
 				black

@@ -119,24 +119,12 @@ class RationalizedPlayer extends Component {
 				onSetActive={() => { this.setActiveSection(1);}}
 				style={{ backgroundColor: darken(brandPrimary, 6)}}>
 					<ProjectIntroBlock
-					col1="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing."
-					col2="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, V.ai Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \n\n The Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and is well poised to create a player unifying the experience."
-					col3="As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created the icon library, animations and typography system for the player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype."
-					col4="Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time."
-					media={{ type: 'image', src: '../assets/img/vai/escalade.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
+					col1Top="Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \n\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing."
+					col1Bottom="As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created the icon library, animations and typography system for the player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype."
+					col2Top="The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, V.ai Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \n\n The Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and is well poised to create a player unifying the experience."
+					col2Bottom="Clarifi’s image recognition technology with video recognition analyzes a video and predicts what’s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time."
 					/>
 				</ScrollSection>
-
-				{/*style={{
-					backgroundImage: `
-						radial-gradient(
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .84),
-							rgba(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b}, .96)
-						),
-						url(../assets/img/vai/mr-robot.jpg)
-					`,
-				 	backgroundPosition: this.props.isMobile ? "center 10%" : "center 45%"
-				}}*/}
 
 				<ScrollSection
 				black
@@ -159,13 +147,8 @@ class RationalizedPlayer extends Component {
 					title="Ai Mode"
 					description1="During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper."
 					description2="V.ai Mode helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
-					media={{ type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }}
+					media={{ type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png', hideControls: true }}
 					/>
-					{/*<ProjectSectionBlock
-					title="Player"
-					description1="During video playback the player shows items related to the current scene. V.ai helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video."
-					media={{ type: 'iframe', src: 'http://localhost:3002', aspectRatioWidth: this.props.isMobile ? 5 : 16, aspectRatioHeight:this.props.isMobile ? 8 : 9 }}
-					/>*/}
 				</ScrollSection>
 
 				<ScrollSection
@@ -179,7 +162,6 @@ class RationalizedPlayer extends Component {
 					description1="Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off."
 					media={{ type: 'image', src: '../assets/img/vai/vai-overlay.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }}
 					/>
-
 				</ScrollSection>
 
 				<ScrollSection

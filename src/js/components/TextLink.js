@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux"
-import {NavLink} from 'react-router-dom'
 import classNames from 'classnames'
 
 import { setCursorHover, setCursorUnhover } from "../actions/cursor"
-
-import splitLetter from '../services/splitLetter'
 
 class TextLink extends Component {
 
@@ -45,17 +42,17 @@ class TextLink extends Component {
 		})
 
 		return (
-			<div 
+			<span 
 			className={classnames} 
 			onMouseEnter={this.handleMouseEnter} 
 			onMouseLeave={this.handleMouseLeave} 
 			onClick={this.handleMouseLeave}
 			style={style ? style : null}>
 				{ this.props.children }
-				<div className="text-link__line-container">
-					<div className="text-link__line"/>
-				</div>
-			</div>
+				<span className="text-link__line-container">
+					<span className="text-link__line"/>
+				</span>
+			</span>
 		);
 	}
 }

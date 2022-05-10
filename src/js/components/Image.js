@@ -1,9 +1,9 @@
 import React, {Component} from "react"
 import classNames from "classnames"
-// import IntersectionVisible from "react-intersection-visible"
 
 import palette from "../services/palette"
 import hexToRgb from "../services/hexToRgb"
+import parseLinks from "../services/parseLinks"
 
 export default class Image extends Component {
 
@@ -82,7 +82,7 @@ export default class Image extends Component {
 				<div className={classnames} style={_style}>
 					<img src={src} loading="lazy" alt={alt} ref={this.ref}/>
 				</div>
-				{ caption ? (<figcaption><p className="mb0">{caption}</p></figcaption>) : null }
+				{ caption ? (<figcaption><p className="mb0">{parseLinks(caption)}</p></figcaption>) : null }
 			</figure>
 		);
 	}

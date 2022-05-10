@@ -1,8 +1,5 @@
 import React, {Component, Fragment} from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
-import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../actions/abbreviation"
@@ -11,13 +8,6 @@ import { setPanel } from "../actions/panel"
 import ScrollSection from "../components/ScrollSection"
 
 import ParallaxBackground from "../components/ParallaxBackground"
-import GridLines from "../components/GridLines"
-import Sidebar from "../components/Sidebar"
-import CodepenEmbed from "../components/CodepenEmbed"
-import SideScroller from "../components/SideScroller"
-import TextLink from "../components/TextLink"
-import Image from "../components/Image"
-import Video from "../components/Video"
 
 import { HeroBlock, HeroBlockItem } from "../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../components/blocks/ProjectUpNextBlock"
@@ -25,23 +15,14 @@ import ProjectDetailsBlock from "../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../components/blocks/ProjectIntroBlock"
 import ProjectSectionBlock from "../components/blocks/ProjectSectionBlock"
 
-import splitWord from "../services/splitWord"
-import splitLetter from "../services/splitLetter"
 import hexToRgb from "../services/hexToRgb"
 import palette from "../services/palette"
 
-import people from "../data/people"
-
-
 class ProjectPage extends Component {
-
-	static propTypes = {
-	}
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
 
-		// this.props.perforce2();
 		this.props.reset();
 		this.props.setPanel(this.props.data.navPanel);
 	}
@@ -70,23 +51,25 @@ class ProjectPage extends Component {
 		if (item.type == "hero-block") {
 			const heroText = item.block.heroText.map(x => (x.word) ? <HeroBlockItem>{x.word}</HeroBlockItem> : x.sentence)
 			return (
-				<ScrollSection 
-				name={item.name}
-				black
-				fullHeight
-				sections={this.state.sections}
-				activeSection={this.state.activeSection}
-				style={{ backgroundColor: 'transparent'}}
-				onSetActive={() => { this.setActiveSection(i); }}>
+				<Fragment>
 					<ParallaxBackground 
 					style={{ 
 						backgroundImage: `
-							linear-gradient(rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.0), rgba(${brandBlack.r}, ${brandBlack.b}, ${brandBlack.g}, 0.08)),
+							${item.block.parallaxBackground.gradient.over},
 							url(${item.block.parallaxBackground.media.src}),
-							${item.block.parallaxBackground.gradient.over}`,
+							${item.block.parallaxBackground.gradient.under}`,
 					}}/>
-					<HeroBlock headerText={heroText}/>
-				</ScrollSection>
+					<ScrollSection 
+					name={item.name}
+					black
+					fullHeight
+					sections={this.state.sections}
+					activeSection={this.state.activeSection}
+					style={{ backgroundColor: 'transparent'}}
+					onSetActive={() => { this.setActiveSection(i); }}>
+						<HeroBlock headerText={heroText}/>
+					</ScrollSection>
+				</Fragment>
 			)
 		}
 		else if (item.type == "project-intro-block") {
@@ -99,11 +82,11 @@ class ProjectPage extends Component {
 				black={item.isBlack}
 				style={item.style}
 				onSetActive={() => { this.setActiveSection(i); }}>
-					<ProjectIntroBlock 
-					col1={item.block.col1}
-					col2={item.block.col2}
-					col3={item.block.col3}
-					col4={item.block.col4}
+					<ProjectIntroBlock
+					col1Top={item.block.col1Top}
+					col1Bottom={item.block.col1Bottom}
+					col2Top={item.block.col2Top}
+					col2Bottom={item.block.col2Bottom}
 					/>
 				</ScrollSection>
 			)
@@ -162,10 +145,6 @@ class ProjectPage extends Component {
 	}
 
 	render() {
-
-		const { setCounter, setNavWhite, setNavBlack } = this.props;
-		const { activeSection, sections } = this.state;
-
 		return (
 			<article>
 				{ this.props.data.sections.map((item, i) => (

@@ -14,6 +14,7 @@ import TextLink from '../components/TextLink'
 
 import splitLetter from '../services/splitLetter'
 import splitWord from '../services/splitWord'
+import Icon from './Icon';
 
 class ProjectCard extends Component {
 
@@ -61,10 +62,11 @@ class ProjectCard extends Component {
 	createText = (item, i) => (
 		<div className="project-card__bottom" onMouseEnter={() => { this.setIndexHovered(i); }} onMouseLeave={this.handleMouseLeave}>
 			<TextLink hideUnderline>
-				<h2 className="mb0">
+				<h2 className="h2 mb0">
 					{ splitWord(item.name, {}, classNames({ "outline": this.state.hoveredIndex != i })) }
 				</h2>
 			</TextLink>
+			{ (/^\/\//).test(item.to) ? <div className="project-card__arrow"><Icon icon="arrow" size={40}/></div> : null }
 		</div>
 	)
 
@@ -75,7 +77,7 @@ class ProjectCard extends Component {
 					<div className="grid__item--col-6 grid__item--col-4-medium"/>
 					<div className="grid__item--col-6 grid__item--col-8-medium">
 						{ (item.media.type == 'video') ? (
-							<Video src={item.media.src} loop/>
+							<Video src={item.media.src} loop hideControls/>
 						) : (
 							<Image src={item.media.src} aspectRatioWidth={item.media.aspectRatioWidth} aspectRatioHeight={item.media.aspectRatioHeight}/>
 						)}

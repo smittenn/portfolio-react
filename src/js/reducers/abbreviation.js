@@ -8,6 +8,8 @@ const abbreviationReducer = (state = 'H', action) => {
 		case 'WORK':
 			return navData.items[1].abbreviation
 		// Start Projects 
+		case 'GOOGLEDESIGN':
+			return navData.items[1].items[0].items[0].abbreviation
 		case 'JJHOME':
 			return navData.items[1].items[1].items[0].abbreviation
 		case 'JJMDC':

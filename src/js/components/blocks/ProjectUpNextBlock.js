@@ -22,7 +22,7 @@ export default class ProjectUpNextBlock extends Component {
 				<div className="grid__item grid__item--col-1 grid__item--hide-bp-medium"/>
 				<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 					<h4 className="light fade">Next Up</h4>
-					<h2 className="mb0">
+					<h2 className="h2 mb0">
 						<DelayLink to={to}>
 							<TextLink hideUnderline>{name}</TextLink>
 						</DelayLink>

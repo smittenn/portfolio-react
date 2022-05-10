@@ -1,9 +1,9 @@
 @media screen and (max-width: $bp-xxlarge) {
-	h1 {
+	.h1 {
 		font-size: px-to-rem(128px);
 	}
 
-	h2 {
+	.h2 {
 		font-size: px-to-rem(112px);
 	}
 
@@ -23,11 +23,11 @@
 }
 
 @media screen and (max-width: $bp-xlarge) {
-	h1 {
+	.h1 {
 		font-size: px-to-rem(120px);
 	}
 
-	h2 {
+	.h2 {
 		font-size: px-to-rem(104px);
 	}
 
@@ -47,11 +47,11 @@
 }
 
 @media screen and (max-width: $bp-large) {
-	h1 {
+	.h1 {
 		font-size: px-to-rem(112px);
 	}
 
-	h2 {
+	.h2 {
 		font-size: px-to-rem(96px);
 	}
 
@@ -143,14 +143,14 @@
 		}
 	}
 
-	h1 {
+	.h1 {
 		font-size: px-to-rem(72px);
 		margin-left: 0;
 		margin-bottom: 24px;
 		letter-spacing: $letter-spacing-xs;
 	}
 
-	h2 {
+	.h2 {
 		font-size: px-to-rem(60px);
 		margin-left: 0;
 		margin-bottom: 18px;
@@ -170,11 +170,11 @@
 
 
 @media screen and (max-width: $bp-small) {
-	h1 {
+	.h1 {
 		font-size: px-to-rem(56px);
 	}
 
-	h2 {
+	.h2 {
 		font-size: px-to-rem(48px);
 	}
 
@@ -206,11 +206,11 @@
 
 
 @media screen and (max-width: $bp-xsmall) {
-	h1 {
+	.h1 {
 		font-size: px-to-rem(48px);
 	}
 
-	h2 {
+	.h2 {
 		font-size: px-to-rem(44px);
 	}
 

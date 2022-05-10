@@ -35147,7 +35147,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
-},{"./actions/mobile":121,"./actions/windowHeight":128,"./components/PageTransition":142,"./routes":179,"connected-react-router":10,"prop-types":30,"react":102,"react-redux":50,"react-router":79}],117:[function(require,module,exports){
+},{"./actions/mobile":121,"./actions/windowHeight":128,"./components/PageTransition":142,"./routes":181,"connected-react-router":10,"prop-types":30,"react":102,"react-redux":50,"react-router":79}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35178,6 +35178,12 @@ var resume = exports.resume = function resume() {
 };
 
 // Projects
+
+var googleDesign = exports.googleDesign = function googleDesign() {
+	return {
+		type: 'GOOGLEDESIGN'
+	};
+};
 
 var americanMade = exports.americanMade = function americanMade() {
 	return {
@@ -35490,7 +35496,7 @@ var render = function render() {
 
 render();
 
-},{"../App":116,"../reducers":165,"connected-react-router":10,"history":18,"react":102,"react-dom":34,"react-redux":50,"redux":103}],130:[function(require,module,exports){
+},{"../App":116,"../reducers":167,"connected-react-router":10,"history":18,"react":102,"react-dom":34,"react-redux":50,"redux":103}],130:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35611,7 +35617,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ArrowGroup);
 
-},{"../actions/cursor":120,"../components/Icon":138,"../services/palette":196,"classnames":7,"react":102,"react-redux":50}],131:[function(require,module,exports){
+},{"../actions/cursor":120,"../components/Icon":138,"../services/palette":199,"classnames":7,"react":102,"react-redux":50}],131:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35661,11 +35667,9 @@ var Carousel = function (_Component) {
 		_this.incrementIndex = function () {
 			_this.setState(function (prevState) {
 				return {
-					// clones: prevState.clones.concat(this.props.children[this.state.index]),
 					index: prevState.index >= _this.props.children.length - 1 ? 0 : prevState.index + 1
 				};
 			});
-			_this.stackingAnimation();
 		};
 
 		_this.decrementIndex = function () {
@@ -35674,26 +35678,10 @@ var Carousel = function (_Component) {
 					index: prevState.index == 0 ? _this.props.children.length - 1 : prevState.index - 1
 				};
 			});
-			_this.stackingAnimation();
-		};
-
-		_this.stackingAnimation = function () {
-			// if (this.props.stacking) {
-			// 	const items = Array.prototype.slice.call(document.querySelectorAll('.carousel__item'))
-			// 	const beforeWidths = items.slice(0, this.state.index).map(item => 100);
-			// 	const totalWidth = beforeWidths.reduce((acc, width) => acc + width, 0)
-
-			// 	const before = items.slice(0, this.state.index);
-			// 	const after = items.slice(this.state.index);
-
-			// 	after.forEach(el => { el.style.transform = `translate3d(-${totalWidth}) + %, 0, 0)` });				
-			// }
 		};
 
 		_this.state = {
-			index: 0,
-			childWidth: [],
-			clones: []
+			index: 0
 		};
 		return _this;
 	}
@@ -35709,7 +35697,6 @@ var Carousel = function (_Component) {
 						index: prevState.index >= _this2.props.children.length - 1 ? 0 : prevState.index + 1
 					};
 				});
-				_this2.stackingAnimation();
 			}, 6000);
 			if (!this.props.disableNavigation) {
 				clearInterval(this.interval);
@@ -35727,9 +35714,7 @@ var Carousel = function (_Component) {
 			    style = _props.style,
 			    bottomNav = _props.bottomNav,
 			    stacking = _props.stacking;
-			var _state = this.state,
-			    index = _state.index,
-			    clones = _state.clones;
+			var index = this.state.index;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -35745,7 +35730,7 @@ var Carousel = function (_Component) {
 					{ className: "carousel__item",
 						key: i,
 						style: stacking ? {
-							transform: "translate3d(\n\t\t\t\t" + (-2 + i * 2 - i * 100) + "%,\n\t\t\t\t" + (-2 + i * 2 + (i >= length - index ? Math.min(index, i) * 103 : 0)) + "%,\n\t\t\t\t0) rotate(" + (i >= length - index ? 90 : 0) + "deg)"
+							transform: "\n\t\t\t\t\ttranslate3d(\n\t\t\t\t\t\t" + (-2 + i * 2 - i * 100) + "%,\n\t\t\t\t\t\t" + (-2 + i * 2 + (i >= length - index ? Math.min(index, i) * 103 : 0)) + "%,\n\t\t\t\t\t\t0\n\t\t\t\t\t)\n\t\t\t\t\trotate(" + (i >= length - index ? 90 : 0) + "deg\n\t\t\t\t)"
 						} : null },
 					item
 				);
@@ -35792,7 +35777,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Carousel);
 
-},{"../components/ArrowGroup":130,"../components/Icon":138,"../services/palette":196,"classnames":7,"react":102,"react-redux":50}],132:[function(require,module,exports){
+},{"../components/ArrowGroup":130,"../components/Icon":138,"../services/palette":199,"classnames":7,"react":102,"react-redux":50}],132:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35925,7 +35910,7 @@ var CodepenEmbed = function (_Component) {
 
 exports.default = CodepenEmbed;
 
-},{"../services/hexToRgb":193,"../services/palette":196,"classnames":7,"react":102}],133:[function(require,module,exports){
+},{"../services/hexToRgb":196,"../services/palette":199,"classnames":7,"react":102}],133:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36426,7 +36411,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HeroScrollButton);
 
-},{"../actions/cursor":120,"../services/splitLetter":197,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],137:[function(require,module,exports){
+},{"../actions/cursor":120,"../services/splitLetter":201,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],137:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36664,7 +36649,9 @@ var Icon = function (_Component) {
 				directions: 'M8.61463019,35.7565549 L29.0109199,28.2586718 C29.4331414,28.0301634 29.6442521,27.6343324 29.6442521,27.0711788 C29.6442521,26.5080252 29.4331414,26.1047619 29.0109199,25.861389 L22.2517109,23.0591723 L34.8133668,18.1072933 C35.4141011,17.50881 35.5395612,16.899361 35.1897471,16.2789461 C34.839933,15.6585312 34.2869378,15.40564 33.5307615,15.5202727 L17.3629751,21.2344736 C16.5256268,21.6043339 16.1069527,22.1287436 16.1069527,22.8077026 C16.1069527,23.4866616 16.5256268,23.9730055 17.3629751,24.2667341 L23.5576939,26.7411397 L7.35013627,32.92608 C6.51657511,33.4391045 6.23802226,34.0846817 6.51447773,34.8628117 C6.79093321,35.6409417 7.49098403,35.9388561 8.61463019,35.7565549 Z M33.8208511,13.1529469 C35.9661936,10.7223616 37.8534838,9.02748388 37.8534838,6.80032235 C37.8534838,4.57316082 36.0480126,2.76768968 33.8208511,2.76768968 C31.5936896,2.76768968 29.7882184,4.57316082 29.7882184,6.80032235 C29.7882184,9.02748388 31.7342847,10.7223616 33.8208511,13.1529469 Z M33.8066371,8.48628494 C34.7443893,8.48628494 35.5045877,7.72608656 35.5045877,6.78833434 C35.5045877,5.85058212 34.7443893,5.09038374 33.8066371,5.09038374 C32.8688849,5.09038374 32.1086865,5.85058212 32.1086865,6.78833434 C32.1086865,7.72608656 32.8688849,8.48628494 33.8066371,8.48628494 Z M7.21658844,29.5855372 C9.36193094,27.1549519 11.2492211,25.4600742 11.2492211,23.2329126 C11.2492211,21.0057511 9.44374997,19.20028 7.21658844,19.20028 C4.98942691,19.20028 3.18395577,21.0057511 3.18395577,23.2329126 C3.18395577,25.4600742 5.13002209,27.1549519 7.21658844,29.5855372 Z M7.21231778,24.8884145 C8.15007,24.8884145 8.91026838,24.1282161 8.91026838,23.1904639 C8.91026838,22.2527117 8.15007,21.4925133 7.21231778,21.4925133 C6.27456556,21.4925133 5.51436718,22.2527117 5.51436718,23.1904639 C5.51436718,24.1282161 6.27456556,24.8884145 7.21231778,24.8884145 Z',
 				filter: 'M20.1187279,11.5229522 C27.2984296,11.5229522 32.9303122,9.568 32.9303122,8.736 C32.9303122,7.904 27.2984296,6 20.1187279,6 C12.9390261,6 7,7.904 7,8.76147611 C7,9.61895221 12.9390261,11.5229522 20.1187279,11.5229522 Z M7.15164131,13.3562624 C9.41304243,14.3466441 12.6875334,15.5 19.8489606,15.6077488 M36.2679711,11.264 L36.2679711,9.76165114 C36.1744369,9.04721738 35.6348114,8.32433376 34.6490949,7.59300025 C33.17052,6.496 28.912195,4.39104732 20,4.39104732 C10.6122154,4.39104732 6.07552251,6.734004 4.81383702,7.69293534 C3.97271335,8.33222291 3.4925333,9.02179484 3.37329687,9.76165114 L3.37329687,11.264 C3.53149625,11.8382393 3.73076366,12.2502393 3.97109909,12.5 C7.30126602,15.9607671 10.7503468,19.4607671 14.3183416,23 C16.1688583,24.7071388 17.0941167,26.2071388 17.0941167,27.5 C17.0941167,30.0206213 17.0941167,32.5412426 17.0941167,35.0618638 L17.0941167,35.0618638 C17.0941167,35.3380062 17.3179743,35.5618638 17.5941167,35.5618638 C17.6749925,35.5618638 17.7546612,35.5422453 17.8262891,35.5046911 L22.3118189,33.1529469 C22.4764833,33.066614 22.5796465,32.8960437 22.5796465,32.7101197 C22.5796465,30.9734131 22.5796465,29.2367066 22.5796465,27.5 C22.5796465,25.8967937 24.3837855,23.9738091 25.4377547,22.9410491 C27.9474165,20.4818896 32.0136823,16.4173822 35.7513063,12.5 C35.9893444,12.2505137 36.161566,11.8385137 36.2679711,11.264 Z',
 				clipboard: 'M16.0103837,7.26417094 L13.262009,7.26417094 C13.1239378,7.26417094 13.012009,7.37609976 13.012009,7.51417094 L13.012009,11.6350078 C13.012009,11.773079 13.1239378,11.8850078 13.262009,11.8850078 L27.8617776,11.8850078 C27.9998488,11.8850078 28.1117776,11.773079 28.1117776,11.6350078 C28.1117776,11.6345116 28.1117761,11.6340155 28.1117732,11.6335194 L28.0872385,7.51268252 C28.0864199,7.37519468 27.9747332,7.26417094 27.8372429,7.26417094 L25.0904915,7.26417094 C24.5527466,7.04972624 24.2838741,6.66070878 24.2838741,6.09711856 C24.4089206,4.96185331 23.6537282,2 20.5617924,2 C17.4698565,2 16.701112,5.14174465 16.9008813,6.09711856 C16.9008813,6.66070878 16.6040488,7.04972624 16.0103837,7.26417094 Z M20.5963112,6.43838351 C21.2859999,6.43838351 21.8418988,5.91600427 21.8418988,5.22631562 C21.8418988,4.53662697 21.2859999,3.9821117 20.5963112,3.9821117 C19.9066226,3.9821117 19.3507236,4.53662697 19.3507236,5.22631562 C19.3507236,5.91600427 19.9066226,6.43838351 20.5963112,6.43838351 Z M20.4749617,31.5812271 C24.3669396,31.5812271 27.4712556,28.465422 27.4712556,24.6800536 C27.4712556,20.8946853 24.190717,17.7788802 20.4877678,17.7788802 C16.7848186,17.7788802 13.6633702,20.8475275 13.6633702,24.6328959 C13.6633702,28.4182643 16.5829837,31.5812271 20.4749617,31.5812271 Z M12.7594384,9.35631379 L10.4516995,9.40090811 C9.09006798,9.42722003 8,10.5385558 8,11.9004415 L8,34.9406741 C8,36.321386 9.11928813,37.4406741 10.5,37.4406741 L30.678646,37.4406741 C32.0593579,37.4406741 33.178646,36.321386 33.178646,34.9406741 L33.178646,11.8563138 C33.178646,10.4756019 32.0593579,9.35631379 30.678646,9.35631379 L28.2954522,9.35631379 M17.6987659,24.3663152 L19.6433317,26.3339709 L23.130907,23.0591723',
-				refresh: 'M33.7999777,14.7149098 C31.5658738,9.58582391 26.4516939,6 20.5,6 C12.4918711,6 6,12.4918711 6,20.5 C6,28.5081289 12.4918711,35 20.5,35 C25.8699494,35 30.5581078,32.0809054 33.0642236,27.7429676 M34.264,7 L34.264,14.9450562 L26,14.9450562'
+				refresh: 'M33.7999777,14.7149098 C31.5658738,9.58582391 26.4516939,6 20.5,6 C12.4918711,6 6,12.4918711 6,20.5 C6,28.5081289 12.4918711,35 20.5,35 C25.8699494,35 30.5581078,32.0809054 33.0642236,27.7429676 M34.264,7 L34.264,14.9450562 L26,14.9450562',
+				play: '37 21 11 6 11 35',
+				pause: 'M18,6 L9,6 L9,35 L18,35 L18,6 Z M32,6 L23,6 L23,35 L32,35 L32,6 Z'
 			};
 
 			var _props = this.props,
@@ -36689,7 +36676,7 @@ var Icon = function (_Component) {
 					fill: "none",
 					strokeLinecap: "round",
 					strokeLinejoin: "round" },
-				_react2.default.createElement("path", { d: icons[icon], vectorEffect: "non-scaling-stroke" })
+				icons[icon].includes('M') ? _react2.default.createElement("path", { d: icons[icon], vectorEffect: "non-scaling-stroke" }) : _react2.default.createElement("polygon", { points: icons[icon], vectorEffect: "non-scaling-stroke" })
 			);
 		}
 	}]);
@@ -36732,6 +36719,10 @@ var _hexToRgb = require("../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 
+var _parseLinks = require("../services/parseLinks");
+
+var _parseLinks2 = _interopRequireDefault(_parseLinks);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36739,7 +36730,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import IntersectionVisible from "react-intersection-visible"
 
 var Image = function (_Component) {
 	_inherits(Image, _Component);
@@ -36846,7 +36836,7 @@ var Image = function (_Component) {
 					_react2.default.createElement(
 						"p",
 						{ className: "mb0" },
-						caption
+						(0, _parseLinks2.default)(caption)
 					)
 				) : null
 			);
@@ -36858,7 +36848,7 @@ var Image = function (_Component) {
 
 exports.default = Image;
 
-},{"../services/hexToRgb":193,"../services/palette":196,"classnames":7,"react":102}],140:[function(require,module,exports){
+},{"../services/hexToRgb":196,"../services/palette":199,"../services/parseLinks":200,"classnames":7,"react":102}],140:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36878,10 +36868,6 @@ var _classnames = require('classnames');
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactRedux = require('react-redux');
-
-var _DelayLink = require('./DelayLink');
-
-var _DelayLink2 = _interopRequireDefault(_DelayLink);
 
 var _Icon = require('./Icon');
 
@@ -36911,17 +36897,9 @@ var _nav = require('../data/nav');
 
 var _nav2 = _interopRequireDefault(_nav);
 
-var _splitLetter = require('../services/splitLetter');
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
 var _palette = require('../services/palette');
 
 var _palette2 = _interopRequireDefault(_palette);
-
-var _toKebabCase = require('../services/toKebabCase');
-
-var _toKebabCase2 = _interopRequireDefault(_toKebabCase);
 
 var _toCamelCase = require('../services/toCamelCase');
 
@@ -36946,7 +36924,6 @@ var NavTakeover = function (_Component) {
 		_this.setMenuClosed = function () {
 			_this.props.closeTakeover();
 			_this.props.setCursorUnhover();
-			// this.props.closeSecondaryPanel();
 
 			setTimeout(function () {
 				_this.props.unhoverToggle();
@@ -36977,11 +36954,7 @@ var NavTakeover = function (_Component) {
 					menus: prevState.menus.concat(data)
 				};
 			});
-			/*if (toCamelCase(data.name) == this.props.openNavPanel) {
-   	this.setState({
-   		activeMenu: data
-   	})
-   }*/
+
 			data.items.forEach(function (child) {
 				child.parent = data;
 				if (child.items != null) {
@@ -37171,11 +37144,9 @@ var NavTakeover = function (_Component) {
 			var lineAnimation = {
 				transform: 'translate3d(1px, ' + (this.props.isMobile ? 72 : 112) * (indexHovered + 0) + 'px, 0)',
 				opacity: isTakeoverOpen ? 1 : 0
+			};
 
-				// console.log(this.state.activeMenu);
-
-
-			};return _react2.default.createElement(
+			return _react2.default.createElement(
 				'nav',
 				{ className: classnames },
 				_react2.default.createElement(
@@ -37268,7 +37239,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavTakeover);
 
-},{"../actions/cursor":120,"../actions/navTakeover":122,"../actions/navToggle":123,"../actions/panel":124,"../actions/primaryPanel":125,"../actions/secondaryPanel":126,"../data/nav":157,"../services/palette":196,"../services/splitLetter":197,"../services/toCamelCase":200,"../services/toKebabCase":201,"./DelayLink":134,"./GridLines":135,"./Icon":138,"./TextLink":150,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67}],141:[function(require,module,exports){
+},{"../actions/cursor":120,"../actions/navTakeover":122,"../actions/navToggle":123,"../actions/panel":124,"../actions/primaryPanel":125,"../actions/secondaryPanel":126,"../data/nav":158,"../services/palette":199,"../services/toCamelCase":204,"./GridLines":135,"./Icon":138,"./TextLink":150,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37458,7 +37429,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NavToggle);
 
-},{"../actions/cursor":120,"../actions/navTakeover":122,"../actions/navToggle":123,"../actions/primaryPanel":125,"../actions/secondaryPanel":126,"../services/pad":195,"../services/splitLetter":197,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67}],142:[function(require,module,exports){
+},{"../actions/cursor":120,"../actions/navTakeover":122,"../actions/navToggle":123,"../actions/primaryPanel":125,"../actions/secondaryPanel":126,"../services/pad":198,"../services/splitLetter":201,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67}],142:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37661,7 +37632,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(ParallaxBackground);
 
-},{"../services/debounce":192,"classnames":7,"react":102,"react-parallax":39,"react-redux":50}],144:[function(require,module,exports){
+},{"../services/debounce":195,"classnames":7,"react":102,"react-parallax":39,"react-redux":50}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37924,7 +37895,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProcessDiagram);
 
-},{"../actions/cursor":120,"../data/process":159,"../services/darken":191,"../services/pad":195,"../services/palette":196,"../services/splitLetter":197,"../services/splitWord":198,"./Icon":138,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50}],145:[function(require,module,exports){
+},{"../actions/cursor":120,"../data/process":160,"../services/darken":194,"../services/pad":198,"../services/palette":199,"../services/splitLetter":201,"../services/splitWord":202,"./Icon":138,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37979,6 +37950,10 @@ var _splitWord = require('../services/splitWord');
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
 
+var _Icon = require('./Icon');
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38031,10 +38006,15 @@ var ProjectCard = function (_Component) {
 					{ hideUnderline: true },
 					_react2.default.createElement(
 						'h2',
-						{ className: 'mb0' },
+						{ className: 'h2 mb0' },
 						(0, _splitWord2.default)(item.name, {}, (0, _classnames2.default)({ "outline": _this.state.hoveredIndex != i }))
 					)
-				)
+				),
+				/^\/\//.test(item.to) ? _react2.default.createElement(
+					'div',
+					{ className: 'project-card__arrow' },
+					_react2.default.createElement(_Icon2.default, { icon: 'arrow', size: 40 })
+				) : null
 			);
 		};
 
@@ -38049,7 +38029,7 @@ var ProjectCard = function (_Component) {
 					_react2.default.createElement(
 						'div',
 						{ className: 'grid__item--col-6 grid__item--col-8-medium' },
-						item.media.type == 'video' ? _react2.default.createElement(_Video2.default, { src: item.media.src, loop: true }) : _react2.default.createElement(_Image2.default, { src: item.media.src, aspectRatioWidth: item.media.aspectRatioWidth, aspectRatioHeight: item.media.aspectRatioHeight })
+						item.media.type == 'video' ? _react2.default.createElement(_Video2.default, { src: item.media.src, loop: true, hideControls: true }) : _react2.default.createElement(_Image2.default, { src: item.media.src, aspectRatioWidth: item.media.aspectRatioWidth, aspectRatioHeight: item.media.aspectRatioHeight })
 					)
 				)
 			) : null;
@@ -38134,7 +38114,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProjectCard);
 
-},{"../actions/cursor":120,"../components/DelayLink":134,"../components/Image":139,"../components/TextLink":150,"../components/Video":151,"../services/splitLetter":197,"../services/splitWord":198,"classnames":7,"intersection-observer":20,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],146:[function(require,module,exports){
+},{"../actions/cursor":120,"../components/DelayLink":134,"../components/Image":139,"../components/TextLink":150,"../components/Video":151,"../services/splitLetter":201,"../services/splitWord":202,"./Icon":138,"classnames":7,"intersection-observer":20,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],146:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38149,14 +38129,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
 var _counter = require("../actions/counter");
 
 var _abbreviation = require("../actions/abbreviation");
@@ -38170,34 +38142,6 @@ var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 var _ParallaxBackground = require("../components/ParallaxBackground");
 
 var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
-
-var _GridLines = require("../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _SideScroller = require("../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
-
-var _Image = require("../components/Image");
-
-var _Image2 = _interopRequireDefault(_Image);
-
-var _Video = require("../components/Video");
-
-var _Video2 = _interopRequireDefault(_Video);
 
 var _HeroBlock = require("../components/blocks/HeroBlock");
 
@@ -38217,14 +38161,6 @@ var _ProjectSectionBlock = require("../components/blocks/ProjectSectionBlock");
 
 var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
 
-var _splitWord = require("../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
 var _hexToRgb = require("../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -38232,10 +38168,6 @@ var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 var _palette = require("../services/palette");
 
 var _palette2 = _interopRequireDefault(_palette);
-
-var _people = require("../data/people");
-
-var _people2 = _interopRequireDefault(_people);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38253,7 +38185,6 @@ var ProjectPage = function (_Component) {
 		value: function componentDidMount() {
 			window.scrollTo(0, 0);
 
-			// this.props.perforce2();
 			this.props.reset();
 			this.props.setPanel(this.props.data.navPanel);
 		}
@@ -38283,22 +38214,26 @@ var ProjectPage = function (_Component) {
 					) : x.sentence;
 				});
 				return _react2.default.createElement(
-					_ScrollSection2.default,
-					{
-						name: item.name,
-						black: true,
-						fullHeight: true,
-						sections: _this.state.sections,
-						activeSection: _this.state.activeSection,
-						style: { backgroundColor: 'transparent' },
-						onSetActive: function onSetActive() {
-							_this.setActiveSection(i);
-						} },
+					_react.Fragment,
+					null,
 					_react2.default.createElement(_ParallaxBackground2.default, {
 						style: {
-							backgroundImage: "\n\t\t\t\t\t\t\tlinear-gradient(rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", 0.0), rgba(" + brandBlack.r + ", " + brandBlack.b + ", " + brandBlack.g + ", 0.08)),\n\t\t\t\t\t\t\turl(" + item.block.parallaxBackground.media.src + "),\n\t\t\t\t\t\t\t" + item.block.parallaxBackground.gradient.over
+							backgroundImage: "\n\t\t\t\t\t\t\t" + item.block.parallaxBackground.gradient.over + ",\n\t\t\t\t\t\t\turl(" + item.block.parallaxBackground.media.src + "),\n\t\t\t\t\t\t\t" + item.block.parallaxBackground.gradient.under
 						} }),
-					_react2.default.createElement(_HeroBlock.HeroBlock, { headerText: heroText })
+					_react2.default.createElement(
+						_ScrollSection2.default,
+						{
+							name: item.name,
+							black: true,
+							fullHeight: true,
+							sections: _this.state.sections,
+							activeSection: _this.state.activeSection,
+							style: { backgroundColor: 'transparent' },
+							onSetActive: function onSetActive() {
+								_this.setActiveSection(i);
+							} },
+						_react2.default.createElement(_HeroBlock.HeroBlock, { headerText: heroText })
+					)
 				);
 			} else if (item.type == "project-intro-block") {
 				return _react2.default.createElement(
@@ -38314,10 +38249,10 @@ var ProjectPage = function (_Component) {
 							_this.setActiveSection(i);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: item.block.col1,
-						col2: item.block.col2,
-						col3: item.block.col3,
-						col4: item.block.col4
+						col1Top: item.block.col1Top,
+						col1Bottom: item.block.col1Bottom,
+						col2Top: item.block.col2Top,
+						col2Bottom: item.block.col2Bottom
 					})
 				);
 			} else if (item.type == "project-details-block") {
@@ -38395,15 +38330,6 @@ var ProjectPage = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var _props = this.props,
-			    setCounter = _props.setCounter,
-			    setNavWhite = _props.setNavWhite,
-			    setNavBlack = _props.setNavBlack;
-			var _state = this.state,
-			    activeSection = _state.activeSection,
-			    sections = _state.sections;
-
-
 			return _react2.default.createElement(
 				"article",
 				null,
@@ -38420,9 +38346,6 @@ var ProjectPage = function (_Component) {
 
 	return ProjectPage;
 }(_react.Component);
-
-ProjectPage.propTypes = {};
-
 
 var mapStateToProps = function mapStateToProps(state) {
 	return {
@@ -38504,7 +38427,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProjectPage);
 
-},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/CodepenEmbed":132,"../components/GridLines":135,"../components/Image":139,"../components/ParallaxBackground":143,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/Sidebar":149,"../components/TextLink":150,"../components/Video":151,"../components/blocks/HeroBlock":152,"../components/blocks/ProjectDetailsBlock":153,"../components/blocks/ProjectIntroBlock":154,"../components/blocks/ProjectSectionBlock":155,"../components/blocks/ProjectUpNextBlock":156,"../data/people":158,"../services/hexToRgb":193,"../services/palette":196,"../services/splitLetter":197,"../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],147:[function(require,module,exports){
+},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/ParallaxBackground":143,"../components/ScrollSection":147,"../components/blocks/HeroBlock":152,"../components/blocks/ProjectDetailsBlock":153,"../components/blocks/ProjectIntroBlock":154,"../components/blocks/ProjectSectionBlock":155,"../components/blocks/ProjectUpNextBlock":156,"../services/hexToRgb":196,"../services/palette":199,"react":102,"react-redux":50}],147:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38518,8 +38441,6 @@ var _react = require("react");
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
-
-var _reactRouterDom = require("react-router-dom");
 
 var _classnames = require("classnames");
 
@@ -38560,14 +38481,6 @@ var _TextLink2 = _interopRequireDefault(_TextLink);
 var _ArrowGroup = require("./ArrowGroup");
 
 var _ArrowGroup2 = _interopRequireDefault(_ArrowGroup);
-
-var _Icon = require("./Icon");
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
-var _palette = require("../services/palette");
-
-var _palette2 = _interopRequireDefault(_palette);
 
 var _pad = require("../services/pad");
 
@@ -38725,31 +38638,14 @@ var ScrollSection = function (_Component) {
 							_react2.default.createElement("div", { onClick: function onClick() {
 									return _this2.scrollTo(sections[indexOfName - 1]);
 								} })
-						)
-						/*<Link to={sections[indexOfName - 1]} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
-						: null,
+						) : null,
 						indexOfName + 1 < sections.length ? _react2.default.createElement(
 							"a",
 							null,
 							_react2.default.createElement("div", { onClick: function onClick() {
 									return _this2.scrollTo(sections[indexOfName + 1]);
 								} })
-						)
-						/*<Link to={sections[indexOfName + 1]} onClick={this.scrollTo(sections[indexOfName + 1])} spy={true} smooth={easing} duration={duration} hashSpy={false} offset={0}/>*/
-						: null
-					)
-				) : null,
-				this.props.abbreviation == 'R' ? _react2.default.createElement(
-					_TextLink2.default,
-					{ hideUnderline: true },
-					_react2.default.createElement(
-						"a",
-						{ href: "assets/img/resume/ericsmith-resume.png", target: "_blank" },
-						_react2.default.createElement(
-							"h3",
-							{ className: "mb0" },
-							_react2.default.createElement(_Icon2.default, { icon: "download", size: 48, color: (0, _palette2.default)('brand-black') })
-						)
+						) : null
 					)
 				) : null
 			);
@@ -38846,7 +38742,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ScrollSection);
 
-},{"../actions/arrowNav":118,"../services/pad":195,"../services/palette":196,"../services/splitLetter":197,"./ArrowGroup":130,"./DelayLink":134,"./GridLines":135,"./HeroScrollButton":136,"./Icon":138,"./NavToggle":141,"./Sidebar":149,"./TextLink":150,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67,"react-scroll":87}],148:[function(require,module,exports){
+},{"../actions/arrowNav":118,"../services/pad":198,"../services/splitLetter":201,"./ArrowGroup":130,"./DelayLink":134,"./GridLines":135,"./HeroScrollButton":136,"./NavToggle":141,"./Sidebar":149,"./TextLink":150,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-scroll":87}],148:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38951,7 +38847,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(SideScroller);
 
-},{"../components/Icon":138,"../services/palette":196,"classnames":7,"react":102,"react-redux":50}],149:[function(require,module,exports){
+},{"../components/Icon":138,"../services/palette":199,"classnames":7,"react":102,"react-redux":50}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39195,7 +39091,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Sidebar);
 
-},{"../actions/cursor":120,"../actions/sidebar":127,"../services/createNewId":190,"../services/pad":195,"../services/splitLetter":197,"../services/textWidth":199,"classnames":7,"react":102,"react-dom":34,"react-redux":50,"react-router-dom":67,"react-scroll":87}],150:[function(require,module,exports){
+},{"../actions/cursor":120,"../actions/sidebar":127,"../services/createNewId":193,"../services/pad":198,"../services/splitLetter":201,"../services/textWidth":203,"classnames":7,"react":102,"react-dom":34,"react-redux":50,"react-router-dom":67,"react-scroll":87}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39210,17 +39106,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require('react-redux');
 
-var _reactRouterDom = require('react-router-dom');
-
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
 var _cursor = require('../actions/cursor');
-
-var _splitLetter = require('../services/splitLetter');
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39278,7 +39168,7 @@ var TextLink = function (_Component) {
 			});
 
 			return _react2.default.createElement(
-				'div',
+				'span',
 				{
 					className: classnames,
 					onMouseEnter: this.handleMouseEnter,
@@ -39287,9 +39177,9 @@ var TextLink = function (_Component) {
 					style: style ? style : null },
 				this.props.children,
 				_react2.default.createElement(
-					'div',
+					'span',
 					{ className: 'text-link__line-container' },
-					_react2.default.createElement('div', { className: 'text-link__line' })
+					_react2.default.createElement('span', { className: 'text-link__line' })
 				)
 			);
 		}
@@ -39317,7 +39207,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(TextLink);
 
-},{"../actions/cursor":120,"../services/splitLetter":197,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67}],151:[function(require,module,exports){
+},{"../actions/cursor":120,"classnames":7,"react":102,"react-redux":50}],151:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39325,6 +39215,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var _react = require("react");
 
@@ -39334,6 +39228,18 @@ var _reactIntersectionVisible = require("react-intersection-visible");
 
 var _reactIntersectionVisible2 = _interopRequireDefault(_reactIntersectionVisible);
 
+var _reactRedux = require("react-redux");
+
+var _cursor = require("../actions/cursor");
+
+var _parseLinks = require("../services/parseLinks");
+
+var _parseLinks2 = _interopRequireDefault(_parseLinks);
+
+var _Icon = require("./Icon");
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39342,8 +39248,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import createNewId from '../services/createNewId'
-
 var Video = function (_Component) {
 	_inherits(Video, _Component);
 
@@ -39351,6 +39255,12 @@ var Video = function (_Component) {
 		_classCallCheck(this, Video);
 
 		var _this = _possibleConstructorReturn(this, (Video.__proto__ || Object.getPrototypeOf(Video)).call(this, props));
+
+		_this.formatTime = function (time) {
+			var minutes = Math.floor(time / 60);
+			var seconds = Math.floor(time - minutes * 60);
+			return minutes + ":" + (seconds >= 10 ? seconds : "0" + seconds);
+		};
 
 		_this.playVideo = function () {
 			_this.ref.current.play();
@@ -39362,8 +39272,70 @@ var Video = function (_Component) {
 			_this.setState({ isPlaying: false });
 		};
 
+		_this.onTimeUpdate = function () {
+			_this.setState({
+				currentTime: _this.formatTime(_this.ref.current.currentTime),
+				isEnded: _this.ref.current.currentTime == _this.state.duration
+			});
+		};
+
+		_this.onEnded = function () {
+			_this.setState({
+				isPlaying: false,
+				isHovering: true,
+				isEnded: true
+			});
+		};
+
+		_this.handleButtonMouseOver = function () {
+			_this.props.setCursorHover();
+			_this.setState({
+				isHovering: true
+			});
+		};
+
+		_this.handleButtonMouseLeave = function () {
+			_this.props.setCursorUnhover();
+		};
+
+		_this.handleMouseMove = function () {
+			_this.props.setCursorHover();
+			clearTimeout(_this.timeout);
+			_this.setState({
+				isHovering: true
+			});
+			if (!_this.state.isEnded) {
+				_this.timeout = setTimeout(function () {
+					return _this.setState({
+						isHovering: false
+					});
+				}, 4000);
+			}
+		};
+
+		_this.handleMouseLeave = function () {
+			_this.setState({
+				isHovering: false
+			});
+			_this.props.setCursorUnhover();
+		};
+
+		_this.onClick = function () {
+			setTimeout(function () {
+				_this.props.setCursorUnhover();
+			}, 300);
+			setTimeout(function () {
+				_this.props.setCursorHover();
+			}, 900);
+			_this.state.isPlaying ? _this.pauseVideo() : _this.playVideo();
+		};
+
 		_this.state = {
-			isPlaying: false
+			isPlaying: false,
+			isEnded: false,
+			isHovering: false,
+			duration: null,
+			currentTime: '0:00'
 		};
 
 		_this.ref = _react2.default.createRef();
@@ -39371,34 +39343,92 @@ var Video = function (_Component) {
 	}
 
 	_createClass(Video, [{
-		key: "componentWillMount",
-		value: function componentWillMount() {}
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			this.ref.current.onloadedmetadata = function () {
+				_this2.setState({
+					duration: _this2.formatTime(_this2.ref.current.duration)
+				});
+			};
+		}
 	}, {
 		key: "render",
 		value: function render() {
 			var _props = this.props,
 			    src = _props.src,
 			    loop = _props.loop,
-			    poster = _props.poster;
-			var isPlaying = this.state.isPlaying;
+			    poster = _props.poster,
+			    caption = _props.caption,
+			    hideControls = _props.hideControls,
+			    disableAutoplay = _props.disableAutoplay;
+			var _state = this.state,
+			    isPlaying = _state.isPlaying,
+			    isEnded = _state.isEnded,
+			    isHovering = _state.isHovering,
+			    duration = _state.duration,
+			    currentTime = _state.currentTime;
 
 
 			return _react2.default.createElement(
 				_reactIntersectionVisible2.default,
 				{
-					onShow: this.playVideo,
-					onHide: this.pauseVideo
-				},
-				_react2.default.createElement("video", {
-					onClick: isPlaying ? this.pauseVideo : this.playVideo,
-					ref: this.ref,
-					src: src,
-					playsInline: true,
-					autoPlay: false,
-					preload: "auto",
-					muted: true,
-					loop: loop ? true : false,
-					poster: poster ? poster : null })
+					onShow: disableAutoplay ? null : this.playVideo,
+					onHide: this.pauseVideo },
+				_react2.default.createElement(
+					"div",
+					{ className: (0, _classnames2.default)({ "video-wrapper": true, "video-wrapper--hovering": isHovering }) },
+					_react2.default.createElement("video", {
+						onClick: this.onClick,
+						onMouseEnter: this.handleMouseMove,
+						onMouseLeave: this.handleMouseLeave,
+						onMouseMove: this.handleMouseMove,
+						onTimeUpdate: this.onTimeUpdate,
+						onEnded: this.onEnded,
+						ref: this.ref,
+						src: src,
+						playsInline: true,
+						autoPlay: false,
+						preload: "auto",
+						muted: true,
+						loop: loop ? true : false,
+						poster: poster ? poster : null }),
+					!hideControls ? _react2.default.createElement(
+						"div",
+						{ className: "video-wrapper__controls" },
+						_react2.default.createElement(
+							"div",
+							{ className: "video-wrapper__controls-item mb0" },
+							_react2.default.createElement(_Icon2.default, { icon: isEnded ? "refresh" : isPlaying ? "play" : "pause", size: 16 }),
+							_react2.default.createElement(
+								"p",
+								{ className: "mb0" },
+								isEnded ? "Replay" : isPlaying ? "Playing" : "Paused"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "video-wrapper__controls-item mb0" },
+							_react2.default.createElement(
+								"p",
+								{ className: "mb0" },
+								currentTime,
+								" / ",
+								duration
+							)
+						)
+					) : null
+				),
+				caption ? _react2.default.createElement(
+					"figcaption",
+					null,
+					_react2.default.createElement(
+						"p",
+						{ className: "mb0" },
+						(0, _parseLinks2.default)(caption)
+					)
+				) : null
 			);
 		}
 	}]);
@@ -39406,9 +39436,26 @@ var Video = function (_Component) {
 	return Video;
 }(_react.Component);
 
-exports.default = Video;
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		isMobile: state.isMobile
+	};
+};
 
-},{"react":102,"react-intersection-visible":35}],152:[function(require,module,exports){
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		setCursorHover: function setCursorHover() {
+			return dispatch((0, _cursor.setCursorHover)());
+		},
+		setCursorUnhover: function setCursorUnhover() {
+			return dispatch((0, _cursor.setCursorUnhover)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Video);
+
+},{"../actions/cursor":120,"../services/parseLinks":200,"./Icon":138,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50}],152:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39507,12 +39554,10 @@ var HeroBlock = exports.HeroBlock = function (_Component2) {
 	_createClass(HeroBlock, [{
 		key: "render",
 		value: function render() {
-			var headerText = this.props.headerText;
+			var _props = this.props,
+			    headerText = _props.headerText,
+			    split = _props.split;
 
-
-			var classnames = (0, _classnames2.default)({
-				"grid": true
-			});
 
 			var style = {};
 
@@ -39524,14 +39569,14 @@ var HeroBlock = exports.HeroBlock = function (_Component2) {
 
 			return _react2.default.createElement(
 				"div",
-				{ className: classnames },
-				_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--col-hide-bp-medium" }),
+				{ className: "grid" },
+				_react2.default.createElement("div", { className: "grid__item " + (split ? "grid__item--col-1" : "grid__item--col-1") + " grid__item--col-hide-bp-medium" }),
 				_react2.default.createElement(
 					"div",
-					{ className: "grid__item grid__item--col-10 grid__item--col-12-medium" },
+					{ className: "grid__item " + (split ? "grid__item--col-6" : "grid__item--col-10") + " grid__item--col-12-medium" },
 					_react2.default.createElement(
 						"h1",
-						{ className: "heading1 mb0" },
+						{ className: "h1 mb0" },
 						updatedText
 					)
 				)
@@ -39542,7 +39587,7 @@ var HeroBlock = exports.HeroBlock = function (_Component2) {
 	return HeroBlock;
 }(_react.Component);
 
-},{"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"../GridLines":135,"../NavToggle":141,"../Sidebar":149,"classnames":7,"react":102,"react-redux":50}],153:[function(require,module,exports){
+},{"../../services/hexToRgb":196,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"../GridLines":135,"../NavToggle":141,"../Sidebar":149,"classnames":7,"react":102,"react-redux":50}],153:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39686,7 +39731,7 @@ var ProjectDetailsBlock = function (_Component) {
 
 exports.default = ProjectDetailsBlock;
 
-},{"../../components/TextLink":150,"../../data/people":158,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],154:[function(require,module,exports){
+},{"../../components/TextLink":150,"../../data/people":159,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],154:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39740,11 +39785,10 @@ var ProjectIntroBlock = function (_Component) {
 		key: "render",
 		value: function render() {
 			var _props = this.props,
-			    media = _props.media,
-			    col1 = _props.col1,
-			    col2 = _props.col2,
-			    col3 = _props.col3,
-			    col4 = _props.col4;
+			    col1Top = _props.col1Top,
+			    col1Bottom = _props.col1Bottom,
+			    col2Top = _props.col2Top,
+			    col2Bottom = _props.col2Bottom;
 
 
 			return _react2.default.createElement(
@@ -39763,12 +39807,12 @@ var ProjectIntroBlock = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								{ className: "mr" },
-								(0, _addLineBreaks2.default)(col1)
+								(0, _addLineBreaks2.default)(col1Top)
 							),
 							_react2.default.createElement(
 								"blockquote",
 								{ className: this.props.isMobile ? "mr" : "mr mb0" },
-								(0, _addLineBreaks2.default)(col3)
+								(0, _addLineBreaks2.default)(col1Bottom)
 							)
 						),
 						_react2.default.createElement(
@@ -39777,12 +39821,12 @@ var ProjectIntroBlock = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								{ className: "mr" },
-								(0, _addLineBreaks2.default)(col2)
+								(0, _addLineBreaks2.default)(col2Top)
 							),
 							_react2.default.createElement(
 								"blockquote",
 								{ className: "mb0 mr" },
-								(0, _addLineBreaks2.default)(col4)
+								(0, _addLineBreaks2.default)(col2Bottom)
 							)
 						)
 					)
@@ -39802,7 +39846,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(ProjectIntroBlock);
 
-},{"../../components/Image":139,"../../services/addLineBreaks":189,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],155:[function(require,module,exports){
+},{"../../components/Image":139,"../../services/addLineBreaks":192,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],155:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39814,18 +39858,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = require("react-redux");
-
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactIntersectionVisible = require("react-intersection-visible");
-
-var _reactIntersectionVisible2 = _interopRequireDefault(_reactIntersectionVisible);
 
 var _Image = require("../../components/Image");
 
@@ -39891,7 +39923,7 @@ var ProjectSectionBlock = function (_Component) {
 		};
 
 		_this.renderMediaType = function (media) {
-			if (media.type == 'image') return _react2.default.createElement(_Image2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight, caption: media.caption });else if (media.type == 'video') return _react2.default.createElement(_Video2.default, { src: media.src, poster: media.poster });else if (media.type == 'iframe') return _react2.default.createElement(_IFrame2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'codepen') return _react2.default.createElement(_CodepenEmbed2.default, { slug: media.slug, title: media.title, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'side-scroller') return _react2.default.createElement(
+			if (media.type == 'image') return _react2.default.createElement(_Image2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight, caption: media.caption });else if (media.type == 'video') return _react2.default.createElement(_Video2.default, { src: media.src, poster: media.poster, caption: media.caption, disableAutoplay: media.disableAutoplay, hideControls: media.hideControls });else if (media.type == 'iframe') return _react2.default.createElement(_IFrame2.default, { src: media.src, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'codepen') return _react2.default.createElement(_CodepenEmbed2.default, { slug: media.slug, title: media.title, aspectRatioWidth: media.aspectRatioWidth, aspectRatioHeight: media.aspectRatioHeight });else if (media.type == 'side-scroller') return _react2.default.createElement(
 				_SideScroller2.default,
 				null,
 				_this.props.children ? _this.props.children : _this.renderChildren(media)
@@ -39943,7 +39975,7 @@ var ProjectSectionBlock = function (_Component) {
 							{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
 							_react2.default.createElement(
 								"h2",
-								{ className: subtitle ? "mb0" : null },
+								{ className: subtitle ? "h2 mb0" : "h2" },
 								title.split(" ").length > 1 ? (0, _splitWord2.default)(title) : (0, _splitLetter2.default)(title)
 							),
 							subtitle ? _react2.default.createElement(
@@ -40000,7 +40032,7 @@ var ProjectSectionBlock = function (_Component) {
 
 exports.default = ProjectSectionBlock;
 
-},{"../../components/Carousel":131,"../../components/CodepenEmbed":132,"../../components/IFrame":137,"../../components/Image":139,"../../components/SideScroller":148,"../../components/Video":151,"../../services/addLineBreaks":189,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50,"react-router-dom":67}],156:[function(require,module,exports){
+},{"../../components/Carousel":131,"../../components/CodepenEmbed":132,"../../components/IFrame":137,"../../components/Image":139,"../../components/SideScroller":148,"../../components/Video":151,"../../services/addLineBreaks":192,"../../services/splitLetter":201,"../../services/splitWord":202,"react":102}],156:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40070,7 +40102,7 @@ var ProjectUpNextBlock = function (_Component) {
 					),
 					_react2.default.createElement(
 						"h2",
-						{ className: "mb0" },
+						{ className: "h2 mb0" },
 						_react2.default.createElement(
 							_DelayLink2.default,
 							{ to: to },
@@ -40092,13 +40124,40 @@ var ProjectUpNextBlock = function (_Component) {
 exports.default = ProjectUpNextBlock;
 
 },{"../../components/DelayLink":134,"../../components/TextLink":150,"classnames":7,"react":102,"react-intersection-visible":35,"react-redux":50}],157:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.tagline = exports.about = undefined;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var about = exports.about = {
+  name: "Eric C. Smith",
+  location: "New York City",
+  role: "Interactive Developer",
+  link: _react2.default.createElement(
+    "a",
+    { href: "" },
+    "lorem"
+  )
+};
+
+var tagline = exports.tagline = about.name + " is an " + about.role + " in " + about.location + ".";
+
+},{"react":102}],158:[function(require,module,exports){
 module.exports={
 	"name": "All Pages",
 	"items" : [
 		{
 			"name": "Home",
 			"to": "/",
-			"abbreviation": "H",
+			"abbreviation": "H"
 		},
 		{
 			"name": "Works",
@@ -40108,33 +40167,38 @@ module.exports={
 				{
 					"name": "Google Design",
 					"items": [
-						{
-							"name": "Best of 2020",
-							"to": "//design.google/library/google-design-2020",
+						{ 
+							"name": "Google Design", 
+							"to": "/google-design",
+							"abbreviation": "G",
+							"media": {
+								"src": "../assets/img/google-design/best-of-2020.gif",
+								"type": "image",
+								"aspectRatioWidth": 10,
+								"aspectRatioHeight": 7
+							}
 						},
 						{
 							"name": "Is it Good Design?",
 							"to": "//design.google/library/good-design",
 							"media": {
-								// "src": "../assets/img/google-design/best-of-2019-3x2.jpg",
 								"src": "../assets/img/google-design/GoodDesign_logo.gif",
 								"type": "image",
 								"aspectRatioWidth": 16,
-								"aspectRatioHeight": 9,
+								"aspectRatioHeight": 9
 							}
 						},
+						{ "name": "MDA 2020", "to": "//design.google/library/material-design-awards-2020" },
 						{
 							"name": "Best of 2019",
 							"to": "//design.google/library/google-design-2019",
 							"media": {
-								// "src": "../assets/img/google-design/best-of-2019-3x2.jpg",
 								"src": "../assets/img/google-design/BestOf2019-logo.gif",
 								"type": "image",
 								"aspectRatioWidth": 16,
-								"aspectRatioHeight": 9,
+								"aspectRatioHeight": 9
 							}
 						},
-						// { "name": "Managing Ambiguity", "to": "//design.google/library/managing-ambiguity" },
 						{ 
 							"name": "Span 2019",
 							"to": "//design.google/library/span2019",
@@ -40142,8 +40206,7 @@ module.exports={
 								"type": "video",
 								"src": "../assets/img/google-design/span-2019.mp4",
 							}
-						},
-						{ "name": "Google Design", "to": "//design.google" }
+						}
 					]
 				},
 				{
@@ -40186,7 +40249,7 @@ module.exports={
 								"type": "image",
 								"aspectRatioWidth" : 16,
 								"aspectRatioHeight" : 9,
-							},
+							}
 						},
 						{
 							"name": "Rationalized Player",
@@ -40295,12 +40358,17 @@ module.exports={
 	]
 }
 
-},{}],158:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 module.exports={
 	// Google
-	"Damien Correll": "",
-	"Sharon Correa Harris": "",
-	"Alessandra Cho Bautista": "",
+	"Damien Correll": "//www.linkedin.com/in/damiencorrell",
+	"Pat Iadanza": "//www.linkedin.com/in/patrickiadanza",
+	"Carly Ayres": "//www.linkedin.com/in/carlyayres/",
+	"Bryn Smith": "//www.linkedin.com/in/bryn-smith-0269244",
+	"Sharon Correa Harris": "//www.instagram.com/sharonmharris/",
+	"Clayton Meador": "//claytonmeador.com/",
+	"Erin Kim": "//www.linkedin.com/in/erinykim",
+	"Lauren Fox": "//laurenfox.work/",
 	
 	// J&J
 	"Matthew Abate": "//www.linkedin.com/in/matthewabate",
@@ -40337,14 +40405,14 @@ module.exports={
 	"Rebecca Jablonski": "//www.linkedin.com/in/rebeccajablonsky",
 	"David Taylor": "//www.linkedin.com/in/lifehug",
 }
-},{}],159:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 module.exports={
 	"data": [
 			{
 				"color": "brand-red",
 				"title": "Explore",
 				"iconName": "binoculars",
-				"body": "Research the problem and interview target users to learn their pain points.",
+				"body": "Research the problem and interview target audience to learn their pain points.",
 				"stepArcPath": "M 50 1 A 49 49 0 0 1 84.64823227814082 15.351767721859176",
 				"circleArcPath": "M 31.248511814110604 4.729902906946947 A 49 49 0 0 1 68.7514881858894 4.729902906946947"
 			},
@@ -40408,7 +40476,192 @@ module.exports={
 		] 
 }
 
-},{}],160:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
+module.exports={
+	"navPanel" : "Google Design",
+	"sections" : [
+		{
+			"name": "Overview",
+			"type": "hero-block",
+			"block": {
+				"heroText": [
+					{ "word": "Google" },
+					{ "word": "Design" },
+					{ "sentence": "tells interactive stories about design at Google." }
+				],
+				"parallaxBackground": {
+					"media": {
+						"src": "../assets/img/google-design/best-of-2020.gif"
+					},
+					"gradient": {
+						"over": "linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08))",
+						"under": "linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08))"
+					}
+				}
+			}
+		},
+		{
+			"name": "About",
+			"type": "project-intro-block",
+			"block": {
+				"col1Top": "Google Design is a cooperative effort led by a group of designers, writers, and developers at Google. Working across teams they create content and produce events that showcase Google’s design work and champion innovators in the design field.",
+				"col1Bottom": "When I joined the team I was tasked with creating the website for SPAN, the yearly conference put on by the team. After a successful launch and event we scaled out article template on design.google building numerous front-end features.",
+				"col2Top": "Since 2019 the team has launch over 100+ using the template along with accompanying social media campaigns. The increase in evergreen content led to huge growth in our following across 2 years.",
+				"col2Bottom": "Over 2 years, I drastically improving usability of our CMS. Having a better UX for our writers and designers made authoring content easier and enjoyable. Better usability allowed for publishing at an increased cadence and ulitmately enabled deeper storytelling."
+			}
+		},
+		{
+			"name": "Details",
+			"type": "project-details-block",
+			"block": {
+				"role": "Lead UX Engineer",
+				"date": "Fall, 2019 —\nSpring, 2022",
+				"client": "Google",
+				"team": ["Damien Correll", "Pat Iadanza", "Bryn Smith", "Carly Ayres", "Sharon Correa Harris", "Erin Kim", "Lauren Fox", "Clayton Meador"]
+			}
+		},
+		{
+			"name": "Carousel",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": {
+				"title": "Carousel",
+				"description1": "The Carousel component allowed a series of images or videos to be browsed. The subtle stacking animation I developed set it apart from the average carousel.",
+				// "description2": "This component scaled for many campaigns including the \"Best of Google Design\" roundup series.",
+				"media": { 
+					"type": "side-scroller",
+					"items": [
+						{ 
+							"gridItemWidth": 10,
+							"type": "video",
+							"src": "assets/img/google-design/why-google-needs-art-directors.mp4",
+							"caption": "The Carousel appears in \"[Why Google Needs Art Directors](//design.google/library/why-google-needs-art-directors/)\" published in February 2020."
+						},
+						{
+							"gridItemWidth": 10,
+							"disableAutoplay": true,
+							"type": "video",
+							"src": "assets/img/google-design/best-of-google-design-2019.mp4",
+							"caption": "The Carousel and Lightbox appear in \"[Best of Google Design 2019](//design.google/library/google-design-2019/)\" published in December 2019."		
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Feature",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Feature Hero",
+				"description1": "The hero for cover stories is a more immersive article experience and a full page takeover. Many theming and layout options were built-in to allow for varying content layouts.",
+        "media": { 
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video",
+							"src": "assets/img/google-design/best-of-google-design-2020.mp4",
+							"caption": "The Feature Hero and Carousel appear in \"[Best of Google Design 2020](//design.google/library/google-design-2020/)\" published in December 2020."		
+						},
+						{
+							"gridItemWidth": 10,
+							"disableAutoplay": true,
+							"type": "video",
+							"src": "assets/img/google-design/floating-action-button.mp4",
+							"caption": "The Feature Hero appears in \"[Absolutely FAB](//design.google/library/floating-action-button/)\" published in October 2020."		
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Split",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Split Hero",
+				"description1": "The split hero was designed with portrait orientation art in mind to make our article template work more naturally with those assets.",
+				"description2": "This feature paired well with the Scroll Show feature that can appear in the body of an article.",
+        "media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/towards-resilient-systems.mp4", 
+							"caption": "The Split Hero and Scroll Show appear in \"[Towards Resilient Systems](//design.google/library/towards-resilient-systems/)\" published in August 2020."
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "ScrollShow",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Scrollshow",
+				"description1": "The Scrollshow component exists as split pane experience within the body of an article. Many theming and asset options were built-in to allow for varying content.",
+        "media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/into-the-dark.mp4", 
+							"caption": "The Scrollshow appears in \"[Into the Dark](//design.google/library/material-design-dark-theme/)\" published in June 2019."
+						},
+						{
+							"disableAutoplay": true,
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/managing-ambiguity.mp4", 
+							"caption": "The Split Hero and Scrollshow appear in \"[Managing Ambiguity](//design.google/library/managing-ambiguity/)\" published in November 2019."
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Accordion",
+			"type": "project-section-block",
+			"isBlack": true,
+			"block": { 
+				"title": "Accordion",
+				"description1": "The accordion feature allowed for expandable and collapsable regions allowing for ",
+        "media": {
+					"type": "side-scroller",
+					"items": [
+						{
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/material-design-awards-2020.mp4", 
+							"caption": "The Accordion and Scrollshow appear in \"[Material Design Awards 2020](//design.google/library/material-design-awards-2020/)\" published in June 2019."
+						},
+						{
+							"disableAutoplay": true,
+							"gridItemWidth": 10,
+							"type": "video", 
+							"src": "assets/img/google-design/span2019.mp4", 
+							"caption": "The Accordion, Carousel and Feature Hero appear in \"[SPAN 2019](//design.google/library/span2019/)\" published in November 2019."
+						}
+					]
+				}
+			}
+		},
+		{
+			"type": "up-next-block",
+			"isBlack": true,
+			"block": {
+				"title": "J&J Home",
+				"to": "jnj-home"
+			}
+		}
+	]
+}
+
+},{}],162:[function(require,module,exports){
 module.exports={
 	"navPanel" : "Perforce",
 	"sections" : [
@@ -40426,7 +40679,8 @@ module.exports={
 						"src": "../assets/img/perforce/mobile-3x2.jpg"
 					},
 					"gradient": {
-						"over": "linear-gradient(#2b8bb5, #178ab9)"
+						"under": "linear-gradient(#2b8bb5, #178ab9)",
+						"over": "linear-gradient(rgba(0,0,0,.04), rgba(0,0,0,.08))"
 					}
 				}
 			}
@@ -40435,10 +40689,10 @@ module.exports={
 			"name": "About",
 			"type": "project-intro-block",
 			"block": {
-				"col1": "The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. \n\n Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
-				"col2": "Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. \n\n Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.",
-				"col3": "My role on this project involved creating the mockups and visual designs–contributing iteratively to the product. I collaborated with a senior designer to deliever designs in sprints. ",
-				"col4": "With the our new design, the web based tool helped our users manage file versions in the cloud. It eliminated the designer’s need to rely on creating versions manually of their files."
+				"col1Top": "The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. \n\n Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
+				"col1Bottom": "My role on this project involved creating the mockups and visual designs–contributing iteratively to the product. I collaborated with a senior designer to deliever designs in sprints. ",
+				"col2Top": "Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995. \n\n Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.",
+				"col2Bottom": "With the our new design, the web based tool helped our users manage file versions in the cloud. It eliminated the designer’s need to rely on creating versions manually of their files."
 			}
 		},
 		{
@@ -40510,7 +40764,7 @@ module.exports={
 	]
 }
 
-},{}],161:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40533,6 +40787,8 @@ var abbreviationReducer = function abbreviationReducer() {
 		case 'WORK':
 			return _nav2.default.items[1].abbreviation;
 		// Start Projects 
+		case 'GOOGLEDESIGN':
+			return _nav2.default.items[1].items[0].items[0].abbreviation;
 		case 'JJHOME':
 			return _nav2.default.items[1].items[1].items[0].abbreviation;
 		case 'JJMDC':
@@ -40564,7 +40820,7 @@ var abbreviationReducer = function abbreviationReducer() {
 }; // import navData from "../data/nav-legacy";
 exports.default = abbreviationReducer;
 
-},{"../data/nav":157}],162:[function(require,module,exports){
+},{"../data/nav":158}],164:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40586,7 +40842,7 @@ var arrowNavReducer = function arrowNavReducer() {
 
 exports.default = arrowNavReducer;
 
-},{}],163:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40612,7 +40868,7 @@ var counterReducer = function counterReducer() {
 
 exports.default = counterReducer;
 
-},{}],164:[function(require,module,exports){
+},{}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40634,7 +40890,7 @@ var cursorReducer = function cursorReducer() {
 
 exports.default = cursorReducer;
 
-},{}],165:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40715,7 +40971,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./abbreviation":161,"./arrowNav":162,"./counter":163,"./cursor":164,"./mobile":166,"./navTakeover":167,"./navToggle":168,"./panel":169,"./primaryPanel":170,"./secondaryPanel":171,"./sidebar":172,"./windowHeight":173,"connected-react-router":10,"redux":103}],166:[function(require,module,exports){
+},{"./abbreviation":163,"./arrowNav":164,"./counter":165,"./cursor":166,"./mobile":168,"./navTakeover":169,"./navToggle":170,"./panel":171,"./primaryPanel":172,"./secondaryPanel":173,"./sidebar":174,"./windowHeight":175,"connected-react-router":10,"redux":103}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40735,7 +40991,7 @@ var mobileReducer = function mobileReducer() {
 
 exports.default = mobileReducer;
 
-},{}],167:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40757,7 +41013,7 @@ var navTakeoverReducer = function navTakeoverReducer() {
 
 exports.default = navTakeoverReducer;
 
-},{}],168:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40779,7 +41035,7 @@ var navToggleReducer = function navToggleReducer() {
 
 exports.default = navToggleReducer;
 
-},{}],169:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40810,7 +41066,7 @@ var panelReducer = function panelReducer() {
 
 exports.default = panelReducer;
 
-},{"../data/nav":157,"../services/toCamelCase":200}],170:[function(require,module,exports){
+},{"../data/nav":158,"../services/toCamelCase":204}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40832,7 +41088,7 @@ var primaryPanelReducer = function primaryPanelReducer() {
 
 exports.default = primaryPanelReducer;
 
-},{}],171:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40854,7 +41110,7 @@ var secondaryPanelReducer = function secondaryPanelReducer() {
 
 exports.default = secondaryPanelReducer;
 
-},{}],172:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40876,7 +41132,7 @@ var sidebarReducer = function sidebarReducer() {
 
 exports.default = sidebarReducer;
 
-},{}],173:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40898,7 +41154,7 @@ var windowHeight = function windowHeight() {
 
 exports.default = windowHeight;
 
-},{}],174:[function(require,module,exports){
+},{}],176:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41048,7 +41304,7 @@ var About = function (_Component) {
 							_this2.setActiveSection(0);
 						} },
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
-						headerText: ["In my free time I make", _react2.default.createElement(
+						headerText: ["In my free time I make ", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -41056,7 +41312,7 @@ var About = function (_Component) {
 								{ className: "outline" },
 								"3d stuff "
 							)
-						), "and snap", _react2.default.createElement(
+						), "and snap ", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -41310,7 +41566,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(About);
 
-},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/Image":139,"../components/ParallaxBackground":143,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/TextLink":150,"../components/Video":151,"../components/blocks/HeroBlock":152,"../components/blocks/ProjectSectionBlock":155,"../services/darken":191,"../services/hexToRgb":193,"../services/palette":196,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],175:[function(require,module,exports){
+},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/Image":139,"../components/ParallaxBackground":143,"../components/ScrollSection":147,"../components/SideScroller":148,"../components/TextLink":150,"../components/Video":151,"../components/blocks/HeroBlock":152,"../components/blocks/ProjectSectionBlock":155,"../services/darken":194,"../services/hexToRgb":196,"../services/palette":199,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],177:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41324,14 +41580,6 @@ var _react = require("react");
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
-var _reactRouterDom = require("react-router-dom");
 
 var _counter = require("../actions/counter");
 
@@ -41361,10 +41609,6 @@ var _TextLink = require("../components/TextLink");
 
 var _TextLink2 = _interopRequireDefault(_TextLink);
 
-var _Sidebar = require("../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
 var _Carousel = require("../components/Carousel");
 
 var _Carousel2 = _interopRequireDefault(_Carousel);
@@ -41385,27 +41629,19 @@ var _nav = require("../data/nav");
 
 var _nav2 = _interopRequireDefault(_nav);
 
+var _about = require("../data/about");
+
 var _splitWord = require("../services/splitWord");
 
 var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
-var _hexToRgb = require("../services/hexToRgb");
-
-var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
-
-var _palette = require("../services/palette");
-
-var _palette2 = _interopRequireDefault(_palette);
 
 var _pad = require("../services/pad");
 
 var _pad2 = _interopRequireDefault(_pad);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -41473,13 +41709,19 @@ var Homepage = function (_Component) {
 			    projects = _state.projects;
 
 
-			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
-			var brandRed = (0, _hexToRgb2.default)((0, _palette2.default)("brand-red"));
-
-			var heroBackgroundImage = this.props.isMobile ? 'banner-5x8.jpg' : 'banner-3x2.jpg';
-
-			// const circles = document.getElementsByClassName('step__spot-circle');
-			// const circleColor = `rgb(${brandBlack.r}, ${brandBlack.g}, ${brandBlack.b})`;
+			var formattedRole = _about.about.role.split(" ").map(function (word) {
+				return _react2.default.createElement(
+					"span",
+					null,
+					_react2.default.createElement(
+						"span",
+						{ className: "outline" },
+						word,
+						" "
+					)
+				);
+			});
+			var formattedTagline = [_about.about.name + " is an "].concat(_toConsumableArray(formattedRole), ["in " + _about.about.location + "."]);
 
 			var processPreview = _process2.default.data.slice(0, 3).map(function (item, i) {
 				return _react2.default.createElement(
@@ -41518,6 +41760,9 @@ var Homepage = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
+						onSetActive: function onSetActive() {
+							_this2.setActiveSection(0);
+						},
 						background: _react2.default.createElement(
 							_ParallaxBackground2.default,
 							null,
@@ -41537,29 +41782,9 @@ var Homepage = function (_Component) {
 									)
 								)
 							)
-						),
-						onSetActive: function onSetActive() {
-							_this2.setActiveSection(0);
-						} },
+						) },
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
-						headerText: ["Eric C. Smith is an", _react2.default.createElement(
-							"span",
-							null,
-							_react2.default.createElement(
-								"span",
-								{ className: "outline" },
-								"Interactive "
-							)
-						), _react2.default.createElement(
-							"span",
-							null,
-							_react2.default.createElement(
-								"span",
-								{ className: "outline" },
-								"Designer "
-							)
-						), "in New York City."]
-					})
+						headerText: formattedTagline })
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
@@ -41599,7 +41824,7 @@ var Homepage = function (_Component) {
 									{ className: "grid__item grid__item--col-12 grid__item--col-10-medium" },
 									_react2.default.createElement(
 										"h2",
-										null,
+										{ className: "h2" },
 										(0, _splitWord2.default)("Hello There")
 									)
 								),
@@ -41609,7 +41834,7 @@ var Homepage = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										{ className: "" },
-										(0, _splitWord2.default)("I\u2019m a technical, detail-oriented creative who blurs the line between designer and developer. My design aesthetic is about keeping it minimal and functional. When I\u2019m not designing, you can find me out taking photos or riding my bike.")
+										(0, _splitWord2.default)("I\u2019m a technical, detail-oriented creative who blurs the line between designer and developer. My design approach is about keeping it minimal and functional. When I\u2019m not designing, you can find me out taking photos or riding my bike.")
 									),
 									_react2.default.createElement(
 										"h5",
@@ -41654,7 +41879,7 @@ var Homepage = function (_Component) {
 									{ className: "grid__item grid__item--col-12 grid__item--col-10-medium" },
 									_react2.default.createElement(
 										"h2",
-										null,
+										{ className: "h2" },
 										(0, _splitWord2.default)("Code × Design")
 									)
 								),
@@ -41877,7 +42102,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Homepage);
 
-},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/Carousel":131,"../components/DelayLink":134,"../components/Image":139,"../components/ParallaxBackground":143,"../components/ProcessDiagram":144,"../components/ProjectCard":145,"../components/ScrollSection":147,"../components/Sidebar":149,"../components/TextLink":150,"../components/blocks/HeroBlock":152,"../data/nav":157,"../data/process":159,"../services/hexToRgb":193,"../services/pad":195,"../services/palette":196,"../services/splitLetter":197,"../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],176:[function(require,module,exports){
+},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/Carousel":131,"../components/DelayLink":134,"../components/Image":139,"../components/ParallaxBackground":143,"../components/ProcessDiagram":144,"../components/ProjectCard":145,"../components/ScrollSection":147,"../components/TextLink":150,"../components/blocks/HeroBlock":152,"../data/about":157,"../data/nav":158,"../data/process":160,"../services/pad":198,"../services/splitWord":202,"react":102,"react-redux":50}],178:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42070,7 +42295,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Process);
 
-},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/ProcessDiagram":144,"../components/ScrollSection":147,"../services/hexToRgb":193,"../services/palette":196,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],177:[function(require,module,exports){
+},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/ProcessDiagram":144,"../components/ScrollSection":147,"../services/hexToRgb":196,"../services/palette":199,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],179:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42085,14 +42310,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
-var _reactRouterDom = require("react-router-dom");
-
 var _counter = require("../actions/counter");
 
 var _abbreviation = require("../actions/abbreviation");
@@ -42103,29 +42320,15 @@ var _ScrollSection = require("../components/ScrollSection");
 
 var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 
-var _HeroBlock = require("../components/blocks/HeroBlock");
-
 var _TextLink = require("../components/TextLink");
 
 var _TextLink2 = _interopRequireDefault(_TextLink);
 
-var _Icon = require("../components/Icon");
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
-var _hexToRgb = require("../services/hexToRgb");
-
-var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
-
-var _palette = require("../services/palette");
-
-var _palette2 = _interopRequireDefault(_palette);
-
-var _splitWord = require("../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
+var _about = require("../data/about");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -42165,9 +42368,6 @@ var Resume = function (_Component) {
 			this.props.setPanel("All Pages");
 		}
 	}, {
-		key: "componentWillUnmount",
-		value: function componentWillUnmount() {}
-	}, {
 		key: "render",
 		value: function render() {
 			var _this2 = this;
@@ -42177,8 +42377,19 @@ var Resume = function (_Component) {
 			    sections = _state.sections;
 
 
-			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
-			var brandRed = (0, _hexToRgb2.default)((0, _palette2.default)("brand-red"));
+			var formattedRole = _about.about.role.split(" ").map(function (word, i) {
+				return _react2.default.createElement(
+					"span",
+					{ key: i, className: "inherit--brand-red" },
+					_react2.default.createElement(
+						"span",
+						{ className: "outline" },
+						word,
+						" "
+					)
+				);
+			});
+			var formattedTagline = [_about.about.name + " is an "].concat(_toConsumableArray(formattedRole), ["in " + _about.about.location + "."]);
 
 			return _react2.default.createElement(
 				"article",
@@ -42205,24 +42416,8 @@ var Resume = function (_Component) {
 								{ className: "grid__row" },
 								_react2.default.createElement(
 									"h2",
-									{ className: "mb0" },
-									["Eric C. Smith is an ", _react2.default.createElement(
-										"span",
-										{ className: "inherit--brand-red", key: 0 },
-										_react2.default.createElement(
-											"span",
-											{ className: "outline" },
-											"Interactive\xA0"
-										)
-									), _react2.default.createElement(
-										"span",
-										{ className: "inherit--brand-red", key: 1 },
-										_react2.default.createElement(
-											"span",
-											{ className: "outline" },
-											"Designer\xA0"
-										)
-									), "in New York City."]
+									{ className: "h2 mb0" },
+									formattedTagline
 								)
 							),
 							_react2.default.createElement(
@@ -42233,37 +42428,41 @@ var Resume = function (_Component) {
 									{ className: "grid__item--col-12" },
 									_react2.default.createElement(
 										"blockquote",
-										{ className: "mb0", style: { minHeight: '48px', alignItems: 'center', width: '100%' } },
+										{ className: "mb0" },
 										_react2.default.createElement("hr", null),
 										_react2.default.createElement(
-											_TextLink2.default,
-											null,
+											"div",
+											{ className: "grid__row mb0" },
 											_react2.default.createElement(
-												"a",
-												{ href: "mailto:hi@ericsmithux.com" },
-												"hi@ericsmithux.com"
-											)
-										),
-										_react2.default.createElement(
-											"h5",
-											{ className: "mb0 inherit--brand-red" },
-											"\xA0\xA0\u2022\xA0\xA0"
-										),
-										_react2.default.createElement(
-											_TextLink2.default,
-											null,
+												_TextLink2.default,
+												null,
+												_react2.default.createElement(
+													"a",
+													{ href: "mailto:hi@ericsmithux.com" },
+													"hi@ericsmithux.com"
+												)
+											),
 											_react2.default.createElement(
-												"a",
-												{ href: "call:5087334510" },
-												"+15087334510"
-											)
+												"h5",
+												{ className: "mb0 inherit--brand-red" },
+												"\xA0\xA0\u2022\xA0\xA0"
+											),
+											_react2.default.createElement(
+												_TextLink2.default,
+												null,
+												_react2.default.createElement(
+													"a",
+													{ href: "call:5087334510" },
+													"+15087334510"
+												)
+											),
+											_react2.default.createElement(
+												"h5",
+												{ className: "mb0 inherit--brand-red" },
+												"\xA0\xA0\u2022\xA0\xA0"
+											),
+											"Brooklyn, NY"
 										),
-										_react2.default.createElement(
-											"h5",
-											{ className: "mb0 inherit--brand-red" },
-											"\xA0\xA0\u2022\xA0\xA0"
-										),
-										"Brooklyn, NY",
 										_react2.default.createElement("hr", null)
 									)
 								)
@@ -42277,7 +42476,7 @@ var Resume = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										{ className: "mb0" },
-										"August 2019 \u2013 Present. New York, NY."
+										"August 2019 \u2013 March 2022. New York, NY."
 									),
 									_react2.default.createElement(
 										"h4",
@@ -42681,7 +42880,7 @@ var Resume = function (_Component) {
 									_react2.default.createElement(
 										"blockquote",
 										{ className: "mb0" },
-										"September 2010 \u2014 May 2014. Amherst, MA"
+										"September 2010 \u2014 May 2014. Amherst, MA."
 									),
 									_react2.default.createElement(
 										"h4",
@@ -42793,7 +42992,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Resume);
 
-},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/Icon":138,"../components/ScrollSection":147,"../components/TextLink":150,"../components/blocks/HeroBlock":152,"../services/hexToRgb":193,"../services/palette":196,"../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],178:[function(require,module,exports){
+},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/ScrollSection":147,"../components/TextLink":150,"../data/about":157,"react":102,"react-redux":50}],180:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43002,7 +43201,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Work);
 
-},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/ProjectCard":145,"../components/ScrollSection":147,"../data/nav":157,"../services/hexToRgb":193,"../services/palette":196,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],179:[function(require,module,exports){
+},{"../actions/abbreviation":117,"../actions/counter":119,"../actions/panel":124,"../components/ProjectCard":145,"../components/ScrollSection":147,"../data/nav":158,"../services/hexToRgb":196,"../services/palette":199,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],181:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43079,7 +43278,9 @@ var _HelixCloud = require('./projects/HelixCloud');
 
 var _HelixCloud2 = _interopRequireDefault(_HelixCloud);
 
-var _windowHeight = require('../actions/windowHeight');
+var _GoogleDesign = require('./projects/GoogleDesign');
+
+var _GoogleDesign2 = _interopRequireDefault(_GoogleDesign);
 
 var _nav = require('../data/nav');
 
@@ -43104,6 +43305,7 @@ var routes = _react2.default.createElement(
 		_react2.default.createElement(_reactRouter.Route, { path: '/micro-app-templates', component: _MicroAppTemplates2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/helix-sync', component: _HelixSync2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/helix-cloud', component: _HelixCloud2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/google-design', component: _GoogleDesign2.default }),
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: _nav2.default.items[2].to, component: _Process2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: _nav2.default.items[3].to, component: _AboutMe2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: _nav2.default.items[4].to, component: _Resume2.default })
@@ -43114,7 +43316,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"../actions/windowHeight":128,"../components/Cursor":133,"../components/NavTakeover":140,"../data/nav":157,"./AboutMe":174,"./Homepage":175,"./Process":176,"./Resume":177,"./Work":178,"./projects/AmericanMade":180,"./projects/HelixCloud":181,"./projects/HelixSync":182,"./projects/JnjHome":183,"./projects/JnjMdc":184,"./projects/MicroAppInteractions":185,"./projects/MicroAppTemplates":186,"./projects/RationalizedPlayer":187,"./projects/Translator":188,"react":102,"react-router":79}],180:[function(require,module,exports){
+},{"../components/Cursor":133,"../components/NavTakeover":140,"../data/nav":158,"./AboutMe":176,"./Homepage":177,"./Process":178,"./Resume":179,"./Work":180,"./projects/AmericanMade":182,"./projects/GoogleDesign":183,"./projects/HelixCloud":184,"./projects/HelixSync":185,"./projects/JnjHome":186,"./projects/JnjMdc":187,"./projects/MicroAppInteractions":188,"./projects/MicroAppTemplates":189,"./projects/RationalizedPlayer":190,"./projects/Translator":191,"react":102,"react-router":79}],182:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43324,16 +43526,10 @@ var AmericanMade = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: " The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures. \\n\\n  The NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees. ",
-						col2: " Our final design is the product of many late nights and too many cups of coffee! It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets. \\n\\n My goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures. ",
-						media: {
-							type: 'image',
-							src: '../assets/img/american-made/half-still.jpg',
-							aspectRatioWidth: 9,
-							aspectRatioHeight: 5
-						},
-						col3: "Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.",
-						col4: "From a developer standpoint I was responsible for QAing the site on all modern devices. I was also responsible for deploying the site which we did in 2 phases\u2013as an MVP and final site."
+						col1Top: " The NBCUX Lab took a deep dive into the story of American Made when the we partnered with Universal Pictures. This was the first film site in a series to be developed in the partnership with Universal Pictures. \\n\\nThe NBCUX Lab operates as an internal agency at NBCUniversal working with different organizations within NBCU on a variety of projects ranging anywhere from consumer-facing film sites to internal tools and content management systems used by employees. ",
+						col1Bottom: "Using our design guide, we prototyped multiple iterations of the site. We A/B tested each version with Universal Pictures in order to hone in on the optimal design.",
+						col2Top: " Our final design is the product of many late nights and too many cups of coffee! It all paid off and the film earned $16.7 million at the box office the first weekend. From our site there was a 63% conversion rate from our site to purchase tickets. \\n\\nMy goal for this project as the lead designer was to integrate the cinematic content of the site and the UI in a seamless way. I wanted to create reusable components with React that could reskinned and reused. This was the first film site in a series to be developed in the partnership with Universal Pictures. ",
+						col2Bottom: "From a developer standpoint I was responsible for QAing the site on all modern devices. I was also responsible for deploying the site which we did in 2 phases\u2013as an MVP and final site."
 					})
 				),
 				_react2.default.createElement(
@@ -43437,8 +43633,8 @@ var AmericanMade = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Parallax",
-						description1: "In my quest to unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.",
-						description2: "I utilized video with alpha channel here, a new interesting technology for web browsers. This cinemagraph, transparent video and parallax really helped enhance the visual storytelling.",
+						description1: "To further unify content and interface, I wanted to create an interactive way to tell the plot in a visual way. I designed a scrolling parallax experience using Greensock which allows users to scroll through the story in a digestable way.",
+						description2: "I utilized video with alpha channel here, a new interesting technology for web browsers. The cinemagraph, transparent video and parallax really helped enhance the visual storytelling.",
 						media: { type: "iframe", src: "//smittenn.github.io/american-made/parallax-story", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
 				_react2.default.createElement(
@@ -43587,7 +43783,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AmericanMade);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],181:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],183:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43602,13 +43798,93 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _reactRouterDom = require("react-router-dom");
+var _counter = require("../../actions/counter");
 
-var _classnames = require("classnames");
+var _abbreviation = require("../../actions/abbreviation");
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _ProjectPage = require("../../components/ProjectPage");
 
-var _reactScroll = require("react-scroll");
+var _ProjectPage2 = _interopRequireDefault(_ProjectPage);
+
+var _googleDesign2 = require("../../data/projects/google-design.json");
+
+var _googleDesign3 = _interopRequireDefault(_googleDesign2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GoogleDesign = function (_Component) {
+	_inherits(GoogleDesign, _Component);
+
+	_createClass(GoogleDesign, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			this.props.googleDesign();
+			this.props.reset();
+		}
+	}]);
+
+	function GoogleDesign(props) {
+		_classCallCheck(this, GoogleDesign);
+
+		return _possibleConstructorReturn(this, (GoogleDesign.__proto__ || Object.getPrototypeOf(GoogleDesign)).call(this, props));
+	}
+
+	_createClass(GoogleDesign, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(_ProjectPage2.default, { data: _googleDesign3.default });
+		}
+	}]);
+
+	return GoogleDesign;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		count: state.count,
+		abbreviation: state.abbreviation,
+		isMobile: state.isMobile
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		reset: function reset() {
+			return dispatch((0, _counter.reset)());
+		},
+		setCounter: function setCounter(n) {
+			return dispatch((0, _counter.setCounter)(n));
+		},
+		googleDesign: function googleDesign() {
+			return dispatch((0, _abbreviation.googleDesign)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(GoogleDesign);
+
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../components/ProjectPage":146,"../../data/projects/google-design.json":161,"react":102,"react-redux":50}],184:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
 
 var _counter = require("../../actions/counter");
 
@@ -43741,7 +44017,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HelixCloud);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/ProjectPage":146,"../../data/projects/helix-cloud":160,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],182:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/ProjectPage":146,"../../data/projects/helix-cloud":162,"react":102,"react-redux":50}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43954,16 +44230,10 @@ var HelixSync = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: " The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers.  \\n\\n  Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
-						col2: " Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995.  \\n\\n Since the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community. ",
-						media: {
-							type: 'image',
-							src: '../assets/img/perforce/sean.png',
-							aspectRatioWidth: 4,
-							aspectRatioHeight: 3
-						},
-						col3: "My role on this project involved creating the visual designs and creating the prototype which we conducted user testing with. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project.",
-						col4: "With the our new design, the unified system is more efficient. It eliminates the designer\u2019s need to rely on creating versions manually of their files. "
+						col1Top: "The design team with Perforce saw an opportunity to create a Dropbox-like asset versioning tool for techincal-minded designers. Perforce's version control tools worked well for their users versioning code but large teams of designers lacked a tool to version and collaborate on large binary files like 3D renders or video files.",
+						col1Bottom: "My role on this project involved creating the visual designs and creating the prototype which we conducted user testing with. In the user research phase I worked closely with another designer to help schedule and facilitate most of the sessions. I also led group synthesis sessions at the end of the project.",
+						col2Top: "Perforce has been a leader in the version control space since they premiered their centralized versioning engine in 1995.  \\n\\nSince the arrival of distributed versioning tools, most notably Git and Github, Perforce has struggled to stay relevant to their users. Recently they have found their niche by appealing to the design community.",
+						col2Bottom: "With the our new design, the unified system is more efficient. It eliminates the designer\u2019s need to rely on creating versions manually of their files. "
 					})
 				),
 				_react2.default.createElement(
@@ -44126,7 +44396,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HelixSync);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],183:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],186:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44301,17 +44571,14 @@ var JnjHome = function (_Component) {
 						fullHeight: true,
 						sections: sections,
 						activeSection: activeSection,
-						style: {
-							backgroundColor: 'transparent'
-						},
+						background: _react2.default.createElement(_ParallaxBackground2.default, {
+							style: {
+								backgroundImage: "\n\t\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\t\trgba(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ", .24), \n\t\t\t\t\t\t\t\trgba(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ", .4)\n\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\turl(../assets/img/jnj-home/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t\t",
+								backgroundColor: "rgb(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ")"
+							} }),
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_ParallaxBackground2.default, {
-						style: {
-							backgroundImage: "\n\t\t\t\t\t\t\tradial-gradient(\n\t\t\t\t\t\t\t\trgba(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ", .24), \n\t\t\t\t\t\t\t\trgba(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ", .4)\n\t\t\t\t\t\t\t),\n\t\t\t\t\t\t\turl(../assets/img/jnj-home/" + heroBackgroundImage + ".jpg)\n\t\t\t\t\t\t",
-							backgroundColor: "rgb(" + brandPrimary.r + ", " + brandPrimary.g + ", " + brandPrimary.b + ")"
-						} }),
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
 						headerText: [_react2.default.createElement(
 							"span",
@@ -44339,16 +44606,10 @@ var JnjHome = function (_Component) {
 							backgroundColor: '#00008c'
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: " The Home team dreamed of a better employee experience for J&J employees. While J&J\u2019s 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J. \\n\\n  Part of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must. ",
-						col2: " Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees. \\n\\n Our goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J. ",
-						media: {
-							type: 'image',
-							src: '../assets/img/jnj-home/connected.svg',
-							aspectRatioWidth: 16,
-							aspectRatioHeight: 9
-						},
-						col3: "My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.",
-						col4: "The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J\u2019s people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish."
+						col1Top: "The Home team dreamed of a better employee experience for J&J employees. While J&J\u2019s 128,000 employees around the world are building the future of healthcare, Home wanted to build a better J&J.\\n\\nPart of the big challenge of Home was building a centralized platform to house all the links and resources our peers used every day, enabling them to access vital information from any device, anywhere. Creating a mobile-first experience was a must.",
+						col1Bottom: "My goal for this project as a Interaction Designer on the project was to solve for the pain points of J&J employees and implement the new J&J True North branding. During this project I helped extend the brand guidelines to include motion and animation principles.",
+						col2Top: "Home was not just about convenience and collaboration. Home is about having a single digital hub that connects all employees.\\n\\nOur goal was to empower every J&J employee to pursue their vision and values, no matter their field, function or seniority. We wanted Home to inspire excitement about all of the innovative, groundbreaking work happening at J&J.",
+						col2Bottom: "The new design for the Home Intranet helped employees connect with each other and find resources they need while bringing J&J\u2019s people experience into the 21st century. The success of Home served as a model for what the J&J Design studio could accomplish."
 					})
 				),
 				_react2.default.createElement(
@@ -44549,7 +44810,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjHome);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],184:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],187:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44752,16 +45013,10 @@ var JnjMdc = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: " We sought to consolidate J&J\u2019s 250 websites across 6 medical device companies into a unified platform that reflected the new J&J brand. The final result, J&J MDC or \u201CMedical Device Center\u201D was a flexible design system which created a centralized experience for the companies. \\n\\n  J&J MDC was ultimately successful \u2013 leading to expanded patient access, improved outcomes and reduced health system costs. ",
-						col2: " In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution.  \\n\\n J&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. ",
-						media: {
-							type: 'image',
-							src: '../assets/img/jnj-mdc/running-man-16x9.png',
-							aspectRatioWidth: 16,
-							aspectRatioHeight: 9
-						},
-						col3: "My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.",
-						col4: "During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J\u2019s own website builder."
+						col1Top: " We sought to consolidate J&J\u2019s 250 websites across 6 medical device companies into a unified platform that reflected the new J&J brand. The final result, J&J MDC or \u201CMedical Device Center\u201D was a flexible design system which created a centralized experience for the companies. \\n\\nJ&J MDC was ultimately successful \u2013 leading to expanded patient access, improved outcomes and reduced health system costs. ",
+						col1Bottom: "My role as Interaction Designer was to create a flexible design system solving for the needs of the HCP and Patient while implementing the new J&J True North branding. Our front-end code prototype acted as a source of truth and as a styleguide for our developers.",
+						col2Top: " In a radically changing environment, J&J had connections across science and technology to combine their own expertise in surgery, orthopaedics and interventional solutions with the big ideas of others to design and deliver a physician and patient-centric product and solution.  \\n\\nJ&J has the breadth, scale and experience to reimagine the way healthcare is delivered and help people live longer, healthier lives. ",
+						col2Bottom: "During this project I helped extend the brand guidelines to include motion and animation principles. Our design system was wildly successful and was eventually genericised into J&J\u2019s own website builder."
 					})
 				),
 				_react2.default.createElement(
@@ -44855,7 +45110,7 @@ var JnjMdc = function (_Component) {
 						sections: sections,
 						activeSection: activeSection
 					},
-					_react2.default.createElement(_ProjectUpNextBlock2.default, { name: "Wrap Interactions", to: "micro-app-interactions" })
+					_react2.default.createElement(_ProjectUpNextBlock2.default, { name: "American Made", to: "american-made" })
 				)
 			);
 		}
@@ -44954,7 +45209,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(JnjMdc);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],185:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],188:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44969,14 +45224,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
 var _counter = require("../../actions/counter");
 
 var _abbreviation = require("../../actions/abbreviation");
@@ -44990,26 +45237,6 @@ var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 var _ParallaxBackground = require("../../components/ParallaxBackground");
 
 var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
-
-var _GridLines = require("../../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _SideScroller = require("../../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
 
 var _HeroBlock = require("../../components/blocks/HeroBlock");
 
@@ -45028,26 +45255,6 @@ var _ProjectIntroBlock2 = _interopRequireDefault(_ProjectIntroBlock);
 var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock");
 
 var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
-
-var _IFrame = require("../../components/IFrame");
-
-var _IFrame2 = _interopRequireDefault(_IFrame);
-
-var _Image = require("../../components/Image");
-
-var _Image2 = _interopRequireDefault(_Image);
-
-var _Video = require("../../components/Video");
-
-var _Video2 = _interopRequireDefault(_Video);
-
-var _splitWord = require("../../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
 
 var _hexToRgb = require("../../services/hexToRgb");
 
@@ -45171,16 +45378,10 @@ var MicroAppInteractions = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: " Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform. \\n\\n  \u201CWell what is a Wrap?\u201D might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.",
-						col2: "Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards \u2014 a new \"page\" of the traditional \"app\" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.",
-						media: {
-							type: 'image',
-							src: '../assets/img/card-components/perspective-cards.jpg',
-							aspectRatioWidth: 8,
-							aspectRatioHeight: 5
-						},
-						col3: "On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS, Javascript and the home-grown Wrap Developer API.",
-						col4: "The way that myself and the design team designed wraps was by designing cards. From the example above you can see that these experiences follow and \"x-cross\" pattern \u2014 The end user is able to scroll either up/down or swipe left or right."
+						col1Top: " Wrap Media aimed to garner adoption of its web based platfrom by partnering with clients. We partnered with high profile clients such as Warner Brothers Music, Salesforce, Minted, Equinox, BMW and many more to help them get started with our platform.\\n\\n\u201CWell what is a Wrap?\u201D might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.",
+						col1Bottom: "On this particular effort I worked as a Creative Techonologist listening to the needs of the client and creating a web application within our platform catered to their needs. I used HTML, CSS, Javascript and the home-grown Wrap Developer API.",
+						col2Top: "Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards \u2014 a new \"page\" of the traditional \"app\" is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.",
+						col2Bottom: "The way that myself and the design team designed wraps was by designing cards. These experiences follow and \"x-cross\" pattern \u2014 The end user is able to scroll either up/down or swipe left or right."
 					})
 				),
 				_react2.default.createElement(
@@ -45360,7 +45561,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppInteractions);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],186:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"react":102,"react-redux":50}],189:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45374,14 +45575,6 @@ var _react = require("react");
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
-
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
 
 var _counter = require("../../actions/counter");
 
@@ -45397,37 +45590,9 @@ var _ParallaxBackground = require("../../components/ParallaxBackground");
 
 var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
 
-var _GridLines = require("../../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _SideScroller = require("../../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
-
-var _IFrame = require("../../components/IFrame");
-
-var _IFrame2 = _interopRequireDefault(_IFrame);
-
 var _Image = require("../../components/Image");
 
 var _Image2 = _interopRequireDefault(_Image);
-
-var _Video = require("../../components/Video");
-
-var _Video2 = _interopRequireDefault(_Video);
 
 var _HeroBlock = require("../../components/blocks/HeroBlock");
 
@@ -45447,14 +45612,6 @@ var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock"
 
 var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
 
-var _splitWord = require("../../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
 var _hexToRgb = require("../../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -45462,10 +45619,6 @@ var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 var _palette = require("../../services/palette");
 
 var _palette2 = _interopRequireDefault(_palette);
-
-var _people = require("../../data/people");
-
-var _people2 = _interopRequireDefault(_people);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45577,24 +45730,17 @@ var MicroAppTemplates = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: " Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content. \\n\\n  \u201CWell what is a Wrap?\u201D might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.",
-						col2: "Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards \u2014 a new \u201Cpage\u201D of the traditional \u201Capp\u201D is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.",
-						media: {
-							type: 'image',
-							src: '../assets/img/card-components/perspective-cards.jpg',
-							aspectRatioWidth: 8,
-							aspectRatioHeight: 5
-						},
-						col3: "On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process.",
-						col4: "The team designed Wraps using cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
+						col1Top: " Wrap Media aimed to garner adoption of its web based platfrom by creating self-service templates for our customers. Over the course of a year we created 125+ templates for a variety of use cases. Users could get started by simply forking a template and adding their own content. \\n\\n\u201CWell what is a Wrap?\u201D might the question your asking at this point. A Wrap is a highly-focused, app-like, mobile web experience.",
+						col1Bottom: "On this particular effort I worked as a designer creating templates. We organized templates for visual style and purpose. Each designer would be put in charge of a single visual style family from end to end in the design process.",
+						col2Top: "Wraps are mobile web apps and live at a URL. The flexibility of the URL allows a end user to enter the Wrap through many channels including social feeds, e-mail, web advertisement or, like shown below, through SMS. Wrap experiences are essentially a colleciton of cards \u2014 a new \u201Cpage\u201D of the traditional \u201Capp\u201D is analagous to a card. The creation and distribution of the experiences was handled through a SAAS application that we developed in-house as well.",
+						col2Bottom: "The team designed Wraps using cards. We would start from a wireframe laying out each card to get a feel for the story of the wrap. Then move into visual design selecting colors and imagery that matched the style family."
 					})
 				),
 				_react2.default.createElement(
 					_ScrollSection2.default,
 					{
 						sections: sections,
-						activeSection: activeSection
-					},
+						activeSection: activeSection },
 					_react2.default.createElement(_ProjectDetailsBlock2.default, { role: "UX/Visual Designer", date: "Fall, 2015", client: "Wrap Media", team: ["Pete Petras", "Mei Yeh", "Theo Arguna", "Cameron Myers"] })
 				),
 				_react2.default.createElement(
@@ -45623,37 +45769,13 @@ var MicroAppTemplates = function (_Component) {
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(3);
-						},
-						style: {
-							// backgroundColor: '#3E7C95'
-						}
-					},
+						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "mb0" },
-									"Event"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "fade" },
-									"Modern Sans Family"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						null,
+						_ProjectSectionBlock2.default,
+						{
+							title: "Event",
+							subtitle: "Modern Sans Family",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-3 grid__item--col-10-medium" },
@@ -45707,31 +45829,11 @@ var MicroAppTemplates = function (_Component) {
 							_this2.setActiveSection(4);
 						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "mb0" },
-									"Lead Gen"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "fade" },
-									"Bold Modern Family"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						null,
+						_ProjectSectionBlock2.default,
+						{
+							title: "Lead Gen",
+							subtitle: "Bold Modern Family",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-3 grid__item--col-10-medium" },
@@ -45773,37 +45875,13 @@ var MicroAppTemplates = function (_Component) {
 						activeSection: activeSection,
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(5);
-						},
-						style: {
-							// backgroundColor: '#DE918E'
-						}
-					},
+						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "mb0" },
-									"Fashion"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "fade" },
-									"Modern Sans Family"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						null,
+						_ProjectSectionBlock2.default,
+						{
+							title: "Fashion",
+							subtitle: "Modern Sans Family",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-3 grid__item--col-10-medium" },
@@ -45862,31 +45940,11 @@ var MicroAppTemplates = function (_Component) {
 							_this2.setActiveSection(6);
 						} },
 					_react2.default.createElement(
-						"div",
-						{ className: "grid" },
-						_react2.default.createElement(
-							"div",
-							{ className: "grid__row" },
-							_react2.default.createElement("div", { className: "grid__item grid__item--col-1 grid__item--hide-bp-medium" }),
-							_react2.default.createElement(
-								"div",
-								{ className: "grid__item grid__item--col-8 grid__item--col-12-medium" },
-								_react2.default.createElement(
-									"h2",
-									{ className: "mb0" },
-									"Agency"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "fade" },
-									"Modern Sans Family"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						_SideScroller2.default,
-						null,
+						_ProjectSectionBlock2.default,
+						{
+							title: "Agency",
+							subtitle: "Modern Sans Family",
+							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
 							{ className: "grid__item grid__item--col-3 grid__item--col-10-medium" },
@@ -46021,7 +46079,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppTemplates);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/IFrame":137,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],187:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../services/hexToRgb":196,"../../services/palette":199,"react":102,"react-redux":50}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46247,11 +46305,10 @@ var RationalizedPlayer = function (_Component) {
 						},
 						style: { backgroundColor: (0, _darken2.default)(brandPrimary, 6) } },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: "Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \\n\\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing.",
-						col2: "The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, V.ai Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \\n\\n The Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and is well poised to create a player unifying the experience.",
-						col3: "As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created the icon library, animations and typography system for the player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype.",
-						col4: "Clarifi\u2019s image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time.",
-						media: { type: 'image', src: '../assets/img/vai/escalade.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }
+						col1Top: "Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \\n\\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing.",
+						col1Bottom: "As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created the icon library, animations and typography system for the player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype.",
+						col2Top: "The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, V.ai Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \\n\\n The Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and is well poised to create a player unifying the experience.",
+						col2Bottom: "Clarifi\u2019s image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time."
 					})
 				),
 				_react2.default.createElement(
@@ -46280,7 +46337,7 @@ var RationalizedPlayer = function (_Component) {
 						title: "Ai Mode",
 						description1: "During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper.",
 						description2: "V.ai Mode helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.",
-						media: { type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png' }
+						media: { type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png', hideControls: true }
 					})
 				),
 				_react2.default.createElement(
@@ -46452,7 +46509,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(RationalizedPlayer);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/darken":191,"../../services/hexToRgb":193,"../../services/lighten":194,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],188:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/darken":194,"../../services/hexToRgb":196,"../../services/lighten":197,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],191:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46467,14 +46524,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
 var _counter = require("../../actions/counter");
 
 var _abbreviation = require("../../actions/abbreviation");
@@ -46488,26 +46537,6 @@ var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 var _ParallaxBackground = require("../../components/ParallaxBackground");
 
 var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
-
-var _GridLines = require("../../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _SideScroller = require("../../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
 
 var _Image = require("../../components/Image");
 
@@ -46531,14 +46560,6 @@ var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock"
 
 var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
 
-var _splitWord = require("../../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
 var _hexToRgb = require("../../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -46546,10 +46567,6 @@ var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 var _palette = require("../../services/palette");
 
 var _palette2 = _interopRequireDefault(_palette);
-
-var _people = require("../../data/people");
-
-var _people2 = _interopRequireDefault(_people);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46650,11 +46667,10 @@ var Translator = function (_Component) {
 							_this2.setActiveSection(1);
 						} },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1: "The process for media asset management varied greatly across NBCU\u2019s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands. \\n\\n The current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or \u201CMAM\u201D to be stored.",
-						col2: "On the previous CMS, the brands were very reliant on the folder structure, search was not available on the brand storage systems. Searching large data stores would cause the servers to crash. \\n\\n Findability was a major issue, if a technician misplaced a file or accidentally dragged a file into another folder, it would be difficult to recall the file later. Each brand had a different folder structure and each team within a brand may have a different naming convention.",
-						media: { type: 'image', src: '../assets/img/translator/usertesting.svg', aspectRatioWidth: 16, aspectRatioHeight: 9 },
-						col3: "My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.",
-						col4: "With the our new design, the unified system is more efficient. It eliminates the brands\u2019 reliance on the folder structure and the middlemen who manage the brand strorage, as well as significantly streamlines the communication between teams."
+						col1Top: "The process for media asset management varied greatly across NBCU\u2019s diverse entertainment brands. Our team was asked to imagine a tool that could that works for all the brands. \\n\\nThe current production process begins with content creation where production teams either shoot a new footage or re-purpose existing footage. Production Assistants (PAs) bring the footage on a physical drive to the Media Asset Manager or \u201CMAM\u201D to be stored.",
+						col1Bottom: "My goal for this project as the Lead Designer was to solve many of the pain points for these technicians and create a flexible design system that not only accomidated the content registration workflow we were intitially tasked with designing but was also flexible enough for to design features later.",
+						col2Top: "On the previous CMS, the brands were very reliant on the folder structure, search was not available on the brand storage systems. Searching large data stores would cause the servers to crash. \\n\\nFindability was a major issue, if a technician misplaced a file or accidentally dragged a file into another folder, it would be difficult to recall the file later. Each brand had a different folder structure and each team within a brand may have a different naming convention.",
+						col2Bottom: "With the our new design, the unified system is more efficient. It eliminates the brands\u2019 reliance on the folder structure and the middlemen who manage the brand strorage, as well as significantly streamlines the communication between teams."
 					})
 				),
 				_react2.default.createElement(
@@ -46701,7 +46717,7 @@ var Translator = function (_Component) {
 						{
 							title: "Metadata",
 							description1: "Editing metadata for content was an important part in of the storage process. By allowing technicians to edit fields quickly and easily we would promote rich metadata platform wide.",
-							description2: "We designed a flyout panel for editing metadata and 3 stages of metatdata completeness. Completing all metadata for a piece of media was incentivized by making it easier to search for.",
+							description2: "We designed a flyout panel for editing metadata and 3 stages of metatdata completeness. Completing all metadata for a single media asset was incentivized\u2014the application indexed supplied fields to make it easily searchable.",
 							media: { type: 'side-scroller' } },
 						_react2.default.createElement(
 							"div",
@@ -46773,7 +46789,7 @@ var Translator = function (_Component) {
 						sections: sections,
 						activeSection: activeSection
 					},
-					_react2.default.createElement(_ProjectUpNextBlock2.default, { name: "J&J Home", to: "jnj-home" })
+					_react2.default.createElement(_ProjectUpNextBlock2.default, { name: "Wrap Interactions", to: "micro-app-interactions" })
 				)
 			);
 		}
@@ -46872,7 +46888,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Translator);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":158,"../../services/hexToRgb":193,"../../services/palette":196,"../../services/splitLetter":197,"../../services/splitWord":198,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],189:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../services/hexToRgb":196,"../../services/palette":199,"react":102,"react-redux":50}],192:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46886,17 +46902,17 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (str) {
-	return str.split("\\n").map(function (text, i) {
+	return str ? str.split("\\n").map(function (text, i) {
 		return _react2.default.createElement(
 			_react.Fragment,
 			{ key: i },
 			text,
 			_react2.default.createElement("br", null)
 		);
-	});
+	}) : null;
 };
 
-},{"react":102}],190:[function(require,module,exports){
+},{"react":102}],193:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -46912,7 +46928,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],191:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46933,7 +46949,7 @@ var darken = function darken(color, amount) {
 
 exports.default = darken;
 
-},{}],192:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46959,7 +46975,7 @@ exports.default = function (func, timeout) {
     };
 };
 
-},{}],193:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46975,7 +46991,7 @@ exports.default = function (hex) {
 	} : null;
 };
 
-},{}],194:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46996,7 +47012,7 @@ var lighten = function lighten(color, amount) {
 
 exports.default = lighten;
 
-},{}],195:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47007,7 +47023,7 @@ exports.default = function (num, digits, z) {
 	return num.length >= digits ? num + '' : new Array(digits - (num + '').length + 1).join(z || '0') + (num + '');
 };
 
-},{}],196:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47042,7 +47058,52 @@ var _darken2 = _interopRequireDefault(_darken);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./darken":191}],197:[function(require,module,exports){
+},{"./darken":194}],200:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TextLink = require("../components/TextLink");
+
+var _TextLink2 = _interopRequireDefault(_TextLink);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (str) {
+	var regex = /\[(.*?)\]\((.*?)\)/gi;
+	var matches = str.toString().match(regex);
+
+	if (matches) {
+		var reformatted = matches.map(function (item, i) {
+			var square = /\[(.*?)\]/gi;
+			var round = /\((.*?)\)/gi;
+			var text = item.match(square)[0].replace('[', '').replace(']', '');
+			var link = item.match(round)[0].replace('(', '').replace(')', '');
+			return _react2.default.createElement(
+				_TextLink2.default,
+				{ key: i },
+				_react2.default.createElement(
+					"a",
+					{ href: link, target: "_blank" },
+					text
+				)
+			);
+		});
+		var rendered = str.toString().split(matches);
+		rendered.splice(1, 0, reformatted);
+		return rendered;
+	} else {
+		return str;
+	}
+};
+
+},{"../components/TextLink":150,"react":102}],201:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47071,7 +47132,7 @@ exports.default = function (text, style) {
 	});
 };
 
-},{"react":102}],198:[function(require,module,exports){
+},{"react":102}],202:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47100,13 +47161,13 @@ exports.default = function (text, style, className) {
 				'span',
 				null,
 				item,
-				'\xA0'
+				i !== text.split(" ").length - 1 ? ' ' : null
 			)
 		);
 	});
 };
 
-},{"classnames":7,"react":102}],199:[function(require,module,exports){
+},{"classnames":7,"react":102}],203:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47117,12 +47178,12 @@ exports.default = function (word) {
   var multiplier = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
   return word.split('').reduce(function (width, c) {
-    if (c == 'W' || c == 'M' || c == 'G' || c == 'N') width += 15;else if (c == 'w' || c == 'm') width += 12;else if (c == 'I' || c == 'i' || c == 'l' || c == 't' || c == 'f') width += 4;else if (c == 'r') width += 8;else if (c == c.toUpperCase()) width += 12;else width += 10;
+    if (c == 'W' || c == 'M' || c == 'G' || c == 'C' || c == 'D' || c == 'O') width += 15;else if (c == 'w' || c == 'm' || c == 'N' || c == 'L') width += 12;else if (c == 'I' || c == 'i' || c == 'l' || c == 't' || c == 'f') width += 4;else if (c == 'r') width += 8;else if (c == c.toUpperCase()) width += 12;else width += 10;
     return width;
   }, 0) * multiplier;
 };
 
-},{}],200:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47134,19 +47195,6 @@ exports.default = function (str) {
     return match.charAt(match.length - 1).toUpperCase();
   });
   return str.charAt(0).toLowerCase() + str.substring(1);
-};
-
-},{}],201:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-exports.default = function (str) {
-    return str && str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).map(function (x) {
-        return x.toLowerCase();
-    }).join('-');
 };
 
 },{}]},{},[129])
