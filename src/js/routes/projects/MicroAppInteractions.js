@@ -9,7 +9,7 @@ import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
 
-import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
+import { HeroBlock } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -17,9 +17,6 @@ import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
 import hexToRgb from "../../services/hexToRgb"
 import palette from "../../services/palette"
-
-import people from "../../data/people"
-
 
 class MicroAppInteractions extends Component {
 
@@ -60,8 +57,6 @@ class MicroAppInteractions extends Component {
 
 
 	render() {
-
-		const { setCounter, setNavWhite, setNavBlack } = this.props;
 		const { activeSection, sections } = this.state;
 
 		const brandBlack = hexToRgb(palette("brand-black"));
@@ -94,7 +89,7 @@ class MicroAppInteractions extends Component {
 				}}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed delightful mobile experiences.`]}
+					headerText={[ `At `, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed delightful mobile experiences.`]}
 					/>
 				</ScrollSection>
 

@@ -48,7 +48,6 @@
 			"block": {
 				"title": "Carousel",
 				"description1": "The Carousel component allowed a series of images or videos to be browsed. The subtle stacking animation I developed set it apart from the average carousel.",
-				// "description2": "This component scaled for many campaigns including the \"Best of Google Design\" roundup series.",
 				"media": { 
 					"type": "side-scroller",
 					"items": [
@@ -102,7 +101,7 @@
 			"isBlack": true,
 			"block": { 
 				"title": "Split Hero",
-				"description1": "The split hero was designed with portrait orientation art in mind to make our article template work more naturally with those assets.",
+				"description1": "The Split Hero was designed with portrait orientation art in mind to make our article template work more naturally with those assets.",
 				"description2": "This feature paired well with the Scroll Show feature that can appear in the body of an article.",
         "media": {
 					"type": "side-scroller",
@@ -122,8 +121,8 @@
 			"type": "project-section-block",
 			"isBlack": true,
 			"block": { 
-				"title": "Scrollshow",
-				"description1": "The Scrollshow component exists as split pane experience within the body of an article. Many theming and asset options were built-in to allow for varying content.",
+				"title": "Scroll Show",
+				"description1": "The Scroll Show component is scrolling split pane experience within the body of an article. Many theming and asset options were built-in to allow for varying content.",
         "media": {
 					"type": "side-scroller",
 					"items": [
@@ -131,14 +130,14 @@
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/into-the-dark.mp4", 
-							"caption": "The Scrollshow appears in \"[Into the Dark](//design.google/library/material-design-dark-theme/)\" published in June 2019."
+							"caption": "The Scroll Show appears in \"[Into the Dark](//design.google/library/material-design-dark-theme/)\" published in June 2019."
 						},
 						{
 							"disableAutoplay": true,
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/managing-ambiguity.mp4", 
-							"caption": "The Split Hero and Scrollshow appear in \"[Managing Ambiguity](//design.google/library/managing-ambiguity/)\" published in November 2019."
+							"caption": "The Split Hero and Scroll Show appear in \"[Managing Ambiguity](//design.google/library/managing-ambiguity/)\" published in November 2019."
 						}
 					]
 				}
@@ -150,7 +149,7 @@
 			"isBlack": true,
 			"block": { 
 				"title": "Accordion",
-				"description1": "The accordion feature allowed for expandable and collapsable regions allowing for dense information to be displayed in an intelligible way.",
+				"description1": "The Accordion feature allowed for expandable and collapsable regions allowing for dense information to be displayed in an intelligible way.",
         "media": {
 					"type": "side-scroller",
 					"items": [
@@ -158,7 +157,7 @@
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/material-design-awards-2020.mp4", 
-							"caption": "The Accordion and Scrollshow appear in \"[Material Design Awards 2020](//design.google/library/material-design-awards-2020/)\" published in June 2019."
+							"caption": "The Accordion and Scroll Show appear in \"[Material Design Awards 2020](//design.google/library/material-design-awards-2020/)\" published in June 2019."
 						},
 						{
 							"disableAutoplay": true,

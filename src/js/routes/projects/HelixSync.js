@@ -1,8 +1,5 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
-import {NavLink} from "react-router-dom"
-import classNames from "classnames"
-import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} from "react-scroll"
 
 import { reset, setCounter } from "../../actions/counter"
 import { home, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce1, perforce2 } from "../../actions/abbreviation"
@@ -11,13 +8,6 @@ import { setPanel } from "../../actions/panel"
 import ScrollSection from "../../components/ScrollSection"
 
 import ParallaxBackground from "../../components/ParallaxBackground"
-import GridLines from "../../components/GridLines"
-import Sidebar from "../../components/Sidebar"
-import CodepenEmbed from "../../components/CodepenEmbed"
-import SideScroller from "../../components/SideScroller"
-import TextLink from "../../components/TextLink"
-import Image from "../../components/Image"
-import Video from "../../components/Video"
 
 import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
@@ -25,13 +15,8 @@ import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
 import ProjectSectionBlock from "../../components/blocks/ProjectSectionBlock"
 
-import splitWord from "../../services/splitWord"
-import splitLetter from "../../services/splitLetter"
 import hexToRgb from "../../services/hexToRgb"
 import palette from "../../services/palette"
-
-import people from "../../data/people"
-
 
 class HelixSync extends Component {
 
@@ -71,12 +56,8 @@ class HelixSync extends Component {
 
 
 	render() {
-
-		const { setCounter, setNavWhite, setNavBlack } = this.props;
 		const { activeSection, sections } = this.state;
-
 		const brandBlack = hexToRgb(palette("brand-black"));
-
 
 		return (
 			<article>

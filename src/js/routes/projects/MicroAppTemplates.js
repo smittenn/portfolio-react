@@ -85,7 +85,7 @@ class MicroAppTemplates extends Component {
 				}}/>}
 				onSetActive={() => { this.setActiveSection(0); }}>
 					<HeroBlock 
-					headerText={[ `At`, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed 150+ mobile app templates.`]}
+					headerText={[ `At `, <span><span className="outline">Wrap </span></span>, <span><span className="outline">Media </span></span>, `we designed 150+ mobile app templates.`]}
 					/>
 				</ScrollSection>
 

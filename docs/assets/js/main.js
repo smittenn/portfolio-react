@@ -40527,7 +40527,6 @@ module.exports={
 			"block": {
 				"title": "Carousel",
 				"description1": "The Carousel component allowed a series of images or videos to be browsed. The subtle stacking animation I developed set it apart from the average carousel.",
-				// "description2": "This component scaled for many campaigns including the \"Best of Google Design\" roundup series.",
 				"media": { 
 					"type": "side-scroller",
 					"items": [
@@ -40581,7 +40580,7 @@ module.exports={
 			"isBlack": true,
 			"block": { 
 				"title": "Split Hero",
-				"description1": "The split hero was designed with portrait orientation art in mind to make our article template work more naturally with those assets.",
+				"description1": "The Split Hero was designed with portrait orientation art in mind to make our article template work more naturally with those assets.",
 				"description2": "This feature paired well with the Scroll Show feature that can appear in the body of an article.",
         "media": {
 					"type": "side-scroller",
@@ -40601,8 +40600,8 @@ module.exports={
 			"type": "project-section-block",
 			"isBlack": true,
 			"block": { 
-				"title": "Scrollshow",
-				"description1": "The Scrollshow component exists as split pane experience within the body of an article. Many theming and asset options were built-in to allow for varying content.",
+				"title": "Scroll Show",
+				"description1": "The Scroll Show component is scrolling split pane experience within the body of an article. Many theming and asset options were built-in to allow for varying content.",
         "media": {
 					"type": "side-scroller",
 					"items": [
@@ -40610,14 +40609,14 @@ module.exports={
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/into-the-dark.mp4", 
-							"caption": "The Scrollshow appears in \"[Into the Dark](//design.google/library/material-design-dark-theme/)\" published in June 2019."
+							"caption": "The Scroll Show appears in \"[Into the Dark](//design.google/library/material-design-dark-theme/)\" published in June 2019."
 						},
 						{
 							"disableAutoplay": true,
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/managing-ambiguity.mp4", 
-							"caption": "The Split Hero and Scrollshow appear in \"[Managing Ambiguity](//design.google/library/managing-ambiguity/)\" published in November 2019."
+							"caption": "The Split Hero and Scroll Show appear in \"[Managing Ambiguity](//design.google/library/managing-ambiguity/)\" published in November 2019."
 						}
 					]
 				}
@@ -40629,7 +40628,7 @@ module.exports={
 			"isBlack": true,
 			"block": { 
 				"title": "Accordion",
-				"description1": "The accordion feature allowed for expandable and collapsable regions allowing for ",
+				"description1": "The Accordion feature allowed for expandable and collapsable regions allowing for dense information to be displayed in an intelligible way.",
         "media": {
 					"type": "side-scroller",
 					"items": [
@@ -40637,14 +40636,14 @@ module.exports={
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/material-design-awards-2020.mp4", 
-							"caption": "The Accordion and Scrollshow appear in \"[Material Design Awards 2020](//design.google/library/material-design-awards-2020/)\" published in June 2019."
+							"caption": "The Accordion and Scroll Show appear in \"[Material Design Awards 2020](//design.google/library/material-design-awards-2020/)\" published in June 2019."
 						},
 						{
 							"disableAutoplay": true,
 							"gridItemWidth": 10,
 							"type": "video", 
 							"src": "assets/img/google-design/span2019.mp4", 
-							"caption": "The Accordion, Carousel and Feature Hero appear in \"[SPAN 2019](//design.google/library/span2019/)\" published in November 2019."
+							"caption": "The Accordion, Carousel and Feature Hero appear in \"[SPAN 2019](//design.google/library/span2019/)\" published in October 2019."
 						}
 					]
 				}
@@ -43600,7 +43599,7 @@ var AmericanMade = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Navigation",
-						description1: "I designed a unique themed navigation for the site. The nav mimic\u2019d the bird\u2019s-eye view of a plane on an airport runway tarmack waiting to take off.",
+						description1: "We designed a unique themed navigation for the site. The nav mimic\u2019d the bird\u2019s-eye view of a plane on an airport runway tarmack waiting to take off.",
 						description2: "The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls.",
 						media: { type: "iframe", src: "//smittenn.github.io/american-made/navigation", aspectRatioWidth: 3, aspectRatioHeight: 2 } })
 				),
@@ -44032,14 +44031,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
 var _counter = require("../../actions/counter");
 
 var _abbreviation = require("../../actions/abbreviation");
@@ -44053,34 +44044,6 @@ var _ScrollSection2 = _interopRequireDefault(_ScrollSection);
 var _ParallaxBackground = require("../../components/ParallaxBackground");
 
 var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
-
-var _GridLines = require("../../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _SideScroller = require("../../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
-
-var _Image = require("../../components/Image");
-
-var _Image2 = _interopRequireDefault(_Image);
-
-var _Video = require("../../components/Video");
-
-var _Video2 = _interopRequireDefault(_Video);
 
 var _HeroBlock = require("../../components/blocks/HeroBlock");
 
@@ -44100,14 +44063,6 @@ var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock"
 
 var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
 
-var _splitWord = require("../../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
 var _hexToRgb = require("../../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -44115,10 +44070,6 @@ var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
 var _palette = require("../../services/palette");
 
 var _palette2 = _interopRequireDefault(_palette);
-
-var _people = require("../../data/people");
-
-var _people2 = _interopRequireDefault(_people);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44166,14 +44117,9 @@ var HelixSync = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var _props = this.props,
-			    setCounter = _props.setCounter,
-			    setNavWhite = _props.setNavWhite,
-			    setNavBlack = _props.setNavBlack;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    sections = _state.sections;
-
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 
@@ -44396,7 +44342,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HelixSync);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],186:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../services/hexToRgb":196,"../../services/palette":199,"react":102,"react-redux":50}],186:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45264,10 +45210,6 @@ var _palette = require("../../services/palette");
 
 var _palette2 = _interopRequireDefault(_palette);
 
-var _people = require("../../data/people");
-
-var _people2 = _interopRequireDefault(_people);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45314,10 +45256,6 @@ var MicroAppInteractions = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var _props = this.props,
-			    setCounter = _props.setCounter,
-			    setNavWhite = _props.setNavWhite,
-			    setNavBlack = _props.setNavBlack;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    sections = _state.sections;
@@ -45348,7 +45286,7 @@ var MicroAppInteractions = function (_Component) {
 							_this2.setActiveSection(0);
 						} },
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
-						headerText: ["At", _react2.default.createElement(
+						headerText: ["At ", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -45561,7 +45499,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MicroAppInteractions);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/hexToRgb":196,"../../services/palette":199,"react":102,"react-redux":50}],189:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../services/hexToRgb":196,"../../services/palette":199,"react":102,"react-redux":50}],189:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45700,7 +45638,7 @@ var MicroAppTemplates = function (_Component) {
 							_this2.setActiveSection(0);
 						} },
 					_react2.default.createElement(_HeroBlock.HeroBlock, {
-						headerText: ["At", _react2.default.createElement(
+						headerText: ["At ", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -46094,14 +46032,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require("react-redux");
 
-var _reactRouterDom = require("react-router-dom");
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _reactScroll = require("react-scroll");
-
 var _counter = require("../../actions/counter");
 
 var _abbreviation = require("../../actions/abbreviation");
@@ -46118,33 +46048,9 @@ var _ParallaxBackground = require("../../components/ParallaxBackground");
 
 var _ParallaxBackground2 = _interopRequireDefault(_ParallaxBackground);
 
-var _GridLines = require("../../components/GridLines");
-
-var _GridLines2 = _interopRequireDefault(_GridLines);
-
-var _Sidebar = require("../../components/Sidebar");
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-var _CodepenEmbed = require("../../components/CodepenEmbed");
-
-var _CodepenEmbed2 = _interopRequireDefault(_CodepenEmbed);
-
-var _Video = require("../../components/Video");
-
-var _Video2 = _interopRequireDefault(_Video);
-
 var _Image = require("../../components/Image");
 
 var _Image2 = _interopRequireDefault(_Image);
-
-var _SideScroller = require("../../components/SideScroller");
-
-var _SideScroller2 = _interopRequireDefault(_SideScroller);
-
-var _TextLink = require("../../components/TextLink");
-
-var _TextLink2 = _interopRequireDefault(_TextLink);
 
 var _ProjectUpNextBlock = require("../../components/blocks/ProjectUpNextBlock");
 
@@ -46162,14 +46068,6 @@ var _ProjectSectionBlock = require("../../components/blocks/ProjectSectionBlock"
 
 var _ProjectSectionBlock2 = _interopRequireDefault(_ProjectSectionBlock);
 
-var _splitWord = require("../../services/splitWord");
-
-var _splitWord2 = _interopRequireDefault(_splitWord);
-
-var _splitLetter = require("../../services/splitLetter");
-
-var _splitLetter2 = _interopRequireDefault(_splitLetter);
-
 var _hexToRgb = require("../../services/hexToRgb");
 
 var _hexToRgb2 = _interopRequireDefault(_hexToRgb);
@@ -46185,10 +46083,6 @@ var _darken2 = _interopRequireDefault(_darken);
 var _lighten = require("../../services/lighten");
 
 var _lighten2 = _interopRequireDefault(_lighten);
-
-var _people = require("../../data/people");
-
-var _people2 = _interopRequireDefault(_people);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46236,10 +46130,6 @@ var RationalizedPlayer = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var _props = this.props,
-			    setCounter = _props.setCounter,
-			    setNavWhite = _props.setNavWhite,
-			    setNavBlack = _props.setNavBlack;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    sections = _state.sections;
@@ -46247,8 +46137,6 @@ var RationalizedPlayer = function (_Component) {
 
 			var brandBlack = (0, _hexToRgb2.default)((0, _palette2.default)("brand-black"));
 			var brandPrimary = '#B6462E';
-
-			// const sections = pageSections.map(i => i.name)
 
 			var heroBackgroundImage = this.props.isMobile ? 'mobile-5x8' : 'mobile-3x2';
 
@@ -46271,9 +46159,8 @@ var RationalizedPlayer = function (_Component) {
 						onSetActive: function onSetActive() {
 							_this2.setActiveSection(0);
 						} },
-					_react2.default.createElement(_HeroBlock.HeroBlock
-					// headerText={[`The`, <span><span className="outline">Rationalized </span></span>, <span><span className="outline">Player </span></span>, `united web player UX across brands.`]}
-					, { headerText: ["The", _react2.default.createElement(
+					_react2.default.createElement(_HeroBlock.HeroBlock, {
+						headerText: ["The ", _react2.default.createElement(
 							"span",
 							null,
 							_react2.default.createElement(
@@ -46305,9 +46192,9 @@ var RationalizedPlayer = function (_Component) {
 						},
 						style: { backgroundColor: (0, _darken2.default)(brandPrimary, 6) } },
 					_react2.default.createElement(_ProjectIntroBlock2.default, {
-						col1Top: "Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did. \\n\\n In the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing.",
+						col1Top: "Have you ever watched a show online and gotten annoyed by the seemingly endless commercials? Did you download an ad blocker plugin to your browser? More likely than not, you did.  \\n\\nIn the current digital space, one filled with ad blockers and displeased consumers, the question of how to move forward in advertising remains unanswered. The traditional means of advertising can no longer withstand the test of time. Users patterns are changing.",
 						col1Bottom: "As the Lead Designer on this project I designed in the browser directly on our front-end video prototype. I directly contributed code to this prototype. I created the icon library, animations and typography system for the player. I also worked with Clarifi, the artificial intelligence API we used to power this prototype.",
-						col2Top: "The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, V.ai Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \\n\\n The Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and is well poised to create a player unifying the experience.",
+						col2Top: "The NBCUX Lab saw the need for a new way for brands to reach their audiences. In order to shape the future of how brands influence consumers our solution, AI Mode, aims to bring AI and product integration into an immersive video-viewing experience. The solution fit seemlessly into our existing Rationalized Player. \\n\\nThe Rationalized Player is a video player the NBCUX Lab created to unify the viewing experience across entertainment brands. The NBCUX Lab operates across brands at NBCUniversal and is well poised to create a player unifying the experience.",
 						col2Bottom: "Clarifi\u2019s image recognition technology with video recognition analyzes a video and predicts what\u2019s inside of it. Their API analyzes inputs at a rate of 1 frame per second, which means a list of predicted results can be shown in real time."
 					})
 				),
@@ -46336,7 +46223,7 @@ var RationalizedPlayer = function (_Component) {
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Ai Mode",
 						description1: "During video playback the player shows items related to the current scene. The player consists of an overlay and a full screen takeover for the user to dive in deeper.",
-						description2: "V.ai Mode helps identify people and product in the video (like the car the lead actor is in). V.ai allows for a user to deeply explore extras all without ever leaving the video.",
+						description2: "AI Mode helps identify people and product in the video (like the car the lead actor is in). AI mode allows for a user to deeply explore extras all without ever leaving the video.",
 						media: { type: 'video', src: 'assets/img/vai/player.mp4', poster: 'assets/img/vai/player.png', hideControls: true }
 					})
 				),
@@ -46352,7 +46239,7 @@ var RationalizedPlayer = function (_Component) {
 						} },
 					_react2.default.createElement(_ProjectSectionBlock2.default, {
 						title: "Overlay",
-						description1: "Cards appear on the left side of the player when users hover or pause the video. V.ai mode is on by default and the toggle gives a user the option to easily turn it off.",
+						description1: "Cards appear on the left side of the player when users hover or pause the video. AI mode is on by default and the toggle gives a user the option to easily turn it off.",
 						media: { type: 'image', src: '../assets/img/vai/vai-overlay.png', aspectRatioWidth: 16, aspectRatioHeight: 9 }
 					})
 				),
@@ -46509,7 +46396,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(RationalizedPlayer);
 
-},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/CodepenEmbed":132,"../../components/GridLines":135,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/SideScroller":148,"../../components/Sidebar":149,"../../components/TextLink":150,"../../components/Video":151,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../data/people":159,"../../services/darken":194,"../../services/hexToRgb":196,"../../services/lighten":197,"../../services/palette":199,"../../services/splitLetter":201,"../../services/splitWord":202,"classnames":7,"react":102,"react-redux":50,"react-router-dom":67,"react-scroll":87}],191:[function(require,module,exports){
+},{"../../actions/abbreviation":117,"../../actions/counter":119,"../../actions/panel":124,"../../components/Image":139,"../../components/ParallaxBackground":143,"../../components/ScrollSection":147,"../../components/blocks/HeroBlock":152,"../../components/blocks/ProjectDetailsBlock":153,"../../components/blocks/ProjectIntroBlock":154,"../../components/blocks/ProjectSectionBlock":155,"../../components/blocks/ProjectUpNextBlock":156,"../../services/darken":194,"../../services/hexToRgb":196,"../../services/lighten":197,"../../services/palette":199,"react":102,"react-redux":50}],191:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46614,10 +46501,6 @@ var Translator = function (_Component) {
 		value: function render() {
 			var _this2 = this;
 
-			var _props = this.props,
-			    setCounter = _props.setCounter,
-			    setNavWhite = _props.setNavWhite,
-			    setNavBlack = _props.setNavBlack;
 			var _state = this.state,
 			    activeSection = _state.activeSection,
 			    sections = _state.sections;
@@ -46679,10 +46562,7 @@ var Translator = function (_Component) {
 						name: sections[2],
 						sections: sections,
 						disableSectionNumber: true,
-						activeSection: activeSection,
-						style: {
-							// backgroundImage: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
-						} },
+						activeSection: activeSection },
 					_react2.default.createElement(_ProjectDetailsBlock2.default, { role: "Lead UI/UX Designer", date: "Spring, 2017", client: "NBCU On-Air", team: ["Mina Azimov", "Kennix Lee", "Oleksandr Lebedyev", "Jing Zhao", "Poplar Bai"] })
 				),
 				_react2.default.createElement(

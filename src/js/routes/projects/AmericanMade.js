@@ -190,7 +190,7 @@ class AmericanMade extends Component {
 				onSetActive={() => { this.setActiveSection(4); }}>
 					<ProjectSectionBlock 
 					title="Navigation"
-					description1="I designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off."
+					description1="We designed a unique themed navigation for the site. The nav mimic’d the bird’s-eye view of a plane on an airport runway tarmack waiting to take off."
 					description2="The navigation is sticky but its minimalistic nature prevents it from blocking content as the user scrolls."
 					media={{ type: "iframe", src: "//smittenn.github.io/american-made/navigation",  aspectRatioWidth: 3, aspectRatioHeight: 2 }}/>
 				</ScrollSection>

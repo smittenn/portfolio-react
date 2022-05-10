@@ -10,7 +10,7 @@ import ScrollSection from "../../components/ScrollSection"
 import ParallaxBackground from "../../components/ParallaxBackground"
 import Image from "../../components/Image"
 
-import { HeroBlock, HeroBlockItem } from "../../components/blocks/HeroBlock"
+import { HeroBlock } from "../../components/blocks/HeroBlock"
 import ProjectUpNextBlock from "../../components/blocks/ProjectUpNextBlock"
 import ProjectDetailsBlock from "../../components/blocks/ProjectDetailsBlock"
 import ProjectIntroBlock from "../../components/blocks/ProjectIntroBlock"
@@ -58,8 +58,6 @@ class Translator extends Component {
 
 
 	render() {
-
-		const { setCounter, setNavWhite, setNavBlack } = this.props;
 		const { activeSection, sections } = this.state;
 
 		const brandPrimary = '#3B96B7';
@@ -112,10 +110,7 @@ class Translator extends Component {
 				name={sections[2]}
 				sections={sections} 
 				disableSectionNumber
-				activeSection={activeSection}
-				style={{ 
-					// backgroundImage: `linear-gradient(45deg, #3C5D78 33%, #426581 33% 66%, #5B7E9A 66%)`,
-				}}>
+				activeSection={activeSection}>
 					<ProjectDetailsBlock role="Lead UI/UX Designer" date="Spring, 2017" client="NBCU On-Air" team={["Mina Azimov", "Kennix Lee", "Oleksandr Lebedyev", "Jing Zhao", "Poplar Bai"]}/>
 				</ScrollSection>}
 

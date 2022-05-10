@@ -123,7 +123,7 @@ class Video extends Component {
 					src={src} 
 					playsInline 
 					autoPlay={false} 
-					preload={disableAutoplay ? "none" : "auto" }
+					preload={"auto"} 
 					muted 
 					loop={loop ? true : false}
 					poster={poster ? poster : null}/>
