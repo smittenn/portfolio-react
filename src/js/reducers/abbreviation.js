@@ -1,4 +1,3 @@
-// import navData from "../data/nav-legacy";
 import navData from "../data/nav";
 
 const abbreviationReducer = (state = 'H', action) => {
@@ -9,25 +8,25 @@ const abbreviationReducer = (state = 'H', action) => {
 			return navData.items[1].abbreviation
 		// Start Projects 
 		case 'GOOGLEDESIGN':
-			return navData.items[1].items[0].items[0].abbreviation
-		case 'JJHOME':
 			return navData.items[1].items[1].items[0].abbreviation
-		case 'JJMDC':
-			return navData.items[1].items[1].items[1].abbreviation
-		case 'AMERICANMADE':
+		case 'JJHOME':
 			return navData.items[1].items[2].items[0].abbreviation
-		case 'VAI':
+		case 'JJMDC':
 			return navData.items[1].items[2].items[1].abbreviation
-		case 'TRANSLATOR':
-			return navData.items[1].items[2].items[2].abbreviation
-		case 'WRAP1':
+		case 'AMERICANMADE':
 			return navData.items[1].items[3].items[0].abbreviation
-		case 'WRAP2':
+		case 'VAI':
 			return navData.items[1].items[3].items[1].abbreviation
-		case 'PERFORCE1':
+		case 'TRANSLATOR':
+			return navData.items[1].items[3].items[2].abbreviation
+		case 'WRAP1':
 			return navData.items[1].items[4].items[0].abbreviation
-		case 'PERFORCE2':
+		case 'WRAP2':
 			return navData.items[1].items[4].items[1].abbreviation
+		case 'PERFORCE1':
+			return navData.items[1].items[5].items[0].abbreviation
+		case 'PERFORCE2':
+			return navData.items[1].items[5].items[1].abbreviation
 		// End Projects 
 		case 'PROCESS':
 			return navData.items[2].abbreviation

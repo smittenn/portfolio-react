@@ -14,6 +14,10 @@ export const resume = () => ({
 	type: 'RESUME',
 })
 
+export const work = () => ({
+	type: 'WORK',
+})
+
 // Projects
 
 export const googleDesign = () => ({

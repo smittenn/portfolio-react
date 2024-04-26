@@ -5,7 +5,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy, scroller} 
 import {NavLink} from 'react-router-dom'
 
 import { reset, setCounter } from "../actions/counter"
-import { home, process, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
+import { home, process, work, americanMade, vai, translator, jjMdc, jjHome, wrap1, wrap2, perforce, cisco, protohack } from "../actions/abbreviation"
 import { setPanel } from "../actions/panel"
 
 import navData from "../data/nav"
@@ -32,7 +32,7 @@ class Work extends Component {
 	componentDidMount() {
 		window.scrollTo(0, 0);
 
-		this.props.process();
+		this.props.work();
 		this.props.reset();
 		this.props.setPanel("All Pages");
 
@@ -92,6 +92,7 @@ const mapDispatchToProps = dispatch => ({
 	reset: () => dispatch(reset()),
 	setCounter: (n) => dispatch(setCounter(n)),
 	home: () => dispatch(home()),
+	work: () => dispatch(work()),
 	process: () => dispatch(process()),
 	americanMade: () => dispatch(americanMade()),
 	vai: () => dispatch(vai()),

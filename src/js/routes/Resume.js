@@ -56,7 +56,7 @@ class Resume extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--col-2-desktop grid__item--hide-bp-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-6-desktop grid__item--col-12-medium">
 							<div className="grid__row">
-								<h2 className="h2 mb0">{formattedTagline}</h2>
+								<h3 className="h3 mb0">{formattedTagline}</h3>
 							</div>
 							<div className="grid__row">
 								<div className="grid__item--col-12">
@@ -71,6 +71,21 @@ class Resume extends Component {
 										</div>
 										<hr/>
 									 </blockquote>
+								</div>
+							</div>
+							<div className="grid__row">
+								<div className="grid__item--col-12">
+									<blockquote className="mb0">April 2022 – Present. New York, NY.</blockquote>
+									<h4 className="mb0">WeTransfer <span className="inherit--brand-red"><span className="outline">•</span></span> Creative Developer</h4>
+									<blockquote>Javascript, Svelte, Adobe CC, HTML, CSS</blockquote>
+									<blockquote className="mb0"><ul className="ls">
+										<li>Creative developer at the WeTransfer Creative Studio.</li>
+										<li>Collaborated daily with art directors, designers and copywriters.</li>
+										<li>Developed wallpapers/ads on <TextLink><a href="//wetransfer.com">wetransfer.com</a></TextLink></li>
+										<li>Prototyped and innovated new advertising types including 3D, games and highly animated formats.</li>
+										<li>Contributed new components to our component library and improved accessibility of existing library.</li>
+										<li>Shipped production code daily to be seen by thousands of users every day.</li>
+									</ul></blockquote>
 								</div>
 							</div>
 							<div className="grid__row">
