@@ -188,16 +188,15 @@ class Resume extends Component {
 							<h4 className="">Skills</h4>
 							<blockquote>
 							  HTML5, CSS3,
-							  LESS, SASS, Bootstrap,
-							  Sketch, Zeplin, Craft,
-							  Adobe CC, Photoshop, Illustrator, XD,
-							  Webflow, Proto.io, Invision, Principle,
+							  LESS, SASS, Figma,
+								Adobe CC, Photoshop, Illustrator,
+							  Webflow, 3D, GLTF/GLB,
 							  Interactive Prototyping,
 							  User Testing, User Interviews,
-							  JavaScript, Typescript, jQuery,
-							  React, Angular, Backbone,
+							  JavaScript, Typescript, ThreeJS, P5JS, D3JS,
+							  React, Angular, Svelte,
 							  Git, Github, Heroku,
-							  Node, NPM
+							  Node, NPM, Python, Django, Wagtail
 							</blockquote>
 						</div>
 					</div>

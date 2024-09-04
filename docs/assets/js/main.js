@@ -48917,7 +48917,7 @@ var Resume = function (_Component) {
 							_react2.default.createElement(
 								"blockquote",
 								null,
-								"HTML5, CSS3, LESS, SASS, Bootstrap, Sketch, Zeplin, Craft, Adobe CC, Photoshop, Illustrator, XD, Webflow, Proto.io, Invision, Principle, Interactive Prototyping, User Testing, User Interviews, JavaScript, Typescript, jQuery, React, Angular, Backbone, Git, Github, Heroku, Node, NPM"
+								"HTML5, CSS3, LESS, SASS, Figma, Adobe CC, Photoshop, Illustrator, Webflow, 3D, GLTF/GLB, Interactive Prototyping, User Testing, User Interviews, JavaScript, Typescript, ThreeJS, P5JS, D3JS, React, Angular, Svelte, Git, Github, Heroku, Node, NPM, Python, Django, Wagtail"
 							)
 						)
 					)
